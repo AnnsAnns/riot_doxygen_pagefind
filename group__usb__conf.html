@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>USB peripheral compile time configurations</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group__usb__conf.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">Topics</a> &#124;
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle"><div class="title">USB peripheral compile time configurations<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__usb.html">USB</a> &#124; <a class="el" href="group__config.html">Compile time configurations</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__acm__conf.html">USBUS CDC ACM compile time configurations</a></td></tr>
+<tr class="memdesc:group__usbus__cdc__acm__conf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus__conf.html">USBUS compile time configurations</a></td></tr>
+<tr class="memdesc:group__usb__usbus__conf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga69df513c23b6c9c32f3a8f65050987dd" id="r_ga69df513c23b6c9c32f3a8f65050987dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga69df513c23b6c9c32f3a8f65050987dd">INTERNAL_PERIPHERAL_VID</a>&#160;&#160;&#160;(0x1209)</td></tr>
+<tr class="memdesc:ga69df513c23b6c9c32f3a8f65050987dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved for RIOT standard peripherals as per <a href="http://pid.codes/1209/7D00/">http://pid.codes/1209/7D00/</a>.  <br /></td></tr>
+<tr class="separator:ga69df513c23b6c9c32f3a8f65050987dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1567112216601ad3e44b3d45843b4ce1" id="r_ga1567112216601ad3e44b3d45843b4ce1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1567112216601ad3e44b3d45843b4ce1">INTERNAL_PERIPHERAL_PID</a>&#160;&#160;&#160;(0x7D00)</td></tr>
+<tr class="memdesc:ga1567112216601ad3e44b3d45843b4ce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved for RIOT standard peripherals as per <a href="http://pid.codes/1209/7D00/">http://pid.codes/1209/7D00/</a>.  <br /></td></tr>
+<tr class="separator:ga1567112216601ad3e44b3d45843b4ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad038b98f0978d8af00b45c8ee22920e4" id="r_gad038b98f0978d8af00b45c8ee22920e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad038b98f0978d8af00b45c8ee22920e4">CONFIG_USB_VID</a></td></tr>
+<tr class="memdesc:gad038b98f0978d8af00b45c8ee22920e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">USB peripheral device vendor ID.  <br /></td></tr>
+<tr class="separator:gad038b98f0978d8af00b45c8ee22920e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad692bbe77ac65d052cb2069ac7607854" id="r_gad692bbe77ac65d052cb2069ac7607854"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad692bbe77ac65d052cb2069ac7607854">CONFIG_USB_PID</a></td></tr>
+<tr class="memdesc:gad692bbe77ac65d052cb2069ac7607854"><td class="mdescLeft">&#160;</td><td class="mdescRight">USB peripheral device product ID.  <br /></td></tr>
+<tr class="separator:gad692bbe77ac65d052cb2069ac7607854"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga490d9d6f831a375060ef492f17e1ecf3" id="r_ga490d9d6f831a375060ef492f17e1ecf3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga490d9d6f831a375060ef492f17e1ecf3">CONFIG_USB_MANUF_STR</a>&#160;&#160;&#160;&quot;RIOT-os.org&quot;</td></tr>
+<tr class="memdesc:ga490d9d6f831a375060ef492f17e1ecf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">USB peripheral manufacturer string.  <br /></td></tr>
+<tr class="separator:ga490d9d6f831a375060ef492f17e1ecf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9686455e601834f27c65836749ea095a" id="r_ga9686455e601834f27c65836749ea095a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9686455e601834f27c65836749ea095a">CONFIG_USB_PRODUCT_STR</a>&#160;&#160;&#160;RIOT_BOARD</td></tr>
+<tr class="memdesc:ga9686455e601834f27c65836749ea095a"><td class="mdescLeft">&#160;</td><td class="mdescRight">USB peripheral product string.  <br /></td></tr>
+<tr class="separator:ga9686455e601834f27c65836749ea095a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga96b20139ee90ed85d1bf775a5bc1e232" id="r_ga96b20139ee90ed85d1bf775a5bc1e232"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga96b20139ee90ed85d1bf775a5bc1e232">CONFIG_USB_CONFIGURATION_STR</a>&#160;&#160;&#160;&quot;USB config&quot;</td></tr>
+<tr class="memdesc:ga96b20139ee90ed85d1bf775a5bc1e232"><td class="mdescLeft">&#160;</td><td class="mdescRight">USB peripheral configuration string.  <br /></td></tr>
+<tr class="separator:ga96b20139ee90ed85d1bf775a5bc1e232"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga78061d0207fa633d85b2fda87f6a741f" id="r_ga78061d0207fa633d85b2fda87f6a741f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga78061d0207fa633d85b2fda87f6a741f">CONFIG_USB_SERIAL_STR</a>&#160;&#160;&#160;&quot;RIOT-12345&quot;</td></tr>
+<tr class="memdesc:ga78061d0207fa633d85b2fda87f6a741f"><td class="mdescLeft">&#160;</td><td class="mdescRight">USB peripheral serial string.  <br /></td></tr>
+<tr class="separator:ga78061d0207fa633d85b2fda87f6a741f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga763a9d6c4e6b294b1b43f439e1585d3f" id="r_ga763a9d6c4e6b294b1b43f439e1585d3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga763a9d6c4e6b294b1b43f439e1585d3f">CONFIG_USB_PRODUCT_BCDVERSION</a>&#160;&#160;&#160;0x0100</td></tr>
+<tr class="memdesc:ga763a9d6c4e6b294b1b43f439e1585d3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">USB peripheral serial string length.  <br /></td></tr>
+<tr class="separator:ga763a9d6c4e6b294b1b43f439e1585d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf9bc5ac065340525af29b02770c59e15" id="r_gaf9bc5ac065340525af29b02770c59e15"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf9bc5ac065340525af29b02770c59e15">CONFIG_USB_SPEC_BCDVERSION</a>&#160;&#160;&#160;0x0200</td></tr>
+<tr class="memdesc:gaf9bc5ac065340525af29b02770c59e15"><td class="mdescLeft">&#160;</td><td class="mdescRight">USB specification version.  <br /></td></tr>
+<tr class="separator:gaf9bc5ac065340525af29b02770c59e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa7a4bbfa8803905f4cf8a21599c2e91c" id="r_gaa7a4bbfa8803905f4cf8a21599c2e91c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa7a4bbfa8803905f4cf8a21599c2e91c">CONFIG_USB_SELF_POWERED</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:gaa7a4bbfa8803905f4cf8a21599c2e91c"><td class="mdescLeft">&#160;</td><td class="mdescRight">USB peripheral setting to indicate self powered devices.  <br /></td></tr>
+<tr class="separator:gaa7a4bbfa8803905f4cf8a21599c2e91c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3fe26c9336384a2d9c65a31f5c1a2c87" id="r_ga3fe26c9336384a2d9c65a31f5c1a2c87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3fe26c9336384a2d9c65a31f5c1a2c87">CONFIG_USB_REM_WAKEUP</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:ga3fe26c9336384a2d9c65a31f5c1a2c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">USB peripheral setting to indicate remote wakeup capability.  <br /></td></tr>
+<tr class="separator:ga3fe26c9336384a2d9c65a31f5c1a2c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga69fbdf3da3e280eb9d19734531f8fda6" id="r_ga69fbdf3da3e280eb9d19734531f8fda6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga69fbdf3da3e280eb9d19734531f8fda6">CONFIG_USB_MAX_POWER</a>&#160;&#160;&#160;(100)</td></tr>
+<tr class="memdesc:ga69fbdf3da3e280eb9d19734531f8fda6"><td class="mdescLeft">&#160;</td><td class="mdescRight">USB device max power draw in mA, between 0 and 500mA.  <br /></td></tr>
+<tr class="separator:ga69fbdf3da3e280eb9d19734531f8fda6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafc337ed0720a10c0cb8bde8a99b8fc7c" id="r_gafc337ed0720a10c0cb8bde8a99b8fc7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafc337ed0720a10c0cb8bde8a99b8fc7c">CONFIG_USB_DEFAULT_LANGID</a>&#160;&#160;&#160;0x0409 /* EN-US */</td></tr>
+<tr class="memdesc:gafc337ed0720a10c0cb8bde8a99b8fc7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default LANG ID reported to the host.  <br /></td></tr>
+<tr class="separator:gafc337ed0720a10c0cb8bde8a99b8fc7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga96b20139ee90ed85d1bf775a5bc1e232" name="ga96b20139ee90ed85d1bf775a5bc1e232"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga96b20139ee90ed85d1bf775a5bc1e232">&#9670;&#160;</a></span>CONFIG_USB_CONFIGURATION_STR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_USB_CONFIGURATION_STR&#160;&#160;&#160;&quot;USB config&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USB peripheral configuration string. </p>
+
+<p class="definition">Definition at line <a class="el" href="usb_8h_source.html#l00104">104</a> of file <a class="el" href="usb_8h_source.html">usb.h</a>.</p>
+
+</div>
+</div>
+<a id="gafc337ed0720a10c0cb8bde8a99b8fc7c" name="gafc337ed0720a10c0cb8bde8a99b8fc7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafc337ed0720a10c0cb8bde8a99b8fc7c">&#9670;&#160;</a></span>CONFIG_USB_DEFAULT_LANGID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_USB_DEFAULT_LANGID&#160;&#160;&#160;0x0409 /* EN-US */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default LANG ID reported to the host. </p>
+
+<p class="definition">Definition at line <a class="el" href="usb_8h_source.html#l00181">181</a> of file <a class="el" href="usb_8h_source.html">usb.h</a>.</p>
+
+</div>
+</div>
+<a id="ga490d9d6f831a375060ef492f17e1ecf3" name="ga490d9d6f831a375060ef492f17e1ecf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga490d9d6f831a375060ef492f17e1ecf3">&#9670;&#160;</a></span>CONFIG_USB_MANUF_STR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_USB_MANUF_STR&#160;&#160;&#160;&quot;RIOT-os.org&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USB peripheral manufacturer string. </p>
+
+<p class="definition">Definition at line <a class="el" href="usb_8h_source.html#l00090">90</a> of file <a class="el" href="usb_8h_source.html">usb.h</a>.</p>
+
+</div>
+</div>
+<a id="ga69fbdf3da3e280eb9d19734531f8fda6" name="ga69fbdf3da3e280eb9d19734531f8fda6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga69fbdf3da3e280eb9d19734531f8fda6">&#9670;&#160;</a></span>CONFIG_USB_MAX_POWER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_USB_MAX_POWER&#160;&#160;&#160;(100)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USB device max power draw in mA, between 0 and 500mA. </p>
+
+<p class="definition">Definition at line <a class="el" href="usb_8h_source.html#l00174">174</a> of file <a class="el" href="usb_8h_source.html">usb.h</a>.</p>
+
+</div>
+</div>
+<a id="gad692bbe77ac65d052cb2069ac7607854" name="gad692bbe77ac65d052cb2069ac7607854"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad692bbe77ac65d052cb2069ac7607854">&#9670;&#160;</a></span>CONFIG_USB_PID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_USB_PID</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USB peripheral device product ID. </p>
+<dl class="section note"><dt>Note</dt><dd>You must provide your own VID/PID combination when manufacturing a device with USB. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="usb_8h_source.html#l00083">83</a> of file <a class="el" href="usb_8h_source.html">usb.h</a>.</p>
+
+</div>
+</div>
+<a id="ga763a9d6c4e6b294b1b43f439e1585d3f" name="ga763a9d6c4e6b294b1b43f439e1585d3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga763a9d6c4e6b294b1b43f439e1585d3f">&#9670;&#160;</a></span>CONFIG_USB_PRODUCT_BCDVERSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_USB_PRODUCT_BCDVERSION&#160;&#160;&#160;0x0100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USB peripheral serial string length. </p>
+<p>Maximum value is 63. Sensible values are between 8 to 32 depending on the number of expected devices.</p>
+<p>The length here is in bytes. The generated hex string is twice as many chars in length due to conversion from bytes to hex chars.</p>
+<p>USB peripheral device version</p>
+<p>This is the version number of this peripheral </p><dl class="section note"><dt>Note</dt><dd>Not to be be confused with the USB version number </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="usb_8h_source.html#l00140">140</a> of file <a class="el" href="usb_8h_source.html">usb.h</a>.</p>
+
+</div>
+</div>
+<a id="ga9686455e601834f27c65836749ea095a" name="ga9686455e601834f27c65836749ea095a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9686455e601834f27c65836749ea095a">&#9670;&#160;</a></span>CONFIG_USB_PRODUCT_STR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_USB_PRODUCT_STR&#160;&#160;&#160;RIOT_BOARD</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USB peripheral product string. </p>
+
+<p class="definition">Definition at line <a class="el" href="usb_8h_source.html#l00097">97</a> of file <a class="el" href="usb_8h_source.html">usb.h</a>.</p>
+
+</div>
+</div>
+<a id="ga3fe26c9336384a2d9c65a31f5c1a2c87" name="ga3fe26c9336384a2d9c65a31f5c1a2c87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3fe26c9336384a2d9c65a31f5c1a2c87">&#9670;&#160;</a></span>CONFIG_USB_REM_WAKEUP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_USB_REM_WAKEUP&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USB peripheral setting to indicate remote wakeup capability. </p>
+
+<p class="definition">Definition at line <a class="el" href="usb_8h_source.html#l00167">167</a> of file <a class="el" href="usb_8h_source.html">usb.h</a>.</p>
+
+</div>
+</div>
+<a id="gaa7a4bbfa8803905f4cf8a21599c2e91c" name="gaa7a4bbfa8803905f4cf8a21599c2e91c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa7a4bbfa8803905f4cf8a21599c2e91c">&#9670;&#160;</a></span>CONFIG_USB_SELF_POWERED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_USB_SELF_POWERED&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USB peripheral setting to indicate self powered devices. </p>
+
+<p class="definition">Definition at line <a class="el" href="usb_8h_source.html#l00160">160</a> of file <a class="el" href="usb_8h_source.html">usb.h</a>.</p>
+
+</div>
+</div>
+<a id="ga78061d0207fa633d85b2fda87f6a741f" name="ga78061d0207fa633d85b2fda87f6a741f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga78061d0207fa633d85b2fda87f6a741f">&#9670;&#160;</a></span>CONFIG_USB_SERIAL_STR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_USB_SERIAL_STR&#160;&#160;&#160;&quot;RIOT-12345&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USB peripheral serial string. </p>
+<p>Compile-time value to override the serial string with. An LUID-based hex string is generated when this value is not used.</p>
+<p>This string does not have to be a number, but it must be unique between devices with identical VID:PID combination. </p>
+
+<p class="definition">Definition at line <a class="el" href="usb_8h_source.html#l00117">117</a> of file <a class="el" href="usb_8h_source.html">usb.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf9bc5ac065340525af29b02770c59e15" name="gaf9bc5ac065340525af29b02770c59e15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf9bc5ac065340525af29b02770c59e15">&#9670;&#160;</a></span>CONFIG_USB_SPEC_BCDVERSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_USB_SPEC_BCDVERSION&#160;&#160;&#160;0x0200</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USB specification version. </p>
+
+<p class="definition">Definition at line <a class="el" href="usb_8h_source.html#l00152">152</a> of file <a class="el" href="usb_8h_source.html">usb.h</a>.</p>
+
+</div>
+</div>
+<a id="gad038b98f0978d8af00b45c8ee22920e4" name="gad038b98f0978d8af00b45c8ee22920e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad038b98f0978d8af00b45c8ee22920e4">&#9670;&#160;</a></span>CONFIG_USB_VID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_USB_VID</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USB peripheral device vendor ID. </p>
+<dl class="section note"><dt>Note</dt><dd>You must provide your own VID/PID combination when manufacturing a device with USB. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="usb_8h_source.html#l00073">73</a> of file <a class="el" href="usb_8h_source.html">usb.h</a>.</p>
+
+</div>
+</div>
+<a id="ga1567112216601ad3e44b3d45843b4ce1" name="ga1567112216601ad3e44b3d45843b4ce1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1567112216601ad3e44b3d45843b4ce1">&#9670;&#160;</a></span>INTERNAL_PERIPHERAL_PID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INTERNAL_PERIPHERAL_PID&#160;&#160;&#160;(0x7D00)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved for RIOT standard peripherals as per <a href="http://pid.codes/1209/7D00/">http://pid.codes/1209/7D00/</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="usb_8h_source.html#l00045">45</a> of file <a class="el" href="usb_8h_source.html">usb.h</a>.</p>
+
+</div>
+</div>
+<a id="ga69df513c23b6c9c32f3a8f65050987dd" name="ga69df513c23b6c9c32f3a8f65050987dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga69df513c23b6c9c32f3a8f65050987dd">&#9670;&#160;</a></span>INTERNAL_PERIPHERAL_VID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INTERNAL_PERIPHERAL_VID&#160;&#160;&#160;(0x1209)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved for RIOT standard peripherals as per <a href="http://pid.codes/1209/7D00/">http://pid.codes/1209/7D00/</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="usb_8h_source.html#l00041">41</a> of file <a class="el" href="usb_8h_source.html">usb.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:34 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

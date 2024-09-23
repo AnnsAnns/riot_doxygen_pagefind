@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>xbee_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structxbee__t.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">xbee_t Struct Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__netdev.html">Network Device Drivers</a> &raquo; <a class="el" href="group__drivers__xbee.html">XBee driver</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>XBee device descriptor.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>XBee device descriptor. </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00128">128</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="xbee_8h_source.html">xbee.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a756d8fc387d1c80f35cb524d37f0fc55" id="r_a756d8fc387d1c80f35cb524d37f0fc55"><td class="memItemLeft" align="right" valign="top">const struct <a class="el" href="structnetdev__driver.html">netdev_driver</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a756d8fc387d1c80f35cb524d37f0fc55">driver</a></td></tr>
+<tr class="memdesc:a756d8fc387d1c80f35cb524d37f0fc55"><td class="mdescLeft">&#160;</td><td class="mdescRight">ptr to that driver's interface.  <br /></td></tr>
+<tr class="separator:a756d8fc387d1c80f35cb524d37f0fc55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a764dc506ac5121bbc95e563a8d733c" id="r_a3a764dc506ac5121bbc95e563a8d733c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__netdev__api.html#gad323355be0487ba68c16dea102740275">netdev_event_cb_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a764dc506ac5121bbc95e563a8d733c">event_callback</a></td></tr>
+<tr class="memdesc:a3a764dc506ac5121bbc95e563a8d733c"><td class="mdescLeft">&#160;</td><td class="mdescRight">callback for device events  <br /></td></tr>
+<tr class="separator:a3a764dc506ac5121bbc95e563a8d733c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60ce905f049e1106789ae1fbbf443216" id="r_a60ce905f049e1106789ae1fbbf443216"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60ce905f049e1106789ae1fbbf443216">context</a></td></tr>
+<tr class="memdesc:a60ce905f049e1106789ae1fbbf443216"><td class="mdescLeft">&#160;</td><td class="mdescRight">ptr to network stack context  <br /></td></tr>
+<tr class="separator:a60ce905f049e1106789ae1fbbf443216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a199bd9861854ca66f74407b5adfc9837" id="r_a199bd9861854ca66f74407b5adfc9837"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxbee__params__t.html">xbee_params_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a199bd9861854ca66f74407b5adfc9837">p</a></td></tr>
+<tr class="memdesc:a199bd9861854ca66f74407b5adfc9837"><td class="mdescLeft">&#160;</td><td class="mdescRight">configuration parameters  <br /></td></tr>
+<tr class="separator:a199bd9861854ca66f74407b5adfc9837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08999ba72b216525d24f0edbfa841deb" id="r_a08999ba72b216525d24f0edbfa841deb"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08999ba72b216525d24f0edbfa841deb">options</a></td></tr>
+<tr class="memdesc:a08999ba72b216525d24f0edbfa841deb"><td class="mdescLeft">&#160;</td><td class="mdescRight">options field  <br /></td></tr>
+<tr class="separator:a08999ba72b216525d24f0edbfa841deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9b45eb5c9603f775525ed6b5c7a799c" id="r_ac9b45eb5c9603f775525ed6b5c7a799c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9b45eb5c9603f775525ed6b5c7a799c">addr_flags</a></td></tr>
+<tr class="memdesc:ac9b45eb5c9603f775525ed6b5c7a799c"><td class="mdescLeft">&#160;</td><td class="mdescRight">address flags as defined above  <br /></td></tr>
+<tr class="separator:ac9b45eb5c9603f775525ed6b5c7a799c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae56989de1fd62f259b871095dcbcfbe" id="r_aae56989de1fd62f259b871095dcbcfbe"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae56989de1fd62f259b871095dcbcfbe">addr_short</a> [2]</td></tr>
+<tr class="memdesc:aae56989de1fd62f259b871095dcbcfbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">own 802.15.4 short address  <br /></td></tr>
+<tr class="separator:aae56989de1fd62f259b871095dcbcfbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81ad3e776e40b2838b8d4ea7a905c10a" id="r_a81ad3e776e40b2838b8d4ea7a905c10a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="unioneui64__t.html">eui64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81ad3e776e40b2838b8d4ea7a905c10a">addr_long</a></td></tr>
+<tr class="memdesc:a81ad3e776e40b2838b8d4ea7a905c10a"><td class="mdescLeft">&#160;</td><td class="mdescRight">own 802.15.4 long address  <br /></td></tr>
+<tr class="separator:a81ad3e776e40b2838b8d4ea7a905c10a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ef676a9cc09b87df92e069b19302030" id="r_a5ef676a9cc09b87df92e069b19302030"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__xbee.html#gacaab6b6ba03d4dc6d8113dd36689b0db">xbee_rx_state_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ef676a9cc09b87df92e069b19302030">int_state</a></td></tr>
+<tr class="memdesc:a5ef676a9cc09b87df92e069b19302030"><td class="mdescLeft">&#160;</td><td class="mdescRight">current state if the UART RX FSM  <br /></td></tr>
+<tr class="separator:a5ef676a9cc09b87df92e069b19302030"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb34cec08542ea046964e7ff37d9815f" id="r_afb34cec08542ea046964e7ff37d9815f"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb34cec08542ea046964e7ff37d9815f">int_size</a></td></tr>
+<tr class="memdesc:afb34cec08542ea046964e7ff37d9815f"><td class="mdescLeft">&#160;</td><td class="mdescRight">temporary space for parsing the frame size  <br /></td></tr>
+<tr class="separator:afb34cec08542ea046964e7ff37d9815f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a947b886eb60b3c1f1c900db1ccdd13c0" id="r_a947b886eb60b3c1f1c900db1ccdd13c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmutex__t.html">mutex_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a947b886eb60b3c1f1c900db1ccdd13c0">tx_lock</a></td></tr>
+<tr class="memdesc:a947b886eb60b3c1f1c900db1ccdd13c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">mutex to allow only one transmission at a time  <br /></td></tr>
+<tr class="separator:a947b886eb60b3c1f1c900db1ccdd13c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67fc55e63bdbe828c54c6a88f992f0e5" id="r_a67fc55e63bdbe828c54c6a88f992f0e5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67fc55e63bdbe828c54c6a88f992f0e5">cmd_buf</a> [<a class="el" href="group__drivers__xbee.html#ga639d8ca4e87f5185493193a1cbf9b0b3">XBEE_MAX_RESP_LENGTH</a>]</td></tr>
+<tr class="memdesc:a67fc55e63bdbe828c54c6a88f992f0e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">command data buffer  <br /></td></tr>
+<tr class="separator:a67fc55e63bdbe828c54c6a88f992f0e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ced10d1daa62378a0778cc15b5e1a0f" id="r_a1ced10d1daa62378a0778cc15b5e1a0f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ced10d1daa62378a0778cc15b5e1a0f">tx_fid</a></td></tr>
+<tr class="memdesc:a1ced10d1daa62378a0778cc15b5e1a0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">TX frame ID.  <br /></td></tr>
+<tr class="separator:a1ced10d1daa62378a0778cc15b5e1a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45d582f81a90f9a061c2b0ab650cd74b" id="r_a45d582f81a90f9a061c2b0ab650cd74b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmutex__t.html">mutex_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45d582f81a90f9a061c2b0ab650cd74b">resp_lock</a></td></tr>
+<tr class="memdesc:a45d582f81a90f9a061c2b0ab650cd74b"><td class="mdescLeft">&#160;</td><td class="mdescRight">mutex for waiting for AT command response frames  <br /></td></tr>
+<tr class="separator:a45d582f81a90f9a061c2b0ab650cd74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33576a90c3dcf80c1feaf55b03580e5e" id="r_a33576a90c3dcf80c1feaf55b03580e5e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33576a90c3dcf80c1feaf55b03580e5e">resp_buf</a> [<a class="el" href="group__drivers__xbee.html#ga639d8ca4e87f5185493193a1cbf9b0b3">XBEE_MAX_RESP_LENGTH</a>]</td></tr>
+<tr class="memdesc:a33576a90c3dcf80c1feaf55b03580e5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">AT response data buffer.  <br /></td></tr>
+<tr class="separator:a33576a90c3dcf80c1feaf55b03580e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8149f7cfa5efbac113583b9ebbccb37d" id="r_a8149f7cfa5efbac113583b9ebbccb37d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8149f7cfa5efbac113583b9ebbccb37d">resp_count</a></td></tr>
+<tr class="memdesc:a8149f7cfa5efbac113583b9ebbccb37d"><td class="mdescLeft">&#160;</td><td class="mdescRight">counter for ongoing transmission  <br /></td></tr>
+<tr class="separator:a8149f7cfa5efbac113583b9ebbccb37d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a061a77ce3abef6a9c5ee163412dfa01c" id="r_a061a77ce3abef6a9c5ee163412dfa01c"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a061a77ce3abef6a9c5ee163412dfa01c">resp_limit</a></td></tr>
+<tr class="memdesc:a061a77ce3abef6a9c5ee163412dfa01c"><td class="mdescLeft">&#160;</td><td class="mdescRight">size RESP frame in transferred  <br /></td></tr>
+<tr class="separator:a061a77ce3abef6a9c5ee163412dfa01c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7071c0833060caff8334a432fe3aa7e4" id="r_a7071c0833060caff8334a432fe3aa7e4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7071c0833060caff8334a432fe3aa7e4">rx_buf</a> [<a class="el" href="group__drivers__xbee.html#ga8b74371146a15ce669fde57df7512312">XBEE_MAX_PKT_LENGTH</a>]</td></tr>
+<tr class="memdesc:a7071c0833060caff8334a432fe3aa7e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">receiving data buffer  <br /></td></tr>
+<tr class="separator:a7071c0833060caff8334a432fe3aa7e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae669bea2c4efaff2f2f4677a26756463" id="r_ae669bea2c4efaff2f2f4677a26756463"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae669bea2c4efaff2f2f4677a26756463">rx_count</a></td></tr>
+<tr class="memdesc:ae669bea2c4efaff2f2f4677a26756463"><td class="mdescLeft">&#160;</td><td class="mdescRight">counter for ongoing transmission  <br /></td></tr>
+<tr class="separator:ae669bea2c4efaff2f2f4677a26756463"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedb288ef6be1fdf2f9ae20623a8c6aa7" id="r_aedb288ef6be1fdf2f9ae20623a8c6aa7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedb288ef6be1fdf2f9ae20623a8c6aa7">rx_limit</a></td></tr>
+<tr class="memdesc:aedb288ef6be1fdf2f9ae20623a8c6aa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">size RX frame transferred  <br /></td></tr>
+<tr class="separator:aedb288ef6be1fdf2f9ae20623a8c6aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="ac9b45eb5c9603f775525ed6b5c7a799c" name="ac9b45eb5c9603f775525ed6b5c7a799c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9b45eb5c9603f775525ed6b5c7a799c">&#9670;&#160;</a></span>addr_flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t xbee_t::addr_flags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>address flags as defined above </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00136">136</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+
+</div>
+</div>
+<a id="a81ad3e776e40b2838b8d4ea7a905c10a" name="a81ad3e776e40b2838b8d4ea7a905c10a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81ad3e776e40b2838b8d4ea7a905c10a">&#9670;&#160;</a></span>addr_long</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="unioneui64__t.html">eui64_t</a> xbee_t::addr_long</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>own 802.15.4 long address </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00138">138</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+
+</div>
+</div>
+<a id="aae56989de1fd62f259b871095dcbcfbe" name="aae56989de1fd62f259b871095dcbcfbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae56989de1fd62f259b871095dcbcfbe">&#9670;&#160;</a></span>addr_short</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t xbee_t::addr_short[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>own 802.15.4 short address </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00137">137</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+
+</div>
+</div>
+<a id="a67fc55e63bdbe828c54c6a88f992f0e5" name="a67fc55e63bdbe828c54c6a88f992f0e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67fc55e63bdbe828c54c6a88f992f0e5">&#9670;&#160;</a></span>cmd_buf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t xbee_t::cmd_buf[<a class="el" href="group__drivers__xbee.html#ga639d8ca4e87f5185493193a1cbf9b0b3">XBEE_MAX_RESP_LENGTH</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>command data buffer </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00146">146</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+
+</div>
+</div>
+<a id="a60ce905f049e1106789ae1fbbf443216" name="a60ce905f049e1106789ae1fbbf443216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60ce905f049e1106789ae1fbbf443216">&#9670;&#160;</a></span>context</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* xbee_t::context</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ptr to network stack context </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00132">132</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+
+</div>
+</div>
+<a id="a756d8fc387d1c80f35cb524d37f0fc55" name="a756d8fc387d1c80f35cb524d37f0fc55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a756d8fc387d1c80f35cb524d37f0fc55">&#9670;&#160;</a></span>driver</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const struct <a class="el" href="structnetdev__driver.html">netdev_driver</a>* xbee_t::driver</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ptr to that driver's interface. </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00130">130</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+
+</div>
+</div>
+<a id="a3a764dc506ac5121bbc95e563a8d733c" name="a3a764dc506ac5121bbc95e563a8d733c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a764dc506ac5121bbc95e563a8d733c">&#9670;&#160;</a></span>event_callback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__netdev__api.html#gad323355be0487ba68c16dea102740275">netdev_event_cb_t</a> xbee_t::event_callback</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>callback for device events </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00131">131</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+
+</div>
+</div>
+<a id="afb34cec08542ea046964e7ff37d9815f" name="afb34cec08542ea046964e7ff37d9815f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb34cec08542ea046964e7ff37d9815f">&#9670;&#160;</a></span>int_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t xbee_t::int_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>temporary space for parsing the frame size </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00141">141</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+
+</div>
+</div>
+<a id="a5ef676a9cc09b87df92e069b19302030" name="a5ef676a9cc09b87df92e069b19302030"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ef676a9cc09b87df92e069b19302030">&#9670;&#160;</a></span>int_state</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__xbee.html#gacaab6b6ba03d4dc6d8113dd36689b0db">xbee_rx_state_t</a> xbee_t::int_state</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>current state if the UART RX FSM </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00140">140</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+
+</div>
+</div>
+<a id="a08999ba72b216525d24f0edbfa841deb" name="a08999ba72b216525d24f0edbfa841deb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08999ba72b216525d24f0edbfa841deb">&#9670;&#160;</a></span>options</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t xbee_t::options</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>options field </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00135">135</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+
+</div>
+</div>
+<a id="a199bd9861854ca66f74407b5adfc9837" name="a199bd9861854ca66f74407b5adfc9837"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a199bd9861854ca66f74407b5adfc9837">&#9670;&#160;</a></span>p</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structxbee__params__t.html">xbee_params_t</a> xbee_t::p</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>configuration parameters </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00134">134</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+
+</div>
+</div>
+<a id="a33576a90c3dcf80c1feaf55b03580e5e" name="a33576a90c3dcf80c1feaf55b03580e5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33576a90c3dcf80c1feaf55b03580e5e">&#9670;&#160;</a></span>resp_buf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t xbee_t::resp_buf[<a class="el" href="group__drivers__xbee.html#ga639d8ca4e87f5185493193a1cbf9b0b3">XBEE_MAX_RESP_LENGTH</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>AT response data buffer. </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00151">151</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+
+</div>
+</div>
+<a id="a8149f7cfa5efbac113583b9ebbccb37d" name="a8149f7cfa5efbac113583b9ebbccb37d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8149f7cfa5efbac113583b9ebbccb37d">&#9670;&#160;</a></span>resp_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t xbee_t::resp_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>counter for ongoing transmission </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00152">152</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+
+</div>
+</div>
+<a id="a061a77ce3abef6a9c5ee163412dfa01c" name="a061a77ce3abef6a9c5ee163412dfa01c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a061a77ce3abef6a9c5ee163412dfa01c">&#9670;&#160;</a></span>resp_limit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t xbee_t::resp_limit</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>size RESP frame in transferred </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00153">153</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+
+</div>
+</div>
+<a id="a45d582f81a90f9a061c2b0ab650cd74b" name="a45d582f81a90f9a061c2b0ab650cd74b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45d582f81a90f9a061c2b0ab650cd74b">&#9670;&#160;</a></span>resp_lock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmutex__t.html">mutex_t</a> xbee_t::resp_lock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>mutex for waiting for AT command response frames </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00149">149</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+
+</div>
+</div>
+<a id="a7071c0833060caff8334a432fe3aa7e4" name="a7071c0833060caff8334a432fe3aa7e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7071c0833060caff8334a432fe3aa7e4">&#9670;&#160;</a></span>rx_buf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t xbee_t::rx_buf[<a class="el" href="group__drivers__xbee.html#ga8b74371146a15ce669fde57df7512312">XBEE_MAX_PKT_LENGTH</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>receiving data buffer </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00155">155</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+
+</div>
+</div>
+<a id="ae669bea2c4efaff2f2f4677a26756463" name="ae669bea2c4efaff2f2f4677a26756463"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae669bea2c4efaff2f2f4677a26756463">&#9670;&#160;</a></span>rx_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t xbee_t::rx_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>counter for ongoing transmission </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00156">156</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+
+</div>
+</div>
+<a id="aedb288ef6be1fdf2f9ae20623a8c6aa7" name="aedb288ef6be1fdf2f9ae20623a8c6aa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedb288ef6be1fdf2f9ae20623a8c6aa7">&#9670;&#160;</a></span>rx_limit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t xbee_t::rx_limit</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>size RX frame transferred </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00157">157</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+
+</div>
+</div>
+<a id="a1ced10d1daa62378a0778cc15b5e1a0f" name="a1ced10d1daa62378a0778cc15b5e1a0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ced10d1daa62378a0778cc15b5e1a0f">&#9670;&#160;</a></span>tx_fid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t xbee_t::tx_fid</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TX frame ID. </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00147">147</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+
+</div>
+</div>
+<a id="a947b886eb60b3c1f1c900db1ccdd13c0" name="a947b886eb60b3c1f1c900db1ccdd13c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a947b886eb60b3c1f1c900db1ccdd13c0">&#9670;&#160;</a></span>tx_lock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmutex__t.html">mutex_t</a> xbee_t::tx_lock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>mutex to allow only one transmission at a time </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee_8h_source.html#l00144">144</a> of file <a class="el" href="xbee_8h_source.html">xbee.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>drivers/include/<a class="el" href="xbee_8h_source.html">xbee.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

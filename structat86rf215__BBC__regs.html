@@ -1,0 +1,2103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>at86rf215_BBC_regs Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structat86rf215__BBC__regs.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">at86rf215_BBC_regs Struct Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Base Band Controller registers.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base Band Controller registers. </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00070">70</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:ac2fde55aff410c4499cf3fd4211da1ed" id="r_ac2fde55aff410c4499cf3fd4211da1ed"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2fde55aff410c4499cf3fd4211da1ed">RG_IRQS</a></td></tr>
+<tr class="memdesc:ac2fde55aff410c4499cf3fd4211da1ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:ac2fde55aff410c4499cf3fd4211da1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a125b09768a78a6215c849e527255581d" id="r_a125b09768a78a6215c849e527255581d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a125b09768a78a6215c849e527255581d">RG_FBRXS</a></td></tr>
+<tr class="memdesc:a125b09768a78a6215c849e527255581d"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a125b09768a78a6215c849e527255581d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12ef60f9c0a870b669786dab26c84927" id="r_a12ef60f9c0a870b669786dab26c84927"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12ef60f9c0a870b669786dab26c84927">RG_FBRXE</a></td></tr>
+<tr class="memdesc:a12ef60f9c0a870b669786dab26c84927"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a12ef60f9c0a870b669786dab26c84927"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45d8a0f9d578b5bcac6b30b0a5a59093" id="r_a45d8a0f9d578b5bcac6b30b0a5a59093"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45d8a0f9d578b5bcac6b30b0a5a59093">RG_FBTXS</a></td></tr>
+<tr class="memdesc:a45d8a0f9d578b5bcac6b30b0a5a59093"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a45d8a0f9d578b5bcac6b30b0a5a59093"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07db2875ca10ada57f4532180cb63bc0" id="r_a07db2875ca10ada57f4532180cb63bc0"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07db2875ca10ada57f4532180cb63bc0">RG_FBTXE</a></td></tr>
+<tr class="memdesc:a07db2875ca10ada57f4532180cb63bc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a07db2875ca10ada57f4532180cb63bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a4d1c6b149c8c2cc61b3d74a4dd1023" id="r_a2a4d1c6b149c8c2cc61b3d74a4dd1023"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a4d1c6b149c8c2cc61b3d74a4dd1023">RG_IRQM</a></td></tr>
+<tr class="memdesc:a2a4d1c6b149c8c2cc61b3d74a4dd1023"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a2a4d1c6b149c8c2cc61b3d74a4dd1023"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3adb57f6dbf08ea86f9d52ea94710904" id="r_a3adb57f6dbf08ea86f9d52ea94710904"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3adb57f6dbf08ea86f9d52ea94710904">RG_PC</a></td></tr>
+<tr class="memdesc:a3adb57f6dbf08ea86f9d52ea94710904"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a3adb57f6dbf08ea86f9d52ea94710904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ac1aec25b123dcac8fd7e91d784ed24" id="r_a3ac1aec25b123dcac8fd7e91d784ed24"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ac1aec25b123dcac8fd7e91d784ed24">RG_PS</a></td></tr>
+<tr class="memdesc:a3ac1aec25b123dcac8fd7e91d784ed24"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a3ac1aec25b123dcac8fd7e91d784ed24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06a60711d6864fd4ad3f9a90f2cff881" id="r_a06a60711d6864fd4ad3f9a90f2cff881"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06a60711d6864fd4ad3f9a90f2cff881">RG_RXFLL</a></td></tr>
+<tr class="memdesc:a06a60711d6864fd4ad3f9a90f2cff881"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a06a60711d6864fd4ad3f9a90f2cff881"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3a91033f9fcbb693e94e70a1494117a" id="r_ab3a91033f9fcbb693e94e70a1494117a"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3a91033f9fcbb693e94e70a1494117a">RG_RXFLH</a></td></tr>
+<tr class="memdesc:ab3a91033f9fcbb693e94e70a1494117a"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:ab3a91033f9fcbb693e94e70a1494117a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a570c85dac7c0d2d4132f5a8f654df3ea" id="r_a570c85dac7c0d2d4132f5a8f654df3ea"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a570c85dac7c0d2d4132f5a8f654df3ea">RG_TXFLL</a></td></tr>
+<tr class="memdesc:a570c85dac7c0d2d4132f5a8f654df3ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a570c85dac7c0d2d4132f5a8f654df3ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad37ceca5a7cdf6a22bbd3b23ceaedb0" id="r_aad37ceca5a7cdf6a22bbd3b23ceaedb0"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad37ceca5a7cdf6a22bbd3b23ceaedb0">RG_TXFLH</a></td></tr>
+<tr class="memdesc:aad37ceca5a7cdf6a22bbd3b23ceaedb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:aad37ceca5a7cdf6a22bbd3b23ceaedb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a935d37475d82f19aea92bbb4c1e232b0" id="r_a935d37475d82f19aea92bbb4c1e232b0"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a935d37475d82f19aea92bbb4c1e232b0">RG_FBLL</a></td></tr>
+<tr class="memdesc:a935d37475d82f19aea92bbb4c1e232b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a935d37475d82f19aea92bbb4c1e232b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03883b456d777500d6c64e99c788a4bb" id="r_a03883b456d777500d6c64e99c788a4bb"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03883b456d777500d6c64e99c788a4bb">RG_FBLH</a></td></tr>
+<tr class="memdesc:a03883b456d777500d6c64e99c788a4bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a03883b456d777500d6c64e99c788a4bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a795cb3e8c88b67e841c763333172d5b7" id="r_a795cb3e8c88b67e841c763333172d5b7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a795cb3e8c88b67e841c763333172d5b7">RG_FBLIL</a></td></tr>
+<tr class="memdesc:a795cb3e8c88b67e841c763333172d5b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a795cb3e8c88b67e841c763333172d5b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ee868721eb0f0f46a4728779f04e9b3" id="r_a2ee868721eb0f0f46a4728779f04e9b3"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ee868721eb0f0f46a4728779f04e9b3">RG_FBLIH</a></td></tr>
+<tr class="memdesc:a2ee868721eb0f0f46a4728779f04e9b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a2ee868721eb0f0f46a4728779f04e9b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae52500d93c4f44a33641f3c5b0b10c97" id="r_ae52500d93c4f44a33641f3c5b0b10c97"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae52500d93c4f44a33641f3c5b0b10c97">RG_OFDMPHRTX</a></td></tr>
+<tr class="memdesc:ae52500d93c4f44a33641f3c5b0b10c97"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:ae52500d93c4f44a33641f3c5b0b10c97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8751e60afb9bed7a38e2c11ad25bb5b6" id="r_a8751e60afb9bed7a38e2c11ad25bb5b6"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8751e60afb9bed7a38e2c11ad25bb5b6">RG_OFDMPHRRX</a></td></tr>
+<tr class="memdesc:a8751e60afb9bed7a38e2c11ad25bb5b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a8751e60afb9bed7a38e2c11ad25bb5b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7996b72e67b6fa8bf8c018a481858854" id="r_a7996b72e67b6fa8bf8c018a481858854"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7996b72e67b6fa8bf8c018a481858854">RG_OFDMC</a></td></tr>
+<tr class="memdesc:a7996b72e67b6fa8bf8c018a481858854"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a7996b72e67b6fa8bf8c018a481858854"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21b704c62a450be59264a80eba258129" id="r_a21b704c62a450be59264a80eba258129"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21b704c62a450be59264a80eba258129">RG_OFDMSW</a></td></tr>
+<tr class="memdesc:a21b704c62a450be59264a80eba258129"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a21b704c62a450be59264a80eba258129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe11cba5bb5daa06f2915365c0400a7b" id="r_abe11cba5bb5daa06f2915365c0400a7b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe11cba5bb5daa06f2915365c0400a7b">RG_OQPSKC0</a></td></tr>
+<tr class="memdesc:abe11cba5bb5daa06f2915365c0400a7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:abe11cba5bb5daa06f2915365c0400a7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17fed5102f4e744d0bddca9031dcaeab" id="r_a17fed5102f4e744d0bddca9031dcaeab"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17fed5102f4e744d0bddca9031dcaeab">RG_OQPSKC1</a></td></tr>
+<tr class="memdesc:a17fed5102f4e744d0bddca9031dcaeab"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a17fed5102f4e744d0bddca9031dcaeab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad23989b78e287dca8916584f66f3147b" id="r_ad23989b78e287dca8916584f66f3147b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad23989b78e287dca8916584f66f3147b">RG_OQPSKC2</a></td></tr>
+<tr class="memdesc:ad23989b78e287dca8916584f66f3147b"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:ad23989b78e287dca8916584f66f3147b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad36e27ce4cef0c106583fd4e7cb72d86" id="r_ad36e27ce4cef0c106583fd4e7cb72d86"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad36e27ce4cef0c106583fd4e7cb72d86">RG_OQPSKC3</a></td></tr>
+<tr class="memdesc:ad36e27ce4cef0c106583fd4e7cb72d86"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:ad36e27ce4cef0c106583fd4e7cb72d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acef9d43bffeeb036e834169fceb58a1f" id="r_acef9d43bffeeb036e834169fceb58a1f"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acef9d43bffeeb036e834169fceb58a1f">RG_OQPSKPHRTX</a></td></tr>
+<tr class="memdesc:acef9d43bffeeb036e834169fceb58a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:acef9d43bffeeb036e834169fceb58a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a020070b5105bc2d02fd0dcf0889d6a44" id="r_a020070b5105bc2d02fd0dcf0889d6a44"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a020070b5105bc2d02fd0dcf0889d6a44">RG_OQPSKPHRRX</a></td></tr>
+<tr class="memdesc:a020070b5105bc2d02fd0dcf0889d6a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a020070b5105bc2d02fd0dcf0889d6a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a40493e978ad5257bdbea479f6560c5" id="r_a5a40493e978ad5257bdbea479f6560c5"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a40493e978ad5257bdbea479f6560c5">RG_AFC0</a></td></tr>
+<tr class="memdesc:a5a40493e978ad5257bdbea479f6560c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a5a40493e978ad5257bdbea479f6560c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a785e688c159d5eaa6356695de2620578" id="r_a785e688c159d5eaa6356695de2620578"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a785e688c159d5eaa6356695de2620578">RG_AFC1</a></td></tr>
+<tr class="memdesc:a785e688c159d5eaa6356695de2620578"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a785e688c159d5eaa6356695de2620578"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93ca722fad79f882ae5a6a62037effec" id="r_a93ca722fad79f882ae5a6a62037effec"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93ca722fad79f882ae5a6a62037effec">RG_AFFTM</a></td></tr>
+<tr class="memdesc:a93ca722fad79f882ae5a6a62037effec"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a93ca722fad79f882ae5a6a62037effec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ff34177c5319e5388b1786fba1a4e9b" id="r_a0ff34177c5319e5388b1786fba1a4e9b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ff34177c5319e5388b1786fba1a4e9b">RG_AFFVM</a></td></tr>
+<tr class="memdesc:a0ff34177c5319e5388b1786fba1a4e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a0ff34177c5319e5388b1786fba1a4e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0477aee5489b0275cc41c7d297168cb" id="r_ac0477aee5489b0275cc41c7d297168cb"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0477aee5489b0275cc41c7d297168cb">RG_AFS</a></td></tr>
+<tr class="memdesc:ac0477aee5489b0275cc41c7d297168cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:ac0477aee5489b0275cc41c7d297168cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61a71ec17b139c0604ce83e1d080ac03" id="r_a61a71ec17b139c0604ce83e1d080ac03"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61a71ec17b139c0604ce83e1d080ac03">RG_MACEA0</a></td></tr>
+<tr class="memdesc:a61a71ec17b139c0604ce83e1d080ac03"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a61a71ec17b139c0604ce83e1d080ac03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8af1c0f37bf5881f855ab20f51168c12" id="r_a8af1c0f37bf5881f855ab20f51168c12"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8af1c0f37bf5881f855ab20f51168c12">RG_MACEA1</a></td></tr>
+<tr class="memdesc:a8af1c0f37bf5881f855ab20f51168c12"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a8af1c0f37bf5881f855ab20f51168c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa79207bacb4d1142018adf9323b31111" id="r_aa79207bacb4d1142018adf9323b31111"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa79207bacb4d1142018adf9323b31111">RG_MACEA2</a></td></tr>
+<tr class="memdesc:aa79207bacb4d1142018adf9323b31111"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:aa79207bacb4d1142018adf9323b31111"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a223e9051b2832aa8b045ecc7f24b9729" id="r_a223e9051b2832aa8b045ecc7f24b9729"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a223e9051b2832aa8b045ecc7f24b9729">RG_MACEA3</a></td></tr>
+<tr class="memdesc:a223e9051b2832aa8b045ecc7f24b9729"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a223e9051b2832aa8b045ecc7f24b9729"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b6aaa63e85e7bef7a13a602155f803a" id="r_a8b6aaa63e85e7bef7a13a602155f803a"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b6aaa63e85e7bef7a13a602155f803a">RG_MACEA4</a></td></tr>
+<tr class="memdesc:a8b6aaa63e85e7bef7a13a602155f803a"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a8b6aaa63e85e7bef7a13a602155f803a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a547d1f9c916de658ef3c901cfc4222a7" id="r_a547d1f9c916de658ef3c901cfc4222a7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a547d1f9c916de658ef3c901cfc4222a7">RG_MACEA5</a></td></tr>
+<tr class="memdesc:a547d1f9c916de658ef3c901cfc4222a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a547d1f9c916de658ef3c901cfc4222a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a183dfd9f9b4c71bc4e943d518e109779" id="r_a183dfd9f9b4c71bc4e943d518e109779"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a183dfd9f9b4c71bc4e943d518e109779">RG_MACEA6</a></td></tr>
+<tr class="memdesc:a183dfd9f9b4c71bc4e943d518e109779"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a183dfd9f9b4c71bc4e943d518e109779"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a884ca4ace1f620c2213f83c7287da231" id="r_a884ca4ace1f620c2213f83c7287da231"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a884ca4ace1f620c2213f83c7287da231">RG_MACEA7</a></td></tr>
+<tr class="memdesc:a884ca4ace1f620c2213f83c7287da231"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a884ca4ace1f620c2213f83c7287da231"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b7b98ef2efbafc899abf3518ed944e2" id="r_a3b7b98ef2efbafc899abf3518ed944e2"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b7b98ef2efbafc899abf3518ed944e2">RG_MACPID0F0</a></td></tr>
+<tr class="memdesc:a3b7b98ef2efbafc899abf3518ed944e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a3b7b98ef2efbafc899abf3518ed944e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affbbb83b30a87510ea71a840eca81e8c" id="r_affbbb83b30a87510ea71a840eca81e8c"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affbbb83b30a87510ea71a840eca81e8c">RG_MACPID1F0</a></td></tr>
+<tr class="memdesc:affbbb83b30a87510ea71a840eca81e8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:affbbb83b30a87510ea71a840eca81e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45f378e6bd3a8182be91639329564af4" id="r_a45f378e6bd3a8182be91639329564af4"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45f378e6bd3a8182be91639329564af4">RG_MACSHA0F0</a></td></tr>
+<tr class="memdesc:a45f378e6bd3a8182be91639329564af4"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a45f378e6bd3a8182be91639329564af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48b8c57658921e49044fe794903b2ef4" id="r_a48b8c57658921e49044fe794903b2ef4"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48b8c57658921e49044fe794903b2ef4">RG_MACSHA1F0</a></td></tr>
+<tr class="memdesc:a48b8c57658921e49044fe794903b2ef4"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a48b8c57658921e49044fe794903b2ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f1597244ca14dd1079ec8a2fbc8193a" id="r_a7f1597244ca14dd1079ec8a2fbc8193a"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f1597244ca14dd1079ec8a2fbc8193a">RG_MACPID0F1</a></td></tr>
+<tr class="memdesc:a7f1597244ca14dd1079ec8a2fbc8193a"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a7f1597244ca14dd1079ec8a2fbc8193a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5c7e81aa71b19e54dfe4a8dba2022c8" id="r_af5c7e81aa71b19e54dfe4a8dba2022c8"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5c7e81aa71b19e54dfe4a8dba2022c8">RG_MACPID1F1</a></td></tr>
+<tr class="memdesc:af5c7e81aa71b19e54dfe4a8dba2022c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:af5c7e81aa71b19e54dfe4a8dba2022c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef810520f7612eba9f8008500894da3d" id="r_aef810520f7612eba9f8008500894da3d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef810520f7612eba9f8008500894da3d">RG_MACSHA0F1</a></td></tr>
+<tr class="memdesc:aef810520f7612eba9f8008500894da3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:aef810520f7612eba9f8008500894da3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2797b7e09f514130600434a9b3874218" id="r_a2797b7e09f514130600434a9b3874218"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2797b7e09f514130600434a9b3874218">RG_MACSHA1F1</a></td></tr>
+<tr class="memdesc:a2797b7e09f514130600434a9b3874218"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a2797b7e09f514130600434a9b3874218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6301cfcbdadb4cdc6b29c2b46f59c39b" id="r_a6301cfcbdadb4cdc6b29c2b46f59c39b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6301cfcbdadb4cdc6b29c2b46f59c39b">RG_MACPID0F2</a></td></tr>
+<tr class="memdesc:a6301cfcbdadb4cdc6b29c2b46f59c39b"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a6301cfcbdadb4cdc6b29c2b46f59c39b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad66f5c0c32a8d09bd8dfe4d3546360bb" id="r_ad66f5c0c32a8d09bd8dfe4d3546360bb"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad66f5c0c32a8d09bd8dfe4d3546360bb">RG_MACPID1F2</a></td></tr>
+<tr class="memdesc:ad66f5c0c32a8d09bd8dfe4d3546360bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:ad66f5c0c32a8d09bd8dfe4d3546360bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae65071529ff305e1f4568b91367b5d64" id="r_ae65071529ff305e1f4568b91367b5d64"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae65071529ff305e1f4568b91367b5d64">RG_MACSHA0F2</a></td></tr>
+<tr class="memdesc:ae65071529ff305e1f4568b91367b5d64"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:ae65071529ff305e1f4568b91367b5d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a120be64c5ba6b7a1808aa1c3ad6cbbdb" id="r_a120be64c5ba6b7a1808aa1c3ad6cbbdb"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a120be64c5ba6b7a1808aa1c3ad6cbbdb">RG_MACSHA1F2</a></td></tr>
+<tr class="memdesc:a120be64c5ba6b7a1808aa1c3ad6cbbdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a120be64c5ba6b7a1808aa1c3ad6cbbdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfc1bbd2ad27a33052590589bae0793a" id="r_adfc1bbd2ad27a33052590589bae0793a"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfc1bbd2ad27a33052590589bae0793a">RG_MACPID0F3</a></td></tr>
+<tr class="memdesc:adfc1bbd2ad27a33052590589bae0793a"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:adfc1bbd2ad27a33052590589bae0793a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04d2a7376a4156394700e0018bf8809e" id="r_a04d2a7376a4156394700e0018bf8809e"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04d2a7376a4156394700e0018bf8809e">RG_MACPID1F3</a></td></tr>
+<tr class="memdesc:a04d2a7376a4156394700e0018bf8809e"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a04d2a7376a4156394700e0018bf8809e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98ba55ffed3eec4c817420f3a9e30687" id="r_a98ba55ffed3eec4c817420f3a9e30687"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98ba55ffed3eec4c817420f3a9e30687">RG_MACSHA0F3</a></td></tr>
+<tr class="memdesc:a98ba55ffed3eec4c817420f3a9e30687"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a98ba55ffed3eec4c817420f3a9e30687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa72bf00d93fa1711a048b9aefa218291" id="r_aa72bf00d93fa1711a048b9aefa218291"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa72bf00d93fa1711a048b9aefa218291">RG_MACSHA1F3</a></td></tr>
+<tr class="memdesc:aa72bf00d93fa1711a048b9aefa218291"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:aa72bf00d93fa1711a048b9aefa218291"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9bf2e5e602d3eee23d4007cc64f6b08" id="r_ad9bf2e5e602d3eee23d4007cc64f6b08"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9bf2e5e602d3eee23d4007cc64f6b08">RG_AMCS</a></td></tr>
+<tr class="memdesc:ad9bf2e5e602d3eee23d4007cc64f6b08"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:ad9bf2e5e602d3eee23d4007cc64f6b08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb13c8b423f17aedf6c465a91de29f0d" id="r_acb13c8b423f17aedf6c465a91de29f0d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb13c8b423f17aedf6c465a91de29f0d">RG_AMEDT</a></td></tr>
+<tr class="memdesc:acb13c8b423f17aedf6c465a91de29f0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:acb13c8b423f17aedf6c465a91de29f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f1f068ac845c032858135a216b31843" id="r_a1f1f068ac845c032858135a216b31843"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f1f068ac845c032858135a216b31843">RG_AMAACKPD</a></td></tr>
+<tr class="memdesc:a1f1f068ac845c032858135a216b31843"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a1f1f068ac845c032858135a216b31843"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e96e6f15255cef3bd4af557b47644d6" id="r_a9e96e6f15255cef3bd4af557b47644d6"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e96e6f15255cef3bd4af557b47644d6">RG_AMAACKTL</a></td></tr>
+<tr class="memdesc:a9e96e6f15255cef3bd4af557b47644d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a9e96e6f15255cef3bd4af557b47644d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45b9aea8b2d46cd498bf64a3a2f896e1" id="r_a45b9aea8b2d46cd498bf64a3a2f896e1"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45b9aea8b2d46cd498bf64a3a2f896e1">RG_AMAACKTH</a></td></tr>
+<tr class="memdesc:a45b9aea8b2d46cd498bf64a3a2f896e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a45b9aea8b2d46cd498bf64a3a2f896e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f2f14167298aa2d83ed962c89e6fe5e" id="r_a4f2f14167298aa2d83ed962c89e6fe5e"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f2f14167298aa2d83ed962c89e6fe5e">RG_FSKC0</a></td></tr>
+<tr class="memdesc:a4f2f14167298aa2d83ed962c89e6fe5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a4f2f14167298aa2d83ed962c89e6fe5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a580f23b2aa76a83578956b66ffa2df1e" id="r_a580f23b2aa76a83578956b66ffa2df1e"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a580f23b2aa76a83578956b66ffa2df1e">RG_FSKC1</a></td></tr>
+<tr class="memdesc:a580f23b2aa76a83578956b66ffa2df1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a580f23b2aa76a83578956b66ffa2df1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc2a5944d36dd85d013df1af59b24e4b" id="r_abc2a5944d36dd85d013df1af59b24e4b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc2a5944d36dd85d013df1af59b24e4b">RG_FSKC2</a></td></tr>
+<tr class="memdesc:abc2a5944d36dd85d013df1af59b24e4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:abc2a5944d36dd85d013df1af59b24e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1377c574240fce9c61e90b436abd4f0" id="r_aa1377c574240fce9c61e90b436abd4f0"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1377c574240fce9c61e90b436abd4f0">RG_FSKC3</a></td></tr>
+<tr class="memdesc:aa1377c574240fce9c61e90b436abd4f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:aa1377c574240fce9c61e90b436abd4f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92e2d213f0e811dcef37fba035d35c76" id="r_a92e2d213f0e811dcef37fba035d35c76"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92e2d213f0e811dcef37fba035d35c76">RG_FSKC4</a></td></tr>
+<tr class="memdesc:a92e2d213f0e811dcef37fba035d35c76"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a92e2d213f0e811dcef37fba035d35c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9d13ecacb05772e795818dbd3b9777d" id="r_ab9d13ecacb05772e795818dbd3b9777d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9d13ecacb05772e795818dbd3b9777d">RG_FSKPLL</a></td></tr>
+<tr class="memdesc:ab9d13ecacb05772e795818dbd3b9777d"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:ab9d13ecacb05772e795818dbd3b9777d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a902bd2864bb8ba1c49217588a64062bb" id="r_a902bd2864bb8ba1c49217588a64062bb"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a902bd2864bb8ba1c49217588a64062bb">RG_FSKSFD0L</a></td></tr>
+<tr class="memdesc:a902bd2864bb8ba1c49217588a64062bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a902bd2864bb8ba1c49217588a64062bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a691e0715d2736838fb3e4b26fc4ba341" id="r_a691e0715d2736838fb3e4b26fc4ba341"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a691e0715d2736838fb3e4b26fc4ba341">RG_FSKSFD0H</a></td></tr>
+<tr class="memdesc:a691e0715d2736838fb3e4b26fc4ba341"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a691e0715d2736838fb3e4b26fc4ba341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2060380c5252345964b7fe7472cf5ad1" id="r_a2060380c5252345964b7fe7472cf5ad1"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2060380c5252345964b7fe7472cf5ad1">RG_FSKSFD1L</a></td></tr>
+<tr class="memdesc:a2060380c5252345964b7fe7472cf5ad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a2060380c5252345964b7fe7472cf5ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01326498faa0997d26bb1bb7fc4b42fc" id="r_a01326498faa0997d26bb1bb7fc4b42fc"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01326498faa0997d26bb1bb7fc4b42fc">RG_FSKSFD1H</a></td></tr>
+<tr class="memdesc:a01326498faa0997d26bb1bb7fc4b42fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a01326498faa0997d26bb1bb7fc4b42fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00c65e7cd808488a489cc279e6339b82" id="r_a00c65e7cd808488a489cc279e6339b82"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00c65e7cd808488a489cc279e6339b82">RG_FSKPHRTX</a></td></tr>
+<tr class="memdesc:a00c65e7cd808488a489cc279e6339b82"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a00c65e7cd808488a489cc279e6339b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa52a432fb1be72434716463aa4f4b3a" id="r_aaa52a432fb1be72434716463aa4f4b3a"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa52a432fb1be72434716463aa4f4b3a">RG_FSKPHRRX</a></td></tr>
+<tr class="memdesc:aaa52a432fb1be72434716463aa4f4b3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:aaa52a432fb1be72434716463aa4f4b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf8459a0a79adbb1a49900b1b0f0fefe" id="r_adf8459a0a79adbb1a49900b1b0f0fefe"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf8459a0a79adbb1a49900b1b0f0fefe">RG_FSKRPC</a></td></tr>
+<tr class="memdesc:adf8459a0a79adbb1a49900b1b0f0fefe"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:adf8459a0a79adbb1a49900b1b0f0fefe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17c63e1e2e4e6b7045534db6301b9d31" id="r_a17c63e1e2e4e6b7045534db6301b9d31"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17c63e1e2e4e6b7045534db6301b9d31">RG_FSKRPCONT</a></td></tr>
+<tr class="memdesc:a17c63e1e2e4e6b7045534db6301b9d31"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a17c63e1e2e4e6b7045534db6301b9d31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a701c72043ed16abbf6f37aec63b9636b" id="r_a701c72043ed16abbf6f37aec63b9636b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a701c72043ed16abbf6f37aec63b9636b">RG_FSKRPCOFFT</a></td></tr>
+<tr class="memdesc:a701c72043ed16abbf6f37aec63b9636b"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a701c72043ed16abbf6f37aec63b9636b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac559e6f80e9fc477a42b8ff33e870bdb" id="r_ac559e6f80e9fc477a42b8ff33e870bdb"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac559e6f80e9fc477a42b8ff33e870bdb">RG_FSKRRXFLL</a></td></tr>
+<tr class="memdesc:ac559e6f80e9fc477a42b8ff33e870bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:ac559e6f80e9fc477a42b8ff33e870bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c2c73df6c5919dcb168724e1afbdb58" id="r_a1c2c73df6c5919dcb168724e1afbdb58"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c2c73df6c5919dcb168724e1afbdb58">RG_FSKRRXFLH</a></td></tr>
+<tr class="memdesc:a1c2c73df6c5919dcb168724e1afbdb58"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a1c2c73df6c5919dcb168724e1afbdb58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b91befb57a43b2e21e6862691f7da93" id="r_a9b91befb57a43b2e21e6862691f7da93"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b91befb57a43b2e21e6862691f7da93">RG_FSKDM</a></td></tr>
+<tr class="memdesc:a9b91befb57a43b2e21e6862691f7da93"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a9b91befb57a43b2e21e6862691f7da93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6de76cd19107d78c9492473137071cb" id="r_af6de76cd19107d78c9492473137071cb"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6de76cd19107d78c9492473137071cb">RG_FSKPE0</a></td></tr>
+<tr class="memdesc:af6de76cd19107d78c9492473137071cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:af6de76cd19107d78c9492473137071cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1a08210f73e8979847ef5a0f2e263f3" id="r_ad1a08210f73e8979847ef5a0f2e263f3"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1a08210f73e8979847ef5a0f2e263f3">RG_FSKPE1</a></td></tr>
+<tr class="memdesc:ad1a08210f73e8979847ef5a0f2e263f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:ad1a08210f73e8979847ef5a0f2e263f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36be41def132f7d278c14ec61101820e" id="r_a36be41def132f7d278c14ec61101820e"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36be41def132f7d278c14ec61101820e">RG_FSKPE2</a></td></tr>
+<tr class="memdesc:a36be41def132f7d278c14ec61101820e"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a36be41def132f7d278c14ec61101820e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa13541b4071396aa86fceb975e1e9a47" id="r_aa13541b4071396aa86fceb975e1e9a47"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa13541b4071396aa86fceb975e1e9a47">RG_PMUC</a></td></tr>
+<tr class="memdesc:aa13541b4071396aa86fceb975e1e9a47"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:aa13541b4071396aa86fceb975e1e9a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a392d3e5fa466fa1febddfc8eefb4be76" id="r_a392d3e5fa466fa1febddfc8eefb4be76"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a392d3e5fa466fa1febddfc8eefb4be76">RG_PMUVAL</a></td></tr>
+<tr class="memdesc:a392d3e5fa466fa1febddfc8eefb4be76"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a392d3e5fa466fa1febddfc8eefb4be76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d1550077f3ae50626804fa30b8aed05" id="r_a3d1550077f3ae50626804fa30b8aed05"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d1550077f3ae50626804fa30b8aed05">RG_PMUQF</a></td></tr>
+<tr class="memdesc:a3d1550077f3ae50626804fa30b8aed05"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a3d1550077f3ae50626804fa30b8aed05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafe70712d2db9c7b1593ea15fd26cbfd" id="r_aafe70712d2db9c7b1593ea15fd26cbfd"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafe70712d2db9c7b1593ea15fd26cbfd">RG_PMUI</a></td></tr>
+<tr class="memdesc:aafe70712d2db9c7b1593ea15fd26cbfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:aafe70712d2db9c7b1593ea15fd26cbfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99906c5ae597939940d48679f0bd336d" id="r_a99906c5ae597939940d48679f0bd336d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99906c5ae597939940d48679f0bd336d">RG_PMUQ</a></td></tr>
+<tr class="memdesc:a99906c5ae597939940d48679f0bd336d"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a99906c5ae597939940d48679f0bd336d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d85740b7c08c4c7bc70df90512d096a" id="r_a8d85740b7c08c4c7bc70df90512d096a"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d85740b7c08c4c7bc70df90512d096a">RG_CNTC</a></td></tr>
+<tr class="memdesc:a8d85740b7c08c4c7bc70df90512d096a"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a8d85740b7c08c4c7bc70df90512d096a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e807842f9dc1366d9015f0977dc008a" id="r_a5e807842f9dc1366d9015f0977dc008a"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e807842f9dc1366d9015f0977dc008a">RG_CNT0</a></td></tr>
+<tr class="memdesc:a5e807842f9dc1366d9015f0977dc008a"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a5e807842f9dc1366d9015f0977dc008a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77582a43cb4f8ff0eae122c84f6fbe88" id="r_a77582a43cb4f8ff0eae122c84f6fbe88"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77582a43cb4f8ff0eae122c84f6fbe88">RG_CNT1</a></td></tr>
+<tr class="memdesc:a77582a43cb4f8ff0eae122c84f6fbe88"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a77582a43cb4f8ff0eae122c84f6fbe88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a981984626114b0f74f2ea7d7416985d9" id="r_a981984626114b0f74f2ea7d7416985d9"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a981984626114b0f74f2ea7d7416985d9">RG_CNT2</a></td></tr>
+<tr class="memdesc:a981984626114b0f74f2ea7d7416985d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a981984626114b0f74f2ea7d7416985d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4eeb4565c710892ad6d34d5a15f4353d" id="r_a4eeb4565c710892ad6d34d5a15f4353d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4eeb4565c710892ad6d34d5a15f4353d">RG_CNT3</a></td></tr>
+<tr class="memdesc:a4eeb4565c710892ad6d34d5a15f4353d"><td class="mdescLeft">&#160;</td><td class="mdescRight">see datasheet  <br /></td></tr>
+<tr class="separator:a4eeb4565c710892ad6d34d5a15f4353d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a5a40493e978ad5257bdbea479f6560c5" name="a5a40493e978ad5257bdbea479f6560c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a40493e978ad5257bdbea479f6560c5">&#9670;&#160;</a></span>RG_AFC0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_AFC0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00097">97</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a785e688c159d5eaa6356695de2620578" name="a785e688c159d5eaa6356695de2620578"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a785e688c159d5eaa6356695de2620578">&#9670;&#160;</a></span>RG_AFC1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_AFC1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00098">98</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a93ca722fad79f882ae5a6a62037effec" name="a93ca722fad79f882ae5a6a62037effec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93ca722fad79f882ae5a6a62037effec">&#9670;&#160;</a></span>RG_AFFTM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_AFFTM</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00099">99</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a0ff34177c5319e5388b1786fba1a4e9b" name="a0ff34177c5319e5388b1786fba1a4e9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ff34177c5319e5388b1786fba1a4e9b">&#9670;&#160;</a></span>RG_AFFVM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_AFFVM</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00100">100</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="ac0477aee5489b0275cc41c7d297168cb" name="ac0477aee5489b0275cc41c7d297168cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0477aee5489b0275cc41c7d297168cb">&#9670;&#160;</a></span>RG_AFS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_AFS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00101">101</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a1f1f068ac845c032858135a216b31843" name="a1f1f068ac845c032858135a216b31843"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f1f068ac845c032858135a216b31843">&#9670;&#160;</a></span>RG_AMAACKPD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_AMAACKPD</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00128">128</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a45b9aea8b2d46cd498bf64a3a2f896e1" name="a45b9aea8b2d46cd498bf64a3a2f896e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45b9aea8b2d46cd498bf64a3a2f896e1">&#9670;&#160;</a></span>RG_AMAACKTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_AMAACKTH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00130">130</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a9e96e6f15255cef3bd4af557b47644d6" name="a9e96e6f15255cef3bd4af557b47644d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e96e6f15255cef3bd4af557b47644d6">&#9670;&#160;</a></span>RG_AMAACKTL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_AMAACKTL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00129">129</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="ad9bf2e5e602d3eee23d4007cc64f6b08" name="ad9bf2e5e602d3eee23d4007cc64f6b08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9bf2e5e602d3eee23d4007cc64f6b08">&#9670;&#160;</a></span>RG_AMCS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_AMCS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00126">126</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="acb13c8b423f17aedf6c465a91de29f0d" name="acb13c8b423f17aedf6c465a91de29f0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb13c8b423f17aedf6c465a91de29f0d">&#9670;&#160;</a></span>RG_AMEDT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_AMEDT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00127">127</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a5e807842f9dc1366d9015f0977dc008a" name="a5e807842f9dc1366d9015f0977dc008a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e807842f9dc1366d9015f0977dc008a">&#9670;&#160;</a></span>RG_CNT0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_CNT0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00158">158</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a77582a43cb4f8ff0eae122c84f6fbe88" name="a77582a43cb4f8ff0eae122c84f6fbe88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77582a43cb4f8ff0eae122c84f6fbe88">&#9670;&#160;</a></span>RG_CNT1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_CNT1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00159">159</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a981984626114b0f74f2ea7d7416985d9" name="a981984626114b0f74f2ea7d7416985d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a981984626114b0f74f2ea7d7416985d9">&#9670;&#160;</a></span>RG_CNT2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_CNT2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00160">160</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a4eeb4565c710892ad6d34d5a15f4353d" name="a4eeb4565c710892ad6d34d5a15f4353d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eeb4565c710892ad6d34d5a15f4353d">&#9670;&#160;</a></span>RG_CNT3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_CNT3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00161">161</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a8d85740b7c08c4c7bc70df90512d096a" name="a8d85740b7c08c4c7bc70df90512d096a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d85740b7c08c4c7bc70df90512d096a">&#9670;&#160;</a></span>RG_CNTC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_CNTC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00157">157</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a03883b456d777500d6c64e99c788a4bb" name="a03883b456d777500d6c64e99c788a4bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03883b456d777500d6c64e99c788a4bb">&#9670;&#160;</a></span>RG_FBLH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FBLH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00084">84</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a2ee868721eb0f0f46a4728779f04e9b3" name="a2ee868721eb0f0f46a4728779f04e9b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ee868721eb0f0f46a4728779f04e9b3">&#9670;&#160;</a></span>RG_FBLIH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FBLIH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00086">86</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a795cb3e8c88b67e841c763333172d5b7" name="a795cb3e8c88b67e841c763333172d5b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a795cb3e8c88b67e841c763333172d5b7">&#9670;&#160;</a></span>RG_FBLIL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FBLIL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00085">85</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a935d37475d82f19aea92bbb4c1e232b0" name="a935d37475d82f19aea92bbb4c1e232b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a935d37475d82f19aea92bbb4c1e232b0">&#9670;&#160;</a></span>RG_FBLL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FBLL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00083">83</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a12ef60f9c0a870b669786dab26c84927" name="a12ef60f9c0a870b669786dab26c84927"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12ef60f9c0a870b669786dab26c84927">&#9670;&#160;</a></span>RG_FBRXE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FBRXE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00073">73</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a125b09768a78a6215c849e527255581d" name="a125b09768a78a6215c849e527255581d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a125b09768a78a6215c849e527255581d">&#9670;&#160;</a></span>RG_FBRXS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FBRXS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00072">72</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a07db2875ca10ada57f4532180cb63bc0" name="a07db2875ca10ada57f4532180cb63bc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07db2875ca10ada57f4532180cb63bc0">&#9670;&#160;</a></span>RG_FBTXE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FBTXE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00075">75</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a45d8a0f9d578b5bcac6b30b0a5a59093" name="a45d8a0f9d578b5bcac6b30b0a5a59093"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45d8a0f9d578b5bcac6b30b0a5a59093">&#9670;&#160;</a></span>RG_FBTXS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FBTXS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00074">74</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a4f2f14167298aa2d83ed962c89e6fe5e" name="a4f2f14167298aa2d83ed962c89e6fe5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f2f14167298aa2d83ed962c89e6fe5e">&#9670;&#160;</a></span>RG_FSKC0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKC0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00131">131</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a580f23b2aa76a83578956b66ffa2df1e" name="a580f23b2aa76a83578956b66ffa2df1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a580f23b2aa76a83578956b66ffa2df1e">&#9670;&#160;</a></span>RG_FSKC1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKC1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00132">132</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="abc2a5944d36dd85d013df1af59b24e4b" name="abc2a5944d36dd85d013df1af59b24e4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc2a5944d36dd85d013df1af59b24e4b">&#9670;&#160;</a></span>RG_FSKC2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKC2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00133">133</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="aa1377c574240fce9c61e90b436abd4f0" name="aa1377c574240fce9c61e90b436abd4f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1377c574240fce9c61e90b436abd4f0">&#9670;&#160;</a></span>RG_FSKC3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKC3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00134">134</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a92e2d213f0e811dcef37fba035d35c76" name="a92e2d213f0e811dcef37fba035d35c76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92e2d213f0e811dcef37fba035d35c76">&#9670;&#160;</a></span>RG_FSKC4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKC4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00135">135</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a9b91befb57a43b2e21e6862691f7da93" name="a9b91befb57a43b2e21e6862691f7da93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b91befb57a43b2e21e6862691f7da93">&#9670;&#160;</a></span>RG_FSKDM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKDM</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00148">148</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="af6de76cd19107d78c9492473137071cb" name="af6de76cd19107d78c9492473137071cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6de76cd19107d78c9492473137071cb">&#9670;&#160;</a></span>RG_FSKPE0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKPE0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00149">149</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="ad1a08210f73e8979847ef5a0f2e263f3" name="ad1a08210f73e8979847ef5a0f2e263f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1a08210f73e8979847ef5a0f2e263f3">&#9670;&#160;</a></span>RG_FSKPE1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKPE1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00150">150</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a36be41def132f7d278c14ec61101820e" name="a36be41def132f7d278c14ec61101820e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36be41def132f7d278c14ec61101820e">&#9670;&#160;</a></span>RG_FSKPE2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKPE2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00151">151</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="aaa52a432fb1be72434716463aa4f4b3a" name="aaa52a432fb1be72434716463aa4f4b3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa52a432fb1be72434716463aa4f4b3a">&#9670;&#160;</a></span>RG_FSKPHRRX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKPHRRX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00142">142</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a00c65e7cd808488a489cc279e6339b82" name="a00c65e7cd808488a489cc279e6339b82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00c65e7cd808488a489cc279e6339b82">&#9670;&#160;</a></span>RG_FSKPHRTX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKPHRTX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00141">141</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="ab9d13ecacb05772e795818dbd3b9777d" name="ab9d13ecacb05772e795818dbd3b9777d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9d13ecacb05772e795818dbd3b9777d">&#9670;&#160;</a></span>RG_FSKPLL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKPLL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00136">136</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="adf8459a0a79adbb1a49900b1b0f0fefe" name="adf8459a0a79adbb1a49900b1b0f0fefe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf8459a0a79adbb1a49900b1b0f0fefe">&#9670;&#160;</a></span>RG_FSKRPC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKRPC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00143">143</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a701c72043ed16abbf6f37aec63b9636b" name="a701c72043ed16abbf6f37aec63b9636b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a701c72043ed16abbf6f37aec63b9636b">&#9670;&#160;</a></span>RG_FSKRPCOFFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKRPCOFFT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00145">145</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a17c63e1e2e4e6b7045534db6301b9d31" name="a17c63e1e2e4e6b7045534db6301b9d31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17c63e1e2e4e6b7045534db6301b9d31">&#9670;&#160;</a></span>RG_FSKRPCONT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKRPCONT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00144">144</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a1c2c73df6c5919dcb168724e1afbdb58" name="a1c2c73df6c5919dcb168724e1afbdb58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c2c73df6c5919dcb168724e1afbdb58">&#9670;&#160;</a></span>RG_FSKRRXFLH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKRRXFLH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00147">147</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="ac559e6f80e9fc477a42b8ff33e870bdb" name="ac559e6f80e9fc477a42b8ff33e870bdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac559e6f80e9fc477a42b8ff33e870bdb">&#9670;&#160;</a></span>RG_FSKRRXFLL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKRRXFLL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00146">146</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a691e0715d2736838fb3e4b26fc4ba341" name="a691e0715d2736838fb3e4b26fc4ba341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a691e0715d2736838fb3e4b26fc4ba341">&#9670;&#160;</a></span>RG_FSKSFD0H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKSFD0H</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00138">138</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a902bd2864bb8ba1c49217588a64062bb" name="a902bd2864bb8ba1c49217588a64062bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a902bd2864bb8ba1c49217588a64062bb">&#9670;&#160;</a></span>RG_FSKSFD0L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKSFD0L</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00137">137</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a01326498faa0997d26bb1bb7fc4b42fc" name="a01326498faa0997d26bb1bb7fc4b42fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01326498faa0997d26bb1bb7fc4b42fc">&#9670;&#160;</a></span>RG_FSKSFD1H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKSFD1H</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00140">140</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a2060380c5252345964b7fe7472cf5ad1" name="a2060380c5252345964b7fe7472cf5ad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2060380c5252345964b7fe7472cf5ad1">&#9670;&#160;</a></span>RG_FSKSFD1L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_FSKSFD1L</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00139">139</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a2a4d1c6b149c8c2cc61b3d74a4dd1023" name="a2a4d1c6b149c8c2cc61b3d74a4dd1023"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a4d1c6b149c8c2cc61b3d74a4dd1023">&#9670;&#160;</a></span>RG_IRQM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_IRQM</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00076">76</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="ac2fde55aff410c4499cf3fd4211da1ed" name="ac2fde55aff410c4499cf3fd4211da1ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2fde55aff410c4499cf3fd4211da1ed">&#9670;&#160;</a></span>RG_IRQS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_IRQS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00071">71</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a61a71ec17b139c0604ce83e1d080ac03" name="a61a71ec17b139c0604ce83e1d080ac03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61a71ec17b139c0604ce83e1d080ac03">&#9670;&#160;</a></span>RG_MACEA0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACEA0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00102">102</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a8af1c0f37bf5881f855ab20f51168c12" name="a8af1c0f37bf5881f855ab20f51168c12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8af1c0f37bf5881f855ab20f51168c12">&#9670;&#160;</a></span>RG_MACEA1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACEA1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00103">103</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="aa79207bacb4d1142018adf9323b31111" name="aa79207bacb4d1142018adf9323b31111"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa79207bacb4d1142018adf9323b31111">&#9670;&#160;</a></span>RG_MACEA2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACEA2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00104">104</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a223e9051b2832aa8b045ecc7f24b9729" name="a223e9051b2832aa8b045ecc7f24b9729"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a223e9051b2832aa8b045ecc7f24b9729">&#9670;&#160;</a></span>RG_MACEA3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACEA3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00105">105</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a8b6aaa63e85e7bef7a13a602155f803a" name="a8b6aaa63e85e7bef7a13a602155f803a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b6aaa63e85e7bef7a13a602155f803a">&#9670;&#160;</a></span>RG_MACEA4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACEA4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00106">106</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a547d1f9c916de658ef3c901cfc4222a7" name="a547d1f9c916de658ef3c901cfc4222a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a547d1f9c916de658ef3c901cfc4222a7">&#9670;&#160;</a></span>RG_MACEA5</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACEA5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00107">107</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a183dfd9f9b4c71bc4e943d518e109779" name="a183dfd9f9b4c71bc4e943d518e109779"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a183dfd9f9b4c71bc4e943d518e109779">&#9670;&#160;</a></span>RG_MACEA6</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACEA6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00108">108</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a884ca4ace1f620c2213f83c7287da231" name="a884ca4ace1f620c2213f83c7287da231"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a884ca4ace1f620c2213f83c7287da231">&#9670;&#160;</a></span>RG_MACEA7</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACEA7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00109">109</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a3b7b98ef2efbafc899abf3518ed944e2" name="a3b7b98ef2efbafc899abf3518ed944e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b7b98ef2efbafc899abf3518ed944e2">&#9670;&#160;</a></span>RG_MACPID0F0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACPID0F0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00110">110</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a7f1597244ca14dd1079ec8a2fbc8193a" name="a7f1597244ca14dd1079ec8a2fbc8193a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f1597244ca14dd1079ec8a2fbc8193a">&#9670;&#160;</a></span>RG_MACPID0F1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACPID0F1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00114">114</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a6301cfcbdadb4cdc6b29c2b46f59c39b" name="a6301cfcbdadb4cdc6b29c2b46f59c39b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6301cfcbdadb4cdc6b29c2b46f59c39b">&#9670;&#160;</a></span>RG_MACPID0F2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACPID0F2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00118">118</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="adfc1bbd2ad27a33052590589bae0793a" name="adfc1bbd2ad27a33052590589bae0793a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfc1bbd2ad27a33052590589bae0793a">&#9670;&#160;</a></span>RG_MACPID0F3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACPID0F3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00122">122</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="affbbb83b30a87510ea71a840eca81e8c" name="affbbb83b30a87510ea71a840eca81e8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affbbb83b30a87510ea71a840eca81e8c">&#9670;&#160;</a></span>RG_MACPID1F0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACPID1F0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00111">111</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="af5c7e81aa71b19e54dfe4a8dba2022c8" name="af5c7e81aa71b19e54dfe4a8dba2022c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5c7e81aa71b19e54dfe4a8dba2022c8">&#9670;&#160;</a></span>RG_MACPID1F1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACPID1F1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00115">115</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="ad66f5c0c32a8d09bd8dfe4d3546360bb" name="ad66f5c0c32a8d09bd8dfe4d3546360bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad66f5c0c32a8d09bd8dfe4d3546360bb">&#9670;&#160;</a></span>RG_MACPID1F2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACPID1F2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00119">119</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a04d2a7376a4156394700e0018bf8809e" name="a04d2a7376a4156394700e0018bf8809e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04d2a7376a4156394700e0018bf8809e">&#9670;&#160;</a></span>RG_MACPID1F3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACPID1F3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00123">123</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a45f378e6bd3a8182be91639329564af4" name="a45f378e6bd3a8182be91639329564af4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45f378e6bd3a8182be91639329564af4">&#9670;&#160;</a></span>RG_MACSHA0F0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACSHA0F0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00112">112</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="aef810520f7612eba9f8008500894da3d" name="aef810520f7612eba9f8008500894da3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef810520f7612eba9f8008500894da3d">&#9670;&#160;</a></span>RG_MACSHA0F1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACSHA0F1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00116">116</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="ae65071529ff305e1f4568b91367b5d64" name="ae65071529ff305e1f4568b91367b5d64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae65071529ff305e1f4568b91367b5d64">&#9670;&#160;</a></span>RG_MACSHA0F2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACSHA0F2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00120">120</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a98ba55ffed3eec4c817420f3a9e30687" name="a98ba55ffed3eec4c817420f3a9e30687"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98ba55ffed3eec4c817420f3a9e30687">&#9670;&#160;</a></span>RG_MACSHA0F3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACSHA0F3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00124">124</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a48b8c57658921e49044fe794903b2ef4" name="a48b8c57658921e49044fe794903b2ef4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48b8c57658921e49044fe794903b2ef4">&#9670;&#160;</a></span>RG_MACSHA1F0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACSHA1F0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00113">113</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a2797b7e09f514130600434a9b3874218" name="a2797b7e09f514130600434a9b3874218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2797b7e09f514130600434a9b3874218">&#9670;&#160;</a></span>RG_MACSHA1F1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACSHA1F1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00117">117</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a120be64c5ba6b7a1808aa1c3ad6cbbdb" name="a120be64c5ba6b7a1808aa1c3ad6cbbdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a120be64c5ba6b7a1808aa1c3ad6cbbdb">&#9670;&#160;</a></span>RG_MACSHA1F2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACSHA1F2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00121">121</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="aa72bf00d93fa1711a048b9aefa218291" name="aa72bf00d93fa1711a048b9aefa218291"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa72bf00d93fa1711a048b9aefa218291">&#9670;&#160;</a></span>RG_MACSHA1F3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_MACSHA1F3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00125">125</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a7996b72e67b6fa8bf8c018a481858854" name="a7996b72e67b6fa8bf8c018a481858854"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7996b72e67b6fa8bf8c018a481858854">&#9670;&#160;</a></span>RG_OFDMC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_OFDMC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00089">89</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a8751e60afb9bed7a38e2c11ad25bb5b6" name="a8751e60afb9bed7a38e2c11ad25bb5b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8751e60afb9bed7a38e2c11ad25bb5b6">&#9670;&#160;</a></span>RG_OFDMPHRRX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_OFDMPHRRX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00088">88</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="ae52500d93c4f44a33641f3c5b0b10c97" name="ae52500d93c4f44a33641f3c5b0b10c97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae52500d93c4f44a33641f3c5b0b10c97">&#9670;&#160;</a></span>RG_OFDMPHRTX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_OFDMPHRTX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00087">87</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a21b704c62a450be59264a80eba258129" name="a21b704c62a450be59264a80eba258129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21b704c62a450be59264a80eba258129">&#9670;&#160;</a></span>RG_OFDMSW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_OFDMSW</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00090">90</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="abe11cba5bb5daa06f2915365c0400a7b" name="abe11cba5bb5daa06f2915365c0400a7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe11cba5bb5daa06f2915365c0400a7b">&#9670;&#160;</a></span>RG_OQPSKC0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_OQPSKC0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00091">91</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a17fed5102f4e744d0bddca9031dcaeab" name="a17fed5102f4e744d0bddca9031dcaeab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17fed5102f4e744d0bddca9031dcaeab">&#9670;&#160;</a></span>RG_OQPSKC1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_OQPSKC1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00092">92</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="ad23989b78e287dca8916584f66f3147b" name="ad23989b78e287dca8916584f66f3147b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad23989b78e287dca8916584f66f3147b">&#9670;&#160;</a></span>RG_OQPSKC2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_OQPSKC2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00093">93</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="ad36e27ce4cef0c106583fd4e7cb72d86" name="ad36e27ce4cef0c106583fd4e7cb72d86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad36e27ce4cef0c106583fd4e7cb72d86">&#9670;&#160;</a></span>RG_OQPSKC3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_OQPSKC3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00094">94</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a020070b5105bc2d02fd0dcf0889d6a44" name="a020070b5105bc2d02fd0dcf0889d6a44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a020070b5105bc2d02fd0dcf0889d6a44">&#9670;&#160;</a></span>RG_OQPSKPHRRX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_OQPSKPHRRX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00096">96</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="acef9d43bffeeb036e834169fceb58a1f" name="acef9d43bffeeb036e834169fceb58a1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acef9d43bffeeb036e834169fceb58a1f">&#9670;&#160;</a></span>RG_OQPSKPHRTX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_OQPSKPHRTX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00095">95</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a3adb57f6dbf08ea86f9d52ea94710904" name="a3adb57f6dbf08ea86f9d52ea94710904"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3adb57f6dbf08ea86f9d52ea94710904">&#9670;&#160;</a></span>RG_PC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_PC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00077">77</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="aa13541b4071396aa86fceb975e1e9a47" name="aa13541b4071396aa86fceb975e1e9a47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa13541b4071396aa86fceb975e1e9a47">&#9670;&#160;</a></span>RG_PMUC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_PMUC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00152">152</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="aafe70712d2db9c7b1593ea15fd26cbfd" name="aafe70712d2db9c7b1593ea15fd26cbfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafe70712d2db9c7b1593ea15fd26cbfd">&#9670;&#160;</a></span>RG_PMUI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_PMUI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00155">155</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a99906c5ae597939940d48679f0bd336d" name="a99906c5ae597939940d48679f0bd336d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99906c5ae597939940d48679f0bd336d">&#9670;&#160;</a></span>RG_PMUQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_PMUQ</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00156">156</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a3d1550077f3ae50626804fa30b8aed05" name="a3d1550077f3ae50626804fa30b8aed05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d1550077f3ae50626804fa30b8aed05">&#9670;&#160;</a></span>RG_PMUQF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_PMUQF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00154">154</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a392d3e5fa466fa1febddfc8eefb4be76" name="a392d3e5fa466fa1febddfc8eefb4be76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a392d3e5fa466fa1febddfc8eefb4be76">&#9670;&#160;</a></span>RG_PMUVAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_PMUVAL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00153">153</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a3ac1aec25b123dcac8fd7e91d784ed24" name="a3ac1aec25b123dcac8fd7e91d784ed24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ac1aec25b123dcac8fd7e91d784ed24">&#9670;&#160;</a></span>RG_PS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_PS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00078">78</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="ab3a91033f9fcbb693e94e70a1494117a" name="ab3a91033f9fcbb693e94e70a1494117a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3a91033f9fcbb693e94e70a1494117a">&#9670;&#160;</a></span>RG_RXFLH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_RXFLH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00080">80</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a06a60711d6864fd4ad3f9a90f2cff881" name="a06a60711d6864fd4ad3f9a90f2cff881"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06a60711d6864fd4ad3f9a90f2cff881">&#9670;&#160;</a></span>RG_RXFLL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_RXFLL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00079">79</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="aad37ceca5a7cdf6a22bbd3b23ceaedb0" name="aad37ceca5a7cdf6a22bbd3b23ceaedb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad37ceca5a7cdf6a22bbd3b23ceaedb0">&#9670;&#160;</a></span>RG_TXFLH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_TXFLH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00082">82</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<a id="a570c85dac7c0d2d4132f5a8f654df3ea" name="a570c85dac7c0d2d4132f5a8f654df3ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a570c85dac7c0d2d4132f5a8f654df3ea">&#9670;&#160;</a></span>RG_TXFLL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t at86rf215_BBC_regs::RG_TXFLL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see datasheet </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf215__registers_8h_source.html#l00081">81</a> of file <a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>drivers/at86rf215/include/<a class="el" href="at86rf215__registers_8h_source.html">at86rf215_registers.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

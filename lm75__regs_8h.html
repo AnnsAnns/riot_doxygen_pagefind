@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/lm75/include/lm75_regs.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('lm75__regs_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lm75_regs.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a> &raquo; <a class="el" href="group__drivers__lm75.html">LM75 Temperature Sensor driver compile configuration</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Registers for the <a class="el" href="structlm75.html" title="lm75 device descriptor">lm75</a> and derived (lm75a and tmp1075) temperature sensors.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Registers for the <a class="el" href="structlm75.html" title="lm75 device descriptor">lm75</a> and derived (lm75a and tmp1075) temperature sensors. </p>
+<dl class="section author"><dt>Author</dt><dd>Vitor Batista <a href="#" onclick="location.href='mai'+'lto:'+'vit'+'or'+'.ba'+'ti'+'sta'+'@m'+'l-p'+'a.'+'com'; return false;">vitor<span class="obfuscator">.nosp@m.</span>.bat<span class="obfuscator">.nosp@m.</span>ista@<span class="obfuscator">.nosp@m.</span>ml-p<span class="obfuscator">.nosp@m.</span>a.com</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="lm75__regs_8h__dep__incl.svg" width="166" height="148"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="lm75__regs_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="memitem:aa2496705858c63179430d88e0adf5aef" id="r_aa2496705858c63179430d88e0adf5aef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2496705858c63179430d88e0adf5aef">LM75_TEMP_REG</a>&#160;&#160;&#160;(0x00)</td></tr>
+<tr class="memdesc:aa2496705858c63179430d88e0adf5aef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temperature register pointer.  <br /></td></tr>
+<tr class="separator:aa2496705858c63179430d88e0adf5aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8452405215ac1131919870d1c6c3d466" id="r_a8452405215ac1131919870d1c6c3d466"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8452405215ac1131919870d1c6c3d466">LM75_CONF_REG</a>&#160;&#160;&#160;(0x01)</td></tr>
+<tr class="memdesc:a8452405215ac1131919870d1c6c3d466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration register pointer.  <br /></td></tr>
+<tr class="separator:a8452405215ac1131919870d1c6c3d466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab41853fa78242642532f28951add86c4" id="r_ab41853fa78242642532f28951add86c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab41853fa78242642532f28951add86c4">LM75_THYST_REG</a>&#160;&#160;&#160;(0x02)</td></tr>
+<tr class="memdesc:ab41853fa78242642532f28951add86c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hysteresis register pointer.  <br /></td></tr>
+<tr class="separator:ab41853fa78242642532f28951add86c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af076d5393e4baca33c9fbcd40262be7c" id="r_af076d5393e4baca33c9fbcd40262be7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af076d5393e4baca33c9fbcd40262be7c">LM75_TOS_REG</a>&#160;&#160;&#160;(0x03)</td></tr>
+<tr class="memdesc:af076d5393e4baca33c9fbcd40262be7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overtemperature shutdown register pointer.  <br /></td></tr>
+<tr class="separator:af076d5393e4baca33c9fbcd40262be7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa045b6864425ecb90f2c253e8440d21c" id="r_aa045b6864425ecb90f2c253e8440d21c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa045b6864425ecb90f2c253e8440d21c">NORMAL_MODE</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:aa045b6864425ecb90f2c253e8440d21c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Continuous conversion mode.  <br /></td></tr>
+<tr class="separator:aa045b6864425ecb90f2c253e8440d21c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a5c84d06caee73dd07d9eab0cc07a12" id="r_a3a5c84d06caee73dd07d9eab0cc07a12"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a5c84d06caee73dd07d9eab0cc07a12">SHUTDOWN_MODE</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a3a5c84d06caee73dd07d9eab0cc07a12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shutdown mode ON.  <br /></td></tr>
+<tr class="separator:a3a5c84d06caee73dd07d9eab0cc07a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba8ceda5c666772bfd30d30b5307395a" id="r_aba8ceda5c666772bfd30d30b5307395a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba8ceda5c666772bfd30d30b5307395a">COMPARATOR_MODE</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:aba8ceda5c666772bfd30d30b5307395a"><td class="mdescLeft">&#160;</td><td class="mdescRight">OS operation in comparator mode.  <br /></td></tr>
+<tr class="separator:aba8ceda5c666772bfd30d30b5307395a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1b21852faa8dc774e5bd4da9ee822a0" id="r_ab1b21852faa8dc774e5bd4da9ee822a0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1b21852faa8dc774e5bd4da9ee822a0">INTERRUPT_MODE</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ab1b21852faa8dc774e5bd4da9ee822a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">OS operation in interrupt mode.  <br /></td></tr>
+<tr class="separator:ab1b21852faa8dc774e5bd4da9ee822a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72e9cf70c6c1ef57d2d7aa151974ebb0" id="r_a72e9cf70c6c1ef57d2d7aa151974ebb0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72e9cf70c6c1ef57d2d7aa151974ebb0">OS_ACTIVE_LOW</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a72e9cf70c6c1ef57d2d7aa151974ebb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">OS pin active on Low voltage.  <br /></td></tr>
+<tr class="separator:a72e9cf70c6c1ef57d2d7aa151974ebb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5814042b2950d495712916911f2dd7b7" id="r_a5814042b2950d495712916911f2dd7b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5814042b2950d495712916911f2dd7b7">OS_ACTIVE_HIGH</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a5814042b2950d495712916911f2dd7b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">OS pin active on positive voltage.  <br /></td></tr>
+<tr class="separator:a5814042b2950d495712916911f2dd7b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae393c57c83d81d035d049e9e167a0199" id="r_ae393c57c83d81d035d049e9e167a0199"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae393c57c83d81d035d049e9e167a0199">FAULT_1</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:ae393c57c83d81d035d049e9e167a0199"><td class="mdescLeft">&#160;</td><td class="mdescRight">OS/ALERT active after 1 fault.  <br /></td></tr>
+<tr class="separator:ae393c57c83d81d035d049e9e167a0199"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa807cb05d6f051d89efa891840a5cb4a" id="r_aa807cb05d6f051d89efa891840a5cb4a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa807cb05d6f051d89efa891840a5cb4a">FAULT_2</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:aa807cb05d6f051d89efa891840a5cb4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">OS/ALERT active after 2 faults.  <br /></td></tr>
+<tr class="separator:aa807cb05d6f051d89efa891840a5cb4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8e2a8a45e2ec245bec4f2790f65f16d" id="r_ae8e2a8a45e2ec245bec4f2790f65f16d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8e2a8a45e2ec245bec4f2790f65f16d">FAULT_4</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:ae8e2a8a45e2ec245bec4f2790f65f16d"><td class="mdescLeft">&#160;</td><td class="mdescRight">OS active after 4 faults.  <br /></td></tr>
+<tr class="separator:ae8e2a8a45e2ec245bec4f2790f65f16d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1971eb2c4eafac7bfc64d9ca9a27a5bc" id="r_a1971eb2c4eafac7bfc64d9ca9a27a5bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1971eb2c4eafac7bfc64d9ca9a27a5bc">FAULT_6</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:a1971eb2c4eafac7bfc64d9ca9a27a5bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">OS active after 6 faults.  <br /></td></tr>
+<tr class="separator:a1971eb2c4eafac7bfc64d9ca9a27a5bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3621590ccdfdcd1e22d0862666c013ae" id="r_a3621590ccdfdcd1e22d0862666c013ae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3621590ccdfdcd1e22d0862666c013ae">TMP1075_DEVICE_ID_REG</a>&#160;&#160;&#160;(0x0F)</td></tr>
+<tr class="memdesc:a3621590ccdfdcd1e22d0862666c013ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID register pointer.  <br /></td></tr>
+<tr class="separator:a3621590ccdfdcd1e22d0862666c013ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02fef101e3cc8d4146962610d21307a6" id="r_a02fef101e3cc8d4146962610d21307a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02fef101e3cc8d4146962610d21307a6">FAULT_3</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:a02fef101e3cc8d4146962610d21307a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">ALERT active after 3 faults.  <br /></td></tr>
+<tr class="separator:a02fef101e3cc8d4146962610d21307a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac196c1c397fa2c0c4ede6d1fe8fc5a0e" id="r_ac196c1c397fa2c0c4ede6d1fe8fc5a0e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac196c1c397fa2c0c4ede6d1fe8fc5a0e">FAULT_4_TMP1075</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:ac196c1c397fa2c0c4ede6d1fe8fc5a0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ALERT active after 4 faults.  <br /></td></tr>
+<tr class="separator:ac196c1c397fa2c0c4ede6d1fe8fc5a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09a5c36895734253e1905020de396f0d" id="r_a09a5c36895734253e1905020de396f0d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09a5c36895734253e1905020de396f0d">TMP1075_CONV_RATE_REG_27H</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a09a5c36895734253e1905020de396f0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">27.5ms conversion rate  <br /></td></tr>
+<tr class="separator:a09a5c36895734253e1905020de396f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16024cc91d29d8d80d799ce829fbb1cb" id="r_a16024cc91d29d8d80d799ce829fbb1cb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16024cc91d29d8d80d799ce829fbb1cb">TMP1075_CONV_RATE_REG_55</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a16024cc91d29d8d80d799ce829fbb1cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">55ms conversion rate  <br /></td></tr>
+<tr class="separator:a16024cc91d29d8d80d799ce829fbb1cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29c623596cc65744e26f1f93f0464eac" id="r_a29c623596cc65744e26f1f93f0464eac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29c623596cc65744e26f1f93f0464eac">TMP1075_CONV_RATE_REG_110</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:a29c623596cc65744e26f1f93f0464eac"><td class="mdescLeft">&#160;</td><td class="mdescRight">110ms conversion rate  <br /></td></tr>
+<tr class="separator:a29c623596cc65744e26f1f93f0464eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52b3c463e9bcaee33434cbc65fca9ac0" id="r_a52b3c463e9bcaee33434cbc65fca9ac0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52b3c463e9bcaee33434cbc65fca9ac0">TMP1075_CONV_RATE_REG_220</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:a52b3c463e9bcaee33434cbc65fca9ac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">220ms conversion rate  <br /></td></tr>
+<tr class="separator:a52b3c463e9bcaee33434cbc65fca9ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="aba8ceda5c666772bfd30d30b5307395a" name="aba8ceda5c666772bfd30d30b5307395a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba8ceda5c666772bfd30d30b5307395a">&#9670;&#160;</a></span>COMPARATOR_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMPARATOR_MODE&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>OS operation in comparator mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00037">37</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ae393c57c83d81d035d049e9e167a0199" name="ae393c57c83d81d035d049e9e167a0199"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae393c57c83d81d035d049e9e167a0199">&#9670;&#160;</a></span>FAULT_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FAULT_1&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>OS/ALERT active after 1 fault. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00045">45</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="aa807cb05d6f051d89efa891840a5cb4a" name="aa807cb05d6f051d89efa891840a5cb4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa807cb05d6f051d89efa891840a5cb4a">&#9670;&#160;</a></span>FAULT_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FAULT_2&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>OS/ALERT active after 2 faults. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00046">46</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a02fef101e3cc8d4146962610d21307a6" name="a02fef101e3cc8d4146962610d21307a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02fef101e3cc8d4146962610d21307a6">&#9670;&#160;</a></span>FAULT_3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FAULT_3&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ALERT active after 3 faults. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00059">59</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ae8e2a8a45e2ec245bec4f2790f65f16d" name="ae8e2a8a45e2ec245bec4f2790f65f16d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8e2a8a45e2ec245bec4f2790f65f16d">&#9670;&#160;</a></span>FAULT_4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FAULT_4&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>OS active after 4 faults. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00050">50</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ac196c1c397fa2c0c4ede6d1fe8fc5a0e" name="ac196c1c397fa2c0c4ede6d1fe8fc5a0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac196c1c397fa2c0c4ede6d1fe8fc5a0e">&#9670;&#160;</a></span>FAULT_4_TMP1075</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FAULT_4_TMP1075&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ALERT active after 4 faults. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00060">60</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a1971eb2c4eafac7bfc64d9ca9a27a5bc" name="a1971eb2c4eafac7bfc64d9ca9a27a5bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1971eb2c4eafac7bfc64d9ca9a27a5bc">&#9670;&#160;</a></span>FAULT_6</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FAULT_6&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>OS active after 6 faults. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00051">51</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ab1b21852faa8dc774e5bd4da9ee822a0" name="ab1b21852faa8dc774e5bd4da9ee822a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1b21852faa8dc774e5bd4da9ee822a0">&#9670;&#160;</a></span>INTERRUPT_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INTERRUPT_MODE&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>OS operation in interrupt mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00038">38</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a8452405215ac1131919870d1c6c3d466" name="a8452405215ac1131919870d1c6c3d466"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8452405215ac1131919870d1c6c3d466">&#9670;&#160;</a></span>LM75_CONF_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LM75_CONF_REG&#160;&#160;&#160;(0x01)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configuration register pointer. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00028">28</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="aa2496705858c63179430d88e0adf5aef" name="aa2496705858c63179430d88e0adf5aef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2496705858c63179430d88e0adf5aef">&#9670;&#160;</a></span>LM75_TEMP_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LM75_TEMP_REG&#160;&#160;&#160;(0x00)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Temperature register pointer. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00027">27</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ab41853fa78242642532f28951add86c4" name="ab41853fa78242642532f28951add86c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab41853fa78242642532f28951add86c4">&#9670;&#160;</a></span>LM75_THYST_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LM75_THYST_REG&#160;&#160;&#160;(0x02)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Hysteresis register pointer. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00029">29</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="af076d5393e4baca33c9fbcd40262be7c" name="af076d5393e4baca33c9fbcd40262be7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af076d5393e4baca33c9fbcd40262be7c">&#9670;&#160;</a></span>LM75_TOS_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LM75_TOS_REG&#160;&#160;&#160;(0x03)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Overtemperature shutdown register pointer. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00030">30</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="aa045b6864425ecb90f2c253e8440d21c" name="aa045b6864425ecb90f2c253e8440d21c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa045b6864425ecb90f2c253e8440d21c">&#9670;&#160;</a></span>NORMAL_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NORMAL_MODE&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Continuous conversion mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00033">33</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a5814042b2950d495712916911f2dd7b7" name="a5814042b2950d495712916911f2dd7b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5814042b2950d495712916911f2dd7b7">&#9670;&#160;</a></span>OS_ACTIVE_HIGH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OS_ACTIVE_HIGH&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>OS pin active on positive voltage. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00042">42</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a72e9cf70c6c1ef57d2d7aa151974ebb0" name="a72e9cf70c6c1ef57d2d7aa151974ebb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72e9cf70c6c1ef57d2d7aa151974ebb0">&#9670;&#160;</a></span>OS_ACTIVE_LOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OS_ACTIVE_LOW&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>OS pin active on Low voltage. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00041">41</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a3a5c84d06caee73dd07d9eab0cc07a12" name="a3a5c84d06caee73dd07d9eab0cc07a12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a5c84d06caee73dd07d9eab0cc07a12">&#9670;&#160;</a></span>SHUTDOWN_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHUTDOWN_MODE&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shutdown mode ON. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00034">34</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a29c623596cc65744e26f1f93f0464eac" name="a29c623596cc65744e26f1f93f0464eac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29c623596cc65744e26f1f93f0464eac">&#9670;&#160;</a></span>TMP1075_CONV_RATE_REG_110</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TMP1075_CONV_RATE_REG_110&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>110ms conversion rate </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00066">66</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a52b3c463e9bcaee33434cbc65fca9ac0" name="a52b3c463e9bcaee33434cbc65fca9ac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52b3c463e9bcaee33434cbc65fca9ac0">&#9670;&#160;</a></span>TMP1075_CONV_RATE_REG_220</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TMP1075_CONV_RATE_REG_220&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>220ms conversion rate </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00067">67</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a09a5c36895734253e1905020de396f0d" name="a09a5c36895734253e1905020de396f0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09a5c36895734253e1905020de396f0d">&#9670;&#160;</a></span>TMP1075_CONV_RATE_REG_27H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TMP1075_CONV_RATE_REG_27H&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>27.5ms conversion rate </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00064">64</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a16024cc91d29d8d80d799ce829fbb1cb" name="a16024cc91d29d8d80d799ce829fbb1cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16024cc91d29d8d80d799ce829fbb1cb">&#9670;&#160;</a></span>TMP1075_CONV_RATE_REG_55</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TMP1075_CONV_RATE_REG_55&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>55ms conversion rate </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00065">65</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a3621590ccdfdcd1e22d0862666c013ae" name="a3621590ccdfdcd1e22d0862666c013ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3621590ccdfdcd1e22d0862666c013ae">&#9670;&#160;</a></span>TMP1075_DEVICE_ID_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TMP1075_DEVICE_ID_REG&#160;&#160;&#160;(0x0F)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ID register pointer. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm75__regs_8h_source.html#l00056">56</a> of file <a class="el" href="lm75__regs_8h_source.html">lm75_regs.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

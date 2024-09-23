@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>pkg/uwb-core/include/dpl/dpl_types.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('dpl__types_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
+  <div class="headertitle"><div class="title">dpl_types.h File Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &raquo; <a class="el" href="group__pkg__uwb__core.html">Device driver model for the Decawave Impulse Radio-Ultra Wideband (IR-UWB) transceiver(s)</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>uwb-core DPL (Decawave Porting Layer) types  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>uwb-core DPL (Decawave Porting Layer) types </p>
+<dl class="section author"><dt>Author</dt><dd>Francisco Molina <a href="#" onclick="location.href='mai'+'lto:'+'fra'+'nc'+'ois'+'-x'+'avi'+'er'+'.mo'+'li'+'na@'+'in'+'ria'+'.f'+'r'; return false;">franc<span class="obfuscator">.nosp@m.</span>ois-<span class="obfuscator">.nosp@m.</span>xavie<span class="obfuscator">.nosp@m.</span>r.mo<span class="obfuscator">.nosp@m.</span>lina@<span class="obfuscator">.nosp@m.</span>inri<span class="obfuscator">.nosp@m.</span>a.fr</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="math_8h_source.html">math.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="os__types_8h_source.html">os/os_types.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for dpl_types.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="dpl__types_8h__incl.svg" width="260" height="207"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="dpl__types_8h__dep__incl.svg" width="391" height="242"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="dpl__types_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ae71449b1cc6e6250b91f539153a7a0d3" id="r_ae71449b1cc6e6250b91f539153a7a0d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a>&#160;&#160;&#160;3.1415926535</td></tr>
+<tr class="memdesc:ae71449b1cc6e6250b91f539153a7a0d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">PI approximated value macro definition.  <br /></td></tr>
+<tr class="separator:ae71449b1cc6e6250b91f539153a7a0d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a4a36ea09631d69359da7698137d284e4" id="r_a4a36ea09631d69359da7698137d284e4"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="os__types_8h.html#aa2378cafc0f8fbfb44633036348bfe64">os_time_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a36ea09631d69359da7698137d284e4">dpl_time_t</a></td></tr>
+<tr class="memdesc:a4a36ea09631d69359da7698137d284e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">dpl time type  <br /></td></tr>
+<tr class="separator:a4a36ea09631d69359da7698137d284e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81db320866f2ab5b964f348838020ef4" id="r_a81db320866f2ab5b964f348838020ef4"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="os__types_8h.html#ab86037626498f615a281ab1e692a945b">os_stack_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81db320866f2ab5b964f348838020ef4">dpl_stack_t</a></td></tr>
+<tr class="memdesc:a81db320866f2ab5b964f348838020ef4"><td class="mdescLeft">&#160;</td><td class="mdescRight">dpl stack buffer type  <br /></td></tr>
+<tr class="separator:a81db320866f2ab5b964f348838020ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9b3ed6c8c9deb8375f03805df82d0e9" id="r_ab9b3ed6c8c9deb8375f03805df82d0e9"><td class="memItemLeft" align="right" valign="top">typedef float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9b3ed6c8c9deb8375f03805df82d0e9">dpl_float32_t</a></td></tr>
+<tr class="memdesc:ab9b3ed6c8c9deb8375f03805df82d0e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">dpl float 32 type  <br /></td></tr>
+<tr class="separator:ab9b3ed6c8c9deb8375f03805df82d0e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70c0d11b8ad7c590397bdf8971847647" id="r_a70c0d11b8ad7c590397bdf8971847647"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70c0d11b8ad7c590397bdf8971847647">dpl_float64_t</a></td></tr>
+<tr class="memdesc:a70c0d11b8ad7c590397bdf8971847647"><td class="mdescLeft">&#160;</td><td class="mdescRight">dpl float 64 type  <br /></td></tr>
+<tr class="separator:a70c0d11b8ad7c590397bdf8971847647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Macro to wait forever on events and mutexes</h2></td></tr>
+<tr class="memitem:aab3a40090f57c648fcbfd5872cdb6294" id="r_aab3a40090f57c648fcbfd5872cdb6294"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab3a40090f57c648fcbfd5872cdb6294">DPL_TIMEOUT_NEVER</a>&#160;&#160;&#160;(OS_TIMEOUT_NEVER)</td></tr>
+<tr class="separator:aab3a40090f57c648fcbfd5872cdb6294"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae59e486ccbfefb7532c8dc2896b26315" id="r_ae59e486ccbfefb7532c8dc2896b26315"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae59e486ccbfefb7532c8dc2896b26315">DPL_WAIT_FOREVER</a>&#160;&#160;&#160;(OS_WAIT_FOREVER)</td></tr>
+<tr class="separator:ae59e486ccbfefb7532c8dc2896b26315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Decawave porting layer (DPL) stack alignment requirement</h2></td></tr>
+<tr class="memitem:a21d6b88d75c4718156db312981475ff8" id="r_a21d6b88d75c4718156db312981475ff8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21d6b88d75c4718156db312981475ff8">DPL_STACK_ALIGNMENT</a>&#160;&#160;&#160;(OS_ALIGNMENT)</td></tr>
+<tr class="separator:a21d6b88d75c4718156db312981475ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Decawave porting layer (DPL) float type macros</h2></td></tr>
+<tr class="memitem:ad2eac8e5157184ce4df4eb34ea1cfa8d" id="r_ad2eac8e5157184ce4df4eb34ea1cfa8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2eac8e5157184ce4df4eb34ea1cfa8d">DPL_FLOAT32_INIT</a>(__X)</td></tr>
+<tr class="separator:ad2eac8e5157184ce4df4eb34ea1cfa8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b210bfd608c667ea7e74a6f050d2192" id="r_a2b210bfd608c667ea7e74a6f050d2192"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b210bfd608c667ea7e74a6f050d2192">DPL_FLOAT64_INIT</a>(__X)</td></tr>
+<tr class="separator:a2b210bfd608c667ea7e74a6f050d2192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62722088d8482d2da12204794601d4ba" id="r_a62722088d8482d2da12204794601d4ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62722088d8482d2da12204794601d4ba">DPL_FLOAT64TO32</a>(__X)</td></tr>
+<tr class="separator:a62722088d8482d2da12204794601d4ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf9c3101e886b836e1ab9f04257c3ff9" id="r_aaf9c3101e886b836e1ab9f04257c3ff9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf9c3101e886b836e1ab9f04257c3ff9">DPL_FLOAT32_I32_TO_F32</a>(__X)</td></tr>
+<tr class="separator:aaf9c3101e886b836e1ab9f04257c3ff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e05ae04ca97f912897aa01306db4b32" id="r_a9e05ae04ca97f912897aa01306db4b32"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e05ae04ca97f912897aa01306db4b32">DPL_FLOAT64_I32_TO_F64</a>(__X)</td></tr>
+<tr class="separator:a9e05ae04ca97f912897aa01306db4b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f1e877328d81c202e6cc4e6cf528613" id="r_a6f1e877328d81c202e6cc4e6cf528613"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f1e877328d81c202e6cc4e6cf528613">DPL_FLOAT64_I64_TO_F64</a>(__X)</td></tr>
+<tr class="separator:a6f1e877328d81c202e6cc4e6cf528613"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeefe6b910f6b44072c6d7f6b3892f9a9" id="r_aeefe6b910f6b44072c6d7f6b3892f9a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeefe6b910f6b44072c6d7f6b3892f9a9">DPL_FLOAT64_U64_TO_F64</a>(__X)</td></tr>
+<tr class="separator:aeefe6b910f6b44072c6d7f6b3892f9a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedd2e00c7c210ed61a5a6341b6c649e3" id="r_aedd2e00c7c210ed61a5a6341b6c649e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedd2e00c7c210ed61a5a6341b6c649e3">DPL_FLOAT64_F64_TO_U64</a>(__X)</td></tr>
+<tr class="separator:aedd2e00c7c210ed61a5a6341b6c649e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadd0011d5156912b38601794af0ef0ec" id="r_aadd0011d5156912b38601794af0ef0ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadd0011d5156912b38601794af0ef0ec">DPL_FLOAT32_INT</a>(__X)</td></tr>
+<tr class="separator:aadd0011d5156912b38601794af0ef0ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe079731953f618ca7215d86f476fc6d" id="r_afe079731953f618ca7215d86f476fc6d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe079731953f618ca7215d86f476fc6d">DPL_FLOAT64_INT</a>(__X)</td></tr>
+<tr class="separator:afe079731953f618ca7215d86f476fc6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeed6696eb53a5209bf0bac8d08ad37de" id="r_aeed6696eb53a5209bf0bac8d08ad37de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeed6696eb53a5209bf0bac8d08ad37de">DPL_FLOAT64_FROM_F32</a>(__X)</td></tr>
+<tr class="separator:aeed6696eb53a5209bf0bac8d08ad37de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85ecc8b146b872f094a4f7f8c5045a7e" id="r_a85ecc8b146b872f094a4f7f8c5045a7e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85ecc8b146b872f094a4f7f8c5045a7e">DPL_FLOAT32_FROM_F64</a>(__X)</td></tr>
+<tr class="separator:a85ecc8b146b872f094a4f7f8c5045a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab97a4d291f0a15bb239f2ed0a1f1ea7d" id="r_ab97a4d291f0a15bb239f2ed0a1f1ea7d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab97a4d291f0a15bb239f2ed0a1f1ea7d">DPL_FLOAT32_CEIL</a>(__X)</td></tr>
+<tr class="separator:ab97a4d291f0a15bb239f2ed0a1f1ea7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19d5f9263344a550835cbcc9fe641e9e" id="r_a19d5f9263344a550835cbcc9fe641e9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19d5f9263344a550835cbcc9fe641e9e">DPL_FLOAT64_CEIL</a>(__X)</td></tr>
+<tr class="separator:a19d5f9263344a550835cbcc9fe641e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a280b0ac2a038598798630f3cf8598668" id="r_a280b0ac2a038598798630f3cf8598668"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a280b0ac2a038598798630f3cf8598668">DPL_FLOAT32_FABS</a>(__X)</td></tr>
+<tr class="separator:a280b0ac2a038598798630f3cf8598668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adadc7d8092136e3977ab1d02d5134c7d" id="r_adadc7d8092136e3977ab1d02d5134c7d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adadc7d8092136e3977ab1d02d5134c7d">DPL_FLOAT32_FMOD</a>(__X,  __Y)</td></tr>
+<tr class="separator:adadc7d8092136e3977ab1d02d5134c7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afca7afe7c5a964a8c092f30769ba9060" id="r_afca7afe7c5a964a8c092f30769ba9060"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afca7afe7c5a964a8c092f30769ba9060">DPL_FLOAT64_FMOD</a>(__X,  __Y)</td></tr>
+<tr class="separator:afca7afe7c5a964a8c092f30769ba9060"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5136aadd05cc8a5a7230e889f3f613c3" id="r_a5136aadd05cc8a5a7230e889f3f613c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5136aadd05cc8a5a7230e889f3f613c3">DPL_FLOAT32_NAN</a>()</td></tr>
+<tr class="separator:a5136aadd05cc8a5a7230e889f3f613c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5429c3e52125af2bb5ab0e552e934874" id="r_a5429c3e52125af2bb5ab0e552e934874"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5429c3e52125af2bb5ab0e552e934874">DPL_FLOAT64_NAN</a>()</td></tr>
+<tr class="separator:a5429c3e52125af2bb5ab0e552e934874"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d881529a3587ff7ed3d4a572b9b01f7" id="r_a0d881529a3587ff7ed3d4a572b9b01f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d881529a3587ff7ed3d4a572b9b01f7">DPL_FLOAT32_ISNAN</a>(__X)</td></tr>
+<tr class="separator:a0d881529a3587ff7ed3d4a572b9b01f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8fe0d1fd698668b3aa93b0215b549b7" id="r_ae8fe0d1fd698668b3aa93b0215b549b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8fe0d1fd698668b3aa93b0215b549b7">DPL_FLOAT64_ISNAN</a>(__X)</td></tr>
+<tr class="separator:ae8fe0d1fd698668b3aa93b0215b549b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c888823b572a78718d840335fc35282" id="r_a8c888823b572a78718d840335fc35282"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c888823b572a78718d840335fc35282">DPL_FLOAT32_LOG10</a>(__X)</td></tr>
+<tr class="separator:a8c888823b572a78718d840335fc35282"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bbf8640df97765749acec5b50c9f14c" id="r_a3bbf8640df97765749acec5b50c9f14c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bbf8640df97765749acec5b50c9f14c">DPL_FLOAT64_LOG10</a>(__X)</td></tr>
+<tr class="separator:a3bbf8640df97765749acec5b50c9f14c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a322a00161d564b1d063424155ec70ef1" id="r_a322a00161d564b1d063424155ec70ef1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a322a00161d564b1d063424155ec70ef1">DPL_FLOAT64_ASIN</a>(__X)</td></tr>
+<tr class="separator:a322a00161d564b1d063424155ec70ef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac780953291f0bf075c42c47cf4d68610" id="r_ac780953291f0bf075c42c47cf4d68610"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac780953291f0bf075c42c47cf4d68610">DPL_FLOAT64_ATAN</a>(__X)</td></tr>
+<tr class="separator:ac780953291f0bf075c42c47cf4d68610"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a719985d57f2365433568a15c7d381928" id="r_a719985d57f2365433568a15c7d381928"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a719985d57f2365433568a15c7d381928">DPL_FLOAT32_SUB</a>(__X,  __Y)</td></tr>
+<tr class="separator:a719985d57f2365433568a15c7d381928"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2d3974622a142c9befd76f9a9eeadcf" id="r_ac2d3974622a142c9befd76f9a9eeadcf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2d3974622a142c9befd76f9a9eeadcf">DPL_FLOAT64_SUB</a>(__X,  __Y)</td></tr>
+<tr class="separator:ac2d3974622a142c9befd76f9a9eeadcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a3bd966dbc48afb541c94d926e31b82" id="r_a9a3bd966dbc48afb541c94d926e31b82"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a3bd966dbc48afb541c94d926e31b82">DPL_FLOAT32_ADD</a>(__X,  __Y)</td></tr>
+<tr class="separator:a9a3bd966dbc48afb541c94d926e31b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba5af879609bb284a4b764394fc2a594" id="r_aba5af879609bb284a4b764394fc2a594"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba5af879609bb284a4b764394fc2a594">DPL_FLOAT64_ADD</a>(__X,  __Y)</td></tr>
+<tr class="separator:aba5af879609bb284a4b764394fc2a594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97b84bdae209a87adf8c19a2f5c01584" id="r_a97b84bdae209a87adf8c19a2f5c01584"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97b84bdae209a87adf8c19a2f5c01584">DPL_FLOAT32_MUL</a>(__X,  __Y)</td></tr>
+<tr class="separator:a97b84bdae209a87adf8c19a2f5c01584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6959bcffba9b937a12ee4bf02196d781" id="r_a6959bcffba9b937a12ee4bf02196d781"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6959bcffba9b937a12ee4bf02196d781">DPL_FLOAT64_MUL</a>(__X,  __Y)</td></tr>
+<tr class="separator:a6959bcffba9b937a12ee4bf02196d781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4a19845e67f27e24449f1e3a51ec8bd" id="r_ae4a19845e67f27e24449f1e3a51ec8bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4a19845e67f27e24449f1e3a51ec8bd">DPL_FLOAT32_DIV</a>(__X,  __Y)</td></tr>
+<tr class="separator:ae4a19845e67f27e24449f1e3a51ec8bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19c7e5a7d8a20c38021abedd9ab457d4" id="r_a19c7e5a7d8a20c38021abedd9ab457d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19c7e5a7d8a20c38021abedd9ab457d4">DPL_FLOAT64_DIV</a>(__X,  __Y)</td></tr>
+<tr class="separator:a19c7e5a7d8a20c38021abedd9ab457d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7541534561f1d85610f54a675cbf64f" id="r_ac7541534561f1d85610f54a675cbf64f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7541534561f1d85610f54a675cbf64f">DPL_FLOAT32_PRINTF_PRIM</a>&#160;&#160;&#160;&quot;%s%d.%03d&quot;</td></tr>
+<tr class="separator:ac7541534561f1d85610f54a675cbf64f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac049e01bc2ae2570252852886eb90343" id="r_ac049e01bc2ae2570252852886eb90343"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac049e01bc2ae2570252852886eb90343">DPL_FLOAT32_PRINTF_VALS</a>(__X)</td></tr>
+<tr class="separator:ac049e01bc2ae2570252852886eb90343"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dfe889b89d6a0c43a2c499d6ff86ee7" id="r_a6dfe889b89d6a0c43a2c499d6ff86ee7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6dfe889b89d6a0c43a2c499d6ff86ee7">DPL_FLOAT64_PRINTF_PRIM</a>&#160;&#160;&#160;&quot;%s%d.%06d&quot;</td></tr>
+<tr class="separator:a6dfe889b89d6a0c43a2c499d6ff86ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45fd944ec55c9e4be0dd5ffe84a3c7b0" id="r_a45fd944ec55c9e4be0dd5ffe84a3c7b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45fd944ec55c9e4be0dd5ffe84a3c7b0">DPL_FLOAT64_PRINTF_VALS</a>(__X)</td></tr>
+<tr class="separator:a45fd944ec55c9e4be0dd5ffe84a3c7b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a9a3bd966dbc48afb541c94d926e31b82" name="a9a3bd966dbc48afb541c94d926e31b82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a3bd966dbc48afb541c94d926e31b82">&#9670;&#160;</a></span>DPL_FLOAT32_ADD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT32_ADD</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__Y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((__X)+(__Y))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00104">104</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="ab97a4d291f0a15bb239f2ed0a1f1ea7d" name="ab97a4d291f0a15bb239f2ed0a1f1ea7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab97a4d291f0a15bb239f2ed0a1f1ea7d">&#9670;&#160;</a></span>DPL_FLOAT32_CEIL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT32_CEIL</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(ceilf(__X))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00089">89</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="ae4a19845e67f27e24449f1e3a51ec8bd" name="ae4a19845e67f27e24449f1e3a51ec8bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4a19845e67f27e24449f1e3a51ec8bd">&#9670;&#160;</a></span>DPL_FLOAT32_DIV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT32_DIV</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__Y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((__X)/(__Y))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00108">108</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a280b0ac2a038598798630f3cf8598668" name="a280b0ac2a038598798630f3cf8598668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a280b0ac2a038598798630f3cf8598668">&#9670;&#160;</a></span>DPL_FLOAT32_FABS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT32_FABS</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">fabsf(__X)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00091">91</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="adadc7d8092136e3977ab1d02d5134c7d" name="adadc7d8092136e3977ab1d02d5134c7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adadc7d8092136e3977ab1d02d5134c7d">&#9670;&#160;</a></span>DPL_FLOAT32_FMOD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT32_FMOD</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__Y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">fmodf(__X, __Y)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00092">92</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a85ecc8b146b872f094a4f7f8c5045a7e" name="a85ecc8b146b872f094a4f7f8c5045a7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85ecc8b146b872f094a4f7f8c5045a7e">&#9670;&#160;</a></span>DPL_FLOAT32_FROM_F64</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT32_FROM_F64</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(float)(__X)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00088">88</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="aaf9c3101e886b836e1ab9f04257c3ff9" name="aaf9c3101e886b836e1ab9f04257c3ff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf9c3101e886b836e1ab9f04257c3ff9">&#9670;&#160;</a></span>DPL_FLOAT32_I32_TO_F32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT32_I32_TO_F32</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(float)(__X)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00080">80</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="ad2eac8e5157184ce4df4eb34ea1cfa8d" name="ad2eac8e5157184ce4df4eb34ea1cfa8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2eac8e5157184ce4df4eb34ea1cfa8d">&#9670;&#160;</a></span>DPL_FLOAT32_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT32_INIT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((float)__X)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00077">77</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="aadd0011d5156912b38601794af0ef0ec" name="aadd0011d5156912b38601794af0ef0ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadd0011d5156912b38601794af0ef0ec">&#9670;&#160;</a></span>DPL_FLOAT32_INT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT32_INT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((int32_t)__X)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00085">85</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a0d881529a3587ff7ed3d4a572b9b01f7" name="a0d881529a3587ff7ed3d4a572b9b01f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d881529a3587ff7ed3d4a572b9b01f7">&#9670;&#160;</a></span>DPL_FLOAT32_ISNAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT32_ISNAN</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">isnan(__X)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00096">96</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a8c888823b572a78718d840335fc35282" name="a8c888823b572a78718d840335fc35282"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c888823b572a78718d840335fc35282">&#9670;&#160;</a></span>DPL_FLOAT32_LOG10</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT32_LOG10</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(log10f(__X))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00098">98</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a97b84bdae209a87adf8c19a2f5c01584" name="a97b84bdae209a87adf8c19a2f5c01584"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97b84bdae209a87adf8c19a2f5c01584">&#9670;&#160;</a></span>DPL_FLOAT32_MUL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT32_MUL</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__Y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((__X)*(__Y))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00106">106</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a5136aadd05cc8a5a7230e889f3f613c3" name="a5136aadd05cc8a5a7230e889f3f613c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5136aadd05cc8a5a7230e889f3f613c3">&#9670;&#160;</a></span>DPL_FLOAT32_NAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT32_NAN</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">nanf(<span class="stringliteral">&quot;&quot;</span>)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00094">94</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="ac7541534561f1d85610f54a675cbf64f" name="ac7541534561f1d85610f54a675cbf64f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7541534561f1d85610f54a675cbf64f">&#9670;&#160;</a></span>DPL_FLOAT32_PRINTF_PRIM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT32_PRINTF_PRIM&#160;&#160;&#160;&quot;%s%d.%03d&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00110">110</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="ac049e01bc2ae2570252852886eb90343" name="ac049e01bc2ae2570252852886eb90343"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac049e01bc2ae2570252852886eb90343">&#9670;&#160;</a></span>DPL_FLOAT32_PRINTF_VALS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT32_PRINTF_VALS</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(__X)&lt;0?<span class="stringliteral">&quot;-&quot;</span>:<span class="stringliteral">&quot;&quot;</span>, (int)(fabsf(__X)), (int)(fabsf((__X)-(int)(__X))*1000)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00111">111</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a719985d57f2365433568a15c7d381928" name="a719985d57f2365433568a15c7d381928"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a719985d57f2365433568a15c7d381928">&#9670;&#160;</a></span>DPL_FLOAT32_SUB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT32_SUB</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__Y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((__X)-(__Y))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00102">102</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="aba5af879609bb284a4b764394fc2a594" name="aba5af879609bb284a4b764394fc2a594"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba5af879609bb284a4b764394fc2a594">&#9670;&#160;</a></span>DPL_FLOAT64_ADD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64_ADD</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__Y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((__X)+(__Y))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00105">105</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a322a00161d564b1d063424155ec70ef1" name="a322a00161d564b1d063424155ec70ef1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a322a00161d564b1d063424155ec70ef1">&#9670;&#160;</a></span>DPL_FLOAT64_ASIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64_ASIN</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">asin(__X)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00100">100</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="ac780953291f0bf075c42c47cf4d68610" name="ac780953291f0bf075c42c47cf4d68610"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac780953291f0bf075c42c47cf4d68610">&#9670;&#160;</a></span>DPL_FLOAT64_ATAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64_ATAN</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">atan(__X)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00101">101</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a19d5f9263344a550835cbcc9fe641e9e" name="a19d5f9263344a550835cbcc9fe641e9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19d5f9263344a550835cbcc9fe641e9e">&#9670;&#160;</a></span>DPL_FLOAT64_CEIL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64_CEIL</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(ceil(__X))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00090">90</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a19c7e5a7d8a20c38021abedd9ab457d4" name="a19c7e5a7d8a20c38021abedd9ab457d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19c7e5a7d8a20c38021abedd9ab457d4">&#9670;&#160;</a></span>DPL_FLOAT64_DIV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64_DIV</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__Y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((__X)/(__Y))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00109">109</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="aedd2e00c7c210ed61a5a6341b6c649e3" name="aedd2e00c7c210ed61a5a6341b6c649e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedd2e00c7c210ed61a5a6341b6c649e3">&#9670;&#160;</a></span>DPL_FLOAT64_F64_TO_U64</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64_F64_TO_U64</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((uint64_t)(__X))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00084">84</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="afca7afe7c5a964a8c092f30769ba9060" name="afca7afe7c5a964a8c092f30769ba9060"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afca7afe7c5a964a8c092f30769ba9060">&#9670;&#160;</a></span>DPL_FLOAT64_FMOD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64_FMOD</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__Y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">fmod(__X, __Y)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00093">93</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="aeed6696eb53a5209bf0bac8d08ad37de" name="aeed6696eb53a5209bf0bac8d08ad37de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeed6696eb53a5209bf0bac8d08ad37de">&#9670;&#160;</a></span>DPL_FLOAT64_FROM_F32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64_FROM_F32</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(double)(__X)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00087">87</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a9e05ae04ca97f912897aa01306db4b32" name="a9e05ae04ca97f912897aa01306db4b32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e05ae04ca97f912897aa01306db4b32">&#9670;&#160;</a></span>DPL_FLOAT64_I32_TO_F64</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64_I32_TO_F64</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((double)(__X))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00081">81</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a6f1e877328d81c202e6cc4e6cf528613" name="a6f1e877328d81c202e6cc4e6cf528613"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f1e877328d81c202e6cc4e6cf528613">&#9670;&#160;</a></span>DPL_FLOAT64_I64_TO_F64</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64_I64_TO_F64</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((double)(__X))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00082">82</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a2b210bfd608c667ea7e74a6f050d2192" name="a2b210bfd608c667ea7e74a6f050d2192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b210bfd608c667ea7e74a6f050d2192">&#9670;&#160;</a></span>DPL_FLOAT64_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64_INIT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((double)__X)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00078">78</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="afe079731953f618ca7215d86f476fc6d" name="afe079731953f618ca7215d86f476fc6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe079731953f618ca7215d86f476fc6d">&#9670;&#160;</a></span>DPL_FLOAT64_INT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64_INT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((int64_t)__X)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00086">86</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="ae8fe0d1fd698668b3aa93b0215b549b7" name="ae8fe0d1fd698668b3aa93b0215b549b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8fe0d1fd698668b3aa93b0215b549b7">&#9670;&#160;</a></span>DPL_FLOAT64_ISNAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64_ISNAN</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">DPL_FLOAT32_ISNAN(__X)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00097">97</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a3bbf8640df97765749acec5b50c9f14c" name="a3bbf8640df97765749acec5b50c9f14c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bbf8640df97765749acec5b50c9f14c">&#9670;&#160;</a></span>DPL_FLOAT64_LOG10</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64_LOG10</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(log10(__X))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00099">99</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a6959bcffba9b937a12ee4bf02196d781" name="a6959bcffba9b937a12ee4bf02196d781"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6959bcffba9b937a12ee4bf02196d781">&#9670;&#160;</a></span>DPL_FLOAT64_MUL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64_MUL</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__Y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((__X)*(__Y))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00107">107</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a5429c3e52125af2bb5ab0e552e934874" name="a5429c3e52125af2bb5ab0e552e934874"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5429c3e52125af2bb5ab0e552e934874">&#9670;&#160;</a></span>DPL_FLOAT64_NAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64_NAN</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">nan(<span class="stringliteral">&quot;&quot;</span>)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00095">95</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a6dfe889b89d6a0c43a2c499d6ff86ee7" name="a6dfe889b89d6a0c43a2c499d6ff86ee7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dfe889b89d6a0c43a2c499d6ff86ee7">&#9670;&#160;</a></span>DPL_FLOAT64_PRINTF_PRIM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64_PRINTF_PRIM&#160;&#160;&#160;&quot;%s%d.%06d&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00112">112</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a45fd944ec55c9e4be0dd5ffe84a3c7b0" name="a45fd944ec55c9e4be0dd5ffe84a3c7b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45fd944ec55c9e4be0dd5ffe84a3c7b0">&#9670;&#160;</a></span>DPL_FLOAT64_PRINTF_VALS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64_PRINTF_VALS</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(__X)&lt;0?<span class="stringliteral">&quot;-&quot;</span>:<span class="stringliteral">&quot;&quot;</span>, (int)(fabs(__X)), (int)(fabs((__X)-(int)(__X))*1000000)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00113">113</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="ac2d3974622a142c9befd76f9a9eeadcf" name="ac2d3974622a142c9befd76f9a9eeadcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2d3974622a142c9befd76f9a9eeadcf">&#9670;&#160;</a></span>DPL_FLOAT64_SUB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64_SUB</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__Y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((__X)-(__Y))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00103">103</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="aeefe6b910f6b44072c6d7f6b3892f9a9" name="aeefe6b910f6b44072c6d7f6b3892f9a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeefe6b910f6b44072c6d7f6b3892f9a9">&#9670;&#160;</a></span>DPL_FLOAT64_U64_TO_F64</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64_U64_TO_F64</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((double)(__X))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00083">83</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a62722088d8482d2da12204794601d4ba" name="a62722088d8482d2da12204794601d4ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62722088d8482d2da12204794601d4ba">&#9670;&#160;</a></span>DPL_FLOAT64TO32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_FLOAT64TO32</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(float)(__X)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00079">79</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a21d6b88d75c4718156db312981475ff8" name="a21d6b88d75c4718156db312981475ff8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21d6b88d75c4718156db312981475ff8">&#9670;&#160;</a></span>DPL_STACK_ALIGNMENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_STACK_ALIGNMENT&#160;&#160;&#160;(OS_ALIGNMENT)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00051">51</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="aab3a40090f57c648fcbfd5872cdb6294" name="aab3a40090f57c648fcbfd5872cdb6294"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab3a40090f57c648fcbfd5872cdb6294">&#9670;&#160;</a></span>DPL_TIMEOUT_NEVER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_TIMEOUT_NEVER&#160;&#160;&#160;(OS_TIMEOUT_NEVER)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00043">43</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="ae59e486ccbfefb7532c8dc2896b26315" name="ae59e486ccbfefb7532c8dc2896b26315"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae59e486ccbfefb7532c8dc2896b26315">&#9670;&#160;</a></span>DPL_WAIT_FOREVER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPL_WAIT_FOREVER&#160;&#160;&#160;(OS_WAIT_FOREVER)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00044">44</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="ae71449b1cc6e6250b91f539153a7a0d3" name="ae71449b1cc6e6250b91f539153a7a0d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae71449b1cc6e6250b91f539153a7a0d3">&#9670;&#160;</a></span>M_PI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define M_PI&#160;&#160;&#160;3.1415926535</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PI approximated value macro definition. </p>
+
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00036">36</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ab9b3ed6c8c9deb8375f03805df82d0e9" name="ab9b3ed6c8c9deb8375f03805df82d0e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9b3ed6c8c9deb8375f03805df82d0e9">&#9670;&#160;</a></span>dpl_float32_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef float <a class="el" href="#ab9b3ed6c8c9deb8375f03805df82d0e9">dpl_float32_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>dpl float 32 type </p>
+
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00067">67</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a70c0d11b8ad7c590397bdf8971847647" name="a70c0d11b8ad7c590397bdf8971847647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70c0d11b8ad7c590397bdf8971847647">&#9670;&#160;</a></span>dpl_float64_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef double <a class="el" href="#a70c0d11b8ad7c590397bdf8971847647">dpl_float64_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>dpl float 64 type </p>
+
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00071">71</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a81db320866f2ab5b964f348838020ef4" name="a81db320866f2ab5b964f348838020ef4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81db320866f2ab5b964f348838020ef4">&#9670;&#160;</a></span>dpl_stack_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="os__types_8h.html#ab86037626498f615a281ab1e692a945b">os_stack_t</a> <a class="el" href="#a81db320866f2ab5b964f348838020ef4">dpl_stack_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>dpl stack buffer type </p>
+
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00062">62</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+<a id="a4a36ea09631d69359da7698137d284e4" name="a4a36ea09631d69359da7698137d284e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a36ea09631d69359da7698137d284e4">&#9670;&#160;</a></span>dpl_time_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="os__types_8h.html#aa2378cafc0f8fbfb44633036348bfe64">os_time_t</a> <a class="el" href="#a4a36ea09631d69359da7698137d284e4">dpl_time_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>dpl time type </p>
+
+<p class="definition">Definition at line <a class="el" href="dpl__types_8h_source.html#l00057">57</a> of file <a class="el" href="dpl__types_8h_source.html">dpl_types.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

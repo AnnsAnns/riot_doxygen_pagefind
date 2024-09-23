@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>usb_descriptor_interface_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structusb__descriptor__interface__t.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">usb_descriptor_interface_t Struct Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__usb.html">USB</a> &raquo; <a class="el" href="group__usb__descriptor.html">USB descriptors</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>USB interface descriptor (USB 2.0 spec table 9-12)  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>USB interface descriptor (USB 2.0 spec table 9-12) </p>
+
+<p class="definition">Definition at line <a class="el" href="descriptor_8h_source.html#l00157">157</a> of file <a class="el" href="descriptor_8h_source.html">descriptor.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="descriptor_8h_source.html">descriptor.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a219073a15b2640957ab6d15e6917892a" id="r_a219073a15b2640957ab6d15e6917892a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a219073a15b2640957ab6d15e6917892a">length</a></td></tr>
+<tr class="memdesc:a219073a15b2640957ab6d15e6917892a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of this descriptor <br  />
+  <br /></td></tr>
+<tr class="separator:a219073a15b2640957ab6d15e6917892a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fef5ed20cb68ba01f875f9b992b2e08" id="r_a2fef5ed20cb68ba01f875f9b992b2e08"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2fef5ed20cb68ba01f875f9b992b2e08">type</a></td></tr>
+<tr class="memdesc:a2fef5ed20cb68ba01f875f9b992b2e08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Descriptor type (<a class="el" href="group__usb__descriptor.html#ga268124d1bd49b4c0b70c5851bf672bd6">USB_TYPE_DESCRIPTOR_INTERFACE</a>)  <br /></td></tr>
+<tr class="separator:a2fef5ed20cb68ba01f875f9b992b2e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28470d8cf48ce1a1a7f7acf8669fc230" id="r_a28470d8cf48ce1a1a7f7acf8669fc230"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28470d8cf48ce1a1a7f7acf8669fc230">interface_num</a></td></tr>
+<tr class="memdesc:a28470d8cf48ce1a1a7f7acf8669fc230"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface number <br  />
+  <br /></td></tr>
+<tr class="separator:a28470d8cf48ce1a1a7f7acf8669fc230"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50ffbd8d53811a473421d7f97d5af416" id="r_a50ffbd8d53811a473421d7f97d5af416"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50ffbd8d53811a473421d7f97d5af416">alternate_setting</a></td></tr>
+<tr class="memdesc:a50ffbd8d53811a473421d7f97d5af416"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alternate setting index <br  />
+  <br /></td></tr>
+<tr class="separator:a50ffbd8d53811a473421d7f97d5af416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41bed53502ffba8309c320097868d5c7" id="r_a41bed53502ffba8309c320097868d5c7"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41bed53502ffba8309c320097868d5c7">num_endpoints</a></td></tr>
+<tr class="memdesc:a41bed53502ffba8309c320097868d5c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of endpoints used by this interface <br  />
+  <br /></td></tr>
+<tr class="separator:a41bed53502ffba8309c320097868d5c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af137b8edb56c6eec93759e0555c39086" id="r_af137b8edb56c6eec93759e0555c39086"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af137b8edb56c6eec93759e0555c39086">class</a></td></tr>
+<tr class="memdesc:af137b8edb56c6eec93759e0555c39086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface class code as assigned by the USB-IF <br  />
+  <br /></td></tr>
+<tr class="separator:af137b8edb56c6eec93759e0555c39086"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac449f0836b779a6d6e745f480ee03f87" id="r_ac449f0836b779a6d6e745f480ee03f87"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac449f0836b779a6d6e745f480ee03f87">subclass</a></td></tr>
+<tr class="memdesc:ac449f0836b779a6d6e745f480ee03f87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subclass code as assigned by the USB-IF <br  />
+  <br /></td></tr>
+<tr class="separator:ac449f0836b779a6d6e745f480ee03f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5367ba0591e5b54f06513fb588a67e89" id="r_a5367ba0591e5b54f06513fb588a67e89"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5367ba0591e5b54f06513fb588a67e89">protocol</a></td></tr>
+<tr class="memdesc:a5367ba0591e5b54f06513fb588a67e89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protocol code <br  />
+  <br /></td></tr>
+<tr class="separator:a5367ba0591e5b54f06513fb588a67e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a10bad25ddb4d59cf3cdfda7e18e7b6" id="r_a6a10bad25ddb4d59cf3cdfda7e18e7b6"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a10bad25ddb4d59cf3cdfda7e18e7b6">idx</a></td></tr>
+<tr class="memdesc:a6a10bad25ddb4d59cf3cdfda7e18e7b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface descriptor string index <br  />
+  <br /></td></tr>
+<tr class="separator:a6a10bad25ddb4d59cf3cdfda7e18e7b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a50ffbd8d53811a473421d7f97d5af416" name="a50ffbd8d53811a473421d7f97d5af416"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50ffbd8d53811a473421d7f97d5af416">&#9670;&#160;</a></span>alternate_setting</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t usb_descriptor_interface_t::alternate_setting</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alternate setting index <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="descriptor_8h_source.html#l00161">161</a> of file <a class="el" href="descriptor_8h_source.html">descriptor.h</a>.</p>
+
+</div>
+</div>
+<a id="af137b8edb56c6eec93759e0555c39086" name="af137b8edb56c6eec93759e0555c39086"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af137b8edb56c6eec93759e0555c39086">&#9670;&#160;</a></span>class</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t usb_descriptor_interface_t::class</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interface class code as assigned by the USB-IF <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="descriptor_8h_source.html#l00163">163</a> of file <a class="el" href="descriptor_8h_source.html">descriptor.h</a>.</p>
+
+</div>
+</div>
+<a id="a6a10bad25ddb4d59cf3cdfda7e18e7b6" name="a6a10bad25ddb4d59cf3cdfda7e18e7b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a10bad25ddb4d59cf3cdfda7e18e7b6">&#9670;&#160;</a></span>idx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t usb_descriptor_interface_t::idx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interface descriptor string index <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="descriptor_8h_source.html#l00166">166</a> of file <a class="el" href="descriptor_8h_source.html">descriptor.h</a>.</p>
+
+</div>
+</div>
+<a id="a28470d8cf48ce1a1a7f7acf8669fc230" name="a28470d8cf48ce1a1a7f7acf8669fc230"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28470d8cf48ce1a1a7f7acf8669fc230">&#9670;&#160;</a></span>interface_num</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t usb_descriptor_interface_t::interface_num</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interface number <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="descriptor_8h_source.html#l00160">160</a> of file <a class="el" href="descriptor_8h_source.html">descriptor.h</a>.</p>
+
+</div>
+</div>
+<a id="a219073a15b2640957ab6d15e6917892a" name="a219073a15b2640957ab6d15e6917892a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a219073a15b2640957ab6d15e6917892a">&#9670;&#160;</a></span>length</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t usb_descriptor_interface_t::length</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Size of this descriptor <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="descriptor_8h_source.html#l00158">158</a> of file <a class="el" href="descriptor_8h_source.html">descriptor.h</a>.</p>
+
+</div>
+</div>
+<a id="a41bed53502ffba8309c320097868d5c7" name="a41bed53502ffba8309c320097868d5c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41bed53502ffba8309c320097868d5c7">&#9670;&#160;</a></span>num_endpoints</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t usb_descriptor_interface_t::num_endpoints</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of endpoints used by this interface <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="descriptor_8h_source.html#l00162">162</a> of file <a class="el" href="descriptor_8h_source.html">descriptor.h</a>.</p>
+
+</div>
+</div>
+<a id="a5367ba0591e5b54f06513fb588a67e89" name="a5367ba0591e5b54f06513fb588a67e89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5367ba0591e5b54f06513fb588a67e89">&#9670;&#160;</a></span>protocol</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t usb_descriptor_interface_t::protocol</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Protocol code <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="descriptor_8h_source.html#l00165">165</a> of file <a class="el" href="descriptor_8h_source.html">descriptor.h</a>.</p>
+
+</div>
+</div>
+<a id="ac449f0836b779a6d6e745f480ee03f87" name="ac449f0836b779a6d6e745f480ee03f87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac449f0836b779a6d6e745f480ee03f87">&#9670;&#160;</a></span>subclass</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t usb_descriptor_interface_t::subclass</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Subclass code as assigned by the USB-IF <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="descriptor_8h_source.html#l00164">164</a> of file <a class="el" href="descriptor_8h_source.html">descriptor.h</a>.</p>
+
+</div>
+</div>
+<a id="a2fef5ed20cb68ba01f875f9b992b2e08" name="a2fef5ed20cb68ba01f875f9b992b2e08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fef5ed20cb68ba01f875f9b992b2e08">&#9670;&#160;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t usb_descriptor_interface_t::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Descriptor type (<a class="el" href="group__usb__descriptor.html#ga268124d1bd49b4c0b70c5851bf672bd6">USB_TYPE_DESCRIPTOR_INTERFACE</a>) </p>
+
+<p class="definition">Definition at line <a class="el" href="descriptor_8h_source.html#l00159">159</a> of file <a class="el" href="descriptor_8h_source.html">descriptor.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>sys/include/usb/<a class="el" href="descriptor_8h_source.html">descriptor.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

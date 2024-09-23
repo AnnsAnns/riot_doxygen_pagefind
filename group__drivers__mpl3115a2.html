@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>MPL3115A2 Pressure Sensor</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group__drivers__mpl3115a2.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">Topics</a> &#124;
+<a href="#files">Files</a> &#124;
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">MPL3115A2 Pressure Sensor<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a> &#124; <a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Driver for the Freescale MPL3115A2 pressure sensor.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Driver for the Freescale MPL3115A2 pressure sensor. </p>
+<p>The driver will initialize the sensor for pressure measurement. The conversion duration depends on oversample ratio. After initialization the sensor can be set active to run periodic measurements. The oversample ratio can be configured during sensor initialization.</p>
+<p>This driver provides <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> capabilities. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mpl3115a2__config.html">MPL3115A2 Pressure Sensor driver compile configuration</a></td></tr>
+<tr class="memdesc:group__drivers__mpl3115a2__config"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpl3115a2_8h.html">mpl3115a2.h</a></td></tr>
+<tr class="memdesc:mpl3115a2_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface definition for the MPL3115A2 sensor driver. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpl3115a2__params_8h.html">mpl3115a2_params.h</a></td></tr>
+<tr class="memdesc:mpl3115a2__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default configuration for MPL3115A2 devices. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpl3115a2__reg_8h.html">mpl3115a2_reg.h</a></td></tr>
+<tr class="memdesc:mpl3115a2__reg_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register definition for the MPL3115A2 sensor driver. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmpl3115a2__params__t.html">mpl3115a2_params_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration parameters.  <a href="structmpl3115a2__params__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmpl3115a2__t.html">mpl3115a2_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device descriptor for MPL3115A2 sensors.  <a href="structmpl3115a2__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga4c537a0c6746a6ae8212641941960984" id="r_ga4c537a0c6746a6ae8212641941960984"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4c537a0c6746a6ae8212641941960984">MPL3115A2_I2C_ADDRESS</a>&#160;&#160;&#160;(0x60)</td></tr>
+<tr class="memdesc:ga4c537a0c6746a6ae8212641941960984"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPL3115A2 Default Address.  <br /></td></tr>
+<tr class="separator:ga4c537a0c6746a6ae8212641941960984"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga0d019765a2884a265421b443c6a956c8" id="r_ga0d019765a2884a265421b443c6a956c8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="#gga0d019765a2884a265421b443c6a956c8a84323abc134ad4889fc7f20a7cadfcd2">MPL3115A2_OK</a>
+, <a class="el" href="#gga0d019765a2884a265421b443c6a956c8aa88b27bef34b1311b5156fdf7fc4abcb">MPL3115A2_ERROR_I2C</a>
+, <a class="el" href="#gga0d019765a2884a265421b443c6a956c8a8d6f477bbb5655c84f8cf7c2aa3b2e34">MPL3115A2_ERROR_DEV</a>
+, <a class="el" href="#gga0d019765a2884a265421b443c6a956c8aa7d75595be15443248b1b0a62bafe27e">MPL3115A2_ERROR_CNF</a>
+ }</td></tr>
+<tr class="memdesc:ga0d019765a2884a265421b443c6a956c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Named return values.  <a href="#ga0d019765a2884a265421b443c6a956c8">More...</a><br /></td></tr>
+<tr class="separator:ga0d019765a2884a265421b443c6a956c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga522ea56894f54659bd37f92625f7032b" id="r_ga522ea56894f54659bd37f92625f7032b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga522ea56894f54659bd37f92625f7032b">mpl3115a2_init</a> (<a class="el" href="structmpl3115a2__t.html">mpl3115a2_t</a> *dev, const <a class="el" href="structmpl3115a2__params__t.html">mpl3115a2_params_t</a> *params)</td></tr>
+<tr class="memdesc:ga522ea56894f54659bd37f92625f7032b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the MPL3115A2 sensor driver.  <br /></td></tr>
+<tr class="separator:ga522ea56894f54659bd37f92625f7032b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3acb0ca784d73b7b3363eb570d3344b0" id="r_ga3acb0ca784d73b7b3363eb570d3344b0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3acb0ca784d73b7b3363eb570d3344b0">mpl3115a2_reset</a> (const <a class="el" href="structmpl3115a2__t.html">mpl3115a2_t</a> *dev)</td></tr>
+<tr class="memdesc:ga3acb0ca784d73b7b3363eb570d3344b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the MPL3115A2 sensor.  <br /></td></tr>
+<tr class="separator:ga3acb0ca784d73b7b3363eb570d3344b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga83781cd30238788ba31cb381733116d7" id="r_ga83781cd30238788ba31cb381733116d7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga83781cd30238788ba31cb381733116d7">mpl3115a2_set_active</a> (const <a class="el" href="structmpl3115a2__t.html">mpl3115a2_t</a> *dev)</td></tr>
+<tr class="memdesc:ga83781cd30238788ba31cb381733116d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set active mode, this enables periodic measurements.  <br /></td></tr>
+<tr class="separator:ga83781cd30238788ba31cb381733116d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga47297785986f954a397cd7b038bd0cd2" id="r_ga47297785986f954a397cd7b038bd0cd2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga47297785986f954a397cd7b038bd0cd2">mpl3115a2_set_standby</a> (const <a class="el" href="structmpl3115a2__t.html">mpl3115a2_t</a> *dev)</td></tr>
+<tr class="memdesc:ga47297785986f954a397cd7b038bd0cd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set standby mode.  <br /></td></tr>
+<tr class="separator:ga47297785986f954a397cd7b038bd0cd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5d5a6b5311f7bdc1dc4a2ba303a68d93" id="r_ga5d5a6b5311f7bdc1dc4a2ba303a68d93"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5d5a6b5311f7bdc1dc4a2ba303a68d93">mpl3115a2_is_ready</a> (const <a class="el" href="structmpl3115a2__t.html">mpl3115a2_t</a> *dev)</td></tr>
+<tr class="memdesc:ga5d5a6b5311f7bdc1dc4a2ba303a68d93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check for new set of measurement data.  <br /></td></tr>
+<tr class="separator:ga5d5a6b5311f7bdc1dc4a2ba303a68d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3fa27e02456e659badac4b5c5de54913" id="r_ga3fa27e02456e659badac4b5c5de54913"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3fa27e02456e659badac4b5c5de54913">mpl3115a2_read_pressure</a> (const <a class="el" href="structmpl3115a2__t.html">mpl3115a2_t</a> *dev, uint32_t *pres, uint8_t *status)</td></tr>
+<tr class="memdesc:ga3fa27e02456e659badac4b5c5de54913"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read sensor's data in pressure mode.  <br /></td></tr>
+<tr class="separator:ga3fa27e02456e659badac4b5c5de54913"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaef556f4adbd25aef7f2a6a20708f2f18" id="r_gaef556f4adbd25aef7f2a6a20708f2f18"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaef556f4adbd25aef7f2a6a20708f2f18">mpl3115a2_read_temp</a> (const <a class="el" href="structmpl3115a2__t.html">mpl3115a2_t</a> *dev, int16_t *temp)</td></tr>
+<tr class="memdesc:gaef556f4adbd25aef7f2a6a20708f2f18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read sensor's temperature.  <br /></td></tr>
+<tr class="separator:gaef556f4adbd25aef7f2a6a20708f2f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Oversample Ratio configuration</h2></td></tr>
+<tr class="memitem:gaa52ea6a123f47db5e6b145e5fc5e369a" id="r_gaa52ea6a123f47db5e6b145e5fc5e369a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="#ggaa52ea6a123f47db5e6b145e5fc5e369aa1f07e58d39a2daf1260d10cc0e7eead6">MPL3115A2_OS_RATIO_1</a> = 0
+, <a class="el" href="#ggaa52ea6a123f47db5e6b145e5fc5e369aa6f4f4e19ce803f8de62da27d30251804">MPL3115A2_OS_RATIO_2</a>
+, <a class="el" href="#ggaa52ea6a123f47db5e6b145e5fc5e369aab1931c6701b58043e02e07b6e3cb1308">MPL3115A2_OS_RATIO_4</a>
+, <a class="el" href="#ggaa52ea6a123f47db5e6b145e5fc5e369aa1eec956e82aa800881aefe01ce7e9bc7">MPL3115A2_OS_RATIO_8</a>
+, <br />
+&#160;&#160;<a class="el" href="#ggaa52ea6a123f47db5e6b145e5fc5e369aaf729bbad7884910b731f959023ccdaef">MPL3115A2_OS_RATIO_16</a>
+, <a class="el" href="#ggaa52ea6a123f47db5e6b145e5fc5e369aac47ad299b4750f5b02441cc418e1af7c">MPL3115A2_OS_RATIO_32</a>
+, <a class="el" href="#ggaa52ea6a123f47db5e6b145e5fc5e369aaf8f15c56fe24ed8c39476112c53dde46">MPL3115A2_OS_RATIO_64</a>
+, <a class="el" href="#ggaa52ea6a123f47db5e6b145e5fc5e369aa305d2ea6feaa954fb41ef5111c62ab32">MPL3115A2_OS_RATIO_128</a>
+<br />
+ }</td></tr>
+<tr class="separator:gaa52ea6a123f47db5e6b145e5fc5e369a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf3a2b0491215b7e6489b0d3621193871" id="r_gaf3a2b0491215b7e6489b0d3621193871"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf3a2b0491215b7e6489b0d3621193871">MPL3115A2_OS_RATIO_DEFAULT</a>&#160;&#160;&#160;<a class="el" href="#ggaa52ea6a123f47db5e6b145e5fc5e369aaf729bbad7884910b731f959023ccdaef">MPL3115A2_OS_RATIO_16</a></td></tr>
+<tr class="memdesc:gaf3a2b0491215b7e6489b0d3621193871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Ratio.  <br /></td></tr>
+<tr class="separator:gaf3a2b0491215b7e6489b0d3621193871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga4c537a0c6746a6ae8212641941960984" name="ga4c537a0c6746a6ae8212641941960984"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4c537a0c6746a6ae8212641941960984">&#9670;&#160;</a></span>MPL3115A2_I2C_ADDRESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPL3115A2_I2C_ADDRESS&#160;&#160;&#160;(0x60)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MPL3115A2 Default Address. </p>
+
+<p class="definition">Definition at line <a class="el" href="mpl3115a2_8h_source.html#l00056">56</a> of file <a class="el" href="mpl3115a2_8h_source.html">mpl3115a2.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf3a2b0491215b7e6489b0d3621193871" name="gaf3a2b0491215b7e6489b0d3621193871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf3a2b0491215b7e6489b0d3621193871">&#9670;&#160;</a></span>MPL3115A2_OS_RATIO_DEFAULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPL3115A2_OS_RATIO_DEFAULT&#160;&#160;&#160;<a class="el" href="#ggaa52ea6a123f47db5e6b145e5fc5e369aaf729bbad7884910b731f959023ccdaef">MPL3115A2_OS_RATIO_16</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default Ratio. </p>
+
+<p class="definition">Definition at line <a class="el" href="mpl3115a2_8h_source.html#l00072">72</a> of file <a class="el" href="mpl3115a2_8h_source.html">mpl3115a2.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ga0d019765a2884a265421b443c6a956c8" name="ga0d019765a2884a265421b443c6a956c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0d019765a2884a265421b443c6a956c8">&#9670;&#160;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Named return values. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga0d019765a2884a265421b443c6a956c8a84323abc134ad4889fc7f20a7cadfcd2" name="gga0d019765a2884a265421b443c6a956c8a84323abc134ad4889fc7f20a7cadfcd2"></a>MPL3115A2_OK&#160;</td><td class="fielddoc"><p>all good </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga0d019765a2884a265421b443c6a956c8aa88b27bef34b1311b5156fdf7fc4abcb" name="gga0d019765a2884a265421b443c6a956c8aa88b27bef34b1311b5156fdf7fc4abcb"></a>MPL3115A2_ERROR_I2C&#160;</td><td class="fielddoc"><p>I2C communication failed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga0d019765a2884a265421b443c6a956c8a8d6f477bbb5655c84f8cf7c2aa3b2e34" name="gga0d019765a2884a265421b443c6a956c8a8d6f477bbb5655c84f8cf7c2aa3b2e34"></a>MPL3115A2_ERROR_DEV&#160;</td><td class="fielddoc"><p>Device MPL3115A2 not found. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga0d019765a2884a265421b443c6a956c8aa7d75595be15443248b1b0a62bafe27e" name="gga0d019765a2884a265421b443c6a956c8aa7d75595be15443248b1b0a62bafe27e"></a>MPL3115A2_ERROR_CNF&#160;</td><td class="fielddoc"><p>Device configuration failed. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="mpl3115a2_8h_source.html#l00046">46</a> of file <a class="el" href="mpl3115a2_8h_source.html">mpl3115a2.h</a>.</p>
+
+</div>
+</div>
+<a id="gaa52ea6a123f47db5e6b145e5fc5e369a" name="gaa52ea6a123f47db5e6b145e5fc5e369a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa52ea6a123f47db5e6b145e5fc5e369a">&#9670;&#160;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggaa52ea6a123f47db5e6b145e5fc5e369aa1f07e58d39a2daf1260d10cc0e7eead6" name="ggaa52ea6a123f47db5e6b145e5fc5e369aa1f07e58d39a2daf1260d10cc0e7eead6"></a>MPL3115A2_OS_RATIO_1&#160;</td><td class="fielddoc"><p>Oversample Ratio 1, conversion 6ms. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaa52ea6a123f47db5e6b145e5fc5e369aa6f4f4e19ce803f8de62da27d30251804" name="ggaa52ea6a123f47db5e6b145e5fc5e369aa6f4f4e19ce803f8de62da27d30251804"></a>MPL3115A2_OS_RATIO_2&#160;</td><td class="fielddoc"><p>Oversample Ratio 2, conversion 10ms. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaa52ea6a123f47db5e6b145e5fc5e369aab1931c6701b58043e02e07b6e3cb1308" name="ggaa52ea6a123f47db5e6b145e5fc5e369aab1931c6701b58043e02e07b6e3cb1308"></a>MPL3115A2_OS_RATIO_4&#160;</td><td class="fielddoc"><p>Oversample Ratio 4, conversion 18ms. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaa52ea6a123f47db5e6b145e5fc5e369aa1eec956e82aa800881aefe01ce7e9bc7" name="ggaa52ea6a123f47db5e6b145e5fc5e369aa1eec956e82aa800881aefe01ce7e9bc7"></a>MPL3115A2_OS_RATIO_8&#160;</td><td class="fielddoc"><p>Oversample Ratio 8, conversion 34ms. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaa52ea6a123f47db5e6b145e5fc5e369aaf729bbad7884910b731f959023ccdaef" name="ggaa52ea6a123f47db5e6b145e5fc5e369aaf729bbad7884910b731f959023ccdaef"></a>MPL3115A2_OS_RATIO_16&#160;</td><td class="fielddoc"><p>Oversample Ratio 16, conversion 66ms. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaa52ea6a123f47db5e6b145e5fc5e369aac47ad299b4750f5b02441cc418e1af7c" name="ggaa52ea6a123f47db5e6b145e5fc5e369aac47ad299b4750f5b02441cc418e1af7c"></a>MPL3115A2_OS_RATIO_32&#160;</td><td class="fielddoc"><p>Oversample Ratio 32, conversion 130ms. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaa52ea6a123f47db5e6b145e5fc5e369aaf8f15c56fe24ed8c39476112c53dde46" name="ggaa52ea6a123f47db5e6b145e5fc5e369aaf8f15c56fe24ed8c39476112c53dde46"></a>MPL3115A2_OS_RATIO_64&#160;</td><td class="fielddoc"><p>Oversample Ratio 64, conversion 258ms. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaa52ea6a123f47db5e6b145e5fc5e369aa305d2ea6feaa954fb41ef5111c62ab32" name="ggaa52ea6a123f47db5e6b145e5fc5e369aa305d2ea6feaa954fb41ef5111c62ab32"></a>MPL3115A2_OS_RATIO_128&#160;</td><td class="fielddoc"><p>Oversample Ratio 128, conversion 514ms. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="mpl3115a2_8h_source.html#l00062">62</a> of file <a class="el" href="mpl3115a2_8h_source.html">mpl3115a2.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga522ea56894f54659bd37f92625f7032b" name="ga522ea56894f54659bd37f92625f7032b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga522ea56894f54659bd37f92625f7032b">&#9670;&#160;</a></span>mpl3115a2_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mpl3115a2_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmpl3115a2__t.html">mpl3115a2_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmpl3115a2__params__t.html">mpl3115a2_params_t</a> *</td>          <td class="paramname"><span class="paramname"><em>params</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize the MPL3115A2 sensor driver. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">dev</td><td>device descriptor of sensor to initialize </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">params</td><td>configuration parameters</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MPL3115A2_OK on success </dd>
+<dd>
+-MPL3115A2_ERROR_I2C on I2C bus error </dd>
+<dd>
+-MPL3115A2_ERROR_DEV on device error </dd>
+<dd>
+-MPL3115A2_ERROR_CNF on config error </dd></dl>
+
+</div>
+</div>
+<a id="ga5d5a6b5311f7bdc1dc4a2ba303a68d93" name="ga5d5a6b5311f7bdc1dc4a2ba303a68d93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5d5a6b5311f7bdc1dc4a2ba303a68d93">&#9670;&#160;</a></span>mpl3115a2_is_ready()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mpl3115a2_is_ready </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmpl3115a2__t.html">mpl3115a2_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dev</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check for new set of measurement data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>device descriptor of sensor</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>&gt;0 if new data sample is ready </dd>
+<dd>
+MPL3115A2_OK measurement in progress </dd>
+<dd>
+-MPL3115A2_ERROR_I2C on error </dd></dl>
+
+</div>
+</div>
+<a id="ga3fa27e02456e659badac4b5c5de54913" name="ga3fa27e02456e659badac4b5c5de54913"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3fa27e02456e659badac4b5c5de54913">&#9670;&#160;</a></span>mpl3115a2_read_pressure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mpl3115a2_read_pressure </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmpl3115a2__t.html">mpl3115a2_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>pres</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>status</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read sensor's data in pressure mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>device descriptor of sensor </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pres</td><td>pressure in Pascals </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">status</td><td>sensor status register</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MPL3115A2_OK on success, </dd>
+<dd>
+-MPL3115A2_ERROR_I2C on error </dd></dl>
+
+</div>
+</div>
+<a id="gaef556f4adbd25aef7f2a6a20708f2f18" name="gaef556f4adbd25aef7f2a6a20708f2f18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaef556f4adbd25aef7f2a6a20708f2f18">&#9670;&#160;</a></span>mpl3115a2_read_temp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mpl3115a2_read_temp </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmpl3115a2__t.html">mpl3115a2_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t *</td>          <td class="paramname"><span class="paramname"><em>temp</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read sensor's temperature. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>device descriptor of sensor </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">temp</td><td>temperature in <picture><source srcset="form_13_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$^\circ C \cdot 10$" src="form_13.png"/></picture></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MPL3115A2_OK on success </dd>
+<dd>
+-MPL3115A2_ERROR_I2C on error </dd></dl>
+
+</div>
+</div>
+<a id="ga3acb0ca784d73b7b3363eb570d3344b0" name="ga3acb0ca784d73b7b3363eb570d3344b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3acb0ca784d73b7b3363eb570d3344b0">&#9670;&#160;</a></span>mpl3115a2_reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mpl3115a2_reset </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmpl3115a2__t.html">mpl3115a2_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dev</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset the MPL3115A2 sensor. </p>
+<p>After that, the sensor should be reinitialized.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>device descriptor of sensor</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MPL3115A2_OK on success </dd>
+<dd>
+-MPL3115A2_ERROR_I2C on error </dd></dl>
+
+</div>
+</div>
+<a id="ga83781cd30238788ba31cb381733116d7" name="ga83781cd30238788ba31cb381733116d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga83781cd30238788ba31cb381733116d7">&#9670;&#160;</a></span>mpl3115a2_set_active()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mpl3115a2_set_active </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmpl3115a2__t.html">mpl3115a2_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dev</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set active mode, this enables periodic measurements. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>device descriptor of sensor</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MPL3115A2_OK on success </dd>
+<dd>
+-MPL3115A2_ERROR_I2C on error </dd></dl>
+
+</div>
+</div>
+<a id="ga47297785986f954a397cd7b038bd0cd2" name="ga47297785986f954a397cd7b038bd0cd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga47297785986f954a397cd7b038bd0cd2">&#9670;&#160;</a></span>mpl3115a2_set_standby()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mpl3115a2_set_standby </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmpl3115a2__t.html">mpl3115a2_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dev</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set standby mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>device descriptor of sensor</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MPL3115A2_OK on success </dd>
+<dd>
+-MPL3115A2_ERROR_I2C on error </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:34 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

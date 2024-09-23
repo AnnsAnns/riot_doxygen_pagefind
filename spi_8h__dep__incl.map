@@ -1,0 +1,262 @@
+<map id="drivers/include/periph/spi.h" name="drivers/include/periph/spi.h">
+<area shape="rect" id="Node000001" title="Low&#45;level SPI peripheral driver interface definition." alt="" coords="6373,5,6535,50"/>
+<area shape="rect" id="Node000002" href="$common_2arduino-atmega_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins for Arduino Atmega boards." alt="" coords="110,98,291,160"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="6357,32,5135,37,3163,50,1274,71,622,85,415,92,304,101,292,103,291,97,303,95,414,87,622,79,1274,66,3162,45,5135,32,6357,27"/>
+<area shape="rect" id="Node000003" href="$common_2arduino-due_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins." alt="" coords="315,98,494,160"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="6357,32,5171,38,3265,51,1444,72,815,85,615,93,508,101,495,103,494,98,507,95,614,87,815,80,1444,66,3265,46,5171,33,6357,27"/>
+<area shape="rect" id="Node000004" href="$common_2arduino-zero_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins." alt="" coords="519,98,698,160"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="6357,32,5208,38,3369,51,1612,72,1006,85,813,93,710,101,699,103,699,97,710,95,813,87,1006,80,1612,67,3369,46,5208,33,6357,27"/>
+<area shape="rect" id="Node000005" href="$remote_2include_2board__common_8h.html" title="Board specific definitions for the RE&#45;Mote boards." alt="" coords="722,106,911,151"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="6357,32,5246,39,3477,53,1790,74,1208,86,1023,93,924,101,885,109,884,103,923,95,1022,88,1208,81,1790,68,3477,48,5246,34,6357,27"/>
+<area shape="rect" id="Node000007" href="$common_2slwstk6000b_2include_2board_8h.html" title="Board specific definitions for the SLWSTK6000B starter kit." alt="" coords="936,106,1148,151"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="6357,32,5336,33,3706,40,2862,48,2103,61,1510,78,1300,89,1161,101,1119,108,1118,103,1160,95,1299,83,1509,73,2103,55,2861,43,3706,35,5336,27,6357,26"/>
+<area shape="rect" id="Node000009" href="$e180-zg120b-tb_2include_2board_8h.html" title="Board specific definitions for the E180&#45;ZG120B&#45;TB starter kit." alt="" coords="1172,106,1325,151"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="6357,32,5321,38,3688,52,2135,72,1600,85,1429,93,1338,101,1306,109,1305,103,1338,95,1429,88,1599,80,2135,67,3688,46,5321,33,6357,27"/>
+<area shape="rect" id="Node000011" href="$ikea-tradfri_2include_2board_8h.html" title="Board specific definitions for the IKEA TRÅDFRI modules." alt="" coords="1350,106,1491,151"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="6357,32,5351,38,3772,51,2272,72,1756,85,1591,93,1504,101,1474,109,1472,103,1503,95,1591,87,1755,80,2272,66,3772,46,5351,33,6357,27"/>
+<area shape="rect" id="Node000013" href="$omote_2include_2board_8h.html" title="Board specific definitions for the omote board." alt="" coords="1516,106,1678,151"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="6357,31,5427,31,3964,37,3208,45,2531,57,2001,76,1814,87,1690,101,1656,109,1655,103,1690,95,1814,82,2001,70,2530,52,3208,39,3964,31,5427,25,6357,26"/>
+<area shape="rect" id="Node000016" href="$slstk3400a_2include_2board_8h.html" title="Board specific definitions for the SLSTK3400A starter kit." alt="" coords="1702,106,1894,151"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="6357,32,5466,33,4071,42,3352,51,2707,63,2203,79,2024,89,1906,101,1868,108,1867,103,1906,95,2024,84,2202,74,2706,57,3351,45,4071,37,5466,28,6357,26"/>
+<area shape="rect" id="Node000018" href="$slstk3401a_2include_2board_8h.html" title="Board specific definitions for the SLSTK3401A starter kit." alt="" coords="1918,106,2110,151"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="6357,32,5503,34,4177,43,3494,52,2882,64,2403,80,2234,90,2122,101,2084,108,2083,103,2122,95,2234,84,2403,75,2881,59,3494,47,4177,38,5503,29,6357,26"/>
+<area shape="rect" id="Node000020" href="$slstk3402a_2include_2board_8h.html" title="Board specific definitions for the SLSTK3402A starter kit." alt="" coords="2134,106,2326,151"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="6357,32,5541,35,4282,45,3636,54,3057,65,2604,81,2444,90,2338,101,2300,108,2299,103,2338,95,2444,85,2604,76,3057,60,3636,48,4282,40,5541,30,6357,27"/>
+<area shape="rect" id="Node000022" href="$slstk3701a_2include_2board_8h.html" title="Board specific definitions for the SLSTK3701A starter kit." alt="" coords="2350,106,2542,151"/>
+<area shape="poly" id="edge21_Node000001_Node000022" title=" " alt="" coords="6357,32,5580,36,4389,46,3779,55,3232,67,2805,82,2654,91,2554,101,2516,108,2515,103,2554,95,2654,85,2805,77,3232,62,3778,50,4389,41,5579,30,6357,27"/>
+<area shape="rect" id="Node000024" href="$sltb001a_2include_2board_8h.html" title="Board specific definitions for the SLTB001A starter kit." alt="" coords="2566,106,2742,151"/>
+<area shape="poly" id="edge23_Node000001_Node000024" title=" " alt="" coords="6357,32,5615,35,4487,46,3910,55,3394,66,2991,82,2849,91,2754,101,2719,108,2717,103,2754,95,2848,85,2991,76,3394,61,3910,49,4487,41,5615,30,6357,27"/>
+<area shape="rect" id="Node000026" href="$sltb009a_2include_2board_8h.html" title="Board specific definitions for the SLTB009A starter kit." alt="" coords="2766,106,2942,151"/>
+<area shape="poly" id="edge25_Node000001_Node000026" title=" " alt="" coords="6357,32,5651,36,4586,47,4043,56,3557,68,3177,83,3043,91,2954,101,2919,108,2917,103,2954,95,3043,86,3177,77,3556,63,4042,51,4586,42,5651,31,6357,27"/>
+<area shape="rect" id="Node000028" href="$slwstk6220a_2include_2board_8h.html" title="Board specific definitions for the SLWSTK6220A starter kit." alt="" coords="2966,106,3118,151"/>
+<area shape="poly" id="edge27_Node000001_Node000028" title=" " alt="" coords="6357,32,5682,35,4672,45,4158,54,3698,66,3340,81,3213,90,3129,101,3098,108,3097,103,3128,95,3213,85,3339,76,3698,61,4157,49,4672,40,5682,30,6357,27"/>
+<area shape="rect" id="Node000030" href="$stk3200_2include_2board_8h.html" title="Board specific definitions for the STK3200 starter kit." alt="" coords="3141,106,3314,151"/>
+<area shape="poly" id="edge29_Node000001_Node000030" title=" " alt="" coords="6357,32,5718,37,4770,49,3858,70,3522,84,3404,92,3325,101,3290,109,3289,103,3324,95,3403,87,3522,79,3858,65,4770,44,5718,32,6357,27"/>
+<area shape="rect" id="Node000032" href="$stk3600_2include_2board_8h.html" title="Board specific definitions for the STK3600 starter kit." alt="" coords="3337,106,3510,151"/>
+<area shape="poly" id="edge31_Node000001_Node000032" title=" " alt="" coords="6357,32,5753,38,4867,51,4017,71,3705,85,3521,101,3486,109,3485,103,3520,95,3705,79,4017,66,4867,45,5753,33,6357,27"/>
+<area shape="rect" id="Node000034" href="$stk3700_2include_2board_8h.html" title="Board specific definitions for the STK3700 starter kit." alt="" coords="3533,106,3706,151"/>
+<area shape="poly" id="edge33_Node000001_Node000034" title=" " alt="" coords="6357,33,5789,39,4965,52,4177,73,3887,86,3717,101,3682,109,3681,103,3716,95,3887,80,4176,67,4965,47,5789,34,6357,27"/>
+<area shape="rect" id="Node000036" href="$spidev__linux_8h.html" title="Implementation of SPI access from Linux User Space." alt="" coords="3729,106,3870,151"/>
+<area shape="poly" id="edge35_Node000001_Node000036" title=" " alt="" coords="6357,33,5822,39,5051,52,4317,73,4048,86,3889,101,3857,109,3856,103,3888,95,4047,80,4317,67,5051,47,5821,34,6357,27"/>
+<area shape="rect" id="Node000037" href="$cc110x__communication_8h.html" title="Functions to communicate with the CC1100/CC1101 transceiver." alt="" coords="3276,216,3467,261"/>
+<area shape="poly" id="edge36_Node000001_Node000037" title=" " alt="" coords="6358,32,5805,36,5019,47,4630,56,4295,67,4050,82,3974,91,3934,100,3918,114,3909,130,3901,147,3883,162,3827,188,3778,201,3732,206,3688,206,3595,200,3541,202,3480,210,3445,218,3444,213,3479,205,3541,197,3595,195,3688,201,3732,201,3777,196,3826,183,3881,157,3896,143,3905,127,3914,110,3931,96,3973,86,4050,77,4295,62,4630,50,5018,42,5805,31,6358,27"/>
+<area shape="rect" id="Node000039" href="$adt7310_8h.html" title="Interface definition for the ADT7310 sensor driver." alt="" coords="3945,115,4131,143"/>
+<area shape="poly" id="edge38_Node000001_Node000039" title=" " alt="" coords="6357,31,5912,33,5272,41,4936,49,4620,62,4349,79,4144,101,4077,117,4075,112,4143,95,4348,73,4620,56,4935,44,5271,36,5912,27,6357,26"/>
+<area shape="rect" id="Node000040" href="$at25xxx_8h.html" title="Driver for the AT25xxx series of EEPROMs." alt="" coords="4358,115,4544,143"/>
+<area shape="poly" id="edge39_Node000001_Node000040" title=" " alt="" coords="6357,32,5984,36,5463,47,4940,67,4722,82,4557,101,4491,117,4489,112,4556,95,4721,77,4939,62,5463,41,5984,31,6357,27"/>
+<area shape="rect" id="Node000043" href="$at86rf215_8h.html" title="Interface definition for AT86RF215 based drivers." alt="" coords="4569,115,4766,143"/>
+<area shape="poly" id="edge43_Node000001_Node000043" title=" " alt="" coords="6357,33,6023,39,5566,51,5110,71,4921,84,4777,101,4708,117,4707,112,4776,95,4920,79,5110,65,5566,45,6023,33,6357,27"/>
+<area shape="rect" id="Node000046" href="$at86rf2xx_8h.html" title="Interface definition for AT86RF2xx based drivers." alt="" coords="4789,115,4986,143"/>
+<area shape="poly" id="edge46_Node000001_Node000046" title=" " alt="" coords="6357,34,5680,57,5297,76,5138,88,5017,101,4936,117,4935,112,5016,95,5137,83,5296,71,5680,51,6357,29"/>
+<area shape="rect" id="Node000051" href="$ata8520e_8h.html" title="Device driver for Microchip ATA8520E transceiver (Sigfox)" alt="" coords="5029,115,5223,143"/>
+<area shape="poly" id="edge52_Node000001_Node000051" title=" " alt="" coords="6357,36,5934,60,5660,78,5384,101,5224,118,5223,112,5383,95,5660,73,5934,55,6357,31"/>
+<area shape="rect" id="Node000053" href="$atwinc15x0_8h.html" title="Netdev Driver for the Microchip ATWINC15x0 WiFi Module." alt="" coords="5395,115,5604,143"/>
+<area shape="poly" id="edge54_Node000001_Node000053" title=" " alt="" coords="6358,38,6059,63,5690,101,5577,117,5576,112,5690,95,6059,57,6357,33"/>
+<area shape="rect" id="Node000055" href="$bme680_8h.html" title="Interface definition for the Bosch BME680 sensor." alt="" coords="5702,115,5888,143"/>
+<area shape="poly" id="edge56_Node000001_Node000055" title=" " alt="" coords="6358,42,6164,67,5938,101,5855,117,5854,112,5938,95,6163,62,6357,37"/>
+<area shape="rect" id="Node000057" href="$candev__mcp2515_8h.html" title="Definition of the implementation of the CAN controller driver." alt="" coords="5950,106,6118,151"/>
+<area shape="poly" id="edge58_Node000001_Node000057" title=" " alt="" coords="6358,53,6149,101,6117,109,6116,103,6148,95,6357,47"/>
+<area shape="rect" id="Node000061" href="$cc110x_8h.html" title="Interface definition for the CC1100/CC1101 driver." alt="" coords="4155,115,4334,143"/>
+<area shape="poly" id="edge62_Node000001_Node000061" title=" " alt="" coords="6358,32,5947,34,5365,43,5062,51,4777,63,4531,80,4346,101,4282,117,4281,112,4346,95,4531,74,4776,58,5061,46,5365,37,5947,28,6358,26"/>
+<area shape="rect" id="Node000062" href="$cc2420_8h.html" title="Interface definition for the CC2420 driver." alt="" coords="6160,115,6340,143"/>
+<area shape="poly" id="edge64_Node000001_Node000062" title=" " alt="" coords="6397,60,6278,117,6276,112,6394,55"/>
+<area shape="rect" id="Node000065" href="$ds3234_8h.html" title="DS3234 device driver." alt="" coords="6364,115,6544,143"/>
+<area shape="poly" id="edge67_Node000001_Node000065" title=" " alt="" coords="6457,65,6457,115,6451,115,6451,65"/>
+<area shape="rect" id="Node000067" href="$enc28j60_8h.html" title="Interface definition for the ENC28J60 driver ." alt="" coords="6568,115,6761,143"/>
+<area shape="poly" id="edge69_Node000001_Node000067" title=" " alt="" coords="6515,55,6638,112,6636,117,6513,59"/>
+<area shape="rect" id="Node000068" href="$encx24j600_8h.html" title="Interface definition for the ENCX24J600 driver." alt="" coords="6784,115,6993,143"/>
+<area shape="poly" id="edge70_Node000001_Node000068" title=" " alt="" coords="6551,46,6773,95,6840,112,6838,117,6772,101,6550,51"/>
+<area shape="rect" id="Node000070" href="$epd__bw__spi_8h.html" title="Generic black/white e&#45;paper/e&#45;ink display SPI driver." alt="" coords="7017,106,7163,151"/>
+<area shape="poly" id="edge72_Node000001_Node000070" title=" " alt="" coords="6551,32,6761,53,6884,71,7005,95,7033,103,7032,108,7004,101,6883,77,6760,59,6551,38"/>
+<area shape="rect" id="Node000072" href="$kw2xrf_8h.html" title="Interface definition for the kw2xrf driver." alt="" coords="7280,115,7457,143"/>
+<area shape="poly" id="edge74_Node000001_Node000072" title=" " alt="" coords="6551,34,6831,58,7176,95,7290,112,7289,117,7175,101,6831,64,6550,39"/>
+<area shape="rect" id="Node000077" href="$l3gxxxx_8h.html" title="Device Driver for ST L3Gxxxx 3&#45;axis gyroscope sensor family." alt="" coords="7631,115,7816,143"/>
+<area shape="poly" id="edge80_Node000001_Node000077" title=" " alt="" coords="6551,31,6952,55,7470,95,7630,113,7630,118,7470,101,6952,61,6551,37"/>
+<area shape="rect" id="Node000079" href="$lcd_8h.html" title=" " alt="" coords="7990,115,8142,143"/>
+<area shape="poly" id="edge82_Node000001_Node000079" title=" " alt="" coords="6551,29,7095,49,7459,68,7829,95,7989,114,7989,119,7828,101,7459,74,7094,54,6551,34"/>
+<area shape="rect" id="Node000084" href="$lis3dh_8h.html" title="Device driver interface for the LIS3DH accelerometer." alt="" coords="8166,115,8339,143"/>
+<area shape="poly" id="edge87_Node000001_Node000084" title=" " alt="" coords="6551,27,6890,32,7353,43,7816,63,8009,78,8154,95,8217,112,8216,117,8154,101,8008,83,7816,68,7353,48,6889,37,6551,32"/>
+<area shape="rect" id="Node000086" href="$max31855_8h.html" title=" " alt="" coords="8364,115,8566,143"/>
+<area shape="poly" id="edge89_Node000001_Node000086" title=" " alt="" coords="6551,27,6924,32,7445,43,7968,63,8187,78,8352,95,8424,112,8423,117,8351,101,8186,83,7968,69,7444,48,6924,37,6551,32"/>
+<area shape="rect" id="Node000088" href="$mfrc522_8h.html" title=" " alt="" coords="8590,115,8777,143"/>
+<area shape="poly" id="edge91_Node000001_Node000088" title=" " alt="" coords="6551,26,6963,29,7550,38,7856,47,8144,59,8391,75,8578,95,8646,112,8645,117,8578,101,8391,80,8144,64,7856,52,7550,43,6963,34,6551,32"/>
+<area shape="rect" id="Node000089" href="$mrf24j40_8h.html" title="Interface definition for MRF24J40 based drivers ." alt="" coords="8800,115,8993,143"/>
+<area shape="poly" id="edge92_Node000001_Node000089" title=" " alt="" coords="6550,26,7000,28,7647,36,7987,44,8306,57,8581,73,8789,95,8858,112,8857,117,8788,101,8581,79,8306,62,7987,50,7647,41,6999,33,6550,31"/>
+<area shape="rect" id="Node000092" href="$mtd__spi__nor_8h.html" title="Interface definition for the serial flash memory driver." alt="" coords="9016,106,9164,151"/>
+<area shape="poly" id="edge95_Node000001_Node000092" title=" " alt="" coords="6551,27,7084,33,7849,46,8580,67,8847,80,9005,95,9036,103,9035,109,9004,101,8847,85,8579,72,7849,51,7083,39,6551,33"/>
+<area shape="rect" id="Node000093" href="$nrf24l01p_8h.html" title=" " alt="" coords="9188,115,9384,143"/>
+<area shape="poly" id="edge96_Node000001_Node000093" title=" " alt="" coords="6551,27,7935,49,8718,69,9006,82,9176,95,9247,112,9245,117,9175,101,9005,87,8718,75,7935,55,6551,33"/>
+<area shape="rect" id="Node000094" href="$nrf24l01p__ng_8h.html" title="Public interface for NRF24L01+ (NG) devices." alt="" coords="9616,115,9834,143"/>
+<area shape="poly" id="edge97_Node000001_Node000094" title=" " alt="" coords="6551,26,6994,28,7693,37,8532,58,8968,74,9396,95,9615,113,9615,119,9395,101,8968,80,8532,63,7693,43,6994,34,6551,32"/>
+<area shape="rect" id="Node000098" href="$nrf24l01p__ng__params_8h.html" title="Board specific configuration for all NRF24L01+ (NG) devices." alt="" coords="9929,317,10091,379"/>
+<area shape="poly" id="edge131_Node000001_Node000098" title=" " alt="" coords="6551,26,7272,26,8344,33,8879,41,9343,53,9683,71,9790,82,9847,96,9865,110,9874,127,9882,144,9898,157,9919,166,9945,171,10008,175,10161,169,10239,167,10310,169,10368,181,10391,192,10409,206,10423,225,10429,243,10428,259,10420,273,10406,286,10387,297,10338,315,10279,328,10214,337,10091,347,10091,342,10213,332,10278,323,10337,310,10385,292,10403,282,10415,270,10423,257,10424,243,10418,227,10405,210,10389,196,10367,186,10309,175,10239,172,10161,175,10008,181,9944,176,9917,171,9895,162,9878,147,9869,130,9861,114,9845,100,9789,88,9683,76,9343,59,8879,46,8344,38,7272,31,6551,31"/>
+<area shape="rect" id="Node000101" href="$nvram-spi_8h.html" title="Device interface for various SPI connected NVRAM." alt="" coords="9908,106,10072,151"/>
+<area shape="poly" id="edge106_Node000001_Node000101" title=" " alt="" coords="6551,27,7246,31,8291,42,8824,51,9300,63,9671,78,9803,86,9890,95,9927,103,9925,108,9890,101,9802,91,9671,83,9300,68,8823,57,8290,48,7246,36,6551,32"/>
+<area shape="rect" id="Node000102" href="$pcd8544_8h.html" title="Interface definition for the PCD8544 LCD driver." alt="" coords="10096,115,10284,143"/>
+<area shape="poly" id="edge107_Node000001_Node000102" title=" " alt="" coords="6551,27,7281,31,8386,42,8951,51,9456,63,9851,78,9991,86,10084,95,10153,112,10151,117,10083,101,9990,91,9851,83,9456,68,8951,57,8386,48,7280,36,6551,32"/>
+<area shape="rect" id="Node000103" href="$pn532_8h.html" title="PN532 driver." alt="" coords="10309,115,10482,143"/>
+<area shape="poly" id="edge108_Node000001_Node000103" title=" " alt="" coords="6551,26,7318,29,8491,39,9092,48,9630,60,10050,75,10198,85,10297,95,10361,112,10360,117,10296,101,10198,90,10049,81,9630,65,9092,53,8491,45,7318,35,6551,32"/>
+<area shape="rect" id="Node000104" href="$sdcard__spi_8h.html" title="Public interface for the sdcard_spi driver." alt="" coords="10506,106,10671,151"/>
+<area shape="poly" id="edge109_Node000001_Node000104" title=" " alt="" coords="6551,26,7354,28,8589,37,9223,45,9790,57,10234,74,10390,84,10494,95,10529,103,10528,108,10494,101,10390,89,10233,79,9790,63,9223,51,8589,42,7354,34,6551,32"/>
+<area shape="rect" id="Node000108" href="$sdcard__spi__internal_8h.html" title="Interface for issuing commands on sd&#45;cards via SPI." alt="" coords="10807,208,10952,269"/>
+<area shape="poly" id="edge132_Node000001_Node000108" title=" " alt="" coords="6551,27,7445,32,8814,45,9497,54,10084,65,10504,79,10628,87,10684,96,10703,109,10713,125,10721,141,10736,158,10772,183,10811,205,10808,209,10769,188,10732,162,10717,144,10708,128,10699,113,10682,100,10628,92,10504,85,10084,71,9497,59,8814,50,7445,38,6551,32"/>
+<area shape="rect" id="Node000109" href="$soft__spi_8h.html" title="Software SPI port descriptor definition." alt="" coords="10746,106,10892,151"/>
+<area shape="poly" id="edge114_Node000001_Node000109" title=" " alt="" coords="6551,26,7395,27,8703,34,9377,43,9980,55,10451,72,10617,83,10728,95,10761,103,10760,108,10727,101,10617,88,10450,78,9980,60,9376,48,8703,40,7395,32,6551,32"/>
+<area shape="rect" id="Node000111" href="$sx126x_8h.html" title=" " alt="" coords="10917,115,11098,143"/>
+<area shape="poly" id="edge116_Node000001_Node000111" title=" " alt="" coords="6551,26,7426,28,8790,36,9493,44,10123,57,10615,73,10790,84,10905,95,10971,112,10970,117,10904,101,10789,89,10615,79,10123,62,9493,50,8790,41,7426,33,6551,32"/>
+<area shape="rect" id="Node000114" href="$sx127x_8h.html" title="Public interface for SX127X driver." alt="" coords="11121,115,11302,143"/>
+<area shape="poly" id="edge119_Node000001_Node000114" title=" " alt="" coords="6551,26,7462,27,8891,34,9628,43,10290,55,10806,72,10989,83,11110,95,11176,112,11175,117,11110,101,10989,88,10806,78,10289,60,9628,48,8891,40,7462,32,6551,32"/>
+<area shape="rect" id="Node000118" href="$sx1280_8h.html" title=" " alt="" coords="11325,115,11506,143"/>
+<area shape="poly" id="edge123_Node000001_Node000118" title=" " alt="" coords="6550,26,7497,26,8990,33,9762,41,10455,54,10996,71,11188,83,11314,95,11380,112,11379,117,11314,101,11187,88,10996,77,10454,59,9762,46,8990,38,7497,32,6550,31"/>
+<area shape="rect" id="Node000120" href="$w5100_8h.html" title="Interface definition for the W5100 device driver." alt="" coords="11530,115,11706,143"/>
+<area shape="poly" id="edge125_Node000001_Node000120" title=" " alt="" coords="6550,26,7532,25,9090,31,9896,39,10620,52,11186,70,11386,82,11518,95,11583,112,11582,117,11518,101,11385,87,11185,76,10620,57,9896,45,9090,37,7532,31,6550,31"/>
+<area shape="rect" id="Node000121" href="$w5500_8h.html" title="Interface definition for the W5500 device driver." alt="" coords="11730,115,11906,143"/>
+<area shape="poly" id="edge126_Node000001_Node000121" title=" " alt="" coords="6551,27,7615,34,9296,47,10897,68,11448,81,11624,88,11718,95,11783,112,11782,117,11718,101,11624,93,11448,86,10897,74,9296,53,7615,39,6551,32"/>
+<area shape="rect" id="Node000122" href="$io1__xplained__internals_8h.html" title="Internal addresses, constants for the IO1 Xplained extension." alt="" coords="11930,98,12090,160"/>
+<area shape="poly" id="edge127_Node000001_Node000122" title=" " alt="" coords="6551,27,7650,32,9398,45,11063,66,11638,80,11820,87,11918,95,11931,98,11930,103,11918,101,11820,93,11637,85,11063,71,9397,51,7650,38,6551,32"/>
+<area shape="rect" id="Node000123" href="$kw2xrf__spi_8h.html" title="Definition of KW2XRF SPI functions." alt="" coords="12114,106,12280,151"/>
+<area shape="poly" id="edge129_Node000001_Node000123" title=" " alt="" coords="6550,27,7682,32,9490,45,11216,66,11811,80,12001,87,12102,95,12137,103,12136,109,12102,101,12000,92,11811,85,11216,71,9490,51,7682,38,6550,32"/>
+<area shape="rect" id="Node000124" href="$mfrc522__params_8h.html" title="Default configuration for the MFRC522 controller." alt="" coords="12304,106,12479,151"/>
+<area shape="poly" id="edge130_Node000001_Node000124" title=" " alt="" coords="6550,27,7716,32,9586,45,11373,66,11990,80,12186,87,12292,95,12328,103,12327,109,12291,101,12186,93,11990,85,11373,72,9586,51,7716,38,6550,32"/>
+<area shape="rect" id="Node000125" href="$hal__spi_8h.html" title="SPI abstraction layer RIOT adaption." alt="" coords="12504,106,12690,151"/>
+<area shape="poly" id="edge133_Node000001_Node000125" title=" " alt="" coords="6550,27,7752,33,9687,46,11539,67,12179,80,12382,87,12492,95,12530,103,12529,109,12491,101,12382,93,12179,85,11539,72,9687,51,7752,38,6550,32"/>
+<area shape="rect" id="Node000126" href="$spiport_8hpp.html" title="Definition of the Arduino &#39;SPI&#39; interface." alt="" coords="12714,106,12861,151"/>
+<area shape="poly" id="edge134_Node000001_Node000126" title=" " alt="" coords="6551,27,7790,30,9795,41,10819,50,11715,62,12378,77,12589,86,12702,95,12734,103,12733,109,12702,101,12589,91,12378,82,11715,67,10819,55,9795,46,7790,36,6551,32"/>
+<area shape="rect" id="Node000006" href="$fancy__leds_8h.html" title="LED extended functions." alt="" coords="5,216,183,261"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="731,158,710,162,632,175,566,181,452,186,338,190,272,197,195,210,161,218,160,213,193,205,271,192,338,185,452,180,565,176,632,169,710,157,730,153"/>
+<area shape="rect" id="Node000008" href="$common_2slwstk6000b_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="206,216,419,261"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="948,158,924,162,786,180,677,186,569,192,432,210,393,218,392,213,431,205,569,187,677,181,785,175,923,157,947,152"/>
+<area shape="rect" id="Node000010" href="$e180-zg120b-tb_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="443,216,633,261"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1177,159,1161,162,1083,176,1017,184,903,189,789,192,723,198,645,210,610,218,609,213,644,205,722,193,789,187,903,183,1017,179,1083,171,1160,157,1175,153"/>
+<area shape="rect" id="Node000012" href="$ikea-tradfri_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="657,216,830,261"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="1352,159,1339,162,1264,176,1200,184,1091,188,981,192,917,198,843,210,810,218,809,213,841,205,916,193,981,186,1090,183,1200,179,1263,171,1337,157,1351,154"/>
+<area shape="rect" id="Node000014" href="$omote_2include_2adc__params_8h.html" title="Board specific configuration of direct mapped ADC in omote." alt="" coords="854,216,1016,261"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="1520,158,1504,162,1432,175,1371,182,1266,186,1161,191,1101,198,1029,210,998,218,997,213,1028,205,1100,192,1161,185,1266,181,1371,177,1431,170,1503,157,1519,153"/>
+<area shape="rect" id="Node000015" href="$omote_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="1041,216,1203,261"/>
+<area shape="poly" id="edge14_Node000013_Node000015" title=" " alt="" coords="1518,159,1504,162,1423,178,1360,186,1296,194,1216,210,1187,218,1186,213,1215,205,1295,189,1359,181,1422,173,1503,157,1517,153"/>
+<area shape="rect" id="Node000017" href="$slstk3400a_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="1228,216,1419,261"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="1708,158,1691,162,1561,186,1432,210,1400,218,1399,213,1431,205,1560,181,1689,157,1707,153"/>
+<area shape="rect" id="Node000019" href="$slstk3401a_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="1444,216,1635,261"/>
+<area shape="poly" id="edge18_Node000018_Node000019" title=" " alt="" coords="1924,158,1907,162,1777,186,1648,210,1616,218,1615,213,1647,205,1776,181,1905,157,1923,153"/>
+<area shape="rect" id="Node000021" href="$slstk3402a_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="1660,216,1851,261"/>
+<area shape="poly" id="edge20_Node000020_Node000021" title=" " alt="" coords="2140,158,2123,162,1993,186,1864,210,1832,218,1831,213,1863,205,1992,181,2121,157,2139,153"/>
+<area shape="rect" id="Node000023" href="$slstk3701a_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="1876,216,2067,261"/>
+<area shape="poly" id="edge22_Node000022_Node000023" title=" " alt="" coords="2356,158,2339,162,2209,186,2080,210,2048,218,2047,213,2079,205,2208,181,2337,157,2355,153"/>
+<area shape="rect" id="Node000025" href="$sltb001a_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="2091,216,2268,261"/>
+<area shape="poly" id="edge24_Node000024_Node000025" title=" " alt="" coords="2570,158,2555,162,2478,178,2417,186,2357,195,2280,210,2250,218,2248,213,2279,205,2356,190,2416,181,2477,172,2553,157,2569,153"/>
+<area shape="rect" id="Node000027" href="$sltb009a_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="2291,216,2468,261"/>
+<area shape="poly" id="edge26_Node000026_Node000027" title=" " alt="" coords="2770,158,2755,162,2678,178,2617,186,2557,195,2480,210,2450,218,2448,213,2479,205,2556,190,2616,181,2677,172,2753,157,2769,153"/>
+<area shape="rect" id="Node000029" href="$slwstk6220a_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="2492,216,2664,261"/>
+<area shape="poly" id="edge28_Node000028_Node000029" title=" " alt="" coords="2968,159,2955,162,2877,179,2815,187,2754,195,2676,210,2646,218,2645,213,2675,205,2753,190,2814,182,2876,173,2953,157,2967,153"/>
+<area shape="rect" id="Node000031" href="$stk3200_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="2688,216,2860,261"/>
+<area shape="poly" id="edge30_Node000030_Node000031" title=" " alt="" coords="3146,158,3131,162,3058,178,3001,186,2944,195,2872,210,2842,218,2841,213,2871,205,2943,190,3000,181,3057,172,3129,157,3144,153"/>
+<area shape="rect" id="Node000033" href="$stk3600_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="2884,216,3056,261"/>
+<area shape="poly" id="edge32_Node000032_Node000033" title=" " alt="" coords="3342,158,3327,162,3254,178,3197,186,3140,195,3068,210,3038,218,3037,213,3067,205,3139,190,3196,181,3253,172,3325,157,3340,153"/>
+<area shape="rect" id="Node000035" href="$stk3700_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="3080,216,3252,261"/>
+<area shape="poly" id="edge34_Node000034_Node000035" title=" " alt="" coords="3538,158,3523,162,3450,178,3393,186,3336,195,3264,210,3234,218,3233,213,3263,205,3335,190,3392,181,3449,172,3521,157,3536,153"/>
+<area shape="rect" id="Node000038" href="$cc110x__internal_8h.html" title="Internal functions of the CC110x transceiver driver." alt="" coords="3288,326,3455,370"/>
+<area shape="poly" id="edge37_Node000037_Node000038" title=" " alt="" coords="3374,277,3374,325,3369,325,3369,277"/>
+<area shape="rect" id="Node000041" href="$at25xxx__params_8h.html" title="Default configuration for the M95M01 EEPROM." alt="" coords="3491,216,3665,261"/>
+<area shape="poly" id="edge40_Node000040_Node000041" title=" " alt="" coords="4398,150,4346,162,4245,177,4159,184,4012,186,3865,188,3779,195,3679,210,3644,218,3643,213,3677,205,3778,190,3865,182,4012,180,4159,179,4245,172,4346,157,4397,145"/>
+<area shape="rect" id="Node000042" href="$at25xxx_2mtd_8h.html" title="Interface definition for at25xxx MTD wrapper." alt="" coords="3690,216,3864,261"/>
+<area shape="poly" id="edge41_Node000040_Node000042" title=" " alt="" coords="4397,150,4347,162,4222,181,4124,188,4026,194,3901,210,3862,218,3861,213,3900,205,4025,189,4123,182,4221,176,4345,157,4396,145"/>
+<area shape="poly" id="edge42_Node000042_Node000042" title=" " alt="" coords="3880,222,3888,229,3890,239,3883,253,3865,260,3863,255,3880,249,3885,238,3883,232,3877,226"/>
+<area shape="rect" id="Node000044" href="$at86rf215__internal_8h.html" title="Low&#45;Level functions for the AT86RF215 driver." alt="" coords="3912,216,4097,261"/>
+<area shape="poly" id="edge44_Node000043_Node000044" title=" " alt="" coords="4611,150,4557,162,4432,180,4333,186,4234,192,4109,210,4075,218,4074,213,4108,205,4234,187,4332,180,4431,175,4556,157,4610,145"/>
+<area shape="rect" id="Node000045" href="$at86rf215__params_8h.html" title="Default configuration for the AT86RF215 driver." alt="" coords="4120,216,4305,261"/>
+<area shape="poly" id="edge45_Node000043_Node000045" title=" " alt="" coords="4607,150,4557,162,4437,186,4317,210,4286,218,4285,213,4316,205,4436,181,4556,157,4606,145"/>
+<area shape="rect" id="Node000047" href="$at86rf2xx__aes_8h.html" title="The extended feature set of at86rf2xx transceivers comprises a hardware implementation of AES." alt="" coords="4328,216,4513,261"/>
+<area shape="poly" id="edge47_Node000046_Node000047" title=" " alt="" coords="4828,150,4779,162,4655,186,4532,210,4500,218,4498,213,4531,205,4654,181,4777,157,4826,145"/>
+<area shape="rect" id="Node000048" href="$at86rf2xx__internal_8h.html" title="Internal interfaces for AT86RF2xx drivers." alt="" coords="4626,326,4810,370"/>
+<area shape="poly" id="edge48_Node000046_Node000048" title=" " alt="" coords="4826,150,4779,162,4746,168,4717,169,4665,168,4641,169,4620,175,4598,188,4577,209,4569,224,4566,238,4570,252,4578,268,4591,286,4608,300,4647,323,4644,328,4605,305,4587,289,4573,271,4565,254,4561,238,4564,222,4573,206,4595,184,4618,170,4641,164,4664,162,4717,164,4746,163,4777,157,4825,145"/>
+<area shape="rect" id="Node000049" href="$at86rf2xx__params_8h.html" title="Default configuration for the AT86RF2xx driver." alt="" coords="4587,216,4772,261"/>
+<area shape="poly" id="edge49_Node000046_Node000049" title=" " alt="" coords="4850,153,4722,218,4720,213,4847,148"/>
+<area shape="rect" id="Node000050" href="$at86rf2xx__registers_8h.html" title="Register and command definitions for AT86RF2xx devices." alt="" coords="4795,216,4980,261"/>
+<area shape="poly" id="edge50_Node000046_Node000050" title=" " alt="" coords="4890,158,4890,216,4885,216,4885,158"/>
+<area shape="poly" id="edge51_Node000050_Node000048" title=" " alt="" coords="4842,272,4754,327,4751,323,4839,267"/>
+<area shape="rect" id="Node000052" href="$ata8520e__params_8h.html" title="Default initialization parameters for the ATA8520E device." alt="" coords="5004,216,5186,261"/>
+<area shape="poly" id="edge53_Node000051_Node000052" title=" " alt="" coords="5121,158,5104,217,5099,215,5116,157"/>
+<area shape="rect" id="Node000054" href="$atwinc15x0__internal_8h.html" title="Internal definitions for the ATWINC15x0 WiFi netdev driver." alt="" coords="5210,208,5362,269"/>
+<area shape="poly" id="edge55_Node000053_Node000054" title=" " alt="" coords="5461,153,5347,209,5345,205,5458,148"/>
+<area shape="rect" id="Node000056" href="$bme680__params_8h.html" title="Default configuration for BME680 device driver." alt="" coords="5386,216,5560,261"/>
+<area shape="poly" id="edge57_Node000055_Node000056" title=" " alt="" coords="5742,151,5539,218,5537,213,5741,145"/>
+<area shape="rect" id="Node000058" href="$mcp2515__params_8h.html" title="Parameters for the CAN driver implementation." alt="" coords="5583,216,5765,261"/>
+<area shape="poly" id="edge59_Node000057_Node000058" title=" " alt="" coords="5948,159,5748,218,5746,213,5946,154"/>
+<area shape="rect" id="Node000059" href="$mcp2515_8h.html" title="Driver for the Microchip MCP2515 can controller." alt="" coords="5788,225,5994,252"/>
+<area shape="poly" id="edge60_Node000057_Node000059" title=" " alt="" coords="5994,163,5910,226,5907,222,5991,159"/>
+<area shape="rect" id="Node000060" href="$mcp2515__spi_8h.html" title="Driver for the Microchip MCP2515 can controller." alt="" coords="6018,216,6212,261"/>
+<area shape="poly" id="edge61_Node000057_Node000060" title=" " alt="" coords="6062,162,6101,214,6097,217,6058,166"/>
+<area shape="poly" id="edge63_Node000061_Node000037" title=" " alt="" coords="4193,150,4144,162,4043,177,3958,185,3812,187,3665,189,3580,196,3480,210,3443,218,3442,213,3479,205,3579,191,3665,184,3811,182,3958,180,4043,172,4143,157,4192,145"/>
+<area shape="rect" id="Node000063" href="$cc2420__internal_8h.html" title="Definitions and settings for the cc2420." alt="" coords="6237,216,6404,261"/>
+<area shape="poly" id="edge65_Node000062_Node000063" title=" " alt="" coords="6269,154,6309,214,6304,217,6265,157"/>
+<area shape="rect" id="Node000064" href="$cc2420__params_8h.html" title="Default configuration for the CC2420 driver." alt="" coords="6429,216,6596,261"/>
+<area shape="poly" id="edge66_Node000062_Node000064" title=" " alt="" coords="6297,146,6461,213,6459,218,6295,151"/>
+<area shape="rect" id="Node000066" href="$ds3234__params_8h.html" title="Default configuration for DS3234 devices." alt="" coords="6620,216,6789,261"/>
+<area shape="poly" id="edge68_Node000065_Node000066" title=" " alt="" coords="6500,147,6655,213,6653,218,6498,152"/>
+<area shape="rect" id="Node000069" href="$encx24j600__params_8h.html" title="Default configuration for the ENCX24J600 Ethernet driver." alt="" coords="6813,208,6964,269"/>
+<area shape="poly" id="edge71_Node000068_Node000069" title=" " alt="" coords="6891,158,6891,207,6886,207,6886,158"/>
+<area shape="rect" id="Node000071" href="$epd__bw__spi__params_8h.html" title="Default configuration for epd_bw_spi." alt="" coords="6988,208,7141,269"/>
+<area shape="poly" id="edge73_Node000070_Node000071" title=" " alt="" coords="7084,167,7074,208,7069,206,7079,166"/>
+<area shape="rect" id="Node000073" href="$kw2xrf__getset_8h.html" title="get/set interfaces for kw2xrf driver" alt="" coords="7166,216,7332,261"/>
+<area shape="poly" id="edge75_Node000072_Node000073" title=" " alt="" coords="7345,155,7274,218,7271,214,7341,151"/>
+<area shape="rect" id="Node000074" href="$kw2xrf__tm_8h.html" title="Testing interfaces for kw2xrf driver." alt="" coords="7226,326,7392,370"/>
+<area shape="poly" id="edge79_Node000072_Node000074" title=" " alt="" coords="7368,158,7360,211,7346,270,7322,327,7317,325,7341,269,7355,210,7363,158"/>
+<area shape="rect" id="Node000075" href="$kw2xrf__intern_8h.html" title="Internal function interfaces for kw2xrf driver." alt="" coords="7406,216,7572,261"/>
+<area shape="poly" id="edge77_Node000072_Node000075" title=" " alt="" coords="7396,151,7466,214,7463,218,7393,155"/>
+<area shape="rect" id="Node000076" href="$kw2xrf__params_8h.html" title="Default configuration for the KW2XRF driver." alt="" coords="7596,216,7762,261"/>
+<area shape="poly" id="edge78_Node000072_Node000076" title=" " alt="" coords="7422,146,7618,213,7616,218,7420,151"/>
+<area shape="poly" id="edge76_Node000073_Node000074" title=" " alt="" coords="7271,273,7299,324,7294,327,7266,276"/>
+<area shape="rect" id="Node000078" href="$l3gxxxx__params_8h.html" title="Default configuration for ST L3Gxxxx 3&#45;axis gyroscope sensor family." alt="" coords="7786,216,7959,261"/>
+<area shape="poly" id="edge81_Node000077_Node000078" title=" " alt="" coords="7756,150,7844,214,7841,218,7753,154"/>
+<area shape="rect" id="Node000080" href="$ili9341__params_8h.html" title="Default configuration for ili9341." alt="" coords="7983,216,8149,261"/>
+<area shape="poly" id="edge83_Node000079_Node000080" title=" " alt="" coords="8069,158,8069,216,8063,216,8063,158"/>
+<area shape="rect" id="Node000081" href="$ili9341_8h.html" title=" " alt="" coords="8173,225,8351,252"/>
+<area shape="poly" id="edge84_Node000079_Node000081" title=" " alt="" coords="8104,148,8240,222,8237,227,8102,153"/>
+<area shape="rect" id="Node000082" href="$st77xx_8h.html" title=" " alt="" coords="8375,225,8552,252"/>
+<area shape="poly" id="edge85_Node000079_Node000082" title=" " alt="" coords="8118,146,8155,157,8259,182,8364,205,8422,222,8420,227,8363,210,8258,187,8153,162,8116,151"/>
+<area shape="rect" id="Node000083" href="$st77xx__params_8h.html" title="Default configuration for ST77xx LCD controllers." alt="" coords="8577,216,8742,261"/>
+<area shape="poly" id="edge86_Node000079_Node000083" title=" " alt="" coords="8115,146,8155,157,8269,176,8359,182,8450,187,8565,205,8596,213,8595,218,8564,210,8450,192,8359,187,8268,181,8153,162,8113,151"/>
+<area shape="rect" id="Node000085" href="$lis3dh__params_8h.html" title="Default configuration for LIS3DH devices." alt="" coords="8766,216,8926,261"/>
+<area shape="poly" id="edge88_Node000084_Node000085" title=" " alt="" coords="8306,145,8352,157,8464,175,8553,180,8642,186,8755,205,8785,213,8783,218,8753,210,8641,192,8553,186,8464,180,8351,162,8304,150"/>
+<area shape="rect" id="Node000087" href="$max31855__params_8h.html" title="Default configuration for the MAX31855 driver." alt="" coords="8951,216,9141,261"/>
+<area shape="poly" id="edge90_Node000086_Node000087" title=" " alt="" coords="8525,145,8579,157,8679,173,8758,181,8838,188,8939,205,8973,213,8971,218,8937,210,8837,194,8758,186,8678,178,8577,162,8524,150"/>
+<area shape="rect" id="Node000090" href="$mrf24j40__internal_8h.html" title="Internal interfaces for MRF24J40 drivers." alt="" coords="9165,216,9346,261"/>
+<area shape="poly" id="edge93_Node000089_Node000090" title=" " alt="" coords="8956,145,9183,213,9182,218,8954,150"/>
+<area shape="rect" id="Node000091" href="$mrf24j40__params_8h.html" title="Default configuration for the MRF24J40 driver." alt="" coords="9369,216,9550,261"/>
+<area shape="poly" id="edge94_Node000089_Node000091" title=" " alt="" coords="8955,145,9005,157,9104,173,9182,181,9260,188,9359,205,9391,213,9390,218,9357,210,9259,193,9181,186,9103,179,9004,162,8953,150"/>
+<area shape="rect" id="Node000095" href="$nrf24l01p__ng__communication_8h.html" title="Functions to communicate with the NRF24L01+ (NG) transceiver via SPI." alt="" coords="9573,208,9735,269"/>
+<area shape="poly" id="edge98_Node000094_Node000095" title=" " alt="" coords="9710,158,9676,209,9671,206,9705,155"/>
+<area shape="rect" id="Node000096" href="$nrf24l01p__ng__registers_8h.html" title="Register map of NRF24L01+ (NG) devices." alt="" coords="9632,317,9793,379"/>
+<area shape="poly" id="edge104_Node000094_Node000096" title=" " alt="" coords="9738,157,9750,209,9753,240,9750,270,9732,318,9727,316,9745,269,9748,239,9745,210,9732,158"/>
+<area shape="rect" id="Node000097" href="$nrf24l01p__ng__constants_8h.html" title="Constants from the datasheet of the NRF24L01+ (NG) transceiver." alt="" coords="9811,208,9972,269"/>
+<area shape="poly" id="edge100_Node000094_Node000097" title=" " alt="" coords="9759,149,9846,205,9843,209,9756,154"/>
+<area shape="poly" id="edge103_Node000094_Node000098" title=" " alt="" coords="9795,144,9913,176,9961,192,9986,206,10003,232,10012,261,10016,317,10010,317,10007,262,9998,234,9983,210,9959,197,9911,181,9793,149"/>
+<area shape="rect" id="Node000099" href="$nrf24l01p__ng__diagnostics_8h.html" title="Functions to print NRF24L01+ (NG) debug information." alt="" coords="10048,208,10209,269"/>
+<area shape="poly" id="edge102_Node000094_Node000099" title=" " alt="" coords="9794,144,10029,205,10048,210,10047,215,10028,210,9793,149"/>
+<area shape="rect" id="Node000100" href="$nrf24l01p__ng__states_8h.html" title="Operation states of NRF24L01+ (NG) devices." alt="" coords="10233,208,10395,269"/>
+<area shape="poly" id="edge105_Node000094_Node000100" title=" " alt="" coords="9791,144,9853,157,9957,172,10038,178,10119,186,10223,205,10234,208,10232,213,10221,210,10119,192,10038,184,9956,177,9852,162,9790,149"/>
+<area shape="poly" id="edge99_Node000095_Node000096" title=" " alt="" coords="9680,282,9699,316,9694,318,9675,284"/>
+<area shape="poly" id="edge101_Node000097_Node000098" title=" " alt="" coords="9937,278,9978,315,9975,319,9934,282"/>
+<area shape="rect" id="Node000105" href="$io1__xplained_8h.html" title="Device driver interface for the Atmel IO1 Xplained extension." alt="" coords="10470,216,10611,261"/>
+<area shape="poly" id="edge110_Node000104_Node000105" title=" " alt="" coords="10575,167,10553,217,10548,214,10570,164"/>
+<area shape="rect" id="Node000107" href="$mtd__sdcard_8h.html" title="Interface definition for the mtd_sdcard driver." alt="" coords="10635,216,10782,261"/>
+<area shape="poly" id="edge112_Node000104_Node000107" title=" " alt="" coords="10626,160,10686,214,10683,218,10623,164"/>
+<area shape="poly" id="edge113_Node000104_Node000108" title=" " alt="" coords="10662,154,10807,208,10805,213,10660,159"/>
+<area shape="rect" id="Node000106" href="$io1__xplained__params_8h.html" title="Default configuration for IO1 Xplained." alt="" coords="11373,317,11532,379"/>
+<area shape="poly" id="edge111_Node000105_Node000106" title=" " alt="" coords="10610,263,10624,267,10728,287,10834,303,11044,326,11231,338,11373,343,11373,349,11231,344,11043,332,10833,309,10727,292,10623,272,10609,268"/>
+<area shape="rect" id="Node000110" href="$soft__spi__params_8h.html" title="Software SPI configuration." alt="" coords="10976,216,11148,261"/>
+<area shape="poly" id="edge115_Node000109_Node000110" title=" " alt="" coords="10883,156,11014,213,11012,218,10881,160"/>
+<area shape="rect" id="Node000112" href="$sx126x__internal_8h.html" title=" " alt="" coords="11172,216,11341,261"/>
+<area shape="poly" id="edge117_Node000111_Node000112" title=" " alt="" coords="11053,147,11207,213,11205,218,11051,152"/>
+<area shape="rect" id="Node000113" href="$sx126x__params_8h.html" title="Default configuration." alt="" coords="11364,216,11533,261"/>
+<area shape="poly" id="edge118_Node000111_Node000113" title=" " alt="" coords="11064,145,11109,157,11231,181,11285,190,11353,205,11382,213,11381,218,11352,210,11284,195,11230,186,11108,162,11063,150"/>
+<area shape="rect" id="Node000115" href="$boards_2nz32-sc151_2include_2sx127x__params_8h.html" title="sx127x configuration for nz32&#45;sc15 using modtronix inAir9 LoRa module" alt="" coords="11557,216,11751,261"/>
+<area shape="poly" id="edge120_Node000114_Node000115" title=" " alt="" coords="11269,145,11313,157,11429,181,11545,205,11577,213,11576,218,11544,210,11428,187,11312,162,11267,150"/>
+<area shape="rect" id="Node000116" href="$sx127x__internal_8h.html" title="Semtech SX127X internal functions." alt="" coords="11775,216,11944,261"/>
+<area shape="poly" id="edge121_Node000114_Node000116" title=" " alt="" coords="11266,145,11313,157,11439,175,11538,180,11638,186,11764,205,11796,213,11795,218,11763,210,11637,191,11538,186,11438,181,11312,162,11264,150"/>
+<area shape="rect" id="Node000117" href="$drivers_2sx127x_2include_2sx127x__params_8h.html" title="Default configuration for SX127X driver." alt="" coords="11967,216,12136,261"/>
+<area shape="poly" id="edge122_Node000114_Node000117" title=" " alt="" coords="11264,145,11313,157,11410,172,11493,179,11634,180,11776,182,11859,190,11956,205,11989,213,11988,218,11955,210,11858,195,11776,188,11634,186,11492,184,11409,177,11312,162,11263,150"/>
+<area shape="rect" id="Node000119" href="$sx1280__params_8h.html" title="Default configuration." alt="" coords="12159,216,12328,261"/>
+<area shape="poly" id="edge124_Node000118_Node000119" title=" " alt="" coords="11469,145,11519,157,11613,171,11694,178,11833,180,11972,182,12053,190,12148,205,12181,213,12180,218,12147,210,12052,195,11971,188,11833,185,11694,183,11613,176,11517,162,11468,150"/>
+<area shape="poly" id="edge128_Node000122_Node000106" title=" " alt="" coords="12105,157,12143,162,12177,163,12238,159,12265,161,12291,167,12317,181,12341,206,12352,222,12355,239,12352,255,12341,271,12325,282,12298,292,12220,308,12116,321,11994,331,11739,343,11533,349,11533,343,11739,338,11994,326,12115,316,12219,303,12297,287,12322,277,12337,267,12347,253,12350,239,12347,224,12337,209,12313,186,12289,172,12264,166,12238,165,12177,168,12143,168,12104,162"/>
+</map>

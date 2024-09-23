@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Dynamic Host Configuration Protocol for IPv6 (DHCPv6)</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group__net__dhcpv6.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">Topics</a> &#124;
+<a href="#files">Files</a>  </div>
+  <div class="headertitle"><div class="title">Dynamic Host Configuration Protocol for IPv6 (DHCPv6)<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__ipv6.html">IPv6</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>DHCPv6 definitions  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>DHCPv6 definitions </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__dhcpv6__client.html">DHCPv6 client</a></td></tr>
+<tr class="memdesc:group__net__dhcpv6__client"><td class="mdescLeft">&#160;</td><td class="mdescRight">DHCPv6 client implementation <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__dhcpv6__relay.html">DHCPv6 relay agent</a></td></tr>
+<tr class="memdesc:group__net__dhcpv6__relay"><td class="mdescLeft">&#160;</td><td class="mdescRight">DHCPv6 relay agent implementation <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dhcpv6_8h.html">dhcpv6.h</a></td></tr>
+<tr class="memdesc:dhcpv6_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">DHCPv6 definitions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="__dhcpv6_8h.html">_dhcpv6.h</a></td></tr>
+<tr class="memdesc:__dhcpv6_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal DHCPv6 definitions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">DHCPv6 ports</h2></td></tr>
+<tr><td class="ititle" colspan="2"><dl class="section see"><dt>See also</dt><dd>[RFC 8415, section 7.2] (<a href="https://tools.ietf.org/html/rfc8415#section-7.2">https://tools.ietf.org/html/rfc8415#section-7.2</a>) </dd></dl>
+</td></tr>
+<tr class="memitem:ga6802d48c8c3b96baafb23641a82f43a0" id="r_ga6802d48c8c3b96baafb23641a82f43a0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6802d48c8c3b96baafb23641a82f43a0">DHCPV6_CLIENT_PORT</a>&#160;&#160;&#160;(546U)</td></tr>
+<tr class="memdesc:ga6802d48c8c3b96baafb23641a82f43a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">client port  <br /></td></tr>
+<tr class="separator:ga6802d48c8c3b96baafb23641a82f43a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab2fd1889bb669d854b61d4a5fee3e3ec" id="r_gab2fd1889bb669d854b61d4a5fee3e3ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab2fd1889bb669d854b61d4a5fee3e3ec">DHCPV6_SERVER_PORT</a>&#160;&#160;&#160;(547U)</td></tr>
+<tr class="memdesc:gab2fd1889bb669d854b61d4a5fee3e3ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">server and relay agent port  <br /></td></tr>
+<tr class="separator:gab2fd1889bb669d854b61d4a5fee3e3ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">DHCPv6 message types</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="net_dhcp6_msg_types"></a> </p><dl class="section see"><dt>See also</dt><dd>[RFC 8415, section 7.3] (<a href="https://tools.ietf.org/html/rfc8415#section-7.3">https://tools.ietf.org/html/rfc8415#section-7.3</a>) </dd></dl>
+</td></tr>
+<tr class="memitem:gaee68ec3e698ac4504d12016c0f4a548c" id="r_gaee68ec3e698ac4504d12016c0f4a548c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaee68ec3e698ac4504d12016c0f4a548c">DHCPV6_SOLICIT</a>&#160;&#160;&#160;(1U)</td></tr>
+<tr class="memdesc:gaee68ec3e698ac4504d12016c0f4a548c"><td class="mdescLeft">&#160;</td><td class="mdescRight">SOLICIT.  <br /></td></tr>
+<tr class="separator:gaee68ec3e698ac4504d12016c0f4a548c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad31ec554f3708558f41084312ace2183" id="r_gad31ec554f3708558f41084312ace2183"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad31ec554f3708558f41084312ace2183">DHCPV6_ADVERTISE</a>&#160;&#160;&#160;(2U)</td></tr>
+<tr class="memdesc:gad31ec554f3708558f41084312ace2183"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADVERTISE.  <br /></td></tr>
+<tr class="separator:gad31ec554f3708558f41084312ace2183"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga44b600c430bc61b6d182a774044fc680" id="r_ga44b600c430bc61b6d182a774044fc680"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga44b600c430bc61b6d182a774044fc680">DHCPV6_REQUEST</a>&#160;&#160;&#160;(3U)</td></tr>
+<tr class="memdesc:ga44b600c430bc61b6d182a774044fc680"><td class="mdescLeft">&#160;</td><td class="mdescRight">REQUEST.  <br /></td></tr>
+<tr class="separator:ga44b600c430bc61b6d182a774044fc680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52394da2ac03602502ec1f06f28b4ef6" id="r_ga52394da2ac03602502ec1f06f28b4ef6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga52394da2ac03602502ec1f06f28b4ef6">DHCPV6_CONFIRM</a>&#160;&#160;&#160;(4U)</td></tr>
+<tr class="memdesc:ga52394da2ac03602502ec1f06f28b4ef6"><td class="mdescLeft">&#160;</td><td class="mdescRight">CONFIRM.  <br /></td></tr>
+<tr class="separator:ga52394da2ac03602502ec1f06f28b4ef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26c378e5dd8b087b14bd7981db9d7c1e" id="r_ga26c378e5dd8b087b14bd7981db9d7c1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga26c378e5dd8b087b14bd7981db9d7c1e">DHCPV6_RENEW</a>&#160;&#160;&#160;(5U)</td></tr>
+<tr class="memdesc:ga26c378e5dd8b087b14bd7981db9d7c1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">RENEW.  <br /></td></tr>
+<tr class="separator:ga26c378e5dd8b087b14bd7981db9d7c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad64bfd4c528dcf4eeae2eaaefe7b5071" id="r_gad64bfd4c528dcf4eeae2eaaefe7b5071"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad64bfd4c528dcf4eeae2eaaefe7b5071">DHCPV6_REBIND</a>&#160;&#160;&#160;(6U)</td></tr>
+<tr class="memdesc:gad64bfd4c528dcf4eeae2eaaefe7b5071"><td class="mdescLeft">&#160;</td><td class="mdescRight">REBIND.  <br /></td></tr>
+<tr class="separator:gad64bfd4c528dcf4eeae2eaaefe7b5071"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga46f7ba9bbbbad540193a360465629bc8" id="r_ga46f7ba9bbbbad540193a360465629bc8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga46f7ba9bbbbad540193a360465629bc8">DHCPV6_REPLY</a>&#160;&#160;&#160;(7U)</td></tr>
+<tr class="memdesc:ga46f7ba9bbbbad540193a360465629bc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">REPLY.  <br /></td></tr>
+<tr class="separator:ga46f7ba9bbbbad540193a360465629bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad7fa2ac61fc3b33c2600665055414a9d" id="r_gad7fa2ac61fc3b33c2600665055414a9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad7fa2ac61fc3b33c2600665055414a9d">DHCPV6_RELEASE</a>&#160;&#160;&#160;(8U)</td></tr>
+<tr class="memdesc:gad7fa2ac61fc3b33c2600665055414a9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">RELEASE.  <br /></td></tr>
+<tr class="separator:gad7fa2ac61fc3b33c2600665055414a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga06981f15007daccd17cf444798bafbbe" id="r_ga06981f15007daccd17cf444798bafbbe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga06981f15007daccd17cf444798bafbbe">DHCPV6_DECLINE</a>&#160;&#160;&#160;(9U)</td></tr>
+<tr class="memdesc:ga06981f15007daccd17cf444798bafbbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">DECLINE.  <br /></td></tr>
+<tr class="separator:ga06981f15007daccd17cf444798bafbbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c20152b3f497ba838ce9cd6a184f87a" id="r_ga6c20152b3f497ba838ce9cd6a184f87a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6c20152b3f497ba838ce9cd6a184f87a">DHCPV6_INFO_REQUEST</a>&#160;&#160;&#160;(11U)</td></tr>
+<tr class="memdesc:ga6c20152b3f497ba838ce9cd6a184f87a"><td class="mdescLeft">&#160;</td><td class="mdescRight">INFORMATION-REQUEST.  <br /></td></tr>
+<tr class="separator:ga6c20152b3f497ba838ce9cd6a184f87a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga477975d742772b166f765d10969dc92e" id="r_ga477975d742772b166f765d10969dc92e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga477975d742772b166f765d10969dc92e">DHCPV6_RELAY_FORW</a>&#160;&#160;&#160;(12U)</td></tr>
+<tr class="memdesc:ga477975d742772b166f765d10969dc92e"><td class="mdescLeft">&#160;</td><td class="mdescRight">RELAY-FORW.  <br /></td></tr>
+<tr class="separator:ga477975d742772b166f765d10969dc92e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1e4bdff933f5bebc7b5865f7e34ad9f0" id="r_ga1e4bdff933f5bebc7b5865f7e34ad9f0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1e4bdff933f5bebc7b5865f7e34ad9f0">DHCPV6_RELAY_REPL</a>&#160;&#160;&#160;(13U)</td></tr>
+<tr class="memdesc:ga1e4bdff933f5bebc7b5865f7e34ad9f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">RELAY-REPL.  <br /></td></tr>
+<tr class="separator:ga1e4bdff933f5bebc7b5865f7e34ad9f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">DHCPv6 option codes</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="net_dhcp6_opt_codes"></a> </p><dl class="section see"><dt>See also</dt><dd>[RFC 8415, section 21] (<a href="https://tools.ietf.org/html/rfc8415#section-21">https://tools.ietf.org/html/rfc8415#section-21</a>) </dd></dl>
+</td></tr>
+<tr class="memitem:gacb1d3f3bb72f411b1a51657398295732" id="r_gacb1d3f3bb72f411b1a51657398295732"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacb1d3f3bb72f411b1a51657398295732">DHCPV6_OPT_CID</a>&#160;&#160;&#160;(1U)</td></tr>
+<tr class="memdesc:gacb1d3f3bb72f411b1a51657398295732"><td class="mdescLeft">&#160;</td><td class="mdescRight">client identifier option  <br /></td></tr>
+<tr class="separator:gacb1d3f3bb72f411b1a51657398295732"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5766fa32fc50a08f44d2d4728cb90880" id="r_ga5766fa32fc50a08f44d2d4728cb90880"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5766fa32fc50a08f44d2d4728cb90880">DHCPV6_OPT_SID</a>&#160;&#160;&#160;(2U)</td></tr>
+<tr class="memdesc:ga5766fa32fc50a08f44d2d4728cb90880"><td class="mdescLeft">&#160;</td><td class="mdescRight">server identifier option  <br /></td></tr>
+<tr class="separator:ga5766fa32fc50a08f44d2d4728cb90880"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2df297ded2a2d5a8a80927738bd3021d" id="r_ga2df297ded2a2d5a8a80927738bd3021d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2df297ded2a2d5a8a80927738bd3021d">DHCPV6_OPT_IA_NA</a>&#160;&#160;&#160;(3U)</td></tr>
+<tr class="memdesc:ga2df297ded2a2d5a8a80927738bd3021d"><td class="mdescLeft">&#160;</td><td class="mdescRight">identity association for non-temporary addresses option  <br /></td></tr>
+<tr class="separator:ga2df297ded2a2d5a8a80927738bd3021d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga30bc3674ef4d0f84bca1a5ab8e432b9f" id="r_ga30bc3674ef4d0f84bca1a5ab8e432b9f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga30bc3674ef4d0f84bca1a5ab8e432b9f">DHCPV6_OPT_IAADDR</a>&#160;&#160;&#160;(5U)</td></tr>
+<tr class="memdesc:ga30bc3674ef4d0f84bca1a5ab8e432b9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">IA address option.  <br /></td></tr>
+<tr class="separator:ga30bc3674ef4d0f84bca1a5ab8e432b9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf8a741f0bbfe033df61cadad4fde30f3" id="r_gaf8a741f0bbfe033df61cadad4fde30f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf8a741f0bbfe033df61cadad4fde30f3">DHCPV6_OPT_ORO</a>&#160;&#160;&#160;(6U)</td></tr>
+<tr class="memdesc:gaf8a741f0bbfe033df61cadad4fde30f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">option request option  <br /></td></tr>
+<tr class="separator:gaf8a741f0bbfe033df61cadad4fde30f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaca65357b8ec33276f6c66a45d5350e6e" id="r_gaca65357b8ec33276f6c66a45d5350e6e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaca65357b8ec33276f6c66a45d5350e6e">DHCPV6_OPT_PREF</a>&#160;&#160;&#160;(7U)</td></tr>
+<tr class="memdesc:gaca65357b8ec33276f6c66a45d5350e6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">preference option  <br /></td></tr>
+<tr class="separator:gaca65357b8ec33276f6c66a45d5350e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga04fafeb8769f2e82f39e856972b9f8e1" id="r_ga04fafeb8769f2e82f39e856972b9f8e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga04fafeb8769f2e82f39e856972b9f8e1">DHCPV6_OPT_ELAPSED_TIME</a>&#160;&#160;&#160;(8U)</td></tr>
+<tr class="memdesc:ga04fafeb8769f2e82f39e856972b9f8e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">elapsed time option  <br /></td></tr>
+<tr class="separator:ga04fafeb8769f2e82f39e856972b9f8e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga12f3f2e55561d77be941e84eb3ef6190" id="r_ga12f3f2e55561d77be941e84eb3ef6190"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga12f3f2e55561d77be941e84eb3ef6190">DHCPV6_OPT_RELAY_MSG</a>&#160;&#160;&#160;(9U)</td></tr>
+<tr class="memdesc:ga12f3f2e55561d77be941e84eb3ef6190"><td class="mdescLeft">&#160;</td><td class="mdescRight">relay message option  <br /></td></tr>
+<tr class="separator:ga12f3f2e55561d77be941e84eb3ef6190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga257251a9e0ec0a122436f1c04b35ac14" id="r_ga257251a9e0ec0a122436f1c04b35ac14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga257251a9e0ec0a122436f1c04b35ac14">DHCPV6_OPT_STATUS</a>&#160;&#160;&#160;(13U)</td></tr>
+<tr class="memdesc:ga257251a9e0ec0a122436f1c04b35ac14"><td class="mdescLeft">&#160;</td><td class="mdescRight">status code option  <br /></td></tr>
+<tr class="separator:ga257251a9e0ec0a122436f1c04b35ac14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaddfcfe6772146f0d81c9c928d9ae48e5" id="r_gaddfcfe6772146f0d81c9c928d9ae48e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaddfcfe6772146f0d81c9c928d9ae48e5">DHCPV6_OPT_IID</a>&#160;&#160;&#160;(18U)</td></tr>
+<tr class="memdesc:gaddfcfe6772146f0d81c9c928d9ae48e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">interface-id option  <br /></td></tr>
+<tr class="separator:gaddfcfe6772146f0d81c9c928d9ae48e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf052bfd51621cb5b3076e05e382ad043" id="r_gaf052bfd51621cb5b3076e05e382ad043"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf052bfd51621cb5b3076e05e382ad043">DHCPV6_OPT_DNS_RNS</a>&#160;&#160;&#160;(23U)</td></tr>
+<tr class="memdesc:gaf052bfd51621cb5b3076e05e382ad043"><td class="mdescLeft">&#160;</td><td class="mdescRight">DNS recursive name server option.  <br /></td></tr>
+<tr class="separator:gaf052bfd51621cb5b3076e05e382ad043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa22cdd18ee1a1cfa03296aeac081b1e1" id="r_gaa22cdd18ee1a1cfa03296aeac081b1e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa22cdd18ee1a1cfa03296aeac081b1e1">DHCPV6_OPT_IA_PD</a>&#160;&#160;&#160;(25U)</td></tr>
+<tr class="memdesc:gaa22cdd18ee1a1cfa03296aeac081b1e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">identity association for prefix delegation (IA_PD) option  <br /></td></tr>
+<tr class="separator:gaa22cdd18ee1a1cfa03296aeac081b1e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga41fdbd1b1cbdd6ec64892c5df6af85ef" id="r_ga41fdbd1b1cbdd6ec64892c5df6af85ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga41fdbd1b1cbdd6ec64892c5df6af85ef">DHCPV6_OPT_IAPFX</a>&#160;&#160;&#160;(26U)</td></tr>
+<tr class="memdesc:ga41fdbd1b1cbdd6ec64892c5df6af85ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">IA prefix option.  <br /></td></tr>
+<tr class="separator:ga41fdbd1b1cbdd6ec64892c5df6af85ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaabd0b9b00aeb9c20a0bb155ca2bc5129" id="r_gaabd0b9b00aeb9c20a0bb155ca2bc5129"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaabd0b9b00aeb9c20a0bb155ca2bc5129">DHCPV6_OPT_IRT</a>&#160;&#160;&#160;(32U)</td></tr>
+<tr class="memdesc:gaabd0b9b00aeb9c20a0bb155ca2bc5129"><td class="mdescLeft">&#160;</td><td class="mdescRight">Information Refresh Time Option.  <br /></td></tr>
+<tr class="separator:gaabd0b9b00aeb9c20a0bb155ca2bc5129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga78063d9669ac4038a5d52a5052e7676b" id="r_ga78063d9669ac4038a5d52a5052e7676b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga78063d9669ac4038a5d52a5052e7676b">DHCPV6_OPT_SMR</a>&#160;&#160;&#160;(82U)</td></tr>
+<tr class="memdesc:ga78063d9669ac4038a5d52a5052e7676b"><td class="mdescLeft">&#160;</td><td class="mdescRight">SOL_MAX_RT option.  <br /></td></tr>
+<tr class="separator:ga78063d9669ac4038a5d52a5052e7676b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0733b6b9d1cc894ff288802a5bb8fcfb" id="r_ga0733b6b9d1cc894ff288802a5bb8fcfb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0733b6b9d1cc894ff288802a5bb8fcfb">DHCPV6_OPT_IMR</a>&#160;&#160;&#160;(83U)</td></tr>
+<tr class="memdesc:ga0733b6b9d1cc894ff288802a5bb8fcfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">INF_MAX_RT option.  <br /></td></tr>
+<tr class="separator:ga0733b6b9d1cc894ff288802a5bb8fcfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga13df9709e7abe3aa7e1a4727034740ca" id="r_ga13df9709e7abe3aa7e1a4727034740ca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga13df9709e7abe3aa7e1a4727034740ca">DHCPV6_OPT_MUD_URL</a>&#160;&#160;&#160;(112U)</td></tr>
+<tr class="memdesc:ga13df9709e7abe3aa7e1a4727034740ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">MUD URL option (see RFC 8520)  <br /></td></tr>
+<tr class="separator:ga13df9709e7abe3aa7e1a4727034740ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">DHCPv6 status codes</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="net_dhcp6_status_codes"></a> </p><dl class="section see"><dt>See also</dt><dd>[RFC 8415, section 21.13] (<a href="https://tools.ietf.org/html/rfc8415#section-21.13">https://tools.ietf.org/html/rfc8415#section-21.13</a>) </dd></dl>
+</td></tr>
+<tr class="memitem:ga8c4dee89cc4a562d902ba30abedf2abc" id="r_ga8c4dee89cc4a562d902ba30abedf2abc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8c4dee89cc4a562d902ba30abedf2abc">DHCPV6_STATUS_SUCCESS</a>&#160;&#160;&#160;(0U)</td></tr>
+<tr class="memdesc:ga8c4dee89cc4a562d902ba30abedf2abc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Success.  <br /></td></tr>
+<tr class="separator:ga8c4dee89cc4a562d902ba30abedf2abc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">DHCPv6 unique identifier (DUID) types</h2></td></tr>
+<tr><td class="ititle" colspan="2"><dl class="section see"><dt>See also</dt><dd>[RFC 8415, section 11.1] (<a href="https://tools.ietf.org/html/rfc8415#section-11.1">https://tools.ietf.org/html/rfc8415#section-11.1</a>) </dd></dl>
+</td></tr>
+<tr class="memitem:gae3de5e88eed265ebdce1bb95eda2c7d5" id="r_gae3de5e88eed265ebdce1bb95eda2c7d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae3de5e88eed265ebdce1bb95eda2c7d5">DHCPV6_DUID_TYPE_L2</a>&#160;&#160;&#160;(3U)</td></tr>
+<tr class="memdesc:gae3de5e88eed265ebdce1bb95eda2c7d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Link-layer address.  <br /></td></tr>
+<tr class="separator:gae3de5e88eed265ebdce1bb95eda2c7d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="gad31ec554f3708558f41084312ace2183" name="gad31ec554f3708558f41084312ace2183"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad31ec554f3708558f41084312ace2183">&#9670;&#160;</a></span>DHCPV6_ADVERTISE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_ADVERTISE&#160;&#160;&#160;(2U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADVERTISE. </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00048">48</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="ga6802d48c8c3b96baafb23641a82f43a0" name="ga6802d48c8c3b96baafb23641a82f43a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6802d48c8c3b96baafb23641a82f43a0">&#9670;&#160;</a></span>DHCPV6_CLIENT_PORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_CLIENT_PORT&#160;&#160;&#160;(546U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>client port </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00034">34</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="ga52394da2ac03602502ec1f06f28b4ef6" name="ga52394da2ac03602502ec1f06f28b4ef6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga52394da2ac03602502ec1f06f28b4ef6">&#9670;&#160;</a></span>DHCPV6_CONFIRM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_CONFIRM&#160;&#160;&#160;(4U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CONFIRM. </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00050">50</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="ga06981f15007daccd17cf444798bafbbe" name="ga06981f15007daccd17cf444798bafbbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga06981f15007daccd17cf444798bafbbe">&#9670;&#160;</a></span>DHCPV6_DECLINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_DECLINE&#160;&#160;&#160;(9U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DECLINE. </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00055">55</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="gae3de5e88eed265ebdce1bb95eda2c7d5" name="gae3de5e88eed265ebdce1bb95eda2c7d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae3de5e88eed265ebdce1bb95eda2c7d5">&#9670;&#160;</a></span>DHCPV6_DUID_TYPE_L2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_DUID_TYPE_L2&#160;&#160;&#160;(3U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Link-layer address. </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00105">105</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="ga6c20152b3f497ba838ce9cd6a184f87a" name="ga6c20152b3f497ba838ce9cd6a184f87a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c20152b3f497ba838ce9cd6a184f87a">&#9670;&#160;</a></span>DHCPV6_INFO_REQUEST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_INFO_REQUEST&#160;&#160;&#160;(11U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>INFORMATION-REQUEST. </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00056">56</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="gacb1d3f3bb72f411b1a51657398295732" name="gacb1d3f3bb72f411b1a51657398295732"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacb1d3f3bb72f411b1a51657398295732">&#9670;&#160;</a></span>DHCPV6_OPT_CID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_OPT_CID&#160;&#160;&#160;(1U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>client identifier option </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00068">68</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf052bfd51621cb5b3076e05e382ad043" name="gaf052bfd51621cb5b3076e05e382ad043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf052bfd51621cb5b3076e05e382ad043">&#9670;&#160;</a></span>DHCPV6_OPT_DNS_RNS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_OPT_DNS_RNS&#160;&#160;&#160;(23U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DNS recursive name server option. </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00079">79</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="ga04fafeb8769f2e82f39e856972b9f8e1" name="ga04fafeb8769f2e82f39e856972b9f8e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga04fafeb8769f2e82f39e856972b9f8e1">&#9670;&#160;</a></span>DHCPV6_OPT_ELAPSED_TIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_OPT_ELAPSED_TIME&#160;&#160;&#160;(8U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>elapsed time option </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00075">75</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="ga2df297ded2a2d5a8a80927738bd3021d" name="ga2df297ded2a2d5a8a80927738bd3021d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2df297ded2a2d5a8a80927738bd3021d">&#9670;&#160;</a></span>DHCPV6_OPT_IA_NA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_OPT_IA_NA&#160;&#160;&#160;(3U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>identity association for non-temporary addresses option </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00070">70</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="gaa22cdd18ee1a1cfa03296aeac081b1e1" name="gaa22cdd18ee1a1cfa03296aeac081b1e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa22cdd18ee1a1cfa03296aeac081b1e1">&#9670;&#160;</a></span>DHCPV6_OPT_IA_PD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_OPT_IA_PD&#160;&#160;&#160;(25U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>identity association for prefix delegation (IA_PD) option </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00080">80</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="ga30bc3674ef4d0f84bca1a5ab8e432b9f" name="ga30bc3674ef4d0f84bca1a5ab8e432b9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga30bc3674ef4d0f84bca1a5ab8e432b9f">&#9670;&#160;</a></span>DHCPV6_OPT_IAADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_OPT_IAADDR&#160;&#160;&#160;(5U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>IA address option. </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00072">72</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="ga41fdbd1b1cbdd6ec64892c5df6af85ef" name="ga41fdbd1b1cbdd6ec64892c5df6af85ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga41fdbd1b1cbdd6ec64892c5df6af85ef">&#9670;&#160;</a></span>DHCPV6_OPT_IAPFX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_OPT_IAPFX&#160;&#160;&#160;(26U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>IA prefix option. </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00082">82</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="gaddfcfe6772146f0d81c9c928d9ae48e5" name="gaddfcfe6772146f0d81c9c928d9ae48e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaddfcfe6772146f0d81c9c928d9ae48e5">&#9670;&#160;</a></span>DHCPV6_OPT_IID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_OPT_IID&#160;&#160;&#160;(18U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>interface-id option </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00078">78</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="ga0733b6b9d1cc894ff288802a5bb8fcfb" name="ga0733b6b9d1cc894ff288802a5bb8fcfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0733b6b9d1cc894ff288802a5bb8fcfb">&#9670;&#160;</a></span>DHCPV6_OPT_IMR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_OPT_IMR&#160;&#160;&#160;(83U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>INF_MAX_RT option. </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00085">85</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="gaabd0b9b00aeb9c20a0bb155ca2bc5129" name="gaabd0b9b00aeb9c20a0bb155ca2bc5129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaabd0b9b00aeb9c20a0bb155ca2bc5129">&#9670;&#160;</a></span>DHCPV6_OPT_IRT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_OPT_IRT&#160;&#160;&#160;(32U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Information Refresh Time Option. </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00083">83</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="ga13df9709e7abe3aa7e1a4727034740ca" name="ga13df9709e7abe3aa7e1a4727034740ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga13df9709e7abe3aa7e1a4727034740ca">&#9670;&#160;</a></span>DHCPV6_OPT_MUD_URL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_OPT_MUD_URL&#160;&#160;&#160;(112U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MUD URL option (see RFC 8520) </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00086">86</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf8a741f0bbfe033df61cadad4fde30f3" name="gaf8a741f0bbfe033df61cadad4fde30f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf8a741f0bbfe033df61cadad4fde30f3">&#9670;&#160;</a></span>DHCPV6_OPT_ORO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_OPT_ORO&#160;&#160;&#160;(6U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>option request option </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00073">73</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="gaca65357b8ec33276f6c66a45d5350e6e" name="gaca65357b8ec33276f6c66a45d5350e6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaca65357b8ec33276f6c66a45d5350e6e">&#9670;&#160;</a></span>DHCPV6_OPT_PREF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_OPT_PREF&#160;&#160;&#160;(7U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>preference option </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00074">74</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="ga12f3f2e55561d77be941e84eb3ef6190" name="ga12f3f2e55561d77be941e84eb3ef6190"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga12f3f2e55561d77be941e84eb3ef6190">&#9670;&#160;</a></span>DHCPV6_OPT_RELAY_MSG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_OPT_RELAY_MSG&#160;&#160;&#160;(9U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>relay message option </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00076">76</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="ga5766fa32fc50a08f44d2d4728cb90880" name="ga5766fa32fc50a08f44d2d4728cb90880"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5766fa32fc50a08f44d2d4728cb90880">&#9670;&#160;</a></span>DHCPV6_OPT_SID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_OPT_SID&#160;&#160;&#160;(2U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>server identifier option </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00069">69</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="ga78063d9669ac4038a5d52a5052e7676b" name="ga78063d9669ac4038a5d52a5052e7676b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga78063d9669ac4038a5d52a5052e7676b">&#9670;&#160;</a></span>DHCPV6_OPT_SMR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_OPT_SMR&#160;&#160;&#160;(82U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SOL_MAX_RT option. </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00084">84</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="ga257251a9e0ec0a122436f1c04b35ac14" name="ga257251a9e0ec0a122436f1c04b35ac14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga257251a9e0ec0a122436f1c04b35ac14">&#9670;&#160;</a></span>DHCPV6_OPT_STATUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_OPT_STATUS&#160;&#160;&#160;(13U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>status code option </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00077">77</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="gad64bfd4c528dcf4eeae2eaaefe7b5071" name="gad64bfd4c528dcf4eeae2eaaefe7b5071"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad64bfd4c528dcf4eeae2eaaefe7b5071">&#9670;&#160;</a></span>DHCPV6_REBIND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_REBIND&#160;&#160;&#160;(6U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>REBIND. </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00052">52</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="ga477975d742772b166f765d10969dc92e" name="ga477975d742772b166f765d10969dc92e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga477975d742772b166f765d10969dc92e">&#9670;&#160;</a></span>DHCPV6_RELAY_FORW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_RELAY_FORW&#160;&#160;&#160;(12U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RELAY-FORW. </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00057">57</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="ga1e4bdff933f5bebc7b5865f7e34ad9f0" name="ga1e4bdff933f5bebc7b5865f7e34ad9f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1e4bdff933f5bebc7b5865f7e34ad9f0">&#9670;&#160;</a></span>DHCPV6_RELAY_REPL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_RELAY_REPL&#160;&#160;&#160;(13U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RELAY-REPL. </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00058">58</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="gad7fa2ac61fc3b33c2600665055414a9d" name="gad7fa2ac61fc3b33c2600665055414a9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad7fa2ac61fc3b33c2600665055414a9d">&#9670;&#160;</a></span>DHCPV6_RELEASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_RELEASE&#160;&#160;&#160;(8U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RELEASE. </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00054">54</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="ga26c378e5dd8b087b14bd7981db9d7c1e" name="ga26c378e5dd8b087b14bd7981db9d7c1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga26c378e5dd8b087b14bd7981db9d7c1e">&#9670;&#160;</a></span>DHCPV6_RENEW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_RENEW&#160;&#160;&#160;(5U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RENEW. </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00051">51</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="ga46f7ba9bbbbad540193a360465629bc8" name="ga46f7ba9bbbbad540193a360465629bc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga46f7ba9bbbbad540193a360465629bc8">&#9670;&#160;</a></span>DHCPV6_REPLY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_REPLY&#160;&#160;&#160;(7U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>REPLY. </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00053">53</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="ga44b600c430bc61b6d182a774044fc680" name="ga44b600c430bc61b6d182a774044fc680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga44b600c430bc61b6d182a774044fc680">&#9670;&#160;</a></span>DHCPV6_REQUEST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_REQUEST&#160;&#160;&#160;(3U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>REQUEST. </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00049">49</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="gab2fd1889bb669d854b61d4a5fee3e3ec" name="gab2fd1889bb669d854b61d4a5fee3e3ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab2fd1889bb669d854b61d4a5fee3e3ec">&#9670;&#160;</a></span>DHCPV6_SERVER_PORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_SERVER_PORT&#160;&#160;&#160;(547U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>server and relay agent port </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00036">36</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="gaee68ec3e698ac4504d12016c0f4a548c" name="gaee68ec3e698ac4504d12016c0f4a548c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaee68ec3e698ac4504d12016c0f4a548c">&#9670;&#160;</a></span>DHCPV6_SOLICIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_SOLICIT&#160;&#160;&#160;(1U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SOLICIT. </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00047">47</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+<a id="ga8c4dee89cc4a562d902ba30abedf2abc" name="ga8c4dee89cc4a562d902ba30abedf2abc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8c4dee89cc4a562d902ba30abedf2abc">&#9670;&#160;</a></span>DHCPV6_STATUS_SUCCESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_STATUS_SUCCESS&#160;&#160;&#160;(0U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Success. </p>
+
+<p class="definition">Definition at line <a class="el" href="dhcpv6_8h_source.html#l00096">96</a> of file <a class="el" href="dhcpv6_8h_source.html">dhcpv6.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:33 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

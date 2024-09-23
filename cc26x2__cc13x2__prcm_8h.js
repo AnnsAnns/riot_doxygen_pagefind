@@ -1,0 +1,27 @@
+var cc26x2__cc13x2__prcm_8h =
+[
+    [ "ddi0_osc_regs_t", "structddi0__osc__regs__t.html", "structddi0__osc__regs__t" ],
+    [ "ddi0_osc_regs_m16_t", "structddi0__osc__regs__m16__t.html", "structddi0__osc__regs__m16__t" ],
+    [ "aon_pmctl_regs_t", "structaon__pmctl__regs__t.html", "structaon__pmctl__regs__t" ],
+    [ "aon_rtc_regs_t", "structaon__rtc__regs__t.html", "structaon__rtc__regs__t" ],
+    [ "prcm_regs_t", "structprcm__regs__t.html", "structprcm__regs__t" ],
+    [ "AON_PMCTL", "cc26x2__cc13x2__prcm_8h.html#ae58d30159e5b0a12011afc691e6eaa4f", null ],
+    [ "AON_PMCTL_BASE", "group__cpu__specific__peripheral__memory__map.html#ga9f79dda55435a04105558f3fb022b9e6", null ],
+    [ "AON_PMCTL_SLEEPCTL_IO_PAD_SLEEP_DIS", "cc26x2__cc13x2__prcm_8h.html#ac276829d8b5b515e48d7c72bcddedf90", null ],
+    [ "AON_RTC", "cc26x2__cc13x2__prcm_8h.html#a4ae9b27955e4da5b95407ec1ea943fff", null ],
+    [ "AON_RTC_BASE", "group__cpu__specific__peripheral__memory__map.html#ga970a2d6a2505152440e60300ca212d93", null ],
+    [ "AON_RTC_CTL_RTC_UPD_EN", "cc26x2__cc13x2__prcm_8h.html#ab3a4ae444a34de27ca96c196ac211b43", null ],
+    [ "CLKLOADCTL_LOAD", "cc26x2__cc13x2__prcm_8h.html#a9a7bdd8690260b992060da04bc34e3b5", null ],
+    [ "DDI0_OSC_BASE", "group__cpu__cc26x2__cc13x2__peripheral__memory__map.html#ga93916f09e1ed76fac22f58e8fcc4be3a", null ],
+    [ "DDI0_OSC_BASE_M16", "group__cpu__cc26x2__cc13x2__peripheral__memory__map.html#gab3672a6c9f11fde8e6c838b50ddf8538", null ],
+    [ "DDI_0_OSC", "cc26x2__cc13x2__prcm_8h.html#a3a79f997a72da9fb5b6acc7265db515d", null ],
+    [ "DDI_0_OSC_CTL0_SCLK_HF_SRC_SEL_m", "cc26x2__cc13x2__prcm_8h.html#a46bd158a8d4f1e21034ca410de1c5369", null ],
+    [ "DDI_0_OSC_M16", "cc26x2__cc13x2__prcm_8h.html#a5eeffd05d7f4335eac78014e38771c84", null ],
+    [ "OSC_RCOSC_HF", "cc26x2__cc13x2__prcm_8h.html#a69c226c32f77c516b33207cc23179c34", null ],
+    [ "OSC_XOSC_HF", "cc26x2__cc13x2__prcm_8h.html#aa167a08c9239cfcfefb8c35bf984ce8b", null ],
+    [ "PRCM", "cc26x2__cc13x2__prcm_8h.html#adb5ef2ff679b3b7fc3cf80ba81efd141", null ],
+    [ "PRCM_BASE", "group__cpu__specific__peripheral__memory__map.html#ga401543253f69d73c52bf17b98f52bca9", null ],
+    [ "PRCM_BASE_NONBUF", "group__cpu__specific__peripheral__memory__map.html#ga3bd6361f5594f825e030d77ed3758742", null ],
+    [ "PRCM_NONBUF", "cc26x2__cc13x2__prcm_8h.html#aae072130ff8a8b76c0c713ea7a298021", null ],
+    [ "osc_hf_source_switch", "cc26x2__cc13x2__prcm_8h.html#ad193814540e7f52285fd617eed8540fc", null ]
+];

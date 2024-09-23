@@ -1,0 +1,340 @@
+<map id="drivers/include/periph/i2c.h" name="drivers/include/periph/i2c.h">
+<area shape="rect" id="Node000001" title="Low&#45;level I2C peripheral driver interface definition." alt="" coords="8977,5,9139,50"/>
+<area shape="rect" id="Node000002" href="$common_2arduino-atmega_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins for Arduino Atmega boards." alt="" coords="5,98,186,160"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="8961,32,7263,33,4401,41,2925,50,1629,62,668,79,362,89,198,101,186,103,185,97,198,95,361,84,667,73,1629,57,2925,44,4401,36,7263,28,8961,26"/>
+<area shape="rect" id="Node000003" href="$common_2arduino-due_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins." alt="" coords="210,98,389,160"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="8961,32,7297,34,4503,42,3063,51,1798,63,860,79,562,89,402,101,390,103,389,98,402,95,561,84,860,74,1798,57,3063,45,4503,37,7297,28,8961,26"/>
+<area shape="rect" id="Node000004" href="$common_2arduino-zero_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins." alt="" coords="414,98,593,160"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="8961,32,7333,34,4605,42,3200,51,1966,63,1051,79,760,89,605,101,594,102,593,97,605,95,760,84,1051,74,1966,58,3200,46,4605,37,7333,28,8961,26"/>
+<area shape="rect" id="Node000005" href="$aip31068__params_8h.html" title="Default configuration for the AIP31068 I2C LCD controller." alt="" coords="617,106,798,151"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="8961,32,7369,34,4708,43,3339,52,2136,64,1245,80,962,90,811,101,773,109,772,103,810,95,962,84,1245,75,2136,59,3339,47,4708,38,7369,29,8961,26"/>
+<area shape="rect" id="Node000006" href="$ad7746_8h.html" title="AD7746 Capacitance&#45;to&#45;digital converter with temperature sensor driver." alt="" coords="822,115,1004,143"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="8962,32,7405,34,4812,44,3478,53,2307,65,1439,81,1163,90,1016,101,950,117,949,112,1015,95,1163,85,1439,75,2307,59,3478,47,4812,39,7405,29,8962,26"/>
+<area shape="rect" id="Node000008" href="$adcxx1c_8h.html" title="ADCXX1C ADC device driver." alt="" coords="1027,115,1214,143"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="8962,32,7444,35,4919,45,3622,54,2482,66,1638,81,1370,91,1227,101,1159,117,1158,112,1226,95,1370,85,1638,76,2482,61,3622,49,4919,40,7444,30,8962,26"/>
+<area shape="rect" id="Node000010" href="$ads101x_8h.html" title="ADS101x/111x ADC device driver." alt="" coords="1239,115,1427,143"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="8961,32,7479,35,5025,46,3764,55,2658,67,1838,82,1578,91,1439,101,1371,117,1370,112,1438,95,1577,85,1838,77,2658,61,3764,50,5025,41,7479,30,8961,26"/>
+<area shape="rect" id="Node000012" href="$adxl345_8h.html" title="Interface definition for the ADXL345." alt="" coords="1451,115,1636,143"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="8961,32,7516,36,5130,46,3906,55,2832,67,2036,82,1783,91,1648,101,1581,117,1580,112,1647,95,1783,86,2036,77,2832,62,3906,50,5130,41,7516,30,8961,26"/>
+<area shape="rect" id="Node000014" href="$aip31068_8h.html" title=" " alt="" coords="1660,115,1854,143"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="8961,32,7553,36,5239,48,4053,57,3012,69,2241,83,1996,91,1865,101,1796,117,1795,112,1864,95,1996,86,2241,78,3012,63,4053,52,5239,43,7553,31,8961,27"/>
+<area shape="rect" id="Node000015" href="$apds99xx_8h.html" title=" " alt="" coords="1877,115,2074,143"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="8962,32,7594,37,5352,49,4203,58,3196,70,2451,84,2213,92,2087,101,2016,117,2014,112,2086,95,2213,87,2450,79,3196,64,4203,53,5352,44,7594,32,8962,27"/>
+<area shape="rect" id="Node000017" href="$at24cxxx_8h.html" title="Device driver interface for AT24CXXX EEPROM units." alt="" coords="2098,115,2291,143"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="8961,32,7632,37,5461,49,4350,59,3377,70,2656,84,2426,92,2304,101,2234,117,2233,112,2303,95,2426,87,2656,79,3377,65,4350,53,5461,44,7632,32,8961,27"/>
+<area shape="rect" id="Node000019" href="$at24mac_8h.html" title=" " alt="" coords="2315,115,2505,143"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="8961,32,7670,37,5570,50,3555,71,2859,84,2637,92,2519,101,2449,117,2448,112,2518,95,2637,87,2858,79,3555,65,5570,45,7670,32,8961,27"/>
+<area shape="rect" id="Node000023" href="$at30tse75x_8h.html" title="Driver for the AT30TSE75x temperature sensor with serial EEPROM." alt="" coords="2530,115,2736,143"/>
+<area shape="poly" id="edge22_Node000001_Node000023" title=" " alt="" coords="8961,32,7711,38,5687,52,3747,73,3076,86,2863,93,2749,101,2675,117,2674,112,2748,95,2863,88,3076,80,3747,67,5686,47,7711,33,8961,27"/>
+<area shape="rect" id="Node000026" href="$bh1750fvi_8h.html" title="Interface definition for the Rohm BH1750FVI ambient light sensor." alt="" coords="2760,115,2959,143"/>
+<area shape="poly" id="edge25_Node000001_Node000026" title=" " alt="" coords="8962,32,7751,38,5799,52,3931,73,3286,86,3080,93,2971,101,2900,117,2898,112,2970,95,3080,88,3285,80,3931,67,5799,46,7751,33,8962,27"/>
+<area shape="rect" id="Node000028" href="$bh1900nux_8h.html" title="Interface definition for the BH1900NUX temperature sensor." alt="" coords="2982,115,3188,143"/>
+<area shape="poly" id="edge27_Node000001_Node000028" title=" " alt="" coords="8961,31,7843,30,6035,36,5095,44,4250,56,3588,75,3354,87,3200,101,3126,117,3125,112,3199,95,3354,82,3588,70,4249,51,5095,38,6035,31,7843,25,8961,26"/>
+<area shape="rect" id="Node000030" href="$bme680_8h.html" title="Interface definition for the Bosch BME680 sensor." alt="" coords="3212,115,3398,143"/>
+<area shape="poly" id="edge29_Node000001_Node000030" title=" " alt="" coords="8961,32,7829,39,6022,52,4296,73,3701,86,3512,93,3411,101,3343,117,3342,112,3410,95,3512,88,3701,81,4296,68,6022,47,7829,33,8961,27"/>
+<area shape="rect" id="Node000032" href="$bmp180_8h.html" title="Device driver interface for the BMP180 sensor." alt="" coords="3422,115,3609,143"/>
+<area shape="poly" id="edge31_Node000001_Node000032" title=" " alt="" coords="8962,32,7868,39,6129,53,4472,74,3900,87,3718,93,3621,101,3554,117,3552,112,3620,95,3718,88,3900,81,4472,68,6129,48,7868,34,8962,27"/>
+<area shape="rect" id="Node000034" href="$bmx055_8h.html" title="Device driver interface for the Bosch BMX055 9&#45;axis sensor." alt="" coords="3633,115,3819,143"/>
+<area shape="poly" id="edge33_Node000001_Node000034" title=" " alt="" coords="8961,31,7951,31,6343,37,5509,45,4761,58,4176,76,3969,87,3832,101,3764,117,3763,112,3831,95,3968,82,4175,71,4761,52,5509,40,6343,32,7951,26,8961,26"/>
+<area shape="rect" id="Node000035" href="$bmx280_8h.html" title="Device driver interface for the BMP280 and BME280 sensors." alt="" coords="3844,115,4030,143"/>
+<area shape="poly" id="edge34_Node000001_Node000035" title=" " alt="" coords="8961,31,7987,32,6445,38,5647,47,4931,59,4371,77,4173,88,4043,101,3975,117,3974,112,4042,95,4173,83,4371,71,4931,54,5647,41,6445,33,7987,26,8961,26"/>
+<area shape="rect" id="Node000037" href="$bq2429x_8h.html" title="Device driver interface for the BQ2429x Single&#45;Cell USB Charger." alt="" coords="4054,115,4244,143"/>
+<area shape="poly" id="edge36_Node000001_Node000037" title=" " alt="" coords="8962,32,8026,33,6551,40,5788,48,5104,61,4570,78,4381,89,4256,101,4187,117,4186,112,4255,95,4380,83,4570,73,5104,55,5788,43,6550,35,8026,27,8962,26"/>
+<area shape="rect" id="Node000039" href="$ccs811_8h.html" title="Device Driver for AMS CCS811 digital gas sensor." alt="" coords="4268,115,4446,143"/>
+<area shape="poly" id="edge38_Node000001_Node000039" title=" " alt="" coords="8962,32,8060,32,6649,40,5921,48,5268,61,4758,78,4578,89,4459,101,4394,117,4392,112,4458,95,4577,83,4758,73,5268,55,5921,43,6649,35,8060,27,8962,26"/>
+<area shape="rect" id="Node000041" href="$cst816s_8h.html" title="Device driver interface for the CST816S touch screen." alt="" coords="4470,115,4654,143"/>
+<area shape="poly" id="edge40_Node000001_Node000041" title=" " alt="" coords="8962,32,8097,33,6751,42,6057,50,5436,62,4950,79,4779,89,4665,101,4599,117,4598,112,4664,95,4778,84,4950,74,5436,57,6057,45,6751,36,8097,28,8962,26"/>
+<area shape="rect" id="Node000043" href="$ds1307_8h.html" title="DS1307 definitions." alt="" coords="4677,115,4858,143"/>
+<area shape="poly" id="edge42_Node000001_Node000043" title=" " alt="" coords="8961,32,8132,34,6851,43,6192,51,5601,63,5140,80,4977,90,4869,101,4804,117,4803,112,4868,95,4977,84,5140,74,5601,58,6191,46,6850,37,8132,29,8961,26"/>
+<area shape="rect" id="Node000045" href="$ds3231_8h.html" title="Interface definition for the Maxim DS3231 RTC." alt="" coords="4881,115,5062,143"/>
+<area shape="poly" id="edge44_Node000001_Node000045" title=" " alt="" coords="8962,32,8169,35,6952,45,6327,53,5768,65,5331,81,5177,90,5075,101,5009,117,5007,112,5074,95,5176,85,5331,75,5768,60,6327,48,6952,39,8169,29,8962,26"/>
+<area shape="rect" id="Node000046" href="$ds75lx_8h.html" title=" " alt="" coords="5086,115,5262,143"/>
+<area shape="poly" id="edge45_Node000001_Node000046" title=" " alt="" coords="8962,32,8205,35,7051,45,6459,54,5930,66,5517,81,5371,90,5275,101,5210,117,5209,112,5274,95,5371,85,5517,76,5930,61,6459,49,7050,40,8205,30,8962,27"/>
+<area shape="rect" id="Node000048" href="$ft5x06_8h.html" title=" " alt="" coords="5286,115,5462,143"/>
+<area shape="poly" id="edge47_Node000001_Node000048" title=" " alt="" coords="8961,32,8240,36,7149,47,6591,56,6092,67,5703,82,5566,91,5475,101,5410,117,5409,112,5474,95,5565,86,5703,77,6092,62,6591,50,7149,41,8240,31,8961,27"/>
+<area shape="rect" id="Node000051" href="$fxos8700_8h.html" title="Interface definition for the FXOS8700 sensor driver." alt="" coords="5486,115,5679,143"/>
+<area shape="poly" id="edge50_Node000001_Node000051" title=" " alt="" coords="8961,32,8279,38,7256,50,6268,70,5905,84,5776,92,5691,101,5622,117,5621,112,5690,95,5776,87,5904,79,6268,65,7256,44,8279,32,8961,27"/>
+<area shape="rect" id="Node000053" href="$hdc1000_8h.html" title="Interface definition for the HDC1000 sensor driver." alt="" coords="5703,115,5891,143"/>
+<area shape="poly" id="edge52_Node000001_Node000053" title=" " alt="" coords="8961,32,8317,38,7362,51,6441,71,6103,85,5904,101,5836,117,5835,112,5903,95,6103,80,6441,66,7361,46,8317,33,8961,27"/>
+<area shape="rect" id="Node000055" href="$hih6130_8h.html" title="Device driver for Honeywell HumidIcon Digital Humidity/Temperature Sensors: HIH&#45;6130/6131 Series." alt="" coords="5915,115,6100,143"/>
+<area shape="poly" id="edge54_Node000001_Node000055" title=" " alt="" coords="8961,32,8355,39,7465,52,6611,72,6297,85,6112,101,6046,117,6044,112,6111,95,6296,80,6610,67,7465,47,8355,33,8961,27"/>
+<area shape="rect" id="Node000056" href="$hm330x_8h.html" title=" " alt="" coords="6124,115,6310,143"/>
+<area shape="poly" id="edge55_Node000001_Node000056" title=" " alt="" coords="8961,33,8394,40,7570,54,6782,74,6493,87,6323,101,6255,117,6254,112,6322,95,6493,81,6782,69,7570,48,8394,34,8961,27"/>
+<area shape="rect" id="Node000058" href="$hmc5883l_8h.html" title=" " alt="" coords="6334,115,6532,143"/>
+<area shape="poly" id="edge57_Node000001_Node000058" title=" " alt="" coords="8962,31,8482,32,7782,40,7414,48,7067,60,6769,78,6544,101,6473,117,6472,112,6543,95,6768,72,7067,55,7414,43,7782,34,8482,27,8962,26"/>
+<area shape="rect" id="Node000060" href="$hsc_8h.html" title="Device driver interface for the HSC sensor." alt="" coords="6555,115,6710,143"/>
+<area shape="poly" id="edge59_Node000001_Node000060" title=" " alt="" coords="8962,33,8469,40,7771,54,7109,75,6867,87,6724,101,6666,117,6665,112,6723,95,6866,82,7109,69,7771,49,8469,35,8962,28"/>
+<area shape="rect" id="Node000062" href="$hts221_8h.html" title="Interface definition for the ST HTS221 driver." alt="" coords="6735,115,6912,143"/>
+<area shape="poly" id="edge61_Node000001_Node000062" title=" " alt="" coords="8962,32,8547,33,7958,42,7650,51,7361,63,7113,79,6925,101,6861,117,6859,112,6924,95,7112,74,7361,58,7650,46,7958,37,8547,28,8962,26"/>
+<area shape="rect" id="Node000065" href="$ina2xx_8h.html" title="Device driver interface for Texas Instruments INA219/INA2XX Bi&#45;Directional CURRENT/POWER MONITOR with..." alt="" coords="6936,115,7114,143"/>
+<area shape="poly" id="edge66_Node000001_Node000065" title=" " alt="" coords="8961,32,8582,35,8051,45,7775,54,7517,66,7294,81,7127,101,7062,117,7061,112,7126,95,7294,76,7517,60,7775,49,8051,40,8582,30,8961,27"/>
+<area shape="rect" id="Node000067" href="$ina3221_8h.html" title="Device driver interface for Texas Instruments INA3221 three&#45;channel, high&#45;side current and bus voltag..." alt="" coords="7138,115,7323,143"/>
+<area shape="poly" id="edge68_Node000001_Node000067" title=" " alt="" coords="8962,33,8619,37,8149,49,7678,69,7483,83,7335,101,7269,117,7268,112,7334,95,7482,78,7678,64,8149,44,8619,32,8962,27"/>
+<area shape="rect" id="Node000070" href="$isl29020_8h.html" title="Device driver interface for the ISL29020 light sensor." alt="" coords="7347,115,7535,143"/>
+<area shape="poly" id="edge71_Node000001_Node000070" title=" " alt="" coords="8962,33,8658,40,8249,52,7843,72,7674,85,7547,101,7480,117,7479,112,7546,95,7674,80,7842,67,8249,47,8657,34,8962,28"/>
+<area shape="rect" id="Node000072" href="$isl29125_8h.html" title="Device driver interface for the ISL29125 RGB light sensor." alt="" coords="7559,115,7747,143"/>
+<area shape="poly" id="edge73_Node000001_Node000072" title=" " alt="" coords="8962,34,8350,56,8009,75,7867,87,7760,101,7693,117,7692,112,7759,95,7867,82,8008,70,8350,51,8962,29"/>
+<area shape="rect" id="Node000074" href="$itg320x_8h.html" title="Device driver for InvenSense ITG320X 3&#45;axis gyroscope." alt="" coords="7771,115,7953,143"/>
+<area shape="poly" id="edge75_Node000001_Node000074" title=" " alt="" coords="8962,31,8777,33,8529,42,8248,63,8106,80,7967,101,7901,117,7900,112,7966,95,8105,74,8248,58,8528,37,8776,28,8962,26"/>
+<area shape="rect" id="Node000076" href="$jc42_8h.html" title="Driver for jc42 compliant temperature sensors." alt="" coords="7978,115,8138,143"/>
+<area shape="poly" id="edge77_Node000001_Node000076" title=" " alt="" coords="8962,32,8807,37,8606,47,8382,68,8268,82,8157,101,8096,117,8095,112,8156,95,8267,77,8381,62,8605,42,8806,31,8962,27"/>
+<area shape="rect" id="Node000077" href="$jc42__params_8h.html" title="Default configuration for jc42." alt="" coords="8087,216,8235,261"/>
+<area shape="poly" id="edge165_Node000001_Node000077" title=" " alt="" coords="8962,33,8762,39,8525,51,8412,60,8316,71,8243,84,8219,92,8204,100,8183,125,8171,157,8165,188,8163,216,8158,216,8159,188,8166,155,8178,123,8200,96,8217,87,8242,79,8315,66,8412,55,8524,46,8762,34,8962,28"/>
+<area shape="rect" id="Node000078" href="$l3g4200d_8h.html" title="Device driver interface for the L3G4200D gyroscope." alt="" coords="8214,115,8407,143"/>
+<area shape="poly" id="edge79_Node000001_Node000078" title=" " alt="" coords="8961,37,8715,59,8567,77,8420,101,8353,117,8352,112,8419,95,8566,72,8714,54,8961,32"/>
+<area shape="rect" id="Node000080" href="$l3gxxxx_8h.html" title="Device Driver for ST L3Gxxxx 3&#45;axis gyroscope sensor family." alt="" coords="8431,115,8616,143"/>
+<area shape="poly" id="edge81_Node000001_Node000080" title=" " alt="" coords="8962,44,8805,67,8628,101,8566,117,8565,112,8627,95,8804,62,8962,38"/>
+<area shape="rect" id="Node000082" href="$lc709203f_8h.html" title="Device driver interface for the LC709203F Battery Fuel Gauge." alt="" coords="8640,115,8836,143"/>
+<area shape="poly" id="edge83_Node000001_Node000082" title=" " alt="" coords="8974,58,8782,117,8780,112,8973,53"/>
+<area shape="rect" id="Node000084" href="$lis2dh12_8h.html" title="Interface definition for the STM LIS2DH12 accelerometer." alt="" coords="8860,115,9048,143"/>
+<area shape="poly" id="edge85_Node000001_Node000084" title=" " alt="" coords="9027,63,8969,117,8966,113,9023,59"/>
+<area shape="rect" id="Node000086" href="$lis3mdl_8h.html" title="Device driver interface for the LIS3MDL 3&#45;axis magnetometer." alt="" coords="9073,115,9254,143"/>
+<area shape="poly" id="edge87_Node000001_Node000086" title=" " alt="" coords="9094,59,9152,113,9148,117,9090,63"/>
+<area shape="rect" id="Node000088" href="$lm75_8h.html" title="Driver for the LM75 temperature sensor." alt="" coords="9278,115,9444,143"/>
+<area shape="poly" id="edge89_Node000001_Node000088" title=" " alt="" coords="9140,53,9321,112,9320,117,9138,58"/>
+<area shape="rect" id="Node000090" href="$lpsxxx_8h.html" title=" " alt="" coords="9469,115,9645,143"/>
+<area shape="poly" id="edge91_Node000001_Node000090" title=" " alt="" coords="9155,40,9298,63,9456,95,9516,112,9515,117,9455,101,9297,69,9154,45"/>
+<area shape="rect" id="Node000092" href="$lsm303dlhc_8h.html" title="Device driver interface for the LSM303DLHC 3D accelerometer/magnetometer." alt="" coords="9669,115,9877,143"/>
+<area shape="poly" id="edge93_Node000001_Node000092" title=" " alt="" coords="9155,33,9385,56,9521,73,9657,95,9728,112,9727,117,9656,101,9521,79,9384,61,9154,39"/>
+<area shape="rect" id="Node000094" href="$lsm6dsxx_8h.html" title="Device driver interface for the LSM6DSXX 3D accelerometer/gyroscope." alt="" coords="9901,115,10098,143"/>
+<area shape="poly" id="edge95_Node000001_Node000094" title=" " alt="" coords="9155,29,9298,35,9482,47,9685,66,9889,95,9958,112,9957,117,9888,101,9685,72,9481,52,9298,40,9154,34"/>
+<area shape="rect" id="Node000096" href="$mag3110_8h.html" title="Interface definition for the MAG3110 magnetometer driver." alt="" coords="10122,115,10317,143"/>
+<area shape="poly" id="edge97_Node000001_Node000096" title=" " alt="" coords="9155,26,9334,30,9572,40,9841,60,9977,76,10111,95,10179,112,10178,117,10110,101,9976,81,9840,66,9572,45,9334,35,9155,32"/>
+<area shape="rect" id="Node000098" href="$mcp47xx_8h.html" title=" " alt="" coords="10340,115,10534,143"/>
+<area shape="poly" id="edge99_Node000001_Node000098" title=" " alt="" coords="9155,29,9754,51,10086,71,10224,82,10329,95,10397,112,10396,117,10328,101,10224,88,10086,76,9753,56,9155,34"/>
+<area shape="rect" id="Node000100" href="$mma7660_8h.html" title="Interface definition for the MMA7660 accelerometer driver." alt="" coords="10557,115,10756,143"/>
+<area shape="poly" id="edge101_Node000001_Node000100" title=" " alt="" coords="9155,28,9455,35,9857,48,10255,68,10421,81,10547,95,10617,112,10616,117,10546,101,10420,86,10255,73,9856,54,9455,40,9155,33"/>
+<area shape="rect" id="Node000102" href="$mma8x5x_8h.html" title="Interface definition for the MMA8x5x accelerometer driver." alt="" coords="10781,115,10980,143"/>
+<area shape="poly" id="edge103_Node000001_Node000102" title=" " alt="" coords="9155,27,9496,33,9962,45,10428,65,10622,79,10769,95,10840,112,10839,117,10768,101,10622,84,10428,71,9962,51,9495,39,9155,33"/>
+<area shape="rect" id="Node000104" href="$mpl3115a2_8h.html" title="Interface definition for the MPL3115A2 sensor driver." alt="" coords="11004,115,11211,143"/>
+<area shape="poly" id="edge105_Node000001_Node000104" title=" " alt="" coords="9155,27,9535,32,10066,43,10602,63,10825,78,10993,95,11066,112,11065,117,10992,101,10824,83,10601,68,10066,48,9535,37,9155,32"/>
+<area shape="rect" id="Node000106" href="$mpu9x50_8h.html" title="Device driver interface for the MPU&#45;9X50 (MPU9150 and MPU9250)" alt="" coords="11234,115,11429,143"/>
+<area shape="poly" id="edge107_Node000001_Node000106" title=" " alt="" coords="9155,26,9574,29,10173,38,10485,47,10779,59,11032,75,11223,95,11293,112,11291,117,11222,101,11031,80,10778,64,10485,52,10172,44,9574,34,9155,32"/>
+<area shape="rect" id="Node000108" href="$opt3001_8h.html" title="Interface definition for the OPT3001 sensor driver." alt="" coords="11453,115,11639,143"/>
+<area shape="poly" id="edge109_Node000001_Node000108" title=" " alt="" coords="9155,26,9612,27,10274,35,10621,43,10948,55,11229,73,11441,95,11509,112,11508,117,11440,101,11229,78,10947,61,10621,48,10274,40,9612,32,9155,31"/>
+<area shape="rect" id="Node000110" href="$pca9633_8h.html" title=" " alt="" coords="11664,115,11852,143"/>
+<area shape="poly" id="edge111_Node000001_Node000110" title=" " alt="" coords="9155,26,9648,25,10371,32,10752,40,11110,53,11419,71,11547,82,11652,95,11720,112,11719,117,11651,101,11546,88,11419,76,11110,58,10752,46,10371,37,9648,31,9155,31"/>
+<area shape="rect" id="Node000111" href="$pca9685_8h.html" title=" " alt="" coords="11876,115,12064,143"/>
+<area shape="poly" id="edge112_Node000001_Node000111" title=" " alt="" coords="9155,27,9736,34,10582,48,11392,68,11689,81,11865,95,11933,112,11932,117,11864,101,11689,86,11392,73,10581,53,9735,40,9155,33"/>
+<area shape="rect" id="Node000113" href="$pcf857x_8h.html" title=" " alt="" coords="12088,115,12274,143"/>
+<area shape="poly" id="edge114_Node000001_Node000113" title=" " alt="" coords="9155,27,9774,33,10687,46,11564,67,11887,80,12077,95,12144,112,12143,117,12076,101,11887,85,11564,72,10687,51,9774,39,9155,32"/>
+<area shape="rect" id="Node000115" href="$pio_2i2c_8h.html" title="PIO I2C program interface." alt="" coords="12297,106,12459,151"/>
+<area shape="poly" id="edge116_Node000001_Node000115" title=" " alt="" coords="9155,27,9813,31,10792,42,11290,51,11735,63,12082,77,12205,86,12287,95,12320,103,12319,108,12286,101,12204,91,12082,83,11735,68,11290,56,10791,47,9813,36,9155,32"/>
+<area shape="rect" id="Node000116" href="$ph__oem_8h.html" title="Device driver for Atlas Scientific pH OEM Sensor with SMBus/I2C interface." alt="" coords="12483,106,12620,151"/>
+<area shape="poly" id="edge117_Node000001_Node000116" title=" " alt="" coords="9155,26,9846,29,10884,37,11413,46,11886,58,12255,74,12385,84,12472,95,12501,103,12500,108,12471,101,12385,90,12255,80,11886,63,11413,51,10884,43,9846,34,9155,32"/>
+<area shape="rect" id="Node000118" href="$pn532_8h.html" title="PN532 driver." alt="" coords="12645,115,12818,143"/>
+<area shape="poly" id="edge119_Node000001_Node000118" title=" " alt="" coords="9155,27,9875,30,10963,41,11519,50,12017,62,12405,77,12542,86,12633,95,12697,112,12696,117,12632,101,12542,91,12404,82,12016,67,11519,55,10963,46,9875,36,9155,32"/>
+<area shape="rect" id="Node000119" href="$qmc5883l_8h.html" title="API definition for the QMC5883L device driver." alt="" coords="12842,115,13040,143"/>
+<area shape="poly" id="edge120_Node000001_Node000119" title=" " alt="" coords="9155,27,9910,31,11060,42,11649,51,12176,63,12588,77,12734,86,12831,95,12902,112,12901,117,12830,101,12733,91,12588,83,12176,68,11649,57,11060,48,9910,36,9155,32"/>
+<area shape="rect" id="Node000121" href="$scd30_8h.html" title="Device driver interface for the SCD30 sensor." alt="" coords="13063,115,13234,143"/>
+<area shape="poly" id="edge122_Node000001_Node000121" title=" " alt="" coords="9155,26,9950,29,11170,38,11796,46,12356,58,12794,75,12949,84,13052,95,13115,112,13114,117,13051,101,12949,90,12794,80,12356,64,11796,52,11169,43,9949,34,9155,32"/>
+<area shape="rect" id="Node000122" href="$scd30__params_8h.html" title="Device driver params interface for the SCD30 sensor." alt="" coords="13101,216,13260,261"/>
+<area shape="poly" id="edge167_Node000001_Node000122" title=" " alt="" coords="9155,26,10045,26,11405,32,12083,40,12663,53,13075,71,13195,82,13230,89,13248,96,13258,111,13261,126,13258,143,13252,160,13231,191,13207,218,13203,214,13226,188,13247,157,13253,142,13255,127,13253,113,13244,100,13229,94,13194,87,13074,76,12663,58,12082,45,11405,37,10045,31,9155,31"/>
+<area shape="rect" id="Node000123" href="$sdp3x_8h.html" title="Device driver interface for the SDP3x sensor." alt="" coords="13309,115,13482,143"/>
+<area shape="poly" id="edge124_Node000001_Node000123" title=" " alt="" coords="9155,26,9992,29,11287,38,11953,47,12550,59,13016,75,13181,84,13291,95,13359,112,13357,117,13290,101,13181,90,13016,80,12550,64,11953,52,11287,43,9992,34,9155,32"/>
+<area shape="rect" id="Node000125" href="$seesaw__soil_8h.html" title="Interface definition for the Adafruit Seesaw Soil sensor." alt="" coords="13506,106,13677,151"/>
+<area shape="poly" id="edge126_Node000001_Node000125" title=" " alt="" coords="9155,26,10027,27,11387,35,12087,43,12715,55,13206,73,13380,83,13495,95,13530,103,13529,108,13494,101,13379,89,13206,78,12715,61,12087,48,11387,40,10027,32,9155,32"/>
+<area shape="rect" id="Node000127" href="$sgp30_8h.html" title=" " alt="" coords="13701,115,13874,143"/>
+<area shape="poly" id="edge128_Node000001_Node000127" title=" " alt="" coords="9155,26,10062,27,11483,34,12216,42,12873,54,13387,72,13569,83,13689,95,13753,112,13752,117,13688,101,13568,88,13387,77,12873,60,12216,47,11483,39,10062,32,9155,32"/>
+<area shape="rect" id="Node000129" href="$sht2x_8h.html" title="Device driver implementation for the SHT2x humidity and temperature humidity sensor." alt="" coords="13898,115,14067,143"/>
+<area shape="poly" id="edge130_Node000001_Node000129" title=" " alt="" coords="9154,26,10095,26,11579,32,12345,40,13033,52,13571,70,13761,82,13887,95,13949,112,13947,117,13886,101,13760,87,13570,76,13033,58,12345,45,11579,37,10095,31,9154,31"/>
+<area shape="rect" id="Node000131" href="$sht3x_8h.html" title="Device Driver for Sensirion SHT30/SHT31/SHT35 Humidity and Temperature Sensors." alt="" coords="14091,115,14260,143"/>
+<area shape="poly" id="edge132_Node000001_Node000131" title=" " alt="" coords="9155,27,10173,34,11775,48,13298,68,13823,81,13990,88,14080,95,14142,112,14141,117,14079,101,13990,93,13823,86,13298,74,11775,53,10173,39,9155,32"/>
+<area shape="rect" id="Node000133" href="$shtcx_8h.html" title="Device driver interface for the SHTCX Temperature and humidity sensor." alt="" coords="14285,115,14453,143"/>
+<area shape="poly" id="edge134_Node000001_Node000133" title=" " alt="" coords="9155,27,10209,33,11875,47,13460,68,14006,81,14180,88,14273,95,14335,112,14334,117,14272,101,14180,93,14006,86,13460,73,11875,52,10209,39,9155,32"/>
+<area shape="rect" id="Node000135" href="$si1133_8h.html" title="Device driver interface for the Si1133 sensor." alt="" coords="14477,115,14653,143"/>
+<area shape="poly" id="edge136_Node000001_Node000135" title=" " alt="" coords="9155,27,10243,33,11972,47,13619,68,14187,81,14368,88,14465,95,14530,112,14529,117,14464,101,14368,93,14187,86,13619,73,11971,52,10243,39,9155,32"/>
+<area shape="rect" id="Node000137" href="$si114x_8h.html" title="Device driver interface for the Si114x sensors family." alt="" coords="14677,115,14853,143"/>
+<area shape="poly" id="edge138_Node000001_Node000137" title=" " alt="" coords="9155,27,10281,33,12074,46,13786,67,14376,80,14564,88,14665,95,14730,112,14729,117,14664,101,14564,93,14376,86,13786,72,12074,52,10281,38,9155,32"/>
+<area shape="rect" id="Node000139" href="$si70xx_8h.html" title="Interface definition of the Si70xx driver." alt="" coords="14877,115,15053,143"/>
+<area shape="poly" id="edge140_Node000001_Node000139" title=" " alt="" coords="9155,27,10315,33,12175,46,13952,66,14565,80,14760,87,14865,95,14930,112,14929,117,14864,101,14760,93,14565,85,13952,72,12175,51,10315,38,9155,32"/>
+<area shape="rect" id="Node000141" href="$sps30_8h.html" title="Driver for the Sensirion SPS30 Particulate Matter Sensor." alt="" coords="15076,115,15248,143"/>
+<area shape="poly" id="edge142_Node000001_Node000141" title=" " alt="" coords="9154,27,10351,32,12276,44,13258,54,14118,65,14754,79,14957,87,15065,95,15128,112,15127,117,15064,101,14956,92,14754,84,14118,71,13258,59,12276,50,10351,37,9154,32"/>
+<area shape="rect" id="Node000143" href="$srf02_8h.html" title="Driver definitions for the SRF02 ultrasonic ranger." alt="" coords="15272,115,15439,143"/>
+<area shape="poly" id="edge144_Node000001_Node000143" title=" " alt="" coords="9155,27,10386,31,12375,43,13391,53,14280,64,14938,78,15148,87,15260,95,15322,112,15321,117,15259,101,15147,92,14938,84,14280,70,13390,58,12375,49,10386,37,9155,32"/>
+<area shape="rect" id="Node000144" href="$srf08_8h.html" title="Driver definitions for the SRF02 ultrasonic ranger." alt="" coords="15463,115,15629,143"/>
+<area shape="poly" id="edge145_Node000001_Node000144" title=" " alt="" coords="9155,27,10419,31,12471,43,13520,52,14439,64,15118,78,15335,86,15451,95,15513,112,15511,117,15450,101,15334,92,15118,83,14438,69,13520,57,12471,48,10419,36,9155,32"/>
+<area shape="rect" id="Node000146" href="$stmpe811_8h.html" title=" " alt="" coords="15654,115,15852,143"/>
+<area shape="poly" id="edge147_Node000001_Node000146" title=" " alt="" coords="9155,27,10454,32,12568,45,14597,66,15298,80,15521,87,15641,95,15713,112,15712,117,15640,101,15521,92,15298,85,14597,71,12568,50,10454,38,9155,32"/>
+<area shape="rect" id="Node000149" href="$tcs37727_8h.html" title="Interface definition for the TCS37727 sensor driver." alt="" coords="15877,115,16069,143"/>
+<area shape="poly" id="edge151_Node000001_Node000149" title=" " alt="" coords="9154,27,10492,32,12680,44,13800,53,14781,65,15508,79,15740,87,15864,95,15934,112,15933,117,15863,101,15740,92,15508,84,14781,70,13800,59,12680,49,10492,37,9154,32"/>
+<area shape="rect" id="Node000151" href="$tmp00x_8h.html" title="Interface definition for the TMP00X sensor driver." alt="" coords="16093,115,16276,143"/>
+<area shape="poly" id="edge153_Node000001_Node000151" title=" " alt="" coords="9155,27,10532,31,12790,42,13948,51,14963,63,15714,78,15953,86,16081,95,16148,112,16147,117,16080,101,15953,91,15714,83,14962,68,13948,57,12790,48,10532,36,9155,32"/>
+<area shape="rect" id="Node000153" href="$tsl2561_8h.html" title="Device driver interface for the illuminance TSL2561 sensor." alt="" coords="16301,115,16482,143"/>
+<area shape="poly" id="edge155_Node000001_Node000153" title=" " alt="" coords="9155,27,10569,30,12896,41,14089,50,15135,62,15910,77,16157,86,16289,95,16356,112,16354,117,16288,101,16157,91,15910,82,15135,67,14089,56,12896,47,10569,36,9155,32"/>
+<area shape="rect" id="Node000155" href="$tsl4531x_8h.html" title="Device driver for the AMS TSL4531 sensor." alt="" coords="16506,115,16696,143"/>
+<area shape="poly" id="edge157_Node000001_Node000155" title=" " alt="" coords="9155,27,10604,30,12998,41,14227,50,15305,62,16104,77,16358,86,16495,95,16563,112,16562,117,16494,101,16358,91,16104,82,15305,68,14227,56,12998,47,10604,36,9155,32"/>
+<area shape="rect" id="Node000157" href="$vcnl40x0_8h.html" title="Device driver interface for the VCNL40X0 sensors family." alt="" coords="16719,115,16912,143"/>
+<area shape="poly" id="edge159_Node000001_Node000157" title=" " alt="" coords="9155,26,10642,30,13106,41,14372,50,15483,62,16306,77,16568,86,16708,95,16778,112,16776,117,16707,101,16567,91,16305,82,15483,67,14372,55,13106,46,10642,36,9155,32"/>
+<area shape="rect" id="Node000159" href="$veml6070_8h.html" title="Device driver interface for the VEML6070 UV sensor." alt="" coords="16936,115,17135,143"/>
+<area shape="poly" id="edge161_Node000001_Node000159" title=" " alt="" coords="9155,26,10679,30,13214,41,14518,50,15662,62,16510,77,16779,86,16924,95,16996,112,16995,117,16923,101,16779,91,16509,82,15662,67,14518,56,13214,47,10679,36,9155,32"/>
+<area shape="rect" id="Node000161" href="$vl6180x_8h.html" title=" " alt="" coords="17159,115,17344,143"/>
+<area shape="poly" id="edge163_Node000001_Node000161" title=" " alt="" coords="9155,26,10718,29,13327,39,14668,48,15847,60,16720,76,16998,85,17147,95,17215,112,17213,117,17146,101,16998,90,16720,81,15847,65,14668,53,13327,44,10718,35,9155,32"/>
+<area shape="rect" id="Node000163" href="$pca9633__params_8h.html" title="Default configuration for the PCA9633 I2C PWM controller." alt="" coords="17369,106,17545,151"/>
+<area shape="poly" id="edge166_Node000001_Node000163" title=" " alt="" coords="9155,26,10756,28,13434,37,14812,46,16022,58,16919,74,17205,84,17357,95,17394,103,17393,109,17356,101,17204,89,16919,80,16022,63,14812,51,13434,43,10756,34,9155,32"/>
+<area shape="rect" id="Node000164" href="$atca_8h.html" title="Default addresses and device descriptor for CryptoAuth devices." alt="" coords="17620,106,17806,151"/>
+<area shape="poly" id="edge168_Node000001_Node000164" title=" " alt="" coords="9155,26,10798,29,13555,39,14976,48,16224,60,17149,76,17444,85,17601,95,17642,103,17641,109,17600,101,17443,90,17149,81,16224,65,14976,53,13555,45,10798,35,9155,32"/>
+<area shape="rect" id="Node000165" href="$atca__params_8h.html" title="Default configuration for Microchip CryptoAuth devices." alt="" coords="17489,216,17675,261"/>
+<area shape="poly" id="edge172_Node000001_Node000165" title=" " alt="" coords="9155,26,10850,27,13674,34,15108,42,16340,54,17210,72,17459,83,17528,89,17558,96,17579,123,17588,155,17590,188,17588,216,17583,216,17585,188,17583,156,17574,125,17555,100,17528,94,17459,88,17210,77,16340,60,15107,47,13674,39,10850,32,9155,32"/>
+<area shape="rect" id="Node000007" href="$ad7746__params_8h.html" title="Default configuration for AD7746 capaticance&#45;to&#45;digital converter." alt="" coords="828,216,998,261"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="916,158,916,216,910,216,910,158"/>
+<area shape="rect" id="Node000009" href="$adcxx1c__params_8h.html" title="Default configuration for ADCXX1C devices." alt="" coords="1033,216,1208,261"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1124,158,1124,216,1118,216,1118,158"/>
+<area shape="rect" id="Node000011" href="$ads101x__params_8h.html" title="Default configuration for ADS101x/111x devices." alt="" coords="1245,216,1421,261"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="1336,158,1336,216,1330,216,1330,158"/>
+<area shape="rect" id="Node000013" href="$adxl345__params_8h.html" title="Default configuration for ADXL345 devices." alt="" coords="1457,216,1630,261"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="1546,158,1546,216,1541,216,1541,158"/>
+<area shape="rect" id="Node000016" href="$apds99xx__params_8h.html" title="Default configuration for Broadcom APDS99XX proximity and ambient light sensor." alt="" coords="1658,216,1842,261"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="1936,152,1797,218,1794,213,1933,147"/>
+<area shape="rect" id="Node000018" href="$mtd__at24cxxx_8h.html" title="Interface definition for at24cxxx MTD wrapper." alt="" coords="1866,216,2013,261"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="2150,152,1992,218,1990,213,2148,147"/>
+<area shape="rect" id="Node000020" href="$avr-rss2_2include_2eui__provider__params_8h.html" title="EUI providers found on the board." alt="" coords="2038,216,2212,261"/>
+<area shape="poly" id="edge19_Node000019_Node000020" title=" " alt="" coords="2362,151,2183,218,2181,213,2360,146"/>
+<area shape="rect" id="Node000021" href="$same54-xpro_2include_2eui__provider__params_8h.html" title="EUI providers found on the board." alt="" coords="2236,208,2393,269"/>
+<area shape="poly" id="edge20_Node000019_Node000021" title=" " alt="" coords="2390,156,2343,209,2339,206,2386,153"/>
+<area shape="rect" id="Node000022" href="$at24mac__params_8h.html" title="Default configuration for the AT24MAC chip." alt="" coords="2417,216,2595,261"/>
+<area shape="poly" id="edge21_Node000019_Node000022" title=" " alt="" coords="2434,153,2489,214,2485,218,2430,156"/>
+<area shape="rect" id="Node000024" href="$io1__xplained_8h.html" title="Device driver interface for the Atmel IO1 Xplained extension." alt="" coords="2620,216,2761,261"/>
+<area shape="poly" id="edge23_Node000023_Node000024" title=" " alt="" coords="2649,155,2681,215,2676,217,2645,158"/>
+<area shape="rect" id="Node000025" href="$io1__xplained__params_8h.html" title="Default configuration for IO1 Xplained." alt="" coords="2610,317,2770,379"/>
+<area shape="poly" id="edge24_Node000024_Node000025" title=" " alt="" coords="2693,276,2693,317,2688,317,2688,276"/>
+<area shape="rect" id="Node000027" href="$bh1750fvi__params_8h.html" title="Default configuration for BH1750FVI devices." alt="" coords="2785,216,2971,261"/>
+<area shape="poly" id="edge26_Node000026_Node000027" title=" " alt="" coords="2867,158,2877,215,2872,216,2862,159"/>
+<area shape="rect" id="Node000029" href="$bh1900nux__params_8h.html" title="Default configuration for BH1900NUX devices." alt="" coords="2995,216,3188,261"/>
+<area shape="poly" id="edge28_Node000028_Node000029" title=" " alt="" coords="3089,158,3093,216,3088,216,3084,158"/>
+<area shape="rect" id="Node000031" href="$bme680__params_8h.html" title="Default configuration for BME680 device driver." alt="" coords="3218,216,3392,261"/>
+<area shape="poly" id="edge30_Node000030_Node000031" title=" " alt="" coords="3308,158,3308,216,3302,216,3302,158"/>
+<area shape="rect" id="Node000033" href="$bmp180__params_8h.html" title="Default configuration for BMP180." alt="" coords="3428,216,3603,261"/>
+<area shape="poly" id="edge32_Node000032_Node000033" title=" " alt="" coords="3518,158,3518,216,3513,216,3513,158"/>
+<area shape="rect" id="Node000036" href="$bmx280__params_8h.html" title="Default configuration for BMX280." alt="" coords="3850,216,4024,261"/>
+<area shape="poly" id="edge35_Node000035_Node000036" title=" " alt="" coords="3940,158,3940,216,3934,216,3934,158"/>
+<area shape="rect" id="Node000038" href="$bq2429x__params_8h.html" title="Default configuration for BQ2429x power ICs." alt="" coords="4060,216,4238,261"/>
+<area shape="poly" id="edge37_Node000037_Node000038" title=" " alt="" coords="4152,158,4152,216,4146,216,4146,158"/>
+<area shape="rect" id="Node000040" href="$ccs811__params_8h.html" title="Default configuration for AMS CCS811 digital gas sensors." alt="" coords="4274,216,4440,261"/>
+<area shape="poly" id="edge39_Node000039_Node000040" title=" " alt="" coords="4360,158,4360,216,4354,216,4354,158"/>
+<area shape="rect" id="Node000042" href="$cst816s__params_8h.html" title="Default configuration for the CST816S touch screen driver." alt="" coords="4476,216,4648,261"/>
+<area shape="poly" id="edge41_Node000041_Node000042" title=" " alt="" coords="4565,158,4565,216,4560,216,4560,158"/>
+<area shape="rect" id="Node000044" href="$ds1307__params_8h.html" title="Default configuration for DS1307 devices." alt="" coords="4683,216,4852,261"/>
+<area shape="poly" id="edge43_Node000043_Node000044" title=" " alt="" coords="4770,158,4770,216,4765,216,4765,158"/>
+<area shape="rect" id="Node000047" href="$ds75lx__params_8h.html" title="Default configuration for DS75LX." alt="" coords="4933,216,5098,261"/>
+<area shape="poly" id="edge46_Node000046_Node000047" title=" " alt="" coords="5144,154,5049,218,5046,214,5141,150"/>
+<area shape="rect" id="Node000049" href="$ft5x06__internal_8h.html" title="FT5X06 internal functions." alt="" coords="5122,216,5285,261"/>
+<area shape="poly" id="edge48_Node000048_Node000049" title=" " alt="" coords="5342,153,5239,218,5236,214,5339,149"/>
+<area shape="rect" id="Node000050" href="$ft5x06__params_8h.html" title="Default configuration." alt="" coords="5310,216,5473,261"/>
+<area shape="poly" id="edge49_Node000048_Node000050" title=" " alt="" coords="5381,158,5391,215,5385,216,5376,159"/>
+<area shape="rect" id="Node000052" href="$fxos8700__params_8h.html" title="Default configuration for FXOS8700 devices." alt="" coords="5497,216,5678,261"/>
+<area shape="poly" id="edge51_Node000051_Node000052" title=" " alt="" coords="5586,158,5589,216,5584,216,5581,158"/>
+<area shape="rect" id="Node000054" href="$hdc1000__params_8h.html" title="Default configuration for HDC1000 devices." alt="" coords="5709,216,5885,261"/>
+<area shape="poly" id="edge53_Node000053_Node000054" title=" " alt="" coords="5800,158,5800,216,5794,216,5794,158"/>
+<area shape="rect" id="Node000057" href="$hm330x__params_8h.html" title="Default configuration." alt="" coords="6092,216,6267,261"/>
+<area shape="poly" id="edge56_Node000056_Node000057" title=" " alt="" coords="6210,158,6189,217,6184,215,6205,157"/>
+<area shape="rect" id="Node000059" href="$hmc5883l__params_8h.html" title="Default configuration for the Honeywell HMC5883L 3&#45;axis digital compass." alt="" coords="6291,216,6476,261"/>
+<area shape="poly" id="edge58_Node000058_Node000059" title=" " alt="" coords="6423,158,6396,217,6391,215,6418,156"/>
+<area shape="rect" id="Node000061" href="$hsc__params_8h.html" title="Default configuration for HSC." alt="" coords="6500,216,6643,261"/>
+<area shape="poly" id="edge60_Node000060_Node000061" title=" " alt="" coords="6620,158,6586,217,6581,214,6615,155"/>
+<area shape="rect" id="Node000063" href="$hts221__params_8h.html" title="Default configuration for ST HTS221 devices." alt="" coords="6658,326,6824,370"/>
+<area shape="poly" id="edge62_Node000062_Node000063" title=" " alt="" coords="6775,152,6737,175,6721,191,6709,209,6701,238,6705,270,6716,299,6729,324,6724,327,6711,301,6700,271,6696,238,6704,207,6717,187,6734,171,6772,147"/>
+<area shape="rect" id="Node000064" href="$hts221__regs_8h.html" title="Register definitions for ST HTS221 devices." alt="" coords="6718,216,6884,261"/>
+<area shape="poly" id="edge63_Node000062_Node000064" title=" " alt="" coords="6812,158,6801,216,6795,215,6807,157"/>
+<area shape="poly" id="edge65_Node000064_Node000062" title=" " alt="" coords="6814,201,6824,143,6830,144,6820,202"/>
+<area shape="poly" id="edge64_Node000064_Node000063" title=" " alt="" coords="6784,276,6755,327,6751,324,6779,273"/>
+<area shape="rect" id="Node000066" href="$ina2xx__params_8h.html" title="Default configuration for INA2xx power/current monitors." alt="" coords="6908,216,7073,261"/>
+<area shape="poly" id="edge67_Node000065_Node000066" title=" " alt="" coords="7019,158,7000,217,6995,215,7013,157"/>
+<area shape="rect" id="Node000068" href="$ina3221__internal_8h.html" title="Functions to convert register values of INA3221 to actual voltage values and vice versa." alt="" coords="7097,216,7270,261"/>
+<area shape="poly" id="edge69_Node000067_Node000068" title=" " alt="" coords="7221,158,7195,217,7190,215,7216,156"/>
+<area shape="rect" id="Node000069" href="$ina3221__params_8h.html" title="Driver configuration parameters for Texas Instruments INA3221 three&#45;channel, high&#45;side current and bu..." alt="" coords="7294,216,7468,261"/>
+<area shape="poly" id="edge70_Node000067_Node000069" title=" " alt="" coords="7262,150,7352,214,7349,218,7259,154"/>
+<area shape="rect" id="Node000071" href="$isl29020__params_8h.html" title="Default configuration for ISL29020 devices." alt="" coords="7491,216,7668,261"/>
+<area shape="poly" id="edge72_Node000070_Node000071" title=" " alt="" coords="7471,150,7553,214,7550,218,7468,154"/>
+<area shape="rect" id="Node000073" href="$isl29125__params_8h.html" title="Default configuration for ISL29125 devices." alt="" coords="7691,216,7868,261"/>
+<area shape="poly" id="edge74_Node000072_Node000073" title=" " alt="" coords="7681,151,7756,214,7752,218,7678,155"/>
+<area shape="rect" id="Node000075" href="$itg320x__params_8h.html" title="Default configuration for InvenSense ITG320X 3&#45;axis gyroscope." alt="" coords="7892,216,8062,261"/>
+<area shape="poly" id="edge76_Node000074_Node000075" title=" " alt="" coords="7889,151,7956,214,7952,218,7885,155"/>
+<area shape="poly" id="edge78_Node000076_Node000077" title=" " alt="" coords="8083,152,8142,214,8138,218,8079,156"/>
+<area shape="rect" id="Node000079" href="$l3g4200d__params_8h.html" title="Default configuration for L3G4200D devices." alt="" coords="8260,216,8441,261"/>
+<area shape="poly" id="edge80_Node000078_Node000079" title=" " alt="" coords="8323,157,8345,215,8340,217,8318,158"/>
+<area shape="rect" id="Node000081" href="$l3gxxxx__params_8h.html" title="Default configuration for ST L3Gxxxx 3&#45;axis gyroscope sensor family." alt="" coords="8465,216,8638,261"/>
+<area shape="poly" id="edge82_Node000080_Node000081" title=" " alt="" coords="8533,157,8548,215,8543,216,8528,159"/>
+<area shape="rect" id="Node000083" href="$lc709203f__params_8h.html" title="Default parameters for the SHTC1 Temperature and humidity sensor." alt="" coords="8663,216,8848,261"/>
+<area shape="poly" id="edge84_Node000082_Node000083" title=" " alt="" coords="8745,158,8755,215,8749,216,8740,159"/>
+<area shape="rect" id="Node000085" href="$lis2dh12__params_8h.html" title="Default configuration for LIS2DH12 devices." alt="" coords="8873,216,9049,261"/>
+<area shape="poly" id="edge86_Node000084_Node000085" title=" " alt="" coords="8959,158,8962,216,8957,216,8953,158"/>
+<area shape="rect" id="Node000087" href="$lis3mdl__params_8h.html" title="Default configuration for LIS3MDL devices." alt="" coords="9079,216,9248,261"/>
+<area shape="poly" id="edge88_Node000086_Node000087" title=" " alt="" coords="9166,158,9166,216,9161,216,9161,158"/>
+<area shape="rect" id="Node000089" href="$lm75__params_8h.html" title="Default configuration parameters for the lm75 sensors." alt="" coords="9284,216,9438,261"/>
+<area shape="poly" id="edge90_Node000088_Node000089" title=" " alt="" coords="9364,158,9364,216,9358,216,9358,158"/>
+<area shape="rect" id="Node000091" href="$lpsxxx__params_8h.html" title="Default configuration for LPSXXX family of devices." alt="" coords="9475,216,9639,261"/>
+<area shape="poly" id="edge92_Node000090_Node000091" title=" " alt="" coords="9560,158,9560,216,9554,216,9554,158"/>
+<area shape="rect" id="Node000093" href="$lsm303dlhc__params_8h.html" title="Default configuration for LSM303DLHC devices." alt="" coords="9697,208,9848,269"/>
+<area shape="poly" id="edge94_Node000092_Node000093" title=" " alt="" coords="9776,158,9776,207,9770,207,9770,158"/>
+<area shape="rect" id="Node000095" href="$lsm6dsxx__params_8h.html" title="Default configuration for LSM6DSXX devices." alt="" coords="9907,216,10092,261"/>
+<area shape="poly" id="edge96_Node000094_Node000095" title=" " alt="" coords="10002,158,10002,216,9997,216,9997,158"/>
+<area shape="rect" id="Node000097" href="$mag3110__params_8h.html" title="Default configuration for MAG3110 devices." alt="" coords="10128,216,10311,261"/>
+<area shape="poly" id="edge98_Node000096_Node000097" title=" " alt="" coords="10222,158,10222,216,10217,216,10217,158"/>
+<area shape="rect" id="Node000099" href="$mcp47xx__params_8h.html" title="Default configuration for Microchip MCP47xx DAC with I2C interface." alt="" coords="10346,216,10528,261"/>
+<area shape="poly" id="edge100_Node000098_Node000099" title=" " alt="" coords="10440,158,10440,216,10434,216,10434,158"/>
+<area shape="rect" id="Node000101" href="$mma7660__params_8h.html" title="Default configuration for MMA7660 accelerometer." alt="" coords="10563,216,10750,261"/>
+<area shape="poly" id="edge102_Node000100_Node000101" title=" " alt="" coords="10660,158,10660,216,10654,216,10654,158"/>
+<area shape="rect" id="Node000103" href="$mma8x5x__params_8h.html" title="Default configuration for MMA8x5x devices." alt="" coords="10787,216,10974,261"/>
+<area shape="poly" id="edge104_Node000102_Node000103" title=" " alt="" coords="10884,158,10884,216,10878,216,10878,158"/>
+<area shape="rect" id="Node000105" href="$mpl3115a2__params_8h.html" title="Default configuration for MPL3115A2 devices." alt="" coords="11010,216,11205,261"/>
+<area shape="poly" id="edge106_Node000104_Node000105" title=" " alt="" coords="11110,158,11110,216,11105,216,11105,158"/>
+<area shape="rect" id="Node000107" href="$mpu9x50__params_8h.html" title="Default configuration for MPU9X50 (MPU9150 and MPU9250) devices." alt="" coords="11240,216,11423,261"/>
+<area shape="poly" id="edge108_Node000106_Node000107" title=" " alt="" coords="11334,158,11334,216,11329,216,11329,158"/>
+<area shape="rect" id="Node000109" href="$opt3001__params_8h.html" title="Default configuration for OPT3001 devices." alt="" coords="11459,216,11633,261"/>
+<area shape="poly" id="edge110_Node000108_Node000109" title=" " alt="" coords="11549,158,11549,216,11544,216,11544,158"/>
+<area shape="rect" id="Node000112" href="$pca9685__params_8h.html" title="Default configuration for the PCA9685 I2C PWM controller." alt="" coords="11882,216,12058,261"/>
+<area shape="poly" id="edge113_Node000111_Node000112" title=" " alt="" coords="11973,158,11973,216,11968,216,11968,158"/>
+<area shape="rect" id="Node000114" href="$pcf857x__params_8h.html" title="Default configuration for Texas Instruments PCF857X I2C I/O expanders." alt="" coords="12094,216,12268,261"/>
+<area shape="poly" id="edge115_Node000113_Node000114" title=" " alt="" coords="12184,158,12184,216,12178,216,12178,158"/>
+<area shape="rect" id="Node000117" href="$ph__oem__params_8h.html" title="Default configuration for Atlas Scientific pH OEM sensors." alt="" coords="12465,216,12638,261"/>
+<area shape="poly" id="edge118_Node000116_Node000117" title=" " alt="" coords="12554,167,12554,216,12549,216,12549,167"/>
+<area shape="rect" id="Node000120" href="$qmc5883l__params_8h.html" title="Default configuration for QMC5883L devices." alt="" coords="12848,216,13034,261"/>
+<area shape="poly" id="edge121_Node000119_Node000120" title=" " alt="" coords="12944,158,12944,216,12938,216,12938,158"/>
+<area shape="poly" id="edge123_Node000121_Node000122" title=" " alt="" coords="13160,157,13177,215,13172,217,13154,158"/>
+<area shape="rect" id="Node000124" href="$sdp3x__params_8h.html" title="Device driver params interface for the SDP3x sensor." alt="" coords="13315,216,13476,261"/>
+<area shape="poly" id="edge125_Node000123_Node000124" title=" " alt="" coords="13398,158,13398,216,13393,216,13393,158"/>
+<area shape="rect" id="Node000126" href="$seesaw__soil__params_8h.html" title="Default configuration for Seesaw Soil devices." alt="" coords="13514,208,13669,269"/>
+<area shape="poly" id="edge127_Node000125_Node000126" title=" " alt="" coords="13594,167,13594,207,13589,207,13589,167"/>
+<area shape="rect" id="Node000128" href="$sgp30__params_8h.html" title="Default configuration." alt="" coords="13707,216,13868,261"/>
+<area shape="poly" id="edge129_Node000127_Node000128" title=" " alt="" coords="13790,158,13790,216,13785,216,13785,158"/>
+<area shape="rect" id="Node000130" href="$sht2x__params_8h.html" title="Default configuration for SHT2x humidity and temperature sensor." alt="" coords="13904,216,14061,261"/>
+<area shape="poly" id="edge131_Node000129_Node000130" title=" " alt="" coords="13985,158,13985,216,13980,216,13980,158"/>
+<area shape="rect" id="Node000132" href="$sht3x__params_8h.html" title="Default configuration for Sensirion SHT30/SHT31/SHT35 devices." alt="" coords="14097,216,14254,261"/>
+<area shape="poly" id="edge133_Node000131_Node000132" title=" " alt="" coords="14178,158,14178,216,14173,216,14173,158"/>
+<area shape="rect" id="Node000134" href="$shtcx__params_8h.html" title="Default parameters for the SHTCX Temperature and humidity sensor." alt="" coords="14291,216,14447,261"/>
+<area shape="poly" id="edge135_Node000133_Node000134" title=" " alt="" coords="14372,158,14372,216,14366,216,14366,158"/>
+<area shape="rect" id="Node000136" href="$si1133__params_8h.html" title="Default configuration for SI1133." alt="" coords="14483,216,14647,261"/>
+<area shape="poly" id="edge137_Node000135_Node000136" title=" " alt="" coords="14568,158,14568,216,14562,216,14562,158"/>
+<area shape="rect" id="Node000138" href="$si114x__params_8h.html" title="Default configuration for SI114x." alt="" coords="14683,216,14847,261"/>
+<area shape="poly" id="edge139_Node000137_Node000138" title=" " alt="" coords="14768,158,14768,216,14762,216,14762,158"/>
+<area shape="rect" id="Node000140" href="$si70xx__params_8h.html" title="Default configuration for Si7006/13/20/21." alt="" coords="14883,216,15047,261"/>
+<area shape="poly" id="edge141_Node000139_Node000140" title=" " alt="" coords="14968,158,14968,216,14962,216,14962,158"/>
+<area shape="rect" id="Node000142" href="$sps30__params_8h.html" title="Default configuration for Sensirion SPS30 sensors devices." alt="" coords="15082,216,15242,261"/>
+<area shape="poly" id="edge143_Node000141_Node000142" title=" " alt="" coords="15165,158,15165,216,15160,216,15160,158"/>
+<area shape="rect" id="Node000145" href="$srf08__params_8h.html" title="Default configuration for srf08 devices." alt="" coords="15449,216,15603,261"/>
+<area shape="poly" id="edge146_Node000144_Node000145" title=" " alt="" coords="15544,159,15533,216,15528,215,15538,158"/>
+<area shape="rect" id="Node000147" href="$stmpe811__constants_8h.html" title="Constants for STMPE811." alt="" coords="15628,216,15814,261"/>
+<area shape="poly" id="edge148_Node000146_Node000147" title=" " alt="" coords="15747,158,15730,217,15725,215,15742,157"/>
+<area shape="rect" id="Node000148" href="$stmpe811__params_8h.html" title="Default configuration for STMPE811." alt="" coords="15693,326,15879,370"/>
+<area shape="poly" id="edge150_Node000146_Node000148" title=" " alt="" coords="15785,151,15810,176,15829,207,15834,239,15829,272,15817,302,15803,326,15799,324,15812,300,15824,270,15829,239,15824,209,15805,179,15782,155"/>
+<area shape="poly" id="edge149_Node000147_Node000148" title=" " alt="" coords="15744,273,15775,324,15771,327,15740,276"/>
+<area shape="rect" id="Node000150" href="$tcs37727__params_8h.html" title="Default configuration for TCS37727 devices." alt="" coords="15889,216,16070,261"/>
+<area shape="poly" id="edge152_Node000149_Node000150" title=" " alt="" coords="15977,158,15981,216,15976,216,15972,158"/>
+<area shape="rect" id="Node000152" href="$tmp00x__params_8h.html" title="Default configuration for TMP00X (TMP006 and TMP007) devices." alt="" coords="16099,216,16270,261"/>
+<area shape="poly" id="edge154_Node000151_Node000152" title=" " alt="" coords="16188,158,16188,216,16182,216,16182,158"/>
+<area shape="rect" id="Node000154" href="$tsl2561__params_8h.html" title="Default configuration for TSL2561." alt="" coords="16307,216,16476,261"/>
+<area shape="poly" id="edge156_Node000153_Node000154" title=" " alt="" coords="16394,158,16394,216,16389,216,16389,158"/>
+<area shape="rect" id="Node000156" href="$tsl4531x__params_8h.html" title="Default configuration for tsl4531x light sensor." alt="" coords="16512,216,16690,261"/>
+<area shape="poly" id="edge158_Node000155_Node000156" title=" " alt="" coords="16604,158,16604,216,16598,216,16598,158"/>
+<area shape="rect" id="Node000158" href="$vcnl40x0__params_8h.html" title="Default configuration for VCNL40X0 devices." alt="" coords="16725,216,16906,261"/>
+<area shape="poly" id="edge160_Node000157_Node000158" title=" " alt="" coords="16818,158,16818,216,16813,216,16813,158"/>
+<area shape="rect" id="Node000160" href="$veml6070__params_8h.html" title="Default configuration for VEML6070." alt="" coords="16942,216,17129,261"/>
+<area shape="poly" id="edge162_Node000159_Node000160" title=" " alt="" coords="17038,158,17038,216,17033,216,17033,158"/>
+<area shape="rect" id="Node000162" href="$vl6180x__params_8h.html" title="Default configuration for ST VL6180X Ranging and Ambient Light Sensing (ALS) module." alt="" coords="17165,216,17338,261"/>
+<area shape="poly" id="edge164_Node000161_Node000162" title=" " alt="" coords="17254,158,17254,216,17249,216,17249,158"/>
+<area shape="poly" id="edge169_Node000164_Node000165" title=" " alt="" coords="17676,164,17610,218,17607,213,17673,159"/>
+<area shape="rect" id="Node000166" href="$cryptoauthlib__test_8h.html" title=" " alt="" coords="17554,326,17741,370"/>
+<area shape="poly" id="edge171_Node000164_Node000166" title=" " alt="" coords="17712,167,17704,216,17690,270,17663,326,17658,324,17685,268,17699,215,17707,166"/>
+<area shape="poly" id="edge170_Node000165_Node000166" title=" " alt="" coords="17605,273,17637,324,17632,327,17601,276"/>
+</map>

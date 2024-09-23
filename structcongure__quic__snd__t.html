@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>congure_quic_snd_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structcongure__quic__snd__t.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">congure_quic_snd_t Struct Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__congure.html">CongURE - A Congestion control framework</a> &raquo; <a class="el" href="group__sys__congure__quic.html">CongURE implementation of QUIC's CC</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>State object for CongURE QUIC.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>State object for CongURE QUIC. </p>
+
+<p class="definition">Definition at line <a class="el" href="quic_8h_source.html#l00134">134</a> of file <a class="el" href="quic_8h_source.html">quic.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="quic_8h_source.html">quic.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:ac503dba145d930a45400b9a43e83f996" id="r_ac503dba145d930a45400b9a43e83f996"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcongure__snd__t.html">congure_snd_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac503dba145d930a45400b9a43e83f996">super</a></td></tr>
+<tr class="memdesc:ac503dba145d930a45400b9a43e83f996"><td class="mdescLeft">&#160;</td><td class="mdescRight">see <a class="el" href="structcongure__snd__t.html">congure_snd_t</a>  <br /></td></tr>
+<tr class="separator:ac503dba145d930a45400b9a43e83f996"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8900d7b4b1949aa4530e3ee7f1680c0" id="r_aa8900d7b4b1949aa4530e3ee7f1680c0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structcongure__quic__snd__consts__t.html">congure_quic_snd_consts_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8900d7b4b1949aa4530e3ee7f1680c0">consts</a></td></tr>
+<tr class="memdesc:aa8900d7b4b1949aa4530e3ee7f1680c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constants.  <br /></td></tr>
+<tr class="separator:aa8900d7b4b1949aa4530e3ee7f1680c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec856f590addc23c5fa3a47c9d55f69e" id="r_aec856f590addc23c5fa3a47c9d55f69e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__sys__ztimer.html#gab10130a9b13fd88ea06a2889e63342f6">ztimer_now_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec856f590addc23c5fa3a47c9d55f69e">first_rtt_sample</a></td></tr>
+<tr class="memdesc:aec856f590addc23c5fa3a47c9d55f69e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timestamp in milliseconds of when the first RTT sample was obtained.  <br /></td></tr>
+<tr class="separator:aec856f590addc23c5fa3a47c9d55f69e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5cfa3b23f8da73cd0ea7bfeab2e0cd9" id="r_ad5cfa3b23f8da73cd0ea7bfeab2e0cd9"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5cfa3b23f8da73cd0ea7bfeab2e0cd9">in_flight_size</a></td></tr>
+<tr class="memdesc:ad5cfa3b23f8da73cd0ea7bfeab2e0cd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sum of caller-defined units of message sizes of all messages that are yet not ack'd or declared lost.  <br /></td></tr>
+<tr class="separator:ad5cfa3b23f8da73cd0ea7bfeab2e0cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f34d20b62e4e9cfe2aea04ad53f87b0" id="r_a4f34d20b62e4e9cfe2aea04ad53f87b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__sys__ztimer.html#gab10130a9b13fd88ea06a2889e63342f6">ztimer_now_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f34d20b62e4e9cfe2aea04ad53f87b0">recovery_start</a></td></tr>
+<tr class="memdesc:a4f34d20b62e4e9cfe2aea04ad53f87b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timestamp in milliseconds of when congestion was first detected.  <br /></td></tr>
+<tr class="separator:a4f34d20b62e4e9cfe2aea04ad53f87b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52400eaaf3b2cd5ebd4790724ddac606" id="r_a52400eaaf3b2cd5ebd4790724ddac606"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__sys__congure.html#gaa8548f80649d991f82009bf414bcb193">congure_wnd_size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52400eaaf3b2cd5ebd4790724ddac606">ssthresh</a></td></tr>
+<tr class="memdesc:a52400eaaf3b2cd5ebd4790724ddac606"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slow start threshold in caller-defined units.  <br /></td></tr>
+<tr class="separator:a52400eaaf3b2cd5ebd4790724ddac606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26e60f87d3ca172438b6023467a6cd9b" id="r_a26e60f87d3ca172438b6023467a6cd9b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26e60f87d3ca172438b6023467a6cd9b">smoothed_rtt</a></td></tr>
+<tr class="memdesc:a26e60f87d3ca172438b6023467a6cd9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The smoothed RTT of a connection between peers in milliseconds.  <br /></td></tr>
+<tr class="separator:a26e60f87d3ca172438b6023467a6cd9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a776cf4434907d2ea21a698b5a17bf451" id="r_a776cf4434907d2ea21a698b5a17bf451"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a776cf4434907d2ea21a698b5a17bf451">rtt_var</a></td></tr>
+<tr class="memdesc:a776cf4434907d2ea21a698b5a17bf451"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RTT variation.  <br /></td></tr>
+<tr class="separator:a776cf4434907d2ea21a698b5a17bf451"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2a8756fca36fe683070890c44ff0fc0" id="r_ad2a8756fca36fe683070890c44ff0fc0"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2a8756fca36fe683070890c44ff0fc0">min_rtt</a></td></tr>
+<tr class="memdesc:ad2a8756fca36fe683070890c44ff0fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum RTT seen over a period of time.  <br /></td></tr>
+<tr class="separator:ad2a8756fca36fe683070890c44ff0fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea76612d6e4175b72c61fd9ee4a15263" id="r_aea76612d6e4175b72c61fd9ee4a15263"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea76612d6e4175b72c61fd9ee4a15263">limited</a></td></tr>
+<tr class="memdesc:aea76612d6e4175b72c61fd9ee4a15263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to one if congestion control should is limited by the application or flow control.  <br /></td></tr>
+<tr class="separator:aea76612d6e4175b72c61fd9ee4a15263"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1c07113d0fc1ab76d100cf7070345ac" id="r_af1c07113d0fc1ab76d100cf7070345ac"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1c07113d0fc1ab76d100cf7070345ac">max_ack_delay</a></td></tr>
+<tr class="memdesc:af1c07113d0fc1ab76d100cf7070345ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advertised maximum amount of time in milliseconds a receiver intends to delay its acknowledgements.  <br /></td></tr>
+<tr class="separator:af1c07113d0fc1ab76d100cf7070345ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_structcongure__snd__t"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_structcongure__snd__t')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="structcongure__snd__t.html">congure_snd_t</a></td></tr>
+<tr class="memitem:a5e607d3b240c468deb7ef0f006a736ff inherit pub_attribs_structcongure__snd__t" id="r_a5e607d3b240c468deb7ef0f006a736ff"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__sys__congure.html#ga19db87d01fe6b0b9fb22a59289fd06a0">congure_snd_driver_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcongure__snd__t.html#a5e607d3b240c468deb7ef0f006a736ff">driver</a></td></tr>
+<tr class="memdesc:a5e607d3b240c468deb7ef0f006a736ff inherit pub_attribs_structcongure__snd__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the state object.  <br /></td></tr>
+<tr class="separator:a5e607d3b240c468deb7ef0f006a736ff inherit pub_attribs_structcongure__snd__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68b932e19d7207ed9d35bd4c9795e151 inherit pub_attribs_structcongure__snd__t" id="r_a68b932e19d7207ed9d35bd4c9795e151"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcongure__snd__t.html#a68b932e19d7207ed9d35bd4c9795e151">ctx</a></td></tr>
+<tr class="memdesc:a68b932e19d7207ed9d35bd4c9795e151 inherit pub_attribs_structcongure__snd__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">Context for callbacks specific to the congestion control.  <br /></td></tr>
+<tr class="separator:a68b932e19d7207ed9d35bd4c9795e151 inherit pub_attribs_structcongure__snd__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a692b89db2aa1507616b657af68246526 inherit pub_attribs_structcongure__snd__t" id="r_a692b89db2aa1507616b657af68246526"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__sys__congure.html#gaa8548f80649d991f82009bf414bcb193">congure_wnd_size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcongure__snd__t.html#a692b89db2aa1507616b657af68246526">cwnd</a></td></tr>
+<tr class="memdesc:a692b89db2aa1507616b657af68246526 inherit pub_attribs_structcongure__snd__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">Congestion window size.  <br /></td></tr>
+<tr class="separator:a692b89db2aa1507616b657af68246526 inherit pub_attribs_structcongure__snd__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="aa8900d7b4b1949aa4530e3ee7f1680c0" name="aa8900d7b4b1949aa4530e3ee7f1680c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8900d7b4b1949aa4530e3ee7f1680c0">&#9670;&#160;</a></span>consts</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structcongure__quic__snd__consts__t.html">congure_quic_snd_consts_t</a>* congure_quic_snd_t::consts</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constants. </p>
+
+<p class="definition">Definition at line <a class="el" href="quic_8h_source.html#l00140">140</a> of file <a class="el" href="quic_8h_source.html">quic.h</a>.</p>
+
+</div>
+</div>
+<a id="aec856f590addc23c5fa3a47c9d55f69e" name="aec856f590addc23c5fa3a47c9d55f69e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec856f590addc23c5fa3a47c9d55f69e">&#9670;&#160;</a></span>first_rtt_sample</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__sys__ztimer.html#gab10130a9b13fd88ea06a2889e63342f6">ztimer_now_t</a> congure_quic_snd_t::first_rtt_sample</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Timestamp in milliseconds of when the first RTT sample was obtained. </p>
+
+<p class="definition">Definition at line <a class="el" href="quic_8h_source.html#l00146">146</a> of file <a class="el" href="quic_8h_source.html">quic.h</a>.</p>
+
+</div>
+</div>
+<a id="ad5cfa3b23f8da73cd0ea7bfeab2e0cd9" name="ad5cfa3b23f8da73cd0ea7bfeab2e0cd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5cfa3b23f8da73cd0ea7bfeab2e0cd9">&#9670;&#160;</a></span>in_flight_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned congure_quic_snd_t::in_flight_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sum of caller-defined units of message sizes of all messages that are yet not ack'd or declared lost. </p>
+
+<p class="definition">Definition at line <a class="el" href="quic_8h_source.html#l00152">152</a> of file <a class="el" href="quic_8h_source.html">quic.h</a>.</p>
+
+</div>
+</div>
+<a id="aea76612d6e4175b72c61fd9ee4a15263" name="aea76612d6e4175b72c61fd9ee4a15263"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea76612d6e4175b72c61fd9ee4a15263">&#9670;&#160;</a></span>limited</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t congure_quic_snd_t::limited</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set to one if congestion control should is limited by the application or flow control. </p>
+<p>Should be supplied and may be changed by user before calling a <a class="el" href="group__sys__congure.html">CongURE - A Congestion control framework</a> function.</p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://tools.ietf.org/html/rfc9002#appendix-B.5">RFC 9002, Appendix B.5</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="quic_8h_source.html#l00194">194</a> of file <a class="el" href="quic_8h_source.html">quic.h</a>.</p>
+
+</div>
+</div>
+<a id="af1c07113d0fc1ab76d100cf7070345ac" name="af1c07113d0fc1ab76d100cf7070345ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1c07113d0fc1ab76d100cf7070345ac">&#9670;&#160;</a></span>max_ack_delay</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t congure_quic_snd_t::max_ack_delay</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Advertised maximum amount of time in milliseconds a receiver intends to delay its acknowledgements. </p>
+<p>Used to establish persistent congestion.</p>
+<p>Should be supplied and may be changed by user before calling a <a class="el" href="group__sys__congure.html">CongURE - A Congestion control framework</a> function. If this value is not provided by the * protocol, leave it at 0. </p>
+
+<p class="definition">Definition at line <a class="el" href="quic_8h_source.html#l00206">206</a> of file <a class="el" href="quic_8h_source.html">quic.h</a>.</p>
+
+</div>
+</div>
+<a id="ad2a8756fca36fe683070890c44ff0fc0" name="ad2a8756fca36fe683070890c44ff0fc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2a8756fca36fe683070890c44ff0fc0">&#9670;&#160;</a></span>min_rtt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t congure_quic_snd_t::min_rtt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The minimum RTT seen over a period of time. </p>
+
+<p class="definition">Definition at line <a class="el" href="quic_8h_source.html#l00183">183</a> of file <a class="el" href="quic_8h_source.html">quic.h</a>.</p>
+
+</div>
+</div>
+<a id="a4f34d20b62e4e9cfe2aea04ad53f87b0" name="a4f34d20b62e4e9cfe2aea04ad53f87b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f34d20b62e4e9cfe2aea04ad53f87b0">&#9670;&#160;</a></span>recovery_start</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__sys__ztimer.html#gab10130a9b13fd88ea06a2889e63342f6">ztimer_now_t</a> congure_quic_snd_t::recovery_start</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Timestamp in milliseconds of when congestion was first detected. </p>
+<p>This is the time when congestion recovery mode is entered. </p>
+
+<p class="definition">Definition at line <a class="el" href="quic_8h_source.html#l00159">159</a> of file <a class="el" href="quic_8h_source.html">quic.h</a>.</p>
+
+</div>
+</div>
+<a id="a776cf4434907d2ea21a698b5a17bf451" name="a776cf4434907d2ea21a698b5a17bf451"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a776cf4434907d2ea21a698b5a17bf451">&#9670;&#160;</a></span>rtt_var</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t congure_quic_snd_t::rtt_var</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The RTT variation. </p>
+
+<p class="definition">Definition at line <a class="el" href="quic_8h_source.html#l00178">178</a> of file <a class="el" href="quic_8h_source.html">quic.h</a>.</p>
+
+</div>
+</div>
+<a id="a26e60f87d3ca172438b6023467a6cd9b" name="a26e60f87d3ca172438b6023467a6cd9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26e60f87d3ca172438b6023467a6cd9b">&#9670;&#160;</a></span>smoothed_rtt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t congure_quic_snd_t::smoothed_rtt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The smoothed RTT of a connection between peers in milliseconds. </p>
+
+<p class="definition">Definition at line <a class="el" href="quic_8h_source.html#l00173">173</a> of file <a class="el" href="quic_8h_source.html">quic.h</a>.</p>
+
+</div>
+</div>
+<a id="a52400eaaf3b2cd5ebd4790724ddac606" name="a52400eaaf3b2cd5ebd4790724ddac606"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52400eaaf3b2cd5ebd4790724ddac606">&#9670;&#160;</a></span>ssthresh</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__sys__congure.html#gaa8548f80649d991f82009bf414bcb193">congure_wnd_size_t</a> congure_quic_snd_t::ssthresh</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Slow start threshold in caller-defined units. </p>
+<p>When <a class="el" href="structcongure__snd__t.html#a692b89db2aa1507616b657af68246526" title="Congestion window size.">congure_quic_snd_t::cwnd</a> is below <a class="el" href="#a52400eaaf3b2cd5ebd4790724ddac606" title="Slow start threshold in caller-defined units.">congure_quic_snd_t::ssthresh</a> the algorithm is in slow start mode and <a class="el" href="structcongure__snd__t.html#a692b89db2aa1507616b657af68246526" title="Congestion window size.">congure_quic_snd_t::cwnd</a> grows in number of caller-defined units of acknowledged messages sizes </p>
+
+<p class="definition">Definition at line <a class="el" href="quic_8h_source.html#l00168">168</a> of file <a class="el" href="quic_8h_source.html">quic.h</a>.</p>
+
+</div>
+</div>
+<a id="ac503dba145d930a45400b9a43e83f996" name="ac503dba145d930a45400b9a43e83f996"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac503dba145d930a45400b9a43e83f996">&#9670;&#160;</a></span>super</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcongure__snd__t.html">congure_snd_t</a> congure_quic_snd_t::super</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>see <a class="el" href="structcongure__snd__t.html">congure_snd_t</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="quic_8h_source.html#l00135">135</a> of file <a class="el" href="quic_8h_source.html">quic.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>sys/include/congure/<a class="el" href="quic_8h_source.html">quic.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

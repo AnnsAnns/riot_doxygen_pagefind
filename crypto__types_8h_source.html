@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/psa_crypto/psa/crypto_types.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('crypto__types_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">crypto_types.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="crypto__types_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (C) 2021 HAW Hamburg</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * directory for more details.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#ifndef PSA_CRYPTO_PSA_CRYPTO_TYPES_H</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define PSA_CRYPTO_PSA_CRYPTO_TYPES_H</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &quot;<a class="code" href="psa__crypto_2psa_2error_8h.html">psa/error.h</a>&quot;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="crypto__types_8h.html#ad4cfad719c2b1ad88835d193f593371d">   35</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    PSA_CRYPTO_DRIVER_DECRYPT,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    PSA_CRYPTO_DRIVER_ENCRYPT</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>} <a class="code hl_enumeration" href="crypto__types_8h.html#ad4cfad719c2b1ad88835d193f593371d">psa_encrypt_or_decrypt_t</a>;</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="crypto__types_8h.html#ac2e4d47f1300d73c2f829a6d99252d69">   48</a></span><span class="keyword">typedef</span> uint32_t <a class="code hl_typedef" href="crypto__types_8h.html#ac2e4d47f1300d73c2f829a6d99252d69">psa_algorithm_t</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="crypto__types_8h.html#af632c5b13aa19c98f8591d4beda8dd1a">   60</a></span><span class="keyword">typedef</span> uint8_t <a class="code hl_typedef" href="crypto__types_8h.html#af632c5b13aa19c98f8591d4beda8dd1a">psa_dh_family_t</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="crypto__types_8h.html#ae7ad3569cb9c91b1ebe59a056edb2fc6">   72</a></span><span class="keyword">typedef</span> uint8_t <a class="code hl_typedef" href="crypto__types_8h.html#ae7ad3569cb9c91b1ebe59a056edb2fc6">psa_ecc_family_t</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="crypto__types_8h.html#a1ad89f1ce73274b54b6557dda5ee6290">  105</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structpsa__key__derivation__operation__s.html">psa_key_derivation_operation_s</a> <a class="code hl_struct" href="structpsa__key__derivation__operation__s.html">psa_key_derivation_operation_t</a>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="crypto__types_8h.html#aac4eeacd36596c548b3a48fc06c5048b">  110</a></span><span class="keyword">typedef</span> uint16_t <a class="code hl_typedef" href="crypto__types_8h.html#aac4eeacd36596c548b3a48fc06c5048b">psa_key_derivation_step_t</a>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="crypto__types_8h.html#a11e986351c65bd3dc3c0fe2cd9926e4b">  118</a></span><span class="keyword">typedef</span> uint32_t <a class="code hl_typedef" href="crypto__types_8h.html#a11e986351c65bd3dc3c0fe2cd9926e4b">psa_key_id_t</a>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="crypto__types_8h.html#a6821ff6dd39dc2bc370ded760ad8b0cf">  156</a></span><span class="keyword">typedef</span> uint32_t <a class="code hl_typedef" href="crypto__types_8h.html#a6821ff6dd39dc2bc370ded760ad8b0cf">psa_key_lifetime_t</a>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="crypto__types_8h.html#a5e700601f686237a8d1e29363ae543d5">  192</a></span><span class="keyword">typedef</span> uint32_t <a class="code hl_typedef" href="crypto__types_8h.html#a5e700601f686237a8d1e29363ae543d5">psa_key_location_t</a>;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno"><a class="line" href="crypto__types_8h.html#a183689a3018896e1e2e4f2bcc57bcff3">  232</a></span><span class="keyword">typedef</span> uint8_t <a class="code hl_typedef" href="crypto__types_8h.html#a183689a3018896e1e2e4f2bcc57bcff3">psa_key_persistence_t</a>;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="crypto__types_8h.html#a63fce6880ca5933b5d6baa257febf1f6">  248</a></span><span class="keyword">typedef</span> uint16_t <a class="code hl_typedef" href="crypto__types_8h.html#a63fce6880ca5933b5d6baa257febf1f6">psa_key_type_t</a>;</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="crypto__types_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">  253</a></span><span class="keyword">typedef</span> uint32_t <a class="code hl_typedef" href="crypto__types_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno"><a class="line" href="crypto__types_8h.html#a57270c808928ab5d7c9cfc7cb1e5735d">  258</a></span><span class="keyword">typedef</span> uint16_t <a class="code hl_typedef" href="crypto__types_8h.html#a57270c808928ab5d7c9cfc7cb1e5735d">psa_key_bits_t</a>;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="comment">/* These are all temporarily defined as some numeric type to prevent errors at compile time.*/</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno"><a class="line" href="crypto__types_8h.html#a14f6a01afbaa8c5b3d8c5d345cbaa3ed">  291</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structpsa__aead__operation__s.html">psa_aead_operation_s</a> <a class="code hl_struct" href="structpsa__aead__operation__s.html">psa_aead_operation_t</a>;</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span> </div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno"><a class="line" href="crypto__types_8h.html#a78f0838b0c4e3db28b26355624d4bd37">  322</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structpsa__mac__operation__s.html">psa_mac_operation_s</a> <a class="code hl_struct" href="structpsa__mac__operation__s.html">psa_mac_operation_t</a>;</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno"><a class="line" href="crypto__types_8h.html#a3c4205d2ce66c4095fc5c78c25273fab">  354</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structpsa__hash__operation__s.html">psa_hash_operation_s</a> <a class="code hl_struct" href="structpsa__hash__operation__s.html">psa_hash_operation_t</a>;</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span> </div>
+<div class="line"><a id="l00457" name="l00457"></a><span class="lineno"><a class="line" href="crypto__types_8h.html#a0ec645e1fdafe59d591104451ebf5680">  457</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structpsa__key__attributes__s.html">psa_key_attributes_s</a> <a class="code hl_struct" href="structpsa__key__attributes__s.html">psa_key_attributes_t</a>;</div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span> </div>
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno"><a class="line" href="crypto__types_8h.html#a1399de29db657e3737bb09927aae51fa">  489</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structpsa__cipher__operation__s.html">psa_cipher_operation_s</a> <a class="code hl_struct" href="structpsa__cipher__operation__s.html">psa_cipher_operation_t</a>;</div>
+<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span> </div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>}</div>
+<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span> </div>
+<div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span><span class="preprocessor">#endif </span><span class="comment">/* PSA_CRYPTO_PSA_CRYPTO_TYPES_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="acrypto__types_8h_html_a11e986351c65bd3dc3c0fe2cd9926e4b"><div class="ttname"><a href="crypto__types_8h.html#a11e986351c65bd3dc3c0fe2cd9926e4b">psa_key_id_t</a></div><div class="ttdeci">uint32_t psa_key_id_t</div><div class="ttdoc">Key identifier.</div><div class="ttdef"><b>Definition</b> <a href="#l00118">crypto_types.h:118</a></div></div>
+<div class="ttc" id="acrypto__types_8h_html_a183689a3018896e1e2e4f2bcc57bcff3"><div class="ttname"><a href="crypto__types_8h.html#a183689a3018896e1e2e4f2bcc57bcff3">psa_key_persistence_t</a></div><div class="ttdeci">uint8_t psa_key_persistence_t</div><div class="ttdoc">Encoding of key persistence levels.</div><div class="ttdef"><b>Definition</b> <a href="#l00232">crypto_types.h:232</a></div></div>
+<div class="ttc" id="acrypto__types_8h_html_a57270c808928ab5d7c9cfc7cb1e5735d"><div class="ttname"><a href="crypto__types_8h.html#a57270c808928ab5d7c9cfc7cb1e5735d">psa_key_bits_t</a></div><div class="ttdeci">uint16_t psa_key_bits_t</div><div class="ttdoc">Public interfaces use size_t, but internally we use a smaller type.</div><div class="ttdef"><b>Definition</b> <a href="#l00258">crypto_types.h:258</a></div></div>
+<div class="ttc" id="acrypto__types_8h_html_a5e700601f686237a8d1e29363ae543d5"><div class="ttname"><a href="crypto__types_8h.html#a5e700601f686237a8d1e29363ae543d5">psa_key_location_t</a></div><div class="ttdeci">uint32_t psa_key_location_t</div><div class="ttdoc">Encoding of key location indicators.</div><div class="ttdef"><b>Definition</b> <a href="#l00192">crypto_types.h:192</a></div></div>
+<div class="ttc" id="acrypto__types_8h_html_a63fce6880ca5933b5d6baa257febf1f6"><div class="ttname"><a href="crypto__types_8h.html#a63fce6880ca5933b5d6baa257febf1f6">psa_key_type_t</a></div><div class="ttdeci">uint16_t psa_key_type_t</div><div class="ttdoc">Encoding of a key type.</div><div class="ttdef"><b>Definition</b> <a href="#l00248">crypto_types.h:248</a></div></div>
+<div class="ttc" id="acrypto__types_8h_html_a6821ff6dd39dc2bc370ded760ad8b0cf"><div class="ttname"><a href="crypto__types_8h.html#a6821ff6dd39dc2bc370ded760ad8b0cf">psa_key_lifetime_t</a></div><div class="ttdeci">uint32_t psa_key_lifetime_t</div><div class="ttdoc">Encoding of key lifetimes.</div><div class="ttdef"><b>Definition</b> <a href="#l00156">crypto_types.h:156</a></div></div>
+<div class="ttc" id="acrypto__types_8h_html_a7bb9de71337e0e98de843aa7f9b55f25"><div class="ttname"><a href="crypto__types_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a></div><div class="ttdeci">uint32_t psa_key_usage_t</div><div class="ttdoc">Encoding of permitted usage on a key.</div><div class="ttdef"><b>Definition</b> <a href="#l00253">crypto_types.h:253</a></div></div>
+<div class="ttc" id="acrypto__types_8h_html_aac4eeacd36596c548b3a48fc06c5048b"><div class="ttname"><a href="crypto__types_8h.html#aac4eeacd36596c548b3a48fc06c5048b">psa_key_derivation_step_t</a></div><div class="ttdeci">uint16_t psa_key_derivation_step_t</div><div class="ttdoc">Encoding of the step of a key derivation.</div><div class="ttdef"><b>Definition</b> <a href="#l00110">crypto_types.h:110</a></div></div>
+<div class="ttc" id="acrypto__types_8h_html_ac2e4d47f1300d73c2f829a6d99252d69"><div class="ttname"><a href="crypto__types_8h.html#ac2e4d47f1300d73c2f829a6d99252d69">psa_algorithm_t</a></div><div class="ttdeci">uint32_t psa_algorithm_t</div><div class="ttdoc">Encoding of a cryptographic algorithm.</div><div class="ttdef"><b>Definition</b> <a href="#l00048">crypto_types.h:48</a></div></div>
+<div class="ttc" id="acrypto__types_8h_html_ad4cfad719c2b1ad88835d193f593371d"><div class="ttname"><a href="crypto__types_8h.html#ad4cfad719c2b1ad88835d193f593371d">psa_encrypt_or_decrypt_t</a></div><div class="ttdeci">psa_encrypt_or_decrypt_t</div><div class="ttdoc">For encrypt-decrypt functions, whether the operation is an encryption or a decryption.</div><div class="ttdef"><b>Definition</b> <a href="#l00035">crypto_types.h:35</a></div></div>
+<div class="ttc" id="acrypto__types_8h_html_ae7ad3569cb9c91b1ebe59a056edb2fc6"><div class="ttname"><a href="crypto__types_8h.html#ae7ad3569cb9c91b1ebe59a056edb2fc6">psa_ecc_family_t</a></div><div class="ttdeci">uint8_t psa_ecc_family_t</div><div class="ttdoc">The type of PSA elliptic curve family identifiers.</div><div class="ttdef"><b>Definition</b> <a href="#l00072">crypto_types.h:72</a></div></div>
+<div class="ttc" id="acrypto__types_8h_html_af632c5b13aa19c98f8591d4beda8dd1a"><div class="ttname"><a href="crypto__types_8h.html#af632c5b13aa19c98f8591d4beda8dd1a">psa_dh_family_t</a></div><div class="ttdeci">uint8_t psa_dh_family_t</div><div class="ttdoc">The type of PSA finite-field Diffie-Hellman group family identifiers.</div><div class="ttdef"><b>Definition</b> <a href="#l00060">crypto_types.h:60</a></div></div>
+<div class="ttc" id="apsa__crypto_2psa_2error_8h_html"><div class="ttname"><a href="psa__crypto_2psa_2error_8h.html">error.h</a></div><div class="ttdoc">Error definitions for the PSA Crypto API.</div></div>
+<div class="ttc" id="astructpsa__aead__operation__s_html"><div class="ttname"><a href="structpsa__aead__operation__s.html">psa_aead_operation_s</a></div><div class="ttdoc">Structure storing an AEAD operation context.</div><div class="ttdef"><b>Definition</b> <a href="crypto__struct_8h_source.html#l00081">crypto_struct.h:81</a></div></div>
+<div class="ttc" id="astructpsa__cipher__operation__s_html"><div class="ttname"><a href="structpsa__cipher__operation__s.html">psa_cipher_operation_s</a></div><div class="ttdoc">Structure storing a cipher operation context.</div><div class="ttdef"><b>Definition</b> <a href="crypto__struct_8h_source.html#l00108">crypto_struct.h:108</a></div></div>
+<div class="ttc" id="astructpsa__hash__operation__s_html"><div class="ttname"><a href="structpsa__hash__operation__s.html">psa_hash_operation_s</a></div><div class="ttdoc">Structure containing a hash context and algorithm.</div><div class="ttdef"><b>Definition</b> <a href="crypto__struct_8h_source.html#l00174">crypto_struct.h:174</a></div></div>
+<div class="ttc" id="astructpsa__key__attributes__s_html"><div class="ttname"><a href="structpsa__key__attributes__s.html">psa_key_attributes_s</a></div><div class="ttdoc">Structure storing key attributes.</div><div class="ttdef"><b>Definition</b> <a href="crypto__struct_8h_source.html#l00048">crypto_struct.h:48</a></div></div>
+<div class="ttc" id="astructpsa__key__derivation__operation__s_html"><div class="ttname"><a href="structpsa__key__derivation__operation__s.html">psa_key_derivation_operation_s</a></div><div class="ttdoc">Structure storing a key derivation context.</div><div class="ttdef"><b>Definition</b> <a href="crypto__struct_8h_source.html#l00153">crypto_struct.h:153</a></div></div>
+<div class="ttc" id="astructpsa__mac__operation__s_html"><div class="ttname"><a href="structpsa__mac__operation__s.html">psa_mac_operation_s</a></div><div class="ttdoc">Structure storing a MAC operation context.</div><div class="ttdef"><b>Definition</b> <a href="crypto__struct_8h_source.html#l00212">crypto_struct.h:212</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:30 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

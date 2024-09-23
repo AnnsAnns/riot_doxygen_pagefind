@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>boards/arduino-mkrzero/include/board.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('arduino-mkrzero_2include_2board_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle"><div class="title">board.h File Reference<div class="ingroups"><a class="el" href="group__boards.html">Boards</a> &raquo; <a class="el" href="group__boards__arduino-mkrzero.html">Arduino MKRZERO</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Board specific definitions for the Arduino MKRZERO board.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Board specific definitions for the Arduino MKRZERO board. </p>
+<dl class="section author"><dt>Author</dt><dd>Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span class="obfuscator">.nosp@m.</span>ndre<span class="obfuscator">.nosp@m.</span>.abad<span class="obfuscator">.nosp@m.</span>ie@i<span class="obfuscator">.nosp@m.</span>nria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html">board.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;cpu.h&quot;</code><br />
+<code>#include &quot;periph_conf.h&quot;</code><br />
+<code>#include &quot;board_common.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="arduino__pinmap_8h_source.html">arduino_pinmap.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="drivers_2include_2periph_2gpio_8h_source.html">periph/gpio.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for board.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="arduino-mkrzero_2include_2board_8h__incl.svg" width="695" height="207"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="arduino-mkrzero_2include_2board_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a599933528ed62f08141075b6546dca5f" id="r_a599933528ed62f08141075b6546dca5f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a599933528ed62f08141075b6546dca5f">CARD_DETECT_PIN</a>&#160;&#160;&#160;(<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 27))</td></tr>
+<tr class="memdesc:a599933528ed62f08141075b6546dca5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Card detect pin.  <br /></td></tr>
+<tr class="separator:a599933528ed62f08141075b6546dca5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">SD Card device configuration</h2></td></tr>
+<tr class="memitem:a41cbf87bcb5db3d76e7bce9db6718437" id="r_a41cbf87bcb5db3d76e7bce9db6718437"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41cbf87bcb5db3d76e7bce9db6718437">SDCARD_SPI_PARAM_SPI</a>&#160;&#160;&#160;(<a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9">SPI_DEV</a>(1))</td></tr>
+<tr class="separator:a41cbf87bcb5db3d76e7bce9db6718437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98bbf84fda3506835da403b773e5bedf" id="r_a98bbf84fda3506835da403b773e5bedf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98bbf84fda3506835da403b773e5bedf">SDCARD_SPI_PARAM_CS</a>&#160;&#160;&#160;(<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 14))</td></tr>
+<tr class="separator:a98bbf84fda3506835da403b773e5bedf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a310f30aa4d25f868559b683ac025ad8a" id="r_a310f30aa4d25f868559b683ac025ad8a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a310f30aa4d25f868559b683ac025ad8a">SDCARD_SPI_PARAM_CLK</a>&#160;&#160;&#160;(<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 13))</td></tr>
+<tr class="separator:a310f30aa4d25f868559b683ac025ad8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf353c6fca5fc34012a4a0ce7fd1270b" id="r_aaf353c6fca5fc34012a4a0ce7fd1270b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf353c6fca5fc34012a4a0ce7fd1270b">SDCARD_SPI_PARAM_MOSI</a>&#160;&#160;&#160;(<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 12))</td></tr>
+<tr class="separator:aaf353c6fca5fc34012a4a0ce7fd1270b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafff7922492a49535a39a7f55b87fd59" id="r_aafff7922492a49535a39a7f55b87fd59"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafff7922492a49535a39a7f55b87fd59">SDCARD_SPI_PARAM_MISO</a>&#160;&#160;&#160;(<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 15))</td></tr>
+<tr class="separator:aafff7922492a49535a39a7f55b87fd59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b39ba3680695d6a0197bf66295fb7ec" id="r_a1b39ba3680695d6a0197bf66295fb7ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b39ba3680695d6a0197bf66295fb7ec">SDCARD_SPI_PARAM_POWER</a>&#160;&#160;&#160;(<a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a>)</td></tr>
+<tr class="separator:a1b39ba3680695d6a0197bf66295fb7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac519e2e5309f85391ecd5b5f8394ae77" id="r_ac519e2e5309f85391ecd5b5f8394ae77"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac519e2e5309f85391ecd5b5f8394ae77">SDCARD_SPI_PARAM_POWER_AH</a>&#160;&#160;&#160;(true)</td></tr>
+<tr class="memdesc:ac519e2e5309f85391ecd5b5f8394ae77"><td class="mdescLeft">&#160;</td><td class="mdescRight">treated as 'don't care' if SDCARD_SPI_PARAM_POWER is GPIO_UNDEF  <br /></td></tr>
+<tr class="separator:ac519e2e5309f85391ecd5b5f8394ae77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">LED pin definitions and handlers</h2></td></tr>
+<tr class="memitem:a3fc522fda449d6edde717d6a857429cf" id="r_a3fc522fda449d6edde717d6a857429cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fc522fda449d6edde717d6a857429cf">LED0_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469a8b7dd81ba2f0d15957795457d92ce139">PB</a>, 8)</td></tr>
+<tr class="separator:a3fc522fda449d6edde717d6a857429cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a663daa01e565aee93c6f20c5845b90b4" id="r_a663daa01e565aee93c6f20c5845b90b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a663daa01e565aee93c6f20c5845b90b4">LED_PORT</a>&#160;&#160;&#160;PORT-&gt;Group[<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469a8b7dd81ba2f0d15957795457d92ce139">PB</a>]</td></tr>
+<tr class="separator:a663daa01e565aee93c6f20c5845b90b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfabde35a3e8b7ab50146a5e223bfead" id="r_abfabde35a3e8b7ab50146a5e223bfead"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfabde35a3e8b7ab50146a5e223bfead">LED0_MASK</a>&#160;&#160;&#160;(1 &lt;&lt; 8)</td></tr>
+<tr class="separator:abfabde35a3e8b7ab50146a5e223bfead"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e48dc02333bfc2e6ad3e5bd466eecd4" id="r_a1e48dc02333bfc2e6ad3e5bd466eecd4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e48dc02333bfc2e6ad3e5bd466eecd4">LED0_ON</a>&#160;&#160;&#160;(LED_PORT.OUTSET.reg = LED0_MASK)</td></tr>
+<tr class="separator:a1e48dc02333bfc2e6ad3e5bd466eecd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef2e39b9fd343d0e437fac0463f3e02d" id="r_aef2e39b9fd343d0e437fac0463f3e02d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef2e39b9fd343d0e437fac0463f3e02d">LED0_OFF</a>&#160;&#160;&#160;(LED_PORT.OUTCLR.reg = LED0_MASK)</td></tr>
+<tr class="separator:aef2e39b9fd343d0e437fac0463f3e02d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebc6389533d9fc8dcbe4d2129a4d5a45" id="r_aebc6389533d9fc8dcbe4d2129a4d5a45"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebc6389533d9fc8dcbe4d2129a4d5a45">LED0_TOGGLE</a>&#160;&#160;&#160;(LED_PORT.OUTTGL.reg = LED0_MASK)</td></tr>
+<tr class="separator:aebc6389533d9fc8dcbe4d2129a4d5a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebcddec3544f2f60cb95f41f3321080f" id="r_aebcddec3544f2f60cb95f41f3321080f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebcddec3544f2f60cb95f41f3321080f">LED0_NAME</a>&#160;&#160;&#160;&quot;LED(Green)&quot;</td></tr>
+<tr class="separator:aebcddec3544f2f60cb95f41f3321080f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a599933528ed62f08141075b6546dca5f" name="a599933528ed62f08141075b6546dca5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a599933528ed62f08141075b6546dca5f">&#9670;&#160;</a></span>CARD_DETECT_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CARD_DETECT_PIN&#160;&#160;&#160;(<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 27))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Card detect pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html#l00050">50</a> of file <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="abfabde35a3e8b7ab50146a5e223bfead" name="abfabde35a3e8b7ab50146a5e223bfead"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfabde35a3e8b7ab50146a5e223bfead">&#9670;&#160;</a></span>LED0_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_MASK&#160;&#160;&#160;(1 &lt;&lt; 8)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html#l00059">59</a> of file <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aebcddec3544f2f60cb95f41f3321080f" name="aebcddec3544f2f60cb95f41f3321080f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebcddec3544f2f60cb95f41f3321080f">&#9670;&#160;</a></span>LED0_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_NAME&#160;&#160;&#160;&quot;LED(Green)&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html#l00065">65</a> of file <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aef2e39b9fd343d0e437fac0463f3e02d" name="aef2e39b9fd343d0e437fac0463f3e02d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef2e39b9fd343d0e437fac0463f3e02d">&#9670;&#160;</a></span>LED0_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_OFF&#160;&#160;&#160;(LED_PORT.OUTCLR.reg = LED0_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html#l00062">62</a> of file <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a1e48dc02333bfc2e6ad3e5bd466eecd4" name="a1e48dc02333bfc2e6ad3e5bd466eecd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e48dc02333bfc2e6ad3e5bd466eecd4">&#9670;&#160;</a></span>LED0_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_ON&#160;&#160;&#160;(LED_PORT.OUTSET.reg = LED0_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html#l00061">61</a> of file <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a3fc522fda449d6edde717d6a857429cf" name="a3fc522fda449d6edde717d6a857429cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fc522fda449d6edde717d6a857429cf">&#9670;&#160;</a></span>LED0_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469a8b7dd81ba2f0d15957795457d92ce139">PB</a>, 8)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html#l00056">56</a> of file <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aebc6389533d9fc8dcbe4d2129a4d5a45" name="aebc6389533d9fc8dcbe4d2129a4d5a45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebc6389533d9fc8dcbe4d2129a4d5a45">&#9670;&#160;</a></span>LED0_TOGGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_TOGGLE&#160;&#160;&#160;(LED_PORT.OUTTGL.reg = LED0_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html#l00063">63</a> of file <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a663daa01e565aee93c6f20c5845b90b4" name="a663daa01e565aee93c6f20c5845b90b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a663daa01e565aee93c6f20c5845b90b4">&#9670;&#160;</a></span>LED_PORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED_PORT&#160;&#160;&#160;PORT-&gt;Group[<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469a8b7dd81ba2f0d15957795457d92ce139">PB</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html#l00058">58</a> of file <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a310f30aa4d25f868559b683ac025ad8a" name="a310f30aa4d25f868559b683ac025ad8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a310f30aa4d25f868559b683ac025ad8a">&#9670;&#160;</a></span>SDCARD_SPI_PARAM_CLK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDCARD_SPI_PARAM_CLK&#160;&#160;&#160;(<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 13))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html#l00039">39</a> of file <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a98bbf84fda3506835da403b773e5bedf" name="a98bbf84fda3506835da403b773e5bedf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98bbf84fda3506835da403b773e5bedf">&#9670;&#160;</a></span>SDCARD_SPI_PARAM_CS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDCARD_SPI_PARAM_CS&#160;&#160;&#160;(<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 14))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html#l00038">38</a> of file <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aafff7922492a49535a39a7f55b87fd59" name="aafff7922492a49535a39a7f55b87fd59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafff7922492a49535a39a7f55b87fd59">&#9670;&#160;</a></span>SDCARD_SPI_PARAM_MISO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDCARD_SPI_PARAM_MISO&#160;&#160;&#160;(<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 15))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html#l00041">41</a> of file <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aaf353c6fca5fc34012a4a0ce7fd1270b" name="aaf353c6fca5fc34012a4a0ce7fd1270b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf353c6fca5fc34012a4a0ce7fd1270b">&#9670;&#160;</a></span>SDCARD_SPI_PARAM_MOSI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDCARD_SPI_PARAM_MOSI&#160;&#160;&#160;(<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 12))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html#l00040">40</a> of file <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a1b39ba3680695d6a0197bf66295fb7ec" name="a1b39ba3680695d6a0197bf66295fb7ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b39ba3680695d6a0197bf66295fb7ec">&#9670;&#160;</a></span>SDCARD_SPI_PARAM_POWER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDCARD_SPI_PARAM_POWER&#160;&#160;&#160;(<a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html#l00042">42</a> of file <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ac519e2e5309f85391ecd5b5f8394ae77" name="ac519e2e5309f85391ecd5b5f8394ae77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac519e2e5309f85391ecd5b5f8394ae77">&#9670;&#160;</a></span>SDCARD_SPI_PARAM_POWER_AH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDCARD_SPI_PARAM_POWER_AH&#160;&#160;&#160;(true)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>treated as 'don't care' if SDCARD_SPI_PARAM_POWER is GPIO_UNDEF </p>
+
+<p class="definition">Definition at line <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html#l00044">44</a> of file <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a41cbf87bcb5db3d76e7bce9db6718437" name="a41cbf87bcb5db3d76e7bce9db6718437"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41cbf87bcb5db3d76e7bce9db6718437">&#9670;&#160;</a></span>SDCARD_SPI_PARAM_SPI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDCARD_SPI_PARAM_SPI&#160;&#160;&#160;(<a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9">SPI_DEV</a>(1))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html#l00037">37</a> of file <a class="el" href="arduino-mkrzero_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:30 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

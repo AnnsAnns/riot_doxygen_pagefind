@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>pkg/openwsn/include/board_info.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('board__info_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">board_info.h File Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__pkg__openwsn.html">OpenWSN network stack</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Thomas Watteyne <a href="#" onclick="location.href='mai'+'lto:'+'wat'+'te'+'yne'+'@e'+'ecs'+'.b'+'erk'+'el'+'ey.'+'ed'+'u'; return false;">watte<span class="obfuscator">.nosp@m.</span>yne@<span class="obfuscator">.nosp@m.</span>eecs.<span class="obfuscator">.nosp@m.</span>berk<span class="obfuscator">.nosp@m.</span>eley.<span class="obfuscator">.nosp@m.</span>edu</a>, February 2012 </dd>
+<dd>
+Tengfei Chang <a href="#" onclick="location.href='mai'+'lto:'+'ten'+'gf'+'ei.'+'ch'+'ang'+'@g'+'mai'+'l.'+'com'; return false;">tengf<span class="obfuscator">.nosp@m.</span>ei.c<span class="obfuscator">.nosp@m.</span>hang@<span class="obfuscator">.nosp@m.</span>gmai<span class="obfuscator">.nosp@m.</span>l.com</a>, July 2012 </dd>
+<dd>
+Peter Kietzmann <a href="#" onclick="location.href='mai'+'lto:'+'pet'+'er'+'.ki'+'et'+'zma'+'nn'+'@ha'+'w-'+'ham'+'bu'+'rg.'+'de'; return false;">peter<span class="obfuscator">.nosp@m.</span>.kie<span class="obfuscator">.nosp@m.</span>tzman<span class="obfuscator">.nosp@m.</span>n@ha<span class="obfuscator">.nosp@m.</span>w-ham<span class="obfuscator">.nosp@m.</span>burg<span class="obfuscator">.nosp@m.</span>.de</a>, July 2017 </dd>
+<dd>
+Francisco Molina <a href="#" onclick="location.href='mai'+'lto:'+'fra'+'nc'+'ois'+'-x'+'avi'+'er'+'.mo'+'li'+'na@'+'in'+'ria'+'.f'+'r'; return false;">franc<span class="obfuscator">.nosp@m.</span>ois-<span class="obfuscator">.nosp@m.</span>xavie<span class="obfuscator">.nosp@m.</span>r.mo<span class="obfuscator">.nosp@m.</span>lina@<span class="obfuscator">.nosp@m.</span>inri<span class="obfuscator">.nosp@m.</span>a.fr</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="board__info_8h_source.html">board_info.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;board.h&quot;</code><br />
+<code>#include &quot;periph_conf.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="timex_8h_source.html">timex.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for board_info.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="board__info_8h__incl.svg" width="494" height="207"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="board__info_8h__dep__incl.svg" width="170" height="148"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="board__info_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">OpenWSN interrupt handling wrappers</h2></td></tr>
+<tr class="memitem:aafcaa3cb5de374b74117d66a78e6589b" id="r_aafcaa3cb5de374b74117d66a78e6589b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafcaa3cb5de374b74117d66a78e6589b">INTERRUPT_DECLARATION</a>()</td></tr>
+<tr class="separator:aafcaa3cb5de374b74117d66a78e6589b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac136489c5ba4794566532004267967f8" id="r_ac136489c5ba4794566532004267967f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac136489c5ba4794566532004267967f8">DISABLE_INTERRUPTS</a>()</td></tr>
+<tr class="separator:ac136489c5ba4794566532004267967f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ca2cec1256c982e354114e155314354" id="r_a7ca2cec1256c982e354114e155314354"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ca2cec1256c982e354114e155314354">ENABLE_INTERRUPTS</a>()</td></tr>
+<tr class="separator:a7ca2cec1256c982e354114e155314354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef89d4774415ded995ca6326a257c4c2" id="r_aef89d4774415ded995ca6326a257c4c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef89d4774415ded995ca6326a257c4c2">SCHEDULER_WAKEUP</a>()</td></tr>
+<tr class="separator:aef89d4774415ded995ca6326a257c4c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae298a96b817c7ab08d0dd2709763bc58" id="r_ae298a96b817c7ab08d0dd2709763bc58"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae298a96b817c7ab08d0dd2709763bc58">SCHEDULER_ENABLE_INTERRUPT</a>()</td></tr>
+<tr class="separator:ae298a96b817c7ab08d0dd2709763bc58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">OpenWSN platform dependent definitions</h2></td></tr>
+<tr class="memitem:abe66b9c1c60db84f2a99f2b827275f24" id="r_abe66b9c1c60db84f2a99f2b827275f24"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe66b9c1c60db84f2a99f2b827275f24">PORT_TIMER_WIDTH</a>&#160;&#160;&#160;uint32_t</td></tr>
+<tr class="separator:abe66b9c1c60db84f2a99f2b827275f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac16e02aadd749b2d27638bed1a805a59" id="r_ac16e02aadd749b2d27638bed1a805a59"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac16e02aadd749b2d27638bed1a805a59">PORT_RADIOTIMER_WIDTH</a>&#160;&#160;&#160;uint32_t</td></tr>
+<tr class="separator:ac16e02aadd749b2d27638bed1a805a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07a9f9de95908017f808cbf0c474828e" id="r_a07a9f9de95908017f808cbf0c474828e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07a9f9de95908017f808cbf0c474828e">PORT_SIGNED_INT_WIDTH</a>&#160;&#160;&#160;int32_t</td></tr>
+<tr class="separator:a07a9f9de95908017f808cbf0c474828e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a614cd73b7d2ac3bfd457f80244772d1d" id="r_a614cd73b7d2ac3bfd457f80244772d1d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a614cd73b7d2ac3bfd457f80244772d1d">SCTIMER_FREQUENCY</a>&#160;&#160;&#160;(32768U)</td></tr>
+<tr class="separator:a614cd73b7d2ac3bfd457f80244772d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71ac4f01b5932487c50c4f1a4b821a92" id="r_a71ac4f01b5932487c50c4f1a4b821a92"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71ac4f01b5932487c50c4f1a4b821a92">PORT_TICS_PER_MS</a>&#160;&#160;&#160;(SCTIMER_FREQUENCY / <a class="el" href="group__sys__time__units.html#ga98c842b52ffe344288b6e38b12417baa">MS_PER_SEC</a>)</td></tr>
+<tr class="separator:a71ac4f01b5932487c50c4f1a4b821a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac89c4bad5f7ef2d7f2d81ccb7d1e48bc" id="r_ac89c4bad5f7ef2d7f2d81ccb7d1e48bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac89c4bad5f7ef2d7f2d81ccb7d1e48bc">PORT_US_PER_TICK</a>&#160;&#160;&#160;(<a class="el" href="group__sys__time__units.html#ga63a377676c26adf4e7f641f98c78fc13">US_PER_SEC</a> / SCTIMER_FREQUENCY)</td></tr>
+<tr class="separator:ac89c4bad5f7ef2d7f2d81ccb7d1e48bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">OpenWSN IEEE802154E timings</h2></td></tr>
+<tr><td class="ititle" colspan="2"><dl class="section note"><dt>Note</dt><dd>These parameters are BOARD and CPU specific. Values can't be taken directly from OpenWSN since they do not necessarily use the same BSP configuration (timers, clock speed, etc.) For precise synchronization these values should be measured and tuned for every BOARD. To understand the relationship between these values and OpenWSN state machine as well as how they can be measured refer to:<ul>
+<li><a href="https://openwsn.atlassian.net/wiki/spaces/OW/pages/688251/State+Machine">https://openwsn.atlassian.net/wiki/spaces/OW/pages/688251/State+Machine</a></li>
+<li><a href="https://openwsn.atlassian.net/wiki/spaces/OW/pages/688255/Timing+Constants">https://openwsn.atlassian.net/wiki/spaces/OW/pages/688255/Timing+Constants</a> </li>
+</ul>
+</dd></dl>
+</td></tr>
+<tr class="memitem:a563dd43c38a05bb65f2cb93c9ff271d7" id="r_a563dd43c38a05bb65f2cb93c9ff271d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a563dd43c38a05bb65f2cb93c9ff271d7">SLOTDURATION</a>&#160;&#160;&#160;20        /* in milliseconds */</td></tr>
+<tr class="separator:a563dd43c38a05bb65f2cb93c9ff271d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Adaptive sync accuracy</h2></td></tr>
+<tr><td class="ititle" colspan="2"><pre class="fragment">     Used for synchronization in heterogeneous networks (different BOARDs)
+     Not supported yet, dummy value needs to be provided.
+</pre> </td></tr>
+<tr class="memitem:a190d1e774c272ae302ed98c400694f9a" id="r_a190d1e774c272ae302ed98c400694f9a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a190d1e774c272ae302ed98c400694f9a">SYNC_ACCURACY</a>&#160;&#160;&#160;(1)    /* ticks */</td></tr>
+<tr class="separator:a190d1e774c272ae302ed98c400694f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ac136489c5ba4794566532004267967f8" name="ac136489c5ba4794566532004267967f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac136489c5ba4794566532004267967f8">&#9670;&#160;</a></span>DISABLE_INTERRUPTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DISABLE_INTERRUPTS</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">irq_state = <a class="code hl_function" href="group__core__irq.html#ga7cb620d77da293d98ccc1715d6cb9a02">irq_disable</a>();</div>
+<div class="ttc" id="agroup__core__irq_html_ga7cb620d77da293d98ccc1715d6cb9a02"><div class="ttname"><a href="group__core__irq.html#ga7cb620d77da293d98ccc1715d6cb9a02">irq_disable</a></div><div class="ttdeci">MAYBE_INLINE unsigned irq_disable(void)</div><div class="ttdoc">This function sets the IRQ disable bit in the status register.</div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="board__info_8h_source.html#l00049">49</a> of file <a class="el" href="board__info_8h_source.html">board_info.h</a>.</p>
+
+</div>
+</div>
+<a id="a7ca2cec1256c982e354114e155314354" name="a7ca2cec1256c982e354114e155314354"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ca2cec1256c982e354114e155314354">&#9670;&#160;</a></span>ENABLE_INTERRUPTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ENABLE_INTERRUPTS</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_function" href="group__core__irq.html#ga066129c367d18a871d0155d85148fd3e">irq_restore</a>(irq_state);</div>
+<div class="ttc" id="agroup__core__irq_html_ga066129c367d18a871d0155d85148fd3e"><div class="ttname"><a href="group__core__irq.html#ga066129c367d18a871d0155d85148fd3e">irq_restore</a></div><div class="ttdeci">MAYBE_INLINE void irq_restore(unsigned state)</div><div class="ttdoc">This function restores the IRQ disable bit in the status register to the value contained within passe...</div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="board__info_8h_source.html#l00050">50</a> of file <a class="el" href="board__info_8h_source.html">board_info.h</a>.</p>
+
+</div>
+</div>
+<a id="aafcaa3cb5de374b74117d66a78e6589b" name="aafcaa3cb5de374b74117d66a78e6589b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafcaa3cb5de374b74117d66a78e6589b">&#9670;&#160;</a></span>INTERRUPT_DECLARATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INTERRUPT_DECLARATION</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordtype">unsigned</span> irq_state;</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="board__info_8h_source.html#l00048">48</a> of file <a class="el" href="board__info_8h_source.html">board_info.h</a>.</p>
+
+</div>
+</div>
+<a id="ac16e02aadd749b2d27638bed1a805a59" name="ac16e02aadd749b2d27638bed1a805a59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac16e02aadd749b2d27638bed1a805a59">&#9670;&#160;</a></span>PORT_RADIOTIMER_WIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PORT_RADIOTIMER_WIDTH&#160;&#160;&#160;uint32_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="board__info_8h_source.html#l00063">63</a> of file <a class="el" href="board__info_8h_source.html">board_info.h</a>.</p>
+
+</div>
+</div>
+<a id="a07a9f9de95908017f808cbf0c474828e" name="a07a9f9de95908017f808cbf0c474828e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07a9f9de95908017f808cbf0c474828e">&#9670;&#160;</a></span>PORT_SIGNED_INT_WIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PORT_SIGNED_INT_WIDTH&#160;&#160;&#160;int32_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="board__info_8h_source.html#l00071">71</a> of file <a class="el" href="board__info_8h_source.html">board_info.h</a>.</p>
+
+</div>
+</div>
+<a id="a71ac4f01b5932487c50c4f1a4b821a92" name="a71ac4f01b5932487c50c4f1a4b821a92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71ac4f01b5932487c50c4f1a4b821a92">&#9670;&#160;</a></span>PORT_TICS_PER_MS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PORT_TICS_PER_MS&#160;&#160;&#160;(SCTIMER_FREQUENCY / <a class="el" href="group__sys__time__units.html#ga98c842b52ffe344288b6e38b12417baa">MS_PER_SEC</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="board__info_8h_source.html#l00077">77</a> of file <a class="el" href="board__info_8h_source.html">board_info.h</a>.</p>
+
+</div>
+</div>
+<a id="abe66b9c1c60db84f2a99f2b827275f24" name="abe66b9c1c60db84f2a99f2b827275f24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe66b9c1c60db84f2a99f2b827275f24">&#9670;&#160;</a></span>PORT_TIMER_WIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PORT_TIMER_WIDTH&#160;&#160;&#160;uint32_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="board__info_8h_source.html#l00062">62</a> of file <a class="el" href="board__info_8h_source.html">board_info.h</a>.</p>
+
+</div>
+</div>
+<a id="ac89c4bad5f7ef2d7f2d81ccb7d1e48bc" name="ac89c4bad5f7ef2d7f2d81ccb7d1e48bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac89c4bad5f7ef2d7f2d81ccb7d1e48bc">&#9670;&#160;</a></span>PORT_US_PER_TICK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PORT_US_PER_TICK&#160;&#160;&#160;(<a class="el" href="group__sys__time__units.html#ga63a377676c26adf4e7f641f98c78fc13">US_PER_SEC</a> / SCTIMER_FREQUENCY)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="board__info_8h_source.html#l00079">79</a> of file <a class="el" href="board__info_8h_source.html">board_info.h</a>.</p>
+
+</div>
+</div>
+<a id="ae298a96b817c7ab08d0dd2709763bc58" name="ae298a96b817c7ab08d0dd2709763bc58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae298a96b817c7ab08d0dd2709763bc58">&#9670;&#160;</a></span>SCHEDULER_ENABLE_INTERRUPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCHEDULER_ENABLE_INTERRUPT</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="comment">/* unused by RIOT */</span></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="board__info_8h_source.html#l00052">52</a> of file <a class="el" href="board__info_8h_source.html">board_info.h</a>.</p>
+
+</div>
+</div>
+<a id="aef89d4774415ded995ca6326a257c4c2" name="aef89d4774415ded995ca6326a257c4c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef89d4774415ded995ca6326a257c4c2">&#9670;&#160;</a></span>SCHEDULER_WAKEUP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCHEDULER_WAKEUP</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="comment">/* unused by RIOT */</span></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="board__info_8h_source.html#l00051">51</a> of file <a class="el" href="board__info_8h_source.html">board_info.h</a>.</p>
+
+</div>
+</div>
+<a id="a614cd73b7d2ac3bfd457f80244772d1d" name="a614cd73b7d2ac3bfd457f80244772d1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a614cd73b7d2ac3bfd457f80244772d1d">&#9670;&#160;</a></span>SCTIMER_FREQUENCY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCTIMER_FREQUENCY&#160;&#160;&#160;(32768U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="board__info_8h_source.html#l00074">74</a> of file <a class="el" href="board__info_8h_source.html">board_info.h</a>.</p>
+
+</div>
+</div>
+<a id="a563dd43c38a05bb65f2cb93c9ff271d7" name="a563dd43c38a05bb65f2cb93c9ff271d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a563dd43c38a05bb65f2cb93c9ff271d7">&#9670;&#160;</a></span>SLOTDURATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SLOTDURATION&#160;&#160;&#160;20        /* in milliseconds */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="board__info_8h_source.html#l00100">100</a> of file <a class="el" href="board__info_8h_source.html">board_info.h</a>.</p>
+
+</div>
+</div>
+<a id="a190d1e774c272ae302ed98c400694f9a" name="a190d1e774c272ae302ed98c400694f9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a190d1e774c272ae302ed98c400694f9a">&#9670;&#160;</a></span>SYNC_ACCURACY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SYNC_ACCURACY&#160;&#160;&#160;(1)    /* ticks */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="board__info_8h_source.html#l00141">141</a> of file <a class="el" href="board__info_8h_source.html">board_info.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

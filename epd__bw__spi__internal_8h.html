@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/epd_bw_spi/include/epd_bw_spi_internal.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('epd__bw__spi__internal_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">epd_bw_spi_internal.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__display.html">Display Device Drivers</a> &raquo; <a class="el" href="group__drivers__epd__bw__spi.html">Generic black/white e-paper/e-ink SPI display driver.</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Device driver implementation for the epd_bw_spi display controller.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Device driver implementation for the epd_bw_spi display controller. </p>
+<dl class="section author"><dt>Author</dt><dd>Silke Hofstra <a href="#" onclick="location.href='mai'+'lto:'+'sil'+'ke'+'@sl'+'xh'+'.eu'; return false;">silke<span class="obfuscator">.nosp@m.</span>@slx<span class="obfuscator">.nosp@m.</span>h.eu</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+</div>
+<p><a href="epd__bw__spi__internal_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">EPD_BW_SPI SPI commands</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>Commands used for controlling EPD displays.</p>
+<p>These are surprisingly portable. </p>
+</td></tr>
+<tr class="memitem:a9e5610fa4c8e9ff39f1945ee48c6221e" id="r_a9e5610fa4c8e9ff39f1945ee48c6221e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e5610fa4c8e9ff39f1945ee48c6221e">EPD_BW_SPI_CMD_DRIVER_OUTPUT_CONTROL</a>&#160;&#160;&#160;(0x01)</td></tr>
+<tr class="separator:a9e5610fa4c8e9ff39f1945ee48c6221e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ae8cdd2c3a63530d07c783e8da11e82" id="r_a4ae8cdd2c3a63530d07c783e8da11e82"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ae8cdd2c3a63530d07c783e8da11e82">EPD_BW_SPI_CMD_GATE_DRIVING_VOLTAGE_CONTROL</a>&#160;&#160;&#160;(0x03)    /* unused */</td></tr>
+<tr class="separator:a4ae8cdd2c3a63530d07c783e8da11e82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73e331a5f6501043f361d0766bc02af1" id="r_a73e331a5f6501043f361d0766bc02af1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73e331a5f6501043f361d0766bc02af1">EPD_BW_SPI_CMD_SOURCE_DRIVING_VOLTAGE_CONTROL</a>&#160;&#160;&#160;(0x04)    /* unused */</td></tr>
+<tr class="separator:a73e331a5f6501043f361d0766bc02af1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80b2dc254b50767e226e7e63b974a78b" id="r_a80b2dc254b50767e226e7e63b974a78b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80b2dc254b50767e226e7e63b974a78b">EPD_BW_SPI_CMD_DISPLAY_CONTROL</a>&#160;&#160;&#160;(0x07)    /* unused */</td></tr>
+<tr class="separator:a80b2dc254b50767e226e7e63b974a78b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d2631fea7745a295996f9775ae397ac" id="r_a8d2631fea7745a295996f9775ae397ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d2631fea7745a295996f9775ae397ac">EPD_BW_SPI_CMD_GATE_AND_SOURCE_NON_OVERLAP_PERIOD_CONTROL</a>&#160;&#160;&#160;(0x0B)    /* unused */</td></tr>
+<tr class="separator:a8d2631fea7745a295996f9775ae397ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a312e2d2f0550968f8ac688a26a7423de" id="r_a312e2d2f0550968f8ac688a26a7423de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a312e2d2f0550968f8ac688a26a7423de">EPD_BW_SPI_CMD_BOOSTER_SOFT_START_CONTROL</a>&#160;&#160;&#160;(0x0C)</td></tr>
+<tr class="separator:a312e2d2f0550968f8ac688a26a7423de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a482c35ff59faf0e125dd0895bf45479e" id="r_a482c35ff59faf0e125dd0895bf45479e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a482c35ff59faf0e125dd0895bf45479e">EPD_BW_SPI_CMD_GATE_SCAN_START_POSITION</a>&#160;&#160;&#160;(0x0F)    /* unused */</td></tr>
+<tr class="separator:a482c35ff59faf0e125dd0895bf45479e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73eb3805e1abc658b8c671940562c197" id="r_a73eb3805e1abc658b8c671940562c197"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73eb3805e1abc658b8c671940562c197">EPD_BW_SPI_CMD_DEEP_SLEEP_MODE</a>&#160;&#160;&#160;(0x10)</td></tr>
+<tr class="separator:a73eb3805e1abc658b8c671940562c197"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d417ae0a23894a19d9c91eeef5d054f" id="r_a8d417ae0a23894a19d9c91eeef5d054f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d417ae0a23894a19d9c91eeef5d054f">EPD_BW_SPI_CMD_DATA_ENTRY_MODE_SETTING</a>&#160;&#160;&#160;(0x11)</td></tr>
+<tr class="separator:a8d417ae0a23894a19d9c91eeef5d054f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ce5d61a861f63ee8ba5f28115b78f13" id="r_a8ce5d61a861f63ee8ba5f28115b78f13"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ce5d61a861f63ee8ba5f28115b78f13">EPD_BW_SPI_CMD_SWRESET</a>&#160;&#160;&#160;(0x12)</td></tr>
+<tr class="separator:a8ce5d61a861f63ee8ba5f28115b78f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6109932b76f54a0c170b92b96b3f971a" id="r_a6109932b76f54a0c170b92b96b3f971a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6109932b76f54a0c170b92b96b3f971a">EPD_BW_SPI_CMD_TEMPERATURE_SENSOR_CONTROL_WRITE</a>&#160;&#160;&#160;(0x1A)    /* unused */</td></tr>
+<tr class="separator:a6109932b76f54a0c170b92b96b3f971a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a093eb179122509d60c6b72076c00b98d" id="r_a093eb179122509d60c6b72076c00b98d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a093eb179122509d60c6b72076c00b98d">EPD_BW_SPI_CMD_TEMPERATURE_SENSOR_CONTROL_READ</a>&#160;&#160;&#160;(0x1B)    /* unused */</td></tr>
+<tr class="separator:a093eb179122509d60c6b72076c00b98d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed3c3f0be3560d4ec59a90601eafdfc6" id="r_aed3c3f0be3560d4ec59a90601eafdfc6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed3c3f0be3560d4ec59a90601eafdfc6">EPD_BW_SPI_CMD_TEMPERATURE_SENSOR_CONTROL_WRITE_CMD</a>&#160;&#160;&#160;(0x1C)    /* unused */</td></tr>
+<tr class="separator:aed3c3f0be3560d4ec59a90601eafdfc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb2b4bcea8dbf1eeeec1c40e9725a069" id="r_afb2b4bcea8dbf1eeeec1c40e9725a069"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb2b4bcea8dbf1eeeec1c40e9725a069">EPD_BW_SPI_CMD_TEMPERATURE_SENSOR_CONTROL_LOAD</a>&#160;&#160;&#160;(0x1D)    /* unused */</td></tr>
+<tr class="separator:afb2b4bcea8dbf1eeeec1c40e9725a069"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f365c1b21d3383245ac79c877ec29c3" id="r_a8f365c1b21d3383245ac79c877ec29c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f365c1b21d3383245ac79c877ec29c3">EPD_BW_SPI_CMD_MASTER_ACTIVATION</a>&#160;&#160;&#160;(0x20)</td></tr>
+<tr class="separator:a8f365c1b21d3383245ac79c877ec29c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cb5caf3d85ee286b8d5472e5c587cd5" id="r_a8cb5caf3d85ee286b8d5472e5c587cd5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cb5caf3d85ee286b8d5472e5c587cd5">EPD_BW_SPI_CMD_DISPLAY_UPDATE_CONTROL_1</a>&#160;&#160;&#160;(0x21)    /* unused */</td></tr>
+<tr class="separator:a8cb5caf3d85ee286b8d5472e5c587cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d812a1a5ebba6cb34eaae18a0165c8d" id="r_a2d812a1a5ebba6cb34eaae18a0165c8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d812a1a5ebba6cb34eaae18a0165c8d">EPD_BW_SPI_CMD_DISPLAY_UPDATE_CONTROL_2</a>&#160;&#160;&#160;(0x22)</td></tr>
+<tr class="separator:a2d812a1a5ebba6cb34eaae18a0165c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7af685e4d979a1e8edfe01edd7d10e9" id="r_ae7af685e4d979a1e8edfe01edd7d10e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7af685e4d979a1e8edfe01edd7d10e9">EPD_BW_SPI_CMD_WRITE_RAM</a>&#160;&#160;&#160;(0x24)</td></tr>
+<tr class="separator:ae7af685e4d979a1e8edfe01edd7d10e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bd0cd9f06c979619a0f6a838021a016" id="r_a3bd0cd9f06c979619a0f6a838021a016"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bd0cd9f06c979619a0f6a838021a016">EPD_BW_SPI_CMD_READ_RAM</a>&#160;&#160;&#160;(0x25)    /* unused */</td></tr>
+<tr class="separator:a3bd0cd9f06c979619a0f6a838021a016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b33e1e670eaf6d6c1a73717810856b0" id="r_a7b33e1e670eaf6d6c1a73717810856b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b33e1e670eaf6d6c1a73717810856b0">EPD_BW_SPI_CMD_VCOM_SENSE</a>&#160;&#160;&#160;(0x28)    /* unused */</td></tr>
+<tr class="separator:a7b33e1e670eaf6d6c1a73717810856b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42edcfc33293b19826da37177f78ef8c" id="r_a42edcfc33293b19826da37177f78ef8c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42edcfc33293b19826da37177f78ef8c">EPD_BW_SPI_CMD_VCOM_SENSE_DURATION</a>&#160;&#160;&#160;(0x29)    /* unused */</td></tr>
+<tr class="separator:a42edcfc33293b19826da37177f78ef8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3b7b905cff15e606056de98b86187e4" id="r_ac3b7b905cff15e606056de98b86187e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3b7b905cff15e606056de98b86187e4">EPD_BW_SPI_CMD_PROGRAM_VCOM_OTP</a>&#160;&#160;&#160;(0x2A)    /* unused */</td></tr>
+<tr class="separator:ac3b7b905cff15e606056de98b86187e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fd2a7a7999d504fb6a8744dce03c772" id="r_a6fd2a7a7999d504fb6a8744dce03c772"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6fd2a7a7999d504fb6a8744dce03c772">EPD_BW_SPI_CMD_WRITE_VCOM_REGISTER</a>&#160;&#160;&#160;(0x2C)</td></tr>
+<tr class="separator:a6fd2a7a7999d504fb6a8744dce03c772"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecdbd41684aca20b15e2b61bc687d7df" id="r_aecdbd41684aca20b15e2b61bc687d7df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecdbd41684aca20b15e2b61bc687d7df">EPD_BW_SPI_CMD_READ_OTP_REGISTERS</a>&#160;&#160;&#160;(0x2D)    /* unused */</td></tr>
+<tr class="separator:aecdbd41684aca20b15e2b61bc687d7df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34abb657ea1407a48f996c30a3b1605c" id="r_a34abb657ea1407a48f996c30a3b1605c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34abb657ea1407a48f996c30a3b1605c">EPD_BW_SPI_CMD_PROGRAM_WS_OTP</a>&#160;&#160;&#160;(0x30)    /* unused */</td></tr>
+<tr class="separator:a34abb657ea1407a48f996c30a3b1605c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a365cfdf2a3956c1a4baebdfe52ae6e11" id="r_a365cfdf2a3956c1a4baebdfe52ae6e11"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a365cfdf2a3956c1a4baebdfe52ae6e11">EPD_BW_SPI_CMD_WRITE_LUT_REGISTER</a>&#160;&#160;&#160;(0x32)</td></tr>
+<tr class="separator:a365cfdf2a3956c1a4baebdfe52ae6e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96090ae2ba99d106909c6bd1f7de5c32" id="r_a96090ae2ba99d106909c6bd1f7de5c32"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96090ae2ba99d106909c6bd1f7de5c32">EPD_BW_SPI_CMD_READ_LUT_REGISTER</a>&#160;&#160;&#160;(0x33)    /* unused */</td></tr>
+<tr class="separator:a96090ae2ba99d106909c6bd1f7de5c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d08dcd212fa3f6e4da7fafcafc2e44e" id="r_a8d08dcd212fa3f6e4da7fafcafc2e44e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d08dcd212fa3f6e4da7fafcafc2e44e">EPD_BW_SPI_CMD_PROGRAM_OTP_SELECTION</a>&#160;&#160;&#160;(0x36)    /* unused */</td></tr>
+<tr class="separator:a8d08dcd212fa3f6e4da7fafcafc2e44e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78f2eb04130be4d86caafbbf2bc93b5d" id="r_a78f2eb04130be4d86caafbbf2bc93b5d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78f2eb04130be4d86caafbbf2bc93b5d">EPD_BW_SPI_CMD_OTP_SELECTION_CONTROL</a>&#160;&#160;&#160;(0x37)    /* unused */</td></tr>
+<tr class="separator:a78f2eb04130be4d86caafbbf2bc93b5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e7a52b5a7ab0cb81e56cc594db550df" id="r_a5e7a52b5a7ab0cb81e56cc594db550df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e7a52b5a7ab0cb81e56cc594db550df">EPD_BW_SPI_CMD_SET_DUMMY_LINE_PERIOD</a>&#160;&#160;&#160;(0x3A)</td></tr>
+<tr class="separator:a5e7a52b5a7ab0cb81e56cc594db550df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2191629f1f45fe042182a031c9b7987f" id="r_a2191629f1f45fe042182a031c9b7987f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2191629f1f45fe042182a031c9b7987f">EPD_BW_SPI_CMD_SET_GATE_LINE_WIDTH</a>&#160;&#160;&#160;(0x3B)</td></tr>
+<tr class="separator:a2191629f1f45fe042182a031c9b7987f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8814120f57226ab75c91858ed5f793a7" id="r_a8814120f57226ab75c91858ed5f793a7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8814120f57226ab75c91858ed5f793a7">EPD_BW_SPI_CMD_BORDER_WAVEFORM_CONTROL</a>&#160;&#160;&#160;(0x3C)    /* unused */</td></tr>
+<tr class="separator:a8814120f57226ab75c91858ed5f793a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7203cd2ed27e8a3b05665bae1a70c158" id="r_a7203cd2ed27e8a3b05665bae1a70c158"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7203cd2ed27e8a3b05665bae1a70c158">EPD_BW_SPI_CMD_SET_RAM_X</a>&#160;&#160;&#160;(0x44)</td></tr>
+<tr class="separator:a7203cd2ed27e8a3b05665bae1a70c158"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fc1d2d62e1b5252d01df581907d0b05" id="r_a8fc1d2d62e1b5252d01df581907d0b05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fc1d2d62e1b5252d01df581907d0b05">EPD_BW_SPI_CMD_SET_RAM_Y</a>&#160;&#160;&#160;(0x45)</td></tr>
+<tr class="separator:a8fc1d2d62e1b5252d01df581907d0b05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac18536eaf5406fcc3373728c7f155375" id="r_ac18536eaf5406fcc3373728c7f155375"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac18536eaf5406fcc3373728c7f155375">EPD_BW_SPI_CMD_SET_RAM_X_ADDR_COUNTER</a>&#160;&#160;&#160;(0x4E)</td></tr>
+<tr class="separator:ac18536eaf5406fcc3373728c7f155375"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ad0a990569dab62f1292e11e44a1407" id="r_a1ad0a990569dab62f1292e11e44a1407"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ad0a990569dab62f1292e11e44a1407">EPD_BW_SPI_CMD_SET_RAM_Y_ADDR_COUNTER</a>&#160;&#160;&#160;(0x4F)</td></tr>
+<tr class="separator:a1ad0a990569dab62f1292e11e44a1407"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad32072a90ffbebb33349cfc3259f8687" id="r_ad32072a90ffbebb33349cfc3259f8687"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad32072a90ffbebb33349cfc3259f8687">EPD_BW_SPI_CMD_NOP</a>&#160;&#160;&#160;(0xFF)</td></tr>
+<tr class="separator:ad32072a90ffbebb33349cfc3259f8687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">EPD_BW_SPI display update sequence option flags</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>Option flags for the EPD_BW_SPI_CMD_DISPLAY_UPDATE_CONTROL_2 command.</p>
+<p>The flags are executed in the order documented below. </p>
+</td></tr>
+<tr class="memitem:ae86d8bb949660228b358788bbc76780f" id="r_ae86d8bb949660228b358788bbc76780f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae86d8bb949660228b358788bbc76780f">EPD_BW_SPI_DISPLAY_UPDATE_OPTION_ENABLE_CLOCK</a>&#160;&#160;&#160;(1&lt;&lt;7)</td></tr>
+<tr class="separator:ae86d8bb949660228b358788bbc76780f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60e3be4f43b44e77b03aad6414f0f2e5" id="r_a60e3be4f43b44e77b03aad6414f0f2e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60e3be4f43b44e77b03aad6414f0f2e5">EPD_BW_SPI_DISPLAY_UPDATE_OPTION_ENABLE_CP</a>&#160;&#160;&#160;(1&lt;&lt;6)</td></tr>
+<tr class="separator:a60e3be4f43b44e77b03aad6414f0f2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fbcbae30ffb934d36b31c76db8c36ad" id="r_a9fbcbae30ffb934d36b31c76db8c36ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9fbcbae30ffb934d36b31c76db8c36ad">EPD_BW_SPI_DISPLAY_UPDATE_OPTION_LOAD_TEMP</a>&#160;&#160;&#160;(1&lt;&lt;5)</td></tr>
+<tr class="separator:a9fbcbae30ffb934d36b31c76db8c36ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13f5599edf3c74a98a7d1726d1ab3f03" id="r_a13f5599edf3c74a98a7d1726d1ab3f03"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13f5599edf3c74a98a7d1726d1ab3f03">EPD_BW_SPI_DISPLAY_UPDATE_OPTION_LOAD_LUT</a>&#160;&#160;&#160;(1&lt;&lt;4)</td></tr>
+<tr class="separator:a13f5599edf3c74a98a7d1726d1ab3f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32a86bf029dfbf215c433bfd01c7f1a4" id="r_a32a86bf029dfbf215c433bfd01c7f1a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32a86bf029dfbf215c433bfd01c7f1a4">EPD_BW_SPI_DISPLAY_UPDATE_OPTION_INITIAL_DISPLAY</a>&#160;&#160;&#160;(1&lt;&lt;3)</td></tr>
+<tr class="separator:a32a86bf029dfbf215c433bfd01c7f1a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37a6c61935dbe0cc715b9060f1b66df4" id="r_a37a6c61935dbe0cc715b9060f1b66df4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37a6c61935dbe0cc715b9060f1b66df4">EPD_BW_SPI_DISPLAY_UPDATE_OPTION_PATTERN_DISPLAY</a>&#160;&#160;&#160;(1&lt;&lt;2)</td></tr>
+<tr class="separator:a37a6c61935dbe0cc715b9060f1b66df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab77da9d7ce382d2c1a804945715df128" id="r_ab77da9d7ce382d2c1a804945715df128"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab77da9d7ce382d2c1a804945715df128">EPD_BW_SPI_DISPLAY_UPDATE_OPTION_DISABLE_CP</a>&#160;&#160;&#160;(1&lt;&lt;1)</td></tr>
+<tr class="separator:ab77da9d7ce382d2c1a804945715df128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1ea2bf4d3fcd006618db63b9e3ba2ab" id="r_ac1ea2bf4d3fcd006618db63b9e3ba2ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1ea2bf4d3fcd006618db63b9e3ba2ab">EPD_BW_SPI_DISPLAY_UPDATE_OPTION_DISABLE_OSC</a>&#160;&#160;&#160;(1&lt;&lt;0)</td></tr>
+<tr class="separator:ac1ea2bf4d3fcd006618db63b9e3ba2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">EPD_BW_SPI Waiting estimates</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>Waiting estimates in milliseconds which are used when the busy pin is not available. </p>
+</td></tr>
+<tr class="memitem:ae6e4030895901b2156ce5ce21d739e3f" id="r_ae6e4030895901b2156ce5ce21d739e3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6e4030895901b2156ce5ce21d739e3f">EPD_BW_SPI_WAIT_UPDATE_FULL</a>&#160;&#160;&#160;1200</td></tr>
+<tr class="separator:ae6e4030895901b2156ce5ce21d739e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31e9c87cf7af38f138b7e0f654dc21a4" id="r_a31e9c87cf7af38f138b7e0f654dc21a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31e9c87cf7af38f138b7e0f654dc21a4">EPD_BW_SPI_WAIT_UPDATE_PART</a>&#160;&#160;&#160;300</td></tr>
+<tr class="separator:a31e9c87cf7af38f138b7e0f654dc21a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24964b9bc995f54822a8e9faf0b4ed99" id="r_a24964b9bc995f54822a8e9faf0b4ed99"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24964b9bc995f54822a8e9faf0b4ed99">EPD_BW_SPI_WAIT_ACTIVATION</a>&#160;&#160;&#160;80</td></tr>
+<tr class="separator:a24964b9bc995f54822a8e9faf0b4ed99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ceac0e6b217aae43fdb37c54fc89ca0" id="r_a2ceac0e6b217aae43fdb37c54fc89ca0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ceac0e6b217aae43fdb37c54fc89ca0">EPD_BW_SPI_WAIT_RESET</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a2ceac0e6b217aae43fdb37c54fc89ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a312e2d2f0550968f8ac688a26a7423de" name="a312e2d2f0550968f8ac688a26a7423de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a312e2d2f0550968f8ac688a26a7423de">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_BOOSTER_SOFT_START_CONTROL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_BOOSTER_SOFT_START_CONTROL&#160;&#160;&#160;(0x0C)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00039">39</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a8814120f57226ab75c91858ed5f793a7" name="a8814120f57226ab75c91858ed5f793a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8814120f57226ab75c91858ed5f793a7">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_BORDER_WAVEFORM_CONTROL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_BORDER_WAVEFORM_CONTROL&#160;&#160;&#160;(0x3C)    /* unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00065">65</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a8d417ae0a23894a19d9c91eeef5d054f" name="a8d417ae0a23894a19d9c91eeef5d054f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d417ae0a23894a19d9c91eeef5d054f">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_DATA_ENTRY_MODE_SETTING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_DATA_ENTRY_MODE_SETTING&#160;&#160;&#160;(0x11)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00042">42</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a73eb3805e1abc658b8c671940562c197" name="a73eb3805e1abc658b8c671940562c197"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73eb3805e1abc658b8c671940562c197">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_DEEP_SLEEP_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_DEEP_SLEEP_MODE&#160;&#160;&#160;(0x10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00041">41</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a80b2dc254b50767e226e7e63b974a78b" name="a80b2dc254b50767e226e7e63b974a78b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80b2dc254b50767e226e7e63b974a78b">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_DISPLAY_CONTROL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_DISPLAY_CONTROL&#160;&#160;&#160;(0x07)    /* unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00037">37</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a8cb5caf3d85ee286b8d5472e5c587cd5" name="a8cb5caf3d85ee286b8d5472e5c587cd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cb5caf3d85ee286b8d5472e5c587cd5">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_DISPLAY_UPDATE_CONTROL_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_DISPLAY_UPDATE_CONTROL_1&#160;&#160;&#160;(0x21)    /* unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00049">49</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a2d812a1a5ebba6cb34eaae18a0165c8d" name="a2d812a1a5ebba6cb34eaae18a0165c8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d812a1a5ebba6cb34eaae18a0165c8d">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_DISPLAY_UPDATE_CONTROL_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_DISPLAY_UPDATE_CONTROL_2&#160;&#160;&#160;(0x22)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00050">50</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a9e5610fa4c8e9ff39f1945ee48c6221e" name="a9e5610fa4c8e9ff39f1945ee48c6221e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e5610fa4c8e9ff39f1945ee48c6221e">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_DRIVER_OUTPUT_CONTROL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_DRIVER_OUTPUT_CONTROL&#160;&#160;&#160;(0x01)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00034">34</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a8d2631fea7745a295996f9775ae397ac" name="a8d2631fea7745a295996f9775ae397ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d2631fea7745a295996f9775ae397ac">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_GATE_AND_SOURCE_NON_OVERLAP_PERIOD_CONTROL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_GATE_AND_SOURCE_NON_OVERLAP_PERIOD_CONTROL&#160;&#160;&#160;(0x0B)    /* unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00038">38</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a4ae8cdd2c3a63530d07c783e8da11e82" name="a4ae8cdd2c3a63530d07c783e8da11e82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ae8cdd2c3a63530d07c783e8da11e82">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_GATE_DRIVING_VOLTAGE_CONTROL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_GATE_DRIVING_VOLTAGE_CONTROL&#160;&#160;&#160;(0x03)    /* unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00035">35</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a482c35ff59faf0e125dd0895bf45479e" name="a482c35ff59faf0e125dd0895bf45479e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a482c35ff59faf0e125dd0895bf45479e">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_GATE_SCAN_START_POSITION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_GATE_SCAN_START_POSITION&#160;&#160;&#160;(0x0F)    /* unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00040">40</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a8f365c1b21d3383245ac79c877ec29c3" name="a8f365c1b21d3383245ac79c877ec29c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f365c1b21d3383245ac79c877ec29c3">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_MASTER_ACTIVATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_MASTER_ACTIVATION&#160;&#160;&#160;(0x20)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00048">48</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ad32072a90ffbebb33349cfc3259f8687" name="ad32072a90ffbebb33349cfc3259f8687"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad32072a90ffbebb33349cfc3259f8687">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_NOP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_NOP&#160;&#160;&#160;(0xFF)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00070">70</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a78f2eb04130be4d86caafbbf2bc93b5d" name="a78f2eb04130be4d86caafbbf2bc93b5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78f2eb04130be4d86caafbbf2bc93b5d">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_OTP_SELECTION_CONTROL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_OTP_SELECTION_CONTROL&#160;&#160;&#160;(0x37)    /* unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00062">62</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a8d08dcd212fa3f6e4da7fafcafc2e44e" name="a8d08dcd212fa3f6e4da7fafcafc2e44e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d08dcd212fa3f6e4da7fafcafc2e44e">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_PROGRAM_OTP_SELECTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_PROGRAM_OTP_SELECTION&#160;&#160;&#160;(0x36)    /* unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00061">61</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ac3b7b905cff15e606056de98b86187e4" name="ac3b7b905cff15e606056de98b86187e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3b7b905cff15e606056de98b86187e4">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_PROGRAM_VCOM_OTP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_PROGRAM_VCOM_OTP&#160;&#160;&#160;(0x2A)    /* unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00055">55</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a34abb657ea1407a48f996c30a3b1605c" name="a34abb657ea1407a48f996c30a3b1605c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34abb657ea1407a48f996c30a3b1605c">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_PROGRAM_WS_OTP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_PROGRAM_WS_OTP&#160;&#160;&#160;(0x30)    /* unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00058">58</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a96090ae2ba99d106909c6bd1f7de5c32" name="a96090ae2ba99d106909c6bd1f7de5c32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96090ae2ba99d106909c6bd1f7de5c32">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_READ_LUT_REGISTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_READ_LUT_REGISTER&#160;&#160;&#160;(0x33)    /* unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00060">60</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="aecdbd41684aca20b15e2b61bc687d7df" name="aecdbd41684aca20b15e2b61bc687d7df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecdbd41684aca20b15e2b61bc687d7df">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_READ_OTP_REGISTERS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_READ_OTP_REGISTERS&#160;&#160;&#160;(0x2D)    /* unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00057">57</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a3bd0cd9f06c979619a0f6a838021a016" name="a3bd0cd9f06c979619a0f6a838021a016"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bd0cd9f06c979619a0f6a838021a016">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_READ_RAM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_READ_RAM&#160;&#160;&#160;(0x25)    /* unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00052">52</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a5e7a52b5a7ab0cb81e56cc594db550df" name="a5e7a52b5a7ab0cb81e56cc594db550df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e7a52b5a7ab0cb81e56cc594db550df">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_SET_DUMMY_LINE_PERIOD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_SET_DUMMY_LINE_PERIOD&#160;&#160;&#160;(0x3A)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00063">63</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a2191629f1f45fe042182a031c9b7987f" name="a2191629f1f45fe042182a031c9b7987f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2191629f1f45fe042182a031c9b7987f">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_SET_GATE_LINE_WIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_SET_GATE_LINE_WIDTH&#160;&#160;&#160;(0x3B)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00064">64</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a7203cd2ed27e8a3b05665bae1a70c158" name="a7203cd2ed27e8a3b05665bae1a70c158"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7203cd2ed27e8a3b05665bae1a70c158">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_SET_RAM_X</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_SET_RAM_X&#160;&#160;&#160;(0x44)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00066">66</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ac18536eaf5406fcc3373728c7f155375" name="ac18536eaf5406fcc3373728c7f155375"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac18536eaf5406fcc3373728c7f155375">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_SET_RAM_X_ADDR_COUNTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_SET_RAM_X_ADDR_COUNTER&#160;&#160;&#160;(0x4E)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00068">68</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a8fc1d2d62e1b5252d01df581907d0b05" name="a8fc1d2d62e1b5252d01df581907d0b05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fc1d2d62e1b5252d01df581907d0b05">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_SET_RAM_Y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_SET_RAM_Y&#160;&#160;&#160;(0x45)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00067">67</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a1ad0a990569dab62f1292e11e44a1407" name="a1ad0a990569dab62f1292e11e44a1407"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ad0a990569dab62f1292e11e44a1407">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_SET_RAM_Y_ADDR_COUNTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_SET_RAM_Y_ADDR_COUNTER&#160;&#160;&#160;(0x4F)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00069">69</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a73e331a5f6501043f361d0766bc02af1" name="a73e331a5f6501043f361d0766bc02af1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73e331a5f6501043f361d0766bc02af1">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_SOURCE_DRIVING_VOLTAGE_CONTROL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_SOURCE_DRIVING_VOLTAGE_CONTROL&#160;&#160;&#160;(0x04)    /* unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00036">36</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a8ce5d61a861f63ee8ba5f28115b78f13" name="a8ce5d61a861f63ee8ba5f28115b78f13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ce5d61a861f63ee8ba5f28115b78f13">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_SWRESET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_SWRESET&#160;&#160;&#160;(0x12)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00043">43</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="afb2b4bcea8dbf1eeeec1c40e9725a069" name="afb2b4bcea8dbf1eeeec1c40e9725a069"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb2b4bcea8dbf1eeeec1c40e9725a069">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_TEMPERATURE_SENSOR_CONTROL_LOAD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_TEMPERATURE_SENSOR_CONTROL_LOAD&#160;&#160;&#160;(0x1D)    /* unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00047">47</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a093eb179122509d60c6b72076c00b98d" name="a093eb179122509d60c6b72076c00b98d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a093eb179122509d60c6b72076c00b98d">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_TEMPERATURE_SENSOR_CONTROL_READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_TEMPERATURE_SENSOR_CONTROL_READ&#160;&#160;&#160;(0x1B)    /* unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00045">45</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a6109932b76f54a0c170b92b96b3f971a" name="a6109932b76f54a0c170b92b96b3f971a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6109932b76f54a0c170b92b96b3f971a">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_TEMPERATURE_SENSOR_CONTROL_WRITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_TEMPERATURE_SENSOR_CONTROL_WRITE&#160;&#160;&#160;(0x1A)    /* unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00044">44</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="aed3c3f0be3560d4ec59a90601eafdfc6" name="aed3c3f0be3560d4ec59a90601eafdfc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed3c3f0be3560d4ec59a90601eafdfc6">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_TEMPERATURE_SENSOR_CONTROL_WRITE_CMD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_TEMPERATURE_SENSOR_CONTROL_WRITE_CMD&#160;&#160;&#160;(0x1C)    /* unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00046">46</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a7b33e1e670eaf6d6c1a73717810856b0" name="a7b33e1e670eaf6d6c1a73717810856b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b33e1e670eaf6d6c1a73717810856b0">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_VCOM_SENSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_VCOM_SENSE&#160;&#160;&#160;(0x28)    /* unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00053">53</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a42edcfc33293b19826da37177f78ef8c" name="a42edcfc33293b19826da37177f78ef8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42edcfc33293b19826da37177f78ef8c">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_VCOM_SENSE_DURATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_VCOM_SENSE_DURATION&#160;&#160;&#160;(0x29)    /* unused */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00054">54</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a365cfdf2a3956c1a4baebdfe52ae6e11" name="a365cfdf2a3956c1a4baebdfe52ae6e11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a365cfdf2a3956c1a4baebdfe52ae6e11">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_WRITE_LUT_REGISTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_WRITE_LUT_REGISTER&#160;&#160;&#160;(0x32)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00059">59</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ae7af685e4d979a1e8edfe01edd7d10e9" name="ae7af685e4d979a1e8edfe01edd7d10e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7af685e4d979a1e8edfe01edd7d10e9">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_WRITE_RAM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_WRITE_RAM&#160;&#160;&#160;(0x24)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00051">51</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a6fd2a7a7999d504fb6a8744dce03c772" name="a6fd2a7a7999d504fb6a8744dce03c772"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fd2a7a7999d504fb6a8744dce03c772">&#9670;&#160;</a></span>EPD_BW_SPI_CMD_WRITE_VCOM_REGISTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_CMD_WRITE_VCOM_REGISTER&#160;&#160;&#160;(0x2C)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00056">56</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ab77da9d7ce382d2c1a804945715df128" name="ab77da9d7ce382d2c1a804945715df128"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab77da9d7ce382d2c1a804945715df128">&#9670;&#160;</a></span>EPD_BW_SPI_DISPLAY_UPDATE_OPTION_DISABLE_CP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_DISPLAY_UPDATE_OPTION_DISABLE_CP&#160;&#160;&#160;(1&lt;&lt;1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00085">85</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ac1ea2bf4d3fcd006618db63b9e3ba2ab" name="ac1ea2bf4d3fcd006618db63b9e3ba2ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1ea2bf4d3fcd006618db63b9e3ba2ab">&#9670;&#160;</a></span>EPD_BW_SPI_DISPLAY_UPDATE_OPTION_DISABLE_OSC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_DISPLAY_UPDATE_OPTION_DISABLE_OSC&#160;&#160;&#160;(1&lt;&lt;0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00086">86</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ae86d8bb949660228b358788bbc76780f" name="ae86d8bb949660228b358788bbc76780f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae86d8bb949660228b358788bbc76780f">&#9670;&#160;</a></span>EPD_BW_SPI_DISPLAY_UPDATE_OPTION_ENABLE_CLOCK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_DISPLAY_UPDATE_OPTION_ENABLE_CLOCK&#160;&#160;&#160;(1&lt;&lt;7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00079">79</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a60e3be4f43b44e77b03aad6414f0f2e5" name="a60e3be4f43b44e77b03aad6414f0f2e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60e3be4f43b44e77b03aad6414f0f2e5">&#9670;&#160;</a></span>EPD_BW_SPI_DISPLAY_UPDATE_OPTION_ENABLE_CP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_DISPLAY_UPDATE_OPTION_ENABLE_CP&#160;&#160;&#160;(1&lt;&lt;6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00080">80</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a32a86bf029dfbf215c433bfd01c7f1a4" name="a32a86bf029dfbf215c433bfd01c7f1a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32a86bf029dfbf215c433bfd01c7f1a4">&#9670;&#160;</a></span>EPD_BW_SPI_DISPLAY_UPDATE_OPTION_INITIAL_DISPLAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_DISPLAY_UPDATE_OPTION_INITIAL_DISPLAY&#160;&#160;&#160;(1&lt;&lt;3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00083">83</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a13f5599edf3c74a98a7d1726d1ab3f03" name="a13f5599edf3c74a98a7d1726d1ab3f03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13f5599edf3c74a98a7d1726d1ab3f03">&#9670;&#160;</a></span>EPD_BW_SPI_DISPLAY_UPDATE_OPTION_LOAD_LUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_DISPLAY_UPDATE_OPTION_LOAD_LUT&#160;&#160;&#160;(1&lt;&lt;4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00082">82</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a9fbcbae30ffb934d36b31c76db8c36ad" name="a9fbcbae30ffb934d36b31c76db8c36ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fbcbae30ffb934d36b31c76db8c36ad">&#9670;&#160;</a></span>EPD_BW_SPI_DISPLAY_UPDATE_OPTION_LOAD_TEMP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_DISPLAY_UPDATE_OPTION_LOAD_TEMP&#160;&#160;&#160;(1&lt;&lt;5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00081">81</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a37a6c61935dbe0cc715b9060f1b66df4" name="a37a6c61935dbe0cc715b9060f1b66df4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37a6c61935dbe0cc715b9060f1b66df4">&#9670;&#160;</a></span>EPD_BW_SPI_DISPLAY_UPDATE_OPTION_PATTERN_DISPLAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_DISPLAY_UPDATE_OPTION_PATTERN_DISPLAY&#160;&#160;&#160;(1&lt;&lt;2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00084">84</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a24964b9bc995f54822a8e9faf0b4ed99" name="a24964b9bc995f54822a8e9faf0b4ed99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24964b9bc995f54822a8e9faf0b4ed99">&#9670;&#160;</a></span>EPD_BW_SPI_WAIT_ACTIVATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_WAIT_ACTIVATION&#160;&#160;&#160;80</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00096">96</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a2ceac0e6b217aae43fdb37c54fc89ca0" name="a2ceac0e6b217aae43fdb37c54fc89ca0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ceac0e6b217aae43fdb37c54fc89ca0">&#9670;&#160;</a></span>EPD_BW_SPI_WAIT_RESET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_WAIT_RESET&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00097">97</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ae6e4030895901b2156ce5ce21d739e3f" name="ae6e4030895901b2156ce5ce21d739e3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6e4030895901b2156ce5ce21d739e3f">&#9670;&#160;</a></span>EPD_BW_SPI_WAIT_UPDATE_FULL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_WAIT_UPDATE_FULL&#160;&#160;&#160;1200</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00094">94</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a31e9c87cf7af38f138b7e0f654dc21a4" name="a31e9c87cf7af38f138b7e0f654dc21a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31e9c87cf7af38f138b7e0f654dc21a4">&#9670;&#160;</a></span>EPD_BW_SPI_WAIT_UPDATE_PART</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPD_BW_SPI_WAIT_UPDATE_PART&#160;&#160;&#160;300</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="epd__bw__spi__internal_8h_source.html#l00095">95</a> of file <a class="el" href="epd__bw__spi__internal_8h_source.html">epd_bw_spi_internal.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

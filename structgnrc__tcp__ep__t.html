@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>gnrc_tcp_ep_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structgnrc__tcp__ep__t.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">gnrc_tcp_ep_t Struct Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__tcp.html">TCP</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Address information for a single TCP connection endpoint.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Address information for a single TCP connection endpoint. </p>
+
+<p class="definition">Definition at line <a class="el" href="gnrc_2tcp_8h_source.html#l00060">60</a> of file <a class="el" href="gnrc_2tcp_8h_source.html">tcp.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="gnrc_2tcp_8h_source.html">tcp.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a40f51ca3cf7744e90a370091497c62c8" id="r_a40f51ca3cf7744e90a370091497c62c8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40f51ca3cf7744e90a370091497c62c8">family</a></td></tr>
+<tr class="memdesc:a40f51ca3cf7744e90a370091497c62c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">IP address family.  <br /></td></tr>
+<tr class="separator:a40f51ca3cf7744e90a370091497c62c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53f1c33062ddeeab57705aa9f8ed8017" id="r_a53f1c33062ddeeab57705aa9f8ed8017"><td class="memItemLeft" ><a id="a53f1c33062ddeeab57705aa9f8ed8017" name="a53f1c33062ddeeab57705aa9f8ed8017"></a>
+union {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ccdecebb719ae44a6b3a655feb91019" id="r_a4ccdecebb719ae44a6b3a655feb91019"><td class="memItemLeft" >&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="#a10fb17a4e8ab05e39f380beb90a8b0ac">ipv6</a> [sizeof(<a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a>)]&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a4ccdecebb719ae44a6b3a655feb91019"><td class="mdescLeft">&#160;</td><td class="mdescRight">IPv6 address storage.  <a href="#a10fb17a4e8ab05e39f380beb90a8b0ac">More...</a><br /></td></tr>
+<tr class="separator:a4ccdecebb719ae44a6b3a655feb91019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f7ebf83fbbd08db9e00414351dd19a6" id="r_a2f7ebf83fbbd08db9e00414351dd19a6"><td class="memItemLeft" >&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="#aecd9d300507bc830b999d9f86400c1f6">dummy</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a2f7ebf83fbbd08db9e00414351dd19a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable build without network module.  <a href="#aecd9d300507bc830b999d9f86400c1f6">More...</a><br /></td></tr>
+<tr class="separator:a2f7ebf83fbbd08db9e00414351dd19a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53f1c33062ddeeab57705aa9f8ed8017" id="r_a53f1c33062ddeeab57705aa9f8ed8017"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><b>addr</b>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a53f1c33062ddeeab57705aa9f8ed8017"><td class="mdescLeft">&#160;</td><td class="mdescRight">IP address storage. <br /></td></tr>
+<tr class="separator:a53f1c33062ddeeab57705aa9f8ed8017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a100b5930e95637d4caf66276dd452556" id="r_a100b5930e95637d4caf66276dd452556"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a100b5930e95637d4caf66276dd452556">netif</a></td></tr>
+<tr class="memdesc:a100b5930e95637d4caf66276dd452556"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structNetwork.html" title="Network struct within mqtt paho.">Network</a> interface ID.  <br /></td></tr>
+<tr class="separator:a100b5930e95637d4caf66276dd452556"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5258be82544e488be5bc61abd55b7a88" id="r_a5258be82544e488be5bc61abd55b7a88"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5258be82544e488be5bc61abd55b7a88">port</a></td></tr>
+<tr class="memdesc:a5258be82544e488be5bc61abd55b7a88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Port number (in host byte order)  <br /></td></tr>
+<tr class="separator:a5258be82544e488be5bc61abd55b7a88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_struct__sock__tl__ep"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_struct__sock__tl__ep')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="struct__sock__tl__ep.html">_sock_tl_ep</a></td></tr>
+<tr class="memitem:a39cc1104d239f1b620e0714a1c33b247 inherit pub_attribs_struct__sock__tl__ep" id="r_a39cc1104d239f1b620e0714a1c33b247"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__sock__tl__ep.html#a39cc1104d239f1b620e0714a1c33b247">family</a></td></tr>
+<tr class="memdesc:a39cc1104d239f1b620e0714a1c33b247 inherit pub_attribs_struct__sock__tl__ep"><td class="mdescLeft">&#160;</td><td class="mdescRight">family of <a class="el" href="structsock__ip__ep__t.html#afd7120d5bb690cceb4b058e8d5c3a979" title="address">sock_ip_ep_t::addr</a>  <br /></td></tr>
+<tr class="separator:a39cc1104d239f1b620e0714a1c33b247 inherit pub_attribs_struct__sock__tl__ep"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c9ec7e621447123a22646bb39fc81a9 inherit pub_attribs_struct__sock__tl__ep" id="r_a1c9ec7e621447123a22646bb39fc81a9"><td class="memItemLeft" >
+union {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator: inherit pub_attribs_struct__sock__tl__ep"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae76023f58df18bb1ed874abf4b6fbc4e inherit pub_attribs_struct__sock__tl__ep" id="r_ae76023f58df18bb1ed874abf4b6fbc4e"><td class="memItemLeft" >&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="struct__sock__tl__ep.html#ac57a885cc2ffcebc1759e3ac4c60cec9">ipv6</a> [16]&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:ae76023f58df18bb1ed874abf4b6fbc4e inherit pub_attribs_struct__sock__tl__ep"><td class="mdescLeft">&#160;</td><td class="mdescRight">IPv6 address mode.  <a href="struct__sock__tl__ep.html#ac57a885cc2ffcebc1759e3ac4c60cec9">More...</a><br /></td></tr>
+<tr class="separator:ae76023f58df18bb1ed874abf4b6fbc4e inherit pub_attribs_struct__sock__tl__ep"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd88cdafcaf928c93a7e64d849bde4f8 inherit pub_attribs_struct__sock__tl__ep" id="r_acd88cdafcaf928c93a7e64d849bde4f8"><td class="memItemLeft" >&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<a class="el" href="struct__sock__tl__ep.html#a962ad49f2dd126b6329db542df577fa7">ipv4</a> [4]&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:acd88cdafcaf928c93a7e64d849bde4f8 inherit pub_attribs_struct__sock__tl__ep"><td class="mdescLeft">&#160;</td><td class="mdescRight">IPv4 address mode.  <a href="struct__sock__tl__ep.html#a962ad49f2dd126b6329db542df577fa7">More...</a><br /></td></tr>
+<tr class="separator:acd88cdafcaf928c93a7e64d849bde4f8 inherit pub_attribs_struct__sock__tl__ep"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad68fa3cae5983549943f6a41e9b2dab8 inherit pub_attribs_struct__sock__tl__ep" id="r_ad68fa3cae5983549943f6a41e9b2dab8"><td class="memItemLeft" >&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="struct__sock__tl__ep.html#a4a3ba084a16d9729f04200f3e158e927">ipv4_u32</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:ad68fa3cae5983549943f6a41e9b2dab8 inherit pub_attribs_struct__sock__tl__ep"><td class="mdescLeft">&#160;</td><td class="mdescRight">IPv4 address <em>in network byte order</em>  <a href="struct__sock__tl__ep.html#a4a3ba084a16d9729f04200f3e158e927">More...</a><br /></td></tr>
+<tr class="separator:ad68fa3cae5983549943f6a41e9b2dab8 inherit pub_attribs_struct__sock__tl__ep"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c9ec7e621447123a22646bb39fc81a9 inherit pub_attribs_struct__sock__tl__ep" id="r_a1c9ec7e621447123a22646bb39fc81a9"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><b>addr</b>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a1c9ec7e621447123a22646bb39fc81a9 inherit pub_attribs_struct__sock__tl__ep"><td class="mdescLeft">&#160;</td><td class="mdescRight">address <br /></td></tr>
+<tr class="separator:a1c9ec7e621447123a22646bb39fc81a9 inherit pub_attribs_struct__sock__tl__ep"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f667124619a9590a0471585f71b2213 inherit pub_attribs_struct__sock__tl__ep" id="r_a4f667124619a9590a0471585f71b2213"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__sock__tl__ep.html#a4f667124619a9590a0471585f71b2213">netif</a></td></tr>
+<tr class="memdesc:a4f667124619a9590a0471585f71b2213 inherit pub_attribs_struct__sock__tl__ep"><td class="mdescLeft">&#160;</td><td class="mdescRight">stack-specific network interface ID  <br /></td></tr>
+<tr class="separator:a4f667124619a9590a0471585f71b2213 inherit pub_attribs_struct__sock__tl__ep"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00b5dbff09ee8e87806fff6280966140 inherit pub_attribs_struct__sock__tl__ep" id="r_a00b5dbff09ee8e87806fff6280966140"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__sock__tl__ep.html#a00b5dbff09ee8e87806fff6280966140">port</a></td></tr>
+<tr class="memdesc:a00b5dbff09ee8e87806fff6280966140 inherit pub_attribs_struct__sock__tl__ep"><td class="mdescLeft">&#160;</td><td class="mdescRight">transport layer port (in host byte order)  <br /></td></tr>
+<tr class="separator:a00b5dbff09ee8e87806fff6280966140 inherit pub_attribs_struct__sock__tl__ep"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="aecd9d300507bc830b999d9f86400c1f6" name="aecd9d300507bc830b999d9f86400c1f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecd9d300507bc830b999d9f86400c1f6">&#9670;&#160;</a></span>dummy</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t gnrc_tcp_ep_t::dummy</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable build without network module. </p>
+
+<p class="definition">Definition at line <a class="el" href="gnrc_2tcp_8h_source.html#l00066">66</a> of file <a class="el" href="gnrc_2tcp_8h_source.html">tcp.h</a>.</p>
+
+</div>
+</div>
+<a id="a40f51ca3cf7744e90a370091497c62c8" name="a40f51ca3cf7744e90a370091497c62c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40f51ca3cf7744e90a370091497c62c8">&#9670;&#160;</a></span>family</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int gnrc_tcp_ep_t::family</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>IP address family. </p>
+
+<p class="definition">Definition at line <a class="el" href="gnrc_2tcp_8h_source.html#l00061">61</a> of file <a class="el" href="gnrc_2tcp_8h_source.html">tcp.h</a>.</p>
+
+</div>
+</div>
+<a id="a10fb17a4e8ab05e39f380beb90a8b0ac" name="a10fb17a4e8ab05e39f380beb90a8b0ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10fb17a4e8ab05e39f380beb90a8b0ac">&#9670;&#160;</a></span>ipv6</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t gnrc_tcp_ep_t::ipv6[sizeof(<a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a>)]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>IPv6 address storage. </p>
+
+<p class="definition">Definition at line <a class="el" href="gnrc_2tcp_8h_source.html#l00064">64</a> of file <a class="el" href="gnrc_2tcp_8h_source.html">tcp.h</a>.</p>
+
+</div>
+</div>
+<a id="a100b5930e95637d4caf66276dd452556" name="a100b5930e95637d4caf66276dd452556"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a100b5930e95637d4caf66276dd452556">&#9670;&#160;</a></span>netif</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t gnrc_tcp_ep_t::netif</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structNetwork.html" title="Network struct within mqtt paho.">Network</a> interface ID. </p>
+
+<p class="definition">Definition at line <a class="el" href="gnrc_2tcp_8h_source.html#l00068">68</a> of file <a class="el" href="gnrc_2tcp_8h_source.html">tcp.h</a>.</p>
+
+</div>
+</div>
+<a id="a5258be82544e488be5bc61abd55b7a88" name="a5258be82544e488be5bc61abd55b7a88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5258be82544e488be5bc61abd55b7a88">&#9670;&#160;</a></span>port</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t gnrc_tcp_ep_t::port</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Port number (in host byte order) </p>
+
+<p class="definition">Definition at line <a class="el" href="gnrc_2tcp_8h_source.html#l00069">69</a> of file <a class="el" href="gnrc_2tcp_8h_source.html">tcp.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>sys/include/net/gnrc/<a class="el" href="gnrc_2tcp_8h_source.html">tcp.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

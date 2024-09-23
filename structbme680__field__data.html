@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>bme680_field_data Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structbme680__field__data.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">bme680_field_data Struct Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a> &raquo; <a class="el" href="group__drivers__bme680.html">BME680 Temperature/Humidity/Pressure/Gas sensor</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>BME680 sensor field data.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>BME680 sensor field data. </p>
+
+<p class="definition">Definition at line <a class="el" href="bme680_8h_source.html#l00156">156</a> of file <a class="el" href="bme680_8h_source.html">bme680.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="bme680_8h_source.html">bme680.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:af52b43f86807c1f1ef7526bbb9584c5b" id="r_af52b43f86807c1f1ef7526bbb9584c5b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af52b43f86807c1f1ef7526bbb9584c5b">status</a></td></tr>
+<tr class="memdesc:af52b43f86807c1f1ef7526bbb9584c5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status for new data, gas measurement valid and heater stable.  <br /></td></tr>
+<tr class="separator:af52b43f86807c1f1ef7526bbb9584c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae96ceedb9e36dc0671ac533e88160f5b" id="r_ae96ceedb9e36dc0671ac533e88160f5b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae96ceedb9e36dc0671ac533e88160f5b">gas_index</a></td></tr>
+<tr class="memdesc:ae96ceedb9e36dc0671ac533e88160f5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of used heater profile.  <br /></td></tr>
+<tr class="separator:ae96ceedb9e36dc0671ac533e88160f5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add2cb9f6b7d736908aa9f75904122d3c" id="r_add2cb9f6b7d736908aa9f75904122d3c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add2cb9f6b7d736908aa9f75904122d3c">meas_index</a></td></tr>
+<tr class="memdesc:add2cb9f6b7d736908aa9f75904122d3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measurement index.  <br /></td></tr>
+<tr class="separator:add2cb9f6b7d736908aa9f75904122d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8954536ec56e28e4bc79ed7bf1bc5176" id="r_a8954536ec56e28e4bc79ed7bf1bc5176"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8954536ec56e28e4bc79ed7bf1bc5176">temperature</a></td></tr>
+<tr class="memdesc:a8954536ec56e28e4bc79ed7bf1bc5176"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temperature in degree Celsius x 100.  <br /></td></tr>
+<tr class="separator:a8954536ec56e28e4bc79ed7bf1bc5176"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af92dbc060536ac0cd546a1f402fcecb4" id="r_af92dbc060536ac0cd546a1f402fcecb4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af92dbc060536ac0cd546a1f402fcecb4">pressure</a></td></tr>
+<tr class="memdesc:af92dbc060536ac0cd546a1f402fcecb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pressure in Pascal.  <br /></td></tr>
+<tr class="separator:af92dbc060536ac0cd546a1f402fcecb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac84103cb41a2fab9614a61b467e5410e" id="r_ac84103cb41a2fab9614a61b467e5410e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac84103cb41a2fab9614a61b467e5410e">humidity</a></td></tr>
+<tr class="memdesc:ac84103cb41a2fab9614a61b467e5410e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relative humidity in percent x 1000.  <br /></td></tr>
+<tr class="separator:ac84103cb41a2fab9614a61b467e5410e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ce58ca03356c0df2e4b02bac6c4ce26" id="r_a6ce58ca03356c0df2e4b02bac6c4ce26"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ce58ca03356c0df2e4b02bac6c4ce26">gas_resistance</a></td></tr>
+<tr class="memdesc:a6ce58ca03356c0df2e4b02bac6c4ce26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gas resistance in ohms.  <br /></td></tr>
+<tr class="separator:a6ce58ca03356c0df2e4b02bac6c4ce26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="ae96ceedb9e36dc0671ac533e88160f5b" name="ae96ceedb9e36dc0671ac533e88160f5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae96ceedb9e36dc0671ac533e88160f5b">&#9670;&#160;</a></span>gas_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t bme680_field_data::gas_index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Index of used heater profile. </p>
+
+<p class="definition">Definition at line <a class="el" href="bme680_8h_source.html#l00161">161</a> of file <a class="el" href="bme680_8h_source.html">bme680.h</a>.</p>
+
+</div>
+</div>
+<a id="a6ce58ca03356c0df2e4b02bac6c4ce26" name="a6ce58ca03356c0df2e4b02bac6c4ce26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ce58ca03356c0df2e4b02bac6c4ce26">&#9670;&#160;</a></span>gas_resistance</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t bme680_field_data::gas_resistance</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gas resistance in ohms. </p>
+
+<p class="definition">Definition at line <a class="el" href="bme680_8h_source.html#l00167">167</a> of file <a class="el" href="bme680_8h_source.html">bme680.h</a>.</p>
+
+</div>
+</div>
+<a id="ac84103cb41a2fab9614a61b467e5410e" name="ac84103cb41a2fab9614a61b467e5410e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac84103cb41a2fab9614a61b467e5410e">&#9670;&#160;</a></span>humidity</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t bme680_field_data::humidity</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Relative humidity in percent x 1000. </p>
+
+<p class="definition">Definition at line <a class="el" href="bme680_8h_source.html#l00166">166</a> of file <a class="el" href="bme680_8h_source.html">bme680.h</a>.</p>
+
+</div>
+</div>
+<a id="add2cb9f6b7d736908aa9f75904122d3c" name="add2cb9f6b7d736908aa9f75904122d3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add2cb9f6b7d736908aa9f75904122d3c">&#9670;&#160;</a></span>meas_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t bme680_field_data::meas_index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Measurement index. </p>
+
+<p class="definition">Definition at line <a class="el" href="bme680_8h_source.html#l00162">162</a> of file <a class="el" href="bme680_8h_source.html">bme680.h</a>.</p>
+
+</div>
+</div>
+<a id="af92dbc060536ac0cd546a1f402fcecb4" name="af92dbc060536ac0cd546a1f402fcecb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af92dbc060536ac0cd546a1f402fcecb4">&#9670;&#160;</a></span>pressure</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t bme680_field_data::pressure</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pressure in Pascal. </p>
+
+<p class="definition">Definition at line <a class="el" href="bme680_8h_source.html#l00165">165</a> of file <a class="el" href="bme680_8h_source.html">bme680.h</a>.</p>
+
+</div>
+</div>
+<a id="af52b43f86807c1f1ef7526bbb9584c5b" name="af52b43f86807c1f1ef7526bbb9584c5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af52b43f86807c1f1ef7526bbb9584c5b">&#9670;&#160;</a></span>status</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t bme680_field_data::status</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Status for new data, gas measurement valid and heater stable. </p>
+<p>Use <code>BME680_NEW_DATA_MSK</code>, <code>BME680_GASM_VALID_MSK</code> and BME680_HEAT_STAB_MSK to check for the status. </p>
+
+<p class="definition">Definition at line <a class="el" href="bme680_8h_source.html#l00157">157</a> of file <a class="el" href="bme680_8h_source.html">bme680.h</a>.</p>
+
+</div>
+</div>
+<a id="a8954536ec56e28e4bc79ed7bf1bc5176" name="a8954536ec56e28e4bc79ed7bf1bc5176"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8954536ec56e28e4bc79ed7bf1bc5176">&#9670;&#160;</a></span>temperature</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t bme680_field_data::temperature</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Temperature in degree Celsius x 100. </p>
+
+<p class="definition">Definition at line <a class="el" href="bme680_8h_source.html#l00164">164</a> of file <a class="el" href="bme680_8h_source.html">bme680.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>drivers/include/<a class="el" href="bme680_8h_source.html">bme680.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

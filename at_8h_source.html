@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/include/at.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('at_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">at.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="at_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (C) 2017 Kaspar Schleiser &lt;kaspar@schleiser.de&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * directory for more details.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#ifndef AT_H</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#define AT_H</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="preprocessor">#include &quot;<a class="code" href="isrpipe_8h.html">isrpipe.h</a>&quot;</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="preprocessor">#include &quot;<a class="code" href="drivers_2include_2periph_2uart_8h.html">periph/uart.h</a>&quot;</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#include &quot;<a class="code" href="clist_8h.html">clist.h</a>&quot;</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="preprocessor">#include &quot;<a class="code" href="kernel__defines_8h.html">kernel_defines.h</a>&quot;</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="preprocessor">#include &quot;event.h&quot;</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="preprocessor">#if IS_ACTIVE(CONFIG_AT_SEND_EOL_WINDOWS)</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="preprocessor">#define CONFIG_AT_SEND_EOL   &quot;\r\n&quot;</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="preprocessor">#elif IS_ACTIVE(CONFIG_AT_SEND_EOL_UNIX)</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="preprocessor">#define CONFIG_AT_SEND_EOL   &quot;\n&quot;</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="preprocessor">#elif IS_ACTIVE(CONFIG_AT_SEND_EOL_MAC)</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="preprocessor">#define CONFIG_AT_SEND_EOL   &quot;\r&quot;</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="preprocessor">#ifndef CONFIG_AT_SEND_EOL</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="group__drivers__at__config.html#ga1bbe0696da476d39ebb81e63915debf2">  149</a></span><span class="preprocessor">#define CONFIG_AT_SEND_EOL &quot;\r&quot;</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="preprocessor">#ifdef DOXYGEN</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="group__drivers__at__config.html#ga5d8ace7feb8881f0220a3f5ccf4b60ad">  157</a></span><span class="preprocessor">#define CONFIG_AT_SEND_SKIP_ECHO</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="preprocessor">#ifndef AT_RECV_EOL_1</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="group__drivers__at__config.html#ga07ac5c053e64d6b153827150f4d85bca">  164</a></span><span class="preprocessor">#define AT_RECV_EOL_1   &quot;\r&quot;</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="preprocessor">#ifndef AT_RECV_EOL_2</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="group__drivers__at__config.html#gae6493ca647dfa21b4ac068ca9079a19f">  171</a></span><span class="preprocessor">#define AT_RECV_EOL_2   &quot;\n&quot;</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="group__drivers__at__config.html#ga012ba99e86c90429742f569bd9b1f36f">  177</a></span><span class="preprocessor">#define AT_RECV_EOL AT_RECV_EOL_1 AT_RECV_EOL_2</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="preprocessor">#ifndef CONFIG_AT_RECV_OK</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="group__drivers__at__config.html#ga94794b813aec103907b1ff70937e9bd8">  183</a></span><span class="preprocessor">#define CONFIG_AT_RECV_OK &quot;OK&quot;</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="preprocessor">#ifndef CONFIG_AT_RECV_ERROR</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="group__drivers__at__config.html#gafac8c8c7d5ea02c15f4ce01b91f0b622">  190</a></span><span class="preprocessor">#define CONFIG_AT_RECV_ERROR &quot;ERROR&quot;</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="preprocessor">#if defined(MODULE_AT_URC) || DOXYGEN</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="group__drivers__at.html#ga7d1acdacf996c040a54c7fa1ea018f29">  201</a></span><span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="group__drivers__at.html#ga7d1acdacf996c040a54c7fa1ea018f29">at_urc_cb_t</a>)(<span class="keywordtype">void</span> *arg, <span class="keyword">const</span> <span class="keywordtype">char</span> *code);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="foldopen" id="foldopen00206" data-start="{" data-end="};">
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="structat__urc__t.html">  206</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno"><a class="line" href="structat__urc__t.html#a7ec45852cd9829889772df7ceff00f41">  207</a></span>    <a class="code hl_struct" href="structlist__node.html">clist_node_t</a> <a class="code hl_variable" href="structat__urc__t.html#a7ec45852cd9829889772df7ceff00f41">list_node</a>; </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="structat__urc__t.html#a345f0cc6969759ff2512c316f68290af">  208</a></span>    <a class="code hl_typedef" href="group__drivers__at.html#ga7d1acdacf996c040a54c7fa1ea018f29">at_urc_cb_t</a> <a class="code hl_variable" href="structat__urc__t.html#a345f0cc6969759ff2512c316f68290af">cb</a>;         </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno"><a class="line" href="structat__urc__t.html#adb535769a191508bc89f79f19bb70627">  209</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="structat__urc__t.html#adb535769a191508bc89f79f19bb70627">code</a>;       </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="structat__urc__t.html#ace8c1eb731078837966294c84a849eb1">  210</a></span>    <span class="keywordtype">void</span> *<a class="code hl_variable" href="structat__urc__t.html#ace8c1eb731078837966294c84a849eb1">arg</a>;              </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>} <a class="code hl_struct" href="structat__urc__t.html">at_urc_t</a>;</div>
+</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="preprocessor">#endif </span><span class="comment">/* MODULE_AT_URC */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="group__drivers__at.html#gac74d49891315253dca949e62c1e04708">  216</a></span><span class="preprocessor">#define AT_ERR_EXTENDED 200</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno"><a class="line" href="group__drivers__at.html#gaf8e6a8d90e09b66b4d1e804f29ca6be7">  219</a></span><span class="preprocessor">#define AT_SEND_EOL_LEN  (sizeof(CONFIG_AT_SEND_EOL) - 1)</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="foldopen" id="foldopen00224" data-start="{" data-end="};">
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="structat__dev__t.html">  224</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno"><a class="line" href="structat__dev__t.html#a5213ffb7f8cb5aad22e93fe4a12d5775">  225</a></span>    <a class="code hl_struct" href="structisrpipe__t.html">isrpipe_t</a> <a class="code hl_variable" href="structat__dev__t.html#a5213ffb7f8cb5aad22e93fe4a12d5775">isrpipe</a>;      </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="structat__dev__t.html#a06eb6056e3fe390783b0e095a4cd726b">  226</a></span>    <a class="code hl_typedef" href="group__drivers__periph__uart.html#ga83a92464bff5eb42f085e06e553d52b1">uart_t</a> <a class="code hl_variable" href="structat__dev__t.html#a06eb6056e3fe390783b0e095a4cd726b">uart</a>;            </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno"><a class="line" href="structat__dev__t.html#a91ead8d7c6f477ce0bde37b70f5f717e">  227</a></span>    <span class="keywordtype">char</span> *<a class="code hl_variable" href="structat__dev__t.html#a91ead8d7c6f477ce0bde37b70f5f717e">rp_buf</a>;           </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="structat__dev__t.html#a55b52ad5f7a4060e3d9936a389671f2f">  228</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structat__dev__t.html#a55b52ad5f7a4060e3d9936a389671f2f">rp_buf_size</a>;     </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="preprocessor">#ifdef MODULE_AT_URC</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <a class="code hl_struct" href="structlist__node.html">clist_node_t</a> urc_list;  </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="preprocessor">#ifdef MODULE_AT_URC_ISR</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keywordtype">bool</span> awaiting_response; </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <a class="code hl_struct" href="structevent.html">event_t</a> <a class="code hl_struct" href="structevent.html">event</a>;          </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>} <a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a>;</div>
+</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
+<div class="foldopen" id="foldopen00241" data-start="{" data-end="};">
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno"><a class="line" href="structat__dev__init__t.html">  241</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="structat__dev__init__t.html#adbf7d0bd7b64e1491b044861261f248b">  242</a></span>    <a class="code hl_typedef" href="group__drivers__periph__uart.html#ga83a92464bff5eb42f085e06e553d52b1">uart_t</a> <a class="code hl_variable" href="structat__dev__init__t.html#adbf7d0bd7b64e1491b044861261f248b">uart</a>;            </div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="structat__dev__init__t.html#aa73910666bcb550c7f98d411576e9b30">  243</a></span>    uint32_t <a class="code hl_variable" href="structat__dev__init__t.html#aa73910666bcb550c7f98d411576e9b30">baudrate</a>;      </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="structat__dev__init__t.html#aea7a7e5ca2d3b8b1f46fd1f53df45ebb">  244</a></span>    <span class="keywordtype">char</span> *<a class="code hl_variable" href="structat__dev__init__t.html#aea7a7e5ca2d3b8b1f46fd1f53df45ebb">rx_buf</a>;           </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno"><a class="line" href="structat__dev__init__t.html#af09fadb917c9ca2b64ff1085d3d52ea2">  245</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structat__dev__init__t.html#af09fadb917c9ca2b64ff1085d3d52ea2">rx_buf_size</a>;     </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="structat__dev__init__t.html#a43714faf8aff9c42e9cd43dba889be82">  253</a></span>    <span class="keywordtype">char</span> *<a class="code hl_variable" href="structat__dev__init__t.html#a43714faf8aff9c42e9cd43dba889be82">rp_buf</a>;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno"><a class="line" href="structat__dev__init__t.html#aa4f309bd695a7053dacc5df4a893144d">  254</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structat__dev__init__t.html#aa4f309bd695a7053dacc5df4a893144d">rp_buf_size</a>;     </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>} <a class="code hl_struct" href="structat__dev__init__t.html">at_dev_init_t</a>;</div>
+</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="foldopen" id="foldopen00267" data-start="{" data-end="}">
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno"><a class="line" href="group__drivers__at.html#gab41a2381cbd97e858119b73e12f43c95">  267</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">char</span> <span class="keyword">const</span> *<a class="code hl_function" href="group__drivers__at.html#gab41a2381cbd97e858119b73e12f43c95">at_get_err_info</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> <span class="keyword">const</span> *dev)</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>{</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    <span class="keywordflow">return</span> dev-&gt;<a class="code hl_variable" href="structat__dev__t.html#a91ead8d7c6f477ce0bde37b70f5f717e">rp_buf</a>;</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>}</div>
+</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno"><a class="line" href="group__drivers__at.html#gae3bf3c6216f1f373fa21764baebf017a">  280</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__drivers__at.html#gae3bf3c6216f1f373fa21764baebf017a">at_dev_init</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, <a class="code hl_struct" href="structat__dev__init__t.html">at_dev_init_t</a> <span class="keyword">const</span> *init);</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno"><a class="line" href="group__drivers__at.html#ga78c3e2c3c058f89a19d2602d95e71df5">  298</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__drivers__at.html#ga78c3e2c3c058f89a19d2602d95e71df5">at_send_cmd_wait_ok</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, <span class="keyword">const</span> <span class="keywordtype">char</span> *command, uint32_t timeout);</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno"><a class="line" href="group__drivers__at.html#gab7a8b9904fdd9abc425555cb206484c1">  317</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__drivers__at.html#gab7a8b9904fdd9abc425555cb206484c1">at_send_cmd_wait_prompt</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, <span class="keyword">const</span> <span class="keywordtype">char</span> *command, uint32_t timeout);</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno"><a class="line" href="group__drivers__at.html#gae6b22e12bf39c82f1b8ad5b7d3af89fa">  330</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__drivers__at.html#gae6b22e12bf39c82f1b8ad5b7d3af89fa">at_wait_prompt</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, uint32_t timeout);</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno"><a class="line" href="group__drivers__at.html#ga5bae602f53c99cc87435847f194240d3">  353</a></span>ssize_t <a class="code hl_function" href="group__drivers__at.html#ga5bae602f53c99cc87435847f194240d3">at_send_cmd_get_resp</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, <span class="keyword">const</span> <span class="keywordtype">char</span> *command, <span class="keywordtype">char</span> *resp_buf,</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>                             <span class="keywordtype">size_t</span> len, uint32_t timeout);</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno"><a class="line" href="group__drivers__at.html#ga56734544e510149d62ab0545df459332">  381</a></span>ssize_t <a class="code hl_function" href="group__drivers__at.html#ga56734544e510149d62ab0545df459332">at_get_resp_with_prefix</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, <span class="keyword">const</span> <span class="keywordtype">char</span> *resp_prefix,</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>                                <span class="keywordtype">char</span> *resp_buf, <span class="keywordtype">size_t</span> len, uint32_t timeout);</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno"><a class="line" href="group__drivers__at.html#ga81db2cf0d221f8114e21286ccbfa1c25">  411</a></span>ssize_t <a class="code hl_function" href="group__drivers__at.html#ga81db2cf0d221f8114e21286ccbfa1c25">at_send_cmd_get_resp_wait_ok</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, <span class="keyword">const</span> <span class="keywordtype">char</span> *command, <span class="keyword">const</span> <span class="keywordtype">char</span> *resp_prefix,</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>                                     <span class="keywordtype">char</span> *resp_buf, <span class="keywordtype">size_t</span> len, uint32_t timeout);</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span> </div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno"><a class="line" href="group__drivers__at.html#ga87da7deaa6e4c154eee3c46171589647">  440</a></span>ssize_t <a class="code hl_function" href="group__drivers__at.html#ga87da7deaa6e4c154eee3c46171589647">at_send_cmd_get_lines</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, <span class="keyword">const</span> <span class="keywordtype">char</span> *command, <span class="keywordtype">char</span> *resp_buf,</div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>                              <span class="keywordtype">size_t</span> len, uint32_t timeout);</div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span> </div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno"><a class="line" href="group__drivers__at.html#ga850f8f93386aacbcac9d892b9feb9ce9">  453</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__drivers__at.html#ga850f8f93386aacbcac9d892b9feb9ce9">at_expect_bytes</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, <span class="keyword">const</span> <span class="keywordtype">char</span> *bytes, uint32_t timeout);</div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span> </div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno"><a class="line" href="group__drivers__at.html#ga27efd32488e44c79bc46e9e45535213b">  465</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__drivers__at.html#ga27efd32488e44c79bc46e9e45535213b">at_wait_bytes</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, <span class="keyword">const</span> <span class="keywordtype">char</span> *bytes, uint32_t timeout);</div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span> </div>
+<div class="line"><a id="l00482" name="l00482"></a><span class="lineno"><a class="line" href="group__drivers__at.html#ga9fd4b47989b8f65589bd3ecb9b7fc7da">  482</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__drivers__at.html#ga9fd4b47989b8f65589bd3ecb9b7fc7da">at_recv_bytes_until_string</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, <span class="keyword">const</span> <span class="keywordtype">char</span> *<span class="keywordtype">string</span>,</div>
+<div class="line"><a id="l00483" name="l00483"></a><span class="lineno">  483</span>                               <span class="keywordtype">char</span> *bytes, <span class="keywordtype">size_t</span> *bytes_len,</div>
+<div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span>                               uint32_t timeout);</div>
+<div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span> </div>
+<div class="line"><a id="l00493" name="l00493"></a><span class="lineno"><a class="line" href="group__drivers__at.html#ga3ade40e3504355ca3b476e7a5ffa625b">  493</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__drivers__at.html#ga3ade40e3504355ca3b476e7a5ffa625b">at_send_bytes</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, <span class="keyword">const</span> <span class="keywordtype">char</span> *bytes, <span class="keywordtype">size_t</span> len);</div>
+<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span> </div>
+<div class="line"><a id="l00505" name="l00505"></a><span class="lineno"><a class="line" href="group__drivers__at.html#ga67070402b981624b5a2388140aa8cca9">  505</a></span>ssize_t <a class="code hl_function" href="group__drivers__at.html#ga67070402b981624b5a2388140aa8cca9">at_recv_bytes</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, <span class="keywordtype">char</span> *bytes, <span class="keywordtype">size_t</span> len, uint32_t timeout);</div>
+<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span> </div>
+<div class="line"><a id="l00519" name="l00519"></a><span class="lineno"><a class="line" href="group__drivers__at.html#ga702914edf074a4fa28769d47c66e5fbf">  519</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__drivers__at.html#ga702914edf074a4fa28769d47c66e5fbf">at_send_cmd</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, <span class="keyword">const</span> <span class="keywordtype">char</span> *command, uint32_t timeout);</div>
+<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span> </div>
+<div class="line"><a id="l00535" name="l00535"></a><span class="lineno"><a class="line" href="group__drivers__at.html#gabd7c38b7afa3b2a1eb22320403a6c30f">  535</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__drivers__at.html#gabd7c38b7afa3b2a1eb22320403a6c30f">at_parse_resp</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, <span class="keywordtype">char</span> <span class="keyword">const</span> *resp);</div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span> </div>
+<div class="line"><a id="l00552" name="l00552"></a><span class="lineno"><a class="line" href="group__drivers__at.html#ga87d80aec5bc08debe3ca57dd8797ca23">  552</a></span>ssize_t <a class="code hl_function" href="group__drivers__at.html#ga87d80aec5bc08debe3ca57dd8797ca23">at_readline</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, <span class="keywordtype">char</span> *resp_buf, <span class="keywordtype">size_t</span> len, <span class="keywordtype">bool</span> keep_eol, uint32_t timeout);</div>
+<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span> </div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno"><a class="line" href="group__drivers__at.html#gabf0eab5fda71168d0f4c184b52b52372">  570</a></span>ssize_t <a class="code hl_function" href="group__drivers__at.html#gabf0eab5fda71168d0f4c184b52b52372">at_readline_skip_empty</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, <span class="keywordtype">char</span> *resp_buf, <span class="keywordtype">size_t</span> len,</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>                               <span class="keywordtype">bool</span> keep_eol, uint32_t timeout);</div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span> </div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno"><a class="line" href="group__drivers__at.html#ga3984bb2bf4be28283254897e4f760b1b">  588</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__drivers__at.html#ga3984bb2bf4be28283254897e4f760b1b">at_wait_ok</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, uint32_t timeout);</div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span> </div>
+<div class="line"><a id="l00598" name="l00598"></a><span class="lineno"><a class="line" href="group__drivers__at.html#gadb4e5f6e898307259621fe477ab7dd31">  598</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__drivers__at.html#gadb4e5f6e898307259621fe477ab7dd31">at_drain</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev);</div>
+<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span> </div>
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno"><a class="line" href="group__drivers__at.html#gaf4a86b03a552052d944daeafcfc4e4fd">  605</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__drivers__at.html#gaf4a86b03a552052d944daeafcfc4e4fd">at_dev_poweron</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev);</div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span> </div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno"><a class="line" href="group__drivers__at.html#ga7f51e9b72ea42a731ecdb6906114ada0">  612</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__drivers__at.html#ga7f51e9b72ea42a731ecdb6906114ada0">at_dev_poweroff</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev);</div>
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span> </div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span><span class="preprocessor">#if defined(MODULE_AT_URC) || DOXYGEN</span></div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno"><a class="line" href="group__drivers__at.html#ga062f9c2edf31ed42305296a1baa46f78">  621</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__drivers__at.html#ga062f9c2edf31ed42305296a1baa46f78">at_add_urc</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, <a class="code hl_struct" href="structat__urc__t.html">at_urc_t</a> *urc);</div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span> </div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno"><a class="line" href="group__drivers__at.html#gaee82b66a03dd98a32986f467a6572274">  629</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__drivers__at.html#gaee82b66a03dd98a32986f467a6572274">at_remove_urc</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, <a class="code hl_struct" href="structat__urc__t.html">at_urc_t</a> *urc);</div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span> </div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno"><a class="line" href="group__drivers__at.html#ga62bde713e9dbb260e83dd469cf2d527e">  637</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__drivers__at.html#ga62bde713e9dbb260e83dd469cf2d527e">at_process_urc</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, uint32_t timeout);</div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span> </div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno"><a class="line" href="group__drivers__at.html#gad7ccb4f94e1dbdf6e3309472df7ae897">  648</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__drivers__at.html#gad7ccb4f94e1dbdf6e3309472df7ae897">at_postprocess_urc</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, <span class="keywordtype">char</span> *buf);</div>
+<div class="line"><a id="l00658" name="l00658"></a><span class="lineno"><a class="line" href="group__drivers__at.html#gae9b0300aa156d0489e21a69dbe5d0698">  658</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__drivers__at.html#gae9b0300aa156d0489e21a69dbe5d0698">at_postprocess_urc_all</a>(<a class="code hl_struct" href="structat__dev__t.html">at_dev_t</a> *dev, <span class="keywordtype">char</span> *buf);</div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span> </div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>}</div>
+<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span> </div>
+<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span><span class="preprocessor">#endif </span><span class="comment">/* AT_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aclist_8h_html"><div class="ttname"><a href="clist_8h.html">clist.h</a></div><div class="ttdoc">Circular linked list.</div></div>
+<div class="ttc" id="adrivers_2include_2periph_2uart_8h_html"><div class="ttname"><a href="drivers_2include_2periph_2uart_8h.html">uart.h</a></div><div class="ttdoc">Low-level UART peripheral driver interface definition.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_ga062f9c2edf31ed42305296a1baa46f78"><div class="ttname"><a href="group__drivers__at.html#ga062f9c2edf31ed42305296a1baa46f78">at_add_urc</a></div><div class="ttdeci">void at_add_urc(at_dev_t *dev, at_urc_t *urc)</div><div class="ttdoc">Add a callback for an unsolicited response code.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_ga27efd32488e44c79bc46e9e45535213b"><div class="ttname"><a href="group__drivers__at.html#ga27efd32488e44c79bc46e9e45535213b">at_wait_bytes</a></div><div class="ttdeci">int at_wait_bytes(at_dev_t *dev, const char *bytes, uint32_t timeout)</div><div class="ttdoc">Repeatedly calls at_expect_bytes() until a match or timeout occurs.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_ga3984bb2bf4be28283254897e4f760b1b"><div class="ttname"><a href="group__drivers__at.html#ga3984bb2bf4be28283254897e4f760b1b">at_wait_ok</a></div><div class="ttdeci">int at_wait_ok(at_dev_t *dev, uint32_t timeout)</div><div class="ttdoc">Wait for an OK response.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_ga3ade40e3504355ca3b476e7a5ffa625b"><div class="ttname"><a href="group__drivers__at.html#ga3ade40e3504355ca3b476e7a5ffa625b">at_send_bytes</a></div><div class="ttdeci">void at_send_bytes(at_dev_t *dev, const char *bytes, size_t len)</div><div class="ttdoc">Send raw bytes to a device.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_ga56734544e510149d62ab0545df459332"><div class="ttname"><a href="group__drivers__at.html#ga56734544e510149d62ab0545df459332">at_get_resp_with_prefix</a></div><div class="ttdeci">ssize_t at_get_resp_with_prefix(at_dev_t *dev, const char *resp_prefix, char *resp_buf, size_t len, uint32_t timeout)</div><div class="ttdoc">Wait for a response with a specific prefix.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_ga5bae602f53c99cc87435847f194240d3"><div class="ttname"><a href="group__drivers__at.html#ga5bae602f53c99cc87435847f194240d3">at_send_cmd_get_resp</a></div><div class="ttdeci">ssize_t at_send_cmd_get_resp(at_dev_t *dev, const char *command, char *resp_buf, size_t len, uint32_t timeout)</div><div class="ttdoc">Send AT command, wait for response.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_ga62bde713e9dbb260e83dd469cf2d527e"><div class="ttname"><a href="group__drivers__at.html#ga62bde713e9dbb260e83dd469cf2d527e">at_process_urc</a></div><div class="ttdeci">void at_process_urc(at_dev_t *dev, uint32_t timeout)</div><div class="ttdoc">Process out-of-band data received from the device.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_ga67070402b981624b5a2388140aa8cca9"><div class="ttname"><a href="group__drivers__at.html#ga67070402b981624b5a2388140aa8cca9">at_recv_bytes</a></div><div class="ttdeci">ssize_t at_recv_bytes(at_dev_t *dev, char *bytes, size_t len, uint32_t timeout)</div><div class="ttdoc">Receive raw bytes from a device.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_ga702914edf074a4fa28769d47c66e5fbf"><div class="ttname"><a href="group__drivers__at.html#ga702914edf074a4fa28769d47c66e5fbf">at_send_cmd</a></div><div class="ttdeci">int at_send_cmd(at_dev_t *dev, const char *command, uint32_t timeout)</div><div class="ttdoc">Send command to device.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_ga78c3e2c3c058f89a19d2602d95e71df5"><div class="ttname"><a href="group__drivers__at.html#ga78c3e2c3c058f89a19d2602d95e71df5">at_send_cmd_wait_ok</a></div><div class="ttdeci">int at_send_cmd_wait_ok(at_dev_t *dev, const char *command, uint32_t timeout)</div><div class="ttdoc">Simple command helper.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_ga7d1acdacf996c040a54c7fa1ea018f29"><div class="ttname"><a href="group__drivers__at.html#ga7d1acdacf996c040a54c7fa1ea018f29">at_urc_cb_t</a></div><div class="ttdeci">void(* at_urc_cb_t)(void *arg, const char *code)</div><div class="ttdoc">Unsolicited result code callback.</div><div class="ttdef"><b>Definition</b> <a href="#l00201">at.h:201</a></div></div>
+<div class="ttc" id="agroup__drivers__at_html_ga7f51e9b72ea42a731ecdb6906114ada0"><div class="ttname"><a href="group__drivers__at.html#ga7f51e9b72ea42a731ecdb6906114ada0">at_dev_poweroff</a></div><div class="ttdeci">void at_dev_poweroff(at_dev_t *dev)</div><div class="ttdoc">Power device off.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_ga81db2cf0d221f8114e21286ccbfa1c25"><div class="ttname"><a href="group__drivers__at.html#ga81db2cf0d221f8114e21286ccbfa1c25">at_send_cmd_get_resp_wait_ok</a></div><div class="ttdeci">ssize_t at_send_cmd_get_resp_wait_ok(at_dev_t *dev, const char *command, const char *resp_prefix, char *resp_buf, size_t len, uint32_t timeout)</div><div class="ttdoc">Send AT command, wait for response plus OK.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_ga850f8f93386aacbcac9d892b9feb9ce9"><div class="ttname"><a href="group__drivers__at.html#ga850f8f93386aacbcac9d892b9feb9ce9">at_expect_bytes</a></div><div class="ttdeci">int at_expect_bytes(at_dev_t *dev, const char *bytes, uint32_t timeout)</div><div class="ttdoc">Expect bytes from device.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_ga87d80aec5bc08debe3ca57dd8797ca23"><div class="ttname"><a href="group__drivers__at.html#ga87d80aec5bc08debe3ca57dd8797ca23">at_readline</a></div><div class="ttdeci">ssize_t at_readline(at_dev_t *dev, char *resp_buf, size_t len, bool keep_eol, uint32_t timeout)</div><div class="ttdoc">Read a line from device.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_ga87da7deaa6e4c154eee3c46171589647"><div class="ttname"><a href="group__drivers__at.html#ga87da7deaa6e4c154eee3c46171589647">at_send_cmd_get_lines</a></div><div class="ttdeci">ssize_t at_send_cmd_get_lines(at_dev_t *dev, const char *command, char *resp_buf, size_t len, uint32_t timeout)</div><div class="ttdoc">Send AT command, wait for multiline response.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_ga9fd4b47989b8f65589bd3ecb9b7fc7da"><div class="ttname"><a href="group__drivers__at.html#ga9fd4b47989b8f65589bd3ecb9b7fc7da">at_recv_bytes_until_string</a></div><div class="ttdeci">int at_recv_bytes_until_string(at_dev_t *dev, const char *string, char *bytes, size_t *bytes_len, uint32_t timeout)</div><div class="ttdoc">Receives bytes into bytes buffer until the string pattern string is received or the buffer is full.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_gab41a2381cbd97e858119b73e12f43c95"><div class="ttname"><a href="group__drivers__at.html#gab41a2381cbd97e858119b73e12f43c95">at_get_err_info</a></div><div class="ttdeci">static char const * at_get_err_info(at_dev_t const *dev)</div><div class="ttdoc">Get extended error information of the last command sent.</div><div class="ttdef"><b>Definition</b> <a href="#l00267">at.h:267</a></div></div>
+<div class="ttc" id="agroup__drivers__at_html_gab7a8b9904fdd9abc425555cb206484c1"><div class="ttname"><a href="group__drivers__at.html#gab7a8b9904fdd9abc425555cb206484c1">at_send_cmd_wait_prompt</a></div><div class="ttdeci">int at_send_cmd_wait_prompt(at_dev_t *dev, const char *command, uint32_t timeout)</div><div class="ttdoc">Send AT command, wait for a prompt.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_gabd7c38b7afa3b2a1eb22320403a6c30f"><div class="ttname"><a href="group__drivers__at.html#gabd7c38b7afa3b2a1eb22320403a6c30f">at_parse_resp</a></div><div class="ttdeci">int at_parse_resp(at_dev_t *dev, char const *resp)</div><div class="ttdoc">Parse a response from the device.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_gabf0eab5fda71168d0f4c184b52b52372"><div class="ttname"><a href="group__drivers__at.html#gabf0eab5fda71168d0f4c184b52b52372">at_readline_skip_empty</a></div><div class="ttdeci">ssize_t at_readline_skip_empty(at_dev_t *dev, char *resp_buf, size_t len, bool keep_eol, uint32_t timeout)</div><div class="ttdoc">Read a line from device, skipping a possibly empty line.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_gad7ccb4f94e1dbdf6e3309472df7ae897"><div class="ttname"><a href="group__drivers__at.html#gad7ccb4f94e1dbdf6e3309472df7ae897">at_postprocess_urc</a></div><div class="ttdeci">void at_postprocess_urc(at_dev_t *dev, char *buf)</div><div class="ttdoc">Process one URC from the provided buffer.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_gadb4e5f6e898307259621fe477ab7dd31"><div class="ttname"><a href="group__drivers__at.html#gadb4e5f6e898307259621fe477ab7dd31">at_drain</a></div><div class="ttdeci">void at_drain(at_dev_t *dev)</div><div class="ttdoc">Drain device input buffer.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_gae3bf3c6216f1f373fa21764baebf017a"><div class="ttname"><a href="group__drivers__at.html#gae3bf3c6216f1f373fa21764baebf017a">at_dev_init</a></div><div class="ttdeci">int at_dev_init(at_dev_t *dev, at_dev_init_t const *init)</div><div class="ttdoc">Initialize AT device struct.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_gae6b22e12bf39c82f1b8ad5b7d3af89fa"><div class="ttname"><a href="group__drivers__at.html#gae6b22e12bf39c82f1b8ad5b7d3af89fa">at_wait_prompt</a></div><div class="ttdeci">int at_wait_prompt(at_dev_t *dev, uint32_t timeout)</div><div class="ttdoc">Waits for the prompt character (&gt;).</div></div>
+<div class="ttc" id="agroup__drivers__at_html_gae9b0300aa156d0489e21a69dbe5d0698"><div class="ttname"><a href="group__drivers__at.html#gae9b0300aa156d0489e21a69dbe5d0698">at_postprocess_urc_all</a></div><div class="ttdeci">void at_postprocess_urc_all(at_dev_t *dev, char *buf)</div><div class="ttdoc">Process all URCs from the provided buffer.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_gaee82b66a03dd98a32986f467a6572274"><div class="ttname"><a href="group__drivers__at.html#gaee82b66a03dd98a32986f467a6572274">at_remove_urc</a></div><div class="ttdeci">void at_remove_urc(at_dev_t *dev, at_urc_t *urc)</div><div class="ttdoc">Remove an unsolicited response code from the list.</div></div>
+<div class="ttc" id="agroup__drivers__at_html_gaf4a86b03a552052d944daeafcfc4e4fd"><div class="ttname"><a href="group__drivers__at.html#gaf4a86b03a552052d944daeafcfc4e4fd">at_dev_poweron</a></div><div class="ttdeci">void at_dev_poweron(at_dev_t *dev)</div><div class="ttdoc">Power device on.</div></div>
+<div class="ttc" id="agroup__drivers__periph__uart_html_ga83a92464bff5eb42f085e06e553d52b1"><div class="ttname"><a href="group__drivers__periph__uart.html#ga83a92464bff5eb42f085e06e553d52b1">uart_t</a></div><div class="ttdeci">uint_fast8_t uart_t</div><div class="ttdoc">Define default UART type identifier.</div><div class="ttdef"><b>Definition</b> <a href="drivers_2include_2periph_2uart_8h_source.html#l00085">uart.h:85</a></div></div>
+<div class="ttc" id="aisrpipe_8h_html"><div class="ttname"><a href="isrpipe_8h.html">isrpipe.h</a></div><div class="ttdoc">isrpipe Interface</div></div>
+<div class="ttc" id="akernel__defines_8h_html"><div class="ttname"><a href="kernel__defines_8h.html">kernel_defines.h</a></div><div class="ttdoc">Common macros and compiler attributes/pragmas configuration.</div></div>
+<div class="ttc" id="astructat__dev__init__t_html"><div class="ttname"><a href="structat__dev__init__t.html">at_dev_init_t</a></div><div class="ttdoc">AT device initialization parameters.</div><div class="ttdef"><b>Definition</b> <a href="#l00241">at.h:241</a></div></div>
+<div class="ttc" id="astructat__dev__init__t_html_a43714faf8aff9c42e9cd43dba889be82"><div class="ttname"><a href="structat__dev__init__t.html#a43714faf8aff9c42e9cd43dba889be82">at_dev_init_t::rp_buf</a></div><div class="ttdeci">char * rp_buf</div><div class="ttdoc">Response parsing buffer - used for classifying DCE responses and holding detailed error information.</div><div class="ttdef"><b>Definition</b> <a href="#l00253">at.h:253</a></div></div>
+<div class="ttc" id="astructat__dev__init__t_html_aa4f309bd695a7053dacc5df4a893144d"><div class="ttname"><a href="structat__dev__init__t.html#aa4f309bd695a7053dacc5df4a893144d">at_dev_init_t::rp_buf_size</a></div><div class="ttdeci">size_t rp_buf_size</div><div class="ttdoc">response parsing buffer size</div><div class="ttdef"><b>Definition</b> <a href="#l00254">at.h:254</a></div></div>
+<div class="ttc" id="astructat__dev__init__t_html_aa73910666bcb550c7f98d411576e9b30"><div class="ttname"><a href="structat__dev__init__t.html#aa73910666bcb550c7f98d411576e9b30">at_dev_init_t::baudrate</a></div><div class="ttdeci">uint32_t baudrate</div><div class="ttdoc">UART device baudrate.</div><div class="ttdef"><b>Definition</b> <a href="#l00243">at.h:243</a></div></div>
+<div class="ttc" id="astructat__dev__init__t_html_adbf7d0bd7b64e1491b044861261f248b"><div class="ttname"><a href="structat__dev__init__t.html#adbf7d0bd7b64e1491b044861261f248b">at_dev_init_t::uart</a></div><div class="ttdeci">uart_t uart</div><div class="ttdoc">UART device where the AT device is attached.</div><div class="ttdef"><b>Definition</b> <a href="#l00242">at.h:242</a></div></div>
+<div class="ttc" id="astructat__dev__init__t_html_aea7a7e5ca2d3b8b1f46fd1f53df45ebb"><div class="ttname"><a href="structat__dev__init__t.html#aea7a7e5ca2d3b8b1f46fd1f53df45ebb">at_dev_init_t::rx_buf</a></div><div class="ttdeci">char * rx_buf</div><div class="ttdoc">UART rx buffer.</div><div class="ttdef"><b>Definition</b> <a href="#l00244">at.h:244</a></div></div>
+<div class="ttc" id="astructat__dev__init__t_html_af09fadb917c9ca2b64ff1085d3d52ea2"><div class="ttname"><a href="structat__dev__init__t.html#af09fadb917c9ca2b64ff1085d3d52ea2">at_dev_init_t::rx_buf_size</a></div><div class="ttdeci">size_t rx_buf_size</div><div class="ttdoc">UART rx buffer size.</div><div class="ttdef"><b>Definition</b> <a href="#l00245">at.h:245</a></div></div>
+<div class="ttc" id="astructat__dev__t_html"><div class="ttname"><a href="structat__dev__t.html">at_dev_t</a></div><div class="ttdoc">AT device structure.</div><div class="ttdef"><b>Definition</b> <a href="#l00224">at.h:224</a></div></div>
+<div class="ttc" id="astructat__dev__t_html_a06eb6056e3fe390783b0e095a4cd726b"><div class="ttname"><a href="structat__dev__t.html#a06eb6056e3fe390783b0e095a4cd726b">at_dev_t::uart</a></div><div class="ttdeci">uart_t uart</div><div class="ttdoc">UART device where the AT device is attached.</div><div class="ttdef"><b>Definition</b> <a href="#l00226">at.h:226</a></div></div>
+<div class="ttc" id="astructat__dev__t_html_a5213ffb7f8cb5aad22e93fe4a12d5775"><div class="ttname"><a href="structat__dev__t.html#a5213ffb7f8cb5aad22e93fe4a12d5775">at_dev_t::isrpipe</a></div><div class="ttdeci">isrpipe_t isrpipe</div><div class="ttdoc">isrpipe used for getting data from uart</div><div class="ttdef"><b>Definition</b> <a href="#l00225">at.h:225</a></div></div>
+<div class="ttc" id="astructat__dev__t_html_a55b52ad5f7a4060e3d9936a389671f2f"><div class="ttname"><a href="structat__dev__t.html#a55b52ad5f7a4060e3d9936a389671f2f">at_dev_t::rp_buf_size</a></div><div class="ttdeci">size_t rp_buf_size</div><div class="ttdoc">response parsing buffer size</div><div class="ttdef"><b>Definition</b> <a href="#l00228">at.h:228</a></div></div>
+<div class="ttc" id="astructat__dev__t_html_a91ead8d7c6f477ce0bde37b70f5f717e"><div class="ttname"><a href="structat__dev__t.html#a91ead8d7c6f477ce0bde37b70f5f717e">at_dev_t::rp_buf</a></div><div class="ttdeci">char * rp_buf</div><div class="ttdoc">response parsing buffer</div><div class="ttdef"><b>Definition</b> <a href="#l00227">at.h:227</a></div></div>
+<div class="ttc" id="astructat__urc__t_html"><div class="ttname"><a href="structat__urc__t.html">at_urc_t</a></div><div class="ttdoc">Unsolicited result code data structure.</div><div class="ttdef"><b>Definition</b> <a href="#l00206">at.h:206</a></div></div>
+<div class="ttc" id="astructat__urc__t_html_a345f0cc6969759ff2512c316f68290af"><div class="ttname"><a href="structat__urc__t.html#a345f0cc6969759ff2512c316f68290af">at_urc_t::cb</a></div><div class="ttdeci">at_urc_cb_t cb</div><div class="ttdoc">callback</div><div class="ttdef"><b>Definition</b> <a href="#l00208">at.h:208</a></div></div>
+<div class="ttc" id="astructat__urc__t_html_a7ec45852cd9829889772df7ceff00f41"><div class="ttname"><a href="structat__urc__t.html#a7ec45852cd9829889772df7ceff00f41">at_urc_t::list_node</a></div><div class="ttdeci">clist_node_t list_node</div><div class="ttdoc">node list</div><div class="ttdef"><b>Definition</b> <a href="#l00207">at.h:207</a></div></div>
+<div class="ttc" id="astructat__urc__t_html_ace8c1eb731078837966294c84a849eb1"><div class="ttname"><a href="structat__urc__t.html#ace8c1eb731078837966294c84a849eb1">at_urc_t::arg</a></div><div class="ttdeci">void * arg</div><div class="ttdoc">optional argument</div><div class="ttdef"><b>Definition</b> <a href="#l00210">at.h:210</a></div></div>
+<div class="ttc" id="astructat__urc__t_html_adb535769a191508bc89f79f19bb70627"><div class="ttname"><a href="structat__urc__t.html#adb535769a191508bc89f79f19bb70627">at_urc_t::code</a></div><div class="ttdeci">const char * code</div><div class="ttdoc">URC string which must match.</div><div class="ttdef"><b>Definition</b> <a href="#l00209">at.h:209</a></div></div>
+<div class="ttc" id="astructevent_html"><div class="ttname"><a href="structevent.html">event</a></div><div class="ttdoc">event structure</div><div class="ttdef"><b>Definition</b> <a href="event_8h_source.html#l00148">event.h:148</a></div></div>
+<div class="ttc" id="astructisrpipe__t_html"><div class="ttname"><a href="structisrpipe__t.html">isrpipe_t</a></div><div class="ttdoc">Context structure for isrpipe.</div><div class="ttdef"><b>Definition</b> <a href="isrpipe_8h_source.html#l00037">isrpipe.h:37</a></div></div>
+<div class="ttc" id="astructlist__node_html"><div class="ttname"><a href="structlist__node.html">list_node</a></div><div class="ttdoc">List node structure.</div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00040">list.h:40</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:30 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

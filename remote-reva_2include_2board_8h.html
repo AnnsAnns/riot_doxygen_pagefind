@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>boards/remote-reva/include/board.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('remote-reva_2include_2board_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">board.h File Reference<div class="ingroups"><a class="el" href="group__boards.html">Boards</a> &raquo; <a class="el" href="group__boards__remote-reva.html">RE-Mote Revision A</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Board specific definitions for the RE-Mote board Revision A.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Board specific definitions for the RE-Mote board Revision A. </p>
+<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
+<dd>
+Antonio Lignan <a href="#" onclick="location.href='mai'+'lto:'+'ali'+'na'+'n@z'+'ol'+'ert'+'ia'+'.co'+'m'; return false;">alina<span class="obfuscator">.nosp@m.</span>n@zo<span class="obfuscator">.nosp@m.</span>lerti<span class="obfuscator">.nosp@m.</span>a.co<span class="obfuscator">.nosp@m.</span>m</a> </dd>
+<dd>
+Sebastian Meiling <a href="#" onclick="location.href='mai'+'lto:'+'s@m'+'ln'+'g.n'+'et'; return false;">s@mln<span class="obfuscator">.nosp@m.</span>g.ne<span class="obfuscator">.nosp@m.</span>t</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;cpu.h&quot;</code><br />
+<code>#include &quot;board_common.h&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for board.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="remote-reva_2include_2board_8h__incl.svg" width="227" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="remote-reva_2include_2board_8h__dep__incl.svg" width="374" height="148"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="remote-reva_2include_2board_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">LED pin definitions</h2></td></tr>
+<tr class="memitem:a3fc522fda449d6edde717d6a857429cf" id="r_a3fc522fda449d6edde717d6a857429cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fc522fda449d6edde717d6a857429cf">LED0_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(3, 5)</td></tr>
+<tr class="separator:a3fc522fda449d6edde717d6a857429cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a318aa17e5d40e2132d2c7f6269ce7f51" id="r_a318aa17e5d40e2132d2c7f6269ce7f51"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a318aa17e5d40e2132d2c7f6269ce7f51">LED1_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(3, 4)</td></tr>
+<tr class="separator:a318aa17e5d40e2132d2c7f6269ce7f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6f84078113b55354d20585131b386f7" id="r_af6f84078113b55354d20585131b386f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6f84078113b55354d20585131b386f7">LED2_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(3, 3)</td></tr>
+<tr class="separator:af6f84078113b55354d20585131b386f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfabde35a3e8b7ab50146a5e223bfead" id="r_abfabde35a3e8b7ab50146a5e223bfead"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfabde35a3e8b7ab50146a5e223bfead">LED0_MASK</a>&#160;&#160;&#160;(1 &lt;&lt; 5)</td></tr>
+<tr class="separator:abfabde35a3e8b7ab50146a5e223bfead"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a669ed6e073140d069b30442bf4c08842" id="r_a669ed6e073140d069b30442bf4c08842"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>&#160;&#160;&#160;(1 &lt;&lt; 4)</td></tr>
+<tr class="separator:a669ed6e073140d069b30442bf4c08842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40f0f4b5ae7ea50d341105ddc740101e" id="r_a40f0f4b5ae7ea50d341105ddc740101e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>&#160;&#160;&#160;(1 &lt;&lt; 3)</td></tr>
+<tr class="separator:a40f0f4b5ae7ea50d341105ddc740101e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e48dc02333bfc2e6ad3e5bd466eecd4" id="r_a1e48dc02333bfc2e6ad3e5bd466eecd4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e48dc02333bfc2e6ad3e5bd466eecd4">LED0_ON</a>&#160;&#160;&#160;(<a class="el" href="group__cpu__cc2538__gpio.html#ga934cdd70e18bffe0417b3cd938b266a9">GPIO_D</a>-&gt;DATA |=  LED0_MASK)</td></tr>
+<tr class="separator:a1e48dc02333bfc2e6ad3e5bd466eecd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef2e39b9fd343d0e437fac0463f3e02d" id="r_aef2e39b9fd343d0e437fac0463f3e02d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef2e39b9fd343d0e437fac0463f3e02d">LED0_OFF</a>&#160;&#160;&#160;(<a class="el" href="group__cpu__cc2538__gpio.html#ga934cdd70e18bffe0417b3cd938b266a9">GPIO_D</a>-&gt;DATA &amp;= ~LED0_MASK)</td></tr>
+<tr class="separator:aef2e39b9fd343d0e437fac0463f3e02d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebc6389533d9fc8dcbe4d2129a4d5a45" id="r_aebc6389533d9fc8dcbe4d2129a4d5a45"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebc6389533d9fc8dcbe4d2129a4d5a45">LED0_TOGGLE</a>&#160;&#160;&#160;(<a class="el" href="group__cpu__cc2538__gpio.html#ga934cdd70e18bffe0417b3cd938b266a9">GPIO_D</a>-&gt;DATA ^=  LED0_MASK)</td></tr>
+<tr class="separator:aebc6389533d9fc8dcbe4d2129a4d5a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadd4c7ae0cd4e9bbb17f7055dd51fe08" id="r_aadd4c7ae0cd4e9bbb17f7055dd51fe08"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadd4c7ae0cd4e9bbb17f7055dd51fe08">LED1_ON</a>&#160;&#160;&#160;(<a class="el" href="group__cpu__cc2538__gpio.html#ga934cdd70e18bffe0417b3cd938b266a9">GPIO_D</a>-&gt;DATA |=  <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>)</td></tr>
+<tr class="separator:aadd4c7ae0cd4e9bbb17f7055dd51fe08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a343fd2d3ce61b84f88ddfaea32c67c58" id="r_a343fd2d3ce61b84f88ddfaea32c67c58"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a343fd2d3ce61b84f88ddfaea32c67c58">LED1_OFF</a>&#160;&#160;&#160;(<a class="el" href="group__cpu__cc2538__gpio.html#ga934cdd70e18bffe0417b3cd938b266a9">GPIO_D</a>-&gt;DATA &amp;= ~<a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>)</td></tr>
+<tr class="separator:a343fd2d3ce61b84f88ddfaea32c67c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a267fdbba1d750146b73da35c1731fd17" id="r_a267fdbba1d750146b73da35c1731fd17"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a267fdbba1d750146b73da35c1731fd17">LED1_TOGGLE</a>&#160;&#160;&#160;(<a class="el" href="group__cpu__cc2538__gpio.html#ga934cdd70e18bffe0417b3cd938b266a9">GPIO_D</a>-&gt;DATA ^=  <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>)</td></tr>
+<tr class="separator:a267fdbba1d750146b73da35c1731fd17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab55f588eb2c5177d3f7806e60d379fba" id="r_ab55f588eb2c5177d3f7806e60d379fba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab55f588eb2c5177d3f7806e60d379fba">LED2_ON</a>&#160;&#160;&#160;(<a class="el" href="group__cpu__cc2538__gpio.html#ga934cdd70e18bffe0417b3cd938b266a9">GPIO_D</a>-&gt;DATA |=  <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>)</td></tr>
+<tr class="separator:ab55f588eb2c5177d3f7806e60d379fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6468b1df4dfabcca0bb142044d6f976" id="r_ac6468b1df4dfabcca0bb142044d6f976"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6468b1df4dfabcca0bb142044d6f976">LED2_OFF</a>&#160;&#160;&#160;(<a class="el" href="group__cpu__cc2538__gpio.html#ga934cdd70e18bffe0417b3cd938b266a9">GPIO_D</a>-&gt;DATA &amp;= ~<a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>)</td></tr>
+<tr class="separator:ac6468b1df4dfabcca0bb142044d6f976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd16785845ce7004334b91a98707f8eb" id="r_acd16785845ce7004334b91a98707f8eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd16785845ce7004334b91a98707f8eb">LED2_TOGGLE</a>&#160;&#160;&#160;(<a class="el" href="group__cpu__cc2538__gpio.html#ga934cdd70e18bffe0417b3cd938b266a9">GPIO_D</a>-&gt;DATA ^=  <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>)</td></tr>
+<tr class="separator:acd16785845ce7004334b91a98707f8eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">User button pin definition</h2></td></tr>
+<tr class="memitem:aab5c3eca54046333af52593b9e360270" id="r_aab5c3eca54046333af52593b9e360270"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab5c3eca54046333af52593b9e360270">BTN0_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 3)</td></tr>
+<tr class="separator:aab5c3eca54046333af52593b9e360270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a904884feea8e03c30c9a85ca6d7a8e5c" id="r_a904884feea8e03c30c9a85ca6d7a8e5c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a904884feea8e03c30c9a85ca6d7a8e5c">BTN0_MODE</a>&#160;&#160;&#160;GPIO_IN_PU</td></tr>
+<tr class="separator:a904884feea8e03c30c9a85ca6d7a8e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">RF switch controlled by SW</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>Controls which RF interface goes to the RP-SMA external antenna</p>
+<p>These values configure the required pin to drive the RF antenna switch, to either enable the sub-1Ghz RF interface (power-up the CC1200) or the 2.4GHz RF interface of the CC2538, both alternatively routed to a RP-SMA connector to allow using an external antenna for both cases.</p>
+<p>Note it is also possible to enable both RF interfaces at the same time, by switching On the sub-1GHz RF interface, and placing an 0Ohm resistor (R19), to select between using a ceramic chip antenna (not mounted), or to connect and external antenna over a pigtail to the U.Fl connector (not mounted).</p>
+<p>RF switch state:</p><ul>
+<li>LOW: 2.4GHz RF interface on RP-SMA connector, CC1200 powered-off.</li>
+<li>HIGH: Sub-1GHz RF interface on RP-SMA connector. </li>
+</ul>
+</td></tr>
+<tr class="memitem:a53a4fd1932f2cb2d19646f86dce2f7f2" id="r_a53a4fd1932f2cb2d19646f86dce2f7f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53a4fd1932f2cb2d19646f86dce2f7f2">RF_SWITCH_GPIO</a>&#160;&#160;&#160;<a class="el" href="group__cpu__cc2538__gpio.html#gga80155586fa275b28773c9b203f52cabaa08dd73ee9634bdf9c42218516c3e05d8">GPIO_PD2</a></td></tr>
+<tr class="separator:a53a4fd1932f2cb2d19646f86dce2f7f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab340460535f17a9bcbd60c9fdf70990a" id="r_ab340460535f17a9bcbd60c9fdf70990a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab340460535f17a9bcbd60c9fdf70990a">RF_SWITCH_SUB_GHZ</a>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#ga5a4136d2b41a16dee4b8539d1690ea42">gpio_set</a>(RF_SWITCH_GPIO)</td></tr>
+<tr class="separator:ab340460535f17a9bcbd60c9fdf70990a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aff5f6e716afd828b3a49aac37bbcc0" id="r_a4aff5f6e716afd828b3a49aac37bbcc0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4aff5f6e716afd828b3a49aac37bbcc0">RF_SWITCH_2_4_GHZ</a>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#ga127706eecc321da649b1d31691d0b546">gpio_clear</a>(RF_SWITCH_GPIO)</td></tr>
+<tr class="separator:a4aff5f6e716afd828b3a49aac37bbcc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ed558b767ac2eb748214a08fd07377d" id="r_a0ed558b767ac2eb748214a08fd07377d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ed558b767ac2eb748214a08fd07377d">RF_SWITCH_TOGGLE</a>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#ga016c2a4e5d611bc64034f70e922f5d52">gpio_toggle</a>(RF_SWITCH_GPIO)</td></tr>
+<tr class="separator:a0ed558b767ac2eb748214a08fd07377d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Shutdown enable/done pins</h2></td></tr>
+<tr class="memitem:a2a1af4d90a3a3d80ae0823b90306382f" id="r_a2a1af4d90a3a3d80ae0823b90306382f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a1af4d90a3a3d80ae0823b90306382f">SHUTDOWN_DONE_GPIO</a>&#160;&#160;&#160;<a class="el" href="group__cpu__cc2538__gpio.html#gga80155586fa275b28773c9b203f52cabaad41d548effb28c792928c4d12e21824e">GPIO_PD0</a></td></tr>
+<tr class="separator:a2a1af4d90a3a3d80ae0823b90306382f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c518558d373c85f392c73cbc1c48a1e" id="r_a0c518558d373c85f392c73cbc1c48a1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c518558d373c85f392c73cbc1c48a1e">SHUTDOWN_EN_GPIO</a>&#160;&#160;&#160;<a class="el" href="group__cpu__cc2538__gpio.html#gga80155586fa275b28773c9b203f52cabaa611104d57fec513ea42a3c4fecd6cfbd">GPIO_PD1</a></td></tr>
+<tr class="separator:a0c518558d373c85f392c73cbc1c48a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">CC1200 SPI and pins definitions</h2></td></tr>
+<tr class="memitem:ad48c501021082fa9faf30b57717c68b1" id="r_ad48c501021082fa9faf30b57717c68b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad48c501021082fa9faf30b57717c68b1">CC1200_SPI_DEV</a>&#160;&#160;&#160;SSI0</td></tr>
+<tr class="separator:ad48c501021082fa9faf30b57717c68b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0988fee256246dfd7eafee9d213be1aa" id="r_a0988fee256246dfd7eafee9d213be1aa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0988fee256246dfd7eafee9d213be1aa">CC1200_MOSI_GPIO</a>&#160;&#160;&#160;<a class="el" href="group__cpu__cc2538__gpio.html#gga80155586fa275b28773c9b203f52cabaa0123ebda101acbcbac5646b3903289a4">GPIO_PB1</a></td></tr>
+<tr class="separator:a0988fee256246dfd7eafee9d213be1aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd6cb491031bc9756eb763d2d038d312" id="r_abd6cb491031bc9756eb763d2d038d312"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd6cb491031bc9756eb763d2d038d312">CC1200_MISO_GPIO</a>&#160;&#160;&#160;<a class="el" href="group__cpu__cc2538__gpio.html#gga80155586fa275b28773c9b203f52cabaa4fd677b037aa978bd4978e9526da034e">GPIO_PB3</a></td></tr>
+<tr class="separator:abd6cb491031bc9756eb763d2d038d312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0f53d9be991ec77629c7ae47ebfecd7" id="r_ab0f53d9be991ec77629c7ae47ebfecd7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0f53d9be991ec77629c7ae47ebfecd7">CC1200_SCLK_GPIO</a>&#160;&#160;&#160;<a class="el" href="group__cpu__cc2538__gpio.html#gga80155586fa275b28773c9b203f52cabaabc245016c5caca63409ba3e110272999">GPIO_PB2</a></td></tr>
+<tr class="separator:ab0f53d9be991ec77629c7ae47ebfecd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb3db1c536345376b7d9ca0aef167d96" id="r_abb3db1c536345376b7d9ca0aef167d96"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb3db1c536345376b7d9ca0aef167d96">CC1200_CSN_GPIO</a>&#160;&#160;&#160;<a class="el" href="group__cpu__cc2538__gpio.html#gga80155586fa275b28773c9b203f52cabaaa6a18f78d554f2a2f84df2135f42eba5">GPIO_PB5</a></td></tr>
+<tr class="separator:abb3db1c536345376b7d9ca0aef167d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a906ffb63a9555614b624eabd9353f569" id="r_a906ffb63a9555614b624eabd9353f569"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a906ffb63a9555614b624eabd9353f569">CC1200_RESET_GPIO</a>&#160;&#160;&#160;<a class="el" href="group__cpu__cc2538__gpio.html#gga80155586fa275b28773c9b203f52cabaa22e409c8ccc929b2d1084cd39fd61879">GPIO_PC7</a></td></tr>
+<tr class="separator:a906ffb63a9555614b624eabd9353f569"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c861b0da2d0e46a49aef43b113ab107" id="r_a1c861b0da2d0e46a49aef43b113ab107"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c861b0da2d0e46a49aef43b113ab107">CC1200_GPD0_GPIO</a>&#160;&#160;&#160;<a class="el" href="group__cpu__cc2538__gpio.html#gga80155586fa275b28773c9b203f52cabaa152365f3a325ba9149b0f559bd658950">GPIO_PB4</a></td></tr>
+<tr class="separator:a1c861b0da2d0e46a49aef43b113ab107"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e6085c0ea4ab4962974733ec86383cd" id="r_a5e6085c0ea4ab4962974733ec86383cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e6085c0ea4ab4962974733ec86383cd">CC1200_GPD2_GPIO</a>&#160;&#160;&#160;<a class="el" href="group__cpu__cc2538__gpio.html#gga80155586fa275b28773c9b203f52cabaa9925ed57b9baee7681aa85b0f5eb3383">GPIO_PB0</a></td></tr>
+<tr class="separator:a5e6085c0ea4ab4962974733ec86383cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a904884feea8e03c30c9a85ca6d7a8e5c" name="a904884feea8e03c30c9a85ca6d7a8e5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a904884feea8e03c30c9a85ca6d7a8e5c">&#9670;&#160;</a></span>BTN0_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BTN0_MODE&#160;&#160;&#160;GPIO_IN_PU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00062">62</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aab5c3eca54046333af52593b9e360270" name="aab5c3eca54046333af52593b9e360270"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab5c3eca54046333af52593b9e360270">&#9670;&#160;</a></span>BTN0_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BTN0_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00061">61</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="abb3db1c536345376b7d9ca0aef167d96" name="abb3db1c536345376b7d9ca0aef167d96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb3db1c536345376b7d9ca0aef167d96">&#9670;&#160;</a></span>CC1200_CSN_GPIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CC1200_CSN_GPIO&#160;&#160;&#160;<a class="el" href="group__cpu__cc2538__gpio.html#gga80155586fa275b28773c9b203f52cabaaa6a18f78d554f2a2f84df2135f42eba5">GPIO_PB5</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00107">107</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a1c861b0da2d0e46a49aef43b113ab107" name="a1c861b0da2d0e46a49aef43b113ab107"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c861b0da2d0e46a49aef43b113ab107">&#9670;&#160;</a></span>CC1200_GPD0_GPIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CC1200_GPD0_GPIO&#160;&#160;&#160;<a class="el" href="group__cpu__cc2538__gpio.html#gga80155586fa275b28773c9b203f52cabaa152365f3a325ba9149b0f559bd658950">GPIO_PB4</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00109">109</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a5e6085c0ea4ab4962974733ec86383cd" name="a5e6085c0ea4ab4962974733ec86383cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e6085c0ea4ab4962974733ec86383cd">&#9670;&#160;</a></span>CC1200_GPD2_GPIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CC1200_GPD2_GPIO&#160;&#160;&#160;<a class="el" href="group__cpu__cc2538__gpio.html#gga80155586fa275b28773c9b203f52cabaa9925ed57b9baee7681aa85b0f5eb3383">GPIO_PB0</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00110">110</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="abd6cb491031bc9756eb763d2d038d312" name="abd6cb491031bc9756eb763d2d038d312"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd6cb491031bc9756eb763d2d038d312">&#9670;&#160;</a></span>CC1200_MISO_GPIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CC1200_MISO_GPIO&#160;&#160;&#160;<a class="el" href="group__cpu__cc2538__gpio.html#gga80155586fa275b28773c9b203f52cabaa4fd677b037aa978bd4978e9526da034e">GPIO_PB3</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00105">105</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a0988fee256246dfd7eafee9d213be1aa" name="a0988fee256246dfd7eafee9d213be1aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0988fee256246dfd7eafee9d213be1aa">&#9670;&#160;</a></span>CC1200_MOSI_GPIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CC1200_MOSI_GPIO&#160;&#160;&#160;<a class="el" href="group__cpu__cc2538__gpio.html#gga80155586fa275b28773c9b203f52cabaa0123ebda101acbcbac5646b3903289a4">GPIO_PB1</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00104">104</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a906ffb63a9555614b624eabd9353f569" name="a906ffb63a9555614b624eabd9353f569"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a906ffb63a9555614b624eabd9353f569">&#9670;&#160;</a></span>CC1200_RESET_GPIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CC1200_RESET_GPIO&#160;&#160;&#160;<a class="el" href="group__cpu__cc2538__gpio.html#gga80155586fa275b28773c9b203f52cabaa22e409c8ccc929b2d1084cd39fd61879">GPIO_PC7</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00108">108</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ab0f53d9be991ec77629c7ae47ebfecd7" name="ab0f53d9be991ec77629c7ae47ebfecd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0f53d9be991ec77629c7ae47ebfecd7">&#9670;&#160;</a></span>CC1200_SCLK_GPIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CC1200_SCLK_GPIO&#160;&#160;&#160;<a class="el" href="group__cpu__cc2538__gpio.html#gga80155586fa275b28773c9b203f52cabaabc245016c5caca63409ba3e110272999">GPIO_PB2</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00106">106</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ad48c501021082fa9faf30b57717c68b1" name="ad48c501021082fa9faf30b57717c68b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad48c501021082fa9faf30b57717c68b1">&#9670;&#160;</a></span>CC1200_SPI_DEV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CC1200_SPI_DEV&#160;&#160;&#160;SSI0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00103">103</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="abfabde35a3e8b7ab50146a5e223bfead" name="abfabde35a3e8b7ab50146a5e223bfead"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfabde35a3e8b7ab50146a5e223bfead">&#9670;&#160;</a></span>LED0_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_MASK&#160;&#160;&#160;(1 &lt;&lt; 5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00040">40</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aef2e39b9fd343d0e437fac0463f3e02d" name="aef2e39b9fd343d0e437fac0463f3e02d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef2e39b9fd343d0e437fac0463f3e02d">&#9670;&#160;</a></span>LED0_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_OFF&#160;&#160;&#160;(<a class="el" href="group__cpu__cc2538__gpio.html#ga934cdd70e18bffe0417b3cd938b266a9">GPIO_D</a>-&gt;DATA &amp;= ~LED0_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00045">45</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a1e48dc02333bfc2e6ad3e5bd466eecd4" name="a1e48dc02333bfc2e6ad3e5bd466eecd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e48dc02333bfc2e6ad3e5bd466eecd4">&#9670;&#160;</a></span>LED0_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_ON&#160;&#160;&#160;(<a class="el" href="group__cpu__cc2538__gpio.html#ga934cdd70e18bffe0417b3cd938b266a9">GPIO_D</a>-&gt;DATA |=  LED0_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00044">44</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a3fc522fda449d6edde717d6a857429cf" name="a3fc522fda449d6edde717d6a857429cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fc522fda449d6edde717d6a857429cf">&#9670;&#160;</a></span>LED0_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(3, 5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00036">36</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aebc6389533d9fc8dcbe4d2129a4d5a45" name="aebc6389533d9fc8dcbe4d2129a4d5a45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebc6389533d9fc8dcbe4d2129a4d5a45">&#9670;&#160;</a></span>LED0_TOGGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_TOGGLE&#160;&#160;&#160;(<a class="el" href="group__cpu__cc2538__gpio.html#ga934cdd70e18bffe0417b3cd938b266a9">GPIO_D</a>-&gt;DATA ^=  LED0_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00046">46</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a669ed6e073140d069b30442bf4c08842" name="a669ed6e073140d069b30442bf4c08842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a669ed6e073140d069b30442bf4c08842">&#9670;&#160;</a></span>LED1_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED1_MASK&#160;&#160;&#160;(1 &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00041">41</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a343fd2d3ce61b84f88ddfaea32c67c58" name="a343fd2d3ce61b84f88ddfaea32c67c58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a343fd2d3ce61b84f88ddfaea32c67c58">&#9670;&#160;</a></span>LED1_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED1_OFF&#160;&#160;&#160;(<a class="el" href="group__cpu__cc2538__gpio.html#ga934cdd70e18bffe0417b3cd938b266a9">GPIO_D</a>-&gt;DATA &amp;= ~<a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00049">49</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aadd4c7ae0cd4e9bbb17f7055dd51fe08" name="aadd4c7ae0cd4e9bbb17f7055dd51fe08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadd4c7ae0cd4e9bbb17f7055dd51fe08">&#9670;&#160;</a></span>LED1_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED1_ON&#160;&#160;&#160;(<a class="el" href="group__cpu__cc2538__gpio.html#ga934cdd70e18bffe0417b3cd938b266a9">GPIO_D</a>-&gt;DATA |=  <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00048">48</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a318aa17e5d40e2132d2c7f6269ce7f51" name="a318aa17e5d40e2132d2c7f6269ce7f51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a318aa17e5d40e2132d2c7f6269ce7f51">&#9670;&#160;</a></span>LED1_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED1_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(3, 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00037">37</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a267fdbba1d750146b73da35c1731fd17" name="a267fdbba1d750146b73da35c1731fd17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a267fdbba1d750146b73da35c1731fd17">&#9670;&#160;</a></span>LED1_TOGGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED1_TOGGLE&#160;&#160;&#160;(<a class="el" href="group__cpu__cc2538__gpio.html#ga934cdd70e18bffe0417b3cd938b266a9">GPIO_D</a>-&gt;DATA ^=  <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00050">50</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a40f0f4b5ae7ea50d341105ddc740101e" name="a40f0f4b5ae7ea50d341105ddc740101e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40f0f4b5ae7ea50d341105ddc740101e">&#9670;&#160;</a></span>LED2_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED2_MASK&#160;&#160;&#160;(1 &lt;&lt; 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00042">42</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ac6468b1df4dfabcca0bb142044d6f976" name="ac6468b1df4dfabcca0bb142044d6f976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6468b1df4dfabcca0bb142044d6f976">&#9670;&#160;</a></span>LED2_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED2_OFF&#160;&#160;&#160;(<a class="el" href="group__cpu__cc2538__gpio.html#ga934cdd70e18bffe0417b3cd938b266a9">GPIO_D</a>-&gt;DATA &amp;= ~<a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00053">53</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ab55f588eb2c5177d3f7806e60d379fba" name="ab55f588eb2c5177d3f7806e60d379fba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab55f588eb2c5177d3f7806e60d379fba">&#9670;&#160;</a></span>LED2_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED2_ON&#160;&#160;&#160;(<a class="el" href="group__cpu__cc2538__gpio.html#ga934cdd70e18bffe0417b3cd938b266a9">GPIO_D</a>-&gt;DATA |=  <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00052">52</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="af6f84078113b55354d20585131b386f7" name="af6f84078113b55354d20585131b386f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6f84078113b55354d20585131b386f7">&#9670;&#160;</a></span>LED2_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED2_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(3, 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00038">38</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="acd16785845ce7004334b91a98707f8eb" name="acd16785845ce7004334b91a98707f8eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd16785845ce7004334b91a98707f8eb">&#9670;&#160;</a></span>LED2_TOGGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED2_TOGGLE&#160;&#160;&#160;(<a class="el" href="group__cpu__cc2538__gpio.html#ga934cdd70e18bffe0417b3cd938b266a9">GPIO_D</a>-&gt;DATA ^=  <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00054">54</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a4aff5f6e716afd828b3a49aac37bbcc0" name="a4aff5f6e716afd828b3a49aac37bbcc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aff5f6e716afd828b3a49aac37bbcc0">&#9670;&#160;</a></span>RF_SWITCH_2_4_GHZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RF_SWITCH_2_4_GHZ&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#ga127706eecc321da649b1d31691d0b546">gpio_clear</a>(RF_SWITCH_GPIO)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00087">87</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a53a4fd1932f2cb2d19646f86dce2f7f2" name="a53a4fd1932f2cb2d19646f86dce2f7f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53a4fd1932f2cb2d19646f86dce2f7f2">&#9670;&#160;</a></span>RF_SWITCH_GPIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RF_SWITCH_GPIO&#160;&#160;&#160;<a class="el" href="group__cpu__cc2538__gpio.html#gga80155586fa275b28773c9b203f52cabaa08dd73ee9634bdf9c42218516c3e05d8">GPIO_PD2</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00085">85</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ab340460535f17a9bcbd60c9fdf70990a" name="ab340460535f17a9bcbd60c9fdf70990a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab340460535f17a9bcbd60c9fdf70990a">&#9670;&#160;</a></span>RF_SWITCH_SUB_GHZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RF_SWITCH_SUB_GHZ&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#ga5a4136d2b41a16dee4b8539d1690ea42">gpio_set</a>(RF_SWITCH_GPIO)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00086">86</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a0ed558b767ac2eb748214a08fd07377d" name="a0ed558b767ac2eb748214a08fd07377d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ed558b767ac2eb748214a08fd07377d">&#9670;&#160;</a></span>RF_SWITCH_TOGGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RF_SWITCH_TOGGLE&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#ga016c2a4e5d611bc64034f70e922f5d52">gpio_toggle</a>(RF_SWITCH_GPIO)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00088">88</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a2a1af4d90a3a3d80ae0823b90306382f" name="a2a1af4d90a3a3d80ae0823b90306382f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a1af4d90a3a3d80ae0823b90306382f">&#9670;&#160;</a></span>SHUTDOWN_DONE_GPIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHUTDOWN_DONE_GPIO&#160;&#160;&#160;<a class="el" href="group__cpu__cc2538__gpio.html#gga80155586fa275b28773c9b203f52cabaad41d548effb28c792928c4d12e21824e">GPIO_PD0</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00095">95</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a0c518558d373c85f392c73cbc1c48a1e" name="a0c518558d373c85f392c73cbc1c48a1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c518558d373c85f392c73cbc1c48a1e">&#9670;&#160;</a></span>SHUTDOWN_EN_GPIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHUTDOWN_EN_GPIO&#160;&#160;&#160;<a class="el" href="group__cpu__cc2538__gpio.html#gga80155586fa275b28773c9b203f52cabaa611104d57fec513ea42a3c4fecd6cfbd">GPIO_PD1</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="remote-reva_2include_2board_8h_source.html#l00096">96</a> of file <a class="el" href="remote-reva_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:31 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

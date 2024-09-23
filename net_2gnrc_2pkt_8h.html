@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/net/gnrc/pkt.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('net_2gnrc_2pkt_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">pkt.h File Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__pktbuf.html">Packet buffer</a> &raquo; <a class="el" href="group__net__gnrc__pkt.html">Packet</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>General definitions for network packets and their helper functions.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>General definitions for network packets and their helper functions. </p>
+<dl class="section author"><dt>Author</dt><dd>Martine Lenders <a href="#" onclick="location.href='mai'+'lto:'+'mle'+'nd'+'ers'+'@i'+'nf.'+'fu'+'-be'+'rl'+'in.'+'de'; return false;">mlend<span class="obfuscator">.nosp@m.</span>ers@<span class="obfuscator">.nosp@m.</span>inf.f<span class="obfuscator">.nosp@m.</span>u-be<span class="obfuscator">.nosp@m.</span>rlin.<span class="obfuscator">.nosp@m.</span>de</a> </dd>
+<dd>
+Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="net_2gnrc_2pkt_8h_source.html">pkt.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;<a class="el" href="inttypes_8h_source.html">inttypes.h</a>&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="sched_8h_source.html">sched.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="nettype_8h_source.html">net/gnrc/nettype.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="list_8h_source.html">list.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for pkt.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="net_2gnrc_2pkt_8h__incl.svg" width="982" height="434"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="net_2gnrc_2pkt_8h__dep__incl.svg" width="7380" height="1143"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="net_2gnrc_2pkt_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgnrc__pktsnip.html">gnrc_pktsnip</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type to represent parts (either headers or payload) of a packet, called snips.  <a href="structgnrc__pktsnip.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga961e6ea05309a3d69a4d96f4a2dedb63" id="r_ga961e6ea05309a3d69a4d96f4a2dedb63"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structgnrc__pktsnip.html">gnrc_pktsnip</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a></td></tr>
+<tr class="memdesc:ga961e6ea05309a3d69a4d96f4a2dedb63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type to represent parts (either headers or payload) of a packet, called snips.  <br /></td></tr>
+<tr class="separator:ga961e6ea05309a3d69a4d96f4a2dedb63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gafe95264c84ed6c44bb581d7e266e67e4" id="r_gafe95264c84ed6c44bb581d7e266e67e4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__pkt.html#gafe95264c84ed6c44bb581d7e266e67e4">gnrc_pkt_prev_snip</a> (<a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> *pkt, <a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> *snip)</td></tr>
+<tr class="memdesc:gafe95264c84ed6c44bb581d7e266e67e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the snip before a given snip in a packet.  <br /></td></tr>
+<tr class="separator:gafe95264c84ed6c44bb581d7e266e67e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac285b3db7ddae4a71f030f16f769a7d5" id="r_gac285b3db7ddae4a71f030f16f769a7d5"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__pkt.html#gac285b3db7ddae4a71f030f16f769a7d5">gnrc_pkt_len</a> (const <a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> *pkt)</td></tr>
+<tr class="memdesc:gac285b3db7ddae4a71f030f16f769a7d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates length of a packet in byte.  <br /></td></tr>
+<tr class="separator:gac285b3db7ddae4a71f030f16f769a7d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae5cc757925d3bf06ea1aae4f21ff53d5" id="r_gae5cc757925d3bf06ea1aae4f21ff53d5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__pkt.html#gae5cc757925d3bf06ea1aae4f21ff53d5">gnrc_pkt_append</a> (<a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> *pkt, <a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> *snip)</td></tr>
+<tr class="memdesc:gae5cc757925d3bf06ea1aae4f21ff53d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a snip to a packet.  <br /></td></tr>
+<tr class="separator:gae5cc757925d3bf06ea1aae4f21ff53d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1ce830f6f7a3292d6fa6be27a3f973dd" id="r_ga1ce830f6f7a3292d6fa6be27a3f973dd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__pkt.html#ga1ce830f6f7a3292d6fa6be27a3f973dd">gnrc_pkt_prepend</a> (<a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> *pkt, <a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> *snip)</td></tr>
+<tr class="memdesc:ga1ce830f6f7a3292d6fa6be27a3f973dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepends a snip to a packet.  <br /></td></tr>
+<tr class="separator:ga1ce830f6f7a3292d6fa6be27a3f973dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1067f03300de375243f6ad0d16b59136" id="r_ga1067f03300de375243f6ad0d16b59136"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__pkt.html#ga1067f03300de375243f6ad0d16b59136">gnrc_pkt_delete</a> (<a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> *pkt, <a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> *snip)</td></tr>
+<tr class="memdesc:ga1067f03300de375243f6ad0d16b59136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a snip from a packet.  <br /></td></tr>
+<tr class="separator:ga1067f03300de375243f6ad0d16b59136"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5e676d65b3edd8cb64b48b407c3b9d30" id="r_ga5e676d65b3edd8cb64b48b407c3b9d30"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__pkt.html#ga5e676d65b3edd8cb64b48b407c3b9d30">gnrc_pkt_len_upto</a> (const <a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> *pkt, <a class="el" href="group__net__gnrc__nettype.html#ga2582fbb16a318806983c225a69460902">gnrc_nettype_t</a> type)</td></tr>
+<tr class="memdesc:ga5e676d65b3edd8cb64b48b407c3b9d30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates length of a packet in byte up to (including) a snip with the given type.  <br /></td></tr>
+<tr class="separator:ga5e676d65b3edd8cb64b48b407c3b9d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga64bff5436035b3d3f4fb231c72fd9d98" id="r_ga64bff5436035b3d3f4fb231c72fd9d98"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__pkt.html#ga64bff5436035b3d3f4fb231c72fd9d98">gnrc_pkt_count</a> (const <a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> *pkt)</td></tr>
+<tr class="memdesc:ga64bff5436035b3d3f4fb231c72fd9d98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count the numbers of snips in the given packet.  <br /></td></tr>
+<tr class="separator:ga64bff5436035b3d3f4fb231c72fd9d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga547cde6b04707e9b42595e30b4abbd25" id="r_ga547cde6b04707e9b42595e30b4abbd25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__pkt.html#ga547cde6b04707e9b42595e30b4abbd25">gnrc_pktsnip_search_type</a> (<a class="el" href="group__net__gnrc__pkt.html#ga961e6ea05309a3d69a4d96f4a2dedb63">gnrc_pktsnip_t</a> *pkt, <a class="el" href="group__net__gnrc__nettype.html#ga2582fbb16a318806983c225a69460902">gnrc_nettype_t</a> type)</td></tr>
+<tr class="memdesc:ga547cde6b04707e9b42595e30b4abbd25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches the packet for a packet snip of a specific type.  <br /></td></tr>
+<tr class="separator:ga547cde6b04707e9b42595e30b4abbd25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:33 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

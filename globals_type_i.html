@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Globals</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('globals_type_i.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="contents">
+<div class="textblock">Here is a list of all documented typedefs with links to the documentation:</div>
+
+<h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
+<li>i2c_t&#160;:&#160;<a class="el" href="group__drivers__periph__i2c.html#ga53bedf646ffe6ddd17f13b893a17fa74">i2c.h</a></li>
+<li>ieee802154_radio_cipher_ops_t&#160;:&#160;<a class="el" href="group__net__ieee802154__security.html#gac63f58c82deafa5003d5db4154d8179a">ieee802154_security.h</a></li>
+<li>ieee802154_sec_context_t&#160;:&#160;<a class="el" href="group__net__ieee802154__security.html#gafa104550837acdb7a8967bd865697430">ieee802154_security.h</a></li>
+<li>ieee802154_sec_dev_t&#160;:&#160;<a class="el" href="group__net__ieee802154__security.html#ga6a22b02c1184f35ca127c34cdbabf42c">ieee802154_security.h</a></li>
+<li>in_addr_t&#160;:&#160;<a class="el" href="group__posix__sockets.html#ga98b38134a62f24554da0ffcabde8062c">in.h</a></li>
+<li>in_port_t&#160;:&#160;<a class="el" href="group__posix__sockets.html#ga979d51fa99f7145221b3ed1afff5b827">in.h</a></li>
+<li>ina2xx_badc_t&#160;:&#160;<a class="el" href="group__drivers__ina2xx.html#ga35c4f95dd210615981aa94656620f56c">ina2xx.h</a></li>
+<li>ina2xx_brng_t&#160;:&#160;<a class="el" href="group__drivers__ina2xx.html#gae5d64dc803ccce9e669a2a601ff9132b">ina2xx.h</a></li>
+<li>ina2xx_i_range_t&#160;:&#160;<a class="el" href="group__drivers__ina2xx.html#ga3ad6dface454c8bc5c8846379b2eadac">ina2xx.h</a></li>
+<li>ina2xx_mode_t&#160;:&#160;<a class="el" href="group__drivers__ina2xx.html#ga00286a50d0b1c72f0192a5da25518c22">ina2xx.h</a></li>
+<li>ina2xx_pga_t&#160;:&#160;<a class="el" href="group__drivers__ina2xx.html#ga84fcfb8471455b1611b41e21d65ef58e">ina2xx.h</a></li>
+<li>ina2xx_reg_t&#160;:&#160;<a class="el" href="ina2xx__defines_8h.html#ade125e9106323d517fb9942a3f19559c">ina2xx_defines.h</a></li>
+<li>ina2xx_sadc_t&#160;:&#160;<a class="el" href="group__drivers__ina2xx.html#ga5a1997eb723996a216661ecab84e61af">ina2xx.h</a></li>
+<li>ina3221_alert_cb_t&#160;:&#160;<a class="el" href="group__drivers__ina3221.html#gac1edd2e9f9f845a7ec3b2a64601ad33b">ina3221.h</a></li>
+<li>ina3221_alert_t&#160;:&#160;<a class="el" href="group__drivers__ina3221.html#ga5d89d6ea26f8e51f7a7058a36427d307">ina3221.h</a></li>
+<li>ina3221_ch_t&#160;:&#160;<a class="el" href="group__drivers__ina3221.html#ga1f145eace1ea9078204fb19a7deb8ddb">ina3221.h</a></li>
+<li>ina3221_channel_t&#160;:&#160;<a class="el" href="group__drivers__ina3221.html#gadb78a8f4707ba9bb9eb0f1b97d1f7329">ina3221.h</a></li>
+<li>ina3221_conv_time_bus_adc_t&#160;:&#160;<a class="el" href="group__drivers__ina3221.html#gaaff4db0cb01f229b8617aad08067d195">ina3221.h</a></li>
+<li>ina3221_conv_time_shunt_adc_t&#160;:&#160;<a class="el" href="group__drivers__ina3221.html#ga76738c6bcf8b4227d97819acbebb7ff1">ina3221.h</a></li>
+<li>ina3221_dev_addr_t&#160;:&#160;<a class="el" href="group__drivers__ina3221.html#gab3a89c8cc603d469da151884ddafbeaa">ina3221.h</a></li>
+<li>ina3221_enable_ch_t&#160;:&#160;<a class="el" href="group__drivers__ina3221.html#ga50316c920f44b93040892085413a1243">ina3221.h</a></li>
+<li>ina3221_enable_latch_t&#160;:&#160;<a class="el" href="group__drivers__ina3221.html#gab77264093a599e1dd240da012dfa01ec">ina3221.h</a></li>
+<li>ina3221_enable_sum_ch_t&#160;:&#160;<a class="el" href="group__drivers__ina3221.html#gac7326d212ef6030bb31132c837d5e278">ina3221.h</a></li>
+<li>ina3221_mode_t&#160;:&#160;<a class="el" href="group__drivers__ina3221.html#ga69aa699f46a893877f36cf5a116d838b">ina3221.h</a></li>
+<li>ina3221_num_samples_t&#160;:&#160;<a class="el" href="group__drivers__ina3221.html#gaa144e8e625494e561036bfb2d301118f">ina3221.h</a></li>
+<li>ina3221_reg_t&#160;:&#160;<a class="el" href="ina3221__regs_8h.html#a6ac0a6ce4c99f2a87962f94ed43d6f6c">ina3221_regs.h</a></li>
+<li>iolist_t&#160;:&#160;<a class="el" href="group__sys__iolist.html#gaa17f91ef26edec149cd806d8457aa3a0">iolist.h</a></li>
+<li>irqn_t&#160;:&#160;<a class="el" href="riscv__common_2include_2periph__cpu__common_8h.html#a82caf5aabee0ec03f04c8f57b776a065">periph_cpu_common.h</a></li>
+<li>IRQn_Type&#160;:&#160;<a class="el" href="group__CC2538__cmsis.html#ga4a0206df9604302e0741c1aa4ca1ded3">cc2538.h</a>, <a class="el" href="group__CC13x2__cmsis.html#ga4a0206df9604302e0741c1aa4ca1ded3">cc26xx_cc13xx.h</a></li>
+<li>isr_t&#160;:&#160;<a class="el" href="vectors__cortexm_8h.html#a6d626fdf464bc6f2160d0bc92243b027">vectors_cortexm.h</a></li>
+<li>itg320x_drdy_int_cb_t&#160;:&#160;<a class="el" href="group__drivers__itg320x.html#ga61f7479fbc78071d75b09877ca54d548">itg320x.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:36 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

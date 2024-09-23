@@ -1,0 +1,2010 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>pkg/semtech-loramac/include/semtech_loramac.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('semtech__loramac_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">semtech_loramac.h File Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__pkg__semtech-loramac.html">Semtech LoRaMAC implementation</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Public API and definitions of the Semtech LoRaMAC.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Public API and definitions of the Semtech LoRaMAC. </p>
+<dl class="section author"><dt>Author</dt><dd>Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span class="obfuscator">.nosp@m.</span>ndre<span class="obfuscator">.nosp@m.</span>.abad<span class="obfuscator">.nosp@m.</span>ie@i<span class="obfuscator">.nosp@m.</span>nria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="semtech__loramac_8h_source.html">semtech_loramac.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;<a class="el" href="inttypes_8h_source.html">inttypes.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="mutex_8h_source.html">mutex.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="drivers_2include_2net_2netdev_8h_source.html">net/netdev.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="loramac_8h_source.html">net/loramac.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for semtech_loramac.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="semtech__loramac_8h__incl.svg" width="1723" height="662"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="semtech__loramac_8h__dep__incl.svg" width="215" height="166"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="semtech__loramac_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsemtech__loramac__channel__params__t.html">semtech_loramac_channel_params_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">LoRaMAC channel radio parameters.  <a href="structsemtech__loramac__channel__params__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsemtech__loramac__rx__data__t.html">semtech_loramac_rx_data_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure containing LoRaWAN RX data.  <a href="structsemtech__loramac__rx__data__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsemtech__loramac__link__check__info__t.html">semtech_loramac_link_check_info_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">LoRaMAC link check information.  <a href="structsemtech__loramac__link__check__info__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Semtech LoRaMAC descriptor.  <a href="structsemtech__loramac__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a00b3bd0109f6138543100250faa8fe1f" id="r_a00b3bd0109f6138543100250faa8fe1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00b3bd0109f6138543100250faa8fe1f">LORAWAN_APP_DATA_MAX_SIZE</a>&#160;&#160;&#160;(242U)</td></tr>
+<tr class="memdesc:a00b3bd0109f6138543100250faa8fe1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum payload size of a LoRaWAN application data.  <br /></td></tr>
+<tr class="separator:a00b3bd0109f6138543100250faa8fe1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:acbd3f41d6ec0844df2cf3023a41e3249" id="r_acbd3f41d6ec0844df2cf3023a41e3249"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="#acbd3f41d6ec0844df2cf3023a41e3249adeb07e54826e0af30766731ecacab95f">SEMTECH_LORAMAC_JOIN_SUCCEEDED</a>
+, <a class="el" href="#acbd3f41d6ec0844df2cf3023a41e3249a33484821d652c970a92880ed63ed8709">SEMTECH_LORAMAC_JOIN_FAILED</a>
+, <a class="el" href="#acbd3f41d6ec0844df2cf3023a41e3249a542fe2c9fc3738ae8a8042b1e5450c53">SEMTECH_LORAMAC_NOT_JOINED</a>
+, <a class="el" href="#acbd3f41d6ec0844df2cf3023a41e3249a6fdc7f7f676ee13caf0e3315e19ffedd">SEMTECH_LORAMAC_ALREADY_JOINED</a>
+, <br />
+&#160;&#160;<a class="el" href="#acbd3f41d6ec0844df2cf3023a41e3249a3c5fd652496a3ad23c9d5408cf2cd320">SEMTECH_LORAMAC_TX_OK</a>
+, <a class="el" href="#acbd3f41d6ec0844df2cf3023a41e3249a9192916368396960a07b404dc7668a17">SEMTECH_LORAMAC_TX_SCHEDULE</a>
+, <a class="el" href="#acbd3f41d6ec0844df2cf3023a41e3249a7228f456428873a7692c93d192db670b">SEMTECH_LORAMAC_TX_DONE</a>
+, <a class="el" href="#acbd3f41d6ec0844df2cf3023a41e3249a64221eb45397de9680e0f5e6f674ecf8">SEMTECH_LORAMAC_TX_CNF_FAILED</a>
+, <br />
+&#160;&#160;<a class="el" href="#acbd3f41d6ec0844df2cf3023a41e3249a2d0befd05ad25c2973f3c04e3acca316">SEMTECH_LORAMAC_TX_ERROR</a>
+, <a class="el" href="#acbd3f41d6ec0844df2cf3023a41e3249a1f9ab64c095d549da16017ed15bd8482">SEMTECH_LORAMAC_RX_DATA</a>
+, <a class="el" href="#acbd3f41d6ec0844df2cf3023a41e3249a44de2fb315c536fce9402ae4927db28b">SEMTECH_LORAMAC_RX_LINK_CHECK</a>
+, <a class="el" href="#acbd3f41d6ec0844df2cf3023a41e3249a6ead4b4d84b1124c620d2b57b64fba3b">SEMTECH_LORAMAC_RX_CONFIRMED</a>
+, <br />
+&#160;&#160;<a class="el" href="#acbd3f41d6ec0844df2cf3023a41e3249a17f471f458986d294c2626d5952198d3">SEMTECH_LORAMAC_BUSY</a>
+, <a class="el" href="#acbd3f41d6ec0844df2cf3023a41e3249a7ecd8c21946454247af9b126473199ac">SEMTECH_LORAMAC_DUTYCYCLE_RESTRICTED</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:acbd3f41d6ec0844df2cf3023a41e3249"><td class="mdescLeft">&#160;</td><td class="mdescRight">LoRaMAC return status.  <a href="#acbd3f41d6ec0844df2cf3023a41e3249">More...</a><br /></td></tr>
+<tr class="separator:acbd3f41d6ec0844df2cf3023a41e3249"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0822f4fd00c3dc92f33c0cf4d7c5bdcc" id="r_a0822f4fd00c3dc92f33c0cf4d7c5bdcc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <b>SEMTECH_LORAMAC_STATE_IDLE</b> = 0
+, <b>SEMTECH_LORAMAC_STATE_BUSY</b>
+ }</td></tr>
+<tr class="memdesc:a0822f4fd00c3dc92f33c0cf4d7c5bdcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">LoRaMAC internal state.  <a href="#a0822f4fd00c3dc92f33c0cf4d7c5bdcc">More...</a><br /></td></tr>
+<tr class="separator:a0822f4fd00c3dc92f33c0cf4d7c5bdcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aa6e500cb5bf3afe2d45ecfc3b43f68fe" id="r_aa6e500cb5bf3afe2d45ecfc3b43f68fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6e500cb5bf3afe2d45ecfc3b43f68fe">semtech_loramac_init</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac)</td></tr>
+<tr class="memdesc:aa6e500cb5bf3afe2d45ecfc3b43f68fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the semtech loramac mac.  <br /></td></tr>
+<tr class="separator:aa6e500cb5bf3afe2d45ecfc3b43f68fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a103f907189b45a8303c2b462797b52f9" id="r_a103f907189b45a8303c2b462797b52f9"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a103f907189b45a8303c2b462797b52f9">semtech_loramac_join</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, uint8_t type)</td></tr>
+<tr class="memdesc:a103f907189b45a8303c2b462797b52f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts a LoRaWAN network join procedure.  <br /></td></tr>
+<tr class="separator:a103f907189b45a8303c2b462797b52f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86f9839a9d80bddb15bb745922767e99" id="r_a86f9839a9d80bddb15bb745922767e99"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86f9839a9d80bddb15bb745922767e99">semtech_loramac_send</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, uint8_t *data, uint8_t len)</td></tr>
+<tr class="memdesc:a86f9839a9d80bddb15bb745922767e99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends data to the LoRaWAN network.  <br /></td></tr>
+<tr class="separator:a86f9839a9d80bddb15bb745922767e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a613004dd4b92feb21126e12e6d71a3bc" id="r_a613004dd4b92feb21126e12e6d71a3bc"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a613004dd4b92feb21126e12e6d71a3bc">semtech_loramac_recv</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac)</td></tr>
+<tr class="memdesc:a613004dd4b92feb21126e12e6d71a3bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for a message sent by the LoRaWAN network.  <br /></td></tr>
+<tr class="separator:a613004dd4b92feb21126e12e6d71a3bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf0518277b4392f2223988be523dd644" id="r_abf0518277b4392f2223988be523dd644"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf0518277b4392f2223988be523dd644">semtech_loramac_is_mac_joined</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac)</td></tr>
+<tr class="memdesc:abf0518277b4392f2223988be523dd644"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if network is already joined.  <br /></td></tr>
+<tr class="separator:abf0518277b4392f2223988be523dd644"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4c3fc8100da2ca6a8ea7279f086fce5" id="r_ae4c3fc8100da2ca6a8ea7279f086fce5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4c3fc8100da2ca6a8ea7279f086fce5">semtech_loramac_request_link_check</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac)</td></tr>
+<tr class="memdesc:ae4c3fc8100da2ca6a8ea7279f086fce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests a LoRaWAN link check.  <br /></td></tr>
+<tr class="separator:ae4c3fc8100da2ca6a8ea7279f086fce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f621621ffe38f3dc9f4f8931a711685" id="r_a3f621621ffe38f3dc9f4f8931a711685"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f621621ffe38f3dc9f4f8931a711685">semtech_loramac_set_deveui</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, const uint8_t *eui)</td></tr>
+<tr class="memdesc:a3f621621ffe38f3dc9f4f8931a711685"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the device EUI.  <br /></td></tr>
+<tr class="separator:a3f621621ffe38f3dc9f4f8931a711685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d9772c16948a14381fc4011d7536814" id="r_a7d9772c16948a14381fc4011d7536814"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d9772c16948a14381fc4011d7536814">semtech_loramac_get_deveui</a> (const <a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, uint8_t *eui)</td></tr>
+<tr class="memdesc:a7d9772c16948a14381fc4011d7536814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the device EUI.  <br /></td></tr>
+<tr class="separator:a7d9772c16948a14381fc4011d7536814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94bf64c581eeb129948ed84168fed736" id="r_a94bf64c581eeb129948ed84168fed736"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94bf64c581eeb129948ed84168fed736">semtech_loramac_set_appeui</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, const uint8_t *eui)</td></tr>
+<tr class="memdesc:a94bf64c581eeb129948ed84168fed736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the application EUI.  <br /></td></tr>
+<tr class="separator:a94bf64c581eeb129948ed84168fed736"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18c7c0c7e470afafc04dfd5abc31a3cd" id="r_a18c7c0c7e470afafc04dfd5abc31a3cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18c7c0c7e470afafc04dfd5abc31a3cd">semtech_loramac_get_appeui</a> (const <a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, uint8_t *eui)</td></tr>
+<tr class="memdesc:a18c7c0c7e470afafc04dfd5abc31a3cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the application EUI.  <br /></td></tr>
+<tr class="separator:a18c7c0c7e470afafc04dfd5abc31a3cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bbc0c8fea451102f2bebfe29fac802a" id="r_a9bbc0c8fea451102f2bebfe29fac802a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bbc0c8fea451102f2bebfe29fac802a">semtech_loramac_set_appkey</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, const uint8_t *key)</td></tr>
+<tr class="memdesc:a9bbc0c8fea451102f2bebfe29fac802a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the application key.  <br /></td></tr>
+<tr class="separator:a9bbc0c8fea451102f2bebfe29fac802a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e477764617c9442070a035901cdb23e" id="r_a3e477764617c9442070a035901cdb23e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e477764617c9442070a035901cdb23e">semtech_loramac_get_appkey</a> (const <a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, uint8_t *key)</td></tr>
+<tr class="memdesc:a3e477764617c9442070a035901cdb23e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the application key.  <br /></td></tr>
+<tr class="separator:a3e477764617c9442070a035901cdb23e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a635d359391702c0df6640d10b1f6a7de" id="r_a635d359391702c0df6640d10b1f6a7de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a635d359391702c0df6640d10b1f6a7de">semtech_loramac_set_appskey</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, const uint8_t *skey)</td></tr>
+<tr class="memdesc:a635d359391702c0df6640d10b1f6a7de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the application session key.  <br /></td></tr>
+<tr class="separator:a635d359391702c0df6640d10b1f6a7de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe52a89b1529b29a0e9fb170901ade57" id="r_abe52a89b1529b29a0e9fb170901ade57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe52a89b1529b29a0e9fb170901ade57">semtech_loramac_get_appskey</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, uint8_t *skey)</td></tr>
+<tr class="memdesc:abe52a89b1529b29a0e9fb170901ade57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the application session key.  <br /></td></tr>
+<tr class="separator:abe52a89b1529b29a0e9fb170901ade57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a961b21a3904013f4f96876b38a21a6ac" id="r_a961b21a3904013f4f96876b38a21a6ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a961b21a3904013f4f96876b38a21a6ac">semtech_loramac_set_nwkskey</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, const uint8_t *skey)</td></tr>
+<tr class="memdesc:a961b21a3904013f4f96876b38a21a6ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the network session key.  <br /></td></tr>
+<tr class="separator:a961b21a3904013f4f96876b38a21a6ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68611b336a8990fff73d398a613a18b1" id="r_a68611b336a8990fff73d398a613a18b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68611b336a8990fff73d398a613a18b1">semtech_loramac_get_nwkskey</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, uint8_t *skey)</td></tr>
+<tr class="memdesc:a68611b336a8990fff73d398a613a18b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the network session key.  <br /></td></tr>
+<tr class="separator:a68611b336a8990fff73d398a613a18b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a140eb63e4a184afd457f47e03e07bdd0" id="r_a140eb63e4a184afd457f47e03e07bdd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a140eb63e4a184afd457f47e03e07bdd0">semtech_loramac_set_devaddr</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, const uint8_t *addr)</td></tr>
+<tr class="memdesc:a140eb63e4a184afd457f47e03e07bdd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the device address.  <br /></td></tr>
+<tr class="separator:a140eb63e4a184afd457f47e03e07bdd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a749c53f677c5fa72e8f765ec26a549c4" id="r_a749c53f677c5fa72e8f765ec26a549c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a749c53f677c5fa72e8f765ec26a549c4">semtech_loramac_get_devaddr</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, uint8_t *addr)</td></tr>
+<tr class="memdesc:a749c53f677c5fa72e8f765ec26a549c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the device address.  <br /></td></tr>
+<tr class="separator:a749c53f677c5fa72e8f765ec26a549c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6abc5a8ab9620a54ce546cf7f309ba2c" id="r_a6abc5a8ab9620a54ce546cf7f309ba2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6abc5a8ab9620a54ce546cf7f309ba2c">semtech_loramac_set_class</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, <a class="el" href="group__net__loramac.html#gaeb6b5d76f38ab39a36f4fe47ff85f651">loramac_class_t</a> cls)</td></tr>
+<tr class="memdesc:a6abc5a8ab9620a54ce546cf7f309ba2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the device class.  <br /></td></tr>
+<tr class="separator:a6abc5a8ab9620a54ce546cf7f309ba2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a069e7e928b8d22b00561e948da5b1f8e" id="r_a069e7e928b8d22b00561e948da5b1f8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__net__loramac.html#gaeb6b5d76f38ab39a36f4fe47ff85f651">loramac_class_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a069e7e928b8d22b00561e948da5b1f8e">semtech_loramac_get_class</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac)</td></tr>
+<tr class="memdesc:a069e7e928b8d22b00561e948da5b1f8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the device class.  <br /></td></tr>
+<tr class="separator:a069e7e928b8d22b00561e948da5b1f8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeeece27f050f3ca1101048e0ef0a0e5" id="r_aaeeece27f050f3ca1101048e0ef0a0e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaeeece27f050f3ca1101048e0ef0a0e5">semtech_loramac_set_dr</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, uint8_t dr)</td></tr>
+<tr class="memdesc:aaeeece27f050f3ca1101048e0ef0a0e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the channels datarate.  <br /></td></tr>
+<tr class="separator:aaeeece27f050f3ca1101048e0ef0a0e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab38ac473ed12d1b4da800b90252bb7bf" id="r_ab38ac473ed12d1b4da800b90252bb7bf"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab38ac473ed12d1b4da800b90252bb7bf">semtech_loramac_get_dr</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac)</td></tr>
+<tr class="memdesc:ab38ac473ed12d1b4da800b90252bb7bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the channels datarate.  <br /></td></tr>
+<tr class="separator:ab38ac473ed12d1b4da800b90252bb7bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeccb487680a811900db9eee68303b0f" id="r_aeeccb487680a811900db9eee68303b0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeeccb487680a811900db9eee68303b0f">semtech_loramac_set_adr</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, bool adr)</td></tr>
+<tr class="memdesc:aeeccb487680a811900db9eee68303b0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables/disable adaptive datarate.  <br /></td></tr>
+<tr class="separator:aeeccb487680a811900db9eee68303b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fcbfbee3108401c44af0d2704099735" id="r_a8fcbfbee3108401c44af0d2704099735"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fcbfbee3108401c44af0d2704099735">semtech_loramac_get_adr</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac)</td></tr>
+<tr class="memdesc:a8fcbfbee3108401c44af0d2704099735"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if adaptive datarate is set.  <br /></td></tr>
+<tr class="separator:a8fcbfbee3108401c44af0d2704099735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73fcdf16034e785cae66720034ccc1f1" id="r_a73fcdf16034e785cae66720034ccc1f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73fcdf16034e785cae66720034ccc1f1">semtech_loramac_set_public_network</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, bool public)</td></tr>
+<tr class="memdesc:a73fcdf16034e785cae66720034ccc1f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable/disable the public network mode.  <br /></td></tr>
+<tr class="separator:a73fcdf16034e785cae66720034ccc1f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3abd95a2d0501d1a942483bac8c4ec1" id="r_ac3abd95a2d0501d1a942483bac8c4ec1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3abd95a2d0501d1a942483bac8c4ec1">semtech_loramac_get_public_network</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac)</td></tr>
+<tr class="memdesc:ac3abd95a2d0501d1a942483bac8c4ec1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if public network is set.  <br /></td></tr>
+<tr class="separator:ac3abd95a2d0501d1a942483bac8c4ec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb62e55ad2e082c4d6da9f5a5a45bdcc" id="r_abb62e55ad2e082c4d6da9f5a5a45bdcc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb62e55ad2e082c4d6da9f5a5a45bdcc">semtech_loramac_set_netid</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, uint32_t netid)</td></tr>
+<tr class="memdesc:abb62e55ad2e082c4d6da9f5a5a45bdcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the NetID (only useful with ABP join procedure)  <br /></td></tr>
+<tr class="separator:abb62e55ad2e082c4d6da9f5a5a45bdcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab39911026663c91f953622554882f051" id="r_ab39911026663c91f953622554882f051"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab39911026663c91f953622554882f051">semtech_loramac_get_netid</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac)</td></tr>
+<tr class="memdesc:ab39911026663c91f953622554882f051"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the NetID.  <br /></td></tr>
+<tr class="separator:ab39911026663c91f953622554882f051"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9e45827b7ac19b225b76b498c13a1f3" id="r_ae9e45827b7ac19b225b76b498c13a1f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9e45827b7ac19b225b76b498c13a1f3">semtech_loramac_set_tx_power</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, uint8_t power)</td></tr>
+<tr class="memdesc:ae9e45827b7ac19b225b76b498c13a1f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the channels TX power index.  <br /></td></tr>
+<tr class="separator:ae9e45827b7ac19b225b76b498c13a1f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73cd70e7e7733007f1ef270ba3d2e9ea" id="r_a73cd70e7e7733007f1ef270ba3d2e9ea"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73cd70e7e7733007f1ef270ba3d2e9ea">semtech_loramac_get_tx_power</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac)</td></tr>
+<tr class="memdesc:a73cd70e7e7733007f1ef270ba3d2e9ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the channels TX power index.  <br /></td></tr>
+<tr class="separator:a73cd70e7e7733007f1ef270ba3d2e9ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6948d283ac4a958bbb5842f2918296ee" id="r_a6948d283ac4a958bbb5842f2918296ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6948d283ac4a958bbb5842f2918296ee">semtech_loramac_set_tx_port</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, uint8_t port)</td></tr>
+<tr class="memdesc:a6948d283ac4a958bbb5842f2918296ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the TX application port.  <br /></td></tr>
+<tr class="separator:a6948d283ac4a958bbb5842f2918296ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af325d47cdecbec14b34b141f58daf591" id="r_af325d47cdecbec14b34b141f58daf591"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af325d47cdecbec14b34b141f58daf591">semtech_loramac_set_system_max_rx_error</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, uint32_t error)</td></tr>
+<tr class="memdesc:af325d47cdecbec14b34b141f58daf591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the maximum system overall timing error for RX (in ms)  <br /></td></tr>
+<tr class="separator:af325d47cdecbec14b34b141f58daf591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5714bf7ce210281ddd3e8a77d625bbbd" id="r_a5714bf7ce210281ddd3e8a77d625bbbd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5714bf7ce210281ddd3e8a77d625bbbd">semtech_loramac_set_min_rx_symbols</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, uint8_t min_rx)</td></tr>
+<tr class="memdesc:a5714bf7ce210281ddd3e8a77d625bbbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the minimum required number of symbols to detect a frame.  <br /></td></tr>
+<tr class="separator:a5714bf7ce210281ddd3e8a77d625bbbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3936dc8cc222ecfbdecfcff277531efd" id="r_a3936dc8cc222ecfbdecfcff277531efd"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3936dc8cc222ecfbdecfcff277531efd">semtech_loramac_get_tx_port</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac)</td></tr>
+<tr class="memdesc:a3936dc8cc222ecfbdecfcff277531efd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the TX application port.  <br /></td></tr>
+<tr class="separator:a3936dc8cc222ecfbdecfcff277531efd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d819d818debb5851cb103668c98eb4c" id="r_a9d819d818debb5851cb103668c98eb4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d819d818debb5851cb103668c98eb4c">semtech_loramac_set_tx_mode</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, uint8_t mode)</td></tr>
+<tr class="memdesc:a9d819d818debb5851cb103668c98eb4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the TX confirmable mode.  <br /></td></tr>
+<tr class="separator:a9d819d818debb5851cb103668c98eb4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13f7df1ce0555e55b166d0942816b976" id="r_a13f7df1ce0555e55b166d0942816b976"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13f7df1ce0555e55b166d0942816b976">semtech_loramac_get_tx_mode</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac)</td></tr>
+<tr class="memdesc:a13f7df1ce0555e55b166d0942816b976"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the TX confirmable mode.  <br /></td></tr>
+<tr class="separator:a13f7df1ce0555e55b166d0942816b976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee757096f6f705284f585357a8a46db1" id="r_aee757096f6f705284f585357a8a46db1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee757096f6f705284f585357a8a46db1">semtech_loramac_set_rx2_freq</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, uint32_t freq)</td></tr>
+<tr class="memdesc:aee757096f6f705284f585357a8a46db1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the RX2 frequency.  <br /></td></tr>
+<tr class="separator:aee757096f6f705284f585357a8a46db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51cd19985ff2bc95a620afce4378f44c" id="r_a51cd19985ff2bc95a620afce4378f44c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51cd19985ff2bc95a620afce4378f44c">semtech_loramac_get_rx2_freq</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac)</td></tr>
+<tr class="memdesc:a51cd19985ff2bc95a620afce4378f44c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the RX2 frequency.  <br /></td></tr>
+<tr class="separator:a51cd19985ff2bc95a620afce4378f44c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11d42e675af8dc471861b1380608dee4" id="r_a11d42e675af8dc471861b1380608dee4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11d42e675af8dc471861b1380608dee4">semtech_loramac_set_rx2_dr</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, uint8_t dr)</td></tr>
+<tr class="memdesc:a11d42e675af8dc471861b1380608dee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the RX2 datarate.  <br /></td></tr>
+<tr class="separator:a11d42e675af8dc471861b1380608dee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6dba8ee1fa30bd0cd28782a8add998d" id="r_ae6dba8ee1fa30bd0cd28782a8add998d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6dba8ee1fa30bd0cd28782a8add998d">semtech_loramac_get_rx2_dr</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac)</td></tr>
+<tr class="memdesc:ae6dba8ee1fa30bd0cd28782a8add998d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the RX2 datarate.  <br /></td></tr>
+<tr class="separator:ae6dba8ee1fa30bd0cd28782a8add998d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad89c110c1f36b05e6cae4859ce53c32b" id="r_ad89c110c1f36b05e6cae4859ce53c32b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad89c110c1f36b05e6cae4859ce53c32b">semtech_loramac_set_uplink_counter</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, uint32_t counter)</td></tr>
+<tr class="memdesc:ad89c110c1f36b05e6cae4859ce53c32b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Uplink Frame Counter.  <br /></td></tr>
+<tr class="separator:ad89c110c1f36b05e6cae4859ce53c32b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07c9dbdbe0e7a6e3b3acf437420f719b" id="r_a07c9dbdbe0e7a6e3b3acf437420f719b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07c9dbdbe0e7a6e3b3acf437420f719b">semtech_loramac_get_uplink_counter</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac)</td></tr>
+<tr class="memdesc:a07c9dbdbe0e7a6e3b3acf437420f719b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Uplink Frame Counter.  <br /></td></tr>
+<tr class="separator:a07c9dbdbe0e7a6e3b3acf437420f719b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d7dd3fb203574490669595823cdffc9" id="r_a9d7dd3fb203574490669595823cdffc9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d7dd3fb203574490669595823cdffc9">semtech_loramac_set_channels_mask</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, uint16_t *mask)</td></tr>
+<tr class="memdesc:a9d7dd3fb203574490669595823cdffc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Channels Mask.  <br /></td></tr>
+<tr class="separator:a9d7dd3fb203574490669595823cdffc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5660feb03067ef73174d66dedf79352" id="r_ae5660feb03067ef73174d66dedf79352"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5660feb03067ef73174d66dedf79352">semtech_loramac_get_channels_mask</a> (<a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *mac, uint16_t *mask)</td></tr>
+<tr class="memdesc:ae5660feb03067ef73174d66dedf79352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Channels Mask.  <br /></td></tr>
+<tr class="separator:ae5660feb03067ef73174d66dedf79352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Definitions for messages exchanged between the MAC and call threads</h2></td></tr>
+<tr class="memitem:a87488dc6198d5fb672131845b958850a" id="r_a87488dc6198d5fb672131845b958850a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87488dc6198d5fb672131845b958850a">MSG_TYPE_ISR</a>&#160;&#160;&#160;(0x3456)</td></tr>
+<tr class="memdesc:a87488dc6198d5fb672131845b958850a"><td class="mdescLeft">&#160;</td><td class="mdescRight">radio device ISR  <br /></td></tr>
+<tr class="separator:a87488dc6198d5fb672131845b958850a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45c82a08e0313f5990f490c1d4151dc7" id="r_a45c82a08e0313f5990f490c1d4151dc7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45c82a08e0313f5990f490c1d4151dc7">MSG_TYPE_RX_TIMEOUT</a>&#160;&#160;&#160;(0x3457)</td></tr>
+<tr class="memdesc:a45c82a08e0313f5990f490c1d4151dc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">radio driver RX timeout  <br /></td></tr>
+<tr class="separator:a45c82a08e0313f5990f490c1d4151dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a358b98862c2020960bfcf9548cd6e4bc" id="r_a358b98862c2020960bfcf9548cd6e4bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a358b98862c2020960bfcf9548cd6e4bc">MSG_TYPE_TX_TIMEOUT</a>&#160;&#160;&#160;(0x3458)</td></tr>
+<tr class="memdesc:a358b98862c2020960bfcf9548cd6e4bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">radio driver TX timeout  <br /></td></tr>
+<tr class="separator:a358b98862c2020960bfcf9548cd6e4bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9930a937350d96d646a4a2d2d1d6e6de" id="r_a9930a937350d96d646a4a2d2d1d6e6de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9930a937350d96d646a4a2d2d1d6e6de">MSG_TYPE_MAC_TIMEOUT</a>&#160;&#160;&#160;(0x3459)</td></tr>
+<tr class="memdesc:a9930a937350d96d646a4a2d2d1d6e6de"><td class="mdescLeft">&#160;</td><td class="mdescRight">MAC timers timeout.  <br /></td></tr>
+<tr class="separator:a9930a937350d96d646a4a2d2d1d6e6de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54f4c1434e7ea40f3e46e907541e4acb" id="r_a54f4c1434e7ea40f3e46e907541e4acb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54f4c1434e7ea40f3e46e907541e4acb">MSG_TYPE_LORAMAC_CMD</a>&#160;&#160;&#160;(0x3460)</td></tr>
+<tr class="memdesc:a54f4c1434e7ea40f3e46e907541e4acb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command sent to the MAC.  <br /></td></tr>
+<tr class="separator:a54f4c1434e7ea40f3e46e907541e4acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5792121b2b11aa12ea4e2a6cbae0a202" id="r_a5792121b2b11aa12ea4e2a6cbae0a202"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5792121b2b11aa12ea4e2a6cbae0a202">MSG_TYPE_LORAMAC_JOIN_STATUS</a>&#160;&#160;&#160;(0x3461)</td></tr>
+<tr class="memdesc:a5792121b2b11aa12ea4e2a6cbae0a202"><td class="mdescLeft">&#160;</td><td class="mdescRight">Join status.  <br /></td></tr>
+<tr class="separator:a5792121b2b11aa12ea4e2a6cbae0a202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f0032c52e2682591ef7ef04a34dfdda" id="r_a4f0032c52e2682591ef7ef04a34dfdda"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f0032c52e2682591ef7ef04a34dfdda">MSG_TYPE_LORAMAC_TX_STATUS</a>&#160;&#160;&#160;(0x3462)</td></tr>
+<tr class="memdesc:a4f0032c52e2682591ef7ef04a34dfdda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uplink status.  <br /></td></tr>
+<tr class="separator:a4f0032c52e2682591ef7ef04a34dfdda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ea5c77e811c82644af09a9436741ff2" id="r_a8ea5c77e811c82644af09a9436741ff2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ea5c77e811c82644af09a9436741ff2">MSG_TYPE_LORAMAC_MLME_CONFIRM</a>&#160;&#160;&#160;(0x3463)</td></tr>
+<tr class="memdesc:a8ea5c77e811c82644af09a9436741ff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">MAC MLME confirm event.  <br /></td></tr>
+<tr class="separator:a8ea5c77e811c82644af09a9436741ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cc48ed82febfe92cc2f7edb073b29d4" id="r_a5cc48ed82febfe92cc2f7edb073b29d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cc48ed82febfe92cc2f7edb073b29d4">MSG_TYPE_LORAMAC_MLME_INDICATION</a>&#160;&#160;&#160;(0x3464)</td></tr>
+<tr class="memdesc:a5cc48ed82febfe92cc2f7edb073b29d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">MAC MLME indication event.  <br /></td></tr>
+<tr class="separator:a5cc48ed82febfe92cc2f7edb073b29d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accf867c969a984ad2e0a4ca25e7c8653" id="r_accf867c969a984ad2e0a4ca25e7c8653"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#accf867c969a984ad2e0a4ca25e7c8653">MSG_TYPE_LORAMAC_MCPS_CONFIRM</a>&#160;&#160;&#160;(0x3465)</td></tr>
+<tr class="memdesc:accf867c969a984ad2e0a4ca25e7c8653"><td class="mdescLeft">&#160;</td><td class="mdescRight">MAC MCPS confirm event.  <br /></td></tr>
+<tr class="separator:accf867c969a984ad2e0a4ca25e7c8653"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21bb6f4d2851fee91d16191ee6af765c" id="r_a21bb6f4d2851fee91d16191ee6af765c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21bb6f4d2851fee91d16191ee6af765c">MSG_TYPE_LORAMAC_MCPS_INDICATION</a>&#160;&#160;&#160;(0x3466)</td></tr>
+<tr class="memdesc:a21bb6f4d2851fee91d16191ee6af765c"><td class="mdescLeft">&#160;</td><td class="mdescRight">MAC MCPS indication event.  <br /></td></tr>
+<tr class="separator:a21bb6f4d2851fee91d16191ee6af765c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a00b3bd0109f6138543100250faa8fe1f" name="a00b3bd0109f6138543100250faa8fe1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00b3bd0109f6138543100250faa8fe1f">&#9670;&#160;</a></span>LORAWAN_APP_DATA_MAX_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LORAWAN_APP_DATA_MAX_SIZE&#160;&#160;&#160;(242U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum payload size of a LoRaWAN application data. </p>
+
+<p class="definition">Definition at line <a class="el" href="semtech__loramac_8h_source.html#l00053">53</a> of file <a class="el" href="semtech__loramac_8h_source.html">semtech_loramac.h</a>.</p>
+
+</div>
+</div>
+<a id="a87488dc6198d5fb672131845b958850a" name="a87488dc6198d5fb672131845b958850a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87488dc6198d5fb672131845b958850a">&#9670;&#160;</a></span>MSG_TYPE_ISR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MSG_TYPE_ISR&#160;&#160;&#160;(0x3456)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>radio device ISR </p>
+
+<p class="definition">Definition at line <a class="el" href="semtech__loramac_8h_source.html#l00037">37</a> of file <a class="el" href="semtech__loramac_8h_source.html">semtech_loramac.h</a>.</p>
+
+</div>
+</div>
+<a id="a54f4c1434e7ea40f3e46e907541e4acb" name="a54f4c1434e7ea40f3e46e907541e4acb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54f4c1434e7ea40f3e46e907541e4acb">&#9670;&#160;</a></span>MSG_TYPE_LORAMAC_CMD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MSG_TYPE_LORAMAC_CMD&#160;&#160;&#160;(0x3460)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Command sent to the MAC. </p>
+
+<p class="definition">Definition at line <a class="el" href="semtech__loramac_8h_source.html#l00041">41</a> of file <a class="el" href="semtech__loramac_8h_source.html">semtech_loramac.h</a>.</p>
+
+</div>
+</div>
+<a id="a5792121b2b11aa12ea4e2a6cbae0a202" name="a5792121b2b11aa12ea4e2a6cbae0a202"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5792121b2b11aa12ea4e2a6cbae0a202">&#9670;&#160;</a></span>MSG_TYPE_LORAMAC_JOIN_STATUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MSG_TYPE_LORAMAC_JOIN_STATUS&#160;&#160;&#160;(0x3461)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Join status. </p>
+
+<p class="definition">Definition at line <a class="el" href="semtech__loramac_8h_source.html#l00042">42</a> of file <a class="el" href="semtech__loramac_8h_source.html">semtech_loramac.h</a>.</p>
+
+</div>
+</div>
+<a id="accf867c969a984ad2e0a4ca25e7c8653" name="accf867c969a984ad2e0a4ca25e7c8653"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accf867c969a984ad2e0a4ca25e7c8653">&#9670;&#160;</a></span>MSG_TYPE_LORAMAC_MCPS_CONFIRM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MSG_TYPE_LORAMAC_MCPS_CONFIRM&#160;&#160;&#160;(0x3465)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MAC MCPS confirm event. </p>
+
+<p class="definition">Definition at line <a class="el" href="semtech__loramac_8h_source.html#l00046">46</a> of file <a class="el" href="semtech__loramac_8h_source.html">semtech_loramac.h</a>.</p>
+
+</div>
+</div>
+<a id="a21bb6f4d2851fee91d16191ee6af765c" name="a21bb6f4d2851fee91d16191ee6af765c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21bb6f4d2851fee91d16191ee6af765c">&#9670;&#160;</a></span>MSG_TYPE_LORAMAC_MCPS_INDICATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MSG_TYPE_LORAMAC_MCPS_INDICATION&#160;&#160;&#160;(0x3466)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MAC MCPS indication event. </p>
+
+<p class="definition">Definition at line <a class="el" href="semtech__loramac_8h_source.html#l00047">47</a> of file <a class="el" href="semtech__loramac_8h_source.html">semtech_loramac.h</a>.</p>
+
+</div>
+</div>
+<a id="a8ea5c77e811c82644af09a9436741ff2" name="a8ea5c77e811c82644af09a9436741ff2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ea5c77e811c82644af09a9436741ff2">&#9670;&#160;</a></span>MSG_TYPE_LORAMAC_MLME_CONFIRM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MSG_TYPE_LORAMAC_MLME_CONFIRM&#160;&#160;&#160;(0x3463)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MAC MLME confirm event. </p>
+
+<p class="definition">Definition at line <a class="el" href="semtech__loramac_8h_source.html#l00044">44</a> of file <a class="el" href="semtech__loramac_8h_source.html">semtech_loramac.h</a>.</p>
+
+</div>
+</div>
+<a id="a5cc48ed82febfe92cc2f7edb073b29d4" name="a5cc48ed82febfe92cc2f7edb073b29d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cc48ed82febfe92cc2f7edb073b29d4">&#9670;&#160;</a></span>MSG_TYPE_LORAMAC_MLME_INDICATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MSG_TYPE_LORAMAC_MLME_INDICATION&#160;&#160;&#160;(0x3464)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MAC MLME indication event. </p>
+
+<p class="definition">Definition at line <a class="el" href="semtech__loramac_8h_source.html#l00045">45</a> of file <a class="el" href="semtech__loramac_8h_source.html">semtech_loramac.h</a>.</p>
+
+</div>
+</div>
+<a id="a4f0032c52e2682591ef7ef04a34dfdda" name="a4f0032c52e2682591ef7ef04a34dfdda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f0032c52e2682591ef7ef04a34dfdda">&#9670;&#160;</a></span>MSG_TYPE_LORAMAC_TX_STATUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MSG_TYPE_LORAMAC_TX_STATUS&#160;&#160;&#160;(0x3462)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Uplink status. </p>
+
+<p class="definition">Definition at line <a class="el" href="semtech__loramac_8h_source.html#l00043">43</a> of file <a class="el" href="semtech__loramac_8h_source.html">semtech_loramac.h</a>.</p>
+
+</div>
+</div>
+<a id="a9930a937350d96d646a4a2d2d1d6e6de" name="a9930a937350d96d646a4a2d2d1d6e6de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9930a937350d96d646a4a2d2d1d6e6de">&#9670;&#160;</a></span>MSG_TYPE_MAC_TIMEOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MSG_TYPE_MAC_TIMEOUT&#160;&#160;&#160;(0x3459)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MAC timers timeout. </p>
+
+<p class="definition">Definition at line <a class="el" href="semtech__loramac_8h_source.html#l00040">40</a> of file <a class="el" href="semtech__loramac_8h_source.html">semtech_loramac.h</a>.</p>
+
+</div>
+</div>
+<a id="a45c82a08e0313f5990f490c1d4151dc7" name="a45c82a08e0313f5990f490c1d4151dc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45c82a08e0313f5990f490c1d4151dc7">&#9670;&#160;</a></span>MSG_TYPE_RX_TIMEOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MSG_TYPE_RX_TIMEOUT&#160;&#160;&#160;(0x3457)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>radio driver RX timeout </p>
+
+<p class="definition">Definition at line <a class="el" href="semtech__loramac_8h_source.html#l00038">38</a> of file <a class="el" href="semtech__loramac_8h_source.html">semtech_loramac.h</a>.</p>
+
+</div>
+</div>
+<a id="a358b98862c2020960bfcf9548cd6e4bc" name="a358b98862c2020960bfcf9548cd6e4bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a358b98862c2020960bfcf9548cd6e4bc">&#9670;&#160;</a></span>MSG_TYPE_TX_TIMEOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MSG_TYPE_TX_TIMEOUT&#160;&#160;&#160;(0x3458)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>radio driver TX timeout </p>
+
+<p class="definition">Definition at line <a class="el" href="semtech__loramac_8h_source.html#l00039">39</a> of file <a class="el" href="semtech__loramac_8h_source.html">semtech_loramac.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="acbd3f41d6ec0844df2cf3023a41e3249" name="acbd3f41d6ec0844df2cf3023a41e3249"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbd3f41d6ec0844df2cf3023a41e3249">&#9670;&#160;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LoRaMAC return status. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="acbd3f41d6ec0844df2cf3023a41e3249adeb07e54826e0af30766731ecacab95f" name="acbd3f41d6ec0844df2cf3023a41e3249adeb07e54826e0af30766731ecacab95f"></a>SEMTECH_LORAMAC_JOIN_SUCCEEDED&#160;</td><td class="fielddoc"><p>Join procedure succeeded. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd3f41d6ec0844df2cf3023a41e3249a33484821d652c970a92880ed63ed8709" name="acbd3f41d6ec0844df2cf3023a41e3249a33484821d652c970a92880ed63ed8709"></a>SEMTECH_LORAMAC_JOIN_FAILED&#160;</td><td class="fielddoc"><p>Join procedure failed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd3f41d6ec0844df2cf3023a41e3249a542fe2c9fc3738ae8a8042b1e5450c53" name="acbd3f41d6ec0844df2cf3023a41e3249a542fe2c9fc3738ae8a8042b1e5450c53"></a>SEMTECH_LORAMAC_NOT_JOINED&#160;</td><td class="fielddoc"><p>MAC is not joined. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd3f41d6ec0844df2cf3023a41e3249a6fdc7f7f676ee13caf0e3315e19ffedd" name="acbd3f41d6ec0844df2cf3023a41e3249a6fdc7f7f676ee13caf0e3315e19ffedd"></a>SEMTECH_LORAMAC_ALREADY_JOINED&#160;</td><td class="fielddoc"><p>MAC is already joined. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd3f41d6ec0844df2cf3023a41e3249a3c5fd652496a3ad23c9d5408cf2cd320" name="acbd3f41d6ec0844df2cf3023a41e3249a3c5fd652496a3ad23c9d5408cf2cd320"></a>SEMTECH_LORAMAC_TX_OK&#160;</td><td class="fielddoc"><p>Transmission is in progress. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd3f41d6ec0844df2cf3023a41e3249a9192916368396960a07b404dc7668a17" name="acbd3f41d6ec0844df2cf3023a41e3249a9192916368396960a07b404dc7668a17"></a>SEMTECH_LORAMAC_TX_SCHEDULE&#160;</td><td class="fielddoc"><p>TX needs reschedule. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd3f41d6ec0844df2cf3023a41e3249a7228f456428873a7692c93d192db670b" name="acbd3f41d6ec0844df2cf3023a41e3249a7228f456428873a7692c93d192db670b"></a>SEMTECH_LORAMAC_TX_DONE&#160;</td><td class="fielddoc"><p>Transmission completed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd3f41d6ec0844df2cf3023a41e3249a64221eb45397de9680e0f5e6f674ecf8" name="acbd3f41d6ec0844df2cf3023a41e3249a64221eb45397de9680e0f5e6f674ecf8"></a>SEMTECH_LORAMAC_TX_CNF_FAILED&#160;</td><td class="fielddoc"><p>Confirmable transmission failed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd3f41d6ec0844df2cf3023a41e3249a2d0befd05ad25c2973f3c04e3acca316" name="acbd3f41d6ec0844df2cf3023a41e3249a2d0befd05ad25c2973f3c04e3acca316"></a>SEMTECH_LORAMAC_TX_ERROR&#160;</td><td class="fielddoc"><p>Error in TX (invalid param, unknown service) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd3f41d6ec0844df2cf3023a41e3249a1f9ab64c095d549da16017ed15bd8482" name="acbd3f41d6ec0844df2cf3023a41e3249a1f9ab64c095d549da16017ed15bd8482"></a>SEMTECH_LORAMAC_RX_DATA&#160;</td><td class="fielddoc"><p>Data received. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd3f41d6ec0844df2cf3023a41e3249a44de2fb315c536fce9402ae4927db28b" name="acbd3f41d6ec0844df2cf3023a41e3249a44de2fb315c536fce9402ae4927db28b"></a>SEMTECH_LORAMAC_RX_LINK_CHECK&#160;</td><td class="fielddoc"><p>Link check info received. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd3f41d6ec0844df2cf3023a41e3249a6ead4b4d84b1124c620d2b57b64fba3b" name="acbd3f41d6ec0844df2cf3023a41e3249a6ead4b4d84b1124c620d2b57b64fba3b"></a>SEMTECH_LORAMAC_RX_CONFIRMED&#160;</td><td class="fielddoc"><p>Confirmed ACK received. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd3f41d6ec0844df2cf3023a41e3249a17f471f458986d294c2626d5952198d3" name="acbd3f41d6ec0844df2cf3023a41e3249a17f471f458986d294c2626d5952198d3"></a>SEMTECH_LORAMAC_BUSY&#160;</td><td class="fielddoc"><p>Internal MAC is busy. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd3f41d6ec0844df2cf3023a41e3249a7ecd8c21946454247af9b126473199ac" name="acbd3f41d6ec0844df2cf3023a41e3249a7ecd8c21946454247af9b126473199ac"></a>SEMTECH_LORAMAC_DUTYCYCLE_RESTRICTED&#160;</td><td class="fielddoc"><p>Restricted access to channels. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="semtech__loramac_8h_source.html#l00058">58</a> of file <a class="el" href="semtech__loramac_8h_source.html">semtech_loramac.h</a>.</p>
+
+</div>
+</div>
+<a id="a0822f4fd00c3dc92f33c0cf4d7c5bdcc" name="a0822f4fd00c3dc92f33c0cf4d7c5bdcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0822f4fd00c3dc92f33c0cf4d7c5bdcc">&#9670;&#160;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LoRaMAC internal state. </p>
+
+<p class="definition">Definition at line <a class="el" href="semtech__loramac_8h_source.html#l00078">78</a> of file <a class="el" href="semtech__loramac_8h_source.html">semtech_loramac.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a8fcbfbee3108401c44af0d2704099735" name="a8fcbfbee3108401c44af0d2704099735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fcbfbee3108401c44af0d2704099735">&#9670;&#160;</a></span>semtech_loramac_get_adr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool semtech_loramac_get_adr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if adaptive datarate is set. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if adr is on, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a18c7c0c7e470afafc04dfd5abc31a3cd" name="a18c7c0c7e470afafc04dfd5abc31a3cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18c7c0c7e470afafc04dfd5abc31a3cd">&#9670;&#160;</a></span>semtech_loramac_get_appeui()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_get_appeui </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>eui</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the application EUI. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">eui</td><td>The application EUI </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3e477764617c9442070a035901cdb23e" name="a3e477764617c9442070a035901cdb23e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e477764617c9442070a035901cdb23e">&#9670;&#160;</a></span>semtech_loramac_get_appkey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_get_appkey </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>key</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the application key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The application key </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abe52a89b1529b29a0e9fb170901ade57" name="abe52a89b1529b29a0e9fb170901ade57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe52a89b1529b29a0e9fb170901ade57">&#9670;&#160;</a></span>semtech_loramac_get_appskey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_get_appskey </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>skey</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the application session key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">skey</td><td>The application session key </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae5660feb03067ef73174d66dedf79352" name="ae5660feb03067ef73174d66dedf79352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5660feb03067ef73174d66dedf79352">&#9670;&#160;</a></span>semtech_loramac_get_channels_mask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_get_channels_mask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t *</td>          <td class="paramname"><span class="paramname"><em>mask</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the Channels Mask. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mask</td><td>Mask array pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a069e7e928b8d22b00561e948da5b1f8e" name="a069e7e928b8d22b00561e948da5b1f8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a069e7e928b8d22b00561e948da5b1f8e">&#9670;&#160;</a></span>semtech_loramac_get_class()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__net__loramac.html#gaeb6b5d76f38ab39a36f4fe47ff85f651">loramac_class_t</a> semtech_loramac_get_class </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the device class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The device class </dd></dl>
+
+</div>
+</div>
+<a id="a749c53f677c5fa72e8f765ec26a549c4" name="a749c53f677c5fa72e8f765ec26a549c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a749c53f677c5fa72e8f765ec26a549c4">&#9670;&#160;</a></span>semtech_loramac_get_devaddr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_get_devaddr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the device address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>The device address </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7d9772c16948a14381fc4011d7536814" name="a7d9772c16948a14381fc4011d7536814"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d9772c16948a14381fc4011d7536814">&#9670;&#160;</a></span>semtech_loramac_get_deveui()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_get_deveui </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>eui</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the device EUI. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">eui</td><td>The device EUI </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab38ac473ed12d1b4da800b90252bb7bf" name="ab38ac473ed12d1b4da800b90252bb7bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab38ac473ed12d1b4da800b90252bb7bf">&#9670;&#160;</a></span>semtech_loramac_get_dr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t semtech_loramac_get_dr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the channels datarate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The datarate (from 1 to 16) </dd></dl>
+
+</div>
+</div>
+<a id="ab39911026663c91f953622554882f051" name="ab39911026663c91f953622554882f051"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab39911026663c91f953622554882f051">&#9670;&#160;</a></span>semtech_loramac_get_netid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t semtech_loramac_get_netid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the NetID. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The NetID </dd></dl>
+
+</div>
+</div>
+<a id="a68611b336a8990fff73d398a613a18b1" name="a68611b336a8990fff73d398a613a18b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68611b336a8990fff73d398a613a18b1">&#9670;&#160;</a></span>semtech_loramac_get_nwkskey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_get_nwkskey </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>skey</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the network session key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">skey</td><td>The network session key </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac3abd95a2d0501d1a942483bac8c4ec1" name="ac3abd95a2d0501d1a942483bac8c4ec1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3abd95a2d0501d1a942483bac8c4ec1">&#9670;&#160;</a></span>semtech_loramac_get_public_network()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool semtech_loramac_get_public_network </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if public network is set. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if public network is on, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ae6dba8ee1fa30bd0cd28782a8add998d" name="ae6dba8ee1fa30bd0cd28782a8add998d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6dba8ee1fa30bd0cd28782a8add998d">&#9670;&#160;</a></span>semtech_loramac_get_rx2_dr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t semtech_loramac_get_rx2_dr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the RX2 datarate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The RX2 datarate </dd></dl>
+
+</div>
+</div>
+<a id="a51cd19985ff2bc95a620afce4378f44c" name="a51cd19985ff2bc95a620afce4378f44c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51cd19985ff2bc95a620afce4378f44c">&#9670;&#160;</a></span>semtech_loramac_get_rx2_freq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t semtech_loramac_get_rx2_freq </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the RX2 frequency. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The RX2 frequency </dd></dl>
+
+</div>
+</div>
+<a id="a13f7df1ce0555e55b166d0942816b976" name="a13f7df1ce0555e55b166d0942816b976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13f7df1ce0555e55b166d0942816b976">&#9670;&#160;</a></span>semtech_loramac_get_tx_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t semtech_loramac_get_tx_mode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the TX confirmable mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The TX mode (confirmable or not confirmable) </dd></dl>
+
+</div>
+</div>
+<a id="a3936dc8cc222ecfbdecfcff277531efd" name="a3936dc8cc222ecfbdecfcff277531efd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3936dc8cc222ecfbdecfcff277531efd">&#9670;&#160;</a></span>semtech_loramac_get_tx_port()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t semtech_loramac_get_tx_port </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the TX application port. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The TX application port </dd></dl>
+
+</div>
+</div>
+<a id="a73cd70e7e7733007f1ef270ba3d2e9ea" name="a73cd70e7e7733007f1ef270ba3d2e9ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73cd70e7e7733007f1ef270ba3d2e9ea">&#9670;&#160;</a></span>semtech_loramac_get_tx_power()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t semtech_loramac_get_tx_power </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the channels TX power index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The TX power index (from 1 to 16) </dd></dl>
+
+</div>
+</div>
+<a id="a07c9dbdbe0e7a6e3b3acf437420f719b" name="a07c9dbdbe0e7a6e3b3acf437420f719b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07c9dbdbe0e7a6e3b3acf437420f719b">&#9670;&#160;</a></span>semtech_loramac_get_uplink_counter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t semtech_loramac_get_uplink_counter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the Uplink Frame Counter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Uplink frame counter </dd></dl>
+
+</div>
+</div>
+<a id="aa6e500cb5bf3afe2d45ecfc3b43f68fe" name="aa6e500cb5bf3afe2d45ecfc3b43f68fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6e500cb5bf3afe2d45ecfc3b43f68fe">&#9670;&#160;</a></span>semtech_loramac_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int semtech_loramac_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the semtech loramac mac. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to loramac descriptor</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success </dd>
+<dd>
+-1 on failure </dd></dl>
+
+</div>
+</div>
+<a id="abf0518277b4392f2223988be523dd644" name="abf0518277b4392f2223988be523dd644"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf0518277b4392f2223988be523dd644">&#9670;&#160;</a></span>semtech_loramac_is_mac_joined()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool semtech_loramac_is_mac_joined </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if network is already joined. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when network is joined, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a103f907189b45a8303c2b462797b52f9" name="a103f907189b45a8303c2b462797b52f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a103f907189b45a8303c2b462797b52f9">&#9670;&#160;</a></span>semtech_loramac_join()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t semtech_loramac_join </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Starts a LoRaWAN network join procedure. </p>
+<p>This function blocks until the join procedure succeeds or fails.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of join procedure (otaa or abp)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>SEMTECH_LORAMAC_JOIN_SUCCEEDED on success </dd>
+<dd>
+SEMTECH_LORAMAC_JOIN_FAILED on failure </dd>
+<dd>
+SEMTECH_LORAMAC_BUSY when the mac is already active (join or tx in progress) </dd>
+<dd>
+SEMTECH_LORAMAC_ALREADY_JOINED if network was already joined </dd></dl>
+
+</div>
+</div>
+<a id="a613004dd4b92feb21126e12e6d71a3bc" name="a613004dd4b92feb21126e12e6d71a3bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a613004dd4b92feb21126e12e6d71a3bc">&#9670;&#160;</a></span>semtech_loramac_recv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t semtech_loramac_recv </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wait for a message sent by the LoRaWAN network. </p>
+<p>This function blocks until a single message is received by the mac (RX1 and RX2 windows). With a class A device, a message can only be received after a send. With a class C device, a message can be received at any time. In this case, this function can be used in a dedicated listener thread.</p>
+<p>Be sure to call this function before the end of the RX windows otherwise it may block the calling thread.</p>
+<p>By default this feature is not available to the user application, enable it by adding <code>USEMODULE += semtech_loramac_rx</code> to the application Makefile.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a86f9839a9d80bddb15bb745922767e99" title="Sends data to the LoRaWAN network.">semtech_loramac_send</a></dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>SEMTECH_LORAMAC_RX_DATA when data is received </dd>
+<dd>
+SEMTECH_LORAMAC_RX_LINK_CHECK when link check information is received </dd>
+<dd>
+SEMTECH_LORAMAC_RX_CONFIRMED when an ACK is received from the network </dd></dl>
+
+</div>
+</div>
+<a id="ae4c3fc8100da2ca6a8ea7279f086fce5" name="ae4c3fc8100da2ca6a8ea7279f086fce5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4c3fc8100da2ca6a8ea7279f086fce5">&#9670;&#160;</a></span>semtech_loramac_request_link_check()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_request_link_check </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Requests a LoRaWAN link check. </p>
+<p>By default this feature is not available to the user application, enable it by adding <code>USEMODULE += semtech_loramac_rx</code> to the application Makefile.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a86f9839a9d80bddb15bb745922767e99" name="a86f9839a9d80bddb15bb745922767e99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86f9839a9d80bddb15bb745922767e99">&#9670;&#160;</a></span>semtech_loramac_send()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t semtech_loramac_send </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sends data to the LoRaWAN network. </p>
+<p>This function returns after TX status is replied from the MAC. To receive potential messages sent from the network an explicit call to <a class="el" href="#a613004dd4b92feb21126e12e6d71a3bc">semtech_loramac_recv</a> must be done after this function if it returned <a class="el" href="#acbd3f41d6ec0844df2cf3023a41e3249a7228f456428873a7692c93d192db670b">SEMTECH_LORAMAC_TX_DONE</a> and within the RX windows delays.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a613004dd4b92feb21126e12e6d71a3bc" title="Wait for a message sent by the LoRaWAN network.">semtech_loramac_recv</a></dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The TX data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>The length of the TX data</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>SEMTECH_LORAMAC_TX_DONE when the message was transmitted </dd>
+<dd>
+SEMTECH_LORAMAC_NOT_JOINED when the network is not joined </dd>
+<dd>
+SEMTECH_LORAMAC_BUSY when the mac is already active (join or tx in progress) </dd>
+<dd>
+SEMTECH_LORAMAC_DUTYCYCLE_RESTRICTED when the send is rejected because of dutycycle restriction </dd>
+<dd>
+SEMTECH_LORAMAC_TX_ERROR when an invalid parameter is given </dd>
+<dd>
+SEMTECH_LORAMAC_TX_CNF_FAILED when message was transmitted but no ACK was received </dd></dl>
+
+</div>
+</div>
+<a id="aeeccb487680a811900db9eee68303b0f" name="aeeccb487680a811900db9eee68303b0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeccb487680a811900db9eee68303b0f">&#9670;&#160;</a></span>semtech_loramac_set_adr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_set_adr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>adr</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enables/disable adaptive datarate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">adr</td><td>Adaptive datarate mode </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a94bf64c581eeb129948ed84168fed736" name="a94bf64c581eeb129948ed84168fed736"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94bf64c581eeb129948ed84168fed736">&#9670;&#160;</a></span>semtech_loramac_set_appeui()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_set_appeui </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *</td>          <td class="paramname"><span class="paramname"><em>eui</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the application EUI. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">eui</td><td>The application EUI </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9bbc0c8fea451102f2bebfe29fac802a" name="a9bbc0c8fea451102f2bebfe29fac802a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bbc0c8fea451102f2bebfe29fac802a">&#9670;&#160;</a></span>semtech_loramac_set_appkey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_set_appkey </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *</td>          <td class="paramname"><span class="paramname"><em>key</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the application key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The application key </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a635d359391702c0df6640d10b1f6a7de" name="a635d359391702c0df6640d10b1f6a7de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a635d359391702c0df6640d10b1f6a7de">&#9670;&#160;</a></span>semtech_loramac_set_appskey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_set_appskey </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *</td>          <td class="paramname"><span class="paramname"><em>skey</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the application session key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">skey</td><td>The application session key </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9d7dd3fb203574490669595823cdffc9" name="a9d7dd3fb203574490669595823cdffc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d7dd3fb203574490669595823cdffc9">&#9670;&#160;</a></span>semtech_loramac_set_channels_mask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_set_channels_mask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t *</td>          <td class="paramname"><span class="paramname"><em>mask</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the Channels Mask. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mask</td><td>Mask array, e.g., {0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0x0000, 0x0000} </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6abc5a8ab9620a54ce546cf7f309ba2c" name="a6abc5a8ab9620a54ce546cf7f309ba2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6abc5a8ab9620a54ce546cf7f309ba2c">&#9670;&#160;</a></span>semtech_loramac_set_class()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_set_class </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__net__loramac.html#gaeb6b5d76f38ab39a36f4fe47ff85f651">loramac_class_t</a></td>          <td class="paramname"><span class="paramname"><em>cls</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the device class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cls</td><td>The device class </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a140eb63e4a184afd457f47e03e07bdd0" name="a140eb63e4a184afd457f47e03e07bdd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a140eb63e4a184afd457f47e03e07bdd0">&#9670;&#160;</a></span>semtech_loramac_set_devaddr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_set_devaddr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the device address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>The device address </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3f621621ffe38f3dc9f4f8931a711685" name="a3f621621ffe38f3dc9f4f8931a711685"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f621621ffe38f3dc9f4f8931a711685">&#9670;&#160;</a></span>semtech_loramac_set_deveui()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_set_deveui </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *</td>          <td class="paramname"><span class="paramname"><em>eui</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the device EUI. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">eui</td><td>The device EUI </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaeeece27f050f3ca1101048e0ef0a0e5" name="aaeeece27f050f3ca1101048e0ef0a0e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeeece27f050f3ca1101048e0ef0a0e5">&#9670;&#160;</a></span>semtech_loramac_set_dr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_set_dr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>dr</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the channels datarate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dr</td><td>The datarate (from 1 to 16) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5714bf7ce210281ddd3e8a77d625bbbd" name="a5714bf7ce210281ddd3e8a77d625bbbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5714bf7ce210281ddd3e8a77d625bbbd">&#9670;&#160;</a></span>semtech_loramac_set_min_rx_symbols()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_set_min_rx_symbols </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>min_rx</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the minimum required number of symbols to detect a frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">min_rx</td><td>The minimum rx symbols </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abb62e55ad2e082c4d6da9f5a5a45bdcc" name="abb62e55ad2e082c4d6da9f5a5a45bdcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb62e55ad2e082c4d6da9f5a5a45bdcc">&#9670;&#160;</a></span>semtech_loramac_set_netid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_set_netid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>netid</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the NetID (only useful with ABP join procedure) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">netid</td><td>The NetID </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a961b21a3904013f4f96876b38a21a6ac" name="a961b21a3904013f4f96876b38a21a6ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a961b21a3904013f4f96876b38a21a6ac">&#9670;&#160;</a></span>semtech_loramac_set_nwkskey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_set_nwkskey </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *</td>          <td class="paramname"><span class="paramname"><em>skey</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the network session key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">skey</td><td>The network session key </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a73fcdf16034e785cae66720034ccc1f1" name="a73fcdf16034e785cae66720034ccc1f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73fcdf16034e785cae66720034ccc1f1">&#9670;&#160;</a></span>semtech_loramac_set_public_network()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_set_public_network </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>public</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable/disable the public network mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">public</td><td>The public network mode </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a11d42e675af8dc471861b1380608dee4" name="a11d42e675af8dc471861b1380608dee4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11d42e675af8dc471861b1380608dee4">&#9670;&#160;</a></span>semtech_loramac_set_rx2_dr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_set_rx2_dr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>dr</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the RX2 datarate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dr</td><td>The RX2 datarate </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aee757096f6f705284f585357a8a46db1" name="aee757096f6f705284f585357a8a46db1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee757096f6f705284f585357a8a46db1">&#9670;&#160;</a></span>semtech_loramac_set_rx2_freq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_set_rx2_freq </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>freq</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the RX2 frequency. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">freq</td><td>The RX2 frequency </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af325d47cdecbec14b34b141f58daf591" name="af325d47cdecbec14b34b141f58daf591"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af325d47cdecbec14b34b141f58daf591">&#9670;&#160;</a></span>semtech_loramac_set_system_max_rx_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_set_system_max_rx_error </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>error</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the maximum system overall timing error for RX (in ms) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">error</td><td>The maximum rx timing error </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9d819d818debb5851cb103668c98eb4c" name="a9d819d818debb5851cb103668c98eb4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d819d818debb5851cb103668c98eb4c">&#9670;&#160;</a></span>semtech_loramac_set_tx_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_set_tx_mode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the TX confirmable mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>The TX mode (confirmable or not confirmable) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6948d283ac4a958bbb5842f2918296ee" name="a6948d283ac4a958bbb5842f2918296ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6948d283ac4a958bbb5842f2918296ee">&#9670;&#160;</a></span>semtech_loramac_set_tx_port()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_set_tx_port </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>port</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the TX application port. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">port</td><td>The TX application port </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae9e45827b7ac19b225b76b498c13a1f3" name="ae9e45827b7ac19b225b76b498c13a1f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9e45827b7ac19b225b76b498c13a1f3">&#9670;&#160;</a></span>semtech_loramac_set_tx_power()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_set_tx_power </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>power</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the channels TX power index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">power</td><td>The TX power index (from 1 to 16) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad89c110c1f36b05e6cae4859ce53c32b" name="ad89c110c1f36b05e6cae4859ce53c32b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad89c110c1f36b05e6cae4859ce53c32b">&#9670;&#160;</a></span>semtech_loramac_set_uplink_counter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void semtech_loramac_set_uplink_counter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsemtech__loramac__t.html">semtech_loramac_t</a> *</td>          <td class="paramname"><span class="paramname"><em>mac</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>counter</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the Uplink Frame Counter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac</td><td>Pointer to the mac </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">counter</td><td>Frame counter to set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

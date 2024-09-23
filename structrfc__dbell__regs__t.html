@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>rfc_dbell_regs_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structrfc__dbell__regs__t.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">rfc_dbell_regs_t Struct Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>RFC_DBELL registers.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>RFC_DBELL registers. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__rfc_8h_source.html#l00031">31</a> of file <a class="el" href="cc26xx__cc13xx__rfc_8h_source.html">cc26xx_cc13xx_rfc.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="cc26xx__cc13xx__rfc_8h_source.html">cc26xx_cc13xx_rfc.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a9a09b95e69a9ce71c79d0c4e703793e4" id="r_a9a09b95e69a9ce71c79d0c4e703793e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a09b95e69a9ce71c79d0c4e703793e4">CMDR</a></td></tr>
+<tr class="memdesc:a9a09b95e69a9ce71c79d0c4e703793e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Doorbell Command Register.  <br /></td></tr>
+<tr class="separator:a9a09b95e69a9ce71c79d0c4e703793e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dbafd26c3d2f8ae73b60f358e6d53aa" id="r_a8dbafd26c3d2f8ae73b60f358e6d53aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8dbafd26c3d2f8ae73b60f358e6d53aa">CMDSTA</a></td></tr>
+<tr class="memdesc:a8dbafd26c3d2f8ae73b60f358e6d53aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Doorbell Command Status Register.  <br /></td></tr>
+<tr class="separator:a8dbafd26c3d2f8ae73b60f358e6d53aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a040884c1951407b1a8afb7c4c6c7488a" id="r_a040884c1951407b1a8afb7c4c6c7488a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a040884c1951407b1a8afb7c4c6c7488a">RFHWIFG</a></td></tr>
+<tr class="memdesc:a040884c1951407b1a8afb7c4c6c7488a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt Flags From RF Hardware Modules.  <br /></td></tr>
+<tr class="separator:a040884c1951407b1a8afb7c4c6c7488a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafa772464a880bf30b4529f8bdec1e37" id="r_aafa772464a880bf30b4529f8bdec1e37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafa772464a880bf30b4529f8bdec1e37">RFHWIEN</a></td></tr>
+<tr class="memdesc:aafa772464a880bf30b4529f8bdec1e37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt Enable For RF Hardware Modules.  <br /></td></tr>
+<tr class="separator:aafa772464a880bf30b4529f8bdec1e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a2d32da1c2ea33c8d75f453a36a238d" id="r_a3a2d32da1c2ea33c8d75f453a36a238d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a2d32da1c2ea33c8d75f453a36a238d">RFCPEIFG</a></td></tr>
+<tr class="memdesc:a3a2d32da1c2ea33c8d75f453a36a238d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt Flags For Command and Packet Engine Generated Interrupts.  <br /></td></tr>
+<tr class="separator:a3a2d32da1c2ea33c8d75f453a36a238d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55dcc9d604609b370c8bfc57607b51f9" id="r_a55dcc9d604609b370c8bfc57607b51f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55dcc9d604609b370c8bfc57607b51f9">RFCPEIEN</a></td></tr>
+<tr class="memdesc:a55dcc9d604609b370c8bfc57607b51f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt Enable For Command and Packet Engine Generated Interrupts.  <br /></td></tr>
+<tr class="separator:a55dcc9d604609b370c8bfc57607b51f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ef3d27cabf962099bcc9b5fe054f382" id="r_a9ef3d27cabf962099bcc9b5fe054f382"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ef3d27cabf962099bcc9b5fe054f382">RFCPEISL</a></td></tr>
+<tr class="memdesc:a9ef3d27cabf962099bcc9b5fe054f382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt Vector Selection For Command and Packet Engine Generated Interrupts.  <br /></td></tr>
+<tr class="separator:a9ef3d27cabf962099bcc9b5fe054f382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7207034c2a33a9e7eeab79d05af3e3c0" id="r_a7207034c2a33a9e7eeab79d05af3e3c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7207034c2a33a9e7eeab79d05af3e3c0">RFACKIFG</a></td></tr>
+<tr class="memdesc:a7207034c2a33a9e7eeab79d05af3e3c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Doorbell Command Acknowledgement Interrupt Flag.  <br /></td></tr>
+<tr class="separator:a7207034c2a33a9e7eeab79d05af3e3c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60b09c86d39819f2fc7c858173ed1914" id="r_a60b09c86d39819f2fc7c858173ed1914"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60b09c86d39819f2fc7c858173ed1914">SYSGPOCTL</a></td></tr>
+<tr class="memdesc:a60b09c86d39819f2fc7c858173ed1914"><td class="mdescLeft">&#160;</td><td class="mdescRight">RF Core General Purpose Output Control.  <br /></td></tr>
+<tr class="separator:a60b09c86d39819f2fc7c858173ed1914"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a9a09b95e69a9ce71c79d0c4e703793e4" name="a9a09b95e69a9ce71c79d0c4e703793e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a09b95e69a9ce71c79d0c4e703793e4">&#9670;&#160;</a></span>CMDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> rfc_dbell_regs_t::CMDR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Doorbell Command Register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__rfc_8h_source.html#l00032">32</a> of file <a class="el" href="cc26xx__cc13xx__rfc_8h_source.html">cc26xx_cc13xx_rfc.h</a>.</p>
+
+</div>
+</div>
+<a id="a8dbafd26c3d2f8ae73b60f358e6d53aa" name="a8dbafd26c3d2f8ae73b60f358e6d53aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dbafd26c3d2f8ae73b60f358e6d53aa">&#9670;&#160;</a></span>CMDSTA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> rfc_dbell_regs_t::CMDSTA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Doorbell Command Status Register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__rfc_8h_source.html#l00033">33</a> of file <a class="el" href="cc26xx__cc13xx__rfc_8h_source.html">cc26xx_cc13xx_rfc.h</a>.</p>
+
+</div>
+</div>
+<a id="a7207034c2a33a9e7eeab79d05af3e3c0" name="a7207034c2a33a9e7eeab79d05af3e3c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7207034c2a33a9e7eeab79d05af3e3c0">&#9670;&#160;</a></span>RFACKIFG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> rfc_dbell_regs_t::RFACKIFG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Doorbell Command Acknowledgement Interrupt Flag. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__rfc_8h_source.html#l00042">42</a> of file <a class="el" href="cc26xx__cc13xx__rfc_8h_source.html">cc26xx_cc13xx_rfc.h</a>.</p>
+
+</div>
+</div>
+<a id="a55dcc9d604609b370c8bfc57607b51f9" name="a55dcc9d604609b370c8bfc57607b51f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55dcc9d604609b370c8bfc57607b51f9">&#9670;&#160;</a></span>RFCPEIEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> rfc_dbell_regs_t::RFCPEIEN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interrupt Enable For Command and Packet Engine Generated Interrupts. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__rfc_8h_source.html#l00038">38</a> of file <a class="el" href="cc26xx__cc13xx__rfc_8h_source.html">cc26xx_cc13xx_rfc.h</a>.</p>
+
+</div>
+</div>
+<a id="a3a2d32da1c2ea33c8d75f453a36a238d" name="a3a2d32da1c2ea33c8d75f453a36a238d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a2d32da1c2ea33c8d75f453a36a238d">&#9670;&#160;</a></span>RFCPEIFG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> rfc_dbell_regs_t::RFCPEIFG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interrupt Flags For Command and Packet Engine Generated Interrupts. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__rfc_8h_source.html#l00036">36</a> of file <a class="el" href="cc26xx__cc13xx__rfc_8h_source.html">cc26xx_cc13xx_rfc.h</a>.</p>
+
+</div>
+</div>
+<a id="a9ef3d27cabf962099bcc9b5fe054f382" name="a9ef3d27cabf962099bcc9b5fe054f382"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ef3d27cabf962099bcc9b5fe054f382">&#9670;&#160;</a></span>RFCPEISL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> rfc_dbell_regs_t::RFCPEISL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interrupt Vector Selection For Command and Packet Engine Generated Interrupts. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__rfc_8h_source.html#l00040">40</a> of file <a class="el" href="cc26xx__cc13xx__rfc_8h_source.html">cc26xx_cc13xx_rfc.h</a>.</p>
+
+</div>
+</div>
+<a id="aafa772464a880bf30b4529f8bdec1e37" name="aafa772464a880bf30b4529f8bdec1e37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafa772464a880bf30b4529f8bdec1e37">&#9670;&#160;</a></span>RFHWIEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> rfc_dbell_regs_t::RFHWIEN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interrupt Enable For RF Hardware Modules. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__rfc_8h_source.html#l00035">35</a> of file <a class="el" href="cc26xx__cc13xx__rfc_8h_source.html">cc26xx_cc13xx_rfc.h</a>.</p>
+
+</div>
+</div>
+<a id="a040884c1951407b1a8afb7c4c6c7488a" name="a040884c1951407b1a8afb7c4c6c7488a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a040884c1951407b1a8afb7c4c6c7488a">&#9670;&#160;</a></span>RFHWIFG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> rfc_dbell_regs_t::RFHWIFG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interrupt Flags From RF Hardware Modules. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__rfc_8h_source.html#l00034">34</a> of file <a class="el" href="cc26xx__cc13xx__rfc_8h_source.html">cc26xx_cc13xx_rfc.h</a>.</p>
+
+</div>
+</div>
+<a id="a60b09c86d39819f2fc7c858173ed1914" name="a60b09c86d39819f2fc7c858173ed1914"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60b09c86d39819f2fc7c858173ed1914">&#9670;&#160;</a></span>SYSGPOCTL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> rfc_dbell_regs_t::SYSGPOCTL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RF Core General Purpose Output Control. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__rfc_8h_source.html#l00043">43</a> of file <a class="el" href="cc26xx__cc13xx__rfc_8h_source.html">cc26xx_cc13xx_rfc.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>cpu/cc26xx_cc13xx/include/<a class="el" href="cc26xx__cc13xx__rfc_8h_source.html">cc26xx_cc13xx_rfc.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

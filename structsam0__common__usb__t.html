@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sam0_common_usb_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structsam0__common__usb__t.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">sam0_common_usb_t Struct Reference<div class="ingroups"><a class="el" href="group__cpu.html">CPU</a> &raquo; <a class="el" href="group__cpu__sam0__common.html">Atmel SAM0 common</a> &raquo; <a class="el" href="group__cpu__sam0__common__usb.html">sam0 USB peripheral</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>sam0 usb peripheral device context  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>sam0 usb peripheral device context </p>
+
+<p class="definition">Definition at line <a class="el" href="sam__usb_8h_source.html#l00042">42</a> of file <a class="el" href="sam__usb_8h_source.html">sam_usb.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="sam__usb_8h_source.html">sam_usb.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a6d514d456b26f0d6a663a0fd58e023d4" id="r_a6d514d456b26f0d6a663a0fd58e023d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__usbdev.html#gaa82d08eb9deca939f11869d69c65e63e">usbdev_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d514d456b26f0d6a663a0fd58e023d4">usbdev</a></td></tr>
+<tr class="memdesc:a6d514d456b26f0d6a663a0fd58e023d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inherited usbdev struct.  <br /></td></tr>
+<tr class="separator:a6d514d456b26f0d6a663a0fd58e023d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab275d019b254d14e3b4fe8e51d95af26" id="r_ab275d019b254d14e3b4fe8e51d95af26"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structsam0__common__usb__config__t.html">sam0_common_usb_config_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab275d019b254d14e3b4fe8e51d95af26">config</a></td></tr>
+<tr class="memdesc:ab275d019b254d14e3b4fe8e51d95af26"><td class="mdescLeft">&#160;</td><td class="mdescRight">USB peripheral config <br  />
+  <br /></td></tr>
+<tr class="separator:ab275d019b254d14e3b4fe8e51d95af26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a146cbd028026deb81101f4d15cfc4b79" id="r_a146cbd028026deb81101f4d15cfc4b79"><td class="memItemLeft" align="right" valign="top">UsbDeviceDescBank&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a146cbd028026deb81101f4d15cfc4b79">banks</a> [2 *<a class="el" href="group__cpu__sam0__common__usb.html#ga7565e330e248636617ac1d7e8c74454c">SAM_USB_NUM_EP</a>]</td></tr>
+<tr class="memdesc:a146cbd028026deb81101f4d15cfc4b79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device descriptor banks.  <br /></td></tr>
+<tr class="separator:a146cbd028026deb81101f4d15cfc4b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a738e197e4f5b14f3abfd1818fc5fc705" id="r_a738e197e4f5b14f3abfd1818fc5fc705"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__usbdev.html#ga45fb2233696b039b8fb4f5264a5f4e5f">usbdev_ep_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a738e197e4f5b14f3abfd1818fc5fc705">endpoints</a> [2 *<a class="el" href="group__cpu__sam0__common__usb.html#ga7565e330e248636617ac1d7e8c74454c">SAM_USB_NUM_EP</a>]</td></tr>
+<tr class="memdesc:a738e197e4f5b14f3abfd1818fc5fc705"><td class="mdescLeft">&#160;</td><td class="mdescRight">Endpoints <br  />
+  <br /></td></tr>
+<tr class="separator:a738e197e4f5b14f3abfd1818fc5fc705"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbd0d48d63f5b95a6b8a684b7d3063ea" id="r_acbd0d48d63f5b95a6b8a684b7d3063ea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbd0d48d63f5b95a6b8a684b7d3063ea">suspended</a></td></tr>
+<tr class="memdesc:acbd0d48d63f5b95a6b8a684b7d3063ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suspend active <br  />
+  <br /></td></tr>
+<tr class="separator:acbd0d48d63f5b95a6b8a684b7d3063ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a146cbd028026deb81101f4d15cfc4b79" name="a146cbd028026deb81101f4d15cfc4b79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a146cbd028026deb81101f4d15cfc4b79">&#9670;&#160;</a></span>banks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UsbDeviceDescBank sam0_common_usb_t::banks[2 *<a class="el" href="group__cpu__sam0__common__usb.html#ga7565e330e248636617ac1d7e8c74454c">SAM_USB_NUM_EP</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Device descriptor banks. </p>
+
+<p class="definition">Definition at line <a class="el" href="sam__usb_8h_source.html#l00045">45</a> of file <a class="el" href="sam__usb_8h_source.html">sam_usb.h</a>.</p>
+
+</div>
+</div>
+<a id="ab275d019b254d14e3b4fe8e51d95af26" name="ab275d019b254d14e3b4fe8e51d95af26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab275d019b254d14e3b4fe8e51d95af26">&#9670;&#160;</a></span>config</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structsam0__common__usb__config__t.html">sam0_common_usb_config_t</a>* sam0_common_usb_t::config</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USB peripheral config <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="sam__usb_8h_source.html#l00044">44</a> of file <a class="el" href="sam__usb_8h_source.html">sam_usb.h</a>.</p>
+
+</div>
+</div>
+<a id="a738e197e4f5b14f3abfd1818fc5fc705" name="a738e197e4f5b14f3abfd1818fc5fc705"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a738e197e4f5b14f3abfd1818fc5fc705">&#9670;&#160;</a></span>endpoints</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__usbdev.html#ga45fb2233696b039b8fb4f5264a5f4e5f">usbdev_ep_t</a> sam0_common_usb_t::endpoints[2 *<a class="el" href="group__cpu__sam0__common__usb.html#ga7565e330e248636617ac1d7e8c74454c">SAM_USB_NUM_EP</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Endpoints <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="sam__usb_8h_source.html#l00046">46</a> of file <a class="el" href="sam__usb_8h_source.html">sam_usb.h</a>.</p>
+
+</div>
+</div>
+<a id="acbd0d48d63f5b95a6b8a684b7d3063ea" name="acbd0d48d63f5b95a6b8a684b7d3063ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbd0d48d63f5b95a6b8a684b7d3063ea">&#9670;&#160;</a></span>suspended</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool sam0_common_usb_t::suspended</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Suspend active <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="sam__usb_8h_source.html#l00047">47</a> of file <a class="el" href="sam__usb_8h_source.html">sam_usb.h</a>.</p>
+
+</div>
+</div>
+<a id="a6d514d456b26f0d6a663a0fd58e023d4" name="a6d514d456b26f0d6a663a0fd58e023d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d514d456b26f0d6a663a0fd58e023d4">&#9670;&#160;</a></span>usbdev</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__usbdev.html#gaa82d08eb9deca939f11869d69c65e63e">usbdev_t</a> sam0_common_usb_t::usbdev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inherited usbdev struct. </p>
+
+<p class="definition">Definition at line <a class="el" href="sam__usb_8h_source.html#l00043">43</a> of file <a class="el" href="sam__usb_8h_source.html">sam_usb.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>cpu/sam0_common/include/<a class="el" href="sam__usb_8h_source.html">sam_usb.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

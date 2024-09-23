@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>usbus_hid_device Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structusbus__hid__device.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">usbus_hid_device Struct Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__usb.html">USB</a> &raquo; <a class="el" href="group__usbus__hid.html">USBUS HID</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>USBUS HID context struct.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>USBUS HID context struct. </p>
+
+<p class="definition">Definition at line <a class="el" href="usbus_2hid_8h_source.html#l00067">67</a> of file <a class="el" href="usbus_2hid_8h_source.html">hid.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="usbus_2hid_8h_source.html">hid.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a99b1fc8ba7ece3cde3cf8e4c9147a8d0" id="r_a99b1fc8ba7ece3cde3cf8e4c9147a8d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__usb__usbus.html#gac1b5cc2688623f80e0104149531bb098">usbus_handler_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99b1fc8ba7ece3cde3cf8e4c9147a8d0">handler_ctrl</a></td></tr>
+<tr class="memdesc:a99b1fc8ba7ece3cde3cf8e4c9147a8d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">control handler  <br /></td></tr>
+<tr class="separator:a99b1fc8ba7ece3cde3cf8e4c9147a8d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa222155742a3e699ebdedad6258be787" id="r_aa222155742a3e699ebdedad6258be787"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__usb__usbus.html#gaa7b80bc5f8481949d7744e77080881c6">usbus_interface_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa222155742a3e699ebdedad6258be787">iface</a></td></tr>
+<tr class="memdesc:aa222155742a3e699ebdedad6258be787"><td class="mdescLeft">&#160;</td><td class="mdescRight">HID interface.  <br /></td></tr>
+<tr class="separator:aa222155742a3e699ebdedad6258be787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe0fcea4190e99397959c0295ed2fccd" id="r_afe0fcea4190e99397959c0295ed2fccd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__usb__usbus.html#ga50f8ddfc9c0ddf5141cd87410a64cf26">usbus_endpoint_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe0fcea4190e99397959c0295ed2fccd">ep_out</a></td></tr>
+<tr class="memdesc:afe0fcea4190e99397959c0295ed2fccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">OUT endpoint.  <br /></td></tr>
+<tr class="separator:afe0fcea4190e99397959c0295ed2fccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fc392ee4edde597a8b00f13a659dcda" id="r_a2fc392ee4edde597a8b00f13a659dcda"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__usb__usbus.html#ga50f8ddfc9c0ddf5141cd87410a64cf26">usbus_endpoint_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2fc392ee4edde597a8b00f13a659dcda">ep_in</a></td></tr>
+<tr class="memdesc:a2fc392ee4edde597a8b00f13a659dcda"><td class="mdescLeft">&#160;</td><td class="mdescRight">IN endpoint.  <br /></td></tr>
+<tr class="separator:a2fc392ee4edde597a8b00f13a659dcda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00d39a3349c1263d3c8f3cab1ce6301f" id="r_a00d39a3349c1263d3c8f3cab1ce6301f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__usb__usbus.html#ga917d1163eff1dafe646b30288a1a4a39">usbus_descr_gen_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00d39a3349c1263d3c8f3cab1ce6301f">hid_descr</a></td></tr>
+<tr class="memdesc:a00d39a3349c1263d3c8f3cab1ce6301f"><td class="mdescLeft">&#160;</td><td class="mdescRight">HID descriptor generator.  <br /></td></tr>
+<tr class="separator:a00d39a3349c1263d3c8f3cab1ce6301f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1156621d8aac28cf9e710eb788fc802" id="r_af1156621d8aac28cf9e710eb788fc802"><td class="memItemLeft" align="right" valign="top">const uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1156621d8aac28cf9e710eb788fc802">report_desc</a></td></tr>
+<tr class="memdesc:af1156621d8aac28cf9e710eb788fc802"><td class="mdescLeft">&#160;</td><td class="mdescRight">report descriptor reference  <br /></td></tr>
+<tr class="separator:af1156621d8aac28cf9e710eb788fc802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52b22692f9aae4f49596dee8908a3013" id="r_a52b22692f9aae4f49596dee8908a3013"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52b22692f9aae4f49596dee8908a3013">report_desc_size</a></td></tr>
+<tr class="memdesc:a52b22692f9aae4f49596dee8908a3013"><td class="mdescLeft">&#160;</td><td class="mdescRight">report descriptor size  <br /></td></tr>
+<tr class="separator:a52b22692f9aae4f49596dee8908a3013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac09b3b55adfbc1b3703771fcdfcd0748" id="r_ac09b3b55adfbc1b3703771fcdfcd0748"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac09b3b55adfbc1b3703771fcdfcd0748">usbus</a></td></tr>
+<tr class="memdesc:ac09b3b55adfbc1b3703771fcdfcd0748"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS reference.  <br /></td></tr>
+<tr class="separator:ac09b3b55adfbc1b3703771fcdfcd0748"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaa5349177ee321d0457c873ddfb452a" id="r_acaa5349177ee321d0457c873ddfb452a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acaa5349177ee321d0457c873ddfb452a">occupied</a></td></tr>
+<tr class="memdesc:acaa5349177ee321d0457c873ddfb452a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of bytes for the host.  <br /></td></tr>
+<tr class="separator:acaa5349177ee321d0457c873ddfb452a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dc887e64e99d61f03393b058ecebf34" id="r_a5dc887e64e99d61f03393b058ecebf34"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__usbus__hid.html#ga346dc005f8e8430a83ff6da8fc205a46">usbus_hid_cb_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5dc887e64e99d61f03393b058ecebf34">cb</a></td></tr>
+<tr class="memdesc:a5dc887e64e99d61f03393b058ecebf34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback for data handlers.  <br /></td></tr>
+<tr class="separator:a5dc887e64e99d61f03393b058ecebf34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10dbae948b8362666150b3f7e449fdf7" id="r_a10dbae948b8362666150b3f7e449fdf7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__sys__event.html#gad0c066ffb009d3286186a124d37a0c2d">event_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10dbae948b8362666150b3f7e449fdf7">tx_ready</a></td></tr>
+<tr class="memdesc:a10dbae948b8362666150b3f7e449fdf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit ready event.  <br /></td></tr>
+<tr class="separator:a10dbae948b8362666150b3f7e449fdf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8fcf99678c296584816e80c0b5ae9b4" id="r_af8fcf99678c296584816e80c0b5ae9b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmutex__t.html">mutex_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8fcf99678c296584816e80c0b5ae9b4">in_lock</a></td></tr>
+<tr class="memdesc:af8fcf99678c296584816e80c0b5ae9b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">mutex used for locking hid send  <br /></td></tr>
+<tr class="separator:af8fcf99678c296584816e80c0b5ae9b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affac9b3d73a44c501ac4229ed58c9773" id="r_affac9b3d73a44c501ac4229ed58c9773"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__usbdev.html#gaa9322e0f092c580129915333bab9a8f2">usbdev_ep_buf_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affac9b3d73a44c501ac4229ed58c9773">out_buf</a> [<a class="el" href="group__usbus__hid.html#ga3aab50d597bf0ac47f04120068bb065a">CONFIG_USBUS_HID_INTERRUPT_EP_SIZE</a>]</td></tr>
+<tr class="memdesc:affac9b3d73a44c501ac4229ed58c9773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Host to device data buffer.  <br /></td></tr>
+<tr class="separator:affac9b3d73a44c501ac4229ed58c9773"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afed74a703173894d84784b43d3f32dd7" id="r_afed74a703173894d84784b43d3f32dd7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__usbdev.html#gaa9322e0f092c580129915333bab9a8f2">usbdev_ep_buf_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afed74a703173894d84784b43d3f32dd7">in_buf</a> [<a class="el" href="group__usbus__hid.html#ga3aab50d597bf0ac47f04120068bb065a">CONFIG_USBUS_HID_INTERRUPT_EP_SIZE</a>]</td></tr>
+<tr class="memdesc:afed74a703173894d84784b43d3f32dd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device to host data buffer.  <br /></td></tr>
+<tr class="separator:afed74a703173894d84784b43d3f32dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a5dc887e64e99d61f03393b058ecebf34" name="a5dc887e64e99d61f03393b058ecebf34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dc887e64e99d61f03393b058ecebf34">&#9670;&#160;</a></span>cb</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__usbus__hid.html#ga346dc005f8e8430a83ff6da8fc205a46">usbus_hid_cb_t</a> usbus_hid_device::cb</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback for data handlers. </p>
+
+<p class="definition">Definition at line <a class="el" href="usbus_2hid_8h_source.html#l00077">77</a> of file <a class="el" href="usbus_2hid_8h_source.html">hid.h</a>.</p>
+
+</div>
+</div>
+<a id="a2fc392ee4edde597a8b00f13a659dcda" name="a2fc392ee4edde597a8b00f13a659dcda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fc392ee4edde597a8b00f13a659dcda">&#9670;&#160;</a></span>ep_in</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__usb__usbus.html#ga50f8ddfc9c0ddf5141cd87410a64cf26">usbus_endpoint_t</a>* usbus_hid_device::ep_in</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>IN endpoint. </p>
+
+<p class="definition">Definition at line <a class="el" href="usbus_2hid_8h_source.html#l00071">71</a> of file <a class="el" href="usbus_2hid_8h_source.html">hid.h</a>.</p>
+
+</div>
+</div>
+<a id="afe0fcea4190e99397959c0295ed2fccd" name="afe0fcea4190e99397959c0295ed2fccd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe0fcea4190e99397959c0295ed2fccd">&#9670;&#160;</a></span>ep_out</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__usb__usbus.html#ga50f8ddfc9c0ddf5141cd87410a64cf26">usbus_endpoint_t</a>* usbus_hid_device::ep_out</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>OUT endpoint. </p>
+
+<p class="definition">Definition at line <a class="el" href="usbus_2hid_8h_source.html#l00070">70</a> of file <a class="el" href="usbus_2hid_8h_source.html">hid.h</a>.</p>
+
+</div>
+</div>
+<a id="a99b1fc8ba7ece3cde3cf8e4c9147a8d0" name="a99b1fc8ba7ece3cde3cf8e4c9147a8d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99b1fc8ba7ece3cde3cf8e4c9147a8d0">&#9670;&#160;</a></span>handler_ctrl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__usb__usbus.html#gac1b5cc2688623f80e0104149531bb098">usbus_handler_t</a> usbus_hid_device::handler_ctrl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>control handler </p>
+
+<p class="definition">Definition at line <a class="el" href="usbus_2hid_8h_source.html#l00068">68</a> of file <a class="el" href="usbus_2hid_8h_source.html">hid.h</a>.</p>
+
+</div>
+</div>
+<a id="a00d39a3349c1263d3c8f3cab1ce6301f" name="a00d39a3349c1263d3c8f3cab1ce6301f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00d39a3349c1263d3c8f3cab1ce6301f">&#9670;&#160;</a></span>hid_descr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__usb__usbus.html#ga917d1163eff1dafe646b30288a1a4a39">usbus_descr_gen_t</a> usbus_hid_device::hid_descr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>HID descriptor generator. </p>
+
+<p class="definition">Definition at line <a class="el" href="usbus_2hid_8h_source.html#l00072">72</a> of file <a class="el" href="usbus_2hid_8h_source.html">hid.h</a>.</p>
+
+</div>
+</div>
+<a id="aa222155742a3e699ebdedad6258be787" name="aa222155742a3e699ebdedad6258be787"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa222155742a3e699ebdedad6258be787">&#9670;&#160;</a></span>iface</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__usb__usbus.html#gaa7b80bc5f8481949d7744e77080881c6">usbus_interface_t</a> usbus_hid_device::iface</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>HID interface. </p>
+
+<p class="definition">Definition at line <a class="el" href="usbus_2hid_8h_source.html#l00069">69</a> of file <a class="el" href="usbus_2hid_8h_source.html">hid.h</a>.</p>
+
+</div>
+</div>
+<a id="afed74a703173894d84784b43d3f32dd7" name="afed74a703173894d84784b43d3f32dd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afed74a703173894d84784b43d3f32dd7">&#9670;&#160;</a></span>in_buf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__usbdev.html#gaa9322e0f092c580129915333bab9a8f2">usbdev_ep_buf_t</a> usbus_hid_device::in_buf[<a class="el" href="group__usbus__hid.html#ga3aab50d597bf0ac47f04120068bb065a">CONFIG_USBUS_HID_INTERRUPT_EP_SIZE</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Device to host data buffer. </p>
+
+<p class="definition">Definition at line <a class="el" href="usbus_2hid_8h_source.html#l00089">89</a> of file <a class="el" href="usbus_2hid_8h_source.html">hid.h</a>.</p>
+
+</div>
+</div>
+<a id="af8fcf99678c296584816e80c0b5ae9b4" name="af8fcf99678c296584816e80c0b5ae9b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8fcf99678c296584816e80c0b5ae9b4">&#9670;&#160;</a></span>in_lock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmutex__t.html">mutex_t</a> usbus_hid_device::in_lock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>mutex used for locking hid send </p>
+
+<p class="definition">Definition at line <a class="el" href="usbus_2hid_8h_source.html#l00079">79</a> of file <a class="el" href="usbus_2hid_8h_source.html">hid.h</a>.</p>
+
+</div>
+</div>
+<a id="acaa5349177ee321d0457c873ddfb452a" name="acaa5349177ee321d0457c873ddfb452a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaa5349177ee321d0457c873ddfb452a">&#9670;&#160;</a></span>occupied</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t usbus_hid_device::occupied</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of bytes for the host. </p>
+
+<p class="definition">Definition at line <a class="el" href="usbus_2hid_8h_source.html#l00076">76</a> of file <a class="el" href="usbus_2hid_8h_source.html">hid.h</a>.</p>
+
+</div>
+</div>
+<a id="affac9b3d73a44c501ac4229ed58c9773" name="affac9b3d73a44c501ac4229ed58c9773"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affac9b3d73a44c501ac4229ed58c9773">&#9670;&#160;</a></span>out_buf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__usbdev.html#gaa9322e0f092c580129915333bab9a8f2">usbdev_ep_buf_t</a> usbus_hid_device::out_buf[<a class="el" href="group__usbus__hid.html#ga3aab50d597bf0ac47f04120068bb065a">CONFIG_USBUS_HID_INTERRUPT_EP_SIZE</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Host to device data buffer. </p>
+
+<p class="definition">Definition at line <a class="el" href="usbus_2hid_8h_source.html#l00084">84</a> of file <a class="el" href="usbus_2hid_8h_source.html">hid.h</a>.</p>
+
+</div>
+</div>
+<a id="af1156621d8aac28cf9e710eb788fc802" name="af1156621d8aac28cf9e710eb788fc802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1156621d8aac28cf9e710eb788fc802">&#9670;&#160;</a></span>report_desc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t* usbus_hid_device::report_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>report descriptor reference </p>
+
+<p class="definition">Definition at line <a class="el" href="usbus_2hid_8h_source.html#l00073">73</a> of file <a class="el" href="usbus_2hid_8h_source.html">hid.h</a>.</p>
+
+</div>
+</div>
+<a id="a52b22692f9aae4f49596dee8908a3013" name="a52b22692f9aae4f49596dee8908a3013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52b22692f9aae4f49596dee8908a3013">&#9670;&#160;</a></span>report_desc_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t usbus_hid_device::report_desc_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>report descriptor size </p>
+
+<p class="definition">Definition at line <a class="el" href="usbus_2hid_8h_source.html#l00074">74</a> of file <a class="el" href="usbus_2hid_8h_source.html">hid.h</a>.</p>
+
+</div>
+</div>
+<a id="a10dbae948b8362666150b3f7e449fdf7" name="a10dbae948b8362666150b3f7e449fdf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10dbae948b8362666150b3f7e449fdf7">&#9670;&#160;</a></span>tx_ready</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__sys__event.html#gad0c066ffb009d3286186a124d37a0c2d">event_t</a> usbus_hid_device::tx_ready</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transmit ready event. </p>
+
+<p class="definition">Definition at line <a class="el" href="usbus_2hid_8h_source.html#l00078">78</a> of file <a class="el" href="usbus_2hid_8h_source.html">hid.h</a>.</p>
+
+</div>
+</div>
+<a id="ac09b3b55adfbc1b3703771fcdfcd0748" name="ac09b3b55adfbc1b3703771fcdfcd0748"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac09b3b55adfbc1b3703771fcdfcd0748">&#9670;&#160;</a></span>usbus</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a>* usbus_hid_device::usbus</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USBUS reference. </p>
+
+<p class="definition">Definition at line <a class="el" href="usbus_2hid_8h_source.html#l00075">75</a> of file <a class="el" href="usbus_2hid_8h_source.html">hid.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>sys/include/usb/usbus/<a class="el" href="usbus_2hid_8h_source.html">hid.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

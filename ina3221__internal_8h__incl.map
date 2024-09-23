@@ -1,0 +1,48 @@
+<map id="drivers/ina3221/include/ina3221_internal.h" name="drivers/ina3221/include/ina3221_internal.h">
+<area shape="rect" id="Node000001" title="Functions to convert register values of INA3221 to actual voltage values and vice versa." alt="" coords="168,5,342,50"/>
+<area shape="rect" id="Node000002" href="$assert_8h.html" title="POSIX.1&#45;2008 compliant version of the assert macro." alt="" coords="17,325,90,353"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,53,146,73,100,99,58,133,24,175,12,201,8,224,11,247,19,276,36,311,31,314,14,278,6,248,3,223,6,199,19,172,54,129,97,95,144,68,188,48"/>
+<area shape="rect" id="Node000004" href="$ina3221__defines_8h.html" title="Internal definitions for Texas Instruments INA3221 three&#45;channel, high&#45;side current and bus voltage m..." alt="" coords="322,98,462,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="293,48,359,87,356,92,290,53"/>
+<area shape="rect" id="Node000005" href="$ina3221_8h.html" title="Device driver interface for Texas Instruments INA3221 three&#45;channel, high&#45;side current and bus voltag..." alt="" coords="212,98,298,126"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="258,50,258,82,252,82,252,50"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="308,401,378,428"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="92,347,293,398,292,403,90,352"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="212,116,173,121,129,131,86,148,49,176,31,199,24,221,24,246,30,276,42,310,37,312,24,278,19,247,18,220,26,196,45,172,83,144,127,126,172,116,211,111"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="298,121,310,123,372,130,452,136,639,150,731,162,814,181,849,194,880,209,905,227,923,248,928,266,923,284,908,299,885,314,820,339,736,361,643,379,548,393,394,411,393,406,548,388,642,374,735,356,819,334,883,309,905,295,919,281,923,266,918,251,901,231,877,214,847,199,812,186,730,167,638,155,452,141,372,135,309,128,297,126"/>
+<area shape="rect" id="Node000006" href="$errno_8h.html" title=" " alt="" coords="59,174,126,201"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="227,129,136,170,134,165,225,124"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="150,174,232,201"/>
+<area shape="poly" id="edge8_Node000005_Node000007" title=" " alt="" coords="246,128,214,164,210,160,242,124"/>
+<area shape="rect" id="Node000008" href="$kernel__defines_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="256,174,384,201"/>
+<area shape="poly" id="edge9_Node000005_Node000008" title=" " alt="" coords="269,124,301,160,297,164,265,128"/>
+<area shape="rect" id="Node000014" href="$drivers_2include_2periph_2gpio_8h.html" title="Low&#45;level GPIO peripheral driver interface definitions." alt="" coords="640,174,747,201"/>
+<area shape="poly" id="edge19_Node000005_Node000014" title=" " alt="" coords="298,121,310,123,462,149,615,171,625,173,625,178,615,176,462,154,309,128,297,126"/>
+<area shape="rect" id="Node000018" href="$i2c_8h.html" title="Low&#45;level I2C peripheral driver interface definition." alt="" coords="505,174,602,201"/>
+<area shape="poly" id="edge23_Node000005_Node000018" title=" " alt="" coords="298,121,490,168,489,173,297,126"/>
+<area shape="rect" id="Node000009" href="$modules_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="193,249,282,277"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="307,204,265,241,262,237,304,200"/>
+<area shape="rect" id="Node000010" href="$riot__version_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="242,325,353,353"/>
+<area shape="poly" id="edge11_Node000008_Node000010" title=" " alt="" coords="321,202,305,310,299,309,316,201"/>
+<area shape="rect" id="Node000011" href="$compiler__hints_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="40,249,169,277"/>
+<area shape="poly" id="edge13_Node000008_Node000011" title=" " alt="" coords="283,204,158,247,156,241,281,199"/>
+<area shape="rect" id="Node000012" href="$container_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="357,249,451,277"/>
+<area shape="poly" id="edge16_Node000008_Node000012" title=" " alt="" coords="337,200,380,237,376,241,334,204"/>
+<area shape="poly" id="edge12_Node000010_Node000003" title=" " alt="" coords="308,352,329,386,325,389,303,355"/>
+<area shape="poly" id="edge14_Node000011_Node000002" title=" " alt="" coords="97,279,74,314,69,310,93,276"/>
+<area shape="poly" id="edge15_Node000011_Node000003" title=" " alt="" coords="123,275,232,350,305,391,302,395,230,355,120,280"/>
+<area shape="poly" id="edge18_Node000012_Node000003" title=" " alt="" coords="402,278,357,387,352,385,397,276"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="428,325,501,353"/>
+<area shape="poly" id="edge17_Node000012_Node000013" title=" " alt="" coords="417,276,446,311,442,314,413,279"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="576,249,646,277"/>
+<area shape="poly" id="edge20_Node000014_Node000015" title=" " alt="" coords="681,204,639,241,635,237,677,200"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="671,249,775,277"/>
+<area shape="poly" id="edge21_Node000014_Node000016" title=" " alt="" coords="701,201,715,234,710,236,696,203"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="799,249,908,277"/>
+<area shape="poly" id="edge22_Node000014_Node000017" title=" " alt="" coords="723,199,813,240,810,245,721,204"/>
+<area shape="poly" id="edge24_Node000018_Node000003" title=" " alt="" coords="557,202,557,232,552,273,539,316,529,336,516,354,489,377,458,393,425,404,394,411,393,405,424,399,456,388,486,372,512,351,525,333,534,314,547,272,551,232,552,202"/>
+<area shape="poly" id="edge25_Node000018_Node000013" title=" " alt="" coords="548,203,482,313,478,310,544,200"/>
+<area shape="poly" id="edge26_Node000018_Node000015" title=" " alt="" coords="566,200,594,235,589,239,562,204"/>
+<area shape="poly" id="edge28_Node000018_Node000016" title=" " alt="" coords="585,199,680,240,678,245,583,204"/>
+<area shape="poly" id="edge27_Node000018_Node000017" title=" " alt="" coords="603,198,786,243,785,248,602,203"/>
+</map>

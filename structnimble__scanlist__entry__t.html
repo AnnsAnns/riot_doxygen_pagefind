@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>nimble_scanlist_entry_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structnimble__scanlist__entry__t.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">nimble_scanlist_entry_t Struct Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__ble.html">Bluetooth Low Energy (BLE)</a> &raquo; <a class="el" href="group__pkg__nimble.html">NimBLE</a> &raquo; <a class="el" href="group__pkg__nimble__scanlist.html">Scan Result Helper</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Data structure for holding a single scanlist entry.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Data structure for holding a single scanlist entry. </p>
+
+<p class="definition">Definition at line <a class="el" href="nimble__scanlist_8h_source.html#l00047">47</a> of file <a class="el" href="nimble__scanlist_8h_source.html">nimble_scanlist.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="nimble__scanlist_8h_source.html">nimble_scanlist.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:ae750f686244e8c6101a6ec730bdf4f84" id="r_ae750f686244e8c6101a6ec730bdf4f84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="clist_8h.html#a6346f09447aabddc705945b64e406f0b">clist_node_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae750f686244e8c6101a6ec730bdf4f84">node</a></td></tr>
+<tr class="memdesc:ae750f686244e8c6101a6ec730bdf4f84"><td class="mdescLeft">&#160;</td><td class="mdescRight">list node  <br /></td></tr>
+<tr class="separator:ae750f686244e8c6101a6ec730bdf4f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a933fa3ec1692e3b33610a2016fef8c2d" id="r_a933fa3ec1692e3b33610a2016fef8c2d"><td class="memItemLeft" align="right" valign="top">ble_addr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a933fa3ec1692e3b33610a2016fef8c2d">addr</a></td></tr>
+<tr class="memdesc:a933fa3ec1692e3b33610a2016fef8c2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">a node's BLE address  <br /></td></tr>
+<tr class="separator:a933fa3ec1692e3b33610a2016fef8c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb033f4425201fc8a4548865cd64339a" id="r_aeb033f4425201fc8a4548865cd64339a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb033f4425201fc8a4548865cd64339a">ad</a> [<a class="el" href="group__ble__defs.html#gaabbaa555ac29084a895640e336936d25">BLE_ADV_PDU_LEN</a>]</td></tr>
+<tr class="memdesc:aeb033f4425201fc8a4548865cd64339a"><td class="mdescLeft">&#160;</td><td class="mdescRight">the received raw advertising data  <br /></td></tr>
+<tr class="separator:aeb033f4425201fc8a4548865cd64339a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7ed9ebb47b9781a4a8950278d4b6e15" id="r_af7ed9ebb47b9781a4a8950278d4b6e15"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7ed9ebb47b9781a4a8950278d4b6e15">ad_len</a></td></tr>
+<tr class="memdesc:af7ed9ebb47b9781a4a8950278d4b6e15"><td class="mdescLeft">&#160;</td><td class="mdescRight">length of the advertising data  <br /></td></tr>
+<tr class="separator:af7ed9ebb47b9781a4a8950278d4b6e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a292bf105f8432497c471d3507c1c1651" id="r_a292bf105f8432497c471d3507c1c1651"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a292bf105f8432497c471d3507c1c1651">last_rssi</a></td></tr>
+<tr class="memdesc:a292bf105f8432497c471d3507c1c1651"><td class="mdescLeft">&#160;</td><td class="mdescRight">last RSSI of a scanned node  <br /></td></tr>
+<tr class="separator:a292bf105f8432497c471d3507c1c1651"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19587bec7aecd6e9e84c5aa56a6ff542" id="r_a19587bec7aecd6e9e84c5aa56a6ff542"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19587bec7aecd6e9e84c5aa56a6ff542">adv_msg_cnt</a></td></tr>
+<tr class="memdesc:a19587bec7aecd6e9e84c5aa56a6ff542"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of adv packets by a node  <br /></td></tr>
+<tr class="separator:a19587bec7aecd6e9e84c5aa56a6ff542"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81926bb50ed24c77c96a3a40d366184b" id="r_a81926bb50ed24c77c96a3a40d366184b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81926bb50ed24c77c96a3a40d366184b">first_update</a></td></tr>
+<tr class="memdesc:a81926bb50ed24c77c96a3a40d366184b"><td class="mdescLeft">&#160;</td><td class="mdescRight">first packet timestamp  <br /></td></tr>
+<tr class="separator:a81926bb50ed24c77c96a3a40d366184b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af99b8df6c847feb5773d47fb4f513f65" id="r_af99b8df6c847feb5773d47fb4f513f65"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af99b8df6c847feb5773d47fb4f513f65">last_update</a></td></tr>
+<tr class="memdesc:af99b8df6c847feb5773d47fb4f513f65"><td class="mdescLeft">&#160;</td><td class="mdescRight">last packet timestamp  <br /></td></tr>
+<tr class="separator:af99b8df6c847feb5773d47fb4f513f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31a48aa46b35cc00fd0ff046120a38fa" id="r_a31a48aa46b35cc00fd0ff046120a38fa"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31a48aa46b35cc00fd0ff046120a38fa">type</a></td></tr>
+<tr class="memdesc:a31a48aa46b35cc00fd0ff046120a38fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">advertising packet type  <br /></td></tr>
+<tr class="separator:a31a48aa46b35cc00fd0ff046120a38fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1434025b70212b91a606a44e761158b" id="r_af1434025b70212b91a606a44e761158b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1434025b70212b91a606a44e761158b">phy_pri</a></td></tr>
+<tr class="memdesc:af1434025b70212b91a606a44e761158b"><td class="mdescLeft">&#160;</td><td class="mdescRight">primary PHY used  <br /></td></tr>
+<tr class="separator:af1434025b70212b91a606a44e761158b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a764e69ed40b4905d8c99dd0858c6c3a9" id="r_a764e69ed40b4905d8c99dd0858c6c3a9"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a764e69ed40b4905d8c99dd0858c6c3a9">phy_sec</a></td></tr>
+<tr class="memdesc:a764e69ed40b4905d8c99dd0858c6c3a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">secondary PHY advertised  <br /></td></tr>
+<tr class="separator:a764e69ed40b4905d8c99dd0858c6c3a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="aeb033f4425201fc8a4548865cd64339a" name="aeb033f4425201fc8a4548865cd64339a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb033f4425201fc8a4548865cd64339a">&#9670;&#160;</a></span>ad</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t nimble_scanlist_entry_t::ad[<a class="el" href="group__ble__defs.html#gaabbaa555ac29084a895640e336936d25">BLE_ADV_PDU_LEN</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>the received raw advertising data </p>
+
+<p class="definition">Definition at line <a class="el" href="nimble__scanlist_8h_source.html#l00050">50</a> of file <a class="el" href="nimble__scanlist_8h_source.html">nimble_scanlist.h</a>.</p>
+
+</div>
+</div>
+<a id="af7ed9ebb47b9781a4a8950278d4b6e15" name="af7ed9ebb47b9781a4a8950278d4b6e15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7ed9ebb47b9781a4a8950278d4b6e15">&#9670;&#160;</a></span>ad_len</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t nimble_scanlist_entry_t::ad_len</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>length of the advertising data </p>
+
+<p class="definition">Definition at line <a class="el" href="nimble__scanlist_8h_source.html#l00051">51</a> of file <a class="el" href="nimble__scanlist_8h_source.html">nimble_scanlist.h</a>.</p>
+
+</div>
+</div>
+<a id="a933fa3ec1692e3b33610a2016fef8c2d" name="a933fa3ec1692e3b33610a2016fef8c2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a933fa3ec1692e3b33610a2016fef8c2d">&#9670;&#160;</a></span>addr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ble_addr_t nimble_scanlist_entry_t::addr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>a node's BLE address </p>
+
+<p class="definition">Definition at line <a class="el" href="nimble__scanlist_8h_source.html#l00049">49</a> of file <a class="el" href="nimble__scanlist_8h_source.html">nimble_scanlist.h</a>.</p>
+
+</div>
+</div>
+<a id="a19587bec7aecd6e9e84c5aa56a6ff542" name="a19587bec7aecd6e9e84c5aa56a6ff542"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19587bec7aecd6e9e84c5aa56a6ff542">&#9670;&#160;</a></span>adv_msg_cnt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t nimble_scanlist_entry_t::adv_msg_cnt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>number of adv packets by a node </p>
+
+<p class="definition">Definition at line <a class="el" href="nimble__scanlist_8h_source.html#l00053">53</a> of file <a class="el" href="nimble__scanlist_8h_source.html">nimble_scanlist.h</a>.</p>
+
+</div>
+</div>
+<a id="a81926bb50ed24c77c96a3a40d366184b" name="a81926bb50ed24c77c96a3a40d366184b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81926bb50ed24c77c96a3a40d366184b">&#9670;&#160;</a></span>first_update</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t nimble_scanlist_entry_t::first_update</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>first packet timestamp </p>
+
+<p class="definition">Definition at line <a class="el" href="nimble__scanlist_8h_source.html#l00054">54</a> of file <a class="el" href="nimble__scanlist_8h_source.html">nimble_scanlist.h</a>.</p>
+
+</div>
+</div>
+<a id="a292bf105f8432497c471d3507c1c1651" name="a292bf105f8432497c471d3507c1c1651"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a292bf105f8432497c471d3507c1c1651">&#9670;&#160;</a></span>last_rssi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t nimble_scanlist_entry_t::last_rssi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>last RSSI of a scanned node </p>
+
+<p class="definition">Definition at line <a class="el" href="nimble__scanlist_8h_source.html#l00052">52</a> of file <a class="el" href="nimble__scanlist_8h_source.html">nimble_scanlist.h</a>.</p>
+
+</div>
+</div>
+<a id="af99b8df6c847feb5773d47fb4f513f65" name="af99b8df6c847feb5773d47fb4f513f65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af99b8df6c847feb5773d47fb4f513f65">&#9670;&#160;</a></span>last_update</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t nimble_scanlist_entry_t::last_update</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>last packet timestamp </p>
+
+<p class="definition">Definition at line <a class="el" href="nimble__scanlist_8h_source.html#l00055">55</a> of file <a class="el" href="nimble__scanlist_8h_source.html">nimble_scanlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ae750f686244e8c6101a6ec730bdf4f84" name="ae750f686244e8c6101a6ec730bdf4f84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae750f686244e8c6101a6ec730bdf4f84">&#9670;&#160;</a></span>node</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="clist_8h.html#a6346f09447aabddc705945b64e406f0b">clist_node_t</a> nimble_scanlist_entry_t::node</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>list node </p>
+
+<p class="definition">Definition at line <a class="el" href="nimble__scanlist_8h_source.html#l00048">48</a> of file <a class="el" href="nimble__scanlist_8h_source.html">nimble_scanlist.h</a>.</p>
+
+</div>
+</div>
+<a id="af1434025b70212b91a606a44e761158b" name="af1434025b70212b91a606a44e761158b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1434025b70212b91a606a44e761158b">&#9670;&#160;</a></span>phy_pri</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t nimble_scanlist_entry_t::phy_pri</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>primary PHY used </p>
+
+<p class="definition">Definition at line <a class="el" href="nimble__scanlist_8h_source.html#l00057">57</a> of file <a class="el" href="nimble__scanlist_8h_source.html">nimble_scanlist.h</a>.</p>
+
+</div>
+</div>
+<a id="a764e69ed40b4905d8c99dd0858c6c3a9" name="a764e69ed40b4905d8c99dd0858c6c3a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a764e69ed40b4905d8c99dd0858c6c3a9">&#9670;&#160;</a></span>phy_sec</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t nimble_scanlist_entry_t::phy_sec</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>secondary PHY advertised </p>
+
+<p class="definition">Definition at line <a class="el" href="nimble__scanlist_8h_source.html#l00058">58</a> of file <a class="el" href="nimble__scanlist_8h_source.html">nimble_scanlist.h</a>.</p>
+
+</div>
+</div>
+<a id="a31a48aa46b35cc00fd0ff046120a38fa" name="a31a48aa46b35cc00fd0ff046120a38fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31a48aa46b35cc00fd0ff046120a38fa">&#9670;&#160;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t nimble_scanlist_entry_t::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>advertising packet type </p>
+
+<p class="definition">Definition at line <a class="el" href="nimble__scanlist_8h_source.html#l00056">56</a> of file <a class="el" href="nimble__scanlist_8h_source.html">nimble_scanlist.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>pkg/nimble/scanlist/include/<a class="el" href="nimble__scanlist_8h_source.html">nimble_scanlist.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

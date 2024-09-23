@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/event/timeout.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('event_2timeout_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a>  </div>
+  <div class="headertitle"><div class="title">timeout.h File Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__event.html">Event Queue</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Provides functionality to trigger events after timeout.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Provides functionality to trigger events after timeout. </p>
+<p>event_timeout intentionally doesn't extend event structures in order to support events that are integrated in larger structs intrusively.</p>
+<p>Example:</p>
+<div class="fragment"><div class="line"><a class="code hl_struct" href="structevent__timeout__t.html">event_timeout_t</a> event_timeout;</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;posting timed callback with timeout 1sec\n&quot;</span>);</div>
+<div class="line"><a class="code hl_function" href="#a83e695971314128d76384432a37bd0d5">event_timeout_init</a>(&amp;event_timeout, &amp;queue, (<a class="code hl_struct" href="structevent.html">event_t</a>*)&amp;<a class="code hl_struct" href="structevent.html">event</a>);</div>
+<div class="line"><a class="code hl_function" href="#a1875a2e9c4bdc2a975d1e562e7341c26">event_timeout_set</a>(&amp;event_timeout, 1000000);</div>
+<div class="line">[...]</div>
+<div class="ttc" id="aevent_2timeout_8h_html_a1875a2e9c4bdc2a975d1e562e7341c26"><div class="ttname"><a href="#a1875a2e9c4bdc2a975d1e562e7341c26">event_timeout_set</a></div><div class="ttdeci">void event_timeout_set(event_timeout_t *event_timeout, uint32_t timeout)</div><div class="ttdoc">Set a timeout.</div></div>
+<div class="ttc" id="aevent_2timeout_8h_html_a83e695971314128d76384432a37bd0d5"><div class="ttname"><a href="#a83e695971314128d76384432a37bd0d5">event_timeout_init</a></div><div class="ttdeci">void event_timeout_init(event_timeout_t *event_timeout, event_queue_t *queue, event_t *event)</div><div class="ttdoc">Initialize timeout event object.</div></div>
+<div class="ttc" id="agroup__cpu__avr8__common__stdio__wrapper_html_gad2eb277496af160238e7306fff780ad2"><div class="ttname"><a href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a></div><div class="ttdeci">#define printf(...)</div><div class="ttdoc">A wrapper for the printf() function that passes arguments through unmodified, but fails to compile if...</div><div class="ttdef"><b>Definition</b> <a href="stdio_8h_source.html#l00060">stdio.h:60</a></div></div>
+<div class="ttc" id="astructevent__timeout__t_html"><div class="ttname"><a href="structevent__timeout__t.html">event_timeout_t</a></div><div class="ttdoc">Timeout Event structure.</div><div class="ttdef"><b>Definition</b> <a href="event_2timeout_8h_source.html#l00050">timeout.h:50</a></div></div>
+<div class="ttc" id="astructevent_html"><div class="ttname"><a href="structevent.html">event</a></div><div class="ttdoc">event structure</div><div class="ttdef"><b>Definition</b> <a href="event_8h_source.html#l00148">event.h:148</a></div></div>
+</div><!-- fragment --><p>Event Timeout API</p>
+<dl class="section author"><dt>Author</dt><dd>Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="event_2timeout_8h_source.html">timeout.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;event.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="ztimer_8h_source.html">ztimer.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for timeout.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="event_2timeout_8h__incl.svg" width="1499" height="795"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="event_2timeout_8h__dep__incl.svg" width="615" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="event_2timeout_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structevent__timeout__t.html">event_timeout_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeout Event structure.  <a href="structevent__timeout__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa541dc06df14a936a8e6cf7c4778b919" id="r_aa541dc06df14a936a8e6cf7c4778b919"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa541dc06df14a936a8e6cf7c4778b919">event_timeout_ztimer_init</a> (<a class="el" href="structevent__timeout__t.html">event_timeout_t</a> *event_timeout, <a class="el" href="group__sys__ztimer.html#ga3639ce794c3bd80a6e9bbe88a7db4a88">ztimer_clock_t</a> *clock, <a class="el" href="group__sys__event.html#ga7806b159463497fbcd16f1697565ff4e">event_queue_t</a> *queue, <a class="el" href="group__sys__event.html#gad0c066ffb009d3286186a124d37a0c2d">event_t</a> *<a class="el" href="structevent.html">event</a>)</td></tr>
+<tr class="memdesc:aa541dc06df14a936a8e6cf7c4778b919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize timeout event object.  <br /></td></tr>
+<tr class="separator:aa541dc06df14a936a8e6cf7c4778b919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83e695971314128d76384432a37bd0d5" id="r_a83e695971314128d76384432a37bd0d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83e695971314128d76384432a37bd0d5">event_timeout_init</a> (<a class="el" href="structevent__timeout__t.html">event_timeout_t</a> *event_timeout, <a class="el" href="group__sys__event.html#ga7806b159463497fbcd16f1697565ff4e">event_queue_t</a> *queue, <a class="el" href="group__sys__event.html#gad0c066ffb009d3286186a124d37a0c2d">event_t</a> *<a class="el" href="structevent.html">event</a>)</td></tr>
+<tr class="memdesc:a83e695971314128d76384432a37bd0d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize timeout event object.  <br /></td></tr>
+<tr class="separator:a83e695971314128d76384432a37bd0d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1875a2e9c4bdc2a975d1e562e7341c26" id="r_a1875a2e9c4bdc2a975d1e562e7341c26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1875a2e9c4bdc2a975d1e562e7341c26">event_timeout_set</a> (<a class="el" href="structevent__timeout__t.html">event_timeout_t</a> *event_timeout, uint32_t timeout)</td></tr>
+<tr class="memdesc:a1875a2e9c4bdc2a975d1e562e7341c26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a timeout.  <br /></td></tr>
+<tr class="separator:a1875a2e9c4bdc2a975d1e562e7341c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6441a56ba068b6235c20e0526e4495a" id="r_ad6441a56ba068b6235c20e0526e4495a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6441a56ba068b6235c20e0526e4495a">event_timeout_clear</a> (<a class="el" href="structevent__timeout__t.html">event_timeout_t</a> *event_timeout)</td></tr>
+<tr class="memdesc:ad6441a56ba068b6235c20e0526e4495a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear a timeout event.  <br /></td></tr>
+<tr class="separator:ad6441a56ba068b6235c20e0526e4495a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f7ca4505abf608ab20a732df9d08392" id="r_a3f7ca4505abf608ab20a732df9d08392"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f7ca4505abf608ab20a732df9d08392">event_timeout_is_pending</a> (const <a class="el" href="structevent__timeout__t.html">event_timeout_t</a> *event_timeout)</td></tr>
+<tr class="memdesc:a3f7ca4505abf608ab20a732df9d08392"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a timeout event is scheduled to be executed in the future.  <br /></td></tr>
+<tr class="separator:a3f7ca4505abf608ab20a732df9d08392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ad6441a56ba068b6235c20e0526e4495a" name="ad6441a56ba068b6235c20e0526e4495a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6441a56ba068b6235c20e0526e4495a">&#9670;&#160;</a></span>event_timeout_clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void event_timeout_clear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structevent__timeout__t.html">event_timeout_t</a> *</td>          <td class="paramname"><span class="paramname"><em>event_timeout</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clear a timeout event. </p>
+<p>Calling this function will cancel the timeout by removing its underlying timer. If the timer has already fired before calling this function, the connected event will be put already into the given event queue and this function does not have any effect.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event_timeout</td><td>event_timeout context object to use </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a83e695971314128d76384432a37bd0d5" name="a83e695971314128d76384432a37bd0d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83e695971314128d76384432a37bd0d5">&#9670;&#160;</a></span>event_timeout_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void event_timeout_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structevent__timeout__t.html">event_timeout_t</a> *</td>          <td class="paramname"><span class="paramname"><em>event_timeout</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__sys__event.html#ga7806b159463497fbcd16f1697565ff4e">event_queue_t</a> *</td>          <td class="paramname"><span class="paramname"><em>queue</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__sys__event.html#gad0c066ffb009d3286186a124d37a0c2d">event_t</a> *</td>          <td class="paramname"><span class="paramname"><em>event</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize timeout event object. </p>
+<dl class="section note"><dt>Note</dt><dd>If ztimer is used the default time clock backend is ZTIMER_USEC</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event_timeout</td><td>event_timeout object to initialize </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">queue</td><td>queue that the timed-out event will be added to </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>event to add to queue after timeout </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3f7ca4505abf608ab20a732df9d08392" name="a3f7ca4505abf608ab20a732df9d08392"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f7ca4505abf608ab20a732df9d08392">&#9670;&#160;</a></span>event_timeout_is_pending()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool event_timeout_is_pending </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structevent__timeout__t.html">event_timeout_t</a> *</td>          <td class="paramname"><span class="paramname"><em>event_timeout</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if a timeout event is scheduled to be executed in the future. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event_timeout</td><td>event_timout context object to use </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the event is scheduled, false otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="event_2timeout_8h_source.html#l00116">116</a> of file <a class="el" href="event_2timeout_8h_source.html">timeout.h</a>.</p>
+
+</div>
+</div>
+<a id="a1875a2e9c4bdc2a975d1e562e7341c26" name="a1875a2e9c4bdc2a975d1e562e7341c26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1875a2e9c4bdc2a975d1e562e7341c26">&#9670;&#160;</a></span>event_timeout_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void event_timeout_set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structevent__timeout__t.html">event_timeout_t</a> *</td>          <td class="paramname"><span class="paramname"><em>event_timeout</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a timeout. </p>
+<p>This will make the event as configured in <code>event_timeout</code> be triggered after <code>timeout</code> microseconds (if using <a class="el" href="structxtimer.html">xtimer</a>) or the <a class="el" href="group__sys__ztimer.html#ga3639ce794c3bd80a6e9bbe88a7db4a88">ztimer_clock_t</a> ticks.</p>
+<dl class="section note"><dt>Note</dt><dd>: the used event_timeout struct must stay valid until after the timeout event has been processed!</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event_timeout</td><td>event_timout context object to use </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>timeout in microseconds or the ztimer_clock_t ticks units </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa541dc06df14a936a8e6cf7c4778b919" name="aa541dc06df14a936a8e6cf7c4778b919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa541dc06df14a936a8e6cf7c4778b919">&#9670;&#160;</a></span>event_timeout_ztimer_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void event_timeout_ztimer_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structevent__timeout__t.html">event_timeout_t</a> *</td>          <td class="paramname"><span class="paramname"><em>event_timeout</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__sys__ztimer.html#ga3639ce794c3bd80a6e9bbe88a7db4a88">ztimer_clock_t</a> *</td>          <td class="paramname"><span class="paramname"><em>clock</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__sys__event.html#ga7806b159463497fbcd16f1697565ff4e">event_queue_t</a> *</td>          <td class="paramname"><span class="paramname"><em>queue</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__sys__event.html#gad0c066ffb009d3286186a124d37a0c2d">event_t</a> *</td>          <td class="paramname"><span class="paramname"><em>event</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize timeout event object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event_timeout</td><td>event_timeout object to initialize </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">clock</td><td>the clock backend, eg: ZTIMER_USEC, ZTIMER_MSEC </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">queue</td><td>queue that the timed-out event will be added to </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>event to add to queue after timeout </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

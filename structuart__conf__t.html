@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>uart_conf_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structuart__conf__t.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">uart_conf_t Struct Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>UART device configuration.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>UART device configuration. </p>
+<p>UART configuration data.</p>
+<p>Configuration details for an UART interface needed by the RPX0XX peripheral.</p>
+<p>MSP430 x1xx UART configuration, board level.</p>
+<p>MSP430 F2xx/G2xx UART configuration, board level.</p>
+<p>UART module configuration options.</p>
+<p>Structure for UART configuration data.</p>
+<p>UART configuration structure type.</p>
+<p>QN908x doesn't have any UART standalone blocks, but it has two FLEXCOMM blocks that can be put in UART mode. The USART_Type* address is one of the FLEXCOMM_Type* addresses as well.</p>
+<pre class="fragment">     The frequency f() of the clock `gclk_src` must fulfill the condition
+
+         16 * baud &lt; f(gclk_src) ≤ 2²⁰ * baud
+
+     in Asynchronous Arithmetic mode and
+
+         16 * baud &lt; f(gclk_src) ≤ 2¹⁷ * baud
+
+     in Asynchronous Fractional mode
+</pre> 
+<p class="definition">Definition at line <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html#l00218">218</a> of file <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="atxmega_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a1f5530ae549c109d04f0ad3575644bb7" id="r_a1f5530ae549c109d04f0ad3575644bb7"><td class="memItemLeft" align="right" valign="top">USART_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f5530ae549c109d04f0ad3575644bb7">dev</a></td></tr>
+<tr class="memdesc:a1f5530ae549c109d04f0ad3575644bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the used UART device  <br /></td></tr>
+<tr class="separator:a1f5530ae549c109d04f0ad3575644bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77945c380a49aa8bbc910a7a9f9ed3f7" id="r_a77945c380a49aa8bbc910a7a9f9ed3f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="atxmega_2include_2periph__cpu_8h.html#a84dd39eddad92f5ea43b0368b47ed1d8">pwr_reduction_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77945c380a49aa8bbc910a7a9f9ed3f7">pwr</a></td></tr>
+<tr class="memdesc:a77945c380a49aa8bbc910a7a9f9ed3f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power Management.  <br /></td></tr>
+<tr class="separator:a77945c380a49aa8bbc910a7a9f9ed3f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac57738979d50769e007af9330599ddcf" id="r_ac57738979d50769e007af9330599ddcf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac57738979d50769e007af9330599ddcf">rx_pin</a></td></tr>
+<tr class="memdesc:ac57738979d50769e007af9330599ddcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin used for RX  <br /></td></tr>
+<tr class="separator:ac57738979d50769e007af9330599ddcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf99018a5ebb74b990864b5e62c0a0fe" id="r_aaf99018a5ebb74b990864b5e62c0a0fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf99018a5ebb74b990864b5e62c0a0fe">tx_pin</a></td></tr>
+<tr class="memdesc:aaf99018a5ebb74b990864b5e62c0a0fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin used for TX  <br /></td></tr>
+<tr class="separator:aaf99018a5ebb74b990864b5e62c0a0fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf027d77c033ef03e8d7b3b462c554d1" id="r_adf027d77c033ef03e8d7b3b462c554d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="atxmega_2include_2periph__cpu_8h.html#aa375cff8e60c9488def9f87ec31d962b">cpu_int_lvl_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf027d77c033ef03e8d7b3b462c554d1">rx_int_lvl</a></td></tr>
+<tr class="memdesc:adf027d77c033ef03e8d7b3b462c554d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">RX Complete Interrupt Level.  <br /></td></tr>
+<tr class="separator:adf027d77c033ef03e8d7b3b462c554d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5806fd6b1bdf648df90ca8c40bb0e13b" id="r_a5806fd6b1bdf648df90ca8c40bb0e13b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="atxmega_2include_2periph__cpu_8h.html#aa375cff8e60c9488def9f87ec31d962b">cpu_int_lvl_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5806fd6b1bdf648df90ca8c40bb0e13b">tx_int_lvl</a></td></tr>
+<tr class="memdesc:a5806fd6b1bdf648df90ca8c40bb0e13b"><td class="mdescLeft">&#160;</td><td class="mdescRight">TX Complete Interrupt Level.  <br /></td></tr>
+<tr class="separator:a5806fd6b1bdf648df90ca8c40bb0e13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0f6ee813a300b3d99dc278801ceacdf" id="r_ab0f6ee813a300b3d99dc278801ceacdf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="atxmega_2include_2periph__cpu_8h.html#aa375cff8e60c9488def9f87ec31d962b">cpu_int_lvl_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0f6ee813a300b3d99dc278801ceacdf">dre_int_lvl</a></td></tr>
+<tr class="memdesc:ab0f6ee813a300b3d99dc278801ceacdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data Registry Empty Interrupt Level.  <br /></td></tr>
+<tr class="separator:ab0f6ee813a300b3d99dc278801ceacdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5ddddccb522b26c13e57a0a71c379bc" id="r_ac5ddddccb522b26c13e57a0a71c379bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcc2538__uart__t.html">cc2538_uart_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5ddddccb522b26c13e57a0a71c379bc">dev</a></td></tr>
+<tr class="memdesc:ac5ddddccb522b26c13e57a0a71c379bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the used UART device  <br /></td></tr>
+<tr class="separator:ac5ddddccb522b26c13e57a0a71c379bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad123951a30b6d09d22c3fb62c1040ee8" id="r_ad123951a30b6d09d22c3fb62c1040ee8"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad123951a30b6d09d22c3fb62c1040ee8">dev</a></td></tr>
+<tr class="memdesc:ad123951a30b6d09d22c3fb62c1040ee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART, USART or LEUART device used.  <br /></td></tr>
+<tr class="separator:ad123951a30b6d09d22c3fb62c1040ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c0a4d9ed6350bd21345bee5c0d0cd31" id="r_a9c0a4d9ed6350bd21345bee5c0d0cd31"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c0a4d9ed6350bd21345bee5c0d0cd31">loc</a></td></tr>
+<tr class="memdesc:a9c0a4d9ed6350bd21345bee5c0d0cd31"><td class="mdescLeft">&#160;</td><td class="mdescRight">location of UART pins  <br /></td></tr>
+<tr class="separator:a9c0a4d9ed6350bd21345bee5c0d0cd31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b23acf3bc341d5b1b4cf7a770dd0c6a" id="r_a0b23acf3bc341d5b1b4cf7a770dd0c6a"><td class="memItemLeft" align="right" valign="top">CMU_Clock_TypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b23acf3bc341d5b1b4cf7a770dd0c6a">cmu</a></td></tr>
+<tr class="memdesc:a0b23acf3bc341d5b1b4cf7a770dd0c6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">the device CMU channel  <br /></td></tr>
+<tr class="separator:a0b23acf3bc341d5b1b4cf7a770dd0c6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a353aa24c87fa42e2b1f0652ab55a5c0d" id="r_a353aa24c87fa42e2b1f0652ab55a5c0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC2538__cmsis.html#ga4a0206df9604302e0741c1aa4ca1ded3">IRQn_Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a353aa24c87fa42e2b1f0652ab55a5c0d">irq</a></td></tr>
+<tr class="memdesc:a353aa24c87fa42e2b1f0652ab55a5c0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">the devices base IRQ channel  <br /></td></tr>
+<tr class="separator:a353aa24c87fa42e2b1f0652ab55a5c0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a609e66cad5c00637b60e3e55697b024d" id="r_a609e66cad5c00637b60e3e55697b024d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a609e66cad5c00637b60e3e55697b024d">txd</a></td></tr>
+<tr class="memdesc:a609e66cad5c00637b60e3e55697b024d"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO used as TxD pin.  <br /></td></tr>
+<tr class="separator:a609e66cad5c00637b60e3e55697b024d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d4e5d39306b9f4b079df8bc3e71655f" id="r_a7d4e5d39306b9f4b079df8bc3e71655f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d4e5d39306b9f4b079df8bc3e71655f">rxd</a></td></tr>
+<tr class="memdesc:a7d4e5d39306b9f4b079df8bc3e71655f"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO used as RxD pin.  <br /></td></tr>
+<tr class="separator:a7d4e5d39306b9f4b079df8bc3e71655f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21f65df2f6b5dade275e075f1c35add1" id="r_a21f65df2f6b5dade275e075f1c35add1"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21f65df2f6b5dade275e075f1c35add1">addr</a></td></tr>
+<tr class="memdesc:a21f65df2f6b5dade275e075f1c35add1"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART control register address.  <br /></td></tr>
+<tr class="separator:a21f65df2f6b5dade275e075f1c35add1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefcd2f4b3d7ff2f697e577f029ef4065" id="r_aefcd2f4b3d7ff2f697e577f029ef4065"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefcd2f4b3d7ff2f697e577f029ef4065">rx</a></td></tr>
+<tr class="memdesc:aefcd2f4b3d7ff2f697e577f029ef4065"><td class="mdescLeft">&#160;</td><td class="mdescRight">RX pin.  <br /></td></tr>
+<tr class="separator:aefcd2f4b3d7ff2f697e577f029ef4065"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f25f25f224441b5aaf1faffab01a1e1" id="r_a7f25f25f224441b5aaf1faffab01a1e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f25f25f224441b5aaf1faffab01a1e1">tx</a></td></tr>
+<tr class="memdesc:a7f25f25f224441b5aaf1faffab01a1e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">TX pin.  <br /></td></tr>
+<tr class="separator:a7f25f25f224441b5aaf1faffab01a1e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb2583f74e9caed3459ba0bc42fc5a87" id="r_abb2583f74e9caed3459ba0bc42fc5a87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="riscv__common_2include_2periph__cpu__common_8h.html#a82caf5aabee0ec03f04c8f57b776a065">irqn_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb2583f74e9caed3459ba0bc42fc5a87">isr_num</a></td></tr>
+<tr class="memdesc:abb2583f74e9caed3459ba0bc42fc5a87"><td class="mdescLeft">&#160;</td><td class="mdescRight">ISR source number.  <br /></td></tr>
+<tr class="separator:abb2583f74e9caed3459ba0bc42fc5a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20b2547ddf67f47812b1f7bd4642a439" id="r_a20b2547ddf67f47812b1f7bd4642a439"><td class="memItemLeft" align="right" valign="top">USART_Type *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20b2547ddf67f47812b1f7bd4642a439">dev</a></td></tr>
+<tr class="memdesc:a20b2547ddf67f47812b1f7bd4642a439"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART device base register address.  <br /></td></tr>
+<tr class="separator:a20b2547ddf67f47812b1f7bd4642a439"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa247b560155a028c20cc9c0031e3d7c4" id="r_aa247b560155a028c20cc9c0031e3d7c4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa247b560155a028c20cc9c0031e3d7c4">rcu_mask</a></td></tr>
+<tr class="memdesc:aa247b560155a028c20cc9c0031e3d7c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">bit in clock enable register  <br /></td></tr>
+<tr class="separator:aa247b560155a028c20cc9c0031e3d7c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf3b854ebcd374a630b97325708a6209" id="r_acf3b854ebcd374a630b97325708a6209"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf3b854ebcd374a630b97325708a6209">bus</a></td></tr>
+<tr class="memdesc:acf3b854ebcd374a630b97325708a6209"><td class="mdescLeft">&#160;</td><td class="mdescRight">APB bus.  <br /></td></tr>
+<tr class="separator:acf3b854ebcd374a630b97325708a6209"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fa7f8557395eb2179f9d330c5724d10" id="r_a4fa7f8557395eb2179f9d330c5724d10"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fa7f8557395eb2179f9d330c5724d10">irqn</a></td></tr>
+<tr class="memdesc:a4fa7f8557395eb2179f9d330c5724d10"><td class="mdescLeft">&#160;</td><td class="mdescRight">IRQ channel.  <br /></td></tr>
+<tr class="separator:a4fa7f8557395eb2179f9d330c5724d10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7bfd750eaf1be2e403098240eaa56b5" id="r_ad7bfd750eaf1be2e403098240eaa56b5"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7bfd750eaf1be2e403098240eaa56b5">freq</a></td></tr>
+<tr class="memdesc:ad7bfd750eaf1be2e403098240eaa56b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Module clock frequency, usually CLOCK_CORECLOCK or CLOCK_BUSCLOCK.  <br /></td></tr>
+<tr class="separator:ad7bfd750eaf1be2e403098240eaa56b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4384b6d6076470d6a6b1c87d912b501e" id="r_a4384b6d6076470d6a6b1c87d912b501e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4384b6d6076470d6a6b1c87d912b501e">pin_rx</a></td></tr>
+<tr class="memdesc:a4384b6d6076470d6a6b1c87d912b501e"><td class="mdescLeft">&#160;</td><td class="mdescRight">RX pin, GPIO_UNDEF disables RX.  <br /></td></tr>
+<tr class="separator:a4384b6d6076470d6a6b1c87d912b501e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a530a98033beb46f3c154e0e980401198" id="r_a530a98033beb46f3c154e0e980401198"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a530a98033beb46f3c154e0e980401198">pin_tx</a></td></tr>
+<tr class="memdesc:a530a98033beb46f3c154e0e980401198"><td class="mdescLeft">&#160;</td><td class="mdescRight">TX pin.  <br /></td></tr>
+<tr class="separator:a530a98033beb46f3c154e0e980401198"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2b1dfcff9ab1c99323112c57f8b8efd" id="r_af2b1dfcff9ab1c99323112c57f8b8efd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC2538__cmsis.html#ga4a0206df9604302e0741c1aa4ca1ded3">IRQn_Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2b1dfcff9ab1c99323112c57f8b8efd">irqn</a></td></tr>
+<tr class="memdesc:af2b1dfcff9ab1c99323112c57f8b8efd"><td class="mdescLeft">&#160;</td><td class="mdescRight">IRQ number for this module.  <br /></td></tr>
+<tr class="separator:af2b1dfcff9ab1c99323112c57f8b8efd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac423bff733d5a4274701defd8822f98b" id="r_ac423bff733d5a4274701defd8822f98b"><td class="memItemLeft" align="right" valign="top">volatile uint32_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac423bff733d5a4274701defd8822f98b">scgc_addr</a></td></tr>
+<tr class="memdesc:ac423bff733d5a4274701defd8822f98b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clock enable register, in SIM module.  <br /></td></tr>
+<tr class="separator:ac423bff733d5a4274701defd8822f98b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf40ee39727e2452fb12720a8ab05a28" id="r_aaf40ee39727e2452fb12720a8ab05a28"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf40ee39727e2452fb12720a8ab05a28">scgc_bit</a></td></tr>
+<tr class="memdesc:aaf40ee39727e2452fb12720a8ab05a28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clock enable bit, within the register.  <br /></td></tr>
+<tr class="separator:aaf40ee39727e2452fb12720a8ab05a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1ac2d6c4180498d240cc656c0ea96ff" id="r_ac1ac2d6c4180498d240cc656c0ea96ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="kinetis_2include_2periph__cpu_8h.html#a93f7c73d772490ab4d22bda8fd0aa5a6">uart_mode_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1ac2d6c4180498d240cc656c0ea96ff">mode</a></td></tr>
+<tr class="memdesc:ac1ac2d6c4180498d240cc656c0ea96ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART mode: data bits, parity, stop bits.  <br /></td></tr>
+<tr class="separator:ac1ac2d6c4180498d240cc656c0ea96ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1916c5e6a856f84747b44179304844d2" id="r_a1916c5e6a856f84747b44179304844d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cpu__uart_8h.html#a5df130ef5152041e30a95957a5e4ca64">uart_type_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1916c5e6a856f84747b44179304844d2">type</a></td></tr>
+<tr class="memdesc:a1916c5e6a856f84747b44179304844d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hardware module type (KINETIS_UART or KINETIS_LPUART)  <br /></td></tr>
+<tr class="separator:a1916c5e6a856f84747b44179304844d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b00a96e712924735c52f9d784146def" id="r_a2b00a96e712924735c52f9d784146def"><td class="memItemLeft" align="right" valign="top">LPC_UART_TypeDef *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b00a96e712924735c52f9d784146def">dev</a></td></tr>
+<tr class="memdesc:a2b00a96e712924735c52f9d784146def"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the UART device  <br /></td></tr>
+<tr class="separator:a2b00a96e712924735c52f9d784146def"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e9eac676dceb1c44f0005057aac90ea" id="r_a7e9eac676dceb1c44f0005057aac90ea"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e9eac676dceb1c44f0005057aac90ea">irq_rx</a></td></tr>
+<tr class="memdesc:a7e9eac676dceb1c44f0005057aac90ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">RX IRQ number.  <br /></td></tr>
+<tr class="separator:a7e9eac676dceb1c44f0005057aac90ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b1eb99498eed32fe4c8be58ca7bd2ed" id="r_a9b1eb99498eed32fe4c8be58ca7bd2ed"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b1eb99498eed32fe4c8be58ca7bd2ed">clk_offset</a></td></tr>
+<tr class="memdesc:a9b1eb99498eed32fe4c8be58ca7bd2ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">The offset of the periph in the clk sel.  <br /></td></tr>
+<tr class="separator:a9b1eb99498eed32fe4c8be58ca7bd2ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0486efae3086dd758dd67ba6671fe1d7" id="r_a0486efae3086dd758dd67ba6671fe1d7"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0486efae3086dd758dd67ba6671fe1d7">pinsel</a></td></tr>
+<tr class="memdesc:a0486efae3086dd758dd67ba6671fe1d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">PINSEL# of the RX and TX pin.  <br /></td></tr>
+<tr class="separator:a0486efae3086dd758dd67ba6671fe1d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01152c9d65941d157a940bfd1cc3f483" id="r_a01152c9d65941d157a940bfd1cc3f483"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01152c9d65941d157a940bfd1cc3f483">pinsel_shift</a></td></tr>
+<tr class="memdesc:a01152c9d65941d157a940bfd1cc3f483"><td class="mdescLeft">&#160;</td><td class="mdescRight">TX/RX bitshift of the PINSEL# register.  <br /></td></tr>
+<tr class="separator:a01152c9d65941d157a940bfd1cc3f483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6b208337925007d84959451d4ec8862" id="r_ab6b208337925007d84959451d4ec8862"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6b208337925007d84959451d4ec8862">pinsel_af</a></td></tr>
+<tr class="memdesc:ab6b208337925007d84959451d4ec8862"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alternate function of the PINSEL# register.  <br /></td></tr>
+<tr class="separator:ab6b208337925007d84959451d4ec8862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e377d856bf2b62664867165039c4e50" id="r_a8e377d856bf2b62664867165039c4e50"><td class="memItemLeft" align="right" valign="top">lpc23xx_uart_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e377d856bf2b62664867165039c4e50">dev</a></td></tr>
+<tr class="memdesc:a8e377d856bf2b62664867165039c4e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the UART device  <br /></td></tr>
+<tr class="separator:a8e377d856bf2b62664867165039c4e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb9de5c74ddca86cfb16b0abe85c246e" id="r_abb9de5c74ddca86cfb16b0abe85c246e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb9de5c74ddca86cfb16b0abe85c246e">irq_prio_rx</a></td></tr>
+<tr class="memdesc:abb9de5c74ddca86cfb16b0abe85c246e"><td class="mdescLeft">&#160;</td><td class="mdescRight">priority of the RX IRQ  <br /></td></tr>
+<tr class="separator:abb9de5c74ddca86cfb16b0abe85c246e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a636c3019150f60239b814e6930523596" id="r_a636c3019150f60239b814e6930523596"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a636c3019150f60239b814e6930523596">pinsel_rx</a></td></tr>
+<tr class="memdesc:a636c3019150f60239b814e6930523596"><td class="mdescLeft">&#160;</td><td class="mdescRight">PINSEL# of the RX pin <br  />
+  <br /></td></tr>
+<tr class="separator:a636c3019150f60239b814e6930523596"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1ab5a549475d570324e8f2c473c7a29" id="r_ab1ab5a549475d570324e8f2c473c7a29"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1ab5a549475d570324e8f2c473c7a29">pinsel_tx</a></td></tr>
+<tr class="memdesc:ab1ab5a549475d570324e8f2c473c7a29"><td class="mdescLeft">&#160;</td><td class="mdescRight">PINSEL# of the TX pin <br  />
+  <br /></td></tr>
+<tr class="separator:ab1ab5a549475d570324e8f2c473c7a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af67f19bf407420ca9290904177b58712" id="r_af67f19bf407420ca9290904177b58712"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af67f19bf407420ca9290904177b58712">pinsel_msk_rx</a></td></tr>
+<tr class="memdesc:af67f19bf407420ca9290904177b58712"><td class="mdescLeft">&#160;</td><td class="mdescRight">RX PINSEL Mask <br  />
+  <br /></td></tr>
+<tr class="separator:af67f19bf407420ca9290904177b58712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94ae6344d844f9efb0cac7aaf656305a" id="r_a94ae6344d844f9efb0cac7aaf656305a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94ae6344d844f9efb0cac7aaf656305a">pinsel_msk_tx</a></td></tr>
+<tr class="memdesc:a94ae6344d844f9efb0cac7aaf656305a"><td class="mdescLeft">&#160;</td><td class="mdescRight">TX PINSEL Mask <br  />
+  <br /></td></tr>
+<tr class="separator:a94ae6344d844f9efb0cac7aaf656305a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97a6c6d5de5cb7e7df88031666151b61" id="r_a97a6c6d5de5cb7e7df88031666151b61"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structmsp430__usci__uart__params__t.html">msp430_usci_uart_params_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97a6c6d5de5cb7e7df88031666151b61">uart</a></td></tr>
+<tr class="memdesc:a97a6c6d5de5cb7e7df88031666151b61"><td class="mdescLeft">&#160;</td><td class="mdescRight">The UART configuration to use.  <br /></td></tr>
+<tr class="separator:a97a6c6d5de5cb7e7df88031666151b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac86b93eae7a064d75d780231f5368387" id="r_ac86b93eae7a064d75d780231f5368387"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structmsp430__usart__uart__params__t.html">msp430_usart_uart_params_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac86b93eae7a064d75d780231f5368387">uart</a></td></tr>
+<tr class="memdesc:ac86b93eae7a064d75d780231f5368387"><td class="mdescLeft">&#160;</td><td class="mdescRight">The UART configuration to use.  <br /></td></tr>
+<tr class="separator:ac86b93eae7a064d75d780231f5368387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b373e14653a62ed040aff106494d25f" id="r_a8b373e14653a62ed040aff106494d25f"><td class="memItemLeft" align="right" valign="top">NRF_UART_Type *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b373e14653a62ed040aff106494d25f">dev</a></td></tr>
+<tr class="memdesc:a8b373e14653a62ed040aff106494d25f"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART device base register address.  <br /></td></tr>
+<tr class="separator:a8b373e14653a62ed040aff106494d25f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73c8caf256abef3f8cd1db783e142545" id="r_a73c8caf256abef3f8cd1db783e142545"><td class="memItemLeft" align="right" valign="top">UART0_Type *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73c8caf256abef3f8cd1db783e142545">dev</a></td></tr>
+<tr class="memdesc:a73c8caf256abef3f8cd1db783e142545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base address of the I/O registers of the device.  <br /></td></tr>
+<tr class="separator:a73c8caf256abef3f8cd1db783e142545"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaae53b16cba6e807a02015487adbcd1c" id="r_aaae53b16cba6e807a02015487adbcd1c"><td class="memItemLeft" align="right" valign="top">SercomUsart *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaae53b16cba6e807a02015487adbcd1c">dev</a></td></tr>
+<tr class="memdesc:aaae53b16cba6e807a02015487adbcd1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the used UART device  <br /></td></tr>
+<tr class="separator:aaae53b16cba6e807a02015487adbcd1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23fca9385395d60e936d1dc0f6b87883" id="r_a23fca9385395d60e936d1dc0f6b87883"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0">gpio_mux_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23fca9385395d60e936d1dc0f6b87883">mux</a></td></tr>
+<tr class="memdesc:a23fca9385395d60e936d1dc0f6b87883"><td class="mdescLeft">&#160;</td><td class="mdescRight">alternative function for pins  <br /></td></tr>
+<tr class="separator:a23fca9385395d60e936d1dc0f6b87883"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1f6122e636aa7925f95fdc0c6668866" id="r_ab1f6122e636aa7925f95fdc0c6668866"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a021fb5a98f716e7efb8754e405c81199">uart_rxpad_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1f6122e636aa7925f95fdc0c6668866">rx_pad</a></td></tr>
+<tr class="memdesc:ab1f6122e636aa7925f95fdc0c6668866"><td class="mdescLeft">&#160;</td><td class="mdescRight">pad selection for RX line  <br /></td></tr>
+<tr class="separator:ab1f6122e636aa7925f95fdc0c6668866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa947df65890d8c7040facae096b4f1b1" id="r_aa947df65890d8c7040facae096b4f1b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a9a4da11aea6791b96ad83a061b0f576d">uart_txpad_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa947df65890d8c7040facae096b4f1b1">tx_pad</a></td></tr>
+<tr class="memdesc:aa947df65890d8c7040facae096b4f1b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">pad selection for TX line  <br /></td></tr>
+<tr class="separator:aa947df65890d8c7040facae096b4f1b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab641a7810cb2896e9fb188ea2a250816" id="r_ab641a7810cb2896e9fb188ea2a250816"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a836e09ffaa5767111e9d10b38a17fd75">uart_flag_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab641a7810cb2896e9fb188ea2a250816">flags</a></td></tr>
+<tr class="memdesc:ab641a7810cb2896e9fb188ea2a250816"><td class="mdescLeft">&#160;</td><td class="mdescRight">set optional SERCOM flags  <br /></td></tr>
+<tr class="separator:ab641a7810cb2896e9fb188ea2a250816"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e73c6b374711c0e45671593c30103fc" id="r_a3e73c6b374711c0e45671593c30103fc"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e73c6b374711c0e45671593c30103fc">gclk_src</a></td></tr>
+<tr class="memdesc:a3e73c6b374711c0e45671593c30103fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">GCLK source which supplys SERCOM.  <br /></td></tr>
+<tr class="separator:a3e73c6b374711c0e45671593c30103fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1e5ab7bd87f32f5703d9a65eac71ad3" id="r_ae1e5ab7bd87f32f5703d9a65eac71ad3"><td class="memItemLeft" align="right" valign="top">Uart *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1e5ab7bd87f32f5703d9a65eac71ad3">dev</a></td></tr>
+<tr class="memdesc:ae1e5ab7bd87f32f5703d9a65eac71ad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">U(S)ART device used.  <br /></td></tr>
+<tr class="separator:ae1e5ab7bd87f32f5703d9a65eac71ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba60a1bae66ee337b9a1476bb71952d4" id="r_aba60a1bae66ee337b9a1476bb71952d4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba60a1bae66ee337b9a1476bb71952d4">pmc_id</a></td></tr>
+<tr class="memdesc:aba60a1bae66ee337b9a1476bb71952d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">bit in the PMC register of the device  <br /></td></tr>
+<tr class="separator:aba60a1bae66ee337b9a1476bb71952d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93f3d857c252066d571b31b0409bf5c4" id="r_a93f3d857c252066d571b31b0409bf5c4"><td class="memItemLeft" align="right" valign="top">USART_TypeDef *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93f3d857c252066d571b31b0409bf5c4">dev</a></td></tr>
+<tr class="memdesc:a93f3d857c252066d571b31b0409bf5c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART device base register address.  <br /></td></tr>
+<tr class="separator:a93f3d857c252066d571b31b0409bf5c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a825d04c8366de6946c9ee1cb019c9b0c" id="r_a825d04c8366de6946c9ee1cb019c9b0c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a825d04c8366de6946c9ee1cb019c9b0c">rcc_mask</a></td></tr>
+<tr class="memdesc:a825d04c8366de6946c9ee1cb019c9b0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">bit in clock enable register  <br /></td></tr>
+<tr class="separator:a825d04c8366de6946c9ee1cb019c9b0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5534e71b162b89034c0b021102c643e4" id="r_a5534e71b162b89034c0b021102c643e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gd32v_2include_2periph__cpu_8h.html#a06ed6aad7d9b996fee989c31338138cd">gpio_af_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5534e71b162b89034c0b021102c643e4">rx_af</a></td></tr>
+<tr class="memdesc:a5534e71b162b89034c0b021102c643e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">alternate function for RX pin  <br /></td></tr>
+<tr class="separator:a5534e71b162b89034c0b021102c643e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac308620ca928ccd79894f11b11d9e0ac" id="r_ac308620ca928ccd79894f11b11d9e0ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gd32v_2include_2periph__cpu_8h.html#a06ed6aad7d9b996fee989c31338138cd">gpio_af_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac308620ca928ccd79894f11b11d9e0ac">tx_af</a></td></tr>
+<tr class="memdesc:ac308620ca928ccd79894f11b11d9e0ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">alternate function for TX pin  <br /></td></tr>
+<tr class="separator:ac308620ca928ccd79894f11b11d9e0ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a21f65df2f6b5dade275e075f1c35add1" name="a21f65df2f6b5dade275e075f1c35add1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21f65df2f6b5dade275e075f1c35add1">&#9670;&#160;</a></span>addr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t uart_conf_t::addr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UART control register address. </p>
+
+<p class="definition">Definition at line <a class="el" href="fe310_2include_2periph__cpu_8h_source.html#l00063">63</a> of file <a class="el" href="fe310_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="acf3b854ebcd374a630b97325708a6209" name="acf3b854ebcd374a630b97325708a6209"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf3b854ebcd374a630b97325708a6209">&#9670;&#160;</a></span>bus</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t uart_conf_t::bus</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>APB bus. </p>
+
+<p class="definition">Definition at line <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html#l00335">335</a> of file <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a9b1eb99498eed32fe4c8be58ca7bd2ed" name="a9b1eb99498eed32fe4c8be58ca7bd2ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b1eb99498eed32fe4c8be58ca7bd2ed">&#9670;&#160;</a></span>clk_offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t uart_conf_t::clk_offset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The offset of the periph in the clk sel. </p>
+
+<p class="definition">Definition at line <a class="el" href="lpc1768_2include_2periph__cpu_8h_source.html#l00084">84</a> of file <a class="el" href="lpc1768_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a0b23acf3bc341d5b1b4cf7a770dd0c6a" name="a0b23acf3bc341d5b1b4cf7a770dd0c6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b23acf3bc341d5b1b4cf7a770dd0c6a">&#9670;&#160;</a></span>cmu</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CMU_Clock_TypeDef uart_conf_t::cmu</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>the device CMU channel </p>
+
+<p class="definition">Definition at line <a class="el" href="efm32_2include_2periph__cpu_8h_source.html#l00660">660</a> of file <a class="el" href="efm32_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a1f5530ae549c109d04f0ad3575644bb7" name="a1f5530ae549c109d04f0ad3575644bb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f5530ae549c109d04f0ad3575644bb7">&#9670;&#160;</a></span>dev <span class="overload">[1/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">USART_Type * uart_conf_t::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pointer to the used UART device </p>
+<p>Pointer to module hardware registers. </p>
+
+<p class="definition">Definition at line <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html#l00219">219</a> of file <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="ac5ddddccb522b26c13e57a0a71c379bc" name="ac5ddddccb522b26c13e57a0a71c379bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5ddddccb522b26c13e57a0a71c379bc">&#9670;&#160;</a></span>dev <span class="overload">[2/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcc2538__uart__t.html">cc2538_uart_t</a>* uart_conf_t::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pointer to the used UART device </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538_2include_2periph__cpu_8h_source.html#l00167">167</a> of file <a class="el" href="cc2538_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="ad123951a30b6d09d22c3fb62c1040ee8" name="ad123951a30b6d09d22c3fb62c1040ee8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad123951a30b6d09d22c3fb62c1040ee8">&#9670;&#160;</a></span>dev <span class="overload">[3/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* uart_conf_t::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UART, USART or LEUART device used. </p>
+<p>Pointer to module hardware registers. </p>
+
+<p class="definition">Definition at line <a class="el" href="efm32_2include_2periph__cpu_8h_source.html#l00654">654</a> of file <a class="el" href="efm32_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a20b2547ddf67f47812b1f7bd4642a439" name="a20b2547ddf67f47812b1f7bd4642a439"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20b2547ddf67f47812b1f7bd4642a439">&#9670;&#160;</a></span>dev <span class="overload">[4/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">USART_Type* uart_conf_t::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UART device base register address. </p>
+<p>Pointer to module hardware registers. </p>
+
+<p class="definition">Definition at line <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html#l00331">331</a> of file <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a2b00a96e712924735c52f9d784146def" name="a2b00a96e712924735c52f9d784146def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b00a96e712924735c52f9d784146def">&#9670;&#160;</a></span>dev <span class="overload">[5/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LPC_UART_TypeDef* uart_conf_t::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pointer to the UART device </p>
+
+<p class="definition">Definition at line <a class="el" href="lpc1768_2include_2periph__cpu_8h_source.html#l00082">82</a> of file <a class="el" href="lpc1768_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a8e377d856bf2b62664867165039c4e50" name="a8e377d856bf2b62664867165039c4e50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e377d856bf2b62664867165039c4e50">&#9670;&#160;</a></span>dev <span class="overload">[6/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lpc23xx_uart_t* uart_conf_t::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pointer to the UART device </p>
+
+<p class="definition">Definition at line <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html#l00106">106</a> of file <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a8b373e14653a62ed040aff106494d25f" name="a8b373e14653a62ed040aff106494d25f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b373e14653a62ed040aff106494d25f">&#9670;&#160;</a></span>dev <span class="overload">[7/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NRF_UART_Type* uart_conf_t::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UART device base register address. </p>
+
+<p class="definition">Definition at line <a class="el" href="nrf5x__common_2include_2periph__cpu__common_8h_source.html#l00394">394</a> of file <a class="el" href="nrf5x__common_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="a73c8caf256abef3f8cd1db783e142545" name="a73c8caf256abef3f8cd1db783e142545"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73c8caf256abef3f8cd1db783e142545">&#9670;&#160;</a></span>dev <span class="overload">[8/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UART0_Type* uart_conf_t::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Base address of the I/O registers of the device. </p>
+
+<p class="definition">Definition at line <a class="el" href="rpx0xx_2include_2periph__cpu_8h_source.html#l00434">434</a> of file <a class="el" href="rpx0xx_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="aaae53b16cba6e807a02015487adbcd1c" name="aaae53b16cba6e807a02015487adbcd1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaae53b16cba6e807a02015487adbcd1c">&#9670;&#160;</a></span>dev <span class="overload">[9/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SercomUsart* uart_conf_t::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pointer to the used UART device </p>
+
+<p class="definition">Definition at line <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00340">340</a> of file <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="ae1e5ab7bd87f32f5703d9a65eac71ad3" name="ae1e5ab7bd87f32f5703d9a65eac71ad3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1e5ab7bd87f32f5703d9a65eac71ad3">&#9670;&#160;</a></span>dev <span class="overload">[10/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Uart* uart_conf_t::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>U(S)ART device used. </p>
+
+<p class="definition">Definition at line <a class="el" href="sam3_2include_2periph__cpu_8h_source.html#l00207">207</a> of file <a class="el" href="sam3_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a93f3d857c252066d571b31b0409bf5c4" name="a93f3d857c252066d571b31b0409bf5c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93f3d857c252066d571b31b0409bf5c4">&#9670;&#160;</a></span>dev <span class="overload">[11/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">USART_TypeDef* uart_conf_t::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UART device base register address. </p>
+
+<p class="definition">Definition at line <a class="el" href="cpu__uart_8h_source.html#l00105">105</a> of file <a class="el" href="cpu__uart_8h_source.html">cpu_uart.h</a>.</p>
+
+</div>
+</div>
+<a id="ab0f6ee813a300b3d99dc278801ceacdf" name="ab0f6ee813a300b3d99dc278801ceacdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0f6ee813a300b3d99dc278801ceacdf">&#9670;&#160;</a></span>dre_int_lvl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="atxmega_2include_2periph__cpu_8h.html#aa375cff8e60c9488def9f87ec31d962b">cpu_int_lvl_t</a> uart_conf_t::dre_int_lvl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Data Registry Empty Interrupt Level. </p>
+
+<p class="definition">Definition at line <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html#l00229">229</a> of file <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="ab641a7810cb2896e9fb188ea2a250816" name="ab641a7810cb2896e9fb188ea2a250816"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab641a7810cb2896e9fb188ea2a250816">&#9670;&#160;</a></span>flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a836e09ffaa5767111e9d10b38a17fd75">uart_flag_t</a> uart_conf_t::flags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set optional SERCOM flags </p>
+
+<p class="definition">Definition at line <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00350">350</a> of file <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="ad7bfd750eaf1be2e403098240eaa56b5" name="ad7bfd750eaf1be2e403098240eaa56b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7bfd750eaf1be2e403098240eaa56b5">&#9670;&#160;</a></span>freq</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t uart_conf_t::freq</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Module clock frequency, usually CLOCK_CORECLOCK or CLOCK_BUSCLOCK. </p>
+
+<p class="definition">Definition at line <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html#l00547">547</a> of file <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a3e73c6b374711c0e45671593c30103fc" name="a3e73c6b374711c0e45671593c30103fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e73c6b374711c0e45671593c30103fc">&#9670;&#160;</a></span>gclk_src</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t uart_conf_t::gclk_src</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GCLK source which supplys SERCOM. </p>
+
+<p class="definition">Definition at line <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00351">351</a> of file <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="a353aa24c87fa42e2b1f0652ab55a5c0d" name="a353aa24c87fa42e2b1f0652ab55a5c0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a353aa24c87fa42e2b1f0652ab55a5c0d">&#9670;&#160;</a></span>irq</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC2538__cmsis.html#ga4a0206df9604302e0741c1aa4ca1ded3">IRQn_Type</a> uart_conf_t::irq</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>the devices base IRQ channel </p>
+
+<p class="definition">Definition at line <a class="el" href="efm32_2include_2periph__cpu_8h_source.html#l00661">661</a> of file <a class="el" href="efm32_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="abb9de5c74ddca86cfb16b0abe85c246e" name="abb9de5c74ddca86cfb16b0abe85c246e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb9de5c74ddca86cfb16b0abe85c246e">&#9670;&#160;</a></span>irq_prio_rx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t uart_conf_t::irq_prio_rx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>priority of the RX IRQ </p>
+
+<p class="definition">Definition at line <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html#l00107">107</a> of file <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a7e9eac676dceb1c44f0005057aac90ea" name="a7e9eac676dceb1c44f0005057aac90ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e9eac676dceb1c44f0005057aac90ea">&#9670;&#160;</a></span>irq_rx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t uart_conf_t::irq_rx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RX IRQ number. </p>
+
+<p class="definition">Definition at line <a class="el" href="lpc1768_2include_2periph__cpu_8h_source.html#l00083">83</a> of file <a class="el" href="lpc1768_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a4fa7f8557395eb2179f9d330c5724d10" name="a4fa7f8557395eb2179f9d330c5724d10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fa7f8557395eb2179f9d330c5724d10">&#9670;&#160;</a></span>irqn <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t uart_conf_t::irqn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>IRQ channel. </p>
+<p>IRQ number of the UART interface.</p>
+<p>interrupt number of the device </p>
+
+<p class="definition">Definition at line <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html#l00336">336</a> of file <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="af2b1dfcff9ab1c99323112c57f8b8efd" name="af2b1dfcff9ab1c99323112c57f8b8efd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2b1dfcff9ab1c99323112c57f8b8efd">&#9670;&#160;</a></span>irqn <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC2538__cmsis.html#ga4a0206df9604302e0741c1aa4ca1ded3">IRQn_Type</a> uart_conf_t::irqn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>IRQ number for this module. </p>
+<p>IRQ number of the UART interface. </p>
+
+<p class="definition">Definition at line <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html#l00559">559</a> of file <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="abb2583f74e9caed3459ba0bc42fc5a87" name="abb2583f74e9caed3459ba0bc42fc5a87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb2583f74e9caed3459ba0bc42fc5a87">&#9670;&#160;</a></span>isr_num</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="riscv__common_2include_2periph__cpu__common_8h.html#a82caf5aabee0ec03f04c8f57b776a065">irqn_t</a> uart_conf_t::isr_num</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ISR source number. </p>
+
+<p class="definition">Definition at line <a class="el" href="fe310_2include_2periph__cpu_8h_source.html#l00066">66</a> of file <a class="el" href="fe310_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a9c0a4d9ed6350bd21345bee5c0d0cd31" name="a9c0a4d9ed6350bd21345bee5c0d0cd31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c0a4d9ed6350bd21345bee5c0d0cd31">&#9670;&#160;</a></span>loc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t uart_conf_t::loc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>location of UART pins </p>
+
+<p class="definition">Definition at line <a class="el" href="efm32_2include_2periph__cpu_8h_source.html#l00658">658</a> of file <a class="el" href="efm32_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="ac1ac2d6c4180498d240cc656c0ea96ff" name="ac1ac2d6c4180498d240cc656c0ea96ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1ac2d6c4180498d240cc656c0ea96ff">&#9670;&#160;</a></span>mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="kinetis_2include_2periph__cpu_8h.html#a93f7c73d772490ab4d22bda8fd0aa5a6">uart_mode_t</a> uart_conf_t::mode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UART mode: data bits, parity, stop bits. </p>
+
+<p class="definition">Definition at line <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html#l00562">562</a> of file <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a23fca9385395d60e936d1dc0f6b87883" name="a23fca9385395d60e936d1dc0f6b87883"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23fca9385395d60e936d1dc0f6b87883">&#9670;&#160;</a></span>mux</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0">gpio_mux_t</a> uart_conf_t::mux</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>alternative function for pins </p>
+<p>MUX used for pins. </p>
+
+<p class="definition">Definition at line <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00347">347</a> of file <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="a4384b6d6076470d6a6b1c87d912b501e" name="a4384b6d6076470d6a6b1c87d912b501e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4384b6d6076470d6a6b1c87d912b501e">&#9670;&#160;</a></span>pin_rx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> uart_conf_t::pin_rx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RX pin, GPIO_UNDEF disables RX. </p>
+
+<p class="definition">Definition at line <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html#l00548">548</a> of file <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a530a98033beb46f3c154e0e980401198" name="a530a98033beb46f3c154e0e980401198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a530a98033beb46f3c154e0e980401198">&#9670;&#160;</a></span>pin_tx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> uart_conf_t::pin_tx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TX pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html#l00549">549</a> of file <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a0486efae3086dd758dd67ba6671fe1d7" name="a0486efae3086dd758dd67ba6671fe1d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0486efae3086dd758dd67ba6671fe1d7">&#9670;&#160;</a></span>pinsel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t uart_conf_t::pinsel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PINSEL# of the RX and TX pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="lpc1768_2include_2periph__cpu_8h_source.html#l00085">85</a> of file <a class="el" href="lpc1768_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="ab6b208337925007d84959451d4ec8862" name="ab6b208337925007d84959451d4ec8862"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6b208337925007d84959451d4ec8862">&#9670;&#160;</a></span>pinsel_af</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t uart_conf_t::pinsel_af</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alternate function of the PINSEL# register. </p>
+
+<p class="definition">Definition at line <a class="el" href="lpc1768_2include_2periph__cpu_8h_source.html#l00087">87</a> of file <a class="el" href="lpc1768_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="af67f19bf407420ca9290904177b58712" name="af67f19bf407420ca9290904177b58712"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af67f19bf407420ca9290904177b58712">&#9670;&#160;</a></span>pinsel_msk_rx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t uart_conf_t::pinsel_msk_rx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RX PINSEL Mask <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html#l00110">110</a> of file <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a94ae6344d844f9efb0cac7aaf656305a" name="a94ae6344d844f9efb0cac7aaf656305a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94ae6344d844f9efb0cac7aaf656305a">&#9670;&#160;</a></span>pinsel_msk_tx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t uart_conf_t::pinsel_msk_tx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TX PINSEL Mask <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html#l00111">111</a> of file <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a636c3019150f60239b814e6930523596" name="a636c3019150f60239b814e6930523596"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a636c3019150f60239b814e6930523596">&#9670;&#160;</a></span>pinsel_rx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t uart_conf_t::pinsel_rx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PINSEL# of the RX pin <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html#l00108">108</a> of file <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a01152c9d65941d157a940bfd1cc3f483" name="a01152c9d65941d157a940bfd1cc3f483"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01152c9d65941d157a940bfd1cc3f483">&#9670;&#160;</a></span>pinsel_shift</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t uart_conf_t::pinsel_shift</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TX/RX bitshift of the PINSEL# register. </p>
+
+<p class="definition">Definition at line <a class="el" href="lpc1768_2include_2periph__cpu_8h_source.html#l00086">86</a> of file <a class="el" href="lpc1768_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="ab1ab5a549475d570324e8f2c473c7a29" name="ab1ab5a549475d570324e8f2c473c7a29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1ab5a549475d570324e8f2c473c7a29">&#9670;&#160;</a></span>pinsel_tx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t uart_conf_t::pinsel_tx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PINSEL# of the TX pin <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html#l00109">109</a> of file <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="aba60a1bae66ee337b9a1476bb71952d4" name="aba60a1bae66ee337b9a1476bb71952d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba60a1bae66ee337b9a1476bb71952d4">&#9670;&#160;</a></span>pmc_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t uart_conf_t::pmc_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>bit in the PMC register of the device </p>
+
+<p class="definition">Definition at line <a class="el" href="sam3_2include_2periph__cpu_8h_source.html#l00211">211</a> of file <a class="el" href="sam3_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a77945c380a49aa8bbc910a7a9f9ed3f7" name="a77945c380a49aa8bbc910a7a9f9ed3f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77945c380a49aa8bbc910a7a9f9ed3f7">&#9670;&#160;</a></span>pwr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="atxmega_2include_2periph__cpu_8h.html#a84dd39eddad92f5ea43b0368b47ed1d8">pwr_reduction_t</a> uart_conf_t::pwr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Power Management. </p>
+
+<p class="definition">Definition at line <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html#l00220">220</a> of file <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a825d04c8366de6946c9ee1cb019c9b0c" name="a825d04c8366de6946c9ee1cb019c9b0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a825d04c8366de6946c9ee1cb019c9b0c">&#9670;&#160;</a></span>rcc_mask</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t uart_conf_t::rcc_mask</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>bit in clock enable register </p>
+
+<p class="definition">Definition at line <a class="el" href="cpu__uart_8h_source.html#l00106">106</a> of file <a class="el" href="cpu__uart_8h_source.html">cpu_uart.h</a>.</p>
+
+</div>
+</div>
+<a id="aa247b560155a028c20cc9c0031e3d7c4" name="aa247b560155a028c20cc9c0031e3d7c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa247b560155a028c20cc9c0031e3d7c4">&#9670;&#160;</a></span>rcu_mask</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t uart_conf_t::rcu_mask</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>bit in clock enable register </p>
+
+<p class="definition">Definition at line <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html#l00332">332</a> of file <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="aefcd2f4b3d7ff2f697e577f029ef4065" name="aefcd2f4b3d7ff2f697e577f029ef4065"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefcd2f4b3d7ff2f697e577f029ef4065">&#9670;&#160;</a></span>rx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> uart_conf_t::rx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RX pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="fe310_2include_2periph__cpu_8h_source.html#l00064">64</a> of file <a class="el" href="fe310_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a5534e71b162b89034c0b021102c643e4" name="a5534e71b162b89034c0b021102c643e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5534e71b162b89034c0b021102c643e4">&#9670;&#160;</a></span>rx_af</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gd32v_2include_2periph__cpu_8h.html#a06ed6aad7d9b996fee989c31338138cd">gpio_af_t</a> uart_conf_t::rx_af</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>alternate function for RX pin </p>
+
+<p class="definition">Definition at line <a class="el" href="cpu__uart_8h_source.html#l00110">110</a> of file <a class="el" href="cpu__uart_8h_source.html">cpu_uart.h</a>.</p>
+
+</div>
+</div>
+<a id="adf027d77c033ef03e8d7b3b462c554d1" name="adf027d77c033ef03e8d7b3b462c554d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf027d77c033ef03e8d7b3b462c554d1">&#9670;&#160;</a></span>rx_int_lvl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="atxmega_2include_2periph__cpu_8h.html#aa375cff8e60c9488def9f87ec31d962b">cpu_int_lvl_t</a> uart_conf_t::rx_int_lvl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RX Complete Interrupt Level. </p>
+
+<p class="definition">Definition at line <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html#l00227">227</a> of file <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="ab1f6122e636aa7925f95fdc0c6668866" name="ab1f6122e636aa7925f95fdc0c6668866"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1f6122e636aa7925f95fdc0c6668866">&#9670;&#160;</a></span>rx_pad</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a021fb5a98f716e7efb8754e405c81199">uart_rxpad_t</a> uart_conf_t::rx_pad</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pad selection for RX line </p>
+
+<p class="definition">Definition at line <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00348">348</a> of file <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="ac57738979d50769e007af9330599ddcf" name="ac57738979d50769e007af9330599ddcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac57738979d50769e007af9330599ddcf">&#9670;&#160;</a></span>rx_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> uart_conf_t::rx_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin used for RX </p>
+<p>GPIO pin to use for RX.</p>
+<p>RX pin, GPIO_UNDEF disables RX.</p>
+<p>RX pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html#l00221">221</a> of file <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a7d4e5d39306b9f4b079df8bc3e71655f" name="a7d4e5d39306b9f4b079df8bc3e71655f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d4e5d39306b9f4b079df8bc3e71655f">&#9670;&#160;</a></span>rxd</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> uart_conf_t::rxd</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO used as RxD pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="esp32_2include_2periph__cpu_8h_source.html#l00978">978</a> of file <a class="el" href="esp32_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="ac423bff733d5a4274701defd8822f98b" name="ac423bff733d5a4274701defd8822f98b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac423bff733d5a4274701defd8822f98b">&#9670;&#160;</a></span>scgc_addr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint32_t* uart_conf_t::scgc_addr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clock enable register, in SIM module. </p>
+
+<p class="definition">Definition at line <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html#l00560">560</a> of file <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="aaf40ee39727e2452fb12720a8ab05a28" name="aaf40ee39727e2452fb12720a8ab05a28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf40ee39727e2452fb12720a8ab05a28">&#9670;&#160;</a></span>scgc_bit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t uart_conf_t::scgc_bit</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clock enable bit, within the register. </p>
+
+<p class="definition">Definition at line <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html#l00561">561</a> of file <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a7f25f25f224441b5aaf1faffab01a1e1" name="a7f25f25f224441b5aaf1faffab01a1e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f25f25f224441b5aaf1faffab01a1e1">&#9670;&#160;</a></span>tx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> uart_conf_t::tx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TX pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="fe310_2include_2periph__cpu_8h_source.html#l00065">65</a> of file <a class="el" href="fe310_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="ac308620ca928ccd79894f11b11d9e0ac" name="ac308620ca928ccd79894f11b11d9e0ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac308620ca928ccd79894f11b11d9e0ac">&#9670;&#160;</a></span>tx_af</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gd32v_2include_2periph__cpu_8h.html#a06ed6aad7d9b996fee989c31338138cd">gpio_af_t</a> uart_conf_t::tx_af</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>alternate function for TX pin </p>
+
+<p class="definition">Definition at line <a class="el" href="cpu__uart_8h_source.html#l00111">111</a> of file <a class="el" href="cpu__uart_8h_source.html">cpu_uart.h</a>.</p>
+
+</div>
+</div>
+<a id="a5806fd6b1bdf648df90ca8c40bb0e13b" name="a5806fd6b1bdf648df90ca8c40bb0e13b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5806fd6b1bdf648df90ca8c40bb0e13b">&#9670;&#160;</a></span>tx_int_lvl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="atxmega_2include_2periph__cpu_8h.html#aa375cff8e60c9488def9f87ec31d962b">cpu_int_lvl_t</a> uart_conf_t::tx_int_lvl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TX Complete Interrupt Level. </p>
+
+<p class="definition">Definition at line <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html#l00228">228</a> of file <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="aa947df65890d8c7040facae096b4f1b1" name="aa947df65890d8c7040facae096b4f1b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa947df65890d8c7040facae096b4f1b1">&#9670;&#160;</a></span>tx_pad</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a9a4da11aea6791b96ad83a061b0f576d">uart_txpad_t</a> uart_conf_t::tx_pad</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pad selection for TX line </p>
+
+<p class="definition">Definition at line <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00349">349</a> of file <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="aaf99018a5ebb74b990864b5e62c0a0fe" name="aaf99018a5ebb74b990864b5e62c0a0fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf99018a5ebb74b990864b5e62c0a0fe">&#9670;&#160;</a></span>tx_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> uart_conf_t::tx_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin used for TX </p>
+<p>GPIO pin to use for TX.</p>
+<p>TX pin, GPIO_UNDEF disables TX.</p>
+<p>TX pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html#l00222">222</a> of file <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a609e66cad5c00637b60e3e55697b024d" name="a609e66cad5c00637b60e3e55697b024d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a609e66cad5c00637b60e3e55697b024d">&#9670;&#160;</a></span>txd</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> uart_conf_t::txd</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO used as TxD pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="esp32_2include_2periph__cpu_8h_source.html#l00977">977</a> of file <a class="el" href="esp32_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a1916c5e6a856f84747b44179304844d2" name="a1916c5e6a856f84747b44179304844d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1916c5e6a856f84747b44179304844d2">&#9670;&#160;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cpu__uart_8h.html#a5df130ef5152041e30a95957a5e4ca64">uart_type_t</a> uart_conf_t::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Hardware module type (KINETIS_UART or KINETIS_LPUART) </p>
+
+<p class="definition">Definition at line <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html#l00563">563</a> of file <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a97a6c6d5de5cb7e7df88031666151b61" name="a97a6c6d5de5cb7e7df88031666151b61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97a6c6d5de5cb7e7df88031666151b61">&#9670;&#160;</a></span>uart <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structmsp430__usci__uart__params__t.html">msp430_usci_uart_params_t</a>* uart_conf_t::uart</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The UART configuration to use. </p>
+
+<p class="definition">Definition at line <a class="el" href="msp430_2include_2f2xx__g2xx_2periph__cpu_8h_source.html#l00159">159</a> of file <a class="el" href="msp430_2include_2f2xx__g2xx_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="ac86b93eae7a064d75d780231f5368387" name="ac86b93eae7a064d75d780231f5368387"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac86b93eae7a064d75d780231f5368387">&#9670;&#160;</a></span>uart <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structmsp430__usart__uart__params__t.html">msp430_usart_uart_params_t</a>* uart_conf_t::uart</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The UART configuration to use. </p>
+
+<p class="definition">Definition at line <a class="el" href="msp430_2include_2x1xx_2periph__cpu_8h_source.html#l00172">172</a> of file <a class="el" href="msp430_2include_2x1xx_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
+<li>cpu/atxmega/include/<a class="el" href="atxmega_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/cc2538/include/<a class="el" href="cc2538_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/efm32/include/<a class="el" href="efm32_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/esp32/include/<a class="el" href="esp32_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/esp8266/include/<a class="el" href="esp8266_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/fe310/include/<a class="el" href="fe310_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/gd32v/include/<a class="el" href="gd32v_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/kinetis/include/<a class="el" href="kinetis_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/lpc1768/include/<a class="el" href="lpc1768_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/lpc23xx/include/<a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/msp430/include/f2xx_g2xx/<a class="el" href="msp430_2include_2f2xx__g2xx_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/msp430/include/x1xx/<a class="el" href="msp430_2include_2x1xx_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/nrf5x_common/include/<a class="el" href="nrf5x__common_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a></li>
+<li>cpu/qn908x/include/<a class="el" href="qn908x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/rpx0xx/include/<a class="el" href="rpx0xx_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/sam0_common/include/<a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a></li>
+<li>cpu/sam3/include/<a class="el" href="sam3_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/stm32/include/periph/<a class="el" href="cpu__uart_8h_source.html">cpu_uart.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

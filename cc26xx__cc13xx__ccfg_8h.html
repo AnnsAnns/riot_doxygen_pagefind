@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>cpu/cc26xx_cc13xx/include/cc26xx_cc13xx_ccfg.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('cc26xx__cc13xx__ccfg_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle"><div class="title">cc26xx_cc13xx_ccfg.h File Reference<div class="ingroups"><a class="el" href="group__cpu.html">CPU</a> &raquo; <a class="el" href="group__cpu__cc26xx__cc13xx__definitions.html">CC26xx/CC13xx common</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>CC26xx/CC13xx CCFG register definitions.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>CC26xx/CC13xx CCFG register definitions. </p>
+
+<p class="definition">Definition in file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;<a class="el" href="cc26xx__cc13xx_8h_source.html">cc26xx_cc13xx.h</a>&gt;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for cc26xx_cc13xx_ccfg.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="cc26xx__cc13xx__ccfg_8h__incl.svg" width="214" height="207"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="cc26xx__cc13xx__ccfg_8h__dep__incl.svg" width="432" height="242"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="cc26xx__cc13xx__ccfg_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structccfg__regs__t.html">ccfg_regs_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CCFG registers.  <a href="structccfg__regs__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a7e970bca1fe82d19eca78ec27d2a274a" id="r_a7e970bca1fe82d19eca78ec27d2a274a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e970bca1fe82d19eca78ec27d2a274a">CCFG</a>&#160;&#160;&#160;((<a class="el" href="structccfg__regs__t.html">ccfg_regs_t</a> *) (<a class="el" href="group__cpu__specific__peripheral__memory__map.html#ga5e40af1e869b349ac9b42ec2178e7f07">CCFG_BASE</a> + 0x1FA8))</td></tr>
+<tr class="memdesc:a7e970bca1fe82d19eca78ec27d2a274a"><td class="mdescLeft">&#160;</td><td class="mdescRight">CCFG register bank.  <br /></td></tr>
+<tr class="separator:a7e970bca1fe82d19eca78ec27d2a274a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b44b9029dcb8e77c00cc54d2ffd08b0" id="r_a7b44b9029dcb8e77c00cc54d2ffd08b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b44b9029dcb8e77c00cc54d2ffd08b0">CCFG_EXT_LF_CLK_DIO_m</a>&#160;&#160;&#160;0xFF000000</td></tr>
+<tr class="memdesc:a7b44b9029dcb8e77c00cc54d2ffd08b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">CCFG register values.  <br /></td></tr>
+<tr class="separator:a7b44b9029dcb8e77c00cc54d2ffd08b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4ee07867afdab27f24d5bc269f78c9d" id="r_ae4ee07867afdab27f24d5bc269f78c9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4ee07867afdab27f24d5bc269f78c9d">CCFG_EXT_LF_CLK_DIO_s</a>&#160;&#160;&#160;24</td></tr>
+<tr class="separator:ae4ee07867afdab27f24d5bc269f78c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fb4565e677077b5fdfdf59c44c7fcf5" id="r_a3fb4565e677077b5fdfdf59c44c7fcf5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fb4565e677077b5fdfdf59c44c7fcf5">CCFG_EXT_LF_CLK_RTC_INCREMENT_m</a>&#160;&#160;&#160;0x00FFFFFF</td></tr>
+<tr class="separator:a3fb4565e677077b5fdfdf59c44c7fcf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdac0a74eb44874a01afd0410880a97a" id="r_abdac0a74eb44874a01afd0410880a97a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abdac0a74eb44874a01afd0410880a97a">CCFG_EXT_LF_CLK_RTC_INCREMENT_s</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:abdac0a74eb44874a01afd0410880a97a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc1b08018ad007ece9bdb7f02dc4a837" id="r_abc1b08018ad007ece9bdb7f02dc4a837"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc1b08018ad007ece9bdb7f02dc4a837">CCFG_MODE_CONF_1_TCXO_TYPE_m</a>&#160;&#160;&#160;0x80000000</td></tr>
+<tr class="separator:abc1b08018ad007ece9bdb7f02dc4a837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8244af78f21e164843f1fddd5534cb96" id="r_a8244af78f21e164843f1fddd5534cb96"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8244af78f21e164843f1fddd5534cb96">CCFG_MODE_CONF_1_TCXO_TYPE_s</a>&#160;&#160;&#160;31</td></tr>
+<tr class="separator:a8244af78f21e164843f1fddd5534cb96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a479924a0b6292390b9cea95c1ae6c13d" id="r_a479924a0b6292390b9cea95c1ae6c13d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a479924a0b6292390b9cea95c1ae6c13d">CCFG_MODE_CONF_1_TCXO_MAX_START_m</a>&#160;&#160;&#160;0x7F000000</td></tr>
+<tr class="separator:a479924a0b6292390b9cea95c1ae6c13d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a522e6a0ae6a5d370aa77b41f5e7f9a5a" id="r_a522e6a0ae6a5d370aa77b41f5e7f9a5a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a522e6a0ae6a5d370aa77b41f5e7f9a5a">CCFG_MODE_CONF_1_TCXO_MAX_START_s</a>&#160;&#160;&#160;24</td></tr>
+<tr class="separator:a522e6a0ae6a5d370aa77b41f5e7f9a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5e9d27a5fc0b4b9d623c71f5aaaeab2" id="r_ae5e9d27a5fc0b4b9d623c71f5aaaeab2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5e9d27a5fc0b4b9d623c71f5aaaeab2">CCFG_MODE_CONF_1_ALT_DCDC_VMIN_m</a>&#160;&#160;&#160;0x00F00000</td></tr>
+<tr class="separator:ae5e9d27a5fc0b4b9d623c71f5aaaeab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33763061080fc599be1dbdfe2718ef87" id="r_a33763061080fc599be1dbdfe2718ef87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33763061080fc599be1dbdfe2718ef87">CCFG_MODE_CONF_1_ALT_DCDC_VMIN_s</a>&#160;&#160;&#160;20</td></tr>
+<tr class="separator:a33763061080fc599be1dbdfe2718ef87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3eab7e455eba5b17bbadc68d92ee79d" id="r_ac3eab7e455eba5b17bbadc68d92ee79d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3eab7e455eba5b17bbadc68d92ee79d">CCFG_MODE_CONF_1_ALT_DCDC_DITHER_EN_m</a>&#160;&#160;&#160;0x00080000</td></tr>
+<tr class="separator:ac3eab7e455eba5b17bbadc68d92ee79d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bea46e807e7b72ad4e12a07be0d5b9c" id="r_a2bea46e807e7b72ad4e12a07be0d5b9c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bea46e807e7b72ad4e12a07be0d5b9c">CCFG_MODE_CONF_1_ALT_DCDC_DITHER_EN_s</a>&#160;&#160;&#160;19</td></tr>
+<tr class="separator:a2bea46e807e7b72ad4e12a07be0d5b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ae575b17d02b7ad5674f3c55612da2e" id="r_a4ae575b17d02b7ad5674f3c55612da2e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ae575b17d02b7ad5674f3c55612da2e">CCFG_MODE_CONF_1_ALT_DCDC_IPEAK_m</a>&#160;&#160;&#160;0x00070000</td></tr>
+<tr class="separator:a4ae575b17d02b7ad5674f3c55612da2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a643e819b193cada45bf2e3d9e5f25ebc" id="r_a643e819b193cada45bf2e3d9e5f25ebc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a643e819b193cada45bf2e3d9e5f25ebc">CCFG_MODE_CONF_1_ALT_DCDC_IPEAK_s</a>&#160;&#160;&#160;16</td></tr>
+<tr class="separator:a643e819b193cada45bf2e3d9e5f25ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8d988d57c4dfc76561f661224513897" id="r_ad8d988d57c4dfc76561f661224513897"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8d988d57c4dfc76561f661224513897">CCFG_MODE_CONF_1_DELTA_IBIAS_INIT_m</a>&#160;&#160;&#160;0x0000F000</td></tr>
+<tr class="separator:ad8d988d57c4dfc76561f661224513897"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af78654387fd5d70c25fa0c7c1f6c6b56" id="r_af78654387fd5d70c25fa0c7c1f6c6b56"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af78654387fd5d70c25fa0c7c1f6c6b56">CCFG_MODE_CONF_1_DELTA_IBIAS_INIT_s</a>&#160;&#160;&#160;12</td></tr>
+<tr class="separator:af78654387fd5d70c25fa0c7c1f6c6b56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc9ec842457c1adb95e47cc3f076fbf5" id="r_acc9ec842457c1adb95e47cc3f076fbf5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc9ec842457c1adb95e47cc3f076fbf5">CCFG_MODE_CONF_1_DELTA_IBIAS_OFFSET_m</a>&#160;&#160;&#160;0x00000F00</td></tr>
+<tr class="separator:acc9ec842457c1adb95e47cc3f076fbf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca2ca503fdb3a5de5776ff8441998d4a" id="r_aca2ca503fdb3a5de5776ff8441998d4a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca2ca503fdb3a5de5776ff8441998d4a">CCFG_MODE_CONF_1_DELTA_IBIAS_OFFSET_s</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:aca2ca503fdb3a5de5776ff8441998d4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b4785d725a4503ae4c571986d84b44b" id="r_a3b4785d725a4503ae4c571986d84b44b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b4785d725a4503ae4c571986d84b44b">CCFG_MODE_CONF_1_XOSC_MAX_START_m</a>&#160;&#160;&#160;0x000000FF</td></tr>
+<tr class="separator:a3b4785d725a4503ae4c571986d84b44b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae932340ecfab5149c1737dd0426e779f" id="r_ae932340ecfab5149c1737dd0426e779f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae932340ecfab5149c1737dd0426e779f">CCFG_MODE_CONF_1_XOSC_MAX_START_s</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ae932340ecfab5149c1737dd0426e779f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae346290ddca1c416cc56d15285700262" id="r_ae346290ddca1c416cc56d15285700262"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae346290ddca1c416cc56d15285700262">CCFG_SIZE_AND_DIS_FLAGS_SIZE_OF_CCFG_m</a>&#160;&#160;&#160;0xFFFF0000</td></tr>
+<tr class="separator:ae346290ddca1c416cc56d15285700262"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75291998953d48f894513ec8791fd8a9" id="r_a75291998953d48f894513ec8791fd8a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75291998953d48f894513ec8791fd8a9">CCFG_SIZE_AND_DIS_FLAGS_SIZE_OF_CCFG_s</a>&#160;&#160;&#160;16</td></tr>
+<tr class="separator:a75291998953d48f894513ec8791fd8a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5da7c6aec5d8512e3a543a13f29df03" id="r_af5da7c6aec5d8512e3a543a13f29df03"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5da7c6aec5d8512e3a543a13f29df03">CCFG_SIZE_AND_DIS_FLAGS_DISABLE_FLAGS_m</a>&#160;&#160;&#160;0x0000FFF0</td></tr>
+<tr class="separator:af5da7c6aec5d8512e3a543a13f29df03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a202e5be1334d92f98f48e0c61cb1269b" id="r_a202e5be1334d92f98f48e0c61cb1269b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a202e5be1334d92f98f48e0c61cb1269b">CCFG_SIZE_AND_DIS_FLAGS_DISABLE_FLAGS_s</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a202e5be1334d92f98f48e0c61cb1269b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2520f6d89b38221347d1f06d3fc40748" id="r_a2520f6d89b38221347d1f06d3fc40748"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2520f6d89b38221347d1f06d3fc40748">CCFG_SIZE_AND_DIS_FLAGS_DIS_TCXO_m</a>&#160;&#160;&#160;0x00000008</td></tr>
+<tr class="separator:a2520f6d89b38221347d1f06d3fc40748"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a867760fbba96284b5bf7228a2e12252a" id="r_a867760fbba96284b5bf7228a2e12252a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a867760fbba96284b5bf7228a2e12252a">CCFG_SIZE_AND_DIS_FLAGS_DIS_TCXO_s</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a867760fbba96284b5bf7228a2e12252a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae40a5ce56ca4117198e86e341aa9fbb6" id="r_ae40a5ce56ca4117198e86e341aa9fbb6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae40a5ce56ca4117198e86e341aa9fbb6">CCFG_SIZE_AND_DIS_FLAGS_DIS_GPRAM_m</a>&#160;&#160;&#160;0x00000004</td></tr>
+<tr class="separator:ae40a5ce56ca4117198e86e341aa9fbb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13ca1f3294eba696dfee13374f40162e" id="r_a13ca1f3294eba696dfee13374f40162e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13ca1f3294eba696dfee13374f40162e">CCFG_SIZE_AND_DIS_FLAGS_DIS_GPRAM_s</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a13ca1f3294eba696dfee13374f40162e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d616422b25d3d43837071dd1125599f" id="r_a4d616422b25d3d43837071dd1125599f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d616422b25d3d43837071dd1125599f">CCFG_SIZE_AND_DIS_FLAGS_DIS_ALT_DCDC_SETTING</a>&#160;&#160;&#160;0x00000002</td></tr>
+<tr class="separator:a4d616422b25d3d43837071dd1125599f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a616331737edf497325762b5ec5e2f740" id="r_a616331737edf497325762b5ec5e2f740"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a616331737edf497325762b5ec5e2f740">CCFG_SIZE_AND_DIS_FLAGS_DIS_ALT_DCDC_SETTING_m</a>&#160;&#160;&#160;0x00000002</td></tr>
+<tr class="separator:a616331737edf497325762b5ec5e2f740"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b521477d57152eb80e65084295ba782" id="r_a5b521477d57152eb80e65084295ba782"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b521477d57152eb80e65084295ba782">CCFG_SIZE_AND_DIS_FLAGS_DIS_ALT_DCDC_SETTING_s</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a5b521477d57152eb80e65084295ba782"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bb3ea3950be246f4340c79d98e859dc" id="r_a5bb3ea3950be246f4340c79d98e859dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5bb3ea3950be246f4340c79d98e859dc">CCFG_SIZE_AND_DIS_FLAGS_DIS_XOSC_OVR_m</a>&#160;&#160;&#160;0x00000001</td></tr>
+<tr class="separator:a5bb3ea3950be246f4340c79d98e859dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3be46b44ef3ae17e04a7233e363444b" id="r_ad3be46b44ef3ae17e04a7233e363444b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3be46b44ef3ae17e04a7233e363444b">CCFG_SIZE_AND_DIS_FLAGS_DIS_XOSC_OVR_s</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ad3be46b44ef3ae17e04a7233e363444b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28dd48efdf16e696429facf1287f61ca" id="r_a28dd48efdf16e696429facf1287f61ca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28dd48efdf16e696429facf1287f61ca">CCFG_MODE_CONF_VDDR_TRIM_SLEEP_DELTA_m</a>&#160;&#160;&#160;0xF0000000</td></tr>
+<tr class="separator:a28dd48efdf16e696429facf1287f61ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad62724b9e1eb1f4c51923ad55e7eddb6" id="r_ad62724b9e1eb1f4c51923ad55e7eddb6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad62724b9e1eb1f4c51923ad55e7eddb6">CCFG_MODE_CONF_VDDR_TRIM_SLEEP_DELTA_s</a>&#160;&#160;&#160;28</td></tr>
+<tr class="separator:ad62724b9e1eb1f4c51923ad55e7eddb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac708b737925860badd03cfd1e0934801" id="r_ac708b737925860badd03cfd1e0934801"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac708b737925860badd03cfd1e0934801">CCFG_MODE_CONF_DCDC_RECHARGE_m</a>&#160;&#160;&#160;0x08000000</td></tr>
+<tr class="separator:ac708b737925860badd03cfd1e0934801"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab187f94a3507b49df75cea803d2a4baf" id="r_ab187f94a3507b49df75cea803d2a4baf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab187f94a3507b49df75cea803d2a4baf">CCFG_MODE_CONF_DCDC_RECHARGE_s</a>&#160;&#160;&#160;27</td></tr>
+<tr class="separator:ab187f94a3507b49df75cea803d2a4baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80d8120f9550ffdada4bbc7d941b71ae" id="r_a80d8120f9550ffdada4bbc7d941b71ae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80d8120f9550ffdada4bbc7d941b71ae">CCFG_MODE_CONF_DCDC_ACTIVE_m</a>&#160;&#160;&#160;0x04000000</td></tr>
+<tr class="separator:a80d8120f9550ffdada4bbc7d941b71ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15e20abc4a8ea4f5b580e76d11ab303e" id="r_a15e20abc4a8ea4f5b580e76d11ab303e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15e20abc4a8ea4f5b580e76d11ab303e">CCFG_MODE_CONF_DCDC_ACTIVE_s</a>&#160;&#160;&#160;26</td></tr>
+<tr class="separator:a15e20abc4a8ea4f5b580e76d11ab303e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9c1dca31c3076fdd4f536ad256ecd84" id="r_ad9c1dca31c3076fdd4f536ad256ecd84"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9c1dca31c3076fdd4f536ad256ecd84">CCFG_MODE_CONF_VDDR_EXT_LOAD</a>&#160;&#160;&#160;0x02000000</td></tr>
+<tr class="separator:ad9c1dca31c3076fdd4f536ad256ecd84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26059270043504feb90eac87e3d14040" id="r_a26059270043504feb90eac87e3d14040"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26059270043504feb90eac87e3d14040">CCFG_MODE_CONF_VDDR_EXT_LOAD_m</a>&#160;&#160;&#160;0x02000000</td></tr>
+<tr class="separator:a26059270043504feb90eac87e3d14040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ce37386344da6a279a35aef9ac61bac" id="r_a3ce37386344da6a279a35aef9ac61bac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ce37386344da6a279a35aef9ac61bac">CCFG_MODE_CONF_VDDR_EXT_LOAD_s</a>&#160;&#160;&#160;25</td></tr>
+<tr class="separator:a3ce37386344da6a279a35aef9ac61bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25d56e571a7649deb6ca64565394402b" id="r_a25d56e571a7649deb6ca64565394402b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25d56e571a7649deb6ca64565394402b">CCFG_MODE_CONF_VDDS_BOD_LEVEL</a>&#160;&#160;&#160;0x01000000</td></tr>
+<tr class="separator:a25d56e571a7649deb6ca64565394402b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ec07f10f61a0c7ce3af8c312191fff3" id="r_a1ec07f10f61a0c7ce3af8c312191fff3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ec07f10f61a0c7ce3af8c312191fff3">CCFG_MODE_CONF_VDDS_BOD_LEVEL_m</a>&#160;&#160;&#160;0x01000000</td></tr>
+<tr class="separator:a1ec07f10f61a0c7ce3af8c312191fff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e9356a9cfa3794a7da979f1bd0610f9" id="r_a7e9356a9cfa3794a7da979f1bd0610f9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e9356a9cfa3794a7da979f1bd0610f9">CCFG_MODE_CONF_VDDS_BOD_LEVEL_s</a>&#160;&#160;&#160;24</td></tr>
+<tr class="separator:a7e9356a9cfa3794a7da979f1bd0610f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20d9875a669d9be4b00391de86d5a310" id="r_a20d9875a669d9be4b00391de86d5a310"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20d9875a669d9be4b00391de86d5a310">CCFG_MODE_CONF_SCLK_LF_OPTION_m</a>&#160;&#160;&#160;0x00C00000</td></tr>
+<tr class="separator:a20d9875a669d9be4b00391de86d5a310"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96d18f27e1dccc1ce8ce9ccb3f59d922" id="r_a96d18f27e1dccc1ce8ce9ccb3f59d922"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96d18f27e1dccc1ce8ce9ccb3f59d922">CCFG_MODE_CONF_SCLK_LF_OPTION_s</a>&#160;&#160;&#160;22</td></tr>
+<tr class="separator:a96d18f27e1dccc1ce8ce9ccb3f59d922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5baed53923cb67874a8313863a5f68d9" id="r_a5baed53923cb67874a8313863a5f68d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5baed53923cb67874a8313863a5f68d9">CCFG_MODE_CONF_VDDR_TRIM_SLEEP_TC_m</a>&#160;&#160;&#160;0x00200000</td></tr>
+<tr class="separator:a5baed53923cb67874a8313863a5f68d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab25f91073459eab6860da69e21c4c0e2" id="r_ab25f91073459eab6860da69e21c4c0e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab25f91073459eab6860da69e21c4c0e2">CCFG_MODE_CONF_VDDR_TRIM_SLEEP_TC_s</a>&#160;&#160;&#160;21</td></tr>
+<tr class="separator:ab25f91073459eab6860da69e21c4c0e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a931f577839b1de6fbfc3f657f7772f82" id="r_a931f577839b1de6fbfc3f657f7772f82"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a931f577839b1de6fbfc3f657f7772f82">CCFG_MODE_CONF_RTC_COMP_m</a>&#160;&#160;&#160;0x00100000</td></tr>
+<tr class="separator:a931f577839b1de6fbfc3f657f7772f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fb8ea37e6a1ab16ad9a050c1bd6c665" id="r_a8fb8ea37e6a1ab16ad9a050c1bd6c665"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fb8ea37e6a1ab16ad9a050c1bd6c665">CCFG_MODE_CONF_RTC_COMP_s</a>&#160;&#160;&#160;20</td></tr>
+<tr class="separator:a8fb8ea37e6a1ab16ad9a050c1bd6c665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a550a43ed71c34ecc479d5d9c596e17f4" id="r_a550a43ed71c34ecc479d5d9c596e17f4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a550a43ed71c34ecc479d5d9c596e17f4">CCFG_MODE_CONF_XOSC_FREQ_m</a>&#160;&#160;&#160;0x000C0000</td></tr>
+<tr class="separator:a550a43ed71c34ecc479d5d9c596e17f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20aebfcb634e530434ea5d4eb18560f2" id="r_a20aebfcb634e530434ea5d4eb18560f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20aebfcb634e530434ea5d4eb18560f2">CCFG_MODE_CONF_XOSC_FREQ_s</a>&#160;&#160;&#160;18</td></tr>
+<tr class="separator:a20aebfcb634e530434ea5d4eb18560f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2a8b9fbb42c71a9b9830c9dc7b94c7d" id="r_ab2a8b9fbb42c71a9b9830c9dc7b94c7d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2a8b9fbb42c71a9b9830c9dc7b94c7d">CCFG_MODE_CONF_XOSC_CAP_MOD_m</a>&#160;&#160;&#160;0x00020000</td></tr>
+<tr class="separator:ab2a8b9fbb42c71a9b9830c9dc7b94c7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8cc4a48eeaa79f1f04b3c5f15a81bff" id="r_ad8cc4a48eeaa79f1f04b3c5f15a81bff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8cc4a48eeaa79f1f04b3c5f15a81bff">CCFG_MODE_CONF_XOSC_CAP_MOD_s</a>&#160;&#160;&#160;17</td></tr>
+<tr class="separator:ad8cc4a48eeaa79f1f04b3c5f15a81bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a350d389ccddf9fa11866a7bbe4f97cbf" id="r_a350d389ccddf9fa11866a7bbe4f97cbf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a350d389ccddf9fa11866a7bbe4f97cbf">CCFG_MODE_CONF_HF_COMP_m</a>&#160;&#160;&#160;0x00010000</td></tr>
+<tr class="separator:a350d389ccddf9fa11866a7bbe4f97cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54de7738718480c7ffed591464aadb4b" id="r_a54de7738718480c7ffed591464aadb4b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54de7738718480c7ffed591464aadb4b">CCFG_MODE_CONF_HF_COMP_s</a>&#160;&#160;&#160;16</td></tr>
+<tr class="separator:a54de7738718480c7ffed591464aadb4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73c0d8fe09ce198cb49fdb102c2fe406" id="r_a73c0d8fe09ce198cb49fdb102c2fe406"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73c0d8fe09ce198cb49fdb102c2fe406">CCFG_MODE_CONF_XOSC_CAPARRAY_DELTA_m</a>&#160;&#160;&#160;0x0000FF00</td></tr>
+<tr class="separator:a73c0d8fe09ce198cb49fdb102c2fe406"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10a697bfcfe37a3a81fcaab4c92157b1" id="r_a10a697bfcfe37a3a81fcaab4c92157b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10a697bfcfe37a3a81fcaab4c92157b1">CCFG_MODE_CONF_XOSC_CAPARRAY_DELTA_s</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:a10a697bfcfe37a3a81fcaab4c92157b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc6c9bd329116169f25406953d7956c2" id="r_acc6c9bd329116169f25406953d7956c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc6c9bd329116169f25406953d7956c2">CCFG_MODE_CONF_VDDR_CAP_m</a>&#160;&#160;&#160;0x000000FF</td></tr>
+<tr class="separator:acc6c9bd329116169f25406953d7956c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f0d087ec5de24e8cddf0333e440e9c8" id="r_a1f0d087ec5de24e8cddf0333e440e9c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f0d087ec5de24e8cddf0333e440e9c8">CCFG_MODE_CONF_VDDR_CAP_s</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a1f0d087ec5de24e8cddf0333e440e9c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5d6d692eba370c70f9d314bf1eacac2" id="r_ac5d6d692eba370c70f9d314bf1eacac2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5d6d692eba370c70f9d314bf1eacac2">CCFG_BL_CONFIG_BOOTLOADER_ENABLE_m</a>&#160;&#160;&#160;0xFF000000</td></tr>
+<tr class="separator:ac5d6d692eba370c70f9d314bf1eacac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c28f0b2c8b846aaad75ce866136735b" id="r_a0c28f0b2c8b846aaad75ce866136735b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c28f0b2c8b846aaad75ce866136735b">CCFG_BL_CONFIG_BOOTLOADER_ENABLE_s</a>&#160;&#160;&#160;24</td></tr>
+<tr class="separator:a0c28f0b2c8b846aaad75ce866136735b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8283e7d5069fa67d7df89f52a33ecc9a" id="r_a8283e7d5069fa67d7df89f52a33ecc9a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8283e7d5069fa67d7df89f52a33ecc9a">CCFG_BL_CONFIG_BL_LEVEL_m</a>&#160;&#160;&#160;0x00010000</td></tr>
+<tr class="separator:a8283e7d5069fa67d7df89f52a33ecc9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c17aceed4e4b802178b98070936dc3e" id="r_a3c17aceed4e4b802178b98070936dc3e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c17aceed4e4b802178b98070936dc3e">CCFG_BL_CONFIG_BL_LEVEL_s</a>&#160;&#160;&#160;16</td></tr>
+<tr class="separator:a3c17aceed4e4b802178b98070936dc3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ec21cddb18e98f7a2fe637f96233724" id="r_a4ec21cddb18e98f7a2fe637f96233724"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ec21cddb18e98f7a2fe637f96233724">CCFG_BL_CONFIG_BL_PIN_NUMBER_m</a>&#160;&#160;&#160;0x0000FF00</td></tr>
+<tr class="separator:a4ec21cddb18e98f7a2fe637f96233724"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5556802ef1dbe8d106ea63739fec9aa1" id="r_a5556802ef1dbe8d106ea63739fec9aa1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5556802ef1dbe8d106ea63739fec9aa1">CCFG_BL_CONFIG_BL_PIN_NUMBER_s</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:a5556802ef1dbe8d106ea63739fec9aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dc6fd3db3fcd77a8355eec0996590c7" id="r_a8dc6fd3db3fcd77a8355eec0996590c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8dc6fd3db3fcd77a8355eec0996590c7">CCFG_BL_CONFIG_BL_ENABLE_m</a>&#160;&#160;&#160;0x000000FF</td></tr>
+<tr class="separator:a8dc6fd3db3fcd77a8355eec0996590c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96df8240f341944dd7ab06d06836d47f" id="r_a96df8240f341944dd7ab06d06836d47f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96df8240f341944dd7ab06d06836d47f">CCFG_BL_CONFIG_BL_ENABLE_s</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a96df8240f341944dd7ab06d06836d47f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f6af9df5b00889da135b74036828f98" id="r_a8f6af9df5b00889da135b74036828f98"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f6af9df5b00889da135b74036828f98">CCFG_ERASE_CONF_CHIP_ERASE_DIS_N_m</a>&#160;&#160;&#160;0x00000100</td></tr>
+<tr class="separator:a8f6af9df5b00889da135b74036828f98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a552bb677754cd6d99029a51ab23e954f" id="r_a552bb677754cd6d99029a51ab23e954f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a552bb677754cd6d99029a51ab23e954f">CCFG_ERASE_CONF_CHIP_ERASE_DIS_N_s</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:a552bb677754cd6d99029a51ab23e954f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf912b52af2463e24d4550ed28c660c2" id="r_abf912b52af2463e24d4550ed28c660c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf912b52af2463e24d4550ed28c660c2">CCFG_ERASE_CONF_BANK_ERASE_DIS_N_m</a>&#160;&#160;&#160;0x00000001</td></tr>
+<tr class="separator:abf912b52af2463e24d4550ed28c660c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c7d06f40e6083e6cc39bc01e1ba0464" id="r_a4c7d06f40e6083e6cc39bc01e1ba0464"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c7d06f40e6083e6cc39bc01e1ba0464">CCFG_ERASE_CONF_BANK_ERASE_DIS_N_s</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a4c7d06f40e6083e6cc39bc01e1ba0464"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a762305c355e34c07d70e100d537a30b5" id="r_a762305c355e34c07d70e100d537a30b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a762305c355e34c07d70e100d537a30b5">CCFG_CCFG_TI_OPTIONS_TI_FA_ENABLE_m</a>&#160;&#160;&#160;0x000000FF</td></tr>
+<tr class="separator:a762305c355e34c07d70e100d537a30b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e8b1352fe9f21f93e2c6100177805de" id="r_a3e8b1352fe9f21f93e2c6100177805de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e8b1352fe9f21f93e2c6100177805de">CCFG_CCFG_TI_OPTIONS_TI_FA_ENABLE_s</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a3e8b1352fe9f21f93e2c6100177805de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ff0e7bcb4eb694d97acb1fbc8d6a610" id="r_a6ff0e7bcb4eb694d97acb1fbc8d6a610"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ff0e7bcb4eb694d97acb1fbc8d6a610">CCFG_CCFG_TAP_DAP_0_CPU_DAP_ENABLE_m</a>&#160;&#160;&#160;0x00FF0000</td></tr>
+<tr class="separator:a6ff0e7bcb4eb694d97acb1fbc8d6a610"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6441224beae8eff3ddd9a0a05fa3a68" id="r_ac6441224beae8eff3ddd9a0a05fa3a68"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6441224beae8eff3ddd9a0a05fa3a68">CCFG_CCFG_TAP_DAP_0_CPU_DAP_ENABLE_s</a>&#160;&#160;&#160;16</td></tr>
+<tr class="separator:ac6441224beae8eff3ddd9a0a05fa3a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3862b2a4cd0d4cf015c8619586af8f5" id="r_ad3862b2a4cd0d4cf015c8619586af8f5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3862b2a4cd0d4cf015c8619586af8f5">CCFG_CCFG_TAP_DAP_0_PWRPROF_TAP_ENABLE_m</a>&#160;&#160;&#160;0x0000FF00</td></tr>
+<tr class="separator:ad3862b2a4cd0d4cf015c8619586af8f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab942191768824ba2fe79d6da1f2e25d6" id="r_ab942191768824ba2fe79d6da1f2e25d6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab942191768824ba2fe79d6da1f2e25d6">CCFG_CCFG_TAP_DAP_0_PWRPROF_TAP_ENABLE_s</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:ab942191768824ba2fe79d6da1f2e25d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa937e51624bafd945e42aebd20903ff0" id="r_aa937e51624bafd945e42aebd20903ff0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa937e51624bafd945e42aebd20903ff0">CCFG_CCFG_TAP_DAP_0_TEST_TAP_ENABLE_m</a>&#160;&#160;&#160;0x000000FF</td></tr>
+<tr class="separator:aa937e51624bafd945e42aebd20903ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7c47766d6d1e156e6e2eb5cc0059308" id="r_aa7c47766d6d1e156e6e2eb5cc0059308"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7c47766d6d1e156e6e2eb5cc0059308">CCFG_CCFG_TAP_DAP_0_TEST_TAP_ENABLE_s</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:aa7c47766d6d1e156e6e2eb5cc0059308"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5e40af1e869b349ac9b42ec2178e7f07" id="r_ga5e40af1e869b349ac9b42ec2178e7f07"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__specific__peripheral__memory__map.html#ga5e40af1e869b349ac9b42ec2178e7f07">CCFG_BASE</a>&#160;&#160;&#160;(0x50003000)</td></tr>
+<tr class="memdesc:ga5e40af1e869b349ac9b42ec2178e7f07"><td class="mdescLeft">&#160;</td><td class="mdescRight">CCFG base address.  <br /></td></tr>
+<tr class="separator:ga5e40af1e869b349ac9b42ec2178e7f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a7e970bca1fe82d19eca78ec27d2a274a" name="a7e970bca1fe82d19eca78ec27d2a274a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e970bca1fe82d19eca78ec27d2a274a">&#9670;&#160;</a></span>CCFG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG&#160;&#160;&#160;((<a class="el" href="structccfg__regs__t.html">ccfg_regs_t</a> *) (<a class="el" href="group__cpu__specific__peripheral__memory__map.html#ga5e40af1e869b349ac9b42ec2178e7f07">CCFG_BASE</a> + 0x1FA8))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CCFG register bank. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00159">159</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a8dc6fd3db3fcd77a8355eec0996590c7" name="a8dc6fd3db3fcd77a8355eec0996590c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dc6fd3db3fcd77a8355eec0996590c7">&#9670;&#160;</a></span>CCFG_BL_CONFIG_BL_ENABLE_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_BL_CONFIG_BL_ENABLE_m&#160;&#160;&#160;0x000000FF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00124">124</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a96df8240f341944dd7ab06d06836d47f" name="a96df8240f341944dd7ab06d06836d47f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96df8240f341944dd7ab06d06836d47f">&#9670;&#160;</a></span>CCFG_BL_CONFIG_BL_ENABLE_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_BL_CONFIG_BL_ENABLE_s&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00125">125</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a8283e7d5069fa67d7df89f52a33ecc9a" name="a8283e7d5069fa67d7df89f52a33ecc9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8283e7d5069fa67d7df89f52a33ecc9a">&#9670;&#160;</a></span>CCFG_BL_CONFIG_BL_LEVEL_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_BL_CONFIG_BL_LEVEL_m&#160;&#160;&#160;0x00010000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00120">120</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a3c17aceed4e4b802178b98070936dc3e" name="a3c17aceed4e4b802178b98070936dc3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c17aceed4e4b802178b98070936dc3e">&#9670;&#160;</a></span>CCFG_BL_CONFIG_BL_LEVEL_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_BL_CONFIG_BL_LEVEL_s&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00121">121</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a4ec21cddb18e98f7a2fe637f96233724" name="a4ec21cddb18e98f7a2fe637f96233724"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ec21cddb18e98f7a2fe637f96233724">&#9670;&#160;</a></span>CCFG_BL_CONFIG_BL_PIN_NUMBER_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_BL_CONFIG_BL_PIN_NUMBER_m&#160;&#160;&#160;0x0000FF00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00122">122</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a5556802ef1dbe8d106ea63739fec9aa1" name="a5556802ef1dbe8d106ea63739fec9aa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5556802ef1dbe8d106ea63739fec9aa1">&#9670;&#160;</a></span>CCFG_BL_CONFIG_BL_PIN_NUMBER_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_BL_CONFIG_BL_PIN_NUMBER_s&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00123">123</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="ac5d6d692eba370c70f9d314bf1eacac2" name="ac5d6d692eba370c70f9d314bf1eacac2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5d6d692eba370c70f9d314bf1eacac2">&#9670;&#160;</a></span>CCFG_BL_CONFIG_BOOTLOADER_ENABLE_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_BL_CONFIG_BOOTLOADER_ENABLE_m&#160;&#160;&#160;0xFF000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00118">118</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a0c28f0b2c8b846aaad75ce866136735b" name="a0c28f0b2c8b846aaad75ce866136735b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c28f0b2c8b846aaad75ce866136735b">&#9670;&#160;</a></span>CCFG_BL_CONFIG_BOOTLOADER_ENABLE_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_BL_CONFIG_BOOTLOADER_ENABLE_s&#160;&#160;&#160;24</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00119">119</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a6ff0e7bcb4eb694d97acb1fbc8d6a610" name="a6ff0e7bcb4eb694d97acb1fbc8d6a610"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ff0e7bcb4eb694d97acb1fbc8d6a610">&#9670;&#160;</a></span>CCFG_CCFG_TAP_DAP_0_CPU_DAP_ENABLE_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_CCFG_TAP_DAP_0_CPU_DAP_ENABLE_m&#160;&#160;&#160;0x00FF0000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00132">132</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="ac6441224beae8eff3ddd9a0a05fa3a68" name="ac6441224beae8eff3ddd9a0a05fa3a68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6441224beae8eff3ddd9a0a05fa3a68">&#9670;&#160;</a></span>CCFG_CCFG_TAP_DAP_0_CPU_DAP_ENABLE_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_CCFG_TAP_DAP_0_CPU_DAP_ENABLE_s&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00133">133</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="ad3862b2a4cd0d4cf015c8619586af8f5" name="ad3862b2a4cd0d4cf015c8619586af8f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3862b2a4cd0d4cf015c8619586af8f5">&#9670;&#160;</a></span>CCFG_CCFG_TAP_DAP_0_PWRPROF_TAP_ENABLE_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_CCFG_TAP_DAP_0_PWRPROF_TAP_ENABLE_m&#160;&#160;&#160;0x0000FF00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00134">134</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="ab942191768824ba2fe79d6da1f2e25d6" name="ab942191768824ba2fe79d6da1f2e25d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab942191768824ba2fe79d6da1f2e25d6">&#9670;&#160;</a></span>CCFG_CCFG_TAP_DAP_0_PWRPROF_TAP_ENABLE_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_CCFG_TAP_DAP_0_PWRPROF_TAP_ENABLE_s&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00135">135</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="aa937e51624bafd945e42aebd20903ff0" name="aa937e51624bafd945e42aebd20903ff0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa937e51624bafd945e42aebd20903ff0">&#9670;&#160;</a></span>CCFG_CCFG_TAP_DAP_0_TEST_TAP_ENABLE_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_CCFG_TAP_DAP_0_TEST_TAP_ENABLE_m&#160;&#160;&#160;0x000000FF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00136">136</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="aa7c47766d6d1e156e6e2eb5cc0059308" name="aa7c47766d6d1e156e6e2eb5cc0059308"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7c47766d6d1e156e6e2eb5cc0059308">&#9670;&#160;</a></span>CCFG_CCFG_TAP_DAP_0_TEST_TAP_ENABLE_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_CCFG_TAP_DAP_0_TEST_TAP_ENABLE_s&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00137">137</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a762305c355e34c07d70e100d537a30b5" name="a762305c355e34c07d70e100d537a30b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a762305c355e34c07d70e100d537a30b5">&#9670;&#160;</a></span>CCFG_CCFG_TI_OPTIONS_TI_FA_ENABLE_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_CCFG_TI_OPTIONS_TI_FA_ENABLE_m&#160;&#160;&#160;0x000000FF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00130">130</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a3e8b1352fe9f21f93e2c6100177805de" name="a3e8b1352fe9f21f93e2c6100177805de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e8b1352fe9f21f93e2c6100177805de">&#9670;&#160;</a></span>CCFG_CCFG_TI_OPTIONS_TI_FA_ENABLE_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_CCFG_TI_OPTIONS_TI_FA_ENABLE_s&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00131">131</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="abf912b52af2463e24d4550ed28c660c2" name="abf912b52af2463e24d4550ed28c660c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf912b52af2463e24d4550ed28c660c2">&#9670;&#160;</a></span>CCFG_ERASE_CONF_BANK_ERASE_DIS_N_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_ERASE_CONF_BANK_ERASE_DIS_N_m&#160;&#160;&#160;0x00000001</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00128">128</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a4c7d06f40e6083e6cc39bc01e1ba0464" name="a4c7d06f40e6083e6cc39bc01e1ba0464"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c7d06f40e6083e6cc39bc01e1ba0464">&#9670;&#160;</a></span>CCFG_ERASE_CONF_BANK_ERASE_DIS_N_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_ERASE_CONF_BANK_ERASE_DIS_N_s&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00129">129</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a8f6af9df5b00889da135b74036828f98" name="a8f6af9df5b00889da135b74036828f98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f6af9df5b00889da135b74036828f98">&#9670;&#160;</a></span>CCFG_ERASE_CONF_CHIP_ERASE_DIS_N_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_ERASE_CONF_CHIP_ERASE_DIS_N_m&#160;&#160;&#160;0x00000100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00126">126</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a552bb677754cd6d99029a51ab23e954f" name="a552bb677754cd6d99029a51ab23e954f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a552bb677754cd6d99029a51ab23e954f">&#9670;&#160;</a></span>CCFG_ERASE_CONF_CHIP_ERASE_DIS_N_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_ERASE_CONF_CHIP_ERASE_DIS_N_s&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00127">127</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a7b44b9029dcb8e77c00cc54d2ffd08b0" name="a7b44b9029dcb8e77c00cc54d2ffd08b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b44b9029dcb8e77c00cc54d2ffd08b0">&#9670;&#160;</a></span>CCFG_EXT_LF_CLK_DIO_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_EXT_LF_CLK_DIO_m&#160;&#160;&#160;0xFF000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CCFG register values. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00057">57</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="ae4ee07867afdab27f24d5bc269f78c9d" name="ae4ee07867afdab27f24d5bc269f78c9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4ee07867afdab27f24d5bc269f78c9d">&#9670;&#160;</a></span>CCFG_EXT_LF_CLK_DIO_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_EXT_LF_CLK_DIO_s&#160;&#160;&#160;24</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00058">58</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a3fb4565e677077b5fdfdf59c44c7fcf5" name="a3fb4565e677077b5fdfdf59c44c7fcf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fb4565e677077b5fdfdf59c44c7fcf5">&#9670;&#160;</a></span>CCFG_EXT_LF_CLK_RTC_INCREMENT_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_EXT_LF_CLK_RTC_INCREMENT_m&#160;&#160;&#160;0x00FFFFFF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00059">59</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="abdac0a74eb44874a01afd0410880a97a" name="abdac0a74eb44874a01afd0410880a97a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdac0a74eb44874a01afd0410880a97a">&#9670;&#160;</a></span>CCFG_EXT_LF_CLK_RTC_INCREMENT_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_EXT_LF_CLK_RTC_INCREMENT_s&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00060">60</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="ac3eab7e455eba5b17bbadc68d92ee79d" name="ac3eab7e455eba5b17bbadc68d92ee79d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3eab7e455eba5b17bbadc68d92ee79d">&#9670;&#160;</a></span>CCFG_MODE_CONF_1_ALT_DCDC_DITHER_EN_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_1_ALT_DCDC_DITHER_EN_m&#160;&#160;&#160;0x00080000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00067">67</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a2bea46e807e7b72ad4e12a07be0d5b9c" name="a2bea46e807e7b72ad4e12a07be0d5b9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bea46e807e7b72ad4e12a07be0d5b9c">&#9670;&#160;</a></span>CCFG_MODE_CONF_1_ALT_DCDC_DITHER_EN_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_1_ALT_DCDC_DITHER_EN_s&#160;&#160;&#160;19</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00068">68</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a4ae575b17d02b7ad5674f3c55612da2e" name="a4ae575b17d02b7ad5674f3c55612da2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ae575b17d02b7ad5674f3c55612da2e">&#9670;&#160;</a></span>CCFG_MODE_CONF_1_ALT_DCDC_IPEAK_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_1_ALT_DCDC_IPEAK_m&#160;&#160;&#160;0x00070000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00069">69</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a643e819b193cada45bf2e3d9e5f25ebc" name="a643e819b193cada45bf2e3d9e5f25ebc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a643e819b193cada45bf2e3d9e5f25ebc">&#9670;&#160;</a></span>CCFG_MODE_CONF_1_ALT_DCDC_IPEAK_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_1_ALT_DCDC_IPEAK_s&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00070">70</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="ae5e9d27a5fc0b4b9d623c71f5aaaeab2" name="ae5e9d27a5fc0b4b9d623c71f5aaaeab2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5e9d27a5fc0b4b9d623c71f5aaaeab2">&#9670;&#160;</a></span>CCFG_MODE_CONF_1_ALT_DCDC_VMIN_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_1_ALT_DCDC_VMIN_m&#160;&#160;&#160;0x00F00000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00065">65</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a33763061080fc599be1dbdfe2718ef87" name="a33763061080fc599be1dbdfe2718ef87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33763061080fc599be1dbdfe2718ef87">&#9670;&#160;</a></span>CCFG_MODE_CONF_1_ALT_DCDC_VMIN_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_1_ALT_DCDC_VMIN_s&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00066">66</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="ad8d988d57c4dfc76561f661224513897" name="ad8d988d57c4dfc76561f661224513897"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8d988d57c4dfc76561f661224513897">&#9670;&#160;</a></span>CCFG_MODE_CONF_1_DELTA_IBIAS_INIT_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_1_DELTA_IBIAS_INIT_m&#160;&#160;&#160;0x0000F000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00071">71</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="af78654387fd5d70c25fa0c7c1f6c6b56" name="af78654387fd5d70c25fa0c7c1f6c6b56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af78654387fd5d70c25fa0c7c1f6c6b56">&#9670;&#160;</a></span>CCFG_MODE_CONF_1_DELTA_IBIAS_INIT_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_1_DELTA_IBIAS_INIT_s&#160;&#160;&#160;12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00072">72</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="acc9ec842457c1adb95e47cc3f076fbf5" name="acc9ec842457c1adb95e47cc3f076fbf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc9ec842457c1adb95e47cc3f076fbf5">&#9670;&#160;</a></span>CCFG_MODE_CONF_1_DELTA_IBIAS_OFFSET_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_1_DELTA_IBIAS_OFFSET_m&#160;&#160;&#160;0x00000F00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00073">73</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="aca2ca503fdb3a5de5776ff8441998d4a" name="aca2ca503fdb3a5de5776ff8441998d4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca2ca503fdb3a5de5776ff8441998d4a">&#9670;&#160;</a></span>CCFG_MODE_CONF_1_DELTA_IBIAS_OFFSET_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_1_DELTA_IBIAS_OFFSET_s&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00074">74</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a479924a0b6292390b9cea95c1ae6c13d" name="a479924a0b6292390b9cea95c1ae6c13d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a479924a0b6292390b9cea95c1ae6c13d">&#9670;&#160;</a></span>CCFG_MODE_CONF_1_TCXO_MAX_START_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_1_TCXO_MAX_START_m&#160;&#160;&#160;0x7F000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00063">63</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a522e6a0ae6a5d370aa77b41f5e7f9a5a" name="a522e6a0ae6a5d370aa77b41f5e7f9a5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a522e6a0ae6a5d370aa77b41f5e7f9a5a">&#9670;&#160;</a></span>CCFG_MODE_CONF_1_TCXO_MAX_START_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_1_TCXO_MAX_START_s&#160;&#160;&#160;24</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00064">64</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="abc1b08018ad007ece9bdb7f02dc4a837" name="abc1b08018ad007ece9bdb7f02dc4a837"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc1b08018ad007ece9bdb7f02dc4a837">&#9670;&#160;</a></span>CCFG_MODE_CONF_1_TCXO_TYPE_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_1_TCXO_TYPE_m&#160;&#160;&#160;0x80000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00061">61</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a8244af78f21e164843f1fddd5534cb96" name="a8244af78f21e164843f1fddd5534cb96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8244af78f21e164843f1fddd5534cb96">&#9670;&#160;</a></span>CCFG_MODE_CONF_1_TCXO_TYPE_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_1_TCXO_TYPE_s&#160;&#160;&#160;31</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00062">62</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a3b4785d725a4503ae4c571986d84b44b" name="a3b4785d725a4503ae4c571986d84b44b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b4785d725a4503ae4c571986d84b44b">&#9670;&#160;</a></span>CCFG_MODE_CONF_1_XOSC_MAX_START_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_1_XOSC_MAX_START_m&#160;&#160;&#160;0x000000FF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00075">75</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="ae932340ecfab5149c1737dd0426e779f" name="ae932340ecfab5149c1737dd0426e779f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae932340ecfab5149c1737dd0426e779f">&#9670;&#160;</a></span>CCFG_MODE_CONF_1_XOSC_MAX_START_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_1_XOSC_MAX_START_s&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00076">76</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a80d8120f9550ffdada4bbc7d941b71ae" name="a80d8120f9550ffdada4bbc7d941b71ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80d8120f9550ffdada4bbc7d941b71ae">&#9670;&#160;</a></span>CCFG_MODE_CONF_DCDC_ACTIVE_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_DCDC_ACTIVE_m&#160;&#160;&#160;0x04000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00094">94</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a15e20abc4a8ea4f5b580e76d11ab303e" name="a15e20abc4a8ea4f5b580e76d11ab303e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15e20abc4a8ea4f5b580e76d11ab303e">&#9670;&#160;</a></span>CCFG_MODE_CONF_DCDC_ACTIVE_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_DCDC_ACTIVE_s&#160;&#160;&#160;26</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00095">95</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="ac708b737925860badd03cfd1e0934801" name="ac708b737925860badd03cfd1e0934801"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac708b737925860badd03cfd1e0934801">&#9670;&#160;</a></span>CCFG_MODE_CONF_DCDC_RECHARGE_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_DCDC_RECHARGE_m&#160;&#160;&#160;0x08000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00092">92</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="ab187f94a3507b49df75cea803d2a4baf" name="ab187f94a3507b49df75cea803d2a4baf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab187f94a3507b49df75cea803d2a4baf">&#9670;&#160;</a></span>CCFG_MODE_CONF_DCDC_RECHARGE_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_DCDC_RECHARGE_s&#160;&#160;&#160;27</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00093">93</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a350d389ccddf9fa11866a7bbe4f97cbf" name="a350d389ccddf9fa11866a7bbe4f97cbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a350d389ccddf9fa11866a7bbe4f97cbf">&#9670;&#160;</a></span>CCFG_MODE_CONF_HF_COMP_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_HF_COMP_m&#160;&#160;&#160;0x00010000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00112">112</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a54de7738718480c7ffed591464aadb4b" name="a54de7738718480c7ffed591464aadb4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54de7738718480c7ffed591464aadb4b">&#9670;&#160;</a></span>CCFG_MODE_CONF_HF_COMP_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_HF_COMP_s&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00113">113</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a931f577839b1de6fbfc3f657f7772f82" name="a931f577839b1de6fbfc3f657f7772f82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a931f577839b1de6fbfc3f657f7772f82">&#9670;&#160;</a></span>CCFG_MODE_CONF_RTC_COMP_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_RTC_COMP_m&#160;&#160;&#160;0x00100000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00106">106</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a8fb8ea37e6a1ab16ad9a050c1bd6c665" name="a8fb8ea37e6a1ab16ad9a050c1bd6c665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fb8ea37e6a1ab16ad9a050c1bd6c665">&#9670;&#160;</a></span>CCFG_MODE_CONF_RTC_COMP_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_RTC_COMP_s&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00107">107</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a20d9875a669d9be4b00391de86d5a310" name="a20d9875a669d9be4b00391de86d5a310"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20d9875a669d9be4b00391de86d5a310">&#9670;&#160;</a></span>CCFG_MODE_CONF_SCLK_LF_OPTION_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_SCLK_LF_OPTION_m&#160;&#160;&#160;0x00C00000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00102">102</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a96d18f27e1dccc1ce8ce9ccb3f59d922" name="a96d18f27e1dccc1ce8ce9ccb3f59d922"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96d18f27e1dccc1ce8ce9ccb3f59d922">&#9670;&#160;</a></span>CCFG_MODE_CONF_SCLK_LF_OPTION_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_SCLK_LF_OPTION_s&#160;&#160;&#160;22</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00103">103</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="acc6c9bd329116169f25406953d7956c2" name="acc6c9bd329116169f25406953d7956c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc6c9bd329116169f25406953d7956c2">&#9670;&#160;</a></span>CCFG_MODE_CONF_VDDR_CAP_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_VDDR_CAP_m&#160;&#160;&#160;0x000000FF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00116">116</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a1f0d087ec5de24e8cddf0333e440e9c8" name="a1f0d087ec5de24e8cddf0333e440e9c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f0d087ec5de24e8cddf0333e440e9c8">&#9670;&#160;</a></span>CCFG_MODE_CONF_VDDR_CAP_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_VDDR_CAP_s&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00117">117</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="ad9c1dca31c3076fdd4f536ad256ecd84" name="ad9c1dca31c3076fdd4f536ad256ecd84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9c1dca31c3076fdd4f536ad256ecd84">&#9670;&#160;</a></span>CCFG_MODE_CONF_VDDR_EXT_LOAD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_VDDR_EXT_LOAD&#160;&#160;&#160;0x02000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00096">96</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a26059270043504feb90eac87e3d14040" name="a26059270043504feb90eac87e3d14040"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26059270043504feb90eac87e3d14040">&#9670;&#160;</a></span>CCFG_MODE_CONF_VDDR_EXT_LOAD_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_VDDR_EXT_LOAD_m&#160;&#160;&#160;0x02000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00097">97</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a3ce37386344da6a279a35aef9ac61bac" name="a3ce37386344da6a279a35aef9ac61bac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ce37386344da6a279a35aef9ac61bac">&#9670;&#160;</a></span>CCFG_MODE_CONF_VDDR_EXT_LOAD_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_VDDR_EXT_LOAD_s&#160;&#160;&#160;25</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00098">98</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a28dd48efdf16e696429facf1287f61ca" name="a28dd48efdf16e696429facf1287f61ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28dd48efdf16e696429facf1287f61ca">&#9670;&#160;</a></span>CCFG_MODE_CONF_VDDR_TRIM_SLEEP_DELTA_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_VDDR_TRIM_SLEEP_DELTA_m&#160;&#160;&#160;0xF0000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00090">90</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="ad62724b9e1eb1f4c51923ad55e7eddb6" name="ad62724b9e1eb1f4c51923ad55e7eddb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad62724b9e1eb1f4c51923ad55e7eddb6">&#9670;&#160;</a></span>CCFG_MODE_CONF_VDDR_TRIM_SLEEP_DELTA_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_VDDR_TRIM_SLEEP_DELTA_s&#160;&#160;&#160;28</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00091">91</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a5baed53923cb67874a8313863a5f68d9" name="a5baed53923cb67874a8313863a5f68d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5baed53923cb67874a8313863a5f68d9">&#9670;&#160;</a></span>CCFG_MODE_CONF_VDDR_TRIM_SLEEP_TC_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_VDDR_TRIM_SLEEP_TC_m&#160;&#160;&#160;0x00200000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00104">104</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="ab25f91073459eab6860da69e21c4c0e2" name="ab25f91073459eab6860da69e21c4c0e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab25f91073459eab6860da69e21c4c0e2">&#9670;&#160;</a></span>CCFG_MODE_CONF_VDDR_TRIM_SLEEP_TC_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_VDDR_TRIM_SLEEP_TC_s&#160;&#160;&#160;21</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00105">105</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a25d56e571a7649deb6ca64565394402b" name="a25d56e571a7649deb6ca64565394402b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25d56e571a7649deb6ca64565394402b">&#9670;&#160;</a></span>CCFG_MODE_CONF_VDDS_BOD_LEVEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_VDDS_BOD_LEVEL&#160;&#160;&#160;0x01000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00099">99</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a1ec07f10f61a0c7ce3af8c312191fff3" name="a1ec07f10f61a0c7ce3af8c312191fff3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ec07f10f61a0c7ce3af8c312191fff3">&#9670;&#160;</a></span>CCFG_MODE_CONF_VDDS_BOD_LEVEL_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_VDDS_BOD_LEVEL_m&#160;&#160;&#160;0x01000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00100">100</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a7e9356a9cfa3794a7da979f1bd0610f9" name="a7e9356a9cfa3794a7da979f1bd0610f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e9356a9cfa3794a7da979f1bd0610f9">&#9670;&#160;</a></span>CCFG_MODE_CONF_VDDS_BOD_LEVEL_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_VDDS_BOD_LEVEL_s&#160;&#160;&#160;24</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00101">101</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="ab2a8b9fbb42c71a9b9830c9dc7b94c7d" name="ab2a8b9fbb42c71a9b9830c9dc7b94c7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2a8b9fbb42c71a9b9830c9dc7b94c7d">&#9670;&#160;</a></span>CCFG_MODE_CONF_XOSC_CAP_MOD_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_XOSC_CAP_MOD_m&#160;&#160;&#160;0x00020000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00110">110</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="ad8cc4a48eeaa79f1f04b3c5f15a81bff" name="ad8cc4a48eeaa79f1f04b3c5f15a81bff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8cc4a48eeaa79f1f04b3c5f15a81bff">&#9670;&#160;</a></span>CCFG_MODE_CONF_XOSC_CAP_MOD_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_XOSC_CAP_MOD_s&#160;&#160;&#160;17</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00111">111</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a73c0d8fe09ce198cb49fdb102c2fe406" name="a73c0d8fe09ce198cb49fdb102c2fe406"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73c0d8fe09ce198cb49fdb102c2fe406">&#9670;&#160;</a></span>CCFG_MODE_CONF_XOSC_CAPARRAY_DELTA_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_XOSC_CAPARRAY_DELTA_m&#160;&#160;&#160;0x0000FF00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00114">114</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a10a697bfcfe37a3a81fcaab4c92157b1" name="a10a697bfcfe37a3a81fcaab4c92157b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10a697bfcfe37a3a81fcaab4c92157b1">&#9670;&#160;</a></span>CCFG_MODE_CONF_XOSC_CAPARRAY_DELTA_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_XOSC_CAPARRAY_DELTA_s&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00115">115</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a550a43ed71c34ecc479d5d9c596e17f4" name="a550a43ed71c34ecc479d5d9c596e17f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a550a43ed71c34ecc479d5d9c596e17f4">&#9670;&#160;</a></span>CCFG_MODE_CONF_XOSC_FREQ_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_XOSC_FREQ_m&#160;&#160;&#160;0x000C0000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00108">108</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a20aebfcb634e530434ea5d4eb18560f2" name="a20aebfcb634e530434ea5d4eb18560f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20aebfcb634e530434ea5d4eb18560f2">&#9670;&#160;</a></span>CCFG_MODE_CONF_XOSC_FREQ_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_MODE_CONF_XOSC_FREQ_s&#160;&#160;&#160;18</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00109">109</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a4d616422b25d3d43837071dd1125599f" name="a4d616422b25d3d43837071dd1125599f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d616422b25d3d43837071dd1125599f">&#9670;&#160;</a></span>CCFG_SIZE_AND_DIS_FLAGS_DIS_ALT_DCDC_SETTING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_SIZE_AND_DIS_FLAGS_DIS_ALT_DCDC_SETTING&#160;&#160;&#160;0x00000002</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00085">85</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a616331737edf497325762b5ec5e2f740" name="a616331737edf497325762b5ec5e2f740"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a616331737edf497325762b5ec5e2f740">&#9670;&#160;</a></span>CCFG_SIZE_AND_DIS_FLAGS_DIS_ALT_DCDC_SETTING_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_SIZE_AND_DIS_FLAGS_DIS_ALT_DCDC_SETTING_m&#160;&#160;&#160;0x00000002</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00086">86</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a5b521477d57152eb80e65084295ba782" name="a5b521477d57152eb80e65084295ba782"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b521477d57152eb80e65084295ba782">&#9670;&#160;</a></span>CCFG_SIZE_AND_DIS_FLAGS_DIS_ALT_DCDC_SETTING_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_SIZE_AND_DIS_FLAGS_DIS_ALT_DCDC_SETTING_s&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00087">87</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="ae40a5ce56ca4117198e86e341aa9fbb6" name="ae40a5ce56ca4117198e86e341aa9fbb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae40a5ce56ca4117198e86e341aa9fbb6">&#9670;&#160;</a></span>CCFG_SIZE_AND_DIS_FLAGS_DIS_GPRAM_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_SIZE_AND_DIS_FLAGS_DIS_GPRAM_m&#160;&#160;&#160;0x00000004</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00083">83</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a13ca1f3294eba696dfee13374f40162e" name="a13ca1f3294eba696dfee13374f40162e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13ca1f3294eba696dfee13374f40162e">&#9670;&#160;</a></span>CCFG_SIZE_AND_DIS_FLAGS_DIS_GPRAM_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_SIZE_AND_DIS_FLAGS_DIS_GPRAM_s&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00084">84</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a2520f6d89b38221347d1f06d3fc40748" name="a2520f6d89b38221347d1f06d3fc40748"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2520f6d89b38221347d1f06d3fc40748">&#9670;&#160;</a></span>CCFG_SIZE_AND_DIS_FLAGS_DIS_TCXO_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_SIZE_AND_DIS_FLAGS_DIS_TCXO_m&#160;&#160;&#160;0x00000008</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00081">81</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a867760fbba96284b5bf7228a2e12252a" name="a867760fbba96284b5bf7228a2e12252a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a867760fbba96284b5bf7228a2e12252a">&#9670;&#160;</a></span>CCFG_SIZE_AND_DIS_FLAGS_DIS_TCXO_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_SIZE_AND_DIS_FLAGS_DIS_TCXO_s&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00082">82</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a5bb3ea3950be246f4340c79d98e859dc" name="a5bb3ea3950be246f4340c79d98e859dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bb3ea3950be246f4340c79d98e859dc">&#9670;&#160;</a></span>CCFG_SIZE_AND_DIS_FLAGS_DIS_XOSC_OVR_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_SIZE_AND_DIS_FLAGS_DIS_XOSC_OVR_m&#160;&#160;&#160;0x00000001</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00088">88</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="ad3be46b44ef3ae17e04a7233e363444b" name="ad3be46b44ef3ae17e04a7233e363444b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3be46b44ef3ae17e04a7233e363444b">&#9670;&#160;</a></span>CCFG_SIZE_AND_DIS_FLAGS_DIS_XOSC_OVR_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_SIZE_AND_DIS_FLAGS_DIS_XOSC_OVR_s&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00089">89</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="af5da7c6aec5d8512e3a543a13f29df03" name="af5da7c6aec5d8512e3a543a13f29df03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5da7c6aec5d8512e3a543a13f29df03">&#9670;&#160;</a></span>CCFG_SIZE_AND_DIS_FLAGS_DISABLE_FLAGS_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_SIZE_AND_DIS_FLAGS_DISABLE_FLAGS_m&#160;&#160;&#160;0x0000FFF0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00079">79</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a202e5be1334d92f98f48e0c61cb1269b" name="a202e5be1334d92f98f48e0c61cb1269b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a202e5be1334d92f98f48e0c61cb1269b">&#9670;&#160;</a></span>CCFG_SIZE_AND_DIS_FLAGS_DISABLE_FLAGS_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_SIZE_AND_DIS_FLAGS_DISABLE_FLAGS_s&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00080">80</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="ae346290ddca1c416cc56d15285700262" name="ae346290ddca1c416cc56d15285700262"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae346290ddca1c416cc56d15285700262">&#9670;&#160;</a></span>CCFG_SIZE_AND_DIS_FLAGS_SIZE_OF_CCFG_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_SIZE_AND_DIS_FLAGS_SIZE_OF_CCFG_m&#160;&#160;&#160;0xFFFF0000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00077">77</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+<a id="a75291998953d48f894513ec8791fd8a9" name="a75291998953d48f894513ec8791fd8a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75291998953d48f894513ec8791fd8a9">&#9670;&#160;</a></span>CCFG_SIZE_AND_DIS_FLAGS_SIZE_OF_CCFG_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCFG_SIZE_AND_DIS_FLAGS_SIZE_OF_CCFG_s&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html#l00078">78</a> of file <a class="el" href="cc26xx__cc13xx__ccfg_8h_source.html">cc26xx_cc13xx_ccfg.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:31 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

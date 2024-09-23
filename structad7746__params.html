@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>ad7746_params Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structad7746__params.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">ad7746_params Struct Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a> &#124; <a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> &raquo; <a class="el" href="group__drivers__ad7746.html">AD7746 Capacitance-to-digital converter driver</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>AD7746 params.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>AD7746 params. </p>
+
+<p class="definition">Definition at line <a class="el" href="ad7746_8h_source.html#l00142">142</a> of file <a class="el" href="ad7746_8h_source.html">ad7746.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="ad7746_8h_source.html">ad7746.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a3073ca6a2815a8f8174ef4c8d63b1fcd" id="r_a3073ca6a2815a8f8174ef4c8d63b1fcd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__i2c.html#ga53bedf646ffe6ddd17f13b893a17fa74">i2c_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3073ca6a2815a8f8174ef4c8d63b1fcd">i2c</a></td></tr>
+<tr class="memdesc:a3073ca6a2815a8f8174ef4c8d63b1fcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">i2c device  <br /></td></tr>
+<tr class="separator:a3073ca6a2815a8f8174ef4c8d63b1fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f14925d6071350ea47aa03db997db57" id="r_a2f14925d6071350ea47aa03db997db57"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f14925d6071350ea47aa03db997db57">addr</a></td></tr>
+<tr class="memdesc:a2f14925d6071350ea47aa03db997db57"><td class="mdescLeft">&#160;</td><td class="mdescRight">i2c address  <br /></td></tr>
+<tr class="separator:a2f14925d6071350ea47aa03db997db57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5ed739b970146d6b3b455c2f279d3cd" id="r_ac5ed739b970146d6b3b455c2f279d3cd"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5ed739b970146d6b3b455c2f279d3cd">dac_a_cap</a></td></tr>
+<tr class="memdesc:ac5ed739b970146d6b3b455c2f279d3cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">DAC A capacitance.  <br /></td></tr>
+<tr class="separator:ac5ed739b970146d6b3b455c2f279d3cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9daa6ae42ea92a1fc821e954cf922239" id="r_a9daa6ae42ea92a1fc821e954cf922239"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9daa6ae42ea92a1fc821e954cf922239">dac_b_cap</a></td></tr>
+<tr class="memdesc:a9daa6ae42ea92a1fc821e954cf922239"><td class="mdescLeft">&#160;</td><td class="mdescRight">DAC B capacitance.  <br /></td></tr>
+<tr class="separator:a9daa6ae42ea92a1fc821e954cf922239"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a475d741911d6d9c78afaf9a5c5f5dad1" id="r_a475d741911d6d9c78afaf9a5c5f5dad1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__ad7746.html#ga2f12d0b2408d43c5aeb3a1de3c8a22cc">ad7746_exc_config_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a475d741911d6d9c78afaf9a5c5f5dad1">exc_config</a></td></tr>
+<tr class="memdesc:a475d741911d6d9c78afaf9a5c5f5dad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">excitation signal config  <br /></td></tr>
+<tr class="separator:a475d741911d6d9c78afaf9a5c5f5dad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77551e877f3132c86498317cf6b580e9" id="r_a77551e877f3132c86498317cf6b580e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__ad7746.html#gac27e150f98c939be117a8c933f9b6017">ad7746_cap_sample_rate_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77551e877f3132c86498317cf6b580e9">cap_sample_rate</a></td></tr>
+<tr class="memdesc:a77551e877f3132c86498317cf6b580e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">capacitance sample rate  <br /></td></tr>
+<tr class="separator:a77551e877f3132c86498317cf6b580e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb2c16cf4a587c7d9aa48693c9d321e0" id="r_acb2c16cf4a587c7d9aa48693c9d321e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__ad7746.html#ga902b40e31d90a6b189bebe78f241339b">ad7746_vt_sample_rate_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb2c16cf4a587c7d9aa48693c9d321e0">vt_sample_rate</a></td></tr>
+<tr class="memdesc:acb2c16cf4a587c7d9aa48693c9d321e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">voltage/temp sample rate  <br /></td></tr>
+<tr class="separator:acb2c16cf4a587c7d9aa48693c9d321e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a680236e96ee6fe7ea1ca4fc23bc496e6" id="r_a680236e96ee6fe7ea1ca4fc23bc496e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__ad7746.html#ga767e5f771c9256fa61a424623dee3750">ad7746_vt_mode_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a680236e96ee6fe7ea1ca4fc23bc496e6">vt_mode</a></td></tr>
+<tr class="memdesc:a680236e96ee6fe7ea1ca4fc23bc496e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">mode of the voltage/temp ch  <br /></td></tr>
+<tr class="separator:a680236e96ee6fe7ea1ca4fc23bc496e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abff2f374cf547a666f17ace518d54a0d" id="r_abff2f374cf547a666f17ace518d54a0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__ad7746.html#ga4288ad466feb87f7f8d0493a15dc7163">ad7746_cap_input_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abff2f374cf547a666f17ace518d54a0d">cap_input</a></td></tr>
+<tr class="memdesc:abff2f374cf547a666f17ace518d54a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">selected capacitance input  <br /></td></tr>
+<tr class="separator:abff2f374cf547a666f17ace518d54a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a2f14925d6071350ea47aa03db997db57" name="a2f14925d6071350ea47aa03db997db57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f14925d6071350ea47aa03db997db57">&#9670;&#160;</a></span>addr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t ad7746_params::addr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>i2c address </p>
+
+<p class="definition">Definition at line <a class="el" href="ad7746_8h_source.html#l00144">144</a> of file <a class="el" href="ad7746_8h_source.html">ad7746.h</a>.</p>
+
+</div>
+</div>
+<a id="abff2f374cf547a666f17ace518d54a0d" name="abff2f374cf547a666f17ace518d54a0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abff2f374cf547a666f17ace518d54a0d">&#9670;&#160;</a></span>cap_input</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__ad7746.html#ga4288ad466feb87f7f8d0493a15dc7163">ad7746_cap_input_t</a> ad7746_params::cap_input</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>selected capacitance input </p>
+
+<p class="definition">Definition at line <a class="el" href="ad7746_8h_source.html#l00151">151</a> of file <a class="el" href="ad7746_8h_source.html">ad7746.h</a>.</p>
+
+</div>
+</div>
+<a id="a77551e877f3132c86498317cf6b580e9" name="a77551e877f3132c86498317cf6b580e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77551e877f3132c86498317cf6b580e9">&#9670;&#160;</a></span>cap_sample_rate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__ad7746.html#gac27e150f98c939be117a8c933f9b6017">ad7746_cap_sample_rate_t</a> ad7746_params::cap_sample_rate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>capacitance sample rate </p>
+
+<p class="definition">Definition at line <a class="el" href="ad7746_8h_source.html#l00148">148</a> of file <a class="el" href="ad7746_8h_source.html">ad7746.h</a>.</p>
+
+</div>
+</div>
+<a id="ac5ed739b970146d6b3b455c2f279d3cd" name="ac5ed739b970146d6b3b455c2f279d3cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5ed739b970146d6b3b455c2f279d3cd">&#9670;&#160;</a></span>dac_a_cap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t ad7746_params::dac_a_cap</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DAC A capacitance. </p>
+
+<p class="definition">Definition at line <a class="el" href="ad7746_8h_source.html#l00145">145</a> of file <a class="el" href="ad7746_8h_source.html">ad7746.h</a>.</p>
+
+</div>
+</div>
+<a id="a9daa6ae42ea92a1fc821e954cf922239" name="a9daa6ae42ea92a1fc821e954cf922239"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9daa6ae42ea92a1fc821e954cf922239">&#9670;&#160;</a></span>dac_b_cap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t ad7746_params::dac_b_cap</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DAC B capacitance. </p>
+
+<p class="definition">Definition at line <a class="el" href="ad7746_8h_source.html#l00146">146</a> of file <a class="el" href="ad7746_8h_source.html">ad7746.h</a>.</p>
+
+</div>
+</div>
+<a id="a475d741911d6d9c78afaf9a5c5f5dad1" name="a475d741911d6d9c78afaf9a5c5f5dad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a475d741911d6d9c78afaf9a5c5f5dad1">&#9670;&#160;</a></span>exc_config</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__ad7746.html#ga2f12d0b2408d43c5aeb3a1de3c8a22cc">ad7746_exc_config_t</a> ad7746_params::exc_config</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>excitation signal config </p>
+
+<p class="definition">Definition at line <a class="el" href="ad7746_8h_source.html#l00147">147</a> of file <a class="el" href="ad7746_8h_source.html">ad7746.h</a>.</p>
+
+</div>
+</div>
+<a id="a3073ca6a2815a8f8174ef4c8d63b1fcd" name="a3073ca6a2815a8f8174ef4c8d63b1fcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3073ca6a2815a8f8174ef4c8d63b1fcd">&#9670;&#160;</a></span>i2c</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__i2c.html#ga53bedf646ffe6ddd17f13b893a17fa74">i2c_t</a> ad7746_params::i2c</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>i2c device </p>
+
+<p class="definition">Definition at line <a class="el" href="ad7746_8h_source.html#l00143">143</a> of file <a class="el" href="ad7746_8h_source.html">ad7746.h</a>.</p>
+
+</div>
+</div>
+<a id="a680236e96ee6fe7ea1ca4fc23bc496e6" name="a680236e96ee6fe7ea1ca4fc23bc496e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a680236e96ee6fe7ea1ca4fc23bc496e6">&#9670;&#160;</a></span>vt_mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__ad7746.html#ga767e5f771c9256fa61a424623dee3750">ad7746_vt_mode_t</a> ad7746_params::vt_mode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>mode of the voltage/temp ch </p>
+
+<p class="definition">Definition at line <a class="el" href="ad7746_8h_source.html#l00150">150</a> of file <a class="el" href="ad7746_8h_source.html">ad7746.h</a>.</p>
+
+</div>
+</div>
+<a id="acb2c16cf4a587c7d9aa48693c9d321e0" name="acb2c16cf4a587c7d9aa48693c9d321e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb2c16cf4a587c7d9aa48693c9d321e0">&#9670;&#160;</a></span>vt_sample_rate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__ad7746.html#ga902b40e31d90a6b189bebe78f241339b">ad7746_vt_sample_rate_t</a> ad7746_params::vt_sample_rate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>voltage/temp sample rate </p>
+
+<p class="definition">Definition at line <a class="el" href="ad7746_8h_source.html#l00149">149</a> of file <a class="el" href="ad7746_8h_source.html">ad7746.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>drivers/include/<a class="el" href="ad7746_8h_source.html">ad7746.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

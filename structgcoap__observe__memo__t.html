@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>gcoap_observe_memo_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structgcoap__observe__memo__t.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">gcoap_observe_memo_t Struct Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gcoap.html">GCoAP</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Memo for Observe registration and notifications.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Memo for Observe registration and notifications. </p>
+
+<p class="definition">Definition at line <a class="el" href="gcoap_8h_source.html#l00861">861</a> of file <a class="el" href="gcoap_8h_source.html">gcoap.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="gcoap_8h_source.html">gcoap.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:aa63dbec93af8e16744d93b938df83fc6" id="r_aa63dbec93af8e16744d93b938df83fc6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__net__sock__udp.html#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa63dbec93af8e16744d93b938df83fc6">observer</a></td></tr>
+<tr class="memdesc:aa63dbec93af8e16744d93b938df83fc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Client endpoint; unused if null.  <br /></td></tr>
+<tr class="separator:aa63dbec93af8e16744d93b938df83fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98965f70405532d01608520c491b6852" id="r_a98965f70405532d01608520c491b6852"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__net__sock__udp.html#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98965f70405532d01608520c491b6852">notifier</a></td></tr>
+<tr class="memdesc:a98965f70405532d01608520c491b6852"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local endpoint to send notifications.  <br /></td></tr>
+<tr class="separator:a98965f70405532d01608520c491b6852"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9140bff73e4eb90d492402576586c8f2" id="r_a9140bff73e4eb90d492402576586c8f2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structcoap__resource__t.html">coap_resource_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9140bff73e4eb90d492402576586c8f2">resource</a></td></tr>
+<tr class="memdesc:a9140bff73e4eb90d492402576586c8f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entity being observed.  <br /></td></tr>
+<tr class="separator:a9140bff73e4eb90d492402576586c8f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c4c622c8af8d8609337f56957213a4f" id="r_a5c4c622c8af8d8609337f56957213a4f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c4c622c8af8d8609337f56957213a4f">token</a> [<a class="el" href="group__net__gcoap.html#ga2f4f23b08bfc7b5bbc578235b1b3ab0e">GCOAP_TOKENLEN_MAX</a>]</td></tr>
+<tr class="memdesc:a5c4c622c8af8d8609337f56957213a4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Client token for notifications.  <br /></td></tr>
+<tr class="separator:a5c4c622c8af8d8609337f56957213a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa59ec1d0490632de1ec73c580896d3ed" id="r_aa59ec1d0490632de1ec73c580896d3ed"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa59ec1d0490632de1ec73c580896d3ed">last_msgid</a></td></tr>
+<tr class="memdesc:aa59ec1d0490632de1ec73c580896d3ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message ID of last notification.  <br /></td></tr>
+<tr class="separator:aa59ec1d0490632de1ec73c580896d3ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a009624ea22e42b910e9649a622f997ab" id="r_a009624ea22e42b910e9649a622f997ab"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a009624ea22e42b910e9649a622f997ab">token_len</a></td></tr>
+<tr class="memdesc:a009624ea22e42b910e9649a622f997ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actual length of token attribute.  <br /></td></tr>
+<tr class="separator:a009624ea22e42b910e9649a622f997ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e786807f7169b9048eb20704de9043c" id="r_a6e786807f7169b9048eb20704de9043c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgcoap__socket__t.html">gcoap_socket_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e786807f7169b9048eb20704de9043c">socket</a></td></tr>
+<tr class="memdesc:a6e786807f7169b9048eb20704de9043c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transport type to observer.  <br /></td></tr>
+<tr class="separator:a6e786807f7169b9048eb20704de9043c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="aa59ec1d0490632de1ec73c580896d3ed" name="aa59ec1d0490632de1ec73c580896d3ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa59ec1d0490632de1ec73c580896d3ed">&#9670;&#160;</a></span>last_msgid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t gcoap_observe_memo_t::last_msgid</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Message ID of last notification. </p>
+
+<p class="definition">Definition at line <a class="el" href="gcoap_8h_source.html#l00866">866</a> of file <a class="el" href="gcoap_8h_source.html">gcoap.h</a>.</p>
+
+</div>
+</div>
+<a id="a98965f70405532d01608520c491b6852" name="a98965f70405532d01608520c491b6852"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98965f70405532d01608520c491b6852">&#9670;&#160;</a></span>notifier</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__net__sock__udp.html#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a>* gcoap_observe_memo_t::notifier</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Local endpoint to send notifications. </p>
+
+<p class="definition">Definition at line <a class="el" href="gcoap_8h_source.html#l00863">863</a> of file <a class="el" href="gcoap_8h_source.html">gcoap.h</a>.</p>
+
+</div>
+</div>
+<a id="aa63dbec93af8e16744d93b938df83fc6" name="aa63dbec93af8e16744d93b938df83fc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa63dbec93af8e16744d93b938df83fc6">&#9670;&#160;</a></span>observer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__net__sock__udp.html#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a>* gcoap_observe_memo_t::observer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Client endpoint; unused if null. </p>
+
+<p class="definition">Definition at line <a class="el" href="gcoap_8h_source.html#l00862">862</a> of file <a class="el" href="gcoap_8h_source.html">gcoap.h</a>.</p>
+
+</div>
+</div>
+<a id="a9140bff73e4eb90d492402576586c8f2" name="a9140bff73e4eb90d492402576586c8f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9140bff73e4eb90d492402576586c8f2">&#9670;&#160;</a></span>resource</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structcoap__resource__t.html">coap_resource_t</a>* gcoap_observe_memo_t::resource</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Entity being observed. </p>
+
+<p class="definition">Definition at line <a class="el" href="gcoap_8h_source.html#l00864">864</a> of file <a class="el" href="gcoap_8h_source.html">gcoap.h</a>.</p>
+
+</div>
+</div>
+<a id="a6e786807f7169b9048eb20704de9043c" name="a6e786807f7169b9048eb20704de9043c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e786807f7169b9048eb20704de9043c">&#9670;&#160;</a></span>socket</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgcoap__socket__t.html">gcoap_socket_t</a> gcoap_observe_memo_t::socket</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transport type to observer. </p>
+
+<p class="definition">Definition at line <a class="el" href="gcoap_8h_source.html#l00868">868</a> of file <a class="el" href="gcoap_8h_source.html">gcoap.h</a>.</p>
+
+</div>
+</div>
+<a id="a5c4c622c8af8d8609337f56957213a4f" name="a5c4c622c8af8d8609337f56957213a4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c4c622c8af8d8609337f56957213a4f">&#9670;&#160;</a></span>token</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t gcoap_observe_memo_t::token[<a class="el" href="group__net__gcoap.html#ga2f4f23b08bfc7b5bbc578235b1b3ab0e">GCOAP_TOKENLEN_MAX</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Client token for notifications. </p>
+
+<p class="definition">Definition at line <a class="el" href="gcoap_8h_source.html#l00865">865</a> of file <a class="el" href="gcoap_8h_source.html">gcoap.h</a>.</p>
+
+</div>
+</div>
+<a id="a009624ea22e42b910e9649a622f997ab" name="a009624ea22e42b910e9649a622f997ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a009624ea22e42b910e9649a622f997ab">&#9670;&#160;</a></span>token_len</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned gcoap_observe_memo_t::token_len</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actual length of token attribute. </p>
+
+<p class="definition">Definition at line <a class="el" href="gcoap_8h_source.html#l00867">867</a> of file <a class="el" href="gcoap_8h_source.html">gcoap.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>sys/include/net/<a class="el" href="gcoap_8h_source.html">gcoap.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

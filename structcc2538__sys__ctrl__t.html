@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>cc2538_sys_ctrl_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structcc2538__sys__ctrl__t.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">cc2538_sys_ctrl_t Struct Reference<div class="ingroups"><a class="el" href="group__cpu.html">CPU</a> &raquo; <a class="el" href="group__cpu__cc2538.html">TI CC2538</a> &raquo; <a class="el" href="group__cpu__cc2538__regs.html">TI CC2538 CMSIS-style Headers</a> &raquo; <a class="el" href="group__cpu__cc2538__sysctrl.html">CC2538 System Control</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>System Control component registers.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>System Control component registers. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00032">32</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:ac5b19da4186b4657454fc476af7c602a" id="r_ac5b19da4186b4657454fc476af7c602a"><td class="memItemLeft" ><a id="ac5b19da4186b4657454fc476af7c602a" name="ac5b19da4186b4657454fc476af7c602a"></a>
+union {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ccfd8c3a28b8a974cbbed5542bd07a6" id="r_a8ccfd8c3a28b8a974cbbed5542bd07a6"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#abbe3be72c97e4e6d82cdaf75f7b71392">CLOCK_CTRL</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a8ccfd8c3a28b8a974cbbed5542bd07a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clock control register.  <a href="#abbe3be72c97e4e6d82cdaf75f7b71392">More...</a><br /></td></tr>
+<tr class="separator:a8ccfd8c3a28b8a974cbbed5542bd07a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae53579c1a37ef0492a9c0361e2014c42" id="r_ae53579c1a37ef0492a9c0361e2014c42"><td class="memItemLeft" >
+&#160;&#160;&#160;struct {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a253bb5cbe8f4cdca507fc941615ff8e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92697b856f3fce0622f1904b35aaaadd" id="r_a92697b856f3fce0622f1904b35aaaadd"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#add579c744a0527b34d97172405dc535e">SYS_DIV</a>: 3&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a92697b856f3fce0622f1904b35aaaadd"><td class="mdescLeft">&#160;</td><td class="mdescRight">System clock rate setting.  <a href="#add579c744a0527b34d97172405dc535e">More...</a><br /></td></tr>
+<tr class="separator:a92697b856f3fce0622f1904b35aaaadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7195dba1a46f60bd152cb6f5a6cadadf" id="r_a7195dba1a46f60bd152cb6f5a6cadadf"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#ab3d3d9cce3bc9681127cf1baa579e72d">RESERVED1</a>: 5&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a7195dba1a46f60bd152cb6f5a6cadadf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved bits.  <a href="#ab3d3d9cce3bc9681127cf1baa579e72d">More...</a><br /></td></tr>
+<tr class="separator:a7195dba1a46f60bd152cb6f5a6cadadf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba7089deedee2319dd6f51654b61b775" id="r_aba7089deedee2319dd6f51654b61b775"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a08d02d0bae77de3c2aad9fee0dfe7416">IO_DIV</a>: 3&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:aba7089deedee2319dd6f51654b61b775"><td class="mdescLeft">&#160;</td><td class="mdescRight">I/O clock rate setting.  <a href="#a08d02d0bae77de3c2aad9fee0dfe7416">More...</a><br /></td></tr>
+<tr class="separator:aba7089deedee2319dd6f51654b61b775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a435248892af42aae8eaf2c9136303779" id="r_a435248892af42aae8eaf2c9136303779"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#ab5473cbe95fb8bd45d0570ee2cf9c594">RESERVED2</a>: 5&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a435248892af42aae8eaf2c9136303779"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved bits.  <a href="#ab5473cbe95fb8bd45d0570ee2cf9c594">More...</a><br /></td></tr>
+<tr class="separator:a435248892af42aae8eaf2c9136303779"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcc851510fb03c424ddae8e39ca6ae5a" id="r_afcc851510fb03c424ddae8e39ca6ae5a"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#ae465eecb69463569a6f2809d361d0335">OSC</a>: 1&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:afcc851510fb03c424ddae8e39ca6ae5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">System clock oscillator selection.  <a href="#ae465eecb69463569a6f2809d361d0335">More...</a><br /></td></tr>
+<tr class="separator:afcc851510fb03c424ddae8e39ca6ae5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac6f92cc840d6013b2eb75509b376ef0" id="r_aac6f92cc840d6013b2eb75509b376ef0"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#ada018db8a904bd7fdcc47bdf78dfa253">OSC_PD</a>: 1&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:aac6f92cc840d6013b2eb75509b376ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oscillator power-down.  <a href="#ada018db8a904bd7fdcc47bdf78dfa253">More...</a><br /></td></tr>
+<tr class="separator:aac6f92cc840d6013b2eb75509b376ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f4942fbe34483ef587e09c4435b6532" id="r_a9f4942fbe34483ef587e09c4435b6532"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#adb13978b7c63a58356441bca2c743195">RESERVED3</a>: 3&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a9f4942fbe34483ef587e09c4435b6532"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved bits.  <a href="#adb13978b7c63a58356441bca2c743195">More...</a><br /></td></tr>
+<tr class="separator:a9f4942fbe34483ef587e09c4435b6532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22a716365d3998f3eeb8ac56c7cba627" id="r_a22a716365d3998f3eeb8ac56c7cba627"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a722fcdc4a67e27747a26af7caab003c4">AMP_DET</a>: 1&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a22a716365d3998f3eeb8ac56c7cba627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Amplitude detector of XOSC during power up.  <a href="#a722fcdc4a67e27747a26af7caab003c4">More...</a><br /></td></tr>
+<tr class="separator:a22a716365d3998f3eeb8ac56c7cba627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab635189813f6ffa56c7dac0b197bc443" id="r_ab635189813f6ffa56c7dac0b197bc443"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a2ae082e11555fe10bf400af0dfc4ff23">RESERVED4</a>: 2&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:ab635189813f6ffa56c7dac0b197bc443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved bits.  <a href="#a2ae082e11555fe10bf400af0dfc4ff23">More...</a><br /></td></tr>
+<tr class="separator:ab635189813f6ffa56c7dac0b197bc443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a776473cb77f195b408c0dec06f171c83" id="r_a776473cb77f195b408c0dec06f171c83"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a346f85c72c48d059f8fee251781c3f1b">OSC32K</a>: 1&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a776473cb77f195b408c0dec06f171c83"><td class="mdescLeft">&#160;</td><td class="mdescRight">32-kHz clock oscillator selection  <a href="#a346f85c72c48d059f8fee251781c3f1b">More...</a><br /></td></tr>
+<tr class="separator:a776473cb77f195b408c0dec06f171c83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8eb34731a5771b4b13d6c442985918b" id="r_ad8eb34731a5771b4b13d6c442985918b"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a612adf8ccba78b8ea9d97fa9acf9199f">OSC32K_CADIS</a>: 1&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:ad8eb34731a5771b4b13d6c442985918b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable calibration 32-kHz RC oscillator.  <a href="#a612adf8ccba78b8ea9d97fa9acf9199f">More...</a><br /></td></tr>
+<tr class="separator:ad8eb34731a5771b4b13d6c442985918b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a887bfc62799c989dcb2fd0e21a82e410" id="r_a887bfc62799c989dcb2fd0e21a82e410"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a5952c8b36d4f193a4149435791504cc9">RESERVED5</a>: 6&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a887bfc62799c989dcb2fd0e21a82e410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved bits.  <a href="#a5952c8b36d4f193a4149435791504cc9">More...</a><br /></td></tr>
+<tr class="separator:a887bfc62799c989dcb2fd0e21a82e410"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae53579c1a37ef0492a9c0361e2014c42" id="r_ae53579c1a37ef0492a9c0361e2014c42"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<b>CLOCK_CTRLbits</b>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:ae53579c1a37ef0492a9c0361e2014c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5b19da4186b4657454fc476af7c602a" id="r_ac5b19da4186b4657454fc476af7c602a"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><b>cc2538_sys_ctrl_clk_ctrl</b>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:ac5b19da4186b4657454fc476af7c602a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clock control register. <br /></td></tr>
+<tr class="separator:ac5b19da4186b4657454fc476af7c602a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a197e50c40cd756d78d0c7a987166989f" id="r_a197e50c40cd756d78d0c7a987166989f"><td class="memItemLeft" ><a id="a197e50c40cd756d78d0c7a987166989f" name="a197e50c40cd756d78d0c7a987166989f"></a>
+union {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7032ebdc761cf91fad86f612c0168b76" id="r_a7032ebdc761cf91fad86f612c0168b76"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a52cda35b92302beca03c55f38e3c0ab2">CLOCK_STA</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a7032ebdc761cf91fad86f612c0168b76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clock status register.  <a href="#a52cda35b92302beca03c55f38e3c0ab2">More...</a><br /></td></tr>
+<tr class="separator:a7032ebdc761cf91fad86f612c0168b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0faa082de811d5aac24e6991bdfb718" id="r_aa0faa082de811d5aac24e6991bdfb718"><td class="memItemLeft" >
+&#160;&#160;&#160;struct {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:ae8fc458610adfa34597633a8a41861b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71726dcff8ab4a2e0ae2f9a0bc52f37e" id="r_a71726dcff8ab4a2e0ae2f9a0bc52f37e"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#add579c744a0527b34d97172405dc535e">SYS_DIV</a>: 3&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a71726dcff8ab4a2e0ae2f9a0bc52f37e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current functional frequency for system clock.  <a href="#add579c744a0527b34d97172405dc535e">More...</a><br /></td></tr>
+<tr class="separator:a71726dcff8ab4a2e0ae2f9a0bc52f37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a715587bdfdfb327628bc7757c2531b23" id="r_a715587bdfdfb327628bc7757c2531b23"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a8b33338e7a791d8b4d771e55c8d8674c">RESERVED6</a>: 5&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a715587bdfdfb327628bc7757c2531b23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved bits.  <a href="#a8b33338e7a791d8b4d771e55c8d8674c">More...</a><br /></td></tr>
+<tr class="separator:a715587bdfdfb327628bc7757c2531b23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f0862a9761a1f7499dba3c614a070e5" id="r_a2f0862a9761a1f7499dba3c614a070e5"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a08d02d0bae77de3c2aad9fee0dfe7416">IO_DIV</a>: 3&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a2f0862a9761a1f7499dba3c614a070e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current functional frequency for IO_CLK.  <a href="#a08d02d0bae77de3c2aad9fee0dfe7416">More...</a><br /></td></tr>
+<tr class="separator:a2f0862a9761a1f7499dba3c614a070e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65bb9d9c3c02b9dcd8d276b15e9f744b" id="r_a65bb9d9c3c02b9dcd8d276b15e9f744b"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a626e0fecfd3acf7770c308469c6e9303">RESERVED7</a>: 5&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a65bb9d9c3c02b9dcd8d276b15e9f744b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved bits.  <a href="#a626e0fecfd3acf7770c308469c6e9303">More...</a><br /></td></tr>
+<tr class="separator:a65bb9d9c3c02b9dcd8d276b15e9f744b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27903a1b6ecb89cfed66fc43d4fb005d" id="r_a27903a1b6ecb89cfed66fc43d4fb005d"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#ae465eecb69463569a6f2809d361d0335">OSC</a>: 1&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a27903a1b6ecb89cfed66fc43d4fb005d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current clock source selected.  <a href="#ae465eecb69463569a6f2809d361d0335">More...</a><br /></td></tr>
+<tr class="separator:a27903a1b6ecb89cfed66fc43d4fb005d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5d63e8d2b935ef7dbc2d53a909229ec" id="r_af5d63e8d2b935ef7dbc2d53a909229ec"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#ada018db8a904bd7fdcc47bdf78dfa253">OSC_PD</a>: 1&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:af5d63e8d2b935ef7dbc2d53a909229ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oscillator power-down.  <a href="#ada018db8a904bd7fdcc47bdf78dfa253">More...</a><br /></td></tr>
+<tr class="separator:af5d63e8d2b935ef7dbc2d53a909229ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e7eb8b727752cf1af7d6f564cb02c36" id="r_a4e7eb8b727752cf1af7d6f564cb02c36"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a76a4f4eb2b2d80b2a973dedb1df8f994">HSOSC_STB</a>: 1&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a4e7eb8b727752cf1af7d6f564cb02c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">HSOSC stable status.  <a href="#a76a4f4eb2b2d80b2a973dedb1df8f994">More...</a><br /></td></tr>
+<tr class="separator:a4e7eb8b727752cf1af7d6f564cb02c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79dd61e3fce14f150ed062ae843cfcaa" id="r_a79dd61e3fce14f150ed062ae843cfcaa"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#ad24c75dbaf6ef5aa5b4d01e17ce5f81f">XOSC_STB</a>: 1&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a79dd61e3fce14f150ed062ae843cfcaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">XOSC stable status.  <a href="#ad24c75dbaf6ef5aa5b4d01e17ce5f81f">More...</a><br /></td></tr>
+<tr class="separator:a79dd61e3fce14f150ed062ae843cfcaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe6fae0d781ec3d84f7d88388b9fb527" id="r_abe6fae0d781ec3d84f7d88388b9fb527"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#ab3fca1b459c5094c2bea516982a542e1">SOURCE_CHANGE</a>: 1&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:abe6fae0d781ec3d84f7d88388b9fb527"><td class="mdescLeft">&#160;</td><td class="mdescRight">System clock source change.  <a href="#ab3fca1b459c5094c2bea516982a542e1">More...</a><br /></td></tr>
+<tr class="separator:abe6fae0d781ec3d84f7d88388b9fb527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5103afbce6c54b10538cc5a43645fc81" id="r_a5103afbce6c54b10538cc5a43645fc81"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a98f82e6ca27df4f5d0cf2a172422122a">RESERVED8</a>: 1&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a5103afbce6c54b10538cc5a43645fc81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved bits.  <a href="#a98f82e6ca27df4f5d0cf2a172422122a">More...</a><br /></td></tr>
+<tr class="separator:a5103afbce6c54b10538cc5a43645fc81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad29fc5e2d6adbffab5c288cb6167de92" id="r_ad29fc5e2d6adbffab5c288cb6167de92"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a30c2a0027106f561da1dae412ef9f7c5">RST</a>: 2&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:ad29fc5e2d6adbffab5c288cb6167de92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last source of reset.  <a href="#a30c2a0027106f561da1dae412ef9f7c5">More...</a><br /></td></tr>
+<tr class="separator:ad29fc5e2d6adbffab5c288cb6167de92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12ddbe7eae5e7383670401f32cb87237" id="r_a12ddbe7eae5e7383670401f32cb87237"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a346f85c72c48d059f8fee251781c3f1b">OSC32K</a>: 1&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a12ddbe7eae5e7383670401f32cb87237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current 32-kHz clock oscillator selected.  <a href="#a346f85c72c48d059f8fee251781c3f1b">More...</a><br /></td></tr>
+<tr class="separator:a12ddbe7eae5e7383670401f32cb87237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a683891b14f79b634fdb2b01d989e2b99" id="r_a683891b14f79b634fdb2b01d989e2b99"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#ac024ef8c5333a8f6cfa70146445c70ad">OSC32K_CALDIS</a>: 1&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a683891b14f79b634fdb2b01d989e2b99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable calibration 32-kHz RC oscillator.  <a href="#ac024ef8c5333a8f6cfa70146445c70ad">More...</a><br /></td></tr>
+<tr class="separator:a683891b14f79b634fdb2b01d989e2b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa574811aeec0f4f7e239a860512edda1" id="r_aa574811aeec0f4f7e239a860512edda1"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#aa31ffab3ebc75534d63cb9043f60eeff">SYNC_32K</a>: 1&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:aa574811aeec0f4f7e239a860512edda1"><td class="mdescLeft">&#160;</td><td class="mdescRight">32-kHz clock source synced to undivided system clock (16 or 32 MHz)  <a href="#aa31ffab3ebc75534d63cb9043f60eeff">More...</a><br /></td></tr>
+<tr class="separator:aa574811aeec0f4f7e239a860512edda1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f9735a48c769e64b01aa73a61eec37a" id="r_a9f9735a48c769e64b01aa73a61eec37a"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#abe2918398cf8bdeb4fa20c006c3393ef">RESERVED9</a>: 5&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a9f9735a48c769e64b01aa73a61eec37a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved bits.  <a href="#abe2918398cf8bdeb4fa20c006c3393ef">More...</a><br /></td></tr>
+<tr class="separator:a9f9735a48c769e64b01aa73a61eec37a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0faa082de811d5aac24e6991bdfb718" id="r_aa0faa082de811d5aac24e6991bdfb718"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<b>CLOCK_STAbits</b>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:aa0faa082de811d5aac24e6991bdfb718"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a197e50c40cd756d78d0c7a987166989f" id="r_a197e50c40cd756d78d0c7a987166989f"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><b>cc2538_sys_ctrl_clk_sta</b>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a197e50c40cd756d78d0c7a987166989f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clock status register. <br /></td></tr>
+<tr class="separator:a197e50c40cd756d78d0c7a987166989f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaf678c50b3d11f182923b73031f23de" id="r_aaaf678c50b3d11f182923b73031f23de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaaf678c50b3d11f182923b73031f23de">RCGCGPT</a></td></tr>
+<tr class="memdesc:aaaf678c50b3d11f182923b73031f23de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Module clocks for GPT[3:0] when the CPU is in active (run) mode.  <br /></td></tr>
+<tr class="separator:aaaf678c50b3d11f182923b73031f23de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a28f9603c0366fc513ed72bd70418ac" id="r_a6a28f9603c0366fc513ed72bd70418ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a28f9603c0366fc513ed72bd70418ac">SCGCGPT</a></td></tr>
+<tr class="memdesc:a6a28f9603c0366fc513ed72bd70418ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Module clocks for GPT[3:0] when the CPU is in sleep mode.  <br /></td></tr>
+<tr class="separator:a6a28f9603c0366fc513ed72bd70418ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab57705c6e176328c94f0a078ef96bda6" id="r_ab57705c6e176328c94f0a078ef96bda6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab57705c6e176328c94f0a078ef96bda6">DCGCGPT</a></td></tr>
+<tr class="memdesc:ab57705c6e176328c94f0a078ef96bda6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Module clocks for GPT[3:0] when the CPU is in PM0.  <br /></td></tr>
+<tr class="separator:ab57705c6e176328c94f0a078ef96bda6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bb42b681920e68d901c984f7e46e399" id="r_a3bb42b681920e68d901c984f7e46e399"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bb42b681920e68d901c984f7e46e399">SRGPT</a></td></tr>
+<tr class="memdesc:a3bb42b681920e68d901c984f7e46e399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset for GPT[3:0].  <br /></td></tr>
+<tr class="separator:a3bb42b681920e68d901c984f7e46e399"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a996c09e47437761121efea59a672bc0d" id="r_a996c09e47437761121efea59a672bc0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a996c09e47437761121efea59a672bc0d">RCGCSSI</a></td></tr>
+<tr class="memdesc:a996c09e47437761121efea59a672bc0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Module clocks for SSI[1:0] when the CPU is in active (run) mode.  <br /></td></tr>
+<tr class="separator:a996c09e47437761121efea59a672bc0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25b03f6e3e13953ccbbb0852ef95b5ae" id="r_a25b03f6e3e13953ccbbb0852ef95b5ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25b03f6e3e13953ccbbb0852ef95b5ae">SCGCSSI</a></td></tr>
+<tr class="memdesc:a25b03f6e3e13953ccbbb0852ef95b5ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Module clocks for SSI[1:0] when the CPU is insSleep mode.  <br /></td></tr>
+<tr class="separator:a25b03f6e3e13953ccbbb0852ef95b5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fade6b6eafb464fa9c238ebd8d7b3aa" id="r_a4fade6b6eafb464fa9c238ebd8d7b3aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fade6b6eafb464fa9c238ebd8d7b3aa">DCGCSSI</a></td></tr>
+<tr class="memdesc:a4fade6b6eafb464fa9c238ebd8d7b3aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Module clocks for SSI[1:0] when the CPU is in PM0.  <br /></td></tr>
+<tr class="separator:a4fade6b6eafb464fa9c238ebd8d7b3aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b81c12e23ca7bed13af6ee3df12dfb5" id="r_a7b81c12e23ca7bed13af6ee3df12dfb5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b81c12e23ca7bed13af6ee3df12dfb5">SRSSI</a></td></tr>
+<tr class="memdesc:a7b81c12e23ca7bed13af6ee3df12dfb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset for SSI[1:0].  <br /></td></tr>
+<tr class="separator:a7b81c12e23ca7bed13af6ee3df12dfb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b56360da843d72566f554769fa8b2e7" id="r_a0b56360da843d72566f554769fa8b2e7"><td class="memItemLeft" ><a id="a0b56360da843d72566f554769fa8b2e7" name="a0b56360da843d72566f554769fa8b2e7"></a>
+union {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba73d908d6e749501b76c1368e5bc8f1" id="r_aba73d908d6e749501b76c1368e5bc8f1"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#af1cc69504d8178cb0e9e3a893d3f7834">RCGCUART</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:aba73d908d6e749501b76c1368e5bc8f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Module clocks for UART[1:0] when the CPU is in active (run) mode.  <a href="#af1cc69504d8178cb0e9e3a893d3f7834">More...</a><br /></td></tr>
+<tr class="separator:aba73d908d6e749501b76c1368e5bc8f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac47d34b4d55ff133ad64cdf9d69cae29" id="r_ac47d34b4d55ff133ad64cdf9d69cae29"><td class="memItemLeft" >
+&#160;&#160;&#160;struct {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:ab23d6155ad64770732bfcafc66726fe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8c6d89bee31e795b43c48984aa16cf7" id="r_ab8c6d89bee31e795b43c48984aa16cf7"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a6652897d4e8b5b734bc83079a00b083e">UART0</a>: 1&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:ab8c6d89bee31e795b43c48984aa16cf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable UART0 clock in active (run) mode.  <a href="#a6652897d4e8b5b734bc83079a00b083e">More...</a><br /></td></tr>
+<tr class="separator:ab8c6d89bee31e795b43c48984aa16cf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5e8b0c91cf545692565cb3df712c0ac" id="r_af5e8b0c91cf545692565cb3df712c0ac"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#adbef21a60d642ca3d5b652b13791aa14">UART1</a>: 1&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:af5e8b0c91cf545692565cb3df712c0ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable UART1 clock in active (run) mode.  <a href="#adbef21a60d642ca3d5b652b13791aa14">More...</a><br /></td></tr>
+<tr class="separator:af5e8b0c91cf545692565cb3df712c0ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab099554daa627aab6a13d97672f43922" id="r_ab099554daa627aab6a13d97672f43922"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a48afdd678104ceaa0760a073d31abf70">RESERVED</a>: 30&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:ab099554daa627aab6a13d97672f43922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved bits.  <a href="#a48afdd678104ceaa0760a073d31abf70">More...</a><br /></td></tr>
+<tr class="separator:ab099554daa627aab6a13d97672f43922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac47d34b4d55ff133ad64cdf9d69cae29" id="r_ac47d34b4d55ff133ad64cdf9d69cae29"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<b>RCGCUARTbits</b>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:ac47d34b4d55ff133ad64cdf9d69cae29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b56360da843d72566f554769fa8b2e7" id="r_a0b56360da843d72566f554769fa8b2e7"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><b>cc2538_sys_ctrl_unnamed1</b>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a0b56360da843d72566f554769fa8b2e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART module clock register - active mode. <br /></td></tr>
+<tr class="separator:a0b56360da843d72566f554769fa8b2e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac081aa76366462db4d5c15392833ab28" id="r_ac081aa76366462db4d5c15392833ab28"><td class="memItemLeft" ><a id="ac081aa76366462db4d5c15392833ab28" name="ac081aa76366462db4d5c15392833ab28"></a>
+union {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acebe9aa44ab2bca784f849e9a1e5ecd7" id="r_acebe9aa44ab2bca784f849e9a1e5ecd7"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a33cb20b6c530e442b03583578d023c87">SCGCUART</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:acebe9aa44ab2bca784f849e9a1e5ecd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Module clocks for UART[1:0] when the CPU is in sleep mode.  <a href="#a33cb20b6c530e442b03583578d023c87">More...</a><br /></td></tr>
+<tr class="separator:acebe9aa44ab2bca784f849e9a1e5ecd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54854e668070f3fcd558cd331c589094" id="r_a54854e668070f3fcd558cd331c589094"><td class="memItemLeft" >
+&#160;&#160;&#160;struct {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a378048886ecd0475b53af0dd07b2d5ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b90879ce7cc661fc8759b1fe13db9a6" id="r_a4b90879ce7cc661fc8759b1fe13db9a6"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a6652897d4e8b5b734bc83079a00b083e">UART0</a>: 1&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a4b90879ce7cc661fc8759b1fe13db9a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable UART0 clock in sleep mode.  <a href="#a6652897d4e8b5b734bc83079a00b083e">More...</a><br /></td></tr>
+<tr class="separator:a4b90879ce7cc661fc8759b1fe13db9a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fe7f001818effa49a81847902b33d32" id="r_a1fe7f001818effa49a81847902b33d32"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#adbef21a60d642ca3d5b652b13791aa14">UART1</a>: 1&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a1fe7f001818effa49a81847902b33d32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable UART1 clock in sleep mode.  <a href="#adbef21a60d642ca3d5b652b13791aa14">More...</a><br /></td></tr>
+<tr class="separator:a1fe7f001818effa49a81847902b33d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7ec1c5468929e46ccfdfc181c15c543" id="r_ae7ec1c5468929e46ccfdfc181c15c543"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a48afdd678104ceaa0760a073d31abf70">RESERVED</a>: 30&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:ae7ec1c5468929e46ccfdfc181c15c543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved bits.  <a href="#a48afdd678104ceaa0760a073d31abf70">More...</a><br /></td></tr>
+<tr class="separator:ae7ec1c5468929e46ccfdfc181c15c543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54854e668070f3fcd558cd331c589094" id="r_a54854e668070f3fcd558cd331c589094"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<b>SCGCUARTbits</b>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a54854e668070f3fcd558cd331c589094"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac081aa76366462db4d5c15392833ab28" id="r_ac081aa76366462db4d5c15392833ab28"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><b>cc2538_sys_ctrl_unnamed2</b>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:ac081aa76366462db4d5c15392833ab28"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART module clock register - sleep mode. <br /></td></tr>
+<tr class="separator:ac081aa76366462db4d5c15392833ab28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97df8e9afcb51cf98a505024963a3e73" id="r_a97df8e9afcb51cf98a505024963a3e73"><td class="memItemLeft" ><a id="a97df8e9afcb51cf98a505024963a3e73" name="a97df8e9afcb51cf98a505024963a3e73"></a>
+union {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad68207f0d24a2eb14e02901d6220894c" id="r_ad68207f0d24a2eb14e02901d6220894c"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#aa1e2e499ed52a39324a7229b85674805">DCGCUART</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:ad68207f0d24a2eb14e02901d6220894c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Module clocks for UART[1:0] when the CPU is in PM0.  <a href="#aa1e2e499ed52a39324a7229b85674805">More...</a><br /></td></tr>
+<tr class="separator:ad68207f0d24a2eb14e02901d6220894c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa98585463025278248bba5d4d4adaadb" id="r_aa98585463025278248bba5d4d4adaadb"><td class="memItemLeft" >
+&#160;&#160;&#160;struct {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:ad5113cd80e4692cd862b6096b1d101e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88e5a1cd16accadbd6b674097ce1fe99" id="r_a88e5a1cd16accadbd6b674097ce1fe99"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a6652897d4e8b5b734bc83079a00b083e">UART0</a>: 1&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a88e5a1cd16accadbd6b674097ce1fe99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable UART0 clock in PM0.  <a href="#a6652897d4e8b5b734bc83079a00b083e">More...</a><br /></td></tr>
+<tr class="separator:a88e5a1cd16accadbd6b674097ce1fe99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01f98cbfa473b85998e04c35cf7cb0a4" id="r_a01f98cbfa473b85998e04c35cf7cb0a4"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#adbef21a60d642ca3d5b652b13791aa14">UART1</a>: 1&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a01f98cbfa473b85998e04c35cf7cb0a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable UART1 clock in PM0.  <a href="#adbef21a60d642ca3d5b652b13791aa14">More...</a><br /></td></tr>
+<tr class="separator:a01f98cbfa473b85998e04c35cf7cb0a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fd6a799c1c3c49560d7c4c5cf7f5409" id="r_a6fd6a799c1c3c49560d7c4c5cf7f5409"><td class="memItemLeft" >&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;&#160;&#160;<a class="el" href="#a48afdd678104ceaa0760a073d31abf70">RESERVED</a>: 30&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a6fd6a799c1c3c49560d7c4c5cf7f5409"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved bits.  <a href="#a48afdd678104ceaa0760a073d31abf70">More...</a><br /></td></tr>
+<tr class="separator:a6fd6a799c1c3c49560d7c4c5cf7f5409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa98585463025278248bba5d4d4adaadb" id="r_aa98585463025278248bba5d4d4adaadb"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<b>DCGCUARTbits</b>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:aa98585463025278248bba5d4d4adaadb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97df8e9afcb51cf98a505024963a3e73" id="r_a97df8e9afcb51cf98a505024963a3e73"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><b>cc2538_sys_ctrl_unnamed3</b>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a97df8e9afcb51cf98a505024963a3e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART module clock register - PM0 mode. <br /></td></tr>
+<tr class="separator:a97df8e9afcb51cf98a505024963a3e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa363637c43ed1e2be981442399f4182f" id="r_aa363637c43ed1e2be981442399f4182f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa363637c43ed1e2be981442399f4182f">SRUART</a></td></tr>
+<tr class="memdesc:aa363637c43ed1e2be981442399f4182f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset for UART[1:0].  <br /></td></tr>
+<tr class="separator:aa363637c43ed1e2be981442399f4182f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9836a6b35b74a5e91ecc380f39ab1c9" id="r_af9836a6b35b74a5e91ecc380f39ab1c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9836a6b35b74a5e91ecc380f39ab1c9">RCGCI2C</a></td></tr>
+<tr class="memdesc:af9836a6b35b74a5e91ecc380f39ab1c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Module clocks for I2C when the CPU is in active (run) mode.  <br /></td></tr>
+<tr class="separator:af9836a6b35b74a5e91ecc380f39ab1c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba159b627685d6bda5e7e283f92212b5" id="r_aba159b627685d6bda5e7e283f92212b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba159b627685d6bda5e7e283f92212b5">SCGCI2C</a></td></tr>
+<tr class="memdesc:aba159b627685d6bda5e7e283f92212b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Module clocks for I2C when the CPU is in sleep mode.  <br /></td></tr>
+<tr class="separator:aba159b627685d6bda5e7e283f92212b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa61142460cd57806f03ea43d5538e647" id="r_aa61142460cd57806f03ea43d5538e647"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa61142460cd57806f03ea43d5538e647">DCGCI2C</a></td></tr>
+<tr class="memdesc:aa61142460cd57806f03ea43d5538e647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Module clocks for I2C when the CPU is in PM0.  <br /></td></tr>
+<tr class="separator:aa61142460cd57806f03ea43d5538e647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d17f06b5a641838adbe055f287fcbce" id="r_a7d17f06b5a641838adbe055f287fcbce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d17f06b5a641838adbe055f287fcbce">SRI2C</a></td></tr>
+<tr class="memdesc:a7d17f06b5a641838adbe055f287fcbce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset for I2C.  <br /></td></tr>
+<tr class="separator:a7d17f06b5a641838adbe055f287fcbce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a418d90e36fef93ea7d4aa2f339262f42" id="r_a418d90e36fef93ea7d4aa2f339262f42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a418d90e36fef93ea7d4aa2f339262f42">RCGCSEC</a></td></tr>
+<tr class="memdesc:a418d90e36fef93ea7d4aa2f339262f42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Module clocks for the security module when the CPU is in active (run) mode.  <br /></td></tr>
+<tr class="separator:a418d90e36fef93ea7d4aa2f339262f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc91aaf4715e33448ad496ae558affac" id="r_abc91aaf4715e33448ad496ae558affac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc91aaf4715e33448ad496ae558affac">SCGCSEC</a></td></tr>
+<tr class="memdesc:abc91aaf4715e33448ad496ae558affac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Module clocks for the security module when the CPU is in sleep mode.  <br /></td></tr>
+<tr class="separator:abc91aaf4715e33448ad496ae558affac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aceead1b2a97433eb36f5502d7d290d23" id="r_aceead1b2a97433eb36f5502d7d290d23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aceead1b2a97433eb36f5502d7d290d23">DCGCSEC</a></td></tr>
+<tr class="memdesc:aceead1b2a97433eb36f5502d7d290d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Module clocks for the security module when the CPU is in PM0.  <br /></td></tr>
+<tr class="separator:aceead1b2a97433eb36f5502d7d290d23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeebe2e7b0bf619259201e3a2df9ffb40" id="r_aeebe2e7b0bf619259201e3a2df9ffb40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeebe2e7b0bf619259201e3a2df9ffb40">SRSEC</a></td></tr>
+<tr class="memdesc:aeebe2e7b0bf619259201e3a2df9ffb40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset for the security module.  <br /></td></tr>
+<tr class="separator:aeebe2e7b0bf619259201e3a2df9ffb40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa322e9642519991bde33657540431974" id="r_aa322e9642519991bde33657540431974"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa322e9642519991bde33657540431974">PMCTL</a></td></tr>
+<tr class="memdesc:aa322e9642519991bde33657540431974"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power mode.  <br /></td></tr>
+<tr class="separator:aa322e9642519991bde33657540431974"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe7622a57fad715f4e52b0e46265e3c0" id="r_afe7622a57fad715f4e52b0e46265e3c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe7622a57fad715f4e52b0e46265e3c0">SRCRC</a></td></tr>
+<tr class="memdesc:afe7622a57fad715f4e52b0e46265e3c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC on state retention.  <br /></td></tr>
+<tr class="separator:afe7622a57fad715f4e52b0e46265e3c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49bbaec028a5be9a72292552031640c4" id="r_a49bbaec028a5be9a72292552031640c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49bbaec028a5be9a72292552031640c4">RESERVED10</a> [5]</td></tr>
+<tr class="memdesc:a49bbaec028a5be9a72292552031640c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved bits.  <br /></td></tr>
+<tr class="separator:a49bbaec028a5be9a72292552031640c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23a0e7a1390e4dd44bdb035fec88a186" id="r_a23a0e7a1390e4dd44bdb035fec88a186"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23a0e7a1390e4dd44bdb035fec88a186">PWRDBG</a></td></tr>
+<tr class="memdesc:a23a0e7a1390e4dd44bdb035fec88a186"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power debug register.  <br /></td></tr>
+<tr class="separator:a23a0e7a1390e4dd44bdb035fec88a186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa50cbaed4cad67fe80396e08133edd33" id="r_aa50cbaed4cad67fe80396e08133edd33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa50cbaed4cad67fe80396e08133edd33">RESERVED11</a> [2]</td></tr>
+<tr class="memdesc:aa50cbaed4cad67fe80396e08133edd33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved bits.  <br /></td></tr>
+<tr class="separator:aa50cbaed4cad67fe80396e08133edd33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99031c962cf34b445e395e9018e3a464" id="r_a99031c962cf34b445e395e9018e3a464"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99031c962cf34b445e395e9018e3a464">CLD</a></td></tr>
+<tr class="memdesc:a99031c962cf34b445e395e9018e3a464"><td class="mdescLeft">&#160;</td><td class="mdescRight">This register controls the clock loss detection feature.  <br /></td></tr>
+<tr class="separator:a99031c962cf34b445e395e9018e3a464"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17d770dbd28d478bab322b33037ba091" id="r_a17d770dbd28d478bab322b33037ba091"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17d770dbd28d478bab322b33037ba091">RESERVED12</a> [4]</td></tr>
+<tr class="memdesc:a17d770dbd28d478bab322b33037ba091"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved bits.  <br /></td></tr>
+<tr class="separator:a17d770dbd28d478bab322b33037ba091"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a252eb3412b3a119ba26515b958a7f6a1" id="r_a252eb3412b3a119ba26515b958a7f6a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a252eb3412b3a119ba26515b958a7f6a1">IWE</a></td></tr>
+<tr class="memdesc:a252eb3412b3a119ba26515b958a7f6a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This register controls interrupt wake-up.  <br /></td></tr>
+<tr class="separator:a252eb3412b3a119ba26515b958a7f6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9541b99c9dd562e1ee5f0c391089793" id="r_ad9541b99c9dd562e1ee5f0c391089793"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9541b99c9dd562e1ee5f0c391089793">I_MAP</a></td></tr>
+<tr class="memdesc:ad9541b99c9dd562e1ee5f0c391089793"><td class="mdescLeft">&#160;</td><td class="mdescRight">This register selects which interrupt map to be used.  <br /></td></tr>
+<tr class="separator:ad9541b99c9dd562e1ee5f0c391089793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34f5481b15d0853b98cca6c4b057761f" id="r_a34f5481b15d0853b98cca6c4b057761f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34f5481b15d0853b98cca6c4b057761f">RESERVED13</a> [3]</td></tr>
+<tr class="memdesc:a34f5481b15d0853b98cca6c4b057761f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved bits.  <br /></td></tr>
+<tr class="separator:a34f5481b15d0853b98cca6c4b057761f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aac3a4e5a0b0c3099fba024ffd55820" id="r_a8aac3a4e5a0b0c3099fba024ffd55820"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8aac3a4e5a0b0c3099fba024ffd55820">RCGCRFC</a></td></tr>
+<tr class="memdesc:a8aac3a4e5a0b0c3099fba024ffd55820"><td class="mdescLeft">&#160;</td><td class="mdescRight">This register defines the module clocks for RF CORE when the CPU is in active (run) mode.  <br /></td></tr>
+<tr class="separator:a8aac3a4e5a0b0c3099fba024ffd55820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43c516e65125752c8b3282332a00eff8" id="r_a43c516e65125752c8b3282332a00eff8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43c516e65125752c8b3282332a00eff8">SCGCRFC</a></td></tr>
+<tr class="memdesc:a43c516e65125752c8b3282332a00eff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">This register defines the module clocks for RF CORE when the CPU is in sleep mode.  <br /></td></tr>
+<tr class="separator:a43c516e65125752c8b3282332a00eff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a678ed1195679cf7b7f0565e8eef3cfbb" id="r_a678ed1195679cf7b7f0565e8eef3cfbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a678ed1195679cf7b7f0565e8eef3cfbb">DCGCRFC</a></td></tr>
+<tr class="memdesc:a678ed1195679cf7b7f0565e8eef3cfbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This register defines the module clocks for RF CORE when the CPU is in PM0.  <br /></td></tr>
+<tr class="separator:a678ed1195679cf7b7f0565e8eef3cfbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68b0f8259bf343949c05aa61c41e901f" id="r_a68b0f8259bf343949c05aa61c41e901f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68b0f8259bf343949c05aa61c41e901f">EMUOVR</a></td></tr>
+<tr class="memdesc:a68b0f8259bf343949c05aa61c41e901f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This register defines the emulator override controls for power mode and peripheral clock gate.  <br /></td></tr>
+<tr class="separator:a68b0f8259bf343949c05aa61c41e901f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a722fcdc4a67e27747a26af7caab003c4" name="a722fcdc4a67e27747a26af7caab003c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a722fcdc4a67e27747a26af7caab003c4">&#9670;&#160;</a></span>AMP_DET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::AMP_DET</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Amplitude detector of XOSC during power up. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00047">47</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a99031c962cf34b445e395e9018e3a464" name="a99031c962cf34b445e395e9018e3a464"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99031c962cf34b445e395e9018e3a464">&#9670;&#160;</a></span>CLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::CLD</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This register controls the clock loss detection feature. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00138">138</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="abbe3be72c97e4e6d82cdaf75f7b71392" name="abbe3be72c97e4e6d82cdaf75f7b71392"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbe3be72c97e4e6d82cdaf75f7b71392">&#9670;&#160;</a></span>CLOCK_CTRL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::CLOCK_CTRL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clock control register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00038">38</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a52cda35b92302beca03c55f38e3c0ab2" name="a52cda35b92302beca03c55f38e3c0ab2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52cda35b92302beca03c55f38e3c0ab2">&#9670;&#160;</a></span>CLOCK_STA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::CLOCK_STA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clock status register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00059">59</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="ab57705c6e176328c94f0a078ef96bda6" name="ab57705c6e176328c94f0a078ef96bda6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab57705c6e176328c94f0a078ef96bda6">&#9670;&#160;</a></span>DCGCGPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::DCGCGPT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Module clocks for GPT[3:0] when the CPU is in PM0. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00081">81</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="aa61142460cd57806f03ea43d5538e647" name="aa61142460cd57806f03ea43d5538e647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa61142460cd57806f03ea43d5538e647">&#9670;&#160;</a></span>DCGCI2C</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::DCGCI2C</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Module clocks for I2C when the CPU is in PM0. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00127">127</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a678ed1195679cf7b7f0565e8eef3cfbb" name="a678ed1195679cf7b7f0565e8eef3cfbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a678ed1195679cf7b7f0565e8eef3cfbb">&#9670;&#160;</a></span>DCGCRFC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::DCGCRFC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This register defines the module clocks for RF CORE when the CPU is in PM0. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00145">145</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="aceead1b2a97433eb36f5502d7d290d23" name="aceead1b2a97433eb36f5502d7d290d23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceead1b2a97433eb36f5502d7d290d23">&#9670;&#160;</a></span>DCGCSEC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::DCGCSEC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Module clocks for the security module when the CPU is in PM0. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00131">131</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a4fade6b6eafb464fa9c238ebd8d7b3aa" name="a4fade6b6eafb464fa9c238ebd8d7b3aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fade6b6eafb464fa9c238ebd8d7b3aa">&#9670;&#160;</a></span>DCGCSSI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::DCGCSSI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Module clocks for SSI[1:0] when the CPU is in PM0. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00085">85</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="aa1e2e499ed52a39324a7229b85674805" name="aa1e2e499ed52a39324a7229b85674805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1e2e499ed52a39324a7229b85674805">&#9670;&#160;</a></span>DCGCUART</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::DCGCUART</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Module clocks for UART[1:0] when the CPU is in PM0. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00116">116</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a68b0f8259bf343949c05aa61c41e901f" name="a68b0f8259bf343949c05aa61c41e901f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68b0f8259bf343949c05aa61c41e901f">&#9670;&#160;</a></span>EMUOVR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::EMUOVR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This register defines the emulator override controls for power mode and peripheral clock gate. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00146">146</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a76a4f4eb2b2d80b2a973dedb1df8f994" name="a76a4f4eb2b2d80b2a973dedb1df8f994"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76a4f4eb2b2d80b2a973dedb1df8f994">&#9670;&#160;</a></span>HSOSC_STB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::HSOSC_STB</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>HSOSC stable status. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00067">67</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="ad9541b99c9dd562e1ee5f0c391089793" name="ad9541b99c9dd562e1ee5f0c391089793"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9541b99c9dd562e1ee5f0c391089793">&#9670;&#160;</a></span>I_MAP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::I_MAP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This register selects which interrupt map to be used. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00141">141</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a08d02d0bae77de3c2aad9fee0dfe7416" name="a08d02d0bae77de3c2aad9fee0dfe7416"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08d02d0bae77de3c2aad9fee0dfe7416">&#9670;&#160;</a></span>IO_DIV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::IO_DIV</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>I/O clock rate setting. </p>
+<p>Current functional frequency for IO_CLK. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00042">42</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a252eb3412b3a119ba26515b958a7f6a1" name="a252eb3412b3a119ba26515b958a7f6a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a252eb3412b3a119ba26515b958a7f6a1">&#9670;&#160;</a></span>IWE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::IWE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This register controls interrupt wake-up. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00140">140</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="ae465eecb69463569a6f2809d361d0335" name="ae465eecb69463569a6f2809d361d0335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae465eecb69463569a6f2809d361d0335">&#9670;&#160;</a></span>OSC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::OSC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>System clock oscillator selection. </p>
+<p>Current clock source selected. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00044">44</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a346f85c72c48d059f8fee251781c3f1b" name="a346f85c72c48d059f8fee251781c3f1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a346f85c72c48d059f8fee251781c3f1b">&#9670;&#160;</a></span>OSC32K</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::OSC32K</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>32-kHz clock oscillator selection </p>
+<p>Current 32-kHz clock oscillator selected. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00049">49</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a612adf8ccba78b8ea9d97fa9acf9199f" name="a612adf8ccba78b8ea9d97fa9acf9199f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a612adf8ccba78b8ea9d97fa9acf9199f">&#9670;&#160;</a></span>OSC32K_CADIS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::OSC32K_CADIS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable calibration 32-kHz RC oscillator. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00050">50</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="ac024ef8c5333a8f6cfa70146445c70ad" name="ac024ef8c5333a8f6cfa70146445c70ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac024ef8c5333a8f6cfa70146445c70ad">&#9670;&#160;</a></span>OSC32K_CALDIS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::OSC32K_CALDIS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable calibration 32-kHz RC oscillator. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00073">73</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="ada018db8a904bd7fdcc47bdf78dfa253" name="ada018db8a904bd7fdcc47bdf78dfa253"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada018db8a904bd7fdcc47bdf78dfa253">&#9670;&#160;</a></span>OSC_PD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::OSC_PD</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Oscillator power-down. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00045">45</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="aa322e9642519991bde33657540431974" name="aa322e9642519991bde33657540431974"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa322e9642519991bde33657540431974">&#9670;&#160;</a></span>PMCTL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::PMCTL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Power mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00133">133</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a23a0e7a1390e4dd44bdb035fec88a186" name="a23a0e7a1390e4dd44bdb035fec88a186"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23a0e7a1390e4dd44bdb035fec88a186">&#9670;&#160;</a></span>PWRDBG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::PWRDBG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Power debug register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00136">136</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="aaaf678c50b3d11f182923b73031f23de" name="aaaf678c50b3d11f182923b73031f23de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaf678c50b3d11f182923b73031f23de">&#9670;&#160;</a></span>RCGCGPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RCGCGPT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Module clocks for GPT[3:0] when the CPU is in active (run) mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00079">79</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="af9836a6b35b74a5e91ecc380f39ab1c9" name="af9836a6b35b74a5e91ecc380f39ab1c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9836a6b35b74a5e91ecc380f39ab1c9">&#9670;&#160;</a></span>RCGCI2C</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RCGCI2C</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Module clocks for I2C when the CPU is in active (run) mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00125">125</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a8aac3a4e5a0b0c3099fba024ffd55820" name="a8aac3a4e5a0b0c3099fba024ffd55820"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aac3a4e5a0b0c3099fba024ffd55820">&#9670;&#160;</a></span>RCGCRFC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RCGCRFC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This register defines the module clocks for RF CORE when the CPU is in active (run) mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00143">143</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a418d90e36fef93ea7d4aa2f339262f42" name="a418d90e36fef93ea7d4aa2f339262f42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a418d90e36fef93ea7d4aa2f339262f42">&#9670;&#160;</a></span>RCGCSEC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RCGCSEC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Module clocks for the security module when the CPU is in active (run) mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00129">129</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a996c09e47437761121efea59a672bc0d" name="a996c09e47437761121efea59a672bc0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a996c09e47437761121efea59a672bc0d">&#9670;&#160;</a></span>RCGCSSI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RCGCSSI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Module clocks for SSI[1:0] when the CPU is in active (run) mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00083">83</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="af1cc69504d8178cb0e9e3a893d3f7834" name="af1cc69504d8178cb0e9e3a893d3f7834"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1cc69504d8178cb0e9e3a893d3f7834">&#9670;&#160;</a></span>RCGCUART</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RCGCUART</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Module clocks for UART[1:0] when the CPU is in active (run) mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00092">92</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a48afdd678104ceaa0760a073d31abf70" name="a48afdd678104ceaa0760a073d31abf70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48afdd678104ceaa0760a073d31abf70">&#9670;&#160;</a></span>RESERVED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RESERVED</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved bits. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00096">96</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="ab3d3d9cce3bc9681127cf1baa579e72d" name="ab3d3d9cce3bc9681127cf1baa579e72d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3d3d9cce3bc9681127cf1baa579e72d">&#9670;&#160;</a></span>RESERVED1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RESERVED1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved bits. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00041">41</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a49bbaec028a5be9a72292552031640c4" name="a49bbaec028a5be9a72292552031640c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49bbaec028a5be9a72292552031640c4">&#9670;&#160;</a></span>RESERVED10</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RESERVED10[5]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved bits. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00135">135</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="aa50cbaed4cad67fe80396e08133edd33" name="aa50cbaed4cad67fe80396e08133edd33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa50cbaed4cad67fe80396e08133edd33">&#9670;&#160;</a></span>RESERVED11</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RESERVED11[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved bits. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00137">137</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a17d770dbd28d478bab322b33037ba091" name="a17d770dbd28d478bab322b33037ba091"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17d770dbd28d478bab322b33037ba091">&#9670;&#160;</a></span>RESERVED12</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RESERVED12[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved bits. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00139">139</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a34f5481b15d0853b98cca6c4b057761f" name="a34f5481b15d0853b98cca6c4b057761f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34f5481b15d0853b98cca6c4b057761f">&#9670;&#160;</a></span>RESERVED13</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RESERVED13[3]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved bits. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00142">142</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="ab5473cbe95fb8bd45d0570ee2cf9c594" name="ab5473cbe95fb8bd45d0570ee2cf9c594"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5473cbe95fb8bd45d0570ee2cf9c594">&#9670;&#160;</a></span>RESERVED2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RESERVED2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved bits. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00043">43</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="adb13978b7c63a58356441bca2c743195" name="adb13978b7c63a58356441bca2c743195"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb13978b7c63a58356441bca2c743195">&#9670;&#160;</a></span>RESERVED3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RESERVED3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved bits. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00046">46</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a2ae082e11555fe10bf400af0dfc4ff23" name="a2ae082e11555fe10bf400af0dfc4ff23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ae082e11555fe10bf400af0dfc4ff23">&#9670;&#160;</a></span>RESERVED4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RESERVED4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved bits. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00048">48</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a5952c8b36d4f193a4149435791504cc9" name="a5952c8b36d4f193a4149435791504cc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5952c8b36d4f193a4149435791504cc9">&#9670;&#160;</a></span>RESERVED5</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RESERVED5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved bits. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00051">51</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a8b33338e7a791d8b4d771e55c8d8674c" name="a8b33338e7a791d8b4d771e55c8d8674c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b33338e7a791d8b4d771e55c8d8674c">&#9670;&#160;</a></span>RESERVED6</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RESERVED6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved bits. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00062">62</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a626e0fecfd3acf7770c308469c6e9303" name="a626e0fecfd3acf7770c308469c6e9303"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a626e0fecfd3acf7770c308469c6e9303">&#9670;&#160;</a></span>RESERVED7</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RESERVED7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved bits. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00064">64</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a98f82e6ca27df4f5d0cf2a172422122a" name="a98f82e6ca27df4f5d0cf2a172422122a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98f82e6ca27df4f5d0cf2a172422122a">&#9670;&#160;</a></span>RESERVED8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RESERVED8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved bits. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00070">70</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="abe2918398cf8bdeb4fa20c006c3393ef" name="abe2918398cf8bdeb4fa20c006c3393ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe2918398cf8bdeb4fa20c006c3393ef">&#9670;&#160;</a></span>RESERVED9</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RESERVED9</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved bits. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00075">75</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a30c2a0027106f561da1dae412ef9f7c5" name="a30c2a0027106f561da1dae412ef9f7c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30c2a0027106f561da1dae412ef9f7c5">&#9670;&#160;</a></span>RST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::RST</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Last source of reset. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00071">71</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a6a28f9603c0366fc513ed72bd70418ac" name="a6a28f9603c0366fc513ed72bd70418ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a28f9603c0366fc513ed72bd70418ac">&#9670;&#160;</a></span>SCGCGPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::SCGCGPT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Module clocks for GPT[3:0] when the CPU is in sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00080">80</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="aba159b627685d6bda5e7e283f92212b5" name="aba159b627685d6bda5e7e283f92212b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba159b627685d6bda5e7e283f92212b5">&#9670;&#160;</a></span>SCGCI2C</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::SCGCI2C</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Module clocks for I2C when the CPU is in sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00126">126</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a43c516e65125752c8b3282332a00eff8" name="a43c516e65125752c8b3282332a00eff8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43c516e65125752c8b3282332a00eff8">&#9670;&#160;</a></span>SCGCRFC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::SCGCRFC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This register defines the module clocks for RF CORE when the CPU is in sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00144">144</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="abc91aaf4715e33448ad496ae558affac" name="abc91aaf4715e33448ad496ae558affac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc91aaf4715e33448ad496ae558affac">&#9670;&#160;</a></span>SCGCSEC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::SCGCSEC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Module clocks for the security module when the CPU is in sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00130">130</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a25b03f6e3e13953ccbbb0852ef95b5ae" name="a25b03f6e3e13953ccbbb0852ef95b5ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25b03f6e3e13953ccbbb0852ef95b5ae">&#9670;&#160;</a></span>SCGCSSI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::SCGCSSI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Module clocks for SSI[1:0] when the CPU is insSleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00084">84</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a33cb20b6c530e442b03583578d023c87" name="a33cb20b6c530e442b03583578d023c87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33cb20b6c530e442b03583578d023c87">&#9670;&#160;</a></span>SCGCUART</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::SCGCUART</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Module clocks for UART[1:0] when the CPU is in sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00104">104</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="ab3fca1b459c5094c2bea516982a542e1" name="ab3fca1b459c5094c2bea516982a542e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3fca1b459c5094c2bea516982a542e1">&#9670;&#160;</a></span>SOURCE_CHANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::SOURCE_CHANGE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>System clock source change. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00069">69</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="afe7622a57fad715f4e52b0e46265e3c0" name="afe7622a57fad715f4e52b0e46265e3c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe7622a57fad715f4e52b0e46265e3c0">&#9670;&#160;</a></span>SRCRC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::SRCRC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CRC on state retention. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00134">134</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a3bb42b681920e68d901c984f7e46e399" name="a3bb42b681920e68d901c984f7e46e399"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bb42b681920e68d901c984f7e46e399">&#9670;&#160;</a></span>SRGPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::SRGPT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset for GPT[3:0]. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00082">82</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a7d17f06b5a641838adbe055f287fcbce" name="a7d17f06b5a641838adbe055f287fcbce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d17f06b5a641838adbe055f287fcbce">&#9670;&#160;</a></span>SRI2C</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::SRI2C</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset for I2C. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00128">128</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="aeebe2e7b0bf619259201e3a2df9ffb40" name="aeebe2e7b0bf619259201e3a2df9ffb40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeebe2e7b0bf619259201e3a2df9ffb40">&#9670;&#160;</a></span>SRSEC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::SRSEC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset for the security module. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00132">132</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a7b81c12e23ca7bed13af6ee3df12dfb5" name="a7b81c12e23ca7bed13af6ee3df12dfb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b81c12e23ca7bed13af6ee3df12dfb5">&#9670;&#160;</a></span>SRSSI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::SRSSI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset for SSI[1:0]. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00086">86</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="aa363637c43ed1e2be981442399f4182f" name="aa363637c43ed1e2be981442399f4182f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa363637c43ed1e2be981442399f4182f">&#9670;&#160;</a></span>SRUART</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::SRUART</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset for UART[1:0]. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00124">124</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="aa31ffab3ebc75534d63cb9043f60eeff" name="aa31ffab3ebc75534d63cb9043f60eeff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa31ffab3ebc75534d63cb9043f60eeff">&#9670;&#160;</a></span>SYNC_32K</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::SYNC_32K</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>32-kHz clock source synced to undivided system clock (16 or 32 MHz) </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00074">74</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="add579c744a0527b34d97172405dc535e" name="add579c744a0527b34d97172405dc535e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add579c744a0527b34d97172405dc535e">&#9670;&#160;</a></span>SYS_DIV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::SYS_DIV</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>System clock rate setting. </p>
+<p>Current functional frequency for system clock. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00040">40</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="a6652897d4e8b5b734bc83079a00b083e" name="a6652897d4e8b5b734bc83079a00b083e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6652897d4e8b5b734bc83079a00b083e">&#9670;&#160;</a></span>UART0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::UART0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable UART0 clock in active (run) mode. </p>
+<p>Enable UART0 clock in PM0.</p>
+<p>Enable UART0 clock in sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00094">94</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="adbef21a60d642ca3d5b652b13791aa14" name="adbef21a60d642ca3d5b652b13791aa14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbef21a60d642ca3d5b652b13791aa14">&#9670;&#160;</a></span>UART1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::UART1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable UART1 clock in active (run) mode. </p>
+<p>Enable UART1 clock in PM0.</p>
+<p>Enable UART1 clock in sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00095">95</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<a id="ad24c75dbaf6ef5aa5b4d01e17ce5f81f" name="ad24c75dbaf6ef5aa5b4d01e17ce5f81f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad24c75dbaf6ef5aa5b4d01e17ce5f81f">&#9670;&#160;</a></span>XOSC_STB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_sys_ctrl_t::XOSC_STB</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>XOSC stable status. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__sys__ctrl_8h_source.html#l00068">68</a> of file <a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>cpu/cc2538/include/<a class="el" href="cc2538__sys__ctrl_8h_source.html">cc2538_sys_ctrl.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>lsm303dlhc_params_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structlsm303dlhc__params__t.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">lsm303dlhc_params_t Struct Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a> &#124; <a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> &raquo; <a class="el" href="group__drivers__lsm303dlhc.html">LSM303DLHC 3D accelerometer/magnetometer</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Data structure holding all the information needed for initialization.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Data structure holding all the information needed for initialization. </p>
+
+<p class="definition">Definition at line <a class="el" href="lsm303dlhc_8h_source.html#l00108">108</a> of file <a class="el" href="lsm303dlhc_8h_source.html">lsm303dlhc.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="lsm303dlhc_8h_source.html">lsm303dlhc.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:adba671d7eb47595179b25c826106823b" id="r_adba671d7eb47595179b25c826106823b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__i2c.html#ga53bedf646ffe6ddd17f13b893a17fa74">i2c_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adba671d7eb47595179b25c826106823b">i2c</a></td></tr>
+<tr class="memdesc:adba671d7eb47595179b25c826106823b"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C bus used.  <br /></td></tr>
+<tr class="separator:adba671d7eb47595179b25c826106823b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37dfff4f22ee9954987d11197adb415f" id="r_a37dfff4f22ee9954987d11197adb415f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37dfff4f22ee9954987d11197adb415f">acc_addr</a></td></tr>
+<tr class="memdesc:a37dfff4f22ee9954987d11197adb415f"><td class="mdescLeft">&#160;</td><td class="mdescRight">accelerometer I2C address  <br /></td></tr>
+<tr class="separator:a37dfff4f22ee9954987d11197adb415f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaff623689ef8bfb3dd745697572dd0c5" id="r_aaff623689ef8bfb3dd745697572dd0c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaff623689ef8bfb3dd745697572dd0c5">acc_pin</a></td></tr>
+<tr class="memdesc:aaff623689ef8bfb3dd745697572dd0c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">accelerometer EXTI pin  <br /></td></tr>
+<tr class="separator:aaff623689ef8bfb3dd745697572dd0c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1af5075e56a2df613d65de8e5e4de798" id="r_a1af5075e56a2df613d65de8e5e4de798"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__lsm303dlhc.html#ga8d8eb6d518659b92eaf3f559a7701f84">lsm303dlhc_acc_sample_rate_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1af5075e56a2df613d65de8e5e4de798">acc_rate</a></td></tr>
+<tr class="memdesc:a1af5075e56a2df613d65de8e5e4de798"><td class="mdescLeft">&#160;</td><td class="mdescRight">accelerometer sample rate  <br /></td></tr>
+<tr class="separator:a1af5075e56a2df613d65de8e5e4de798"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4401544758ec651f2ace727e9997b95a" id="r_a4401544758ec651f2ace727e9997b95a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__lsm303dlhc.html#ga14717a90270e848d48adbd670021864b">lsm303dlhc_acc_scale_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4401544758ec651f2ace727e9997b95a">acc_scale</a></td></tr>
+<tr class="memdesc:a4401544758ec651f2ace727e9997b95a"><td class="mdescLeft">&#160;</td><td class="mdescRight">accelerometer scale factor  <br /></td></tr>
+<tr class="separator:a4401544758ec651f2ace727e9997b95a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f2923c71b9b7d080a6449286e41220b" id="r_a6f2923c71b9b7d080a6449286e41220b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f2923c71b9b7d080a6449286e41220b">mag_addr</a></td></tr>
+<tr class="memdesc:a6f2923c71b9b7d080a6449286e41220b"><td class="mdescLeft">&#160;</td><td class="mdescRight">magnetometer I2C address  <br /></td></tr>
+<tr class="separator:a6f2923c71b9b7d080a6449286e41220b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83c2677dd4f6b42d8e07c850f1d6c4b8" id="r_a83c2677dd4f6b42d8e07c850f1d6c4b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83c2677dd4f6b42d8e07c850f1d6c4b8">mag_pin</a></td></tr>
+<tr class="memdesc:a83c2677dd4f6b42d8e07c850f1d6c4b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">magnetometer EXTI pin  <br /></td></tr>
+<tr class="separator:a83c2677dd4f6b42d8e07c850f1d6c4b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab098955f329717e1be5cb86ebbdc46e3" id="r_ab098955f329717e1be5cb86ebbdc46e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__lsm303dlhc.html#gae0e4b5699378a68a1c622925dacec439">lsm303dlhc_mag_sample_rate_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab098955f329717e1be5cb86ebbdc46e3">mag_rate</a></td></tr>
+<tr class="memdesc:ab098955f329717e1be5cb86ebbdc46e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">magnetometer sample rate  <br /></td></tr>
+<tr class="separator:ab098955f329717e1be5cb86ebbdc46e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfd70e45f5a82836c1df5b44898d3489" id="r_abfd70e45f5a82836c1df5b44898d3489"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__lsm303dlhc.html#ga388a4733819b2541d067f4c60214d882">lsm303dlhc_mag_gain_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfd70e45f5a82836c1df5b44898d3489">mag_gain</a></td></tr>
+<tr class="memdesc:abfd70e45f5a82836c1df5b44898d3489"><td class="mdescLeft">&#160;</td><td class="mdescRight">magnetometer gain  <br /></td></tr>
+<tr class="separator:abfd70e45f5a82836c1df5b44898d3489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a37dfff4f22ee9954987d11197adb415f" name="a37dfff4f22ee9954987d11197adb415f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37dfff4f22ee9954987d11197adb415f">&#9670;&#160;</a></span>acc_addr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t lsm303dlhc_params_t::acc_addr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>accelerometer I2C address </p>
+
+<p class="definition">Definition at line <a class="el" href="lsm303dlhc_8h_source.html#l00110">110</a> of file <a class="el" href="lsm303dlhc_8h_source.html">lsm303dlhc.h</a>.</p>
+
+</div>
+</div>
+<a id="aaff623689ef8bfb3dd745697572dd0c5" name="aaff623689ef8bfb3dd745697572dd0c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaff623689ef8bfb3dd745697572dd0c5">&#9670;&#160;</a></span>acc_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lsm303dlhc_params_t::acc_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>accelerometer EXTI pin </p>
+
+<p class="definition">Definition at line <a class="el" href="lsm303dlhc_8h_source.html#l00111">111</a> of file <a class="el" href="lsm303dlhc_8h_source.html">lsm303dlhc.h</a>.</p>
+
+</div>
+</div>
+<a id="a1af5075e56a2df613d65de8e5e4de798" name="a1af5075e56a2df613d65de8e5e4de798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1af5075e56a2df613d65de8e5e4de798">&#9670;&#160;</a></span>acc_rate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__lsm303dlhc.html#ga8d8eb6d518659b92eaf3f559a7701f84">lsm303dlhc_acc_sample_rate_t</a> lsm303dlhc_params_t::acc_rate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>accelerometer sample rate </p>
+
+<p class="definition">Definition at line <a class="el" href="lsm303dlhc_8h_source.html#l00112">112</a> of file <a class="el" href="lsm303dlhc_8h_source.html">lsm303dlhc.h</a>.</p>
+
+</div>
+</div>
+<a id="a4401544758ec651f2ace727e9997b95a" name="a4401544758ec651f2ace727e9997b95a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4401544758ec651f2ace727e9997b95a">&#9670;&#160;</a></span>acc_scale</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__lsm303dlhc.html#ga14717a90270e848d48adbd670021864b">lsm303dlhc_acc_scale_t</a> lsm303dlhc_params_t::acc_scale</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>accelerometer scale factor </p>
+
+<p class="definition">Definition at line <a class="el" href="lsm303dlhc_8h_source.html#l00113">113</a> of file <a class="el" href="lsm303dlhc_8h_source.html">lsm303dlhc.h</a>.</p>
+
+</div>
+</div>
+<a id="adba671d7eb47595179b25c826106823b" name="adba671d7eb47595179b25c826106823b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adba671d7eb47595179b25c826106823b">&#9670;&#160;</a></span>i2c</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__i2c.html#ga53bedf646ffe6ddd17f13b893a17fa74">i2c_t</a> lsm303dlhc_params_t::i2c</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>I2C bus used. </p>
+
+<p class="definition">Definition at line <a class="el" href="lsm303dlhc_8h_source.html#l00109">109</a> of file <a class="el" href="lsm303dlhc_8h_source.html">lsm303dlhc.h</a>.</p>
+
+</div>
+</div>
+<a id="a6f2923c71b9b7d080a6449286e41220b" name="a6f2923c71b9b7d080a6449286e41220b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f2923c71b9b7d080a6449286e41220b">&#9670;&#160;</a></span>mag_addr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t lsm303dlhc_params_t::mag_addr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>magnetometer I2C address </p>
+
+<p class="definition">Definition at line <a class="el" href="lsm303dlhc_8h_source.html#l00114">114</a> of file <a class="el" href="lsm303dlhc_8h_source.html">lsm303dlhc.h</a>.</p>
+
+</div>
+</div>
+<a id="abfd70e45f5a82836c1df5b44898d3489" name="abfd70e45f5a82836c1df5b44898d3489"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfd70e45f5a82836c1df5b44898d3489">&#9670;&#160;</a></span>mag_gain</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__lsm303dlhc.html#ga388a4733819b2541d067f4c60214d882">lsm303dlhc_mag_gain_t</a> lsm303dlhc_params_t::mag_gain</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>magnetometer gain </p>
+
+<p class="definition">Definition at line <a class="el" href="lsm303dlhc_8h_source.html#l00117">117</a> of file <a class="el" href="lsm303dlhc_8h_source.html">lsm303dlhc.h</a>.</p>
+
+</div>
+</div>
+<a id="a83c2677dd4f6b42d8e07c850f1d6c4b8" name="a83c2677dd4f6b42d8e07c850f1d6c4b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83c2677dd4f6b42d8e07c850f1d6c4b8">&#9670;&#160;</a></span>mag_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lsm303dlhc_params_t::mag_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>magnetometer EXTI pin </p>
+
+<p class="definition">Definition at line <a class="el" href="lsm303dlhc_8h_source.html#l00115">115</a> of file <a class="el" href="lsm303dlhc_8h_source.html">lsm303dlhc.h</a>.</p>
+
+</div>
+</div>
+<a id="ab098955f329717e1be5cb86ebbdc46e3" name="ab098955f329717e1be5cb86ebbdc46e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab098955f329717e1be5cb86ebbdc46e3">&#9670;&#160;</a></span>mag_rate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__lsm303dlhc.html#gae0e4b5699378a68a1c622925dacec439">lsm303dlhc_mag_sample_rate_t</a> lsm303dlhc_params_t::mag_rate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>magnetometer sample rate </p>
+
+<p class="definition">Definition at line <a class="el" href="lsm303dlhc_8h_source.html#l00116">116</a> of file <a class="el" href="lsm303dlhc_8h_source.html">lsm303dlhc.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>drivers/include/<a class="el" href="lsm303dlhc_8h_source.html">lsm303dlhc.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

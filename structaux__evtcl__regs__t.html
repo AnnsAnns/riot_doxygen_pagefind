@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>aux_evtcl_regs_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structaux__evtcl__regs__t.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">aux_evtcl_regs_t Struct Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>AUX_EVCTL registers.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>AUX_EVCTL registers. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00080">80</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a222c5be3230503b08252d3c0cb7209e4" id="r_a222c5be3230503b08252d3c0cb7209e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a222c5be3230503b08252d3c0cb7209e4">VECCFG0</a></td></tr>
+<tr class="memdesc:a222c5be3230503b08252d3c0cb7209e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector config 0  <br /></td></tr>
+<tr class="separator:a222c5be3230503b08252d3c0cb7209e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2857b33bd7473aead3bd13e002bfcb75" id="r_a2857b33bd7473aead3bd13e002bfcb75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2857b33bd7473aead3bd13e002bfcb75">VECCFG1</a></td></tr>
+<tr class="memdesc:a2857b33bd7473aead3bd13e002bfcb75"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector config 1  <br /></td></tr>
+<tr class="separator:a2857b33bd7473aead3bd13e002bfcb75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32a8fd4e9d6ff06a3d85f671c3b0e273" id="r_a32a8fd4e9d6ff06a3d85f671c3b0e273"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32a8fd4e9d6ff06a3d85f671c3b0e273">SCEWEVSEL</a></td></tr>
+<tr class="memdesc:a32a8fd4e9d6ff06a3d85f671c3b0e273"><td class="mdescLeft">&#160;</td><td class="mdescRight">sensor controller engine wait event selection  <br /></td></tr>
+<tr class="separator:a32a8fd4e9d6ff06a3d85f671c3b0e273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee38a5ca3ec1c6e99733a6beb8eae696" id="r_aee38a5ca3ec1c6e99733a6beb8eae696"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee38a5ca3ec1c6e99733a6beb8eae696">EVTOAONFLAGS</a></td></tr>
+<tr class="memdesc:aee38a5ca3ec1c6e99733a6beb8eae696"><td class="mdescLeft">&#160;</td><td class="mdescRight">events to AON domain flags  <br /></td></tr>
+<tr class="separator:aee38a5ca3ec1c6e99733a6beb8eae696"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca83e6149786814f41329f08279f85eb" id="r_aca83e6149786814f41329f08279f85eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca83e6149786814f41329f08279f85eb">EVTOAONPOL</a></td></tr>
+<tr class="memdesc:aca83e6149786814f41329f08279f85eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">events to AON domain polarity  <br /></td></tr>
+<tr class="separator:aca83e6149786814f41329f08279f85eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98ba12e0cacd289f7373bb2614407665" id="r_a98ba12e0cacd289f7373bb2614407665"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98ba12e0cacd289f7373bb2614407665">DMACTL</a></td></tr>
+<tr class="memdesc:a98ba12e0cacd289f7373bb2614407665"><td class="mdescLeft">&#160;</td><td class="mdescRight">direct memory access control  <br /></td></tr>
+<tr class="separator:a98ba12e0cacd289f7373bb2614407665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a5f107f2965032fa1e6f51cac67fcf0" id="r_a8a5f107f2965032fa1e6f51cac67fcf0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a5f107f2965032fa1e6f51cac67fcf0">SWEVSET</a></td></tr>
+<tr class="memdesc:a8a5f107f2965032fa1e6f51cac67fcf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">software event set  <br /></td></tr>
+<tr class="separator:a8a5f107f2965032fa1e6f51cac67fcf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc538c6e5f716bfda319dde23fc51d1a" id="r_afc538c6e5f716bfda319dde23fc51d1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc538c6e5f716bfda319dde23fc51d1a">EVSTAT0</a></td></tr>
+<tr class="memdesc:afc538c6e5f716bfda319dde23fc51d1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">event status 0  <br /></td></tr>
+<tr class="separator:afc538c6e5f716bfda319dde23fc51d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f87e54f0afb30a1fb285ffae169ca8e" id="r_a8f87e54f0afb30a1fb285ffae169ca8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f87e54f0afb30a1fb285ffae169ca8e">EVSTAT1</a></td></tr>
+<tr class="memdesc:a8f87e54f0afb30a1fb285ffae169ca8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">event status 1  <br /></td></tr>
+<tr class="separator:a8f87e54f0afb30a1fb285ffae169ca8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac08db57e5989fc967e5ae6be18e145f0" id="r_ac08db57e5989fc967e5ae6be18e145f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac08db57e5989fc967e5ae6be18e145f0">EVTOMCUPOL</a></td></tr>
+<tr class="memdesc:ac08db57e5989fc967e5ae6be18e145f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">event to MCU domain polarity  <br /></td></tr>
+<tr class="separator:ac08db57e5989fc967e5ae6be18e145f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02259a0c82f789b1a28d0391a0ad31d6" id="r_a02259a0c82f789b1a28d0391a0ad31d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02259a0c82f789b1a28d0391a0ad31d6">EVTOMCUFLAGS</a></td></tr>
+<tr class="memdesc:a02259a0c82f789b1a28d0391a0ad31d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">event to MCU domain flags  <br /></td></tr>
+<tr class="separator:a02259a0c82f789b1a28d0391a0ad31d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5462e864fee6f2d148156449492d6af" id="r_aa5462e864fee6f2d148156449492d6af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5462e864fee6f2d148156449492d6af">COMBEVTOMCUMASK</a></td></tr>
+<tr class="memdesc:aa5462e864fee6f2d148156449492d6af"><td class="mdescLeft">&#160;</td><td class="mdescRight">combined event to MCU domain mask  <br /></td></tr>
+<tr class="separator:aa5462e864fee6f2d148156449492d6af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad918f38ac1ae0ddcd4ff30685f4d35f4" id="r_ad918f38ac1ae0ddcd4ff30685f4d35f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad918f38ac1ae0ddcd4ff30685f4d35f4">__reserved</a></td></tr>
+<tr class="memdesc:ad918f38ac1ae0ddcd4ff30685f4d35f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">meh  <br /></td></tr>
+<tr class="separator:ad918f38ac1ae0ddcd4ff30685f4d35f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5486c847a5bb42b015bf1285e4a97e3" id="r_ad5486c847a5bb42b015bf1285e4a97e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5486c847a5bb42b015bf1285e4a97e3">VECFLAGS</a></td></tr>
+<tr class="memdesc:ad5486c847a5bb42b015bf1285e4a97e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector flags  <br /></td></tr>
+<tr class="separator:ad5486c847a5bb42b015bf1285e4a97e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab85ab62589dbebc23b8b4963887099e1" id="r_ab85ab62589dbebc23b8b4963887099e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab85ab62589dbebc23b8b4963887099e1">EVTOMCUFLAGSCLR</a></td></tr>
+<tr class="memdesc:ab85ab62589dbebc23b8b4963887099e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">events to MCU domain flags clear  <br /></td></tr>
+<tr class="separator:ab85ab62589dbebc23b8b4963887099e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57e144fce14e7d0567f8163288579d18" id="r_a57e144fce14e7d0567f8163288579d18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57e144fce14e7d0567f8163288579d18">EVTOAONFLAGSCLR</a></td></tr>
+<tr class="memdesc:a57e144fce14e7d0567f8163288579d18"><td class="mdescLeft">&#160;</td><td class="mdescRight">events to AON domain clear  <br /></td></tr>
+<tr class="separator:a57e144fce14e7d0567f8163288579d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6626e04658299d5c44b56cd3c7af96ef" id="r_a6626e04658299d5c44b56cd3c7af96ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6626e04658299d5c44b56cd3c7af96ef">VECFLAGSCLR</a></td></tr>
+<tr class="memdesc:a6626e04658299d5c44b56cd3c7af96ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector flags clear  <br /></td></tr>
+<tr class="separator:a6626e04658299d5c44b56cd3c7af96ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="ad918f38ac1ae0ddcd4ff30685f4d35f4" name="ad918f38ac1ae0ddcd4ff30685f4d35f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad918f38ac1ae0ddcd4ff30685f4d35f4">&#9670;&#160;</a></span>__reserved</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_evtcl_regs_t::__reserved</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>meh </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00093">93</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<a id="aa5462e864fee6f2d148156449492d6af" name="aa5462e864fee6f2d148156449492d6af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5462e864fee6f2d148156449492d6af">&#9670;&#160;</a></span>COMBEVTOMCUMASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_evtcl_regs_t::COMBEVTOMCUMASK</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>combined event to MCU domain mask </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00092">92</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<a id="a98ba12e0cacd289f7373bb2614407665" name="a98ba12e0cacd289f7373bb2614407665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98ba12e0cacd289f7373bb2614407665">&#9670;&#160;</a></span>DMACTL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_evtcl_regs_t::DMACTL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>direct memory access control </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00086">86</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<a id="afc538c6e5f716bfda319dde23fc51d1a" name="afc538c6e5f716bfda319dde23fc51d1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc538c6e5f716bfda319dde23fc51d1a">&#9670;&#160;</a></span>EVSTAT0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_evtcl_regs_t::EVSTAT0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>event status 0 </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00088">88</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<a id="a8f87e54f0afb30a1fb285ffae169ca8e" name="a8f87e54f0afb30a1fb285ffae169ca8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f87e54f0afb30a1fb285ffae169ca8e">&#9670;&#160;</a></span>EVSTAT1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_evtcl_regs_t::EVSTAT1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>event status 1 </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00089">89</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<a id="aee38a5ca3ec1c6e99733a6beb8eae696" name="aee38a5ca3ec1c6e99733a6beb8eae696"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee38a5ca3ec1c6e99733a6beb8eae696">&#9670;&#160;</a></span>EVTOAONFLAGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_evtcl_regs_t::EVTOAONFLAGS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>events to AON domain flags </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00084">84</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<a id="a57e144fce14e7d0567f8163288579d18" name="a57e144fce14e7d0567f8163288579d18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57e144fce14e7d0567f8163288579d18">&#9670;&#160;</a></span>EVTOAONFLAGSCLR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_evtcl_regs_t::EVTOAONFLAGSCLR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>events to AON domain clear </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00096">96</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<a id="aca83e6149786814f41329f08279f85eb" name="aca83e6149786814f41329f08279f85eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca83e6149786814f41329f08279f85eb">&#9670;&#160;</a></span>EVTOAONPOL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_evtcl_regs_t::EVTOAONPOL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>events to AON domain polarity </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00085">85</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<a id="a02259a0c82f789b1a28d0391a0ad31d6" name="a02259a0c82f789b1a28d0391a0ad31d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02259a0c82f789b1a28d0391a0ad31d6">&#9670;&#160;</a></span>EVTOMCUFLAGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_evtcl_regs_t::EVTOMCUFLAGS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>event to MCU domain flags </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00091">91</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<a id="ab85ab62589dbebc23b8b4963887099e1" name="ab85ab62589dbebc23b8b4963887099e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab85ab62589dbebc23b8b4963887099e1">&#9670;&#160;</a></span>EVTOMCUFLAGSCLR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_evtcl_regs_t::EVTOMCUFLAGSCLR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>events to MCU domain flags clear </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00095">95</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<a id="ac08db57e5989fc967e5ae6be18e145f0" name="ac08db57e5989fc967e5ae6be18e145f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac08db57e5989fc967e5ae6be18e145f0">&#9670;&#160;</a></span>EVTOMCUPOL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_evtcl_regs_t::EVTOMCUPOL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>event to MCU domain polarity </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00090">90</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<a id="a32a8fd4e9d6ff06a3d85f671c3b0e273" name="a32a8fd4e9d6ff06a3d85f671c3b0e273"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32a8fd4e9d6ff06a3d85f671c3b0e273">&#9670;&#160;</a></span>SCEWEVSEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_evtcl_regs_t::SCEWEVSEL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>sensor controller engine wait event selection </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00083">83</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<a id="a8a5f107f2965032fa1e6f51cac67fcf0" name="a8a5f107f2965032fa1e6f51cac67fcf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a5f107f2965032fa1e6f51cac67fcf0">&#9670;&#160;</a></span>SWEVSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_evtcl_regs_t::SWEVSET</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>software event set </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00087">87</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<a id="a222c5be3230503b08252d3c0cb7209e4" name="a222c5be3230503b08252d3c0cb7209e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a222c5be3230503b08252d3c0cb7209e4">&#9670;&#160;</a></span>VECCFG0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_evtcl_regs_t::VECCFG0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>vector config 0 </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00081">81</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<a id="a2857b33bd7473aead3bd13e002bfcb75" name="a2857b33bd7473aead3bd13e002bfcb75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2857b33bd7473aead3bd13e002bfcb75">&#9670;&#160;</a></span>VECCFG1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_evtcl_regs_t::VECCFG1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>vector config 1 </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00082">82</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<a id="ad5486c847a5bb42b015bf1285e4a97e3" name="ad5486c847a5bb42b015bf1285e4a97e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5486c847a5bb42b015bf1285e4a97e3">&#9670;&#160;</a></span>VECFLAGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_evtcl_regs_t::VECFLAGS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>vector flags </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00094">94</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<a id="a6626e04658299d5c44b56cd3c7af96ef" name="a6626e04658299d5c44b56cd3c7af96ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6626e04658299d5c44b56cd3c7af96ef">&#9670;&#160;</a></span>VECFLAGSCLR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_evtcl_regs_t::VECFLAGSCLR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>vector flags clear </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00097">97</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>cpu/cc26x0_cc13x0/include/<a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/net/sock/ip.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('ip_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ip.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ip_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (C) 2016 Alexander Aring &lt;aar@pengutronix.de&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *                    Freie Universität Berlin</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *                    HAW Hamburg</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *                    Kaspar Schleiser &lt;kaspar@schleiser.de&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * directory for more details.</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="preprocessor">#ifndef NET_SOCK_IP_H</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span><span class="preprocessor">#define NET_SOCK_IP_H</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="preprocessor">#include &lt;<a class="code" href="errno_8h.html">errno.h</a>&gt;</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="preprocessor">#include &lt;sys/types.h&gt;</span></div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="comment">/* net/sock/async/types.h included by net/sock.h needs to re-typedef the</span></div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="comment"> * `sock_ip_t` to prevent cyclic includes */</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="preprocessor">#if defined (__clang__)</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="preprocessor"># pragma clang diagnostic push</span></div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span><span class="preprocessor"># pragma clang diagnostic ignored &quot;-Wtypedef-redefinition&quot;</span></div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span><span class="preprocessor">#include &quot;<a class="code" href="sock_8h.html">net/sock.h</a>&quot;</span></div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno"><a class="line" href="group__net__sock__ip.html#ga439f68352d1339555536747a64b5232e">  295</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structsock__ip.html">sock_ip</a> <a class="code hl_struct" href="structsock__ip.html">sock_ip_t</a>;</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span> </div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="preprocessor">#if defined (__clang__)</span></div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="preprocessor"># pragma clang diagnostic pop</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span> </div>
+<div class="foldopen" id="foldopen00304" data-start="{" data-end="};">
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno"><a class="line" href="structsock__ip__aux__rx__t.html">  304</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span><span class="preprocessor">#if defined(MODULE_SOCK_AUX_LOCAL) || defined(DOXYGEN)</span></div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno"><a class="line" href="structsock__ip__aux__rx__t.html#a58acd49deb54e35de438689be78dfe8c">  311</a></span>    <a class="code hl_struct" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> <a class="code hl_variable" href="structsock__ip__aux__rx__t.html#a58acd49deb54e35de438689be78dfe8c">local</a>;</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span><span class="preprocessor">#endif </span><span class="comment">/* MODULE_SOCK_AUX_ENDPOINT */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span><span class="preprocessor">#if defined(MODULE_SOCK_AUX_TIMESTAMP) || defined(DOXYGEN)</span></div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno"><a class="line" href="structsock__ip__aux__rx__t.html#af26b9e0766764f93dc0c4ffc5dadbbe2">  319</a></span>    uint64_t <a class="code hl_variable" href="structsock__ip__aux__rx__t.html#af26b9e0766764f93dc0c4ffc5dadbbe2">timestamp</a>;</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span><span class="preprocessor">#endif </span><span class="comment">/* MODULE_SOCK_AUX_TIMESTAP */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="preprocessor">#if defined(MODULE_SOCK_AUX_RSSI) || defined(DOXYGEN)</span></div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno"><a class="line" href="structsock__ip__aux__rx__t.html#a0e1159bd55a7170a0bffacaa390d7997">  327</a></span>    int16_t <a class="code hl_variable" href="structsock__ip__aux__rx__t.html#a0e1159bd55a7170a0bffacaa390d7997">rssi</a>;</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span><span class="preprocessor">#endif </span><span class="comment">/* MODULE_SOCK_AUX_RSSI */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno"><a class="line" href="structsock__ip__aux__rx__t.html#a5e4398a020f4df40a482a67f0e2e3dd1">  329</a></span>    <a class="code hl_typedef" href="group__net__sock.html#gaa918a855b7f0e8b7fc0d4348d3010f93">sock_aux_flags_t</a> <a class="code hl_variable" href="structsock__ip__aux__rx__t.html#a5e4398a020f4df40a482a67f0e2e3dd1">flags</a>; </div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>} <a class="code hl_struct" href="structsock__ip__aux__rx__t.html">sock_ip_aux_rx_t</a>;</div>
+</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span> </div>
+<div class="foldopen" id="foldopen00335" data-start="{" data-end="};">
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno"><a class="line" href="structsock__ip__aux__tx__t.html">  335</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span><span class="preprocessor">#if defined(MODULE_SOCK_AUX_LOCAL) || defined(DOXYGEN)</span></div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno"><a class="line" href="structsock__ip__aux__tx__t.html#ace3e20e93b52724815f0c832cd381d3b">  342</a></span>    <a class="code hl_struct" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> <a class="code hl_variable" href="structsock__ip__aux__tx__t.html#ace3e20e93b52724815f0c832cd381d3b">local</a>;</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span><span class="preprocessor">#endif </span><span class="comment">/* MODULE_SOCK_AUX_ENDPOINT */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span><span class="preprocessor">#if defined(MODULE_SOCK_AUX_TIMESTAMP) || defined(DOXYGEN)</span></div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno"><a class="line" href="structsock__ip__aux__tx__t.html#a5e5eb568fd676fc78d096691ee0cddda">  357</a></span>    uint64_t <a class="code hl_variable" href="structsock__ip__aux__tx__t.html#a5e5eb568fd676fc78d096691ee0cddda">timestamp</a>;</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span><span class="preprocessor">#endif </span><span class="comment">/* MODULE_SOCK_AUX_TIMESTAP*/</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno"><a class="line" href="structsock__ip__aux__tx__t.html#ac2021e00e0055d452b149b484b65126e">  359</a></span>    <a class="code hl_typedef" href="group__net__sock.html#gaa918a855b7f0e8b7fc0d4348d3010f93">sock_aux_flags_t</a> <a class="code hl_variable" href="structsock__ip__aux__tx__t.html#ac2021e00e0055d452b149b484b65126e">flags</a>; </div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>} <a class="code hl_struct" href="structsock__ip__aux__tx__t.html">sock_ip_aux_tx_t</a>;</div>
+</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span> </div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno"><a class="line" href="group__net__sock__ip.html#ga0b416e35dd100962d88bdd675e7f6b18">  404</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__net__sock__ip.html#ga0b416e35dd100962d88bdd675e7f6b18">sock_ip_create</a>(<a class="code hl_struct" href="structsock__ip.html">sock_ip_t</a> *sock, <span class="keyword">const</span> <a class="code hl_struct" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *local,</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>                   <span class="keyword">const</span> <a class="code hl_struct" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote, uint8_t proto, uint16_t flags);</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span> </div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno"><a class="line" href="group__net__sock__ip.html#ga59aea36d7e415e533686e37bf69d3ec4">  414</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__net__sock__ip.html#ga59aea36d7e415e533686e37bf69d3ec4">sock_ip_close</a>(<a class="code hl_struct" href="structsock__ip.html">sock_ip_t</a> *sock);</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span> </div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno"><a class="line" href="group__net__sock__ip.html#gae01afa2e9d65199732f37d0ea927b581">  434</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__net__sock__ip.html#gae01afa2e9d65199732f37d0ea927b581">sock_ip_get_local</a>(<a class="code hl_struct" href="structsock__ip.html">sock_ip_t</a> *sock, <a class="code hl_struct" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *ep);</div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span> </div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno"><a class="line" href="group__net__sock__ip.html#ga51463dba508be8f9a114486a75f9fdbe">  454</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__net__sock__ip.html#ga51463dba508be8f9a114486a75f9fdbe">sock_ip_get_remote</a>(<a class="code hl_struct" href="structsock__ip.html">sock_ip_t</a> *sock, <a class="code hl_struct" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *ep);</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span> </div>
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno"><a class="line" href="group__net__sock__ip.html#gaa9ec389133f8c39fd4132724306089df">  489</a></span>ssize_t <a class="code hl_function" href="group__net__sock__ip.html#gaa9ec389133f8c39fd4132724306089df">sock_ip_recv_aux</a>(<a class="code hl_struct" href="structsock__ip.html">sock_ip_t</a> *sock, <span class="keywordtype">void</span> *data, <span class="keywordtype">size_t</span> max_len,</div>
+<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>                         uint32_t timeout, <a class="code hl_struct" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote,</div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>                         <a class="code hl_struct" href="structsock__ip__aux__rx__t.html">sock_ip_aux_rx_t</a> *aux);</div>
+<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span> </div>
+<div class="foldopen" id="foldopen00524" data-start="{" data-end="}">
+<div class="line"><a id="l00524" name="l00524"></a><span class="lineno"><a class="line" href="group__net__sock__ip.html#gafad2a57b4ee2bb5604e2d788f5e116ba">  524</a></span><span class="keyword">static</span> <span class="keyword">inline</span> ssize_t <a class="code hl_function" href="group__net__sock__ip.html#gafad2a57b4ee2bb5604e2d788f5e116ba">sock_ip_recv</a>(<a class="code hl_struct" href="structsock__ip.html">sock_ip_t</a> *sock, <span class="keywordtype">void</span> *data, <span class="keywordtype">size_t</span> max_len,</div>
+<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>                                   uint32_t timeout, <a class="code hl_struct" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote)</div>
+<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>{</div>
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__net__sock__ip.html#gaa9ec389133f8c39fd4132724306089df">sock_ip_recv_aux</a>(sock, data, max_len, timeout, remote, NULL);</div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>}</div>
+</div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span> </div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno"><a class="line" href="group__net__sock__ip.html#ga1a678826f520f62c94ff8f4492e4847b">  574</a></span>ssize_t <a class="code hl_function" href="group__net__sock__ip.html#ga1a678826f520f62c94ff8f4492e4847b">sock_ip_recv_buf_aux</a>(<a class="code hl_struct" href="structsock__ip.html">sock_ip_t</a> *sock, <span class="keywordtype">void</span> **data, <span class="keywordtype">void</span> **buf_ctx,</div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>                             uint32_t timeout, <a class="code hl_struct" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote,</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>                             <a class="code hl_struct" href="structsock__ip__aux__rx__t.html">sock_ip_aux_rx_t</a> *aux);</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span> </div>
+<div class="foldopen" id="foldopen00620" data-start="{" data-end="}">
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno"><a class="line" href="group__net__sock__ip.html#gaa3ccb9ce7d1ac34118227549531a6ce7">  620</a></span><span class="keyword">static</span> <span class="keyword">inline</span> ssize_t <a class="code hl_function" href="group__net__sock__ip.html#gaa3ccb9ce7d1ac34118227549531a6ce7">sock_ip_recv_buf</a>(<a class="code hl_struct" href="structsock__ip.html">sock_ip_t</a> *sock,</div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>                                       <span class="keywordtype">void</span> **data, <span class="keywordtype">void</span> **buf_ctx,</div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>                                       uint32_t timeout, <a class="code hl_struct" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote)</div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>{</div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__net__sock__ip.html#ga1a678826f520f62c94ff8f4492e4847b">sock_ip_recv_buf_aux</a>(sock, data, buf_ctx, timeout, remote, NULL);</div>
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>}</div>
+</div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span> </div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno"><a class="line" href="group__net__sock__ip.html#gaaf777c4afca9984f71a25c57aeaf49bf">  661</a></span>ssize_t <a class="code hl_function" href="group__net__sock__ip.html#gaaf777c4afca9984f71a25c57aeaf49bf">sock_ip_send_aux</a>(<a class="code hl_struct" href="structsock__ip.html">sock_ip_t</a> *sock, <span class="keyword">const</span> <span class="keywordtype">void</span> *data, <span class="keywordtype">size_t</span> len,</div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>                         uint8_t proto, <span class="keyword">const</span> <a class="code hl_struct" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote,</div>
+<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>                         <a class="code hl_struct" href="structsock__ip__aux__tx__t.html">sock_ip_aux_tx_t</a> *aux);</div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span> </div>
+<div class="foldopen" id="foldopen00697" data-start="{" data-end="}">
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno"><a class="line" href="group__net__sock__ip.html#ga66054a9b18473f819d098e7896adda57">  697</a></span><span class="keyword">static</span> <span class="keyword">inline</span> ssize_t <a class="code hl_function" href="group__net__sock__ip.html#ga66054a9b18473f819d098e7896adda57">sock_ip_send</a>(<a class="code hl_struct" href="structsock__ip.html">sock_ip_t</a> *sock,</div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>                                   <span class="keyword">const</span> <span class="keywordtype">void</span> *data, <span class="keywordtype">size_t</span> len,</div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>                                   uint8_t proto, <span class="keyword">const</span> <a class="code hl_struct" href="structsock__ip__ep__t.html">sock_ip_ep_t</a> *remote)</div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>{</div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__net__sock__ip.html#gaaf777c4afca9984f71a25c57aeaf49bf">sock_ip_send_aux</a>(sock, data, len, proto, remote, NULL);</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>}</div>
+</div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span> </div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span><span class="preprocessor">#include &quot;sock_types.h&quot;</span></div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span> </div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>}</div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span> </div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span><span class="preprocessor">#endif </span><span class="comment">/* NET_SOCK_IP_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aerrno_8h_html"><div class="ttname"><a href="errno_8h.html">errno.h</a></div></div>
+<div class="ttc" id="agroup__net__sock__ip_html_ga0b416e35dd100962d88bdd675e7f6b18"><div class="ttname"><a href="group__net__sock__ip.html#ga0b416e35dd100962d88bdd675e7f6b18">sock_ip_create</a></div><div class="ttdeci">int sock_ip_create(sock_ip_t *sock, const sock_ip_ep_t *local, const sock_ip_ep_t *remote, uint8_t proto, uint16_t flags)</div><div class="ttdoc">Creates a new raw IPv4/IPv6 sock object.</div></div>
+<div class="ttc" id="agroup__net__sock__ip_html_ga1a678826f520f62c94ff8f4492e4847b"><div class="ttname"><a href="group__net__sock__ip.html#ga1a678826f520f62c94ff8f4492e4847b">sock_ip_recv_buf_aux</a></div><div class="ttdeci">ssize_t sock_ip_recv_buf_aux(sock_ip_t *sock, void **data, void **buf_ctx, uint32_t timeout, sock_ip_ep_t *remote, sock_ip_aux_rx_t *aux)</div><div class="ttdoc">Provides stack-internal buffer space containing an IPv4/IPv6 message from remote end point.</div></div>
+<div class="ttc" id="agroup__net__sock__ip_html_ga51463dba508be8f9a114486a75f9fdbe"><div class="ttname"><a href="group__net__sock__ip.html#ga51463dba508be8f9a114486a75f9fdbe">sock_ip_get_remote</a></div><div class="ttdeci">int sock_ip_get_remote(sock_ip_t *sock, sock_ip_ep_t *ep)</div><div class="ttdoc">Gets the remote end point of a raw IPv4/IPv6 sock object.</div></div>
+<div class="ttc" id="agroup__net__sock__ip_html_ga59aea36d7e415e533686e37bf69d3ec4"><div class="ttname"><a href="group__net__sock__ip.html#ga59aea36d7e415e533686e37bf69d3ec4">sock_ip_close</a></div><div class="ttdeci">void sock_ip_close(sock_ip_t *sock)</div><div class="ttdoc">Closes a raw IPv4/IPv6 sock object.</div></div>
+<div class="ttc" id="agroup__net__sock__ip_html_ga66054a9b18473f819d098e7896adda57"><div class="ttname"><a href="group__net__sock__ip.html#ga66054a9b18473f819d098e7896adda57">sock_ip_send</a></div><div class="ttdeci">static ssize_t sock_ip_send(sock_ip_t *sock, const void *data, size_t len, uint8_t proto, const sock_ip_ep_t *remote)</div><div class="ttdoc">Sends a message over IPv4/IPv6 to remote end point.</div><div class="ttdef"><b>Definition</b> <a href="#l00697">ip.h:697</a></div></div>
+<div class="ttc" id="agroup__net__sock__ip_html_gaa3ccb9ce7d1ac34118227549531a6ce7"><div class="ttname"><a href="group__net__sock__ip.html#gaa3ccb9ce7d1ac34118227549531a6ce7">sock_ip_recv_buf</a></div><div class="ttdeci">static ssize_t sock_ip_recv_buf(sock_ip_t *sock, void **data, void **buf_ctx, uint32_t timeout, sock_ip_ep_t *remote)</div><div class="ttdoc">Provides stack-internal buffer space containing an IPv4/IPv6 message from remote end point.</div><div class="ttdef"><b>Definition</b> <a href="#l00620">ip.h:620</a></div></div>
+<div class="ttc" id="agroup__net__sock__ip_html_gaa9ec389133f8c39fd4132724306089df"><div class="ttname"><a href="group__net__sock__ip.html#gaa9ec389133f8c39fd4132724306089df">sock_ip_recv_aux</a></div><div class="ttdeci">ssize_t sock_ip_recv_aux(sock_ip_t *sock, void *data, size_t max_len, uint32_t timeout, sock_ip_ep_t *remote, sock_ip_aux_rx_t *aux)</div><div class="ttdoc">Receives a message over IPv4/IPv6 from remote end point.</div></div>
+<div class="ttc" id="agroup__net__sock__ip_html_gaaf777c4afca9984f71a25c57aeaf49bf"><div class="ttname"><a href="group__net__sock__ip.html#gaaf777c4afca9984f71a25c57aeaf49bf">sock_ip_send_aux</a></div><div class="ttdeci">ssize_t sock_ip_send_aux(sock_ip_t *sock, const void *data, size_t len, uint8_t proto, const sock_ip_ep_t *remote, sock_ip_aux_tx_t *aux)</div><div class="ttdoc">Sends a message over IPv4/IPv6 to remote end point.</div></div>
+<div class="ttc" id="agroup__net__sock__ip_html_gae01afa2e9d65199732f37d0ea927b581"><div class="ttname"><a href="group__net__sock__ip.html#gae01afa2e9d65199732f37d0ea927b581">sock_ip_get_local</a></div><div class="ttdeci">int sock_ip_get_local(sock_ip_t *sock, sock_ip_ep_t *ep)</div><div class="ttdoc">Gets the local end point of a raw IPv4/IPv6 sock object.</div></div>
+<div class="ttc" id="agroup__net__sock__ip_html_gafad2a57b4ee2bb5604e2d788f5e116ba"><div class="ttname"><a href="group__net__sock__ip.html#gafad2a57b4ee2bb5604e2d788f5e116ba">sock_ip_recv</a></div><div class="ttdeci">static ssize_t sock_ip_recv(sock_ip_t *sock, void *data, size_t max_len, uint32_t timeout, sock_ip_ep_t *remote)</div><div class="ttdoc">Receives a message over IPv4/IPv6 from remote end point.</div><div class="ttdef"><b>Definition</b> <a href="#l00524">ip.h:524</a></div></div>
+<div class="ttc" id="agroup__net__sock_html_gaa918a855b7f0e8b7fc0d4348d3010f93"><div class="ttname"><a href="group__net__sock.html#gaa918a855b7f0e8b7fc0d4348d3010f93">sock_aux_flags_t</a></div><div class="ttdeci">uint8_t sock_aux_flags_t</div><div class="ttdoc">Type holding the flags used to request specific auxiliary data.</div><div class="ttdef"><b>Definition</b> <a href="sock_8h_source.html#l00349">sock.h:349</a></div></div>
+<div class="ttc" id="asock_8h_html"><div class="ttname"><a href="sock_8h.html">sock.h</a></div><div class="ttdoc">Common sock API definitions.</div></div>
+<div class="ttc" id="astructsock__ip__aux__rx__t_html"><div class="ttname"><a href="structsock__ip__aux__rx__t.html">sock_ip_aux_rx_t</a></div><div class="ttdoc">Auxiliary data provided when receiving using an IP sock object.</div><div class="ttdef"><b>Definition</b> <a href="#l00304">ip.h:304</a></div></div>
+<div class="ttc" id="astructsock__ip__aux__rx__t_html_a0e1159bd55a7170a0bffacaa390d7997"><div class="ttname"><a href="structsock__ip__aux__rx__t.html#a0e1159bd55a7170a0bffacaa390d7997">sock_ip_aux_rx_t::rssi</a></div><div class="ttdeci">int16_t rssi</div><div class="ttdoc">RSSI value of the received frame.</div><div class="ttdef"><b>Definition</b> <a href="#l00327">ip.h:327</a></div></div>
+<div class="ttc" id="astructsock__ip__aux__rx__t_html_a58acd49deb54e35de438689be78dfe8c"><div class="ttname"><a href="structsock__ip__aux__rx__t.html#a58acd49deb54e35de438689be78dfe8c">sock_ip_aux_rx_t::local</a></div><div class="ttdeci">sock_ip_ep_t local</div><div class="ttdoc">The local address the packet was received on.</div><div class="ttdef"><b>Definition</b> <a href="#l00311">ip.h:311</a></div></div>
+<div class="ttc" id="astructsock__ip__aux__rx__t_html_a5e4398a020f4df40a482a67f0e2e3dd1"><div class="ttname"><a href="structsock__ip__aux__rx__t.html#a5e4398a020f4df40a482a67f0e2e3dd1">sock_ip_aux_rx_t::flags</a></div><div class="ttdeci">sock_aux_flags_t flags</div><div class="ttdoc">Flags used request information.</div><div class="ttdef"><b>Definition</b> <a href="#l00329">ip.h:329</a></div></div>
+<div class="ttc" id="astructsock__ip__aux__rx__t_html_af26b9e0766764f93dc0c4ffc5dadbbe2"><div class="ttname"><a href="structsock__ip__aux__rx__t.html#af26b9e0766764f93dc0c4ffc5dadbbe2">sock_ip_aux_rx_t::timestamp</a></div><div class="ttdeci">uint64_t timestamp</div><div class="ttdoc">System time the packet was received.</div><div class="ttdef"><b>Definition</b> <a href="#l00319">ip.h:319</a></div></div>
+<div class="ttc" id="astructsock__ip__aux__tx__t_html"><div class="ttname"><a href="structsock__ip__aux__tx__t.html">sock_ip_aux_tx_t</a></div><div class="ttdoc">Auxiliary data provided when sending using an IP sock object.</div><div class="ttdef"><b>Definition</b> <a href="#l00335">ip.h:335</a></div></div>
+<div class="ttc" id="astructsock__ip__aux__tx__t_html_a5e5eb568fd676fc78d096691ee0cddda"><div class="ttname"><a href="structsock__ip__aux__tx__t.html#a5e5eb568fd676fc78d096691ee0cddda">sock_ip_aux_tx_t::timestamp</a></div><div class="ttdeci">uint64_t timestamp</div><div class="ttdoc">System time the packet was send.</div><div class="ttdef"><b>Definition</b> <a href="#l00357">ip.h:357</a></div></div>
+<div class="ttc" id="astructsock__ip__aux__tx__t_html_ac2021e00e0055d452b149b484b65126e"><div class="ttname"><a href="structsock__ip__aux__tx__t.html#ac2021e00e0055d452b149b484b65126e">sock_ip_aux_tx_t::flags</a></div><div class="ttdeci">sock_aux_flags_t flags</div><div class="ttdoc">Flags used request information.</div><div class="ttdef"><b>Definition</b> <a href="#l00359">ip.h:359</a></div></div>
+<div class="ttc" id="astructsock__ip__aux__tx__t_html_ace3e20e93b52724815f0c832cd381d3b"><div class="ttname"><a href="structsock__ip__aux__tx__t.html#ace3e20e93b52724815f0c832cd381d3b">sock_ip_aux_tx_t::local</a></div><div class="ttdeci">sock_ip_ep_t local</div><div class="ttdoc">The local endpoint from which the datagram will be sent.</div><div class="ttdef"><b>Definition</b> <a href="#l00342">ip.h:342</a></div></div>
+<div class="ttc" id="astructsock__ip__ep__t_html"><div class="ttname"><a href="structsock__ip__ep__t.html">sock_ip_ep_t</a></div><div class="ttdoc">Abstract IP end point and end point for a raw IP sock object.</div><div class="ttdef"><b>Definition</b> <a href="sock_8h_source.html#l00178">sock.h:178</a></div></div>
+<div class="ttc" id="astructsock__ip_html"><div class="ttname"><a href="structsock__ip.html">sock_ip</a></div><div class="ttdoc">Raw IP sock type.</div><div class="ttdef"><b>Definition</b> <a href="pkg_2lwip_2include_2sock__types_8h_source.html#l00091">sock_types.h:91</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:30 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

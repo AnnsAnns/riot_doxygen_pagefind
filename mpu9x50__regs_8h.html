@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/mpu9x50/include/mpu9x50_regs.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('mpu9x50__regs_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">mpu9x50_regs.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a> &#124; <a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> &raquo; <a class="el" href="group__drivers__mpu9x50.html">MPU-9X50 (MPU9150 and MPU9250) accelerometer/magnetometer/gyroscope</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Register and bit definitions for the MPU-9X50 (MPU9150 and MPU9250) 9-Axis Motion Sensor.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Register and bit definitions for the MPU-9X50 (MPU9150 and MPU9250) 9-Axis Motion Sensor. </p>
+<dl class="section author"><dt>Author</dt><dd>Fabian Nack <a href="#" onclick="location.href='mai'+'lto:'+'nac'+'k@'+'inf'+'.f'+'u-b'+'er'+'lin'+'.d'+'e'; return false;">nack@<span class="obfuscator">.nosp@m.</span>inf.<span class="obfuscator">.nosp@m.</span>fu-be<span class="obfuscator">.nosp@m.</span>rlin<span class="obfuscator">.nosp@m.</span>.de</a> </dd>
+<dd>
+Jannes Volkens <a href="#" onclick="location.href='mai'+'lto:'+'jan'+'ne'+'s.v'+'ol'+'ken'+'s@'+'haw'+'-h'+'amb'+'ur'+'g.d'+'e'; return false;">janne<span class="obfuscator">.nosp@m.</span>s.vo<span class="obfuscator">.nosp@m.</span>lkens<span class="obfuscator">.nosp@m.</span>@haw<span class="obfuscator">.nosp@m.</span>-hamb<span class="obfuscator">.nosp@m.</span>urg.<span class="obfuscator">.nosp@m.</span>de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+</div>
+<p><a href="mpu9x50__regs_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">MPU-9X50 register definitions</h2></td></tr>
+<tr class="memitem:aa38dcdfe4922616187c5e623baa72f42" id="r_aa38dcdfe4922616187c5e623baa72f42"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa38dcdfe4922616187c5e623baa72f42">MPU9X50_YG_OFFS_TC_REG</a>&#160;&#160;&#160;(0x01)</td></tr>
+<tr class="separator:aa38dcdfe4922616187c5e623baa72f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f8ca68cc007cf046b71049557f6c4ed" id="r_a4f8ca68cc007cf046b71049557f6c4ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f8ca68cc007cf046b71049557f6c4ed">MPU9X50_RATE_DIV_REG</a>&#160;&#160;&#160;(0x19)</td></tr>
+<tr class="separator:a4f8ca68cc007cf046b71049557f6c4ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf1a08f4334ce670dbbda592b0fc9b1f" id="r_abf1a08f4334ce670dbbda592b0fc9b1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf1a08f4334ce670dbbda592b0fc9b1f">MPU9X50_LPF_REG</a>&#160;&#160;&#160;(0x1A)</td></tr>
+<tr class="separator:abf1a08f4334ce670dbbda592b0fc9b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e01c183ab8c9683c6c5687cb766e5da" id="r_a3e01c183ab8c9683c6c5687cb766e5da"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e01c183ab8c9683c6c5687cb766e5da">MPU9X50_GYRO_CFG_REG</a>&#160;&#160;&#160;(0x1B)</td></tr>
+<tr class="separator:a3e01c183ab8c9683c6c5687cb766e5da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b819aae39b9884084eebd935ade90cb" id="r_a2b819aae39b9884084eebd935ade90cb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b819aae39b9884084eebd935ade90cb">MPU9X50_ACCEL_CFG_REG</a>&#160;&#160;&#160;(0x1C)</td></tr>
+<tr class="separator:a2b819aae39b9884084eebd935ade90cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f4534cb791203ff8663cde7cee998e6" id="r_a3f4534cb791203ff8663cde7cee998e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f4534cb791203ff8663cde7cee998e6">MPU9X50_FIFO_EN_REG</a>&#160;&#160;&#160;(0x23)</td></tr>
+<tr class="separator:a3f4534cb791203ff8663cde7cee998e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08dc4b80d14527d530fe32deba07e56b" id="r_a08dc4b80d14527d530fe32deba07e56b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08dc4b80d14527d530fe32deba07e56b">MPU9X50_I2C_MST_REG</a>&#160;&#160;&#160;(0x24)</td></tr>
+<tr class="separator:a08dc4b80d14527d530fe32deba07e56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a180e199aa29085082ebf53a0de3586e8" id="r_a180e199aa29085082ebf53a0de3586e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a180e199aa29085082ebf53a0de3586e8">MPU9X50_SLAVE0_ADDR_REG</a>&#160;&#160;&#160;(0x25)</td></tr>
+<tr class="separator:a180e199aa29085082ebf53a0de3586e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99e1b60f6d04c241bcafc16f6d470c0f" id="r_a99e1b60f6d04c241bcafc16f6d470c0f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99e1b60f6d04c241bcafc16f6d470c0f">MPU9X50_SLAVE0_REG_REG</a>&#160;&#160;&#160;(0x26)</td></tr>
+<tr class="separator:a99e1b60f6d04c241bcafc16f6d470c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b96b32d3f0dead44a95a9a5bc9c8190" id="r_a5b96b32d3f0dead44a95a9a5bc9c8190"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b96b32d3f0dead44a95a9a5bc9c8190">MPU9X50_SLAVE0_CTRL_REG</a>&#160;&#160;&#160;(0x27)</td></tr>
+<tr class="separator:a5b96b32d3f0dead44a95a9a5bc9c8190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b91fc000d341dd50a3a17faafe66b2f" id="r_a8b91fc000d341dd50a3a17faafe66b2f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b91fc000d341dd50a3a17faafe66b2f">MPU9X50_SLAVE1_ADDR_REG</a>&#160;&#160;&#160;(0x28)</td></tr>
+<tr class="separator:a8b91fc000d341dd50a3a17faafe66b2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71f8e735fa6bade3e42eb0e37788499d" id="r_a71f8e735fa6bade3e42eb0e37788499d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71f8e735fa6bade3e42eb0e37788499d">MPU9X50_SLAVE1_REG_REG</a>&#160;&#160;&#160;(0x29)</td></tr>
+<tr class="separator:a71f8e735fa6bade3e42eb0e37788499d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac13dbd73bb27e73cd8f653d8ab348f15" id="r_ac13dbd73bb27e73cd8f653d8ab348f15"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac13dbd73bb27e73cd8f653d8ab348f15">MPU9X50_SLAVE1_CTRL_REG</a>&#160;&#160;&#160;(0x2A)</td></tr>
+<tr class="separator:ac13dbd73bb27e73cd8f653d8ab348f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b7e80dea6694faba290ac697e19a060" id="r_a9b7e80dea6694faba290ac697e19a060"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b7e80dea6694faba290ac697e19a060">MPU9X50_SLAVE4_CTRL_REG</a>&#160;&#160;&#160;(0x34)</td></tr>
+<tr class="separator:a9b7e80dea6694faba290ac697e19a060"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac346b22f197fd3918af08a4e40457cb6" id="r_ac346b22f197fd3918af08a4e40457cb6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac346b22f197fd3918af08a4e40457cb6">MPU9X50_INT_PIN_CFG_REG</a>&#160;&#160;&#160;(0x37)</td></tr>
+<tr class="separator:ac346b22f197fd3918af08a4e40457cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a001cabb0c7a1e776554fff9cc65d97bf" id="r_a001cabb0c7a1e776554fff9cc65d97bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a001cabb0c7a1e776554fff9cc65d97bf">MPU9X50_INT_ENABLE_REG</a>&#160;&#160;&#160;(0x38)</td></tr>
+<tr class="separator:a001cabb0c7a1e776554fff9cc65d97bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36186fe4a2f552618075493534477313" id="r_a36186fe4a2f552618075493534477313"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36186fe4a2f552618075493534477313">MPU9X50_DMP_INT_STATUS</a>&#160;&#160;&#160;(0x39)</td></tr>
+<tr class="separator:a36186fe4a2f552618075493534477313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a021295d6c679ddb358539bd8ecbc9591" id="r_a021295d6c679ddb358539bd8ecbc9591"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a021295d6c679ddb358539bd8ecbc9591">MPU9X50_INT_STATUS</a>&#160;&#160;&#160;(0x3A)</td></tr>
+<tr class="separator:a021295d6c679ddb358539bd8ecbc9591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4839bad2c0e3c246dfc43b77134c9bad" id="r_a4839bad2c0e3c246dfc43b77134c9bad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4839bad2c0e3c246dfc43b77134c9bad">MPU9X50_ACCEL_START_REG</a>&#160;&#160;&#160;(0x3B)</td></tr>
+<tr class="separator:a4839bad2c0e3c246dfc43b77134c9bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae73546cfa4f987d02ecf0be29b65635f" id="r_ae73546cfa4f987d02ecf0be29b65635f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae73546cfa4f987d02ecf0be29b65635f">MPU9X50_TEMP_START_REG</a>&#160;&#160;&#160;(0x41)</td></tr>
+<tr class="separator:ae73546cfa4f987d02ecf0be29b65635f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8499eab15baecaa49a10cfc26d1a489" id="r_ae8499eab15baecaa49a10cfc26d1a489"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8499eab15baecaa49a10cfc26d1a489">MPU9X50_GYRO_START_REG</a>&#160;&#160;&#160;(0x43)</td></tr>
+<tr class="separator:ae8499eab15baecaa49a10cfc26d1a489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a718288459ed759bb2492022166098ce8" id="r_a718288459ed759bb2492022166098ce8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a718288459ed759bb2492022166098ce8">MPU9X50_EXT_SENS_DATA_START_REG</a>&#160;&#160;&#160;(0x49)</td></tr>
+<tr class="separator:a718288459ed759bb2492022166098ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f14d9c4bc141881643d514a2cc704a6" id="r_a2f14d9c4bc141881643d514a2cc704a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f14d9c4bc141881643d514a2cc704a6">MPU9X50_COMPASS_DATA_START_REG</a>&#160;&#160;&#160;(0x4A)</td></tr>
+<tr class="separator:a2f14d9c4bc141881643d514a2cc704a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a301ef86e582aa883b0881e947eff7a" id="r_a5a301ef86e582aa883b0881e947eff7a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a301ef86e582aa883b0881e947eff7a">MPU9X50_SLAVE0_DATA_OUT_REG</a>&#160;&#160;&#160;(0x63)</td></tr>
+<tr class="separator:a5a301ef86e582aa883b0881e947eff7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d549cd0be7ed2ffbbe558a7a22799a5" id="r_a0d549cd0be7ed2ffbbe558a7a22799a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d549cd0be7ed2ffbbe558a7a22799a5">MPU9X50_SLAVE1_DATA_OUT_REG</a>&#160;&#160;&#160;(0x64)</td></tr>
+<tr class="separator:a0d549cd0be7ed2ffbbe558a7a22799a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7783015814e461a82e8d2f2139c33e70" id="r_a7783015814e461a82e8d2f2139c33e70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7783015814e461a82e8d2f2139c33e70">MPU9X50_SLAVE2_DATA_OUT_REG</a>&#160;&#160;&#160;(0x65)</td></tr>
+<tr class="separator:a7783015814e461a82e8d2f2139c33e70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5a522b72b8a25179b48347d17b67d4c" id="r_ac5a522b72b8a25179b48347d17b67d4c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5a522b72b8a25179b48347d17b67d4c">MPU9X50_SLAVE3_DATA_OUT_REG</a>&#160;&#160;&#160;(0x66)</td></tr>
+<tr class="separator:ac5a522b72b8a25179b48347d17b67d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81b66bee0e4b15dbfaa146baf100b4ec" id="r_a81b66bee0e4b15dbfaa146baf100b4ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81b66bee0e4b15dbfaa146baf100b4ec">MPU9X50_I2C_DELAY_CTRL_REG</a>&#160;&#160;&#160;(0x67)</td></tr>
+<tr class="separator:a81b66bee0e4b15dbfaa146baf100b4ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84209586148f17b2349731a28d9e4d5a" id="r_a84209586148f17b2349731a28d9e4d5a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84209586148f17b2349731a28d9e4d5a">MPU9X50_USER_CTRL_REG</a>&#160;&#160;&#160;(0x6A)</td></tr>
+<tr class="separator:a84209586148f17b2349731a28d9e4d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d073a76bdbe520076c1ed29d9ff5b6b" id="r_a1d073a76bdbe520076c1ed29d9ff5b6b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d073a76bdbe520076c1ed29d9ff5b6b">MPU9X50_PWR_MGMT_1_REG</a>&#160;&#160;&#160;(0x6B)</td></tr>
+<tr class="separator:a1d073a76bdbe520076c1ed29d9ff5b6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ef0858dd8a9268c7682ceaecedbc4e1" id="r_a2ef0858dd8a9268c7682ceaecedbc4e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ef0858dd8a9268c7682ceaecedbc4e1">MPU9X50_PWR_MGMT_2_REG</a>&#160;&#160;&#160;(0x6C)</td></tr>
+<tr class="separator:a2ef0858dd8a9268c7682ceaecedbc4e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6988a9ce91c7b800e107bbfd7adb021" id="r_ad6988a9ce91c7b800e107bbfd7adb021"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6988a9ce91c7b800e107bbfd7adb021">MPU9X50_FIFO_COUNT_START_REG</a>&#160;&#160;&#160;(0x72)</td></tr>
+<tr class="separator:ad6988a9ce91c7b800e107bbfd7adb021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a286fc5019f9c8bb87f099ab1f06ed284" id="r_a286fc5019f9c8bb87f099ab1f06ed284"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a286fc5019f9c8bb87f099ab1f06ed284">MPU9X50_FIFO_RW_REG</a>&#160;&#160;&#160;(0x74)</td></tr>
+<tr class="separator:a286fc5019f9c8bb87f099ab1f06ed284"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f83d9bdd6c6125b3b6ef09fac5be46b" id="r_a7f83d9bdd6c6125b3b6ef09fac5be46b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f83d9bdd6c6125b3b6ef09fac5be46b">MPU9X50_WHO_AM_I_REG</a>&#160;&#160;&#160;(0x75)</td></tr>
+<tr class="separator:a7f83d9bdd6c6125b3b6ef09fac5be46b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Compass register definitions</h2></td></tr>
+<tr class="memitem:ac74137ae1d7394fc1af0413184b47111" id="r_ac74137ae1d7394fc1af0413184b47111"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac74137ae1d7394fc1af0413184b47111">COMPASS_WHOAMI_REG</a>&#160;&#160;&#160;(0x00)</td></tr>
+<tr class="separator:ac74137ae1d7394fc1af0413184b47111"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae86cc2c574563b21283f29131fa4f939" id="r_ae86cc2c574563b21283f29131fa4f939"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae86cc2c574563b21283f29131fa4f939">COMPASS_ST1_REG</a>&#160;&#160;&#160;(0x02)</td></tr>
+<tr class="separator:ae86cc2c574563b21283f29131fa4f939"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5deee4a3aa2d9b34576eda71b6185848" id="r_a5deee4a3aa2d9b34576eda71b6185848"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5deee4a3aa2d9b34576eda71b6185848">COMPASS_DATA_START_REG</a>&#160;&#160;&#160;(0x03)</td></tr>
+<tr class="separator:a5deee4a3aa2d9b34576eda71b6185848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ac63d3322e986a62d0a3aaffd61c69c" id="r_a2ac63d3322e986a62d0a3aaffd61c69c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ac63d3322e986a62d0a3aaffd61c69c">COMPASS_ST2_REG</a>&#160;&#160;&#160;(0x09)</td></tr>
+<tr class="separator:a2ac63d3322e986a62d0a3aaffd61c69c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5e4f1e3bc750297a91a8bc0f91c1916" id="r_ab5e4f1e3bc750297a91a8bc0f91c1916"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5e4f1e3bc750297a91a8bc0f91c1916">COMPASS_CNTL_REG</a>&#160;&#160;&#160;(0x0A)</td></tr>
+<tr class="separator:ab5e4f1e3bc750297a91a8bc0f91c1916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c44e47d56e850d6b3a8ae9d1df89d3c" id="r_a0c44e47d56e850d6b3a8ae9d1df89d3c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c44e47d56e850d6b3a8ae9d1df89d3c">COMPASS_ASTC_REG</a>&#160;&#160;&#160;(0x0C)</td></tr>
+<tr class="separator:a0c44e47d56e850d6b3a8ae9d1df89d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a702fc05f754d3c6aef0bc24a0fb8f4c1" id="r_a702fc05f754d3c6aef0bc24a0fb8f4c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a702fc05f754d3c6aef0bc24a0fb8f4c1">COMPASS_ASAX_REG</a>&#160;&#160;&#160;(0x10)</td></tr>
+<tr class="separator:a702fc05f754d3c6aef0bc24a0fb8f4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39a9ec764f823ac8ca0724cdf356420b" id="r_a39a9ec764f823ac8ca0724cdf356420b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39a9ec764f823ac8ca0724cdf356420b">COMPASS_ASAY_REG</a>&#160;&#160;&#160;(0x11)</td></tr>
+<tr class="separator:a39a9ec764f823ac8ca0724cdf356420b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4078a5a9bdf36f0522e8b3228df3485" id="r_ae4078a5a9bdf36f0522e8b3228df3485"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4078a5a9bdf36f0522e8b3228df3485">COMPASS_ASAZ_REG</a>&#160;&#160;&#160;(0x12)</td></tr>
+<tr class="separator:ae4078a5a9bdf36f0522e8b3228df3485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">MPU9X50 bitfield definitions</h2></td></tr>
+<tr class="memitem:abd48798db650eaea9750f68e6e24cc90" id="r_abd48798db650eaea9750f68e6e24cc90"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd48798db650eaea9750f68e6e24cc90">BIT_SLV0_DELAY_EN</a>&#160;&#160;&#160;(0x01)</td></tr>
+<tr class="separator:abd48798db650eaea9750f68e6e24cc90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2720ab86c236bd45f9fc85d7a529d919" id="r_a2720ab86c236bd45f9fc85d7a529d919"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2720ab86c236bd45f9fc85d7a529d919">BIT_SLV1_DELAY_EN</a>&#160;&#160;&#160;(0x02)</td></tr>
+<tr class="separator:a2720ab86c236bd45f9fc85d7a529d919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c9fb24ead5c0b62377dd972e3d5f0ec" id="r_a3c9fb24ead5c0b62377dd972e3d5f0ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c9fb24ead5c0b62377dd972e3d5f0ec">BIT_I2C_BYPASS_EN</a>&#160;&#160;&#160;(0x02)</td></tr>
+<tr class="separator:a3c9fb24ead5c0b62377dd972e3d5f0ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa38251c2bf844bc1345bc57d8ef0576" id="r_aaa38251c2bf844bc1345bc57d8ef0576"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa38251c2bf844bc1345bc57d8ef0576">BIT_I2C_MST_EN</a>&#160;&#160;&#160;(0x20)</td></tr>
+<tr class="separator:aaa38251c2bf844bc1345bc57d8ef0576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0223ce2dccc8923d80973dd2764b981c" id="r_a0223ce2dccc8923d80973dd2764b981c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0223ce2dccc8923d80973dd2764b981c">BIT_PWR_MGMT1_SLEEP</a>&#160;&#160;&#160;(0x40)</td></tr>
+<tr class="separator:a0223ce2dccc8923d80973dd2764b981c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf03ac30eb8a5dfcafdcd7f9c5bae921" id="r_abf03ac30eb8a5dfcafdcd7f9c5bae921"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf03ac30eb8a5dfcafdcd7f9c5bae921">BIT_WAIT_FOR_ES</a>&#160;&#160;&#160;(0x40)</td></tr>
+<tr class="separator:abf03ac30eb8a5dfcafdcd7f9c5bae921"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac52d7caf4efc485ef6faa1211bfe60dc" id="r_ac52d7caf4efc485ef6faa1211bfe60dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac52d7caf4efc485ef6faa1211bfe60dc">BIT_I2C_MST_VDDIO</a>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="separator:ac52d7caf4efc485ef6faa1211bfe60dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af03311012ad3e699cbcbe7d38ff53cc9" id="r_af03311012ad3e699cbcbe7d38ff53cc9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af03311012ad3e699cbcbe7d38ff53cc9">BIT_SLAVE_RW</a>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="separator:af03311012ad3e699cbcbe7d38ff53cc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9440f48b6d70d900366dc040a8714d7" id="r_ae9440f48b6d70d900366dc040a8714d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9440f48b6d70d900366dc040a8714d7">BIT_SLAVE_EN</a>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="separator:ae9440f48b6d70d900366dc040a8714d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02c3e9ddd63128f1c3cf50bf1e9b5fe6" id="r_a02c3e9ddd63128f1c3cf50bf1e9b5fe6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02c3e9ddd63128f1c3cf50bf1e9b5fe6">BIT_DMP_EN</a>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="separator:a02c3e9ddd63128f1c3cf50bf1e9b5fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a02c3e9ddd63128f1c3cf50bf1e9b5fe6" name="a02c3e9ddd63128f1c3cf50bf1e9b5fe6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02c3e9ddd63128f1c3cf50bf1e9b5fe6">&#9670;&#160;</a></span>BIT_DMP_EN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BIT_DMP_EN&#160;&#160;&#160;(0x80)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00096">96</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a3c9fb24ead5c0b62377dd972e3d5f0ec" name="a3c9fb24ead5c0b62377dd972e3d5f0ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c9fb24ead5c0b62377dd972e3d5f0ec">&#9670;&#160;</a></span>BIT_I2C_BYPASS_EN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BIT_I2C_BYPASS_EN&#160;&#160;&#160;(0x02)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00089">89</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="aaa38251c2bf844bc1345bc57d8ef0576" name="aaa38251c2bf844bc1345bc57d8ef0576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa38251c2bf844bc1345bc57d8ef0576">&#9670;&#160;</a></span>BIT_I2C_MST_EN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BIT_I2C_MST_EN&#160;&#160;&#160;(0x20)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00090">90</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ac52d7caf4efc485ef6faa1211bfe60dc" name="ac52d7caf4efc485ef6faa1211bfe60dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac52d7caf4efc485ef6faa1211bfe60dc">&#9670;&#160;</a></span>BIT_I2C_MST_VDDIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BIT_I2C_MST_VDDIO&#160;&#160;&#160;(0x80)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00093">93</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a0223ce2dccc8923d80973dd2764b981c" name="a0223ce2dccc8923d80973dd2764b981c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0223ce2dccc8923d80973dd2764b981c">&#9670;&#160;</a></span>BIT_PWR_MGMT1_SLEEP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BIT_PWR_MGMT1_SLEEP&#160;&#160;&#160;(0x40)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00091">91</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ae9440f48b6d70d900366dc040a8714d7" name="ae9440f48b6d70d900366dc040a8714d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9440f48b6d70d900366dc040a8714d7">&#9670;&#160;</a></span>BIT_SLAVE_EN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BIT_SLAVE_EN&#160;&#160;&#160;(0x80)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00095">95</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="af03311012ad3e699cbcbe7d38ff53cc9" name="af03311012ad3e699cbcbe7d38ff53cc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af03311012ad3e699cbcbe7d38ff53cc9">&#9670;&#160;</a></span>BIT_SLAVE_RW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BIT_SLAVE_RW&#160;&#160;&#160;(0x80)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00094">94</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="abd48798db650eaea9750f68e6e24cc90" name="abd48798db650eaea9750f68e6e24cc90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd48798db650eaea9750f68e6e24cc90">&#9670;&#160;</a></span>BIT_SLV0_DELAY_EN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BIT_SLV0_DELAY_EN&#160;&#160;&#160;(0x01)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00087">87</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a2720ab86c236bd45f9fc85d7a529d919" name="a2720ab86c236bd45f9fc85d7a529d919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2720ab86c236bd45f9fc85d7a529d919">&#9670;&#160;</a></span>BIT_SLV1_DELAY_EN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BIT_SLV1_DELAY_EN&#160;&#160;&#160;(0x02)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00088">88</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="abf03ac30eb8a5dfcafdcd7f9c5bae921" name="abf03ac30eb8a5dfcafdcd7f9c5bae921"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf03ac30eb8a5dfcafdcd7f9c5bae921">&#9670;&#160;</a></span>BIT_WAIT_FOR_ES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BIT_WAIT_FOR_ES&#160;&#160;&#160;(0x40)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00092">92</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a702fc05f754d3c6aef0bc24a0fb8f4c1" name="a702fc05f754d3c6aef0bc24a0fb8f4c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a702fc05f754d3c6aef0bc24a0fb8f4c1">&#9670;&#160;</a></span>COMPASS_ASAX_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMPASS_ASAX_REG&#160;&#160;&#160;(0x10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00078">78</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a39a9ec764f823ac8ca0724cdf356420b" name="a39a9ec764f823ac8ca0724cdf356420b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39a9ec764f823ac8ca0724cdf356420b">&#9670;&#160;</a></span>COMPASS_ASAY_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMPASS_ASAY_REG&#160;&#160;&#160;(0x11)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00079">79</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ae4078a5a9bdf36f0522e8b3228df3485" name="ae4078a5a9bdf36f0522e8b3228df3485"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4078a5a9bdf36f0522e8b3228df3485">&#9670;&#160;</a></span>COMPASS_ASAZ_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMPASS_ASAZ_REG&#160;&#160;&#160;(0x12)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00080">80</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a0c44e47d56e850d6b3a8ae9d1df89d3c" name="a0c44e47d56e850d6b3a8ae9d1df89d3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c44e47d56e850d6b3a8ae9d1df89d3c">&#9670;&#160;</a></span>COMPASS_ASTC_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMPASS_ASTC_REG&#160;&#160;&#160;(0x0C)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00077">77</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ab5e4f1e3bc750297a91a8bc0f91c1916" name="ab5e4f1e3bc750297a91a8bc0f91c1916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5e4f1e3bc750297a91a8bc0f91c1916">&#9670;&#160;</a></span>COMPASS_CNTL_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMPASS_CNTL_REG&#160;&#160;&#160;(0x0A)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00076">76</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a5deee4a3aa2d9b34576eda71b6185848" name="a5deee4a3aa2d9b34576eda71b6185848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5deee4a3aa2d9b34576eda71b6185848">&#9670;&#160;</a></span>COMPASS_DATA_START_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMPASS_DATA_START_REG&#160;&#160;&#160;(0x03)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00074">74</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ae86cc2c574563b21283f29131fa4f939" name="ae86cc2c574563b21283f29131fa4f939"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae86cc2c574563b21283f29131fa4f939">&#9670;&#160;</a></span>COMPASS_ST1_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMPASS_ST1_REG&#160;&#160;&#160;(0x02)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00073">73</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a2ac63d3322e986a62d0a3aaffd61c69c" name="a2ac63d3322e986a62d0a3aaffd61c69c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ac63d3322e986a62d0a3aaffd61c69c">&#9670;&#160;</a></span>COMPASS_ST2_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMPASS_ST2_REG&#160;&#160;&#160;(0x09)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00075">75</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ac74137ae1d7394fc1af0413184b47111" name="ac74137ae1d7394fc1af0413184b47111"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac74137ae1d7394fc1af0413184b47111">&#9670;&#160;</a></span>COMPASS_WHOAMI_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMPASS_WHOAMI_REG&#160;&#160;&#160;(0x00)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00072">72</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a2b819aae39b9884084eebd935ade90cb" name="a2b819aae39b9884084eebd935ade90cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b819aae39b9884084eebd935ade90cb">&#9670;&#160;</a></span>MPU9X50_ACCEL_CFG_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_ACCEL_CFG_REG&#160;&#160;&#160;(0x1C)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00036">36</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a4839bad2c0e3c246dfc43b77134c9bad" name="a4839bad2c0e3c246dfc43b77134c9bad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4839bad2c0e3c246dfc43b77134c9bad">&#9670;&#160;</a></span>MPU9X50_ACCEL_START_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_ACCEL_START_REG&#160;&#160;&#160;(0x3B)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00050">50</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a2f14d9c4bc141881643d514a2cc704a6" name="a2f14d9c4bc141881643d514a2cc704a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f14d9c4bc141881643d514a2cc704a6">&#9670;&#160;</a></span>MPU9X50_COMPASS_DATA_START_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_COMPASS_DATA_START_REG&#160;&#160;&#160;(0x4A)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00054">54</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a36186fe4a2f552618075493534477313" name="a36186fe4a2f552618075493534477313"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36186fe4a2f552618075493534477313">&#9670;&#160;</a></span>MPU9X50_DMP_INT_STATUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_DMP_INT_STATUS&#160;&#160;&#160;(0x39)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00048">48</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a718288459ed759bb2492022166098ce8" name="a718288459ed759bb2492022166098ce8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a718288459ed759bb2492022166098ce8">&#9670;&#160;</a></span>MPU9X50_EXT_SENS_DATA_START_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_EXT_SENS_DATA_START_REG&#160;&#160;&#160;(0x49)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00053">53</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ad6988a9ce91c7b800e107bbfd7adb021" name="ad6988a9ce91c7b800e107bbfd7adb021"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6988a9ce91c7b800e107bbfd7adb021">&#9670;&#160;</a></span>MPU9X50_FIFO_COUNT_START_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_FIFO_COUNT_START_REG&#160;&#160;&#160;(0x72)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00063">63</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a3f4534cb791203ff8663cde7cee998e6" name="a3f4534cb791203ff8663cde7cee998e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f4534cb791203ff8663cde7cee998e6">&#9670;&#160;</a></span>MPU9X50_FIFO_EN_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_FIFO_EN_REG&#160;&#160;&#160;(0x23)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00037">37</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a286fc5019f9c8bb87f099ab1f06ed284" name="a286fc5019f9c8bb87f099ab1f06ed284"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a286fc5019f9c8bb87f099ab1f06ed284">&#9670;&#160;</a></span>MPU9X50_FIFO_RW_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_FIFO_RW_REG&#160;&#160;&#160;(0x74)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00064">64</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a3e01c183ab8c9683c6c5687cb766e5da" name="a3e01c183ab8c9683c6c5687cb766e5da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e01c183ab8c9683c6c5687cb766e5da">&#9670;&#160;</a></span>MPU9X50_GYRO_CFG_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_GYRO_CFG_REG&#160;&#160;&#160;(0x1B)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00035">35</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ae8499eab15baecaa49a10cfc26d1a489" name="ae8499eab15baecaa49a10cfc26d1a489"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8499eab15baecaa49a10cfc26d1a489">&#9670;&#160;</a></span>MPU9X50_GYRO_START_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_GYRO_START_REG&#160;&#160;&#160;(0x43)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00052">52</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a81b66bee0e4b15dbfaa146baf100b4ec" name="a81b66bee0e4b15dbfaa146baf100b4ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81b66bee0e4b15dbfaa146baf100b4ec">&#9670;&#160;</a></span>MPU9X50_I2C_DELAY_CTRL_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_I2C_DELAY_CTRL_REG&#160;&#160;&#160;(0x67)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00059">59</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a08dc4b80d14527d530fe32deba07e56b" name="a08dc4b80d14527d530fe32deba07e56b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08dc4b80d14527d530fe32deba07e56b">&#9670;&#160;</a></span>MPU9X50_I2C_MST_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_I2C_MST_REG&#160;&#160;&#160;(0x24)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00038">38</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a001cabb0c7a1e776554fff9cc65d97bf" name="a001cabb0c7a1e776554fff9cc65d97bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a001cabb0c7a1e776554fff9cc65d97bf">&#9670;&#160;</a></span>MPU9X50_INT_ENABLE_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_INT_ENABLE_REG&#160;&#160;&#160;(0x38)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00047">47</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ac346b22f197fd3918af08a4e40457cb6" name="ac346b22f197fd3918af08a4e40457cb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac346b22f197fd3918af08a4e40457cb6">&#9670;&#160;</a></span>MPU9X50_INT_PIN_CFG_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_INT_PIN_CFG_REG&#160;&#160;&#160;(0x37)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00046">46</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a021295d6c679ddb358539bd8ecbc9591" name="a021295d6c679ddb358539bd8ecbc9591"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a021295d6c679ddb358539bd8ecbc9591">&#9670;&#160;</a></span>MPU9X50_INT_STATUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_INT_STATUS&#160;&#160;&#160;(0x3A)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00049">49</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="abf1a08f4334ce670dbbda592b0fc9b1f" name="abf1a08f4334ce670dbbda592b0fc9b1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf1a08f4334ce670dbbda592b0fc9b1f">&#9670;&#160;</a></span>MPU9X50_LPF_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_LPF_REG&#160;&#160;&#160;(0x1A)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00034">34</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a1d073a76bdbe520076c1ed29d9ff5b6b" name="a1d073a76bdbe520076c1ed29d9ff5b6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d073a76bdbe520076c1ed29d9ff5b6b">&#9670;&#160;</a></span>MPU9X50_PWR_MGMT_1_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_PWR_MGMT_1_REG&#160;&#160;&#160;(0x6B)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00061">61</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a2ef0858dd8a9268c7682ceaecedbc4e1" name="a2ef0858dd8a9268c7682ceaecedbc4e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ef0858dd8a9268c7682ceaecedbc4e1">&#9670;&#160;</a></span>MPU9X50_PWR_MGMT_2_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_PWR_MGMT_2_REG&#160;&#160;&#160;(0x6C)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00062">62</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a4f8ca68cc007cf046b71049557f6c4ed" name="a4f8ca68cc007cf046b71049557f6c4ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f8ca68cc007cf046b71049557f6c4ed">&#9670;&#160;</a></span>MPU9X50_RATE_DIV_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_RATE_DIV_REG&#160;&#160;&#160;(0x19)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00033">33</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a180e199aa29085082ebf53a0de3586e8" name="a180e199aa29085082ebf53a0de3586e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a180e199aa29085082ebf53a0de3586e8">&#9670;&#160;</a></span>MPU9X50_SLAVE0_ADDR_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_SLAVE0_ADDR_REG&#160;&#160;&#160;(0x25)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00039">39</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a5b96b32d3f0dead44a95a9a5bc9c8190" name="a5b96b32d3f0dead44a95a9a5bc9c8190"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b96b32d3f0dead44a95a9a5bc9c8190">&#9670;&#160;</a></span>MPU9X50_SLAVE0_CTRL_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_SLAVE0_CTRL_REG&#160;&#160;&#160;(0x27)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00041">41</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a5a301ef86e582aa883b0881e947eff7a" name="a5a301ef86e582aa883b0881e947eff7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a301ef86e582aa883b0881e947eff7a">&#9670;&#160;</a></span>MPU9X50_SLAVE0_DATA_OUT_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_SLAVE0_DATA_OUT_REG&#160;&#160;&#160;(0x63)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00055">55</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a99e1b60f6d04c241bcafc16f6d470c0f" name="a99e1b60f6d04c241bcafc16f6d470c0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99e1b60f6d04c241bcafc16f6d470c0f">&#9670;&#160;</a></span>MPU9X50_SLAVE0_REG_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_SLAVE0_REG_REG&#160;&#160;&#160;(0x26)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00040">40</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a8b91fc000d341dd50a3a17faafe66b2f" name="a8b91fc000d341dd50a3a17faafe66b2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b91fc000d341dd50a3a17faafe66b2f">&#9670;&#160;</a></span>MPU9X50_SLAVE1_ADDR_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_SLAVE1_ADDR_REG&#160;&#160;&#160;(0x28)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00042">42</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ac13dbd73bb27e73cd8f653d8ab348f15" name="ac13dbd73bb27e73cd8f653d8ab348f15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac13dbd73bb27e73cd8f653d8ab348f15">&#9670;&#160;</a></span>MPU9X50_SLAVE1_CTRL_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_SLAVE1_CTRL_REG&#160;&#160;&#160;(0x2A)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00044">44</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a0d549cd0be7ed2ffbbe558a7a22799a5" name="a0d549cd0be7ed2ffbbe558a7a22799a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d549cd0be7ed2ffbbe558a7a22799a5">&#9670;&#160;</a></span>MPU9X50_SLAVE1_DATA_OUT_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_SLAVE1_DATA_OUT_REG&#160;&#160;&#160;(0x64)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00056">56</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a71f8e735fa6bade3e42eb0e37788499d" name="a71f8e735fa6bade3e42eb0e37788499d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71f8e735fa6bade3e42eb0e37788499d">&#9670;&#160;</a></span>MPU9X50_SLAVE1_REG_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_SLAVE1_REG_REG&#160;&#160;&#160;(0x29)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00043">43</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a7783015814e461a82e8d2f2139c33e70" name="a7783015814e461a82e8d2f2139c33e70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7783015814e461a82e8d2f2139c33e70">&#9670;&#160;</a></span>MPU9X50_SLAVE2_DATA_OUT_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_SLAVE2_DATA_OUT_REG&#160;&#160;&#160;(0x65)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00057">57</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ac5a522b72b8a25179b48347d17b67d4c" name="ac5a522b72b8a25179b48347d17b67d4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5a522b72b8a25179b48347d17b67d4c">&#9670;&#160;</a></span>MPU9X50_SLAVE3_DATA_OUT_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_SLAVE3_DATA_OUT_REG&#160;&#160;&#160;(0x66)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00058">58</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a9b7e80dea6694faba290ac697e19a060" name="a9b7e80dea6694faba290ac697e19a060"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b7e80dea6694faba290ac697e19a060">&#9670;&#160;</a></span>MPU9X50_SLAVE4_CTRL_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_SLAVE4_CTRL_REG&#160;&#160;&#160;(0x34)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00045">45</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ae73546cfa4f987d02ecf0be29b65635f" name="ae73546cfa4f987d02ecf0be29b65635f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae73546cfa4f987d02ecf0be29b65635f">&#9670;&#160;</a></span>MPU9X50_TEMP_START_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_TEMP_START_REG&#160;&#160;&#160;(0x41)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00051">51</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a84209586148f17b2349731a28d9e4d5a" name="a84209586148f17b2349731a28d9e4d5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84209586148f17b2349731a28d9e4d5a">&#9670;&#160;</a></span>MPU9X50_USER_CTRL_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_USER_CTRL_REG&#160;&#160;&#160;(0x6A)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00060">60</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a7f83d9bdd6c6125b3b6ef09fac5be46b" name="a7f83d9bdd6c6125b3b6ef09fac5be46b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f83d9bdd6c6125b3b6ef09fac5be46b">&#9670;&#160;</a></span>MPU9X50_WHO_AM_I_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_WHO_AM_I_REG&#160;&#160;&#160;(0x75)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00065">65</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="aa38dcdfe4922616187c5e623baa72f42" name="aa38dcdfe4922616187c5e623baa72f42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa38dcdfe4922616187c5e623baa72f42">&#9670;&#160;</a></span>MPU9X50_YG_OFFS_TC_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MPU9X50_YG_OFFS_TC_REG&#160;&#160;&#160;(0x01)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mpu9x50__regs_8h_source.html#l00032">32</a> of file <a class="el" href="mpu9x50__regs_8h_source.html">mpu9x50_regs.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

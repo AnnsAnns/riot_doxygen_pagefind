@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>adxl345_interrupt_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structadxl345__interrupt__t.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">adxl345_interrupt_t Struct Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a> &#124; <a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> &raquo; <a class="el" href="group__drivers__adxl345.html">ADXL345 3-Axis accelerometer</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Interrupt configuration struct for the ADXL345 sensor.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Interrupt configuration struct for the ADXL345 sensor. </p>
+
+<p class="definition">Definition at line <a class="el" href="adxl345_8h_source.html#l00125">125</a> of file <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="adxl345_8h_source.html">adxl345.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:aabef54d68040610b83601c0e68cfca75" id="r_aabef54d68040610b83601c0e68cfca75"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aabef54d68040610b83601c0e68cfca75">source</a></td></tr>
+<tr class="memdesc:aabef54d68040610b83601c0e68cfca75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source of interrupts.  <br /></td></tr>
+<tr class="separator:aabef54d68040610b83601c0e68cfca75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81036c12d9daf0df6912d22e2d0f9b53" id="r_a81036c12d9daf0df6912d22e2d0f9b53"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81036c12d9daf0df6912d22e2d0f9b53">map</a></td></tr>
+<tr class="memdesc:a81036c12d9daf0df6912d22e2d0f9b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt mapping control.  <br /></td></tr>
+<tr class="separator:a81036c12d9daf0df6912d22e2d0f9b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c68b7068f0e4efef457d528d46281ce" id="r_a4c68b7068f0e4efef457d528d46281ce"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c68b7068f0e4efef457d528d46281ce">enable</a></td></tr>
+<tr class="memdesc:a4c68b7068f0e4efef457d528d46281ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt enable control.  <br /></td></tr>
+<tr class="separator:a4c68b7068f0e4efef457d528d46281ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33a7ddf92fdefef589beecb3ad26abb5" id="r_a33a7ddf92fdefef589beecb3ad26abb5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33a7ddf92fdefef589beecb3ad26abb5">thres_tap</a></td></tr>
+<tr class="memdesc:a33a7ddf92fdefef589beecb3ad26abb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tap threshold.  <br /></td></tr>
+<tr class="separator:a33a7ddf92fdefef589beecb3ad26abb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a686ba9664aa2afc12183ce10aef92e6d" id="r_a686ba9664aa2afc12183ce10aef92e6d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a686ba9664aa2afc12183ce10aef92e6d">thres_dur</a></td></tr>
+<tr class="memdesc:a686ba9664aa2afc12183ce10aef92e6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tap duration.  <br /></td></tr>
+<tr class="separator:a686ba9664aa2afc12183ce10aef92e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3820d3f3991a617cd375b01fe72937ff" id="r_a3820d3f3991a617cd375b01fe72937ff"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3820d3f3991a617cd375b01fe72937ff">thres_latent</a></td></tr>
+<tr class="memdesc:a3820d3f3991a617cd375b01fe72937ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tap latency.  <br /></td></tr>
+<tr class="separator:a3820d3f3991a617cd375b01fe72937ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95aff3132dd3feddd0d8c361ec0ca3f9" id="r_a95aff3132dd3feddd0d8c361ec0ca3f9"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95aff3132dd3feddd0d8c361ec0ca3f9">thres_window</a></td></tr>
+<tr class="memdesc:a95aff3132dd3feddd0d8c361ec0ca3f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tap window.  <br /></td></tr>
+<tr class="separator:a95aff3132dd3feddd0d8c361ec0ca3f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9098f8a3993bef2ad3394e309b740d4" id="r_af9098f8a3993bef2ad3394e309b740d4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9098f8a3993bef2ad3394e309b740d4">thres_act</a></td></tr>
+<tr class="memdesc:af9098f8a3993bef2ad3394e309b740d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activity threshold.  <br /></td></tr>
+<tr class="separator:af9098f8a3993bef2ad3394e309b740d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d407afe655df6e4670e3b39a7d0002d" id="r_a2d407afe655df6e4670e3b39a7d0002d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d407afe655df6e4670e3b39a7d0002d">thres_inact</a></td></tr>
+<tr class="memdesc:a2d407afe655df6e4670e3b39a7d0002d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inactivity threshold.  <br /></td></tr>
+<tr class="separator:a2d407afe655df6e4670e3b39a7d0002d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6279ec6100ce3f9918485cc275f19308" id="r_a6279ec6100ce3f9918485cc275f19308"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6279ec6100ce3f9918485cc275f19308">time_inact</a></td></tr>
+<tr class="memdesc:a6279ec6100ce3f9918485cc275f19308"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inactivity time.  <br /></td></tr>
+<tr class="separator:a6279ec6100ce3f9918485cc275f19308"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab4abf491093efc1e91b3511b8fae879" id="r_aab4abf491093efc1e91b3511b8fae879"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab4abf491093efc1e91b3511b8fae879">thres_ff</a></td></tr>
+<tr class="memdesc:aab4abf491093efc1e91b3511b8fae879"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free-fall threshold.  <br /></td></tr>
+<tr class="separator:aab4abf491093efc1e91b3511b8fae879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00f2f46f1e4e54889303421c97da105e" id="r_a00f2f46f1e4e54889303421c97da105e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00f2f46f1e4e54889303421c97da105e">time_ff</a></td></tr>
+<tr class="memdesc:a00f2f46f1e4e54889303421c97da105e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time threshold.  <br /></td></tr>
+<tr class="separator:a00f2f46f1e4e54889303421c97da105e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac52c9af40fe48505cc6e24b5825e87a1" id="r_ac52c9af40fe48505cc6e24b5825e87a1"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac52c9af40fe48505cc6e24b5825e87a1">act_inact</a></td></tr>
+<tr class="memdesc:ac52c9af40fe48505cc6e24b5825e87a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable ctrl for activity/inactivity detection.  <br /></td></tr>
+<tr class="separator:ac52c9af40fe48505cc6e24b5825e87a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c11ea7adfa720912f110b8df1d00c7b" id="r_a2c11ea7adfa720912f110b8df1d00c7b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c11ea7adfa720912f110b8df1d00c7b">tap_axes</a></td></tr>
+<tr class="memdesc:a2c11ea7adfa720912f110b8df1d00c7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Axis control for single tap/double tap.  <br /></td></tr>
+<tr class="separator:a2c11ea7adfa720912f110b8df1d00c7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="ac52c9af40fe48505cc6e24b5825e87a1" name="ac52c9af40fe48505cc6e24b5825e87a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac52c9af40fe48505cc6e24b5825e87a1">&#9670;&#160;</a></span>act_inact</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t adxl345_interrupt_t::act_inact</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable ctrl for activity/inactivity detection. </p>
+
+<p class="definition">Definition at line <a class="el" href="adxl345_8h_source.html#l00138">138</a> of file <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a4c68b7068f0e4efef457d528d46281ce" name="a4c68b7068f0e4efef457d528d46281ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c68b7068f0e4efef457d528d46281ce">&#9670;&#160;</a></span>enable</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t adxl345_interrupt_t::enable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interrupt enable control. </p>
+
+<p class="definition">Definition at line <a class="el" href="adxl345_8h_source.html#l00128">128</a> of file <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a81036c12d9daf0df6912d22e2d0f9b53" name="a81036c12d9daf0df6912d22e2d0f9b53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81036c12d9daf0df6912d22e2d0f9b53">&#9670;&#160;</a></span>map</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t adxl345_interrupt_t::map</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interrupt mapping control. </p>
+
+<p class="definition">Definition at line <a class="el" href="adxl345_8h_source.html#l00127">127</a> of file <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="aabef54d68040610b83601c0e68cfca75" name="aabef54d68040610b83601c0e68cfca75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabef54d68040610b83601c0e68cfca75">&#9670;&#160;</a></span>source</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t adxl345_interrupt_t::source</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Source of interrupts. </p>
+
+<p class="definition">Definition at line <a class="el" href="adxl345_8h_source.html#l00126">126</a> of file <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a2c11ea7adfa720912f110b8df1d00c7b" name="a2c11ea7adfa720912f110b8df1d00c7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c11ea7adfa720912f110b8df1d00c7b">&#9670;&#160;</a></span>tap_axes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t adxl345_interrupt_t::tap_axes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Axis control for single tap/double tap. </p>
+
+<p class="definition">Definition at line <a class="el" href="adxl345_8h_source.html#l00139">139</a> of file <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="af9098f8a3993bef2ad3394e309b740d4" name="af9098f8a3993bef2ad3394e309b740d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9098f8a3993bef2ad3394e309b740d4">&#9670;&#160;</a></span>thres_act</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t adxl345_interrupt_t::thres_act</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Activity threshold. </p>
+
+<p class="definition">Definition at line <a class="el" href="adxl345_8h_source.html#l00133">133</a> of file <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a686ba9664aa2afc12183ce10aef92e6d" name="a686ba9664aa2afc12183ce10aef92e6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a686ba9664aa2afc12183ce10aef92e6d">&#9670;&#160;</a></span>thres_dur</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t adxl345_interrupt_t::thres_dur</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tap duration. </p>
+
+<p class="definition">Definition at line <a class="el" href="adxl345_8h_source.html#l00130">130</a> of file <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="aab4abf491093efc1e91b3511b8fae879" name="aab4abf491093efc1e91b3511b8fae879"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab4abf491093efc1e91b3511b8fae879">&#9670;&#160;</a></span>thres_ff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t adxl345_interrupt_t::thres_ff</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Free-fall threshold. </p>
+
+<p class="definition">Definition at line <a class="el" href="adxl345_8h_source.html#l00136">136</a> of file <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a2d407afe655df6e4670e3b39a7d0002d" name="a2d407afe655df6e4670e3b39a7d0002d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d407afe655df6e4670e3b39a7d0002d">&#9670;&#160;</a></span>thres_inact</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t adxl345_interrupt_t::thres_inact</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inactivity threshold. </p>
+
+<p class="definition">Definition at line <a class="el" href="adxl345_8h_source.html#l00134">134</a> of file <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a3820d3f3991a617cd375b01fe72937ff" name="a3820d3f3991a617cd375b01fe72937ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3820d3f3991a617cd375b01fe72937ff">&#9670;&#160;</a></span>thres_latent</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t adxl345_interrupt_t::thres_latent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tap latency. </p>
+
+<p class="definition">Definition at line <a class="el" href="adxl345_8h_source.html#l00131">131</a> of file <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a33a7ddf92fdefef589beecb3ad26abb5" name="a33a7ddf92fdefef589beecb3ad26abb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33a7ddf92fdefef589beecb3ad26abb5">&#9670;&#160;</a></span>thres_tap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t adxl345_interrupt_t::thres_tap</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tap threshold. </p>
+
+<p class="definition">Definition at line <a class="el" href="adxl345_8h_source.html#l00129">129</a> of file <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a95aff3132dd3feddd0d8c361ec0ca3f9" name="a95aff3132dd3feddd0d8c361ec0ca3f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95aff3132dd3feddd0d8c361ec0ca3f9">&#9670;&#160;</a></span>thres_window</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t adxl345_interrupt_t::thres_window</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tap window. </p>
+
+<p class="definition">Definition at line <a class="el" href="adxl345_8h_source.html#l00132">132</a> of file <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a00f2f46f1e4e54889303421c97da105e" name="a00f2f46f1e4e54889303421c97da105e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00f2f46f1e4e54889303421c97da105e">&#9670;&#160;</a></span>time_ff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t adxl345_interrupt_t::time_ff</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Time threshold. </p>
+
+<p class="definition">Definition at line <a class="el" href="adxl345_8h_source.html#l00137">137</a> of file <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a6279ec6100ce3f9918485cc275f19308" name="a6279ec6100ce3f9918485cc275f19308"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6279ec6100ce3f9918485cc275f19308">&#9670;&#160;</a></span>time_inact</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t adxl345_interrupt_t::time_inact</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inactivity time. </p>
+
+<p class="definition">Definition at line <a class="el" href="adxl345_8h_source.html#l00135">135</a> of file <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>drivers/include/<a class="el" href="adxl345_8h_source.html">adxl345.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

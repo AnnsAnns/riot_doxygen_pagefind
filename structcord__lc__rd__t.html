@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>cord_lc_rd_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structcord__lc__rd__t.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">cord_lc_rd_t Struct Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__cord.html">CoRE RD Endpoint and Lookup Client</a> &raquo; <a class="el" href="group__net__cord__lc.html">CoRE RD Lookup Client</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Information about RD server and its lookup interface resources.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Information about RD server and its lookup interface resources. </p>
+
+<p class="definition">Definition at line <a class="el" href="lc_8h_source.html#l00082">82</a> of file <a class="el" href="lc_8h_source.html">lc.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="lc_8h_source.html">lc.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a96774f0334ecb0e81b1ff620a81a1fec" id="r_a96774f0334ecb0e81b1ff620a81a1fec"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__net__sock__udp.html#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96774f0334ecb0e81b1ff620a81a1fec">remote</a></td></tr>
+<tr class="memdesc:a96774f0334ecb0e81b1ff620a81a1fec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remote endpoint of RD server.  <br /></td></tr>
+<tr class="separator:a96774f0334ecb0e81b1ff620a81a1fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1ea14fd1c0ab4184a6105c258fe29a3" id="r_ab1ea14fd1c0ab4184a6105c258fe29a3"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1ea14fd1c0ab4184a6105c258fe29a3">res_lookif</a></td></tr>
+<tr class="memdesc:ab1ea14fd1c0ab4184a6105c258fe29a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resource lookup interface.  <br /></td></tr>
+<tr class="separator:ab1ea14fd1c0ab4184a6105c258fe29a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad081ed630748e3df48f856660d77bc53" id="r_ad081ed630748e3df48f856660d77bc53"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad081ed630748e3df48f856660d77bc53">ep_lookif</a></td></tr>
+<tr class="memdesc:ad081ed630748e3df48f856660d77bc53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Endpoint lookup interface.  <br /></td></tr>
+<tr class="separator:ad081ed630748e3df48f856660d77bc53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20152ce84f1b60ee48cb954fd11a65d4" id="r_a20152ce84f1b60ee48cb954fd11a65d4"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20152ce84f1b60ee48cb954fd11a65d4">res_last_page</a></td></tr>
+<tr class="memdesc:a20152ce84f1b60ee48cb954fd11a65d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Page of last resource lookup.  <br /></td></tr>
+<tr class="separator:a20152ce84f1b60ee48cb954fd11a65d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abde3d06b339f8558f288c52dc175fd3f" id="r_abde3d06b339f8558f288c52dc175fd3f"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abde3d06b339f8558f288c52dc175fd3f">ep_last_page</a></td></tr>
+<tr class="memdesc:abde3d06b339f8558f288c52dc175fd3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Page of last endpoint lookup.  <br /></td></tr>
+<tr class="separator:abde3d06b339f8558f288c52dc175fd3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="abde3d06b339f8558f288c52dc175fd3f" name="abde3d06b339f8558f288c52dc175fd3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abde3d06b339f8558f288c52dc175fd3f">&#9670;&#160;</a></span>ep_last_page</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned cord_lc_rd_t::ep_last_page</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Page of last endpoint lookup. </p>
+
+<p class="definition">Definition at line <a class="el" href="lc_8h_source.html#l00087">87</a> of file <a class="el" href="lc_8h_source.html">lc.h</a>.</p>
+
+</div>
+</div>
+<a id="ad081ed630748e3df48f856660d77bc53" name="ad081ed630748e3df48f856660d77bc53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad081ed630748e3df48f856660d77bc53">&#9670;&#160;</a></span>ep_lookif</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* cord_lc_rd_t::ep_lookif</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Endpoint lookup interface. </p>
+
+<p class="definition">Definition at line <a class="el" href="lc_8h_source.html#l00085">85</a> of file <a class="el" href="lc_8h_source.html">lc.h</a>.</p>
+
+</div>
+</div>
+<a id="a96774f0334ecb0e81b1ff620a81a1fec" name="a96774f0334ecb0e81b1ff620a81a1fec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96774f0334ecb0e81b1ff620a81a1fec">&#9670;&#160;</a></span>remote</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="group__net__sock__udp.html#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a>* cord_lc_rd_t::remote</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remote endpoint of RD server. </p>
+
+<p class="definition">Definition at line <a class="el" href="lc_8h_source.html#l00083">83</a> of file <a class="el" href="lc_8h_source.html">lc.h</a>.</p>
+
+</div>
+</div>
+<a id="a20152ce84f1b60ee48cb954fd11a65d4" name="a20152ce84f1b60ee48cb954fd11a65d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20152ce84f1b60ee48cb954fd11a65d4">&#9670;&#160;</a></span>res_last_page</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned cord_lc_rd_t::res_last_page</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Page of last resource lookup. </p>
+
+<p class="definition">Definition at line <a class="el" href="lc_8h_source.html#l00086">86</a> of file <a class="el" href="lc_8h_source.html">lc.h</a>.</p>
+
+</div>
+</div>
+<a id="ab1ea14fd1c0ab4184a6105c258fe29a3" name="ab1ea14fd1c0ab4184a6105c258fe29a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1ea14fd1c0ab4184a6105c258fe29a3">&#9670;&#160;</a></span>res_lookif</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* cord_lc_rd_t::res_lookif</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resource lookup interface. </p>
+
+<p class="definition">Definition at line <a class="el" href="lc_8h_source.html#l00084">84</a> of file <a class="el" href="lc_8h_source.html">lc.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>sys/include/net/cord/<a class="el" href="lc_8h_source.html">lc.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

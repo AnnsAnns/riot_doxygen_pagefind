@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/nrf24l01p_ng/include/nrf24l01p_ng_params.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('nrf24l01p__ng__params_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">nrf24l01p_ng_params.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__netdev.html">Network Device Drivers</a> &raquo; <a class="el" href="group__drivers__nrf24l01p__ng.html">NRF24L01+ (NG) 2.4 GHz trasceiver driver</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Board specific configuration for all NRF24L01+ (NG) devices.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Board specific configuration for all NRF24L01+ (NG) devices. </p>
+<dl class="section author"><dt>Author</dt><dd>Fabian Hüßler <a href="#" onclick="location.href='mai'+'lto:'+'fab'+'ia'+'n.h'+'ue'+'ssl'+'er'+'@ov'+'gu'+'.de'; return false;">fabia<span class="obfuscator">.nosp@m.</span>n.hu<span class="obfuscator">.nosp@m.</span>essle<span class="obfuscator">.nosp@m.</span>r@ov<span class="obfuscator">.nosp@m.</span>gu.de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="nrf24l01p__ng__params_8h_source.html">nrf24l01p_ng_params.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;board.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="drivers_2include_2periph_2gpio_8h_source.html">periph/gpio.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="spi_8h_source.html">periph/spi.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="kernel__defines_8h_source.html">kernel_defines.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="nrf24l01p__ng__constants_8h_source.html">nrf24l01p_ng_constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="nrf24l01p__ng_8h_source.html">nrf24l01p_ng.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for nrf24l01p_ng_params.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="nrf24l01p__ng__params_8h__incl.svg" width="1814" height="603"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="nrf24l01p__ng__params_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="memitem:a70064cab2973fc138952ad873c0c7595" id="r_a70064cab2973fc138952ad873c0c7595"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70064cab2973fc138952ad873c0c7595">NRF24L01P_NG_PARAM_SPI</a>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9">SPI_DEV</a>(0)</td></tr>
+<tr class="memdesc:a70064cab2973fc138952ad873c0c7595"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI bus.  <br /></td></tr>
+<tr class="separator:a70064cab2973fc138952ad873c0c7595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd907606cea1324514e23bbe84367e05" id="r_abd907606cea1324514e23bbe84367e05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd907606cea1324514e23bbe84367e05">NRF24L01P_NG_PARAM_SPI_CLK</a>&#160;&#160;&#160;<a class="el" href="atxmega_2include_2periph__cpu_8h.html#a17adf016c33fa2f2e36c9bec898bc0c8a4105210aa902203502e4392d4a3fbe58">SPI_CLK_5MHZ</a></td></tr>
+<tr class="memdesc:abd907606cea1324514e23bbe84367e05"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI clock speed.  <br /></td></tr>
+<tr class="separator:abd907606cea1324514e23bbe84367e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a196140168ac3e185ff81468cc1328291" id="r_a196140168ac3e185ff81468cc1328291"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a196140168ac3e185ff81468cc1328291">NRF24L01P_NG_PARAM_CS</a>&#160;&#160;&#160;<a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a></td></tr>
+<tr class="memdesc:a196140168ac3e185ff81468cc1328291"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI CS gpio pin.  <br /></td></tr>
+<tr class="separator:a196140168ac3e185ff81468cc1328291"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2627ba9010cf89274ce07398abd66e8" id="r_af2627ba9010cf89274ce07398abd66e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2627ba9010cf89274ce07398abd66e8">NRF24L01P_NG_PARAM_CE</a>&#160;&#160;&#160;<a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a></td></tr>
+<tr class="memdesc:af2627ba9010cf89274ce07398abd66e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">NRF24L01+ chip enable gpio pin.  <br /></td></tr>
+<tr class="separator:af2627ba9010cf89274ce07398abd66e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c7a35fd5e7f8705a38c9ea8187ca799" id="r_a4c7a35fd5e7f8705a38c9ea8187ca799"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c7a35fd5e7f8705a38c9ea8187ca799">NRF24L01P_NG_PARAM_IRQ</a>&#160;&#160;&#160;<a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a></td></tr>
+<tr class="memdesc:a4c7a35fd5e7f8705a38c9ea8187ca799"><td class="mdescLeft">&#160;</td><td class="mdescRight">NRF24L01+ interrupt gpio pin.  <br /></td></tr>
+<tr class="separator:a4c7a35fd5e7f8705a38c9ea8187ca799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7025a70869f2801ee2c6f2680bfb15a" id="r_aa7025a70869f2801ee2c6f2680bfb15a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7025a70869f2801ee2c6f2680bfb15a">NRF24L01P_NG_PARAM_CRC_LEN</a>&#160;&#160;&#160;(<a class="el" href="nrf24l01p__ng__types_8h.html#a4728f5dee29a72d58fbfbcc4cec28909a53cb5450f9ff091d7f1b5c09d0f9799d">NRF24L01P_NG_CRC_2BYTE</a>)</td></tr>
+<tr class="memdesc:aa7025a70869f2801ee2c6f2680bfb15a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default CRC length.  <br /></td></tr>
+<tr class="separator:aa7025a70869f2801ee2c6f2680bfb15a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56179dd70eb3037ae350fc866db6f197" id="r_a56179dd70eb3037ae350fc866db6f197"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56179dd70eb3037ae350fc866db6f197">NRF24L01P_NG_PARAM_TX_POWER</a>&#160;&#160;&#160;(<a class="el" href="nrf24l01p__ng__types_8h.html#ac92638f7f673ff9863feebc4b56b16e7a12b61d82ebb9f0f3cb1c7fd087232f1f">NRF24L01P_NG_TX_POWER_0DBM</a>)</td></tr>
+<tr class="memdesc:a56179dd70eb3037ae350fc866db6f197"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default TX power.  <br /></td></tr>
+<tr class="separator:a56179dd70eb3037ae350fc866db6f197"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac09d247350235837e4dd0196b754c256" id="r_ac09d247350235837e4dd0196b754c256"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac09d247350235837e4dd0196b754c256">NRF24L01P_NG_PARAM_DATA_RATE</a>&#160;&#160;&#160;(<a class="el" href="nrf24l01p__ng__types_8h.html#a180d52c13d07572d31bb6ea44983f645a126e85440bff66d5b4013795004e5b30">NRF24L01P_NG_RF_DR_2MBPS</a>)</td></tr>
+<tr class="memdesc:ac09d247350235837e4dd0196b754c256"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default data rate.  <br /></td></tr>
+<tr class="separator:ac09d247350235837e4dd0196b754c256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a106057e89b772bb8df9995e4fbc04983" id="r_a106057e89b772bb8df9995e4fbc04983"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a106057e89b772bb8df9995e4fbc04983">NRF24L01P_NG_PARAM_CHANNEL</a>&#160;&#160;&#160;(4)</td></tr>
+<tr class="memdesc:a106057e89b772bb8df9995e4fbc04983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default channel in [0; 124].  <br /></td></tr>
+<tr class="separator:a106057e89b772bb8df9995e4fbc04983"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d850a45e009235b5877c8efb24bc471" id="r_a4d850a45e009235b5877c8efb24bc471"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d850a45e009235b5877c8efb24bc471">NRF24L01P_NG_PARAM_MAX_RETRANSM</a>&#160;&#160;&#160;(5)</td></tr>
+<tr class="memdesc:a4d850a45e009235b5877c8efb24bc471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default number of retransmissions.  <br /></td></tr>
+<tr class="separator:a4d850a45e009235b5877c8efb24bc471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f82dbc93b8a1548b573f07ea6b9728c" id="r_a4f82dbc93b8a1548b573f07ea6b9728c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f82dbc93b8a1548b573f07ea6b9728c">NRF24L01P_NG_PARAM_RETRANSM_DELAY</a>&#160;&#160;&#160;(<a class="el" href="nrf24l01p__ng__types_8h.html#ad6fe257a034cc76a4c4f6312e0010a98a5bc29bc76ec34ce1f6a7b8990af47db5">NRF24L01P_NG_ARD_2750US</a>)</td></tr>
+<tr class="memdesc:a4f82dbc93b8a1548b573f07ea6b9728c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default retransmission delay.  <br /></td></tr>
+<tr class="separator:a4f82dbc93b8a1548b573f07ea6b9728c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13eee5222c755d74d89aec233ad5aa6f" id="r_a13eee5222c755d74d89aec233ad5aa6f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13eee5222c755d74d89aec233ad5aa6f">NRF24L01P_NG_PARAMS</a></td></tr>
+<tr class="memdesc:a13eee5222c755d74d89aec233ad5aa6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default NRF24L01+ device parameters.  <br /></td></tr>
+<tr class="separator:a13eee5222c755d74d89aec233ad5aa6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa32c38c4191653535e8c2595cfd629bf" id="r_aa32c38c4191653535e8c2595cfd629bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa32c38c4191653535e8c2595cfd629bf">NRF24L01P_NG_NUM</a>&#160;&#160;&#160;<a class="el" href="container_8h.html#a25f003de16c08a4888b69f619d70f427">ARRAY_SIZE</a>(<a class="el" href="#ac6899303497d6aca7c92141cb4fb2bc0">nrf24l01p_ng_params</a>)</td></tr>
+<tr class="memdesc:aa32c38c4191653535e8c2595cfd629bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of NRF24L01+ device configurations.  <br /></td></tr>
+<tr class="separator:aa32c38c4191653535e8c2595cfd629bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6899303497d6aca7c92141cb4fb2bc0" id="r_ac6899303497d6aca7c92141cb4fb2bc0"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structnrf24l01p__ng__params__t.html">nrf24l01p_ng_params_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6899303497d6aca7c92141cb4fb2bc0">nrf24l01p_ng_params</a> []</td></tr>
+<tr class="memdesc:ac6899303497d6aca7c92141cb4fb2bc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static array that holds NRF24L01+ device configurations.  <br /></td></tr>
+<tr class="separator:ac6899303497d6aca7c92141cb4fb2bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="aa32c38c4191653535e8c2595cfd629bf" name="aa32c38c4191653535e8c2595cfd629bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa32c38c4191653535e8c2595cfd629bf">&#9670;&#160;</a></span>NRF24L01P_NG_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01P_NG_NUM&#160;&#160;&#160;<a class="el" href="container_8h.html#a25f003de16c08a4888b69f619d70f427">ARRAY_SIZE</a>(<a class="el" href="#ac6899303497d6aca7c92141cb4fb2bc0">nrf24l01p_ng_params</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of NRF24L01+ device configurations. </p>
+
+<p class="definition">Definition at line <a class="el" href="nrf24l01p__ng__params_8h_source.html#l00143">143</a> of file <a class="el" href="nrf24l01p__ng__params_8h_source.html">nrf24l01p_ng_params.h</a>.</p>
+
+</div>
+</div>
+<a id="af2627ba9010cf89274ce07398abd66e8" name="af2627ba9010cf89274ce07398abd66e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2627ba9010cf89274ce07398abd66e8">&#9670;&#160;</a></span>NRF24L01P_NG_PARAM_CE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01P_NG_PARAM_CE&#160;&#160;&#160;<a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>NRF24L01+ chip enable gpio pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="nrf24l01p__ng__params_8h_source.html#l00056">56</a> of file <a class="el" href="nrf24l01p__ng__params_8h_source.html">nrf24l01p_ng_params.h</a>.</p>
+
+</div>
+</div>
+<a id="a106057e89b772bb8df9995e4fbc04983" name="a106057e89b772bb8df9995e4fbc04983"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a106057e89b772bb8df9995e4fbc04983">&#9670;&#160;</a></span>NRF24L01P_NG_PARAM_CHANNEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01P_NG_PARAM_CHANNEL&#160;&#160;&#160;(4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default channel in [0; 124]. </p>
+
+<p class="definition">Definition at line <a class="el" href="nrf24l01p__ng__params_8h_source.html#l00094">94</a> of file <a class="el" href="nrf24l01p__ng__params_8h_source.html">nrf24l01p_ng_params.h</a>.</p>
+
+</div>
+</div>
+<a id="aa7025a70869f2801ee2c6f2680bfb15a" name="aa7025a70869f2801ee2c6f2680bfb15a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7025a70869f2801ee2c6f2680bfb15a">&#9670;&#160;</a></span>NRF24L01P_NG_PARAM_CRC_LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01P_NG_PARAM_CRC_LEN&#160;&#160;&#160;(<a class="el" href="nrf24l01p__ng__types_8h.html#a4728f5dee29a72d58fbfbcc4cec28909a53cb5450f9ff091d7f1b5c09d0f9799d">NRF24L01P_NG_CRC_2BYTE</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default CRC length. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="nrf24l01p__ng__types_8h.html#ad0a7e4b8188e7180bffd020694adf0d7" title="Possible values to configure the CRC length.">nrf24l01p_ng_crc_t</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="nrf24l01p__ng__params_8h_source.html#l00071">71</a> of file <a class="el" href="nrf24l01p__ng__params_8h_source.html">nrf24l01p_ng_params.h</a>.</p>
+
+</div>
+</div>
+<a id="a196140168ac3e185ff81468cc1328291" name="a196140168ac3e185ff81468cc1328291"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a196140168ac3e185ff81468cc1328291">&#9670;&#160;</a></span>NRF24L01P_NG_PARAM_CS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01P_NG_PARAM_CS&#160;&#160;&#160;<a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SPI CS gpio pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="nrf24l01p__ng__params_8h_source.html#l00049">49</a> of file <a class="el" href="nrf24l01p__ng__params_8h_source.html">nrf24l01p_ng_params.h</a>.</p>
+
+</div>
+</div>
+<a id="ac09d247350235837e4dd0196b754c256" name="ac09d247350235837e4dd0196b754c256"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac09d247350235837e4dd0196b754c256">&#9670;&#160;</a></span>NRF24L01P_NG_PARAM_DATA_RATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01P_NG_PARAM_DATA_RATE&#160;&#160;&#160;(<a class="el" href="nrf24l01p__ng__types_8h.html#a180d52c13d07572d31bb6ea44983f645a126e85440bff66d5b4013795004e5b30">NRF24L01P_NG_RF_DR_2MBPS</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default data rate. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="nrf24l01p__ng__types_8h.html#a0b0248f27eb5fe1cf1b33db69c5dc37b" title="Possible values to configure the data rate.">nrf24l01p_ng_rfdr_t</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="nrf24l01p__ng__params_8h_source.html#l00087">87</a> of file <a class="el" href="nrf24l01p__ng__params_8h_source.html">nrf24l01p_ng_params.h</a>.</p>
+
+</div>
+</div>
+<a id="a4c7a35fd5e7f8705a38c9ea8187ca799" name="a4c7a35fd5e7f8705a38c9ea8187ca799"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c7a35fd5e7f8705a38c9ea8187ca799">&#9670;&#160;</a></span>NRF24L01P_NG_PARAM_IRQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01P_NG_PARAM_IRQ&#160;&#160;&#160;<a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>NRF24L01+ interrupt gpio pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="nrf24l01p__ng__params_8h_source.html#l00063">63</a> of file <a class="el" href="nrf24l01p__ng__params_8h_source.html">nrf24l01p_ng_params.h</a>.</p>
+
+</div>
+</div>
+<a id="a4d850a45e009235b5877c8efb24bc471" name="a4d850a45e009235b5877c8efb24bc471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d850a45e009235b5877c8efb24bc471">&#9670;&#160;</a></span>NRF24L01P_NG_PARAM_MAX_RETRANSM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01P_NG_PARAM_MAX_RETRANSM&#160;&#160;&#160;(5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default number of retransmissions. </p>
+
+<p class="definition">Definition at line <a class="el" href="nrf24l01p__ng__params_8h_source.html#l00101">101</a> of file <a class="el" href="nrf24l01p__ng__params_8h_source.html">nrf24l01p_ng_params.h</a>.</p>
+
+</div>
+</div>
+<a id="a4f82dbc93b8a1548b573f07ea6b9728c" name="a4f82dbc93b8a1548b573f07ea6b9728c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f82dbc93b8a1548b573f07ea6b9728c">&#9670;&#160;</a></span>NRF24L01P_NG_PARAM_RETRANSM_DELAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01P_NG_PARAM_RETRANSM_DELAY&#160;&#160;&#160;(<a class="el" href="nrf24l01p__ng__types_8h.html#ad6fe257a034cc76a4c4f6312e0010a98a5bc29bc76ec34ce1f6a7b8990af47db5">NRF24L01P_NG_ARD_2750US</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default retransmission delay. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="nrf24l01p__ng__types_8h.html#ac87dd15da4f1526150f2d3063ace69c5" title="Possible values to configure the retransmission delay in ESB.">nrf24l01p_ng_ard_t</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="nrf24l01p__ng__params_8h_source.html#l00109">109</a> of file <a class="el" href="nrf24l01p__ng__params_8h_source.html">nrf24l01p_ng_params.h</a>.</p>
+
+</div>
+</div>
+<a id="a70064cab2973fc138952ad873c0c7595" name="a70064cab2973fc138952ad873c0c7595"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70064cab2973fc138952ad873c0c7595">&#9670;&#160;</a></span>NRF24L01P_NG_PARAM_SPI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01P_NG_PARAM_SPI&#160;&#160;&#160;<a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9">SPI_DEV</a>(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SPI bus. </p>
+
+<p class="definition">Definition at line <a class="el" href="nrf24l01p__ng__params_8h_source.html#l00035">35</a> of file <a class="el" href="nrf24l01p__ng__params_8h_source.html">nrf24l01p_ng_params.h</a>.</p>
+
+</div>
+</div>
+<a id="abd907606cea1324514e23bbe84367e05" name="abd907606cea1324514e23bbe84367e05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd907606cea1324514e23bbe84367e05">&#9670;&#160;</a></span>NRF24L01P_NG_PARAM_SPI_CLK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01P_NG_PARAM_SPI_CLK&#160;&#160;&#160;<a class="el" href="atxmega_2include_2periph__cpu_8h.html#a17adf016c33fa2f2e36c9bec898bc0c8a4105210aa902203502e4392d4a3fbe58">SPI_CLK_5MHZ</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SPI clock speed. </p>
+
+<p class="definition">Definition at line <a class="el" href="nrf24l01p__ng__params_8h_source.html#l00042">42</a> of file <a class="el" href="nrf24l01p__ng__params_8h_source.html">nrf24l01p_ng_params.h</a>.</p>
+
+</div>
+</div>
+<a id="a56179dd70eb3037ae350fc866db6f197" name="a56179dd70eb3037ae350fc866db6f197"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56179dd70eb3037ae350fc866db6f197">&#9670;&#160;</a></span>NRF24L01P_NG_PARAM_TX_POWER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01P_NG_PARAM_TX_POWER&#160;&#160;&#160;(<a class="el" href="nrf24l01p__ng__types_8h.html#ac92638f7f673ff9863feebc4b56b16e7a12b61d82ebb9f0f3cb1c7fd087232f1f">NRF24L01P_NG_TX_POWER_0DBM</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default TX power. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="nrf24l01p__ng__types_8h.html#afa0d1ef0db2dc7acd4a8c2c2f35b4c73" title="Possible values to configure the radio power.">nrf24l01p_ng_tx_power_t</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="nrf24l01p__ng__params_8h_source.html#l00079">79</a> of file <a class="el" href="nrf24l01p__ng__params_8h_source.html">nrf24l01p_ng_params.h</a>.</p>
+
+</div>
+</div>
+<a id="a13eee5222c755d74d89aec233ad5aa6f" name="a13eee5222c755d74d89aec233ad5aa6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13eee5222c755d74d89aec233ad5aa6f">&#9670;&#160;</a></span>NRF24L01P_NG_PARAMS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01P_NG_PARAMS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">        {                                               \</div>
+<div class="line">        .spi = <a class="code hl_define" href="#a70064cab2973fc138952ad873c0c7595">NRF24L01P_NG_PARAM_SPI</a>,                                         \</div>
+<div class="line">        .spi_clk = <a class="code hl_define" href="#abd907606cea1324514e23bbe84367e05">NRF24L01P_NG_PARAM_SPI_CLK</a>,                                 \</div>
+<div class="line">        .pin_cs = <a class="code hl_define" href="#a196140168ac3e185ff81468cc1328291">NRF24L01P_NG_PARAM_CS</a>,                                       \</div>
+<div class="line">        .pin_ce = <a class="code hl_define" href="#af2627ba9010cf89274ce07398abd66e8">NRF24L01P_NG_PARAM_CE</a>,                                       \</div>
+<div class="line">        .pin_irq = <a class="code hl_define" href="#a4c7a35fd5e7f8705a38c9ea8187ca799">NRF24L01P_NG_PARAM_IRQ</a>,                                     \</div>
+<div class="line">        .config =       {                                                      \</div>
+<div class="line">            .cfg_crc = <a class="code hl_define" href="#aa7025a70869f2801ee2c6f2680bfb15a">NRF24L01P_NG_PARAM_CRC_LEN</a>,                             \</div>
+<div class="line">            .cfg_tx_power = <a class="code hl_define" href="#a56179dd70eb3037ae350fc866db6f197">NRF24L01P_NG_PARAM_TX_POWER</a>,                       \</div>
+<div class="line">            .cfg_data_rate = <a class="code hl_define" href="#ac09d247350235837e4dd0196b754c256">NRF24L01P_NG_PARAM_DATA_RATE</a>,                     \</div>
+<div class="line">            .cfg_channel = <a class="code hl_define" href="#a106057e89b772bb8df9995e4fbc04983">NRF24L01P_NG_PARAM_CHANNEL</a>,                         \</div>
+<div class="line">            .cfg_max_retr = <a class="code hl_define" href="#a4d850a45e009235b5877c8efb24bc471">NRF24L01P_NG_PARAM_MAX_RETRANSM</a>,                   \</div>
+<div class="line">            .cfg_retr_delay = <a class="code hl_define" href="#a4f82dbc93b8a1548b573f07ea6b9728c">NRF24L01P_NG_PARAM_RETRANSM_DELAY</a>,               \</div>
+<div class="line">        }                                                                      \</div>
+<div class="line">}</div>
+<div class="ttc" id="anrf24l01p__ng__params_8h_html_a106057e89b772bb8df9995e4fbc04983"><div class="ttname"><a href="#a106057e89b772bb8df9995e4fbc04983">NRF24L01P_NG_PARAM_CHANNEL</a></div><div class="ttdeci">#define NRF24L01P_NG_PARAM_CHANNEL</div><div class="ttdoc">Default channel in [0; 124].</div><div class="ttdef"><b>Definition</b> <a href="nrf24l01p__ng__params_8h_source.html#l00094">nrf24l01p_ng_params.h:94</a></div></div>
+<div class="ttc" id="anrf24l01p__ng__params_8h_html_a196140168ac3e185ff81468cc1328291"><div class="ttname"><a href="#a196140168ac3e185ff81468cc1328291">NRF24L01P_NG_PARAM_CS</a></div><div class="ttdeci">#define NRF24L01P_NG_PARAM_CS</div><div class="ttdoc">SPI CS gpio pin.</div><div class="ttdef"><b>Definition</b> <a href="nrf24l01p__ng__params_8h_source.html#l00049">nrf24l01p_ng_params.h:49</a></div></div>
+<div class="ttc" id="anrf24l01p__ng__params_8h_html_a4c7a35fd5e7f8705a38c9ea8187ca799"><div class="ttname"><a href="#a4c7a35fd5e7f8705a38c9ea8187ca799">NRF24L01P_NG_PARAM_IRQ</a></div><div class="ttdeci">#define NRF24L01P_NG_PARAM_IRQ</div><div class="ttdoc">NRF24L01+ interrupt gpio pin.</div><div class="ttdef"><b>Definition</b> <a href="nrf24l01p__ng__params_8h_source.html#l00063">nrf24l01p_ng_params.h:63</a></div></div>
+<div class="ttc" id="anrf24l01p__ng__params_8h_html_a4d850a45e009235b5877c8efb24bc471"><div class="ttname"><a href="#a4d850a45e009235b5877c8efb24bc471">NRF24L01P_NG_PARAM_MAX_RETRANSM</a></div><div class="ttdeci">#define NRF24L01P_NG_PARAM_MAX_RETRANSM</div><div class="ttdoc">Default number of retransmissions.</div><div class="ttdef"><b>Definition</b> <a href="nrf24l01p__ng__params_8h_source.html#l00101">nrf24l01p_ng_params.h:101</a></div></div>
+<div class="ttc" id="anrf24l01p__ng__params_8h_html_a4f82dbc93b8a1548b573f07ea6b9728c"><div class="ttname"><a href="#a4f82dbc93b8a1548b573f07ea6b9728c">NRF24L01P_NG_PARAM_RETRANSM_DELAY</a></div><div class="ttdeci">#define NRF24L01P_NG_PARAM_RETRANSM_DELAY</div><div class="ttdoc">Default retransmission delay.</div><div class="ttdef"><b>Definition</b> <a href="nrf24l01p__ng__params_8h_source.html#l00109">nrf24l01p_ng_params.h:109</a></div></div>
+<div class="ttc" id="anrf24l01p__ng__params_8h_html_a56179dd70eb3037ae350fc866db6f197"><div class="ttname"><a href="#a56179dd70eb3037ae350fc866db6f197">NRF24L01P_NG_PARAM_TX_POWER</a></div><div class="ttdeci">#define NRF24L01P_NG_PARAM_TX_POWER</div><div class="ttdoc">Default TX power.</div><div class="ttdef"><b>Definition</b> <a href="nrf24l01p__ng__params_8h_source.html#l00079">nrf24l01p_ng_params.h:79</a></div></div>
+<div class="ttc" id="anrf24l01p__ng__params_8h_html_a70064cab2973fc138952ad873c0c7595"><div class="ttname"><a href="#a70064cab2973fc138952ad873c0c7595">NRF24L01P_NG_PARAM_SPI</a></div><div class="ttdeci">#define NRF24L01P_NG_PARAM_SPI</div><div class="ttdoc">SPI bus.</div><div class="ttdef"><b>Definition</b> <a href="nrf24l01p__ng__params_8h_source.html#l00035">nrf24l01p_ng_params.h:35</a></div></div>
+<div class="ttc" id="anrf24l01p__ng__params_8h_html_aa7025a70869f2801ee2c6f2680bfb15a"><div class="ttname"><a href="#aa7025a70869f2801ee2c6f2680bfb15a">NRF24L01P_NG_PARAM_CRC_LEN</a></div><div class="ttdeci">#define NRF24L01P_NG_PARAM_CRC_LEN</div><div class="ttdoc">Default CRC length.</div><div class="ttdef"><b>Definition</b> <a href="nrf24l01p__ng__params_8h_source.html#l00071">nrf24l01p_ng_params.h:71</a></div></div>
+<div class="ttc" id="anrf24l01p__ng__params_8h_html_abd907606cea1324514e23bbe84367e05"><div class="ttname"><a href="#abd907606cea1324514e23bbe84367e05">NRF24L01P_NG_PARAM_SPI_CLK</a></div><div class="ttdeci">#define NRF24L01P_NG_PARAM_SPI_CLK</div><div class="ttdoc">SPI clock speed.</div><div class="ttdef"><b>Definition</b> <a href="nrf24l01p__ng__params_8h_source.html#l00042">nrf24l01p_ng_params.h:42</a></div></div>
+<div class="ttc" id="anrf24l01p__ng__params_8h_html_ac09d247350235837e4dd0196b754c256"><div class="ttname"><a href="#ac09d247350235837e4dd0196b754c256">NRF24L01P_NG_PARAM_DATA_RATE</a></div><div class="ttdeci">#define NRF24L01P_NG_PARAM_DATA_RATE</div><div class="ttdoc">Default data rate.</div><div class="ttdef"><b>Definition</b> <a href="nrf24l01p__ng__params_8h_source.html#l00087">nrf24l01p_ng_params.h:87</a></div></div>
+<div class="ttc" id="anrf24l01p__ng__params_8h_html_af2627ba9010cf89274ce07398abd66e8"><div class="ttname"><a href="#af2627ba9010cf89274ce07398abd66e8">NRF24L01P_NG_PARAM_CE</a></div><div class="ttdeci">#define NRF24L01P_NG_PARAM_CE</div><div class="ttdoc">NRF24L01+ chip enable gpio pin.</div><div class="ttdef"><b>Definition</b> <a href="nrf24l01p__ng__params_8h_source.html#l00056">nrf24l01p_ng_params.h:56</a></div></div>
+</div><!-- fragment -->
+<p>Default NRF24L01+ device parameters. </p>
+
+<p class="definition">Definition at line <a class="el" href="nrf24l01p__ng__params_8h_source.html#l00116">116</a> of file <a class="el" href="nrf24l01p__ng__params_8h_source.html">nrf24l01p_ng_params.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ac6899303497d6aca7c92141cb4fb2bc0" name="ac6899303497d6aca7c92141cb4fb2bc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6899303497d6aca7c92141cb4fb2bc0">&#9670;&#160;</a></span>nrf24l01p_ng_params</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structnrf24l01p__ng__params__t.html">nrf24l01p_ng_params_t</a> nrf24l01p_ng_params[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    <a class="code hl_define" href="#a13eee5222c755d74d89aec233ad5aa6f">NRF24L01P_NG_PARAMS</a></div>
+<div class="line">}</div>
+<div class="ttc" id="anrf24l01p__ng__params_8h_html_a13eee5222c755d74d89aec233ad5aa6f"><div class="ttname"><a href="#a13eee5222c755d74d89aec233ad5aa6f">NRF24L01P_NG_PARAMS</a></div><div class="ttdeci">#define NRF24L01P_NG_PARAMS</div><div class="ttdoc">Default NRF24L01+ device parameters.</div><div class="ttdef"><b>Definition</b> <a href="nrf24l01p__ng__params_8h_source.html#l00116">nrf24l01p_ng_params.h:116</a></div></div>
+</div><!-- fragment -->
+<p>Static array that holds NRF24L01+ device configurations. </p>
+
+<p class="definition">Definition at line <a class="el" href="nrf24l01p__ng__params_8h_source.html#l00136">136</a> of file <a class="el" href="nrf24l01p__ng__params_8h_source.html">nrf24l01p_ng_params.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

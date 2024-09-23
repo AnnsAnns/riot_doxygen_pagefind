@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/fido2/ctap/ctap.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('ctap_2ctap_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ctap.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ctap_2ctap_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (C) 2021 Freie Universität Berlin</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * directory for more details.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#ifndef FIDO2_CTAP_CTAP_H</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#define FIDO2_CTAP_CTAP_H</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &quot;<a class="code" href="mutex_8h.html">mutex.h</a>&quot;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;<a class="code" href="cbor_8h.html">cbor.h</a>&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &quot;<a class="code" href="assert_8h.html">assert.h</a>&quot;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;<a class="code" href="ccm_8h.html">crypto/modes/ccm.h</a>&quot;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;<a class="code" href="timex_8h.html">timex.h</a>&quot;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;board.h&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="ctap_8h.html">fido2/ctap.h</a>&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;<a class="code" href="ctap__crypto_8h.html">fido2/ctap/ctap_crypto.h</a>&quot;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga30d3a66446bb328e2990ec07bad55448">   51</a></span><span class="preprocessor">#define CTAP_PIN_AUTH_SZ 16</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gac643f11122a5c672064b88bc7c327cf8">   58</a></span><span class="preprocessor">#define CTAP_MAKE_CREDENTIAL                0x01    </span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga7d47fc21611003a3db7c3fc0368f63ba">   59</a></span><span class="preprocessor">#define CTAP_GET_ASSERTION                  0x02    </span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga2eb5ddfd6391a8ceafd208ff61303b25">   60</a></span><span class="preprocessor">#define CTAP_GET_INFO                       0x04    </span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gac2ad80a33fcbfa797f50280d28e71916">   61</a></span><span class="preprocessor">#define CTAP_CLIENT_PIN                     0x06    </span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gad270e7ec6b072d3ddd2400f35cc5f2fc">   62</a></span><span class="preprocessor">#define CTAP_RESET                          0x07    </span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga6d90a65390b40e1a3a8b8d649a5235f9">   63</a></span><span class="preprocessor">#define CTAP_GET_NEXT_ASSERTION             0x08    </span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga7cc7f018fbf95c66d395b22bc00721d1">   71</a></span><span class="preprocessor">#define CTAP_AUTH_DATA_FLAG_UP     (1 &lt;&lt; 0)     </span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gaa39328c058e596799f6ebbf8238e9cae">   72</a></span><span class="preprocessor">#define CTAP_AUTH_DATA_FLAG_UV     (1 &lt;&lt; 2)     </span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga7c7132903a51bcd98afcd6ffb9ceb85e">   73</a></span><span class="preprocessor">#define CTAP_AUTH_DATA_FLAG_AT     (1 &lt;&lt; 6)     </span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gaa9418066601d9b0a8d7785aed0bcc9b0">   74</a></span><span class="preprocessor">#define CTAP_AUTH_DATA_FLAG_ED     (1 &lt;&lt; 7)     </span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga04a8982fb90a7f54393dc5feb93e0367">   82</a></span><span class="preprocessor">#define CTAP_VERSION_FLAG_FIDO_PRE  0x01    </span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga45263a2ec587c629807660088ff6e3f5">   83</a></span><span class="preprocessor">#define CTAP_VERSION_FLAG_FIDO      0x02    </span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga6225c37730fe79395474579ae242915c">   84</a></span><span class="preprocessor">#define CTAP_VERSION_FLAG_U2F_V2    0x04    </span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga27c5f1a7c665bd41d3c62a73f21a7fd6">   94</a></span><span class="preprocessor">#define CTAP_GET_INFO_RESP_OPTIONS_ID_PLAT       &quot;plat&quot;         </span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga1b1197bb065b6af8b9e507711115c261">   95</a></span><span class="preprocessor">#define CTAP_GET_INFO_RESP_OPTIONS_ID_RK         &quot;rk&quot;           </span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga6c22c6c0a6dec09d6a98534cadf36828">   96</a></span><span class="preprocessor">#define CTAP_GET_INFO_RESP_OPTIONS_ID_CLIENT_PIN &quot;clientPin&quot;    </span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga2fa23cc426a7ce58bd1e3a8630e522dc">   97</a></span><span class="preprocessor">#define CTAP_GET_INFO_RESP_OPTIONS_ID_UP         &quot;up&quot;           </span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gac1ec2ff64da0a265efbe5545fed180c9">   98</a></span><span class="preprocessor">#define CTAP_GET_INFO_RESP_OPTIONS_ID_UV         &quot;uv&quot;           </span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gabf7f2403a6e6f71b551e1fca21e1fcd1">  106</a></span><span class="preprocessor">#define CTAP_INFO_OPTIONS_FLAG_PLAT         (1 &lt;&lt; 0)    </span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gaffd24a9786282b2c119da016c864619d">  107</a></span><span class="preprocessor">#define CTAP_INFO_OPTIONS_FLAG_RK           (1 &lt;&lt; 1)    </span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga34e893191d84c189d390f5c5283a5e07">  108</a></span><span class="preprocessor">#define CTAP_INFO_OPTIONS_FLAG_CLIENT_PIN   (1 &lt;&lt; 2)    </span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga6e9fdd0e203b5a4f7d33860f3f7ee70e">  109</a></span><span class="preprocessor">#define CTAP_INFO_OPTIONS_FLAG_UP           (1 &lt;&lt; 3)    </span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gafa4f22a5a67cc8e636fbf913c22ea119">  110</a></span><span class="preprocessor">#define CTAP_INFO_OPTIONS_FLAG_UV           (1 &lt;&lt; 4)    </span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gaa7910911c615e4001474be637d7e20c9">  118</a></span><span class="preprocessor">#define CTAP_CP_REQ_SUB_COMMAND_GET_RETRIES         0x01    </span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gadd3b0a69a7df7bec08bd1973d887aaf3">  119</a></span><span class="preprocessor">#define CTAP_CP_REQ_SUB_COMMAND_GET_KEY_AGREEMENT   0x02    </span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga15763541cb93797d13433689580744e4">  120</a></span><span class="preprocessor">#define CTAP_CP_REQ_SUB_COMMAND_SET_PIN             0x03    </span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga476e4a1587d7519640506c418e3e501a">  121</a></span><span class="preprocessor">#define CTAP_CP_REQ_SUB_COMMAND_CHANGE_PIN          0x04    </span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gaea3fef90b3988862fea15bdc9229d495">  122</a></span><span class="preprocessor">#define CTAP_CP_REQ_SUB_COMMAND_GET_PIN_TOKEN       0x05    </span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="preprocessor">#ifdef CONFIG_FIDO2_CTAP_STACK_SIZE</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">#define CTAP_STACKSIZE CONFIG_FIDO2_CTAP_STACK_SIZE</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gaf25c65f0c96132475ed6b0442ff4a48d">  131</a></span><span class="preprocessor">#define CTAP_STACKSIZE 15000</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="preprocessor">#if defined(CONFIG_FIDO2_CTAP_UP_BUTTON_PORT) &amp;&amp; defined(CONFIG_FIDO2_CTAP_UP_BUTTON_PIN) &amp;&amp; \</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="preprocessor">    (CONFIG_FIDO2_CTAP_UP_BUTTON_PORT &gt;= 0) &amp;&amp; (CONFIG_FIDO2_CTAP_UP_BUTTON_PIN &gt;= 0)</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="preprocessor">#define CTAP_UP_BUTTON GPIO_PIN(CONFIG_FIDO2_CTAP_UP_BUTTON_PORT, CONFIG_FIDO2_CTAP_UP_BUTTON_PIN)</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="comment">/* set default button if no button is configured */</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="preprocessor">#ifdef BTN0_PIN</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="preprocessor">#define CTAP_UP_BUTTON BTN0_PIN</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gac7aa48faa447a0da1c287cf16bd33988">  145</a></span><span class="preprocessor">#define CTAP_UP_BUTTON 0</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga4e6ebe20a47b7b34d55eeff7a8b9e5ed">  149</a></span><span class="preprocessor">#define CONFIG_FIDO2_CTAP_DISABLE_UP 1</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">#endif </span><span class="comment">/* BTN0_PIN */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="preprocessor">#if IS_ACTIVE(CONFIG_FIDO2_CTAP_UP_BUTTON_MODE_IN_PU)</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="preprocessor">#define CTAP_UP_BUTTON_MODE GPIO_IN_PU</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="preprocessor">#elif IS_ACTIVE(CONFIG_FIDO2_CTAP_UP_BUTTON_MODE_IN_PD)</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="preprocessor">#define CTAP_UP_BUTTON_MODE GPIO_IN_PD</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="preprocessor">#elif IS_ACTIVE(CONFIG_FIDO2_CTAP_UP_BUTTON_MODE_IN)</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="preprocessor">#define CTAP_UP_BUTTON_MODE GPIO_IN</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga12f7d13f0b349b8e18f873449925d4a4">  163</a></span><span class="preprocessor">#define CTAP_UP_BUTTON_MODE GPIO_IN_PU</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="preprocessor">#if IS_ACTIVE(CONFIG_FIDO2_CTAP_UP_BUTTON_FLANK_FALLING)</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="preprocessor">#define CTAP_UP_BUTTON_FLANK GPIO_FALLING</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="preprocessor">#elif IS_ACTIVE(CONFIG_FIDO2_CTAP_UP_BUTTON_FLANK_RISING)</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="preprocessor">#define CTAP_UP_BUTTON_FLANK GPIO_RISING</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="preprocessor">#elif IS_ACTIVE(CONFIG_FIDO2_CTAP_UP_BUTTON_FLANK_BOTH)</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="preprocessor">#define CTAP_UP_BUTTON_FLANK GPIO_BOTH</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga3a6cede5552b704d5616fc61879d4c43">  176</a></span><span class="preprocessor">#define CTAP_UP_BUTTON_FLANK GPIO_FALLING</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="preprocessor">#ifndef CONFIG_FIDO2_CTAP_DISABLE_UP</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="preprocessor">#define CONFIG_FIDO2_CTAP_DISABLE_UP 0</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="preprocessor">#ifndef CONFIG_FIDO2_CTAP_DISABLE_LED</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga921ff94a9795d469369fe136f85ad1de">  190</a></span><span class="preprocessor">#define CONFIG_FIDO2_CTAP_DISABLE_LED 0</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga58c4918ec5cd8834f96a0245bbe359f5">  196</a></span><span class="preprocessor">#define CTAP_RP_MAX_NAME_SIZE   32</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gacb7048598196e8eb73fb32c0fca08352">  201</a></span><span class="preprocessor">#define CTAP_USER_MAX_NAME_SIZE 64 + 1</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gac2ee2553c931d5eeae789339aa04eb6a">  206</a></span><span class="preprocessor">#define CTAP_USER_ID_MAX_SIZE 64</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gab0e182159f2f27dab0714a38a47697f0">  211</a></span><span class="preprocessor">#define CTAP_DOMAIN_NAME_MAX_SIZE 253 + 1</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga059ce53d8ccd903b84720bd455f9e138">  216</a></span><span class="preprocessor">#define CTAP_ICON_MAX_SIZE  128 + 1</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gac511e0182ebf3aaadc36c52fc001ccc7">  221</a></span><span class="preprocessor">#define CTAP_PIN_MIN_SIZE   4</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gaf7c4efc404c1ec32303fe061ce750a6d">  229</a></span><span class="preprocessor">#define CTAP_PIN_ENC_MIN_SIZE 64</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga67eb9af04e5453c57e6a0f78933566c4">  235</a></span><span class="preprocessor">#define CTAP_PIN_ENC_MAX_SIZE 256</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gae5346677d7ee8146ccc845378f6a6248">  240</a></span><span class="preprocessor">#define CTAP_PIN_MAX_SIZE   64</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga0dbefca590ecd222ae82d58b9f9af62f">  245</a></span><span class="preprocessor">#define CTAP_PIN_MAX_ATTS 8</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga97dafca9a1a99e5bf999d89bdca76185">  250</a></span><span class="preprocessor">#define CTAP_PIN_MAX_ATTS_BOOT 3</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga787d67f41873e99580dd79d887c08c42">  255</a></span><span class="preprocessor">#define CTAP_PIN_PROT_VER 1</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga8a89b2cc16ba329f7f486f7d0ea7581c">  260</a></span><span class="preprocessor">#define CTAP_AMT_SUP_PIN_VER 1</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gaa8b954664708326192441cb7ea76c59d">  267</a></span><span class="preprocessor">#define CTAP_PIN_TOKEN_SZ 16</span></div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gad0b4210a6a0ec00ee7168348b1c728b9">  276</a></span><span class="preprocessor">#define CTAP_CRED_KEY_LEN 16</span></div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga0d3ab8d7a35879df94b8b10097ce5231">  285</a></span><span class="preprocessor">#define CTAP_AES_CCM_L 2</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gac54c065a0e95eeb9461642fba8841784">  290</a></span><span class="preprocessor">#define CTAP_AES_CCM_NONCE_SIZE (15 - CTAP_AES_CCM_L)</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
+<div class="foldopen" id="foldopen00297" data-start="" data-end="">
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga2a632ea453a214459e06b5df6e945c9f">  297</a></span><span class="preprocessor">#define CTAP_CREDENTIAL_ID_ENC_SIZE (sizeof(struct ctap_resident_key) - \</span></div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="preprocessor">                                     sizeof(((struct ctap_resident_key *)0)-&gt; \</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="preprocessor">                                            cred_desc.cred_id) - \</span></div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="preprocessor">                                     sizeof(((struct ctap_resident_key *)0)-&gt; \</span></div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><span class="preprocessor">                                            cred_desc.has_nonce))</span></div>
+</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span><span class="preprocessor">#ifdef CONFIG_FIDO2_CTAP_UP_TIMEOUT</span></div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span><span class="preprocessor">#define CTAP_UP_TIMEOUT (CONFIG_FIDO2_CTAP_UP_TIMEOUT * MS_PER_SEC)</span></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gabd960f9d81b350fc259dbd0eac553dca">  309</a></span><span class="preprocessor">#define CTAP_UP_TIMEOUT (15 * MS_PER_SEC)</span></div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span> </div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gaa0e290281d8eff4fb828677b069ac368">  316</a></span><span class="preprocessor">#define CTAP_GET_NEXT_ASSERTION_TIMEOUT (30 * MS_PER_SEC)</span></div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span> </div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="preprocessor">#ifdef CONFIG_FIDO2_CTAP_DEVICE_AAGUID</span></div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="preprocessor">#define CTAP_AAGUID CONFIG_FIDO2_CTAP_DEVICE_AAGUID</span></div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span><span class="comment">/* randomly generated fallback value */</span></div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gac92d0e1e8f579083477fc64610535b36">  325</a></span><span class="preprocessor">#define CTAP_AAGUID &quot;9c295865fa2c36b705a42320af9c8f16&quot;</span></div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span> </div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gab3bd5542375cc1a073171287ec385788">  333</a></span><span class="preprocessor">#define CTAP_PUB_KEY_CRED_PUB_KEY 0x01  </span></div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gad42e95dcfd34268bdc6ddc270bee18fa">  334</a></span><span class="preprocessor">#define CTAP_PUB_KEY_CRED_UNKNOWN 0x02  </span></div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gad9cea98f70df291553eecd1d3e954837">  342</a></span><span class="preprocessor">#define CTAP_COSE_KEY_LABEL_KTY      1  </span></div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga6f56aee52f9b35ebed016823d6c9fddf">  343</a></span><span class="preprocessor">#define CTAP_COSE_KEY_LABEL_ALG      3  </span></div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gaa63e3164c0e8ae78be1f5c3cb2f669a9">  344</a></span><span class="preprocessor">#define CTAP_COSE_KEY_LABEL_CRV      -1 </span></div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga515d4d1a7f5e380cb085a2da13838679">  345</a></span><span class="preprocessor">#define CTAP_COSE_KEY_LABEL_X        -2 </span></div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gad1053ecc6216bd2a600de4b6c1e6499c">  346</a></span><span class="preprocessor">#define CTAP_COSE_KEY_LABEL_Y        -3 </span></div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga33f9dc1e728a12e112242140bab7883d">  347</a></span><span class="preprocessor">#define CTAP_COSE_KEY_KTY_EC2        2  </span></div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gab5d15a6c7f740a3366a4c9e06c0baf18">  348</a></span><span class="preprocessor">#define CTAP_COSE_KEY_CRV_P256       1  </span></div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga9506644604e5d0beaf15e8c9c74d309d">  354</a></span><span class="preprocessor">#define CTAP_AAGUID_SIZE 16</span></div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span> </div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga74f28d2e0fed9f61401162637616d917">  359</a></span><span class="preprocessor">#define CTAP_COSE_ALG_ES256           -7</span></div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span> </div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gaa4a369b743441f0a166ffc6c74c91c8f">  364</a></span><span class="preprocessor">#define CTAP_COSE_ALG_ECDH_ES_HKDF_256 -25</span></div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span> </div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga22677cc28f2b9a92b7544ea6b96686c8">  370</a></span><span class="preprocessor">#define CTAP_CREDENTIAL_ID_SIZE 16U</span></div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span> </div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga9dcaee9666e3ac124be483a17d199e06">  378</a></span><span class="preprocessor">#define CTAP_INITIALIZED_MARKER 0x4e</span></div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span> </div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gab799f534347e780c274b4c760b384651">  383</a></span><span class="preprocessor">#define CTAP_MAX_EXCLUDE_LIST_SIZE 0x14</span></div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span> </div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gabf33efc2175b3d1beeb399d95067a41f">  388</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structctap__cred__desc.html">ctap_cred_desc</a> <a class="code hl_struct" href="structctap__cred__desc.html">ctap_cred_desc_t</a>;</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span> </div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga523c7ac689f242490e782609c088e88b">  393</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structctap__cred__desc__alt.html">ctap_cred_desc_alt</a> <a class="code hl_struct" href="structctap__cred__desc__alt.html">ctap_cred_desc_alt_t</a>;</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span> </div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga41f3542a7fd6e03caeff36b2f2403a5a">  398</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structctap__resident__key.html">ctap_resident_key</a> <a class="code hl_struct" href="structctap__resident__key.html">ctap_resident_key_t</a>;</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span> </div>
+<div class="foldopen" id="foldopen00403" data-start="{" data-end="};">
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno"><a class="line" href="structctap__config__t.html">  403</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno"><a class="line" href="structctap__config__t.html#abcd9caa1ddd3d032345350cfd68a27b9">  404</a></span>    uint8_t aaguid[<a class="code hl_define" href="group__fido2__ctap__ctap.html#ga9506644604e5d0beaf15e8c9c74d309d">CTAP_AAGUID_SIZE</a>];   </div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno"><a class="line" href="structctap__config__t.html#a144421d0bd72d1c5b152c8af098f76b9">  405</a></span>    uint8_t <a class="code hl_variable" href="structctap__config__t.html#a144421d0bd72d1c5b152c8af098f76b9">options</a>;                    </div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>} <a class="code hl_struct" href="structctap__config__t.html">ctap_config_t</a>;</div>
+</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span> </div>
+<div class="foldopen" id="foldopen00413" data-start="{" data-end="};">
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno"><a class="line" href="structctap__state__t.html">  413</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno"><a class="line" href="structctap__state__t.html#a728c607e8252fb89c86ff0a3ad7e21b0">  414</a></span>    <a class="code hl_struct" href="structctap__config__t.html">ctap_config_t</a> <a class="code hl_variable" href="structctap__state__t.html#a728c607e8252fb89c86ff0a3ad7e21b0">config</a>;                       </div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno"><a class="line" href="structctap__state__t.html#af451549da473490edbbbbf8235cd43d0">  415</a></span>    <a class="code hl_struct" href="structctap__crypto__key__agreement__key__t.html">ctap_crypto_key_agreement_key_t</a> <a class="code hl_variable" href="structctap__state__t.html#af451549da473490edbbbbf8235cd43d0">ag_key</a>;     </div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno"><a class="line" href="structctap__state__t.html#a3b5e8eb4ace1862120f162f1dfea2950">  416</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structctap__state__t.html#a3b5e8eb4ace1862120f162f1dfea2950">rem_pin_att</a>;                            </div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno"><a class="line" href="structctap__state__t.html#a299830832a0b918577f598dda6d56f4f">  417</a></span>    uint16_t <a class="code hl_variable" href="structctap__state__t.html#a299830832a0b918577f598dda6d56f4f">rk_amount_stored</a>;                  </div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno"><a class="line" href="structctap__state__t.html#abb54c27bbb41083203dd0cf3497d00cd">  418</a></span>    uint8_t <a class="code hl_variable" href="structctap__state__t.html#abb54c27bbb41083203dd0cf3497d00cd">initialized_marker</a>;                 </div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno"><a class="line" href="structctap__state__t.html#ab7e545cf7520e1cdb42ada77c90e8295">  419</a></span>    uint8_t pin_hash[<a class="code hl_define" href="group__sys__hashes__sha256.html#gaa9cf0abf87b30c4c63e9c7e89c590579">SHA256_DIGEST_LENGTH</a> / 2]; </div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno"><a class="line" href="structctap__state__t.html#a2fd926054a5ddfe85b1eee3ae0c6c8c3">  420</a></span>    uint8_t cred_key[<a class="code hl_define" href="group__fido2__ctap__ctap.html#gad0b4210a6a0ec00ee7168348b1c728b9">CTAP_CRED_KEY_LEN</a>];        </div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno"><a class="line" href="structctap__state__t.html#ab1d7a0722146b8b4a36cafd76e016dba">  421</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structctap__state__t.html#ab1d7a0722146b8b4a36cafd76e016dba">cred_key_is_initialized</a>;               </div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno"><a class="line" href="structctap__state__t.html#a4fd81a3c6c8ab0d1565aa4bb90f4bb5c">  422</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structctap__state__t.html#a4fd81a3c6c8ab0d1565aa4bb90f4bb5c">pin_is_set</a>;                            </div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno"><a class="line" href="structctap__state__t.html#afeab5e4a2c4fd1b7a7bbbf16fd58597d">  423</a></span>    uint32_t <a class="code hl_variable" href="structctap__state__t.html#afeab5e4a2c4fd1b7a7bbbf16fd58597d">id_cnt</a>;                            </div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>} <a class="code hl_struct" href="structctap__state__t.html">ctap_state_t</a>;</div>
+</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span> </div>
+<div class="foldopen" id="foldopen00429" data-start="{" data-end="};">
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno"><a class="line" href="structctap__options__t.html">  429</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno"><a class="line" href="structctap__options__t.html#aadd140ae5737671633f37dccd68dd3a0">  430</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structctap__options__t.html#aadd140ae5737671633f37dccd68dd3a0">rk</a>; </div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno"><a class="line" href="structctap__options__t.html#a5fff26f2d15d4ca80bb5ba0809e02498">  431</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structctap__options__t.html#a5fff26f2d15d4ca80bb5ba0809e02498">uv</a>; </div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno"><a class="line" href="structctap__options__t.html#a189a499208df32d54ab9b119d6621fd0">  432</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structctap__options__t.html#a189a499208df32d54ab9b119d6621fd0">up</a>; </div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>} <a class="code hl_struct" href="structctap__options__t.html">ctap_options_t</a>;</div>
+</div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span> </div>
+<div class="foldopen" id="foldopen00438" data-start="{" data-end="};">
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno"><a class="line" href="structctap__user__ent__t.html">  438</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno"><a class="line" href="structctap__user__ent__t.html#a9b50e77306740baf45ae2e9378ecc8f3">  439</a></span>    uint8_t <span class="keywordtype">id</span>[<a class="code hl_define" href="group__fido2__ctap__ctap.html#gac2ee2553c931d5eeae789339aa04eb6a">CTAP_USER_ID_MAX_SIZE</a>];                  </div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno"><a class="line" href="structctap__user__ent__t.html#ace50537b37229a22513156cf1e170ae0">  440</a></span>    uint8_t <a class="code hl_variable" href="structctap__user__ent__t.html#ace50537b37229a22513156cf1e170ae0">id_len</a>;                                     </div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno"><a class="line" href="structctap__user__ent__t.html#a9e2360ac4454635225ed9d90a682bbb6">  441</a></span>    uint8_t name[<a class="code hl_define" href="group__fido2__ctap__ctap.html#gacb7048598196e8eb73fb32c0fca08352">CTAP_USER_MAX_NAME_SIZE</a>];              </div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno"><a class="line" href="structctap__user__ent__t.html#a22bc4dded76f8d40d5bd192e277b86a1">  442</a></span>    uint8_t display_name[<a class="code hl_define" href="group__fido2__ctap__ctap.html#gacb7048598196e8eb73fb32c0fca08352">CTAP_USER_MAX_NAME_SIZE</a>];      </div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno"><a class="line" href="structctap__user__ent__t.html#ab7a8fc1ba79ef2dcd5a920aca53e0228">  443</a></span>    uint8_t icon[<a class="code hl_define" href="group__fido2__ctap__ctap.html#gab0e182159f2f27dab0714a38a47697f0">CTAP_DOMAIN_NAME_MAX_SIZE</a>];            </div>
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>} <a class="code hl_struct" href="structctap__user__ent__t.html">ctap_user_ent_t</a>;</div>
+</div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span> </div>
+<div class="foldopen" id="foldopen00450" data-start="{" data-end="};">
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno"><a class="line" href="structctap__rp__ent__t.html">  450</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno"><a class="line" href="structctap__rp__ent__t.html#a0e4fd6b23c002dc943639652c69c4aac">  451</a></span>    uint8_t <span class="keywordtype">id</span>[<a class="code hl_define" href="group__fido2__ctap__ctap.html#gab0e182159f2f27dab0714a38a47697f0">CTAP_DOMAIN_NAME_MAX_SIZE</a> + 1];      </div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno"><a class="line" href="structctap__rp__ent__t.html#a0aa4635ec3bbe9e3a464b3ceb90f6592">  452</a></span>    uint8_t <a class="code hl_variable" href="structctap__rp__ent__t.html#a0aa4635ec3bbe9e3a464b3ceb90f6592">id_len</a>;                                 </div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno"><a class="line" href="structctap__rp__ent__t.html#afe81f7e0fe08f73b1b447e459a802bc4">  454</a></span>    uint8_t name[<a class="code hl_define" href="group__fido2__ctap__ctap.html#ga58c4918ec5cd8834f96a0245bbe359f5">CTAP_RP_MAX_NAME_SIZE</a> + 1];        </div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno"><a class="line" href="structctap__rp__ent__t.html#a2885d922cdb5cc32aa4352d0563c60b5">  456</a></span>    uint8_t icon[<a class="code hl_define" href="group__fido2__ctap__ctap.html#gab0e182159f2f27dab0714a38a47697f0">CTAP_DOMAIN_NAME_MAX_SIZE</a> + 1];    </div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>} <a class="code hl_struct" href="structctap__rp__ent__t.html">ctap_rp_ent_t</a>;</div>
+</div>
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span> </div>
+<div class="foldopen" id="foldopen00465" data-start="{" data-end="};">
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno"><a class="line" href="structctap__public__key__cose__t.html">  465</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno"><a class="line" href="structctap__public__key__cose__t.html#a35f622afd8ad9f9a69793d77a21fb3c9">  466</a></span>    <a class="code hl_struct" href="structctap__crypto__pub__key__t.html">ctap_crypto_pub_key_t</a> <a class="code hl_variable" href="structctap__public__key__cose__t.html#a35f622afd8ad9f9a69793d77a21fb3c9">pubkey</a>;   </div>
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno"><a class="line" href="structctap__public__key__cose__t.html#a2ecdfeeb81c4df14038fcc9dfd0f313f">  467</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structctap__public__key__cose__t.html#a2ecdfeeb81c4df14038fcc9dfd0f313f">kty</a>;                        </div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno"><a class="line" href="structctap__public__key__cose__t.html#a0ebabce0ba1c468552f5c09a3190e270">  468</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structctap__public__key__cose__t.html#a0ebabce0ba1c468552f5c09a3190e270">crv</a>;                        </div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno"><a class="line" href="structctap__public__key__cose__t.html#a25aa8aa86696b763c2bb5c61471e6fe4">  469</a></span>    int32_t <a class="code hl_variable" href="structctap__public__key__cose__t.html#a25aa8aa86696b763c2bb5c61471e6fe4">alg_type</a>;               </div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno"><a class="line" href="structctap__public__key__cose__t.html#aa6fc9fa5a525af5ec4b644607cab2d17">  470</a></span>    uint8_t <a class="code hl_variable" href="structctap__public__key__cose__t.html#aa6fc9fa5a525af5ec4b644607cab2d17">cred_type</a>;              </div>
+<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>} <a class="code hl_struct" href="structctap__public__key__cose__t.html">ctap_public_key_cose_t</a>;</div>
+</div>
+<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span> </div>
+<div class="foldopen" id="foldopen00481" data-start="{" data-end="};">
+<div class="line"><a id="l00481" name="l00481"></a><span class="lineno"><a class="line" href="structctap__cred__desc.html">  481</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structctap__cred__desc.html">ctap_cred_desc</a> {</div>
+<div class="line"><a id="l00482" name="l00482"></a><span class="lineno"><a class="line" href="structctap__cred__desc.html#aa98cefdd2993b85e80ae0aa2c3977cdc">  482</a></span>    uint8_t <a class="code hl_variable" href="structctap__cred__desc.html#aa98cefdd2993b85e80ae0aa2c3977cdc">cred_type</a>;                              </div>
+<div class="line"><a id="l00483" name="l00483"></a><span class="lineno">  483</span>    <span class="keyword">union </span>{</div>
+<div class="line"><a id="l00484" name="l00484"></a><span class="lineno"><a class="line" href="structctap__cred__desc.html#a32609c59652fb118d7297b913d7d93cc">  484</a></span>        uint8_t <a class="code hl_variable" href="structctap__cred__desc.html#a32609c59652fb118d7297b913d7d93cc">cred_id</a>[<a class="code hl_define" href="group__fido2__ctap__ctap.html#ga22677cc28f2b9a92b7544ea6b96686c8">CTAP_CREDENTIAL_ID_SIZE</a>];   </div>
+<div class="line"><a id="l00485" name="l00485"></a><span class="lineno"><a class="line" href="structctap__cred__desc.html#a6cedaa47c25ed49f24e63f47ba65461a">  485</a></span>        uint8_t <a class="code hl_variable" href="structctap__cred__desc.html#a6cedaa47c25ed49f24e63f47ba65461a">nonce</a>[<a class="code hl_define" href="group__fido2__ctap__ctap.html#gac54c065a0e95eeb9461642fba8841784">CTAP_AES_CCM_NONCE_SIZE</a>];     </div>
+<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span>    };</div>
+<div class="line"><a id="l00487" name="l00487"></a><span class="lineno"><a class="line" href="structctap__cred__desc.html#ada70b3fd86361d729fb1d766bc659c6f">  487</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structctap__cred__desc.html#ada70b3fd86361d729fb1d766bc659c6f">has_nonce</a>;                                 </div>
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>};</div>
+</div>
+<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span> </div>
+<div class="foldopen" id="foldopen00497" data-start="{" data-end="};">
+<div class="line"><a id="l00497" name="l00497"></a><span class="lineno"><a class="line" href="structctap__resident__key.html">  497</a></span><span class="keyword">struct </span>__attribute__((packed)) <a class="code hl_struct" href="structctap__resident__key.html">ctap_resident_key</a> {</div>
+<div class="line"><a id="l00498" name="l00498"></a><span class="lineno"><a class="line" href="structctap__resident__key.html#ab7cb8c542402dbca7a477bd28654816f">  498</a></span>    uint8_t rp_id_hash[<a class="code hl_define" href="group__sys__hashes__sha256.html#gaa9cf0abf87b30c4c63e9c7e89c590579">SHA256_DIGEST_LENGTH</a>];   </div>
+<div class="line"><a id="l00499" name="l00499"></a><span class="lineno"><a class="line" href="structctap__resident__key.html#a0c0ade359ccdc46a1d46d4926caf313a">  499</a></span>    uint8_t user_id[<a class="code hl_define" href="group__fido2__ctap__ctap.html#gac2ee2553c931d5eeae789339aa04eb6a">CTAP_USER_ID_MAX_SIZE</a>];     </div>
+<div class="line"><a id="l00500" name="l00500"></a><span class="lineno"><a class="line" href="structctap__resident__key.html#a758b94cb58a9f60ef1375bf3d3cda0a5">  500</a></span>    uint8_t <a class="code hl_variable" href="structctap__resident__key.html#a758b94cb58a9f60ef1375bf3d3cda0a5">user_id_len</a>;                        </div>
+<div class="line"><a id="l00501" name="l00501"></a><span class="lineno"><a class="line" href="structctap__resident__key.html#a2c6b5e7fd3418f1cfe197eb7a3079343">  501</a></span>    uint8_t priv_key[<a class="code hl_define" href="group__fido2__ctap__crypto.html#ga8bef3f3fee26c70308a414fb343700fe">CTAP_CRYPTO_KEY_SIZE</a>];     </div>
+<div class="line"><a id="l00502" name="l00502"></a><span class="lineno"><a class="line" href="structctap__resident__key.html#a9ac746b76de71efe600bbd592cae7dd4">  502</a></span>    uint16_t <a class="code hl_variable" href="structctap__resident__key.html#a9ac746b76de71efe600bbd592cae7dd4">id</a>;                                </div>
+<div class="line"><a id="l00503" name="l00503"></a><span class="lineno"><a class="line" href="structctap__resident__key.html#a317032820a48f03fe9dd880b82d5ec0d">  503</a></span>    uint32_t <a class="code hl_variable" href="structctap__resident__key.html#a317032820a48f03fe9dd880b82d5ec0d">sign_count</a>;                        </div>
+<div class="line"><a id="l00507" name="l00507"></a><span class="lineno"><a class="line" href="structctap__resident__key.html#a04b052c0be1cd7507c0aacf29e8b8a10">  507</a></span>    <a class="code hl_struct" href="structctap__cred__desc.html">ctap_cred_desc_t</a> <a class="code hl_variable" href="structctap__resident__key.html#a04b052c0be1cd7507c0aacf29e8b8a10">cred_desc</a>;                 </div>
+<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>};</div>
+</div>
+<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span> </div>
+<div class="foldopen" id="foldopen00516" data-start="{" data-end="};">
+<div class="line"><a id="l00516" name="l00516"></a><span class="lineno"><a class="line" href="structctap__cred__id__t.html">  516</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>__attribute__((packed)) {</div>
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno"><a class="line" href="structctap__cred__id__t.html#a6ca45da0d042ac403d50495bf97b906d">  517</a></span>    uint8_t <span class="keywordtype">id</span>[<a class="code hl_define" href="group__fido2__ctap__ctap.html#ga2a632ea453a214459e06b5df6e945c9f">CTAP_CREDENTIAL_ID_ENC_SIZE</a>];    </div>
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno"><a class="line" href="structctap__cred__id__t.html#a7a4bb25e65dacb50d2494425e845c45a">  518</a></span>    uint8_t mac[<a class="code hl_define" href="ccm_8h.html#a313e949249f24268a72e16507b329247">CCM_MAC_MAX_LEN</a>];               </div>
+<div class="line"><a id="l00519" name="l00519"></a><span class="lineno"><a class="line" href="structctap__cred__id__t.html#a68732552a156665390e95d9a8453191a">  519</a></span>    uint8_t nonce[<a class="code hl_define" href="group__fido2__ctap__ctap.html#gac54c065a0e95eeb9461642fba8841784">CTAP_AES_CCM_NONCE_SIZE</a>];     </div>
+<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>} <a class="code hl_struct" href="structctap__cred__id__t.html">ctap_cred_id_t</a>;</div>
+</div>
+<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span> </div>
+<div class="foldopen" id="foldopen00527" data-start="{" data-end="};">
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno"><a class="line" href="structctap__cred__desc__alt.html">  527</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structctap__cred__desc__alt.html">ctap_cred_desc_alt</a> {</div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno"><a class="line" href="structctap__cred__desc__alt.html#a31edfc45fc79638d76f9fe3ab996a03f">  528</a></span>    uint8_t <a class="code hl_variable" href="structctap__cred__desc__alt.html#a31edfc45fc79638d76f9fe3ab996a03f">cred_type</a>;          </div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno"><a class="line" href="structctap__cred__desc__alt.html#af251c4c772626ec7e421c2e3c6d5a2bd">  529</a></span>    <a class="code hl_struct" href="structctap__cred__id__t.html">ctap_cred_id_t</a> <a class="code hl_variable" href="structctap__cred__desc__alt.html#af251c4c772626ec7e421c2e3c6d5a2bd">cred_id</a>;     </div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>};</div>
+</div>
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span> </div>
+<div class="foldopen" id="foldopen00535" data-start="{" data-end="};">
+<div class="line"><a id="l00535" name="l00535"></a><span class="lineno"><a class="line" href="structctap__make__credential__req__t.html">  535</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno"><a class="line" href="structctap__make__credential__req__t.html#a4e1ea5b7df2ba97a4f22d2d365d56255">  536</a></span>    <a class="code hl_struct" href="structctap__cred__desc__alt.html">ctap_cred_desc_alt_t</a> exclude_list[<a class="code hl_define" href="group__fido2__ctap__ctap.html#gab799f534347e780c274b4c760b384651">CTAP_MAX_EXCLUDE_LIST_SIZE</a>];  </div>
+<div class="line"><a id="l00537" name="l00537"></a><span class="lineno"><a class="line" href="structctap__make__credential__req__t.html#accb466fbd785fc1fea62723d1f5de5f5">  537</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structctap__make__credential__req__t.html#accb466fbd785fc1fea62723d1f5de5f5">exclude_list_len</a>;                                        </div>
+<div class="line"><a id="l00538" name="l00538"></a><span class="lineno"><a class="line" href="structctap__make__credential__req__t.html#adfde6bf887d9953764f9b6a115a692f8">  538</a></span>    <a class="code hl_struct" href="structctap__rp__ent__t.html">ctap_rp_ent_t</a> <a class="code hl_variable" href="structctap__make__credential__req__t.html#adfde6bf887d9953764f9b6a115a692f8">rp</a>;                                               </div>
+<div class="line"><a id="l00539" name="l00539"></a><span class="lineno"><a class="line" href="structctap__make__credential__req__t.html#a02959aaac95be0efadf3c138479d1ecf">  539</a></span>    <a class="code hl_struct" href="structctap__user__ent__t.html">ctap_user_ent_t</a> <a class="code hl_variable" href="structctap__make__credential__req__t.html#a02959aaac95be0efadf3c138479d1ecf">user</a>;                                           </div>
+<div class="line"><a id="l00540" name="l00540"></a><span class="lineno"><a class="line" href="structctap__make__credential__req__t.html#ae94572f8d7b997033e16fa195895142b">  540</a></span>    <a class="code hl_struct" href="structctap__options__t.html">ctap_options_t</a> <a class="code hl_variable" href="structctap__make__credential__req__t.html#ae94572f8d7b997033e16fa195895142b">options</a>;                                         </div>
+<div class="line"><a id="l00541" name="l00541"></a><span class="lineno"><a class="line" href="structctap__make__credential__req__t.html#ac6e1d5af86a2032aba1985d3ed698660">  541</a></span>    uint8_t client_data_hash[<a class="code hl_define" href="group__sys__hashes__sha256.html#gaa9cf0abf87b30c4c63e9c7e89c590579">SHA256_DIGEST_LENGTH</a>];                 </div>
+<div class="line"><a id="l00542" name="l00542"></a><span class="lineno"><a class="line" href="structctap__make__credential__req__t.html#a5f58396a7e0e52d7ffdbe9f6b9b9af64">  542</a></span>    uint8_t pin_auth[<a class="code hl_define" href="group__fido2__ctap__ctap.html#ga30d3a66446bb328e2990ec07bad55448">CTAP_PIN_AUTH_SZ</a>];                             </div>
+<div class="line"><a id="l00543" name="l00543"></a><span class="lineno"><a class="line" href="structctap__make__credential__req__t.html#ae7f735f7acd4222646c04556b1c64473">  543</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structctap__make__credential__req__t.html#ae7f735f7acd4222646c04556b1c64473">pin_auth_len</a>;                                            </div>
+<div class="line"><a id="l00544" name="l00544"></a><span class="lineno"><a class="line" href="structctap__make__credential__req__t.html#a8d4643363bdeb4d429cc4a645047f79e">  544</a></span>    int32_t <a class="code hl_variable" href="structctap__make__credential__req__t.html#a8d4643363bdeb4d429cc4a645047f79e">alg_type</a>;                                               </div>
+<div class="line"><a id="l00545" name="l00545"></a><span class="lineno"><a class="line" href="structctap__make__credential__req__t.html#a68bc0468b88bd7548547a9560a7ace31">  545</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structctap__make__credential__req__t.html#a68bc0468b88bd7548547a9560a7ace31">pin_auth_present</a>;                                          </div>
+<div class="line"><a id="l00546" name="l00546"></a><span class="lineno"><a class="line" href="structctap__make__credential__req__t.html#aeb828c3b095a518fd39508e109853f5b">  546</a></span>    uint8_t <a class="code hl_variable" href="structctap__make__credential__req__t.html#aeb828c3b095a518fd39508e109853f5b">pin_protocol</a>;                                           </div>
+<div class="line"><a id="l00547" name="l00547"></a><span class="lineno"><a class="line" href="structctap__make__credential__req__t.html#ae8fd6db4b3410da173427982aaace2d4">  547</a></span>    uint8_t <a class="code hl_variable" href="structctap__make__credential__req__t.html#ae8fd6db4b3410da173427982aaace2d4">cred_type</a>;                                              </div>
+<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>} <a class="code hl_struct" href="structctap__make__credential__req__t.html">ctap_make_credential_req_t</a>;</div>
+</div>
+<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span> </div>
+<div class="foldopen" id="foldopen00553" data-start="{" data-end="};">
+<div class="line"><a id="l00553" name="l00553"></a><span class="lineno"><a class="line" href="structctap__get__assertion__req__t.html">  553</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00554" name="l00554"></a><span class="lineno"><a class="line" href="structctap__get__assertion__req__t.html#af23ba3303ffbafd06ab8c47cb34c6209">  554</a></span>    <a class="code hl_struct" href="structctap__options__t.html">ctap_options_t</a> <a class="code hl_variable" href="structctap__get__assertion__req__t.html#af23ba3303ffbafd06ab8c47cb34c6209">options</a>;                                         </div>
+<div class="line"><a id="l00555" name="l00555"></a><span class="lineno"><a class="line" href="structctap__get__assertion__req__t.html#a6d5abf132a7bd8302d19a1ac1a5eb882">  555</a></span>    <a class="code hl_struct" href="structctap__cred__desc__alt.html">ctap_cred_desc_alt_t</a> allow_list[<a class="code hl_define" href="group__fido2__ctap__ctap.html#gab799f534347e780c274b4c760b384651">CTAP_MAX_EXCLUDE_LIST_SIZE</a>];    </div>
+<div class="line"><a id="l00556" name="l00556"></a><span class="lineno"><a class="line" href="structctap__get__assertion__req__t.html#a3e71b0ef872f9068e52ede97c27eb607">  556</a></span>    uint8_t client_data_hash[<a class="code hl_define" href="group__sys__hashes__sha256.html#gaa9cf0abf87b30c4c63e9c7e89c590579">SHA256_DIGEST_LENGTH</a>];                 </div>
+<div class="line"><a id="l00557" name="l00557"></a><span class="lineno"><a class="line" href="structctap__get__assertion__req__t.html#a2cad9c6b8e1832f7ec352803af2a5704">  557</a></span>    uint8_t rp_id[<a class="code hl_define" href="group__fido2__ctap__ctap.html#gab0e182159f2f27dab0714a38a47697f0">CTAP_DOMAIN_NAME_MAX_SIZE</a> + 1];                   </div>
+<div class="line"><a id="l00558" name="l00558"></a><span class="lineno"><a class="line" href="structctap__get__assertion__req__t.html#ae475e7f48eeb1b835bfb8cb175bea694">  558</a></span>    uint8_t <a class="code hl_variable" href="structctap__get__assertion__req__t.html#ae475e7f48eeb1b835bfb8cb175bea694">rp_id_len</a>;                                              </div>
+<div class="line"><a id="l00559" name="l00559"></a><span class="lineno"><a class="line" href="structctap__get__assertion__req__t.html#aeaeafb0655fc8722eb05c49a7a197800">  559</a></span>    uint8_t <a class="code hl_variable" href="structctap__get__assertion__req__t.html#aeaeafb0655fc8722eb05c49a7a197800">allow_list_len</a>;                                         </div>
+<div class="line"><a id="l00560" name="l00560"></a><span class="lineno"><a class="line" href="structctap__get__assertion__req__t.html#a9418bc6dbcdabce80eb762e4612ed73d">  560</a></span>    uint8_t pin_auth[<a class="code hl_define" href="group__fido2__ctap__ctap.html#ga30d3a66446bb328e2990ec07bad55448">CTAP_PIN_AUTH_SZ</a>];                             </div>
+<div class="line"><a id="l00561" name="l00561"></a><span class="lineno"><a class="line" href="structctap__get__assertion__req__t.html#aabaa9f86699188b48d91422accea7bf7">  561</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structctap__get__assertion__req__t.html#aabaa9f86699188b48d91422accea7bf7">pin_auth_len</a>;                                            </div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno"><a class="line" href="structctap__get__assertion__req__t.html#a34d381b8ecf56e52b174f08f4740b76e">  562</a></span>    uint8_t <a class="code hl_variable" href="structctap__get__assertion__req__t.html#a34d381b8ecf56e52b174f08f4740b76e">pin_protocol</a>;                                           </div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno"><a class="line" href="structctap__get__assertion__req__t.html#a4655a71422f0c162a4e170d25b2429c9">  563</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structctap__get__assertion__req__t.html#a4655a71422f0c162a4e170d25b2429c9">pin_auth_present</a>;                                          </div>
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>} <a class="code hl_struct" href="structctap__get__assertion__req__t.html">ctap_get_assertion_req_t</a>;</div>
+</div>
+<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span> </div>
+<div class="foldopen" id="foldopen00569" data-start="{" data-end="};">
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno"><a class="line" href="structctap__client__pin__req__t.html">  569</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno"><a class="line" href="structctap__client__pin__req__t.html#a2ca0bdc623e09f358b590976fb4d58a1">  570</a></span>    <a class="code hl_struct" href="structctap__public__key__cose__t.html">ctap_public_key_cose_t</a> <a class="code hl_variable" href="structctap__client__pin__req__t.html#a2ca0bdc623e09f358b590976fb4d58a1">key_agreement</a>;                       </div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno"><a class="line" href="structctap__client__pin__req__t.html#a1e2560c9ff3d5fe9ba5b65786581df74">  571</a></span>    uint16_t <a class="code hl_variable" href="structctap__client__pin__req__t.html#a1e2560c9ff3d5fe9ba5b65786581df74">new_pin_enc_size</a>;                                  </div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno"><a class="line" href="structctap__client__pin__req__t.html#a1e3a3177ea39a1350e88896ac3855687">  572</a></span>    uint8_t pin_auth[<a class="code hl_define" href="group__fido2__ctap__ctap.html#ga30d3a66446bb328e2990ec07bad55448">CTAP_PIN_AUTH_SZ</a>];                         </div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno"><a class="line" href="structctap__client__pin__req__t.html#af4a1d767b1f6eb6440b968be4867c418">  573</a></span>    uint8_t new_pin_enc[<a class="code hl_define" href="group__fido2__ctap__ctap.html#ga67eb9af04e5453c57e6a0f78933566c4">CTAP_PIN_ENC_MAX_SIZE</a>];                 </div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno"><a class="line" href="structctap__client__pin__req__t.html#aba8d4470e585f84eafd4b0b2c0e79a76">  574</a></span>    uint8_t pin_hash_enc[<a class="code hl_define" href="group__sys__hashes__sha256.html#gaa9cf0abf87b30c4c63e9c7e89c590579">SHA256_DIGEST_LENGTH</a> / 2];             </div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno"><a class="line" href="structctap__client__pin__req__t.html#a5cedc850271e0d0d2edf4252548f5a54">  575</a></span>    uint8_t <a class="code hl_variable" href="structctap__client__pin__req__t.html#a5cedc850271e0d0d2edf4252548f5a54">sub_command</a>;                                        </div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno"><a class="line" href="structctap__client__pin__req__t.html#a86c68320e43cc1aa7b9455e5a066c0c9">  576</a></span>    uint8_t <a class="code hl_variable" href="structctap__client__pin__req__t.html#a86c68320e43cc1aa7b9455e5a066c0c9">pin_protocol</a>;                                       </div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno"><a class="line" href="structctap__client__pin__req__t.html#abcf5f7ec2048e5e8f67ade56992a86c1">  577</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structctap__client__pin__req__t.html#abcf5f7ec2048e5e8f67ade56992a86c1">pin_hash_enc_present</a>;                                  </div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno"><a class="line" href="structctap__client__pin__req__t.html#a75ba6db4a99bc4b5e665f44441fb360e">  578</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structctap__client__pin__req__t.html#a75ba6db4a99bc4b5e665f44441fb360e">pin_auth_present</a>;                                      </div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno"><a class="line" href="structctap__client__pin__req__t.html#a0cc543315acd4056c204fdea31c90d60">  579</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structctap__client__pin__req__t.html#a0cc543315acd4056c204fdea31c90d60">key_agreement_present</a>;                                 </div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>} <a class="code hl_struct" href="structctap__client__pin__req__t.html">ctap_client_pin_req_t</a>;</div>
+</div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span> </div>
+<div class="foldopen" id="foldopen00587" data-start="{" data-end="};">
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno"><a class="line" href="structctap__attested__cred__data__header__t.html">  587</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>__attribute__((packed)){</div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno"><a class="line" href="structctap__attested__cred__data__header__t.html#a9ff42e278bb5299e11fd5fb712062ffb">  588</a></span>    uint8_t aaguid[<a class="code hl_define" href="group__fido2__ctap__ctap.html#ga9506644604e5d0beaf15e8c9c74d309d">CTAP_AAGUID_SIZE</a>];   </div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno"><a class="line" href="structctap__attested__cred__data__header__t.html#acb42bf7549300cb5a6f2c9e1b3e90e59">  589</a></span>    uint8_t <a class="code hl_variable" href="structctap__attested__cred__data__header__t.html#acb42bf7549300cb5a6f2c9e1b3e90e59">cred_len_h</a>;                 </div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno"><a class="line" href="structctap__attested__cred__data__header__t.html#a338348ada8bbcea2482c42ad1c424ccb">  590</a></span>    uint8_t <a class="code hl_variable" href="structctap__attested__cred__data__header__t.html#a338348ada8bbcea2482c42ad1c424ccb">cred_len_l</a>;                 </div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno"><a class="line" href="structctap__attested__cred__data__header__t.html#a0663f315d8ef583a1e876a06508279b0">  591</a></span>    <a class="code hl_struct" href="structctap__cred__id__t.html">ctap_cred_id_t</a> <a class="code hl_variable" href="structctap__attested__cred__data__header__t.html#a0663f315d8ef583a1e876a06508279b0">cred_id</a>;             </div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>} <a class="code hl_struct" href="structctap__attested__cred__data__header__t.html">ctap_attested_cred_data_header_t</a>;</div>
+</div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span> </div>
+<div class="foldopen" id="foldopen00597" data-start="{" data-end="};">
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno"><a class="line" href="structctap__attested__cred__data__t.html">  597</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00598" name="l00598"></a><span class="lineno"><a class="line" href="structctap__attested__cred__data__t.html#ac693b1e07de6d8f43082de502c220bc1">  598</a></span>    <a class="code hl_struct" href="structctap__attested__cred__data__header__t.html">ctap_attested_cred_data_header_t</a> <a class="code hl_variable" href="structctap__attested__cred__data__t.html#ac693b1e07de6d8f43082de502c220bc1">header</a>;    </div>
+<div class="line"><a id="l00599" name="l00599"></a><span class="lineno"><a class="line" href="structctap__attested__cred__data__t.html#a253abf2101292aa35b3dc4b4832e99ca">  599</a></span>    <a class="code hl_struct" href="structctap__public__key__cose__t.html">ctap_public_key_cose_t</a> <a class="code hl_variable" href="structctap__attested__cred__data__t.html#a253abf2101292aa35b3dc4b4832e99ca">key</a>;                 </div>
+<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>} <a class="code hl_struct" href="structctap__attested__cred__data__t.html">ctap_attested_cred_data_t</a>;</div>
+</div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span> </div>
+<div class="foldopen" id="foldopen00607" data-start="{" data-end="};">
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno"><a class="line" href="structctap__auth__data__header__t.html">  607</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>__attribute__((packed)){</div>
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno"><a class="line" href="structctap__auth__data__header__t.html#a7a6f95e5af5b6ed565b7785f82734898">  608</a></span>    uint8_t rp_id_hash[<a class="code hl_define" href="group__sys__hashes__sha256.html#gaa9cf0abf87b30c4c63e9c7e89c590579">SHA256_DIGEST_LENGTH</a>];   </div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno"><a class="line" href="structctap__auth__data__header__t.html#a3112b40c8d37331d03edd08a8a4b5d10">  609</a></span>    uint8_t <a class="code hl_variable" href="structctap__auth__data__header__t.html#a3112b40c8d37331d03edd08a8a4b5d10">flags</a>;                              </div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno"><a class="line" href="structctap__auth__data__header__t.html#aafbae584fbc6b2ddf16ce2d88820450c">  610</a></span>    uint32_t <a class="code hl_variable" href="structctap__auth__data__header__t.html#aafbae584fbc6b2ddf16ce2d88820450c">sign_count</a>;                        </div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>} <a class="code hl_struct" href="structctap__auth__data__header__t.html">ctap_auth_data_header_t</a>;</div>
+</div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span> </div>
+<div class="foldopen" id="foldopen00616" data-start="{" data-end="};">
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno"><a class="line" href="structctap__auth__data__t.html">  616</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno"><a class="line" href="structctap__auth__data__t.html#af080deae363333d0aff245b35e2f5785">  617</a></span>    <a class="code hl_struct" href="structctap__auth__data__header__t.html">ctap_auth_data_header_t</a> <a class="code hl_variable" href="structctap__auth__data__t.html#af080deae363333d0aff245b35e2f5785">header</a>;                 </div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno"><a class="line" href="structctap__auth__data__t.html#ad3d53e9dfedc8fe058077a43d560d90a">  618</a></span>    <a class="code hl_struct" href="structctap__attested__cred__data__t.html">ctap_attested_cred_data_t</a> <a class="code hl_variable" href="structctap__auth__data__t.html#ad3d53e9dfedc8fe058077a43d560d90a">attested_cred_data</a>;   </div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>} <a class="code hl_struct" href="structctap__auth__data__t.html">ctap_auth_data_t</a>;</div>
+</div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span> </div>
+<div class="foldopen" id="foldopen00624" data-start="{" data-end="};">
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno"><a class="line" href="structctap__info__t.html">  624</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno"><a class="line" href="structctap__info__t.html#addbf4db9e86de775004753f8b327c86a">  625</a></span>    uint16_t <a class="code hl_variable" href="structctap__info__t.html#addbf4db9e86de775004753f8b327c86a">max_msg_size</a>;              </div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno"><a class="line" href="structctap__info__t.html#a383093fa87fd3a3adaad751c5cef4516">  626</a></span>    uint8_t aaguid[<a class="code hl_define" href="group__fido2__ctap__ctap.html#ga9506644604e5d0beaf15e8c9c74d309d">CTAP_AAGUID_SIZE</a>];   </div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno"><a class="line" href="structctap__info__t.html#a611fc536a4d2474881fd8ed870ad38dd">  627</a></span>    uint8_t <a class="code hl_variable" href="structctap__info__t.html#a611fc536a4d2474881fd8ed870ad38dd">versions</a>;                   </div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno"><a class="line" href="structctap__info__t.html#a53f101977ccdc3725e91622c43cf74ac">  628</a></span>    uint8_t <a class="code hl_variable" href="structctap__info__t.html#a53f101977ccdc3725e91622c43cf74ac">options</a>;                    </div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno"><a class="line" href="structctap__info__t.html#a56b17f012554312e0676f8ffc6588ae6">  629</a></span>    uint8_t <a class="code hl_variable" href="structctap__info__t.html#a56b17f012554312e0676f8ffc6588ae6">pin_protocol</a>;               </div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno"><a class="line" href="structctap__info__t.html#a4c2a99d362c67fe291c12e8c8bee436a">  630</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structctap__info__t.html#a4c2a99d362c67fe291c12e8c8bee436a">pin_is_set</a>;                    </div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>} <a class="code hl_struct" href="structctap__info__t.html">ctap_info_t</a>;</div>
+</div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span> </div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga29bcc773a21a28b80846901269f71abf">  647</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__fido2__ctap__ctap.html#ga29bcc773a21a28b80846901269f71abf">fido2_ctap_get_sig</a>(<span class="keyword">const</span> uint8_t *auth_data, <span class="keywordtype">size_t</span> auth_data_len,</div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>                       <span class="keyword">const</span> uint8_t *client_data_hash,</div>
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>                       <span class="keyword">const</span> <a class="code hl_struct" href="structctap__resident__key.html">ctap_resident_key_t</a> *rk,</div>
+<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>                       uint8_t *sig, <span class="keywordtype">size_t</span> *sig_len);</div>
+<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span> </div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga1600cf4566c67f9759a82741a8b5f441">  661</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="group__fido2__ctap__ctap.html#ga1600cf4566c67f9759a82741a8b5f441">fido2_ctap_cred_params_supported</a>(uint8_t cred_type, int32_t alg_type);</div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span> </div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga25a7e7d74f188705198c08a6ef8106b1">  673</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__fido2__ctap__ctap.html#ga25a7e7d74f188705198c08a6ef8106b1">fido2_ctap_encrypt_rk</a>(<a class="code hl_struct" href="structctap__resident__key.html">ctap_resident_key_t</a> *rk, uint8_t *nonce,</div>
+<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>                          <span class="keywordtype">size_t</span> nonce_len, <a class="code hl_struct" href="structctap__cred__id__t.html">ctap_cred_id_t</a> *<span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span> </div>
+<div class="line"><a id="l00682" name="l00682"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#gac3a1509f3c83c4d2377b512901f45830">  682</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="group__fido2__ctap__ctap.html#gac3a1509f3c83c4d2377b512901f45830">fido2_ctap_pin_is_set</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span> </div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno"><a class="line" href="group__fido2__ctap__ctap.html#ga9bac26a6d6bc121247f2c45ef9229147">  689</a></span><a class="code hl_struct" href="structctap__state__t.html">ctap_state_t</a> *<a class="code hl_function" href="group__fido2__ctap__ctap.html#ga9bac26a6d6bc121247f2c45ef9229147">fido2_ctap_get_state</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span> </div>
+<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>}</div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span><span class="preprocessor">#endif </span><span class="comment">/* FIDO2_CTAP_CTAP_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aassert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div><div class="ttdoc">POSIX.1-2008 compliant version of the assert macro.</div></div>
+<div class="ttc" id="acbor_8h_html"><div class="ttname"><a href="cbor_8h.html">cbor.h</a></div><div class="ttdoc">Functionality for encoding SenML values as CBOR.</div></div>
+<div class="ttc" id="accm_8h_html"><div class="ttname"><a href="ccm_8h.html">ccm.h</a></div><div class="ttdoc">Counter with CBC-MAC mode of operation for block ciphers.</div></div>
+<div class="ttc" id="accm_8h_html_a313e949249f24268a72e16507b329247"><div class="ttname"><a href="ccm_8h.html#a313e949249f24268a72e16507b329247">CCM_MAC_MAX_LEN</a></div><div class="ttdeci">#define CCM_MAC_MAX_LEN</div><div class="ttdoc">Maximum length for the appended MAC.</div><div class="ttdef"><b>Definition</b> <a href="ccm_8h_source.html#l00048">ccm.h:48</a></div></div>
+<div class="ttc" id="actap_8h_html"><div class="ttname"><a href="ctap_8h.html">ctap.h</a></div><div class="ttdoc">Public FIDO2 CTAP defines, structures and function declarations.</div></div>
+<div class="ttc" id="actap__crypto_8h_html"><div class="ttname"><a href="ctap__crypto_8h.html">ctap_crypto.h</a></div><div class="ttdoc">FIDO2 CTAP crypto helper defines, structures and function declarations.</div></div>
+<div class="ttc" id="agroup__fido2__ctap__crypto_html_ga8bef3f3fee26c70308a414fb343700fe"><div class="ttname"><a href="group__fido2__ctap__crypto.html#ga8bef3f3fee26c70308a414fb343700fe">CTAP_CRYPTO_KEY_SIZE</a></div><div class="ttdeci">#define CTAP_CRYPTO_KEY_SIZE</div><div class="ttdoc">Size in bytes of cryptographic keys used.</div><div class="ttdef"><b>Definition</b> <a href="ctap__crypto_8h_source.html#l00037">ctap_crypto.h:37</a></div></div>
+<div class="ttc" id="agroup__fido2__ctap__ctap_html_ga1600cf4566c67f9759a82741a8b5f441"><div class="ttname"><a href="group__fido2__ctap__ctap.html#ga1600cf4566c67f9759a82741a8b5f441">fido2_ctap_cred_params_supported</a></div><div class="ttdeci">bool fido2_ctap_cred_params_supported(uint8_t cred_type, int32_t alg_type)</div><div class="ttdoc">Check if requested algorithm is supported.</div></div>
+<div class="ttc" id="agroup__fido2__ctap__ctap_html_ga22677cc28f2b9a92b7544ea6b96686c8"><div class="ttname"><a href="group__fido2__ctap__ctap.html#ga22677cc28f2b9a92b7544ea6b96686c8">CTAP_CREDENTIAL_ID_SIZE</a></div><div class="ttdeci">#define CTAP_CREDENTIAL_ID_SIZE</div><div class="ttdoc">CTAP size of credential id.</div><div class="ttdef"><b>Definition</b> <a href="#l00370">ctap.h:370</a></div></div>
+<div class="ttc" id="agroup__fido2__ctap__ctap_html_ga25a7e7d74f188705198c08a6ef8106b1"><div class="ttname"><a href="group__fido2__ctap__ctap.html#ga25a7e7d74f188705198c08a6ef8106b1">fido2_ctap_encrypt_rk</a></div><div class="ttdeci">int fido2_ctap_encrypt_rk(ctap_resident_key_t *rk, uint8_t *nonce, size_t nonce_len, ctap_cred_id_t *id)</div><div class="ttdoc">Encrypt resident key with AES CCM.</div></div>
+<div class="ttc" id="agroup__fido2__ctap__ctap_html_ga29bcc773a21a28b80846901269f71abf"><div class="ttname"><a href="group__fido2__ctap__ctap.html#ga29bcc773a21a28b80846901269f71abf">fido2_ctap_get_sig</a></div><div class="ttdeci">int fido2_ctap_get_sig(const uint8_t *auth_data, size_t auth_data_len, const uint8_t *client_data_hash, const ctap_resident_key_t *rk, uint8_t *sig, size_t *sig_len)</div><div class="ttdoc">Create signature from authenticator data.</div></div>
+<div class="ttc" id="agroup__fido2__ctap__ctap_html_ga2a632ea453a214459e06b5df6e945c9f"><div class="ttname"><a href="group__fido2__ctap__ctap.html#ga2a632ea453a214459e06b5df6e945c9f">CTAP_CREDENTIAL_ID_ENC_SIZE</a></div><div class="ttdeci">#define CTAP_CREDENTIAL_ID_ENC_SIZE</div><div class="ttdoc">Total size of AES CCM credential id.</div><div class="ttdef"><b>Definition</b> <a href="#l00297">ctap.h:297</a></div></div>
+<div class="ttc" id="agroup__fido2__ctap__ctap_html_ga30d3a66446bb328e2990ec07bad55448"><div class="ttname"><a href="group__fido2__ctap__ctap.html#ga30d3a66446bb328e2990ec07bad55448">CTAP_PIN_AUTH_SZ</a></div><div class="ttdeci">#define CTAP_PIN_AUTH_SZ</div><div class="ttdoc">Size of pin auth.</div><div class="ttdef"><b>Definition</b> <a href="#l00051">ctap.h:51</a></div></div>
+<div class="ttc" id="agroup__fido2__ctap__ctap_html_ga58c4918ec5cd8834f96a0245bbe359f5"><div class="ttname"><a href="group__fido2__ctap__ctap.html#ga58c4918ec5cd8834f96a0245bbe359f5">CTAP_RP_MAX_NAME_SIZE</a></div><div class="ttdeci">#define CTAP_RP_MAX_NAME_SIZE</div><div class="ttdoc">Max size of relying party name.</div><div class="ttdef"><b>Definition</b> <a href="#l00196">ctap.h:196</a></div></div>
+<div class="ttc" id="agroup__fido2__ctap__ctap_html_ga67eb9af04e5453c57e6a0f78933566c4"><div class="ttname"><a href="group__fido2__ctap__ctap.html#ga67eb9af04e5453c57e6a0f78933566c4">CTAP_PIN_ENC_MAX_SIZE</a></div><div class="ttdeci">#define CTAP_PIN_ENC_MAX_SIZE</div><div class="ttdoc">Encrypted newPin max size.</div><div class="ttdef"><b>Definition</b> <a href="#l00235">ctap.h:235</a></div></div>
+<div class="ttc" id="agroup__fido2__ctap__ctap_html_ga9506644604e5d0beaf15e8c9c74d309d"><div class="ttname"><a href="group__fido2__ctap__ctap.html#ga9506644604e5d0beaf15e8c9c74d309d">CTAP_AAGUID_SIZE</a></div><div class="ttdeci">#define CTAP_AAGUID_SIZE</div><div class="ttdoc">CTAP size of authenticator AAGUID in bytes.</div><div class="ttdef"><b>Definition</b> <a href="#l00354">ctap.h:354</a></div></div>
+<div class="ttc" id="agroup__fido2__ctap__ctap_html_ga9bac26a6d6bc121247f2c45ef9229147"><div class="ttname"><a href="group__fido2__ctap__ctap.html#ga9bac26a6d6bc121247f2c45ef9229147">fido2_ctap_get_state</a></div><div class="ttdeci">ctap_state_t * fido2_ctap_get_state(void)</div><div class="ttdoc">Get a pointer to the authenticator state.</div></div>
+<div class="ttc" id="agroup__fido2__ctap__ctap_html_gab0e182159f2f27dab0714a38a47697f0"><div class="ttname"><a href="group__fido2__ctap__ctap.html#gab0e182159f2f27dab0714a38a47697f0">CTAP_DOMAIN_NAME_MAX_SIZE</a></div><div class="ttdeci">#define CTAP_DOMAIN_NAME_MAX_SIZE</div><div class="ttdoc">Max size of a domain name including null character.</div><div class="ttdef"><b>Definition</b> <a href="#l00211">ctap.h:211</a></div></div>
+<div class="ttc" id="agroup__fido2__ctap__ctap_html_gab799f534347e780c274b4c760b384651"><div class="ttname"><a href="group__fido2__ctap__ctap.html#gab799f534347e780c274b4c760b384651">CTAP_MAX_EXCLUDE_LIST_SIZE</a></div><div class="ttdeci">#define CTAP_MAX_EXCLUDE_LIST_SIZE</div><div class="ttdoc">Max size of allow list.</div><div class="ttdef"><b>Definition</b> <a href="#l00383">ctap.h:383</a></div></div>
+<div class="ttc" id="agroup__fido2__ctap__ctap_html_gac2ee2553c931d5eeae789339aa04eb6a"><div class="ttname"><a href="group__fido2__ctap__ctap.html#gac2ee2553c931d5eeae789339aa04eb6a">CTAP_USER_ID_MAX_SIZE</a></div><div class="ttdeci">#define CTAP_USER_ID_MAX_SIZE</div><div class="ttdoc">Max size of user id.</div><div class="ttdef"><b>Definition</b> <a href="#l00206">ctap.h:206</a></div></div>
+<div class="ttc" id="agroup__fido2__ctap__ctap_html_gac3a1509f3c83c4d2377b512901f45830"><div class="ttname"><a href="group__fido2__ctap__ctap.html#gac3a1509f3c83c4d2377b512901f45830">fido2_ctap_pin_is_set</a></div><div class="ttdeci">bool fido2_ctap_pin_is_set(void)</div><div class="ttdoc">Check if PIN has been set on authenticator.</div></div>
+<div class="ttc" id="agroup__fido2__ctap__ctap_html_gac54c065a0e95eeb9461642fba8841784"><div class="ttname"><a href="group__fido2__ctap__ctap.html#gac54c065a0e95eeb9461642fba8841784">CTAP_AES_CCM_NONCE_SIZE</a></div><div class="ttdeci">#define CTAP_AES_CCM_NONCE_SIZE</div><div class="ttdoc">AES CCM nonce size.</div><div class="ttdef"><b>Definition</b> <a href="#l00290">ctap.h:290</a></div></div>
+<div class="ttc" id="agroup__fido2__ctap__ctap_html_gacb7048598196e8eb73fb32c0fca08352"><div class="ttname"><a href="group__fido2__ctap__ctap.html#gacb7048598196e8eb73fb32c0fca08352">CTAP_USER_MAX_NAME_SIZE</a></div><div class="ttdeci">#define CTAP_USER_MAX_NAME_SIZE</div><div class="ttdoc">Max size of username including null character.</div><div class="ttdef"><b>Definition</b> <a href="#l00201">ctap.h:201</a></div></div>
+<div class="ttc" id="agroup__fido2__ctap__ctap_html_gad0b4210a6a0ec00ee7168348b1c728b9"><div class="ttname"><a href="group__fido2__ctap__ctap.html#gad0b4210a6a0ec00ee7168348b1c728b9">CTAP_CRED_KEY_LEN</a></div><div class="ttdeci">#define CTAP_CRED_KEY_LEN</div><div class="ttdoc">Size of key used to encrypt credential.</div><div class="ttdef"><b>Definition</b> <a href="#l00276">ctap.h:276</a></div></div>
+<div class="ttc" id="agroup__sys__hashes__sha256_html_gaa9cf0abf87b30c4c63e9c7e89c590579"><div class="ttname"><a href="group__sys__hashes__sha256.html#gaa9cf0abf87b30c4c63e9c7e89c590579">SHA256_DIGEST_LENGTH</a></div><div class="ttdeci">#define SHA256_DIGEST_LENGTH</div><div class="ttdoc">Length of SHA256 digests in bytes.</div><div class="ttdef"><b>Definition</b> <a href="sha256_8h_source.html#l00062">sha256.h:62</a></div></div>
+<div class="ttc" id="amutex_8h_html"><div class="ttname"><a href="mutex_8h.html">mutex.h</a></div><div class="ttdoc">Mutex for thread synchronization.</div></div>
+<div class="ttc" id="astructctap__attested__cred__data__header__t_html"><div class="ttname"><a href="structctap__attested__cred__data__header__t.html">ctap_attested_cred_data_header_t</a></div><div class="ttdoc">CTAP attested credential data header struct.</div><div class="ttdef"><b>Definition</b> <a href="#l00587">ctap.h:587</a></div></div>
+<div class="ttc" id="astructctap__attested__cred__data__header__t_html_a0663f315d8ef583a1e876a06508279b0"><div class="ttname"><a href="structctap__attested__cred__data__header__t.html#a0663f315d8ef583a1e876a06508279b0">ctap_attested_cred_data_header_t::cred_id</a></div><div class="ttdeci">ctap_cred_id_t cred_id</div><div class="ttdoc">credential id</div><div class="ttdef"><b>Definition</b> <a href="#l00591">ctap.h:591</a></div></div>
+<div class="ttc" id="astructctap__attested__cred__data__header__t_html_a338348ada8bbcea2482c42ad1c424ccb"><div class="ttname"><a href="structctap__attested__cred__data__header__t.html#a338348ada8bbcea2482c42ad1c424ccb">ctap_attested_cred_data_header_t::cred_len_l</a></div><div class="ttdeci">uint8_t cred_len_l</div><div class="ttdoc">lower byte of credential length</div><div class="ttdef"><b>Definition</b> <a href="#l00590">ctap.h:590</a></div></div>
+<div class="ttc" id="astructctap__attested__cred__data__header__t_html_acb42bf7549300cb5a6f2c9e1b3e90e59"><div class="ttname"><a href="structctap__attested__cred__data__header__t.html#acb42bf7549300cb5a6f2c9e1b3e90e59">ctap_attested_cred_data_header_t::cred_len_h</a></div><div class="ttdeci">uint8_t cred_len_h</div><div class="ttdoc">higher byte of credential length</div><div class="ttdef"><b>Definition</b> <a href="#l00589">ctap.h:589</a></div></div>
+<div class="ttc" id="astructctap__attested__cred__data__t_html"><div class="ttname"><a href="structctap__attested__cred__data__t.html">ctap_attested_cred_data_t</a></div><div class="ttdoc">CTAP attested credential data struct.</div><div class="ttdef"><b>Definition</b> <a href="#l00597">ctap.h:597</a></div></div>
+<div class="ttc" id="astructctap__attested__cred__data__t_html_a253abf2101292aa35b3dc4b4832e99ca"><div class="ttname"><a href="structctap__attested__cred__data__t.html#a253abf2101292aa35b3dc4b4832e99ca">ctap_attested_cred_data_t::key</a></div><div class="ttdeci">ctap_public_key_cose_t key</div><div class="ttdoc">cose key</div><div class="ttdef"><b>Definition</b> <a href="#l00599">ctap.h:599</a></div></div>
+<div class="ttc" id="astructctap__attested__cred__data__t_html_ac693b1e07de6d8f43082de502c220bc1"><div class="ttname"><a href="structctap__attested__cred__data__t.html#ac693b1e07de6d8f43082de502c220bc1">ctap_attested_cred_data_t::header</a></div><div class="ttdeci">ctap_attested_cred_data_header_t header</div><div class="ttdoc">attested credential data header</div><div class="ttdef"><b>Definition</b> <a href="#l00598">ctap.h:598</a></div></div>
+<div class="ttc" id="astructctap__auth__data__header__t_html"><div class="ttname"><a href="structctap__auth__data__header__t.html">ctap_auth_data_header_t</a></div><div class="ttdoc">CTAP authenticator data header struct.</div><div class="ttdef"><b>Definition</b> <a href="#l00607">ctap.h:607</a></div></div>
+<div class="ttc" id="astructctap__auth__data__header__t_html_a3112b40c8d37331d03edd08a8a4b5d10"><div class="ttname"><a href="structctap__auth__data__header__t.html#a3112b40c8d37331d03edd08a8a4b5d10">ctap_auth_data_header_t::flags</a></div><div class="ttdeci">uint8_t flags</div><div class="ttdoc">flags indicating result of user verification</div><div class="ttdef"><b>Definition</b> <a href="#l00609">ctap.h:609</a></div></div>
+<div class="ttc" id="astructctap__auth__data__header__t_html_aafbae584fbc6b2ddf16ce2d88820450c"><div class="ttname"><a href="structctap__auth__data__header__t.html#aafbae584fbc6b2ddf16ce2d88820450c">ctap_auth_data_header_t::sign_count</a></div><div class="ttdeci">uint32_t sign_count</div><div class="ttdoc">sign count of credential</div><div class="ttdef"><b>Definition</b> <a href="#l00610">ctap.h:610</a></div></div>
+<div class="ttc" id="astructctap__auth__data__t_html"><div class="ttname"><a href="structctap__auth__data__t.html">ctap_auth_data_t</a></div><div class="ttdoc">CTAP authenticator data struct.</div><div class="ttdef"><b>Definition</b> <a href="#l00616">ctap.h:616</a></div></div>
+<div class="ttc" id="astructctap__auth__data__t_html_ad3d53e9dfedc8fe058077a43d560d90a"><div class="ttname"><a href="structctap__auth__data__t.html#ad3d53e9dfedc8fe058077a43d560d90a">ctap_auth_data_t::attested_cred_data</a></div><div class="ttdeci">ctap_attested_cred_data_t attested_cred_data</div><div class="ttdoc">attested credential data</div><div class="ttdef"><b>Definition</b> <a href="#l00618">ctap.h:618</a></div></div>
+<div class="ttc" id="astructctap__auth__data__t_html_af080deae363333d0aff245b35e2f5785"><div class="ttname"><a href="structctap__auth__data__t.html#af080deae363333d0aff245b35e2f5785">ctap_auth_data_t::header</a></div><div class="ttdeci">ctap_auth_data_header_t header</div><div class="ttdoc">auth data header</div><div class="ttdef"><b>Definition</b> <a href="#l00617">ctap.h:617</a></div></div>
+<div class="ttc" id="astructctap__client__pin__req__t_html"><div class="ttname"><a href="structctap__client__pin__req__t.html">ctap_client_pin_req_t</a></div><div class="ttdoc">CTAP client pin request struct.</div><div class="ttdef"><b>Definition</b> <a href="#l00569">ctap.h:569</a></div></div>
+<div class="ttc" id="astructctap__client__pin__req__t_html_a0cc543315acd4056c204fdea31c90d60"><div class="ttname"><a href="structctap__client__pin__req__t.html#a0cc543315acd4056c204fdea31c90d60">ctap_client_pin_req_t::key_agreement_present</a></div><div class="ttdeci">bool key_agreement_present</div><div class="ttdoc">indicate if key_agreement present</div><div class="ttdef"><b>Definition</b> <a href="#l00579">ctap.h:579</a></div></div>
+<div class="ttc" id="astructctap__client__pin__req__t_html_a1e2560c9ff3d5fe9ba5b65786581df74"><div class="ttname"><a href="structctap__client__pin__req__t.html#a1e2560c9ff3d5fe9ba5b65786581df74">ctap_client_pin_req_t::new_pin_enc_size</a></div><div class="ttdeci">uint16_t new_pin_enc_size</div><div class="ttdoc">size of encrypted new pin</div><div class="ttdef"><b>Definition</b> <a href="#l00571">ctap.h:571</a></div></div>
+<div class="ttc" id="astructctap__client__pin__req__t_html_a2ca0bdc623e09f358b590976fb4d58a1"><div class="ttname"><a href="structctap__client__pin__req__t.html#a2ca0bdc623e09f358b590976fb4d58a1">ctap_client_pin_req_t::key_agreement</a></div><div class="ttdeci">ctap_public_key_cose_t key_agreement</div><div class="ttdoc">public key of platform_key_agreement_key</div><div class="ttdef"><b>Definition</b> <a href="#l00570">ctap.h:570</a></div></div>
+<div class="ttc" id="astructctap__client__pin__req__t_html_a5cedc850271e0d0d2edf4252548f5a54"><div class="ttname"><a href="structctap__client__pin__req__t.html#a5cedc850271e0d0d2edf4252548f5a54">ctap_client_pin_req_t::sub_command</a></div><div class="ttdeci">uint8_t sub_command</div><div class="ttdoc">authenticator Client PIN sub command</div><div class="ttdef"><b>Definition</b> <a href="#l00575">ctap.h:575</a></div></div>
+<div class="ttc" id="astructctap__client__pin__req__t_html_a75ba6db4a99bc4b5e665f44441fb360e"><div class="ttname"><a href="structctap__client__pin__req__t.html#a75ba6db4a99bc4b5e665f44441fb360e">ctap_client_pin_req_t::pin_auth_present</a></div><div class="ttdeci">bool pin_auth_present</div><div class="ttdoc">indicate if pin_auth present</div><div class="ttdef"><b>Definition</b> <a href="#l00578">ctap.h:578</a></div></div>
+<div class="ttc" id="astructctap__client__pin__req__t_html_a86c68320e43cc1aa7b9455e5a066c0c9"><div class="ttname"><a href="structctap__client__pin__req__t.html#a86c68320e43cc1aa7b9455e5a066c0c9">ctap_client_pin_req_t::pin_protocol</a></div><div class="ttdeci">uint8_t pin_protocol</div><div class="ttdoc">PIN protocol version chosen by the client.</div><div class="ttdef"><b>Definition</b> <a href="#l00576">ctap.h:576</a></div></div>
+<div class="ttc" id="astructctap__client__pin__req__t_html_abcf5f7ec2048e5e8f67ade56992a86c1"><div class="ttname"><a href="structctap__client__pin__req__t.html#abcf5f7ec2048e5e8f67ade56992a86c1">ctap_client_pin_req_t::pin_hash_enc_present</a></div><div class="ttdeci">bool pin_hash_enc_present</div><div class="ttdoc">indicate pin_hash_enc is present</div><div class="ttdef"><b>Definition</b> <a href="#l00577">ctap.h:577</a></div></div>
+<div class="ttc" id="astructctap__config__t_html"><div class="ttname"><a href="structctap__config__t.html">ctap_config_t</a></div><div class="ttdoc">CTAP authenticator config struct.</div><div class="ttdef"><b>Definition</b> <a href="#l00403">ctap.h:403</a></div></div>
+<div class="ttc" id="astructctap__config__t_html_a144421d0bd72d1c5b152c8af098f76b9"><div class="ttname"><a href="structctap__config__t.html#a144421d0bd72d1c5b152c8af098f76b9">ctap_config_t::options</a></div><div class="ttdeci">uint8_t options</div><div class="ttdoc">options</div><div class="ttdef"><b>Definition</b> <a href="#l00405">ctap.h:405</a></div></div>
+<div class="ttc" id="astructctap__cred__desc__alt_html"><div class="ttname"><a href="structctap__cred__desc__alt.html">ctap_cred_desc_alt</a></div><div class="ttdoc">CTAP credential description alternative struct.</div><div class="ttdef"><b>Definition</b> <a href="#l00527">ctap.h:527</a></div></div>
+<div class="ttc" id="astructctap__cred__desc__alt_html_a31edfc45fc79638d76f9fe3ab996a03f"><div class="ttname"><a href="structctap__cred__desc__alt.html#a31edfc45fc79638d76f9fe3ab996a03f">ctap_cred_desc_alt::cred_type</a></div><div class="ttdeci">uint8_t cred_type</div><div class="ttdoc">type of credential</div><div class="ttdef"><b>Definition</b> <a href="#l00528">ctap.h:528</a></div></div>
+<div class="ttc" id="astructctap__cred__desc__alt_html_af251c4c772626ec7e421c2e3c6d5a2bd"><div class="ttname"><a href="structctap__cred__desc__alt.html#af251c4c772626ec7e421c2e3c6d5a2bd">ctap_cred_desc_alt::cred_id</a></div><div class="ttdeci">ctap_cred_id_t cred_id</div><div class="ttdoc">credential id</div><div class="ttdef"><b>Definition</b> <a href="#l00529">ctap.h:529</a></div></div>
+<div class="ttc" id="astructctap__cred__desc_html"><div class="ttname"><a href="structctap__cred__desc.html">ctap_cred_desc</a></div><div class="ttdoc">CTAP credential description struct.</div><div class="ttdef"><b>Definition</b> <a href="#l00481">ctap.h:481</a></div></div>
+<div class="ttc" id="astructctap__cred__desc_html_a32609c59652fb118d7297b913d7d93cc"><div class="ttname"><a href="structctap__cred__desc.html#a32609c59652fb118d7297b913d7d93cc">ctap_cred_desc::cred_id</a></div><div class="ttdeci">uint8_t cred_id[CTAP_CREDENTIAL_ID_SIZE]</div><div class="ttdoc">credential identifier</div><div class="ttdef"><b>Definition</b> <a href="#l00484">ctap.h:484</a></div></div>
+<div class="ttc" id="astructctap__cred__desc_html_a6cedaa47c25ed49f24e63f47ba65461a"><div class="ttname"><a href="structctap__cred__desc.html#a6cedaa47c25ed49f24e63f47ba65461a">ctap_cred_desc::nonce</a></div><div class="ttdeci">uint8_t nonce[CTAP_AES_CCM_NONCE_SIZE]</div><div class="ttdoc">CTAP AES CCM nonce.</div><div class="ttdef"><b>Definition</b> <a href="#l00485">ctap.h:485</a></div></div>
+<div class="ttc" id="astructctap__cred__desc_html_aa98cefdd2993b85e80ae0aa2c3977cdc"><div class="ttname"><a href="structctap__cred__desc.html#aa98cefdd2993b85e80ae0aa2c3977cdc">ctap_cred_desc::cred_type</a></div><div class="ttdeci">uint8_t cred_type</div><div class="ttdoc">type of credential</div><div class="ttdef"><b>Definition</b> <a href="#l00482">ctap.h:482</a></div></div>
+<div class="ttc" id="astructctap__cred__desc_html_ada70b3fd86361d729fb1d766bc659c6f"><div class="ttname"><a href="structctap__cred__desc.html#ada70b3fd86361d729fb1d766bc659c6f">ctap_cred_desc::has_nonce</a></div><div class="ttdeci">bool has_nonce</div><div class="ttdoc">Indicate if nonce or cred_id</div><div class="ttdef"><b>Definition</b> <a href="#l00487">ctap.h:487</a></div></div>
+<div class="ttc" id="astructctap__cred__id__t_html"><div class="ttname"><a href="structctap__cred__id__t.html">ctap_cred_id_t</a></div><div class="ttdoc">CTAP credential ID.</div><div class="ttdef"><b>Definition</b> <a href="#l00516">ctap.h:516</a></div></div>
+<div class="ttc" id="astructctap__crypto__key__agreement__key__t_html"><div class="ttname"><a href="structctap__crypto__key__agreement__key__t.html">ctap_crypto_key_agreement_key_t</a></div><div class="ttdoc">Key agreement key.</div><div class="ttdef"><b>Definition</b> <a href="ctap__crypto_8h_source.html#l00057">ctap_crypto.h:57</a></div></div>
+<div class="ttc" id="astructctap__crypto__pub__key__t_html"><div class="ttname"><a href="structctap__crypto__pub__key__t.html">ctap_crypto_pub_key_t</a></div><div class="ttdoc">Elliptic curve public key.</div><div class="ttdef"><b>Definition</b> <a href="ctap__crypto_8h_source.html#l00047">ctap_crypto.h:47</a></div></div>
+<div class="ttc" id="astructctap__get__assertion__req__t_html"><div class="ttname"><a href="structctap__get__assertion__req__t.html">ctap_get_assertion_req_t</a></div><div class="ttdoc">CTAP get assertion request struct.</div><div class="ttdef"><b>Definition</b> <a href="#l00553">ctap.h:553</a></div></div>
+<div class="ttc" id="astructctap__get__assertion__req__t_html_a34d381b8ecf56e52b174f08f4740b76e"><div class="ttname"><a href="structctap__get__assertion__req__t.html#a34d381b8ecf56e52b174f08f4740b76e">ctap_get_assertion_req_t::pin_protocol</a></div><div class="ttdeci">uint8_t pin_protocol</div><div class="ttdoc">PIN protocol version.</div><div class="ttdef"><b>Definition</b> <a href="#l00562">ctap.h:562</a></div></div>
+<div class="ttc" id="astructctap__get__assertion__req__t_html_a4655a71422f0c162a4e170d25b2429c9"><div class="ttname"><a href="structctap__get__assertion__req__t.html#a4655a71422f0c162a4e170d25b2429c9">ctap_get_assertion_req_t::pin_auth_present</a></div><div class="ttdeci">bool pin_auth_present</div><div class="ttdoc">indicate if pin_auth present</div><div class="ttdef"><b>Definition</b> <a href="#l00563">ctap.h:563</a></div></div>
+<div class="ttc" id="astructctap__get__assertion__req__t_html_aabaa9f86699188b48d91422accea7bf7"><div class="ttname"><a href="structctap__get__assertion__req__t.html#aabaa9f86699188b48d91422accea7bf7">ctap_get_assertion_req_t::pin_auth_len</a></div><div class="ttdeci">size_t pin_auth_len</div><div class="ttdoc">pin_auth length</div><div class="ttdef"><b>Definition</b> <a href="#l00561">ctap.h:561</a></div></div>
+<div class="ttc" id="astructctap__get__assertion__req__t_html_ae475e7f48eeb1b835bfb8cb175bea694"><div class="ttname"><a href="structctap__get__assertion__req__t.html#ae475e7f48eeb1b835bfb8cb175bea694">ctap_get_assertion_req_t::rp_id_len</a></div><div class="ttdeci">uint8_t rp_id_len</div><div class="ttdoc">Actual Length of Relying Party Identifier.</div><div class="ttdef"><b>Definition</b> <a href="#l00558">ctap.h:558</a></div></div>
+<div class="ttc" id="astructctap__get__assertion__req__t_html_aeaeafb0655fc8722eb05c49a7a197800"><div class="ttname"><a href="structctap__get__assertion__req__t.html#aeaeafb0655fc8722eb05c49a7a197800">ctap_get_assertion_req_t::allow_list_len</a></div><div class="ttdeci">uint8_t allow_list_len</div><div class="ttdoc">length of CBOR allow list array</div><div class="ttdef"><b>Definition</b> <a href="#l00559">ctap.h:559</a></div></div>
+<div class="ttc" id="astructctap__get__assertion__req__t_html_af23ba3303ffbafd06ab8c47cb34c6209"><div class="ttname"><a href="structctap__get__assertion__req__t.html#af23ba3303ffbafd06ab8c47cb34c6209">ctap_get_assertion_req_t::options</a></div><div class="ttdeci">ctap_options_t options</div><div class="ttdoc">parameters to influence authenticator operation</div><div class="ttdef"><b>Definition</b> <a href="#l00554">ctap.h:554</a></div></div>
+<div class="ttc" id="astructctap__info__t_html"><div class="ttname"><a href="structctap__info__t.html">ctap_info_t</a></div><div class="ttdoc">CTAP info struct.</div><div class="ttdef"><b>Definition</b> <a href="#l00624">ctap.h:624</a></div></div>
+<div class="ttc" id="astructctap__info__t_html_a4c2a99d362c67fe291c12e8c8bee436a"><div class="ttname"><a href="structctap__info__t.html#a4c2a99d362c67fe291c12e8c8bee436a">ctap_info_t::pin_is_set</a></div><div class="ttdeci">bool pin_is_set</div><div class="ttdoc">PIN is set or not.</div><div class="ttdef"><b>Definition</b> <a href="#l00630">ctap.h:630</a></div></div>
+<div class="ttc" id="astructctap__info__t_html_a53f101977ccdc3725e91622c43cf74ac"><div class="ttname"><a href="structctap__info__t.html#a53f101977ccdc3725e91622c43cf74ac">ctap_info_t::options</a></div><div class="ttdeci">uint8_t options</div><div class="ttdoc">supported options</div><div class="ttdef"><b>Definition</b> <a href="#l00628">ctap.h:628</a></div></div>
+<div class="ttc" id="astructctap__info__t_html_a56b17f012554312e0676f8ffc6588ae6"><div class="ttname"><a href="structctap__info__t.html#a56b17f012554312e0676f8ffc6588ae6">ctap_info_t::pin_protocol</a></div><div class="ttdeci">uint8_t pin_protocol</div><div class="ttdoc">supported PIN protocol versions</div><div class="ttdef"><b>Definition</b> <a href="#l00629">ctap.h:629</a></div></div>
+<div class="ttc" id="astructctap__info__t_html_a611fc536a4d2474881fd8ed870ad38dd"><div class="ttname"><a href="structctap__info__t.html#a611fc536a4d2474881fd8ed870ad38dd">ctap_info_t::versions</a></div><div class="ttdeci">uint8_t versions</div><div class="ttdoc">supported versions of FIDO</div><div class="ttdef"><b>Definition</b> <a href="#l00627">ctap.h:627</a></div></div>
+<div class="ttc" id="astructctap__info__t_html_addbf4db9e86de775004753f8b327c86a"><div class="ttname"><a href="structctap__info__t.html#addbf4db9e86de775004753f8b327c86a">ctap_info_t::max_msg_size</a></div><div class="ttdeci">uint16_t max_msg_size</div><div class="ttdoc">max message size</div><div class="ttdef"><b>Definition</b> <a href="#l00625">ctap.h:625</a></div></div>
+<div class="ttc" id="astructctap__make__credential__req__t_html"><div class="ttname"><a href="structctap__make__credential__req__t.html">ctap_make_credential_req_t</a></div><div class="ttdoc">CTAP make credential request struct.</div><div class="ttdef"><b>Definition</b> <a href="#l00535">ctap.h:535</a></div></div>
+<div class="ttc" id="astructctap__make__credential__req__t_html_a02959aaac95be0efadf3c138479d1ecf"><div class="ttname"><a href="structctap__make__credential__req__t.html#a02959aaac95be0efadf3c138479d1ecf">ctap_make_credential_req_t::user</a></div><div class="ttdeci">ctap_user_ent_t user</div><div class="ttdoc">user</div><div class="ttdef"><b>Definition</b> <a href="#l00539">ctap.h:539</a></div></div>
+<div class="ttc" id="astructctap__make__credential__req__t_html_a68bc0468b88bd7548547a9560a7ace31"><div class="ttname"><a href="structctap__make__credential__req__t.html#a68bc0468b88bd7548547a9560a7ace31">ctap_make_credential_req_t::pin_auth_present</a></div><div class="ttdeci">bool pin_auth_present</div><div class="ttdoc">pin_auth present</div><div class="ttdef"><b>Definition</b> <a href="#l00545">ctap.h:545</a></div></div>
+<div class="ttc" id="astructctap__make__credential__req__t_html_a8d4643363bdeb4d429cc4a645047f79e"><div class="ttname"><a href="structctap__make__credential__req__t.html#a8d4643363bdeb4d429cc4a645047f79e">ctap_make_credential_req_t::alg_type</a></div><div class="ttdeci">int32_t alg_type</div><div class="ttdoc">cryptographic algorithm identifier</div><div class="ttdef"><b>Definition</b> <a href="#l00544">ctap.h:544</a></div></div>
+<div class="ttc" id="astructctap__make__credential__req__t_html_accb466fbd785fc1fea62723d1f5de5f5"><div class="ttname"><a href="structctap__make__credential__req__t.html#accb466fbd785fc1fea62723d1f5de5f5">ctap_make_credential_req_t::exclude_list_len</a></div><div class="ttdeci">size_t exclude_list_len</div><div class="ttdoc">length of CBOR exclude list array</div><div class="ttdef"><b>Definition</b> <a href="#l00537">ctap.h:537</a></div></div>
+<div class="ttc" id="astructctap__make__credential__req__t_html_adfde6bf887d9953764f9b6a115a692f8"><div class="ttname"><a href="structctap__make__credential__req__t.html#adfde6bf887d9953764f9b6a115a692f8">ctap_make_credential_req_t::rp</a></div><div class="ttdeci">ctap_rp_ent_t rp</div><div class="ttdoc">relying party</div><div class="ttdef"><b>Definition</b> <a href="#l00538">ctap.h:538</a></div></div>
+<div class="ttc" id="astructctap__make__credential__req__t_html_ae7f735f7acd4222646c04556b1c64473"><div class="ttname"><a href="structctap__make__credential__req__t.html#ae7f735f7acd4222646c04556b1c64473">ctap_make_credential_req_t::pin_auth_len</a></div><div class="ttdeci">size_t pin_auth_len</div><div class="ttdoc">pin_auth len</div><div class="ttdef"><b>Definition</b> <a href="#l00543">ctap.h:543</a></div></div>
+<div class="ttc" id="astructctap__make__credential__req__t_html_ae8fd6db4b3410da173427982aaace2d4"><div class="ttname"><a href="structctap__make__credential__req__t.html#ae8fd6db4b3410da173427982aaace2d4">ctap_make_credential_req_t::cred_type</a></div><div class="ttdeci">uint8_t cred_type</div><div class="ttdoc">type of credential</div><div class="ttdef"><b>Definition</b> <a href="#l00547">ctap.h:547</a></div></div>
+<div class="ttc" id="astructctap__make__credential__req__t_html_ae94572f8d7b997033e16fa195895142b"><div class="ttname"><a href="structctap__make__credential__req__t.html#ae94572f8d7b997033e16fa195895142b">ctap_make_credential_req_t::options</a></div><div class="ttdeci">ctap_options_t options</div><div class="ttdoc">parameters to influence authenticator operation</div><div class="ttdef"><b>Definition</b> <a href="#l00540">ctap.h:540</a></div></div>
+<div class="ttc" id="astructctap__make__credential__req__t_html_aeb828c3b095a518fd39508e109853f5b"><div class="ttname"><a href="structctap__make__credential__req__t.html#aeb828c3b095a518fd39508e109853f5b">ctap_make_credential_req_t::pin_protocol</a></div><div class="ttdeci">uint8_t pin_protocol</div><div class="ttdoc">PIN protocol version.</div><div class="ttdef"><b>Definition</b> <a href="#l00546">ctap.h:546</a></div></div>
+<div class="ttc" id="astructctap__options__t_html"><div class="ttname"><a href="structctap__options__t.html">ctap_options_t</a></div><div class="ttdoc">CTAP options struct.</div><div class="ttdef"><b>Definition</b> <a href="#l00429">ctap.h:429</a></div></div>
+<div class="ttc" id="astructctap__options__t_html_a189a499208df32d54ab9b119d6621fd0"><div class="ttname"><a href="structctap__options__t.html#a189a499208df32d54ab9b119d6621fd0">ctap_options_t::up</a></div><div class="ttdeci">int up</div><div class="ttdoc">user presence</div><div class="ttdef"><b>Definition</b> <a href="#l00432">ctap.h:432</a></div></div>
+<div class="ttc" id="astructctap__options__t_html_a5fff26f2d15d4ca80bb5ba0809e02498"><div class="ttname"><a href="structctap__options__t.html#a5fff26f2d15d4ca80bb5ba0809e02498">ctap_options_t::uv</a></div><div class="ttdeci">int uv</div><div class="ttdoc">user verification</div><div class="ttdef"><b>Definition</b> <a href="#l00431">ctap.h:431</a></div></div>
+<div class="ttc" id="astructctap__options__t_html_aadd140ae5737671633f37dccd68dd3a0"><div class="ttname"><a href="structctap__options__t.html#aadd140ae5737671633f37dccd68dd3a0">ctap_options_t::rk</a></div><div class="ttdeci">int rk</div><div class="ttdoc">resident key</div><div class="ttdef"><b>Definition</b> <a href="#l00430">ctap.h:430</a></div></div>
+<div class="ttc" id="astructctap__public__key__cose__t_html"><div class="ttname"><a href="structctap__public__key__cose__t.html">ctap_public_key_cose_t</a></div><div class="ttdoc">CTAP cose key struct.</div><div class="ttdef"><b>Definition</b> <a href="#l00465">ctap.h:465</a></div></div>
+<div class="ttc" id="astructctap__public__key__cose__t_html_a0ebabce0ba1c468552f5c09a3190e270"><div class="ttname"><a href="structctap__public__key__cose__t.html#a0ebabce0ba1c468552f5c09a3190e270">ctap_public_key_cose_t::crv</a></div><div class="ttdeci">int crv</div><div class="ttdoc">EC identifier.</div><div class="ttdef"><b>Definition</b> <a href="#l00468">ctap.h:468</a></div></div>
+<div class="ttc" id="astructctap__public__key__cose__t_html_a25aa8aa86696b763c2bb5c61471e6fe4"><div class="ttname"><a href="structctap__public__key__cose__t.html#a25aa8aa86696b763c2bb5c61471e6fe4">ctap_public_key_cose_t::alg_type</a></div><div class="ttdeci">int32_t alg_type</div><div class="ttdoc">COSEAlgorithmIdentifier.</div><div class="ttdef"><b>Definition</b> <a href="#l00469">ctap.h:469</a></div></div>
+<div class="ttc" id="astructctap__public__key__cose__t_html_a2ecdfeeb81c4df14038fcc9dfd0f313f"><div class="ttname"><a href="structctap__public__key__cose__t.html#a2ecdfeeb81c4df14038fcc9dfd0f313f">ctap_public_key_cose_t::kty</a></div><div class="ttdeci">int kty</div><div class="ttdoc">identification of key type</div><div class="ttdef"><b>Definition</b> <a href="#l00467">ctap.h:467</a></div></div>
+<div class="ttc" id="astructctap__public__key__cose__t_html_a35f622afd8ad9f9a69793d77a21fb3c9"><div class="ttname"><a href="structctap__public__key__cose__t.html#a35f622afd8ad9f9a69793d77a21fb3c9">ctap_public_key_cose_t::pubkey</a></div><div class="ttdeci">ctap_crypto_pub_key_t pubkey</div><div class="ttdoc">public key</div><div class="ttdef"><b>Definition</b> <a href="#l00466">ctap.h:466</a></div></div>
+<div class="ttc" id="astructctap__public__key__cose__t_html_aa6fc9fa5a525af5ec4b644607cab2d17"><div class="ttname"><a href="structctap__public__key__cose__t.html#aa6fc9fa5a525af5ec4b644607cab2d17">ctap_public_key_cose_t::cred_type</a></div><div class="ttdeci">uint8_t cred_type</div><div class="ttdoc">type of credential</div><div class="ttdef"><b>Definition</b> <a href="#l00470">ctap.h:470</a></div></div>
+<div class="ttc" id="astructctap__resident__key_html"><div class="ttname"><a href="structctap__resident__key.html">ctap_resident_key</a></div><div class="ttdoc">CTAP resident key struct.</div><div class="ttdef"><b>Definition</b> <a href="#l00497">ctap.h:497</a></div></div>
+<div class="ttc" id="astructctap__resident__key_html_a04b052c0be1cd7507c0aacf29e8b8a10"><div class="ttname"><a href="structctap__resident__key.html#a04b052c0be1cd7507c0aacf29e8b8a10">ctap_resident_key::cred_desc</a></div><div class="ttdeci">ctap_cred_desc_t cred_desc</div><div class="ttdoc">credential descriptor</div><div class="ttdef"><b>Definition</b> <a href="#l00507">ctap.h:507</a></div></div>
+<div class="ttc" id="astructctap__resident__key_html_a317032820a48f03fe9dd880b82d5ec0d"><div class="ttname"><a href="structctap__resident__key.html#a317032820a48f03fe9dd880b82d5ec0d">ctap_resident_key::sign_count</a></div><div class="ttdeci">uint32_t sign_count</div><div class="ttdoc">signature counter.</div><div class="ttdef"><b>Definition</b> <a href="#l00503">ctap.h:503</a></div></div>
+<div class="ttc" id="astructctap__resident__key_html_a758b94cb58a9f60ef1375bf3d3cda0a5"><div class="ttname"><a href="structctap__resident__key.html#a758b94cb58a9f60ef1375bf3d3cda0a5">ctap_resident_key::user_id_len</a></div><div class="ttdeci">uint8_t user_id_len</div><div class="ttdoc">length of the user id</div><div class="ttdef"><b>Definition</b> <a href="#l00500">ctap.h:500</a></div></div>
+<div class="ttc" id="astructctap__resident__key_html_a9ac746b76de71efe600bbd592cae7dd4"><div class="ttname"><a href="structctap__resident__key.html#a9ac746b76de71efe600bbd592cae7dd4">ctap_resident_key::id</a></div><div class="ttdeci">uint16_t id</div><div class="ttdoc">internal id of key</div><div class="ttdef"><b>Definition</b> <a href="#l00502">ctap.h:502</a></div></div>
+<div class="ttc" id="astructctap__rp__ent__t_html"><div class="ttname"><a href="structctap__rp__ent__t.html">ctap_rp_ent_t</a></div><div class="ttdoc">CTAP relying party entity struct.</div><div class="ttdef"><b>Definition</b> <a href="#l00450">ctap.h:450</a></div></div>
+<div class="ttc" id="astructctap__rp__ent__t_html_a0aa4635ec3bbe9e3a464b3ceb90f6592"><div class="ttname"><a href="structctap__rp__ent__t.html#a0aa4635ec3bbe9e3a464b3ceb90f6592">ctap_rp_ent_t::id_len</a></div><div class="ttdeci">uint8_t id_len</div><div class="ttdoc">actual length of relying party identifier</div><div class="ttdef"><b>Definition</b> <a href="#l00452">ctap.h:452</a></div></div>
+<div class="ttc" id="astructctap__state__t_html"><div class="ttname"><a href="structctap__state__t.html">ctap_state_t</a></div><div class="ttdoc">CTAP state struct.</div><div class="ttdef"><b>Definition</b> <a href="#l00413">ctap.h:413</a></div></div>
+<div class="ttc" id="astructctap__state__t_html_a299830832a0b918577f598dda6d56f4f"><div class="ttname"><a href="structctap__state__t.html#a299830832a0b918577f598dda6d56f4f">ctap_state_t::rk_amount_stored</a></div><div class="ttdeci">uint16_t rk_amount_stored</div><div class="ttdoc">total number of resident keys stored on device</div><div class="ttdef"><b>Definition</b> <a href="#l00417">ctap.h:417</a></div></div>
+<div class="ttc" id="astructctap__state__t_html_a3b5e8eb4ace1862120f162f1dfea2950"><div class="ttname"><a href="structctap__state__t.html#a3b5e8eb4ace1862120f162f1dfea2950">ctap_state_t::rem_pin_att</a></div><div class="ttdeci">int rem_pin_att</div><div class="ttdoc">remaining PIN tries</div><div class="ttdef"><b>Definition</b> <a href="#l00416">ctap.h:416</a></div></div>
+<div class="ttc" id="astructctap__state__t_html_a4fd81a3c6c8ab0d1565aa4bb90f4bb5c"><div class="ttname"><a href="structctap__state__t.html#a4fd81a3c6c8ab0d1565aa4bb90f4bb5c">ctap_state_t::pin_is_set</a></div><div class="ttdeci">bool pin_is_set</div><div class="ttdoc">PIN is set or not.</div><div class="ttdef"><b>Definition</b> <a href="#l00422">ctap.h:422</a></div></div>
+<div class="ttc" id="astructctap__state__t_html_a728c607e8252fb89c86ff0a3ad7e21b0"><div class="ttname"><a href="structctap__state__t.html#a728c607e8252fb89c86ff0a3ad7e21b0">ctap_state_t::config</a></div><div class="ttdeci">ctap_config_t config</div><div class="ttdoc">configuration of authenticator</div><div class="ttdef"><b>Definition</b> <a href="#l00414">ctap.h:414</a></div></div>
+<div class="ttc" id="astructctap__state__t_html_ab1d7a0722146b8b4a36cafd76e016dba"><div class="ttname"><a href="structctap__state__t.html#ab1d7a0722146b8b4a36cafd76e016dba">ctap_state_t::cred_key_is_initialized</a></div><div class="ttdeci">bool cred_key_is_initialized</div><div class="ttdoc">AES CCM key initialized flag.</div><div class="ttdef"><b>Definition</b> <a href="#l00421">ctap.h:421</a></div></div>
+<div class="ttc" id="astructctap__state__t_html_abb54c27bbb41083203dd0cf3497d00cd"><div class="ttname"><a href="structctap__state__t.html#abb54c27bbb41083203dd0cf3497d00cd">ctap_state_t::initialized_marker</a></div><div class="ttdeci">uint8_t initialized_marker</div><div class="ttdoc">CTAP initialized marker.</div><div class="ttdef"><b>Definition</b> <a href="#l00418">ctap.h:418</a></div></div>
+<div class="ttc" id="astructctap__state__t_html_af451549da473490edbbbbf8235cd43d0"><div class="ttname"><a href="structctap__state__t.html#af451549da473490edbbbbf8235cd43d0">ctap_state_t::ag_key</a></div><div class="ttdeci">ctap_crypto_key_agreement_key_t ag_key</div><div class="ttdoc">Platform key agreement key.</div><div class="ttdef"><b>Definition</b> <a href="#l00415">ctap.h:415</a></div></div>
+<div class="ttc" id="astructctap__state__t_html_afeab5e4a2c4fd1b7a7bbbf16fd58597d"><div class="ttname"><a href="structctap__state__t.html#afeab5e4a2c4fd1b7a7bbbf16fd58597d">ctap_state_t::id_cnt</a></div><div class="ttdeci">uint32_t id_cnt</div><div class="ttdoc">id counter for credential id</div><div class="ttdef"><b>Definition</b> <a href="#l00423">ctap.h:423</a></div></div>
+<div class="ttc" id="astructctap__user__ent__t_html"><div class="ttname"><a href="structctap__user__ent__t.html">ctap_user_ent_t</a></div><div class="ttdoc">CTAP user entity struct.</div><div class="ttdef"><b>Definition</b> <a href="#l00438">ctap.h:438</a></div></div>
+<div class="ttc" id="astructctap__user__ent__t_html_ace50537b37229a22513156cf1e170ae0"><div class="ttname"><a href="structctap__user__ent__t.html#ace50537b37229a22513156cf1e170ae0">ctap_user_ent_t::id_len</a></div><div class="ttdeci">uint8_t id_len</div><div class="ttdoc">actual length of user id</div><div class="ttdef"><b>Definition</b> <a href="#l00440">ctap.h:440</a></div></div>
+<div class="ttc" id="atimex_8h_html"><div class="ttname"><a href="timex_8h.html">timex.h</a></div><div class="ttdoc">Utility library for comparing and computing timestamps.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:30 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

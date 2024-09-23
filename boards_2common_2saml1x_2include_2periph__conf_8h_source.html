@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>boards/common/saml1x/include/periph_conf.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('boards_2common_2saml1x_2include_2periph__conf_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">periph_conf.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="boards_2common_2saml1x_2include_2periph__conf_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (C) 2019 Mesotic SAS</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * directory for more details.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#ifndef PERIPH_CONF_H</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define PERIPH_CONF_H</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;periph_cpu.h&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="boards_2common_2saml1x_2include_2periph__conf_8h.html#afc465f12242e68f6c3695caa3ba0a169">   32</a></span><span class="preprocessor">#define CLOCK_CORECLOCK     (16000000U)</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="boards_2common_2saml1x_2include_2periph__conf_8h.html#a9e1238f5985c94a661e836289438d740">   38</a></span><span class="preprocessor">#define USE_VREG_BUCK       (1)</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_struct" href="structtc32__conf__t.html">tc32_conf_t</a> timer_config[] = {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    {   <span class="comment">/* Timer 0 - System Clock */</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        .dev            = TC0,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        .irq            = TC0_IRQn,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        .mclk           = &amp;MCLK-&gt;APBCMASK.reg,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        .mclk_mask      = MCLK_APBCMASK_TC0_Msk | MCLK_APBCMASK_TC1_Msk,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        .gclk_id        = TC0_GCLK_ID,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        .gclk_src       = <a class="code hl_define" href="samd5x_2include_2periph__cpu_8h.html#a086ca6a9c92fc2673def07c2cb6b65c7">SAM0_GCLK_MAIN</a>,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        .flags          = TC_CTRLA_MODE_COUNT32,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    },</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        .dev            = TC2,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        .irq            = TC2_IRQn,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        .mclk           = &amp;MCLK-&gt;APBCMASK.reg,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        .mclk_mask      = MCLK_APBCMASK_TC2_Msk,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        .gclk_id        = TC2_GCLK_ID,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        .gclk_src       = <a class="code hl_define" href="samd5x_2include_2periph__cpu_8h.html#a086ca6a9c92fc2673def07c2cb6b65c7">SAM0_GCLK_MAIN</a>,</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        .flags          = TC_CTRLA_MODE_COUNT16,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">/* Timer 0 configuration */</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#define TIMER_0_CHANNELS    2</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#define TIMER_0_ISR         isr_tc0</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">/* Timer 1 configuration */</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#define TIMER_1_CHANNELS    2</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#define TIMER_1_ISR         isr_tc2</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#define TIMER_1_MAX_VALUE   0xffff</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#define TIMER_NUMOF         ARRAY_SIZE(timer_config)</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_struct" href="structuart__conf__t.html">uart_conf_t</a> uart_config[] = {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    {    <span class="comment">/* Virtual COM Port */</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        .dev      = &amp;SERCOM2-&gt;USART,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        .rx_pin   = <a class="code hl_define" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 25),</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        .tx_pin   = <a class="code hl_define" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 24),</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#ifdef MODULE_PERIPH_UART_HW_FC</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        .rts_pin  = <a class="code hl_define" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a>,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        .cts_pin  = <a class="code hl_define" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a>,</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        .mux      = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0a58aca89cf09aaa1d2026ab1f32b05236">GPIO_MUX_D</a>,</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        .rx_pad   = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a021fb5a98f716e7efb8754e405c81199a66d59263bdb8bf96952c1e75b999f45e">UART_PAD_RX_3</a>,</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        .tx_pad   = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a9a4da11aea6791b96ad83a061b0f576dae59a06105ec31aff983245e9d06cad10">UART_PAD_TX_2</a>,</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        .flags    = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a836e09ffaa5767111e9d10b38a17fd75a85629b346e3b64053d1888d17efdfcd6">UART_FLAG_NONE</a>,</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        .gclk_src = <a class="code hl_define" href="samd5x_2include_2periph__cpu_8h.html#a086ca6a9c92fc2673def07c2cb6b65c7">SAM0_GCLK_MAIN</a>,</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    },</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    {    <span class="comment">/* EXT1 */</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="comment">/* For SAML11, see boards/saml11/doc.txt</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment">         * to properly enable this SERCOM */</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        .dev      = &amp;SERCOM1-&gt;USART,</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        .rx_pin   = <a class="code hl_define" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 9),</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        .tx_pin   = <a class="code hl_define" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 8),</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#ifdef MODULE_PERIPH_UART_HW_FC</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        .rts_pin  = <a class="code hl_define" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a>,</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        .cts_pin  = <a class="code hl_define" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a>,</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        .mux      = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0a735b6a3c0b2afe9159f89367eeee53d9">GPIO_MUX_C</a>,</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        .rx_pad   = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a021fb5a98f716e7efb8754e405c81199a274af0f75e2a10323280d40487559c64">UART_PAD_RX_1</a>,</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        .tx_pad   = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a9a4da11aea6791b96ad83a061b0f576dad17d929271f49a266d2dd337a6b4004a">UART_PAD_TX_0</a>,</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        .flags    = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a836e09ffaa5767111e9d10b38a17fd75a85629b346e3b64053d1888d17efdfcd6">UART_FLAG_NONE</a>,</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        .gclk_src = <a class="code hl_define" href="samd5x_2include_2periph__cpu_8h.html#a086ca6a9c92fc2673def07c2cb6b65c7">SAM0_GCLK_MAIN</a>,</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>};</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment">/* interrupt function name mapping */</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#define UART_0_ISR          isr_sercom2_2</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="preprocessor">#define UART_0_ISR_TX       isr_sercom2_0</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="preprocessor">#define UART_1_ISR          isr_sercom1_2</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">#define UART_1_ISR_TX       isr_sercom1_0</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="preprocessor">#define UART_NUMOF          ARRAY_SIZE(uart_config)</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="preprocessor">#define PWM_0_EN            1</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="preprocessor">#define PWM_1_EN            0</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="preprocessor">#if PWM_0_EN</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment">/* PWM0 channels */</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_struct" href="structpwm__conf__chan__t.html">pwm_conf_chan_t</a> pwm_chan0_config[] = {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="comment">/* GPIO pin, MUX value, TC channel */</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    { <a class="code hl_define" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 18), <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0a1753f05fa16af9774bae3839d7fd0258">GPIO_MUX_E</a>, 0 },</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    { <a class="code hl_define" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 19), <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0a1753f05fa16af9774bae3839d7fd0258">GPIO_MUX_E</a>, 1 },</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>};</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="preprocessor">#if PWM_1_EN</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment">/* PWM1 channels */</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_struct" href="structpwm__conf__chan__t.html">pwm_conf_chan_t</a> pwm_chan1_config[] = {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="comment">/* GPIO pin, MUX value, TC channel */</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    { <a class="code hl_define" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 7), <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0a1753f05fa16af9774bae3839d7fd0258">GPIO_MUX_E</a>, 1 }, <span class="comment">/* LED */</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>};</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="comment">/* PWM device configuration */</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_struct" href="structpwm__conf__t.html">pwm_conf_t</a> pwm_config[] = {</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="preprocessor">#if PWM_0_EN</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    { .tim  = <a class="code hl_define" href="sam0__common_2include_2periph__cpu__common_8h.html#a3a4abe508daf397cbac469838ca69a91">TC_CONFIG</a>(TC2),</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>      .chan = pwm_chan0_config,</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>      .chan_numof = <a class="code hl_define" href="container_8h.html#a25f003de16c08a4888b69f619d70f427">ARRAY_SIZE</a>(pwm_chan0_config),</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>      .gclk_src = <a class="code hl_define" href="samd5x_2include_2periph__cpu_8h.html#a086ca6a9c92fc2673def07c2cb6b65c7">SAM0_GCLK_MAIN</a>,</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    },</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="preprocessor">#if PWM_1_EN</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="comment">/* conflicts with xtimer config (TC0_TC1) */</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    { .tim  = <a class="code hl_define" href="sam0__common_2include_2periph__cpu__common_8h.html#a3a4abe508daf397cbac469838ca69a91">TC_CONFIG</a>(TC1),</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      .chan = pwm_chan1_config,</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>      .chan_numof = <a class="code hl_define" href="container_8h.html#a25f003de16c08a4888b69f619d70f427">ARRAY_SIZE</a>(pwm_chan0_config),</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>      .gclk_src = <a class="code hl_define" href="samd5x_2include_2periph__cpu_8h.html#a086ca6a9c92fc2673def07c2cb6b65c7">SAM0_GCLK_MAIN</a>,</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    },</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>};</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="comment">/* number of devices that are actually defined */</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="preprocessor">#define PWM_NUMOF           ARRAY_SIZE(pwm_config)</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_struct" href="structspi__conf__t.html">spi_conf_t</a> spi_config[] = {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        .dev      = &amp;(SERCOM0-&gt;SPI),</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        .miso_pin = <a class="code hl_define" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>,  4),</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        .mosi_pin = <a class="code hl_define" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 14),</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        .clk_pin  = <a class="code hl_define" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 15),</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        .miso_mux = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0a58aca89cf09aaa1d2026ab1f32b05236">GPIO_MUX_D</a>,</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        .mosi_mux = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0a58aca89cf09aaa1d2026ab1f32b05236">GPIO_MUX_D</a>,</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        .clk_mux  = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0a58aca89cf09aaa1d2026ab1f32b05236">GPIO_MUX_D</a>,</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        .miso_pad = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a5f3aefc5ac5917dd4a5c71ca3b624b29a92f167e36771c98d038232388b7e850c">SPI_PAD_MISO_0</a>,</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        .mosi_pad = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#aecd093a68bc8af5fd8df392bc9e7d598a3dfa7950c9a6cb45530c07ae67f13581">SPI_PAD_MOSI_2_SCK_3</a>,</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        .gclk_src = <a class="code hl_define" href="samd5x_2include_2periph__cpu_8h.html#a086ca6a9c92fc2673def07c2cb6b65c7">SAM0_GCLK_MAIN</a>,</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="preprocessor">#ifdef MODULE_PERIPH_DMA</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        .tx_trigger = SERCOM0_DMAC_ID_TX,</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        .rx_trigger = SERCOM0_DMAC_ID_RX,</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    }</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>};</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="preprocessor">#define SPI_NUMOF           ARRAY_SIZE(spi_config)</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_struct" href="structi2c__conf__t.html">i2c_conf_t</a> i2c_config[] = {</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        .dev      = &amp;(SERCOM1-&gt;I2CM),</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        .speed    = <a class="code hl_enumvalue" href="atxmega_2include_2periph__cpu_8h.html#a6e6a870f98abb8cffa95373b69fb8243a0826bf5711e82ba26b4ada6104260583">I2C_SPEED_NORMAL</a>,</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        .scl_pin  = <a class="code hl_define" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 17),</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        .sda_pin  = <a class="code hl_define" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 16),</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        .mux      = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0a735b6a3c0b2afe9159f89367eeee53d9">GPIO_MUX_C</a>,</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        .gclk_src = <a class="code hl_define" href="samd5x_2include_2periph__cpu_8h.html#a086ca6a9c92fc2673def07c2cb6b65c7">SAM0_GCLK_MAIN</a>,</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        .flags    = <a class="code hl_enumvalue" href="sam0__common_2include_2periph__cpu__common_8h.html#a35689050a00ae4d0da14a1abe0e38dc3a0af5d8198ede19f93bab78bc0db71652">I2C_FLAG_NONE</a></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    }</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>};</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="preprocessor">#define I2C_NUMOF           ARRAY_SIZE(i2c_config)</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="preprocessor">#define EXTERNAL_OSC32_SOURCE                    1</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="preprocessor">#define ULTRA_LOW_POWER_INTERNAL_OSC_SOURCE      0</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="preprocessor">#ifndef RTT_FREQUENCY</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="preprocessor">#define RTT_FREQUENCY       (32768U)</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="comment">/* ADC Default values */</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="preprocessor">#define ADC_PRESCALER                       ADC_CTRLB_PRESCALER_DIV256</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="preprocessor">#define ADC_NEG_INPUT                       ADC_INPUTCTRL_MUXNEG(0x18u)</span></div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="preprocessor">#define ADC_REF_DEFAULT                     ADC_REFCTRL_REFSEL_INTVCC2</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_struct" href="structadc__conf__chan__t.html">adc_conf_chan_t</a> adc_channels[] = {</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <span class="comment">/* port, pin, muxpos */</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    { .inputctrl = <a class="code hl_define" href="samd21_2include_2periph__cpu_8h.html#a267fea48f753d8c71df8231bdec26755">ADC_INPUTCTRL_MUXPOS_PA10</a> },</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>};</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="preprocessor">#define ADC_NUMOF                           ARRAY_SIZE(adc_channels)</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span><span class="preprocessor">#define DAC_CLOCK           SAM0_GCLK_32KHZ</span></div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                            <span class="comment">/* use Vcc as reference voltage */</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="preprocessor">#define DAC_VREF            DAC_CTRLB_REFSEL_AVCC</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>}</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span><span class="preprocessor">#endif </span><span class="comment">/* PERIPH_CONF_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aatmega1284p_2include_2periph__cpu_8h_html_ae29846b3ecd19a0b7c44ff80a37ae7c1"><div class="ttname"><a href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a></div><div class="ttdeci">#define GPIO_PIN(x, y)</div><div class="ttdoc">Define a CPU specific GPIO pin generator macro.</div><div class="ttdef"><b>Definition</b> <a href="atmega1284p_2include_2periph__cpu_8h_source.html#l00046">periph_cpu.h:46</a></div></div>
+<div class="ttc" id="aatmega__common_2include_2periph__cpu__common_8h_html_a3969ce1e494a72d3c2925b10ddeb4604"><div class="ttname"><a href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a></div><div class="ttdeci">#define GPIO_UNDEF</div><div class="ttdoc">Definition of a fitting UNDEF value.</div><div class="ttdef"><b>Definition</b> <a href="atmega__common_2include_2periph__cpu__common_8h_source.html#l00054">periph_cpu_common.h:54</a></div></div>
+<div class="ttc" id="aatxmega_2include_2periph__cpu_8h_html_a6e6a870f98abb8cffa95373b69fb8243a0826bf5711e82ba26b4ada6104260583"><div class="ttname"><a href="atxmega_2include_2periph__cpu_8h.html#a6e6a870f98abb8cffa95373b69fb8243a0826bf5711e82ba26b4ada6104260583">I2C_SPEED_NORMAL</a></div><div class="ttdeci">@ I2C_SPEED_NORMAL</div><div class="ttdoc">normal mode: ~100 kbit/s</div><div class="ttdef"><b>Definition</b> <a href="atxmega_2include_2periph__cpu_8h_source.html#l00278">periph_cpu.h:278</a></div></div>
+<div class="ttc" id="acontainer_8h_html_a25f003de16c08a4888b69f619d70f427"><div class="ttname"><a href="container_8h.html#a25f003de16c08a4888b69f619d70f427">ARRAY_SIZE</a></div><div class="ttdeci">#define ARRAY_SIZE(a)</div><div class="ttdoc">Calculate the number of elements in a static array.</div><div class="ttdef"><b>Definition</b> <a href="container_8h_source.html#l00083">container.h:83</a></div></div>
+<div class="ttc" id="asam0__common_2include_2periph__cpu__common_8h_html_a021fb5a98f716e7efb8754e405c81199a274af0f75e2a10323280d40487559c64"><div class="ttname"><a href="sam0__common_2include_2periph__cpu__common_8h.html#a021fb5a98f716e7efb8754e405c81199a274af0f75e2a10323280d40487559c64">UART_PAD_RX_1</a></div><div class="ttdeci">@ UART_PAD_RX_1</div><div class="ttdoc">select pad 1</div><div class="ttdef"><b>Definition</b> <a href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00267">periph_cpu_common.h:267</a></div></div>
+<div class="ttc" id="asam0__common_2include_2periph__cpu__common_8h_html_a021fb5a98f716e7efb8754e405c81199a66d59263bdb8bf96952c1e75b999f45e"><div class="ttname"><a href="sam0__common_2include_2periph__cpu__common_8h.html#a021fb5a98f716e7efb8754e405c81199a66d59263bdb8bf96952c1e75b999f45e">UART_PAD_RX_3</a></div><div class="ttdeci">@ UART_PAD_RX_3</div><div class="ttdoc">select pad 3</div><div class="ttdef"><b>Definition</b> <a href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00269">periph_cpu_common.h:269</a></div></div>
+<div class="ttc" id="asam0__common_2include_2periph__cpu__common_8h_html_a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db"><div class="ttname"><a href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a></div><div class="ttdeci">@ PA</div><div class="ttdoc">port A</div><div class="ttdef"><b>Definition</b> <a href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00099">periph_cpu_common.h:99</a></div></div>
+<div class="ttc" id="asam0__common_2include_2periph__cpu__common_8h_html_a35689050a00ae4d0da14a1abe0e38dc3a0af5d8198ede19f93bab78bc0db71652"><div class="ttname"><a href="sam0__common_2include_2periph__cpu__common_8h.html#a35689050a00ae4d0da14a1abe0e38dc3a0af5d8198ede19f93bab78bc0db71652">I2C_FLAG_NONE</a></div><div class="ttdeci">@ I2C_FLAG_NONE</div><div class="ttdoc">No flags set.</div><div class="ttdef"><b>Definition</b> <a href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00520">periph_cpu_common.h:520</a></div></div>
+<div class="ttc" id="asam0__common_2include_2periph__cpu__common_8h_html_a3a4abe508daf397cbac469838ca69a91"><div class="ttname"><a href="sam0__common_2include_2periph__cpu__common_8h.html#a3a4abe508daf397cbac469838ca69a91">TC_CONFIG</a></div><div class="ttdeci">#define TC_CONFIG(tim)</div><div class="ttdoc">Static initializer for TC timer configuration.</div><div class="ttdef"><b>Definition</b> <a href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00392">periph_cpu_common.h:392</a></div></div>
+<div class="ttc" id="asam0__common_2include_2periph__cpu__common_8h_html_a5f3aefc5ac5917dd4a5c71ca3b624b29a92f167e36771c98d038232388b7e850c"><div class="ttname"><a href="sam0__common_2include_2periph__cpu__common_8h.html#a5f3aefc5ac5917dd4a5c71ca3b624b29a92f167e36771c98d038232388b7e850c">SPI_PAD_MISO_0</a></div><div class="ttdeci">@ SPI_PAD_MISO_0</div><div class="ttdoc">use pad 0 for MISO line</div><div class="ttdef"><b>Definition</b> <a href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00440">periph_cpu_common.h:440</a></div></div>
+<div class="ttc" id="asam0__common_2include_2periph__cpu__common_8h_html_a836e09ffaa5767111e9d10b38a17fd75a85629b346e3b64053d1888d17efdfcd6"><div class="ttname"><a href="sam0__common_2include_2periph__cpu__common_8h.html#a836e09ffaa5767111e9d10b38a17fd75a85629b346e3b64053d1888d17efdfcd6">UART_FLAG_NONE</a></div><div class="ttdeci">@ UART_FLAG_NONE</div><div class="ttdoc">No flags set.</div><div class="ttdef"><b>Definition</b> <a href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00286">periph_cpu_common.h:286</a></div></div>
+<div class="ttc" id="asam0__common_2include_2periph__cpu__common_8h_html_a9a4da11aea6791b96ad83a061b0f576dad17d929271f49a266d2dd337a6b4004a"><div class="ttname"><a href="sam0__common_2include_2periph__cpu__common_8h.html#a9a4da11aea6791b96ad83a061b0f576dad17d929271f49a266d2dd337a6b4004a">UART_PAD_TX_0</a></div><div class="ttdeci">@ UART_PAD_TX_0</div><div class="ttdoc">select pad 0</div><div class="ttdef"><b>Definition</b> <a href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00276">periph_cpu_common.h:276</a></div></div>
+<div class="ttc" id="asam0__common_2include_2periph__cpu__common_8h_html_a9a4da11aea6791b96ad83a061b0f576dae59a06105ec31aff983245e9d06cad10"><div class="ttname"><a href="sam0__common_2include_2periph__cpu__common_8h.html#a9a4da11aea6791b96ad83a061b0f576dae59a06105ec31aff983245e9d06cad10">UART_PAD_TX_2</a></div><div class="ttdeci">@ UART_PAD_TX_2</div><div class="ttdoc">select pad 2</div><div class="ttdef"><b>Definition</b> <a href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00277">periph_cpu_common.h:277</a></div></div>
+<div class="ttc" id="asam0__common_2include_2periph__cpu__common_8h_html_ac86e130e5617ffe35f2aa1169d8a67c0a1753f05fa16af9774bae3839d7fd0258"><div class="ttname"><a href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0a1753f05fa16af9774bae3839d7fd0258">GPIO_MUX_E</a></div><div class="ttdeci">@ GPIO_MUX_E</div><div class="ttdoc">select peripheral function E</div><div class="ttdef"><b>Definition</b> <a href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00248">periph_cpu_common.h:248</a></div></div>
+<div class="ttc" id="asam0__common_2include_2periph__cpu__common_8h_html_ac86e130e5617ffe35f2aa1169d8a67c0a58aca89cf09aaa1d2026ab1f32b05236"><div class="ttname"><a href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0a58aca89cf09aaa1d2026ab1f32b05236">GPIO_MUX_D</a></div><div class="ttdeci">@ GPIO_MUX_D</div><div class="ttdoc">select peripheral function D</div><div class="ttdef"><b>Definition</b> <a href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00247">periph_cpu_common.h:247</a></div></div>
+<div class="ttc" id="asam0__common_2include_2periph__cpu__common_8h_html_ac86e130e5617ffe35f2aa1169d8a67c0a735b6a3c0b2afe9159f89367eeee53d9"><div class="ttname"><a href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0a735b6a3c0b2afe9159f89367eeee53d9">GPIO_MUX_C</a></div><div class="ttdeci">@ GPIO_MUX_C</div><div class="ttdoc">select peripheral function C</div><div class="ttdef"><b>Definition</b> <a href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00246">periph_cpu_common.h:246</a></div></div>
+<div class="ttc" id="asam0__common_2include_2periph__cpu__common_8h_html_aecd093a68bc8af5fd8df392bc9e7d598a3dfa7950c9a6cb45530c07ae67f13581"><div class="ttname"><a href="sam0__common_2include_2periph__cpu__common_8h.html#aecd093a68bc8af5fd8df392bc9e7d598a3dfa7950c9a6cb45530c07ae67f13581">SPI_PAD_MOSI_2_SCK_3</a></div><div class="ttdeci">@ SPI_PAD_MOSI_2_SCK_3</div><div class="ttdoc">use pad 2 for MOSI, pad 3 for SCK</div><div class="ttdef"><b>Definition</b> <a href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00451">periph_cpu_common.h:451</a></div></div>
+<div class="ttc" id="asamd21_2include_2periph__cpu_8h_html_a267fea48f753d8c71df8231bdec26755"><div class="ttname"><a href="samd21_2include_2periph__cpu_8h.html#a267fea48f753d8c71df8231bdec26755">ADC_INPUTCTRL_MUXPOS_PA10</a></div><div class="ttdeci">#define ADC_INPUTCTRL_MUXPOS_PA10</div><div class="ttdoc">Alias for PIN18.</div><div class="ttdef"><b>Definition</b> <a href="samd21_2include_2periph__cpu_8h_source.html#l00137">periph_cpu.h:137</a></div></div>
+<div class="ttc" id="asamd5x_2include_2periph__cpu_8h_html_a086ca6a9c92fc2673def07c2cb6b65c7"><div class="ttname"><a href="samd5x_2include_2periph__cpu_8h.html#a086ca6a9c92fc2673def07c2cb6b65c7">SAM0_GCLK_MAIN</a></div><div class="ttdeci">#define SAM0_GCLK_MAIN</div><div class="ttdoc">120 MHz main clock</div><div class="ttdef"><b>Definition</b> <a href="samd5x_2include_2periph__cpu_8h_source.html#l00074">periph_cpu.h:74</a></div></div>
+<div class="ttc" id="astructadc__conf__chan__t_html"><div class="ttname"><a href="structadc__conf__chan__t.html">adc_conf_chan_t</a></div><div class="ttdoc">ADC Channel Configuration.</div><div class="ttdef"><b>Definition</b> <a href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00884">periph_cpu_common.h:884</a></div></div>
+<div class="ttc" id="astructi2c__conf__t_html"><div class="ttname"><a href="structi2c__conf__t.html">i2c_conf_t</a></div><div class="ttdoc">I2C configuration structure.</div><div class="ttdef"><b>Definition</b> <a href="atxmega_2include_2periph__cpu_8h_source.html#l00299">periph_cpu.h:299</a></div></div>
+<div class="ttc" id="astructpwm__conf__chan__t_html"><div class="ttname"><a href="structpwm__conf__chan__t.html">pwm_conf_chan_t</a></div><div class="ttdoc">PWM channel configuration data structure.</div><div class="ttdef"><b>Definition</b> <a href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00420">periph_cpu_common.h:420</a></div></div>
+<div class="ttc" id="astructpwm__conf__t_html"><div class="ttname"><a href="structpwm__conf__t.html">pwm_conf_t</a></div><div class="ttdoc">PWM device configuration.</div><div class="ttdef"><b>Definition</b> <a href="atmega__common_2include_2periph__cpu__common_8h_source.html#l00323">periph_cpu_common.h:323</a></div></div>
+<div class="ttc" id="astructspi__conf__t_html"><div class="ttname"><a href="structspi__conf__t.html">spi_conf_t</a></div><div class="ttdoc">SPI device configuration.</div><div class="ttdef"><b>Definition</b> <a href="atxmega_2include_2periph__cpu_8h_source.html#l00337">periph_cpu.h:337</a></div></div>
+<div class="ttc" id="astructtc32__conf__t_html"><div class="ttname"><a href="structtc32__conf__t.html">tc32_conf_t</a></div><div class="ttdoc">Timer device configuration.</div><div class="ttdef"><b>Definition</b> <a href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00574">periph_cpu_common.h:574</a></div></div>
+<div class="ttc" id="astructuart__conf__t_html"><div class="ttname"><a href="structuart__conf__t.html">uart_conf_t</a></div><div class="ttdoc">UART device configuration.</div><div class="ttdef"><b>Definition</b> <a href="atxmega_2include_2periph__cpu_8h_source.html#l00218">periph_cpu.h:218</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:30 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

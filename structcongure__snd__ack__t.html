@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>congure_snd_ack_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structcongure__snd__ack__t.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">congure_snd_ack_t Struct Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__congure.html">CongURE - A Congestion control framework</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Object to represent an ACK to a message.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Object to represent an ACK to a message. </p>
+
+<p class="definition">Definition at line <a class="el" href="congure_8h_source.html#l00086">86</a> of file <a class="el" href="congure_8h_source.html">congure.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="congure_8h_source.html">congure.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a2d9f7fd8ae3da4786d2f7acd73418814" id="r_a2d9f7fd8ae3da4786d2f7acd73418814"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__sys__ztimer.html#gab10130a9b13fd88ea06a2889e63342f6">ztimer_now_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d9f7fd8ae3da4786d2f7acd73418814">recv_time</a></td></tr>
+<tr class="memdesc:a2d9f7fd8ae3da4786d2f7acd73418814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timestamp in milliseconds of when the ACK was received.  <br /></td></tr>
+<tr class="separator:a2d9f7fd8ae3da4786d2f7acd73418814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55688924b20e3154e762f5509c7da7ab" id="r_a55688924b20e3154e762f5509c7da7ab"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55688924b20e3154e762f5509c7da7ab">id</a></td></tr>
+<tr class="memdesc:a55688924b20e3154e762f5509c7da7ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID of the message the ACK is for.  <br /></td></tr>
+<tr class="separator:a55688924b20e3154e762f5509c7da7ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a967f109f3bf8f24b2c3def38f304e76d" id="r_a967f109f3bf8f24b2c3def38f304e76d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__sys__congure.html#gaa8548f80649d991f82009bf414bcb193">congure_wnd_size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a967f109f3bf8f24b2c3def38f304e76d">size</a></td></tr>
+<tr class="memdesc:a967f109f3bf8f24b2c3def38f304e76d"><td class="mdescLeft">&#160;</td><td class="mdescRight">size of the ACK in initiator-defined units  <br /></td></tr>
+<tr class="separator:a967f109f3bf8f24b2c3def38f304e76d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a83ff3f459035ce2c6b2ca2dc582c97" id="r_a0a83ff3f459035ce2c6b2ca2dc582c97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__sys__congure.html#gaa8548f80649d991f82009bf414bcb193">congure_wnd_size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a83ff3f459035ce2c6b2ca2dc582c97">wnd</a></td></tr>
+<tr class="memdesc:a0a83ff3f459035ce2c6b2ca2dc582c97"><td class="mdescLeft">&#160;</td><td class="mdescRight">the peer-reported window size in caller defined units.  <br /></td></tr>
+<tr class="separator:a0a83ff3f459035ce2c6b2ca2dc582c97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90ddef7162b5df9063c36be3e04ce93c" id="r_a90ddef7162b5df9063c36be3e04ce93c"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90ddef7162b5df9063c36be3e04ce93c">clean</a></td></tr>
+<tr class="memdesc:a90ddef7162b5df9063c36be3e04ce93c"><td class="mdescLeft">&#160;</td><td class="mdescRight">true, if ACK only contains an ACK, false if not  <br /></td></tr>
+<tr class="separator:a90ddef7162b5df9063c36be3e04ce93c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41deee4a885bc1ba3e25e62e69b24010" id="r_a41deee4a885bc1ba3e25e62e69b24010"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41deee4a885bc1ba3e25e62e69b24010">delay</a></td></tr>
+<tr class="memdesc:a41deee4a885bc1ba3e25e62e69b24010"><td class="mdescLeft">&#160;</td><td class="mdescRight">the peer-reported time in milliseconds the ACK was delayed since message reception.  <br /></td></tr>
+<tr class="separator:a41deee4a885bc1ba3e25e62e69b24010"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a90ddef7162b5df9063c36be3e04ce93c" name="a90ddef7162b5df9063c36be3e04ce93c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90ddef7162b5df9063c36be3e04ce93c">&#9670;&#160;</a></span>clean</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t congure_snd_ack_t::clean</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>true, if ACK only contains an ACK, false if not </p>
+<p>This e.g. can be used to tell the congestion control mechanism that the SYN or FIN tag are cleared in the ACK with TCP. </p>
+
+<p class="definition">Definition at line <a class="el" href="congure_8h_source.html#l00107">107</a> of file <a class="el" href="congure_8h_source.html">congure.h</a>.</p>
+
+</div>
+</div>
+<a id="a41deee4a885bc1ba3e25e62e69b24010" name="a41deee4a885bc1ba3e25e62e69b24010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41deee4a885bc1ba3e25e62e69b24010">&#9670;&#160;</a></span>delay</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t congure_snd_ack_t::delay</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>the peer-reported time in milliseconds the ACK was delayed since message reception. </p>
+<p>Leave 0 if not supplied by the protocol. </p>
+
+<p class="definition">Definition at line <a class="el" href="congure_8h_source.html#l00113">113</a> of file <a class="el" href="congure_8h_source.html">congure.h</a>.</p>
+
+</div>
+</div>
+<a id="a55688924b20e3154e762f5509c7da7ab" name="a55688924b20e3154e762f5509c7da7ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55688924b20e3154e762f5509c7da7ab">&#9670;&#160;</a></span>id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t congure_snd_ack_t::id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ID of the message the ACK is for. </p>
+
+<p class="definition">Definition at line <a class="el" href="congure_8h_source.html#l00091">91</a> of file <a class="el" href="congure_8h_source.html">congure.h</a>.</p>
+
+</div>
+</div>
+<a id="a2d9f7fd8ae3da4786d2f7acd73418814" name="a2d9f7fd8ae3da4786d2f7acd73418814"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d9f7fd8ae3da4786d2f7acd73418814">&#9670;&#160;</a></span>recv_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__sys__ztimer.html#gab10130a9b13fd88ea06a2889e63342f6">ztimer_now_t</a> congure_snd_ack_t::recv_time</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Timestamp in milliseconds of when the ACK was received. </p>
+
+<p class="definition">Definition at line <a class="el" href="congure_8h_source.html#l00090">90</a> of file <a class="el" href="congure_8h_source.html">congure.h</a>.</p>
+
+</div>
+</div>
+<a id="a967f109f3bf8f24b2c3def38f304e76d" name="a967f109f3bf8f24b2c3def38f304e76d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a967f109f3bf8f24b2c3def38f304e76d">&#9670;&#160;</a></span>size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__sys__congure.html#gaa8548f80649d991f82009bf414bcb193">congure_wnd_size_t</a> congure_snd_ack_t::size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>size of the ACK in initiator-defined units </p>
+
+<p class="definition">Definition at line <a class="el" href="congure_8h_source.html#l00095">95</a> of file <a class="el" href="congure_8h_source.html">congure.h</a>.</p>
+
+</div>
+</div>
+<a id="a0a83ff3f459035ce2c6b2ca2dc582c97" name="a0a83ff3f459035ce2c6b2ca2dc582c97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a83ff3f459035ce2c6b2ca2dc582c97">&#9670;&#160;</a></span>wnd</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__sys__congure.html#gaa8548f80649d991f82009bf414bcb193">congure_wnd_size_t</a> congure_snd_ack_t::wnd</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>the peer-reported window size in caller defined units. </p>
+<p>Leave 0 if not supplied by the protocol. </p>
+
+<p class="definition">Definition at line <a class="el" href="congure_8h_source.html#l00100">100</a> of file <a class="el" href="congure_8h_source.html">congure.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>sys/include/<a class="el" href="congure_8h_source.html">congure.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

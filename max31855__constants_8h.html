@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/max31855/include/max31855_constants.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('max31855__constants_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">max31855_constants.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a> &raquo; <a class="el" href="group__drivers__max31855.html">MAX31855 Thermocouple-to-Digital Converter driver</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Internal addresses, registers and constants.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Internal addresses, registers and constants. </p>
+<dl class="section author"><dt>Author</dt><dd>Leandro Lanzieri <a href="#" onclick="location.href='mai'+'lto:'+'lea'+'nd'+'ro.'+'la'+'nzi'+'er'+'i@h'+'aw'+'-ha'+'mb'+'urg'+'.d'+'e'; return false;">leand<span class="obfuscator">.nosp@m.</span>ro.l<span class="obfuscator">.nosp@m.</span>anzie<span class="obfuscator">.nosp@m.</span>ri@h<span class="obfuscator">.nosp@m.</span>aw-ha<span class="obfuscator">.nosp@m.</span>mbur<span class="obfuscator">.nosp@m.</span>g.de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="max31855__constants_8h__dep__incl.svg" width="202" height="148"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="max31855__constants_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="memitem:a2cff8f153d67c6e61c5ecbc1920dedb2" id="r_a2cff8f153d67c6e61c5ecbc1920dedb2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2cff8f153d67c6e61c5ecbc1920dedb2">MAX31855_DATA_SIZE</a>&#160;&#160;&#160;(4)</td></tr>
+<tr class="memdesc:a2cff8f153d67c6e61c5ecbc1920dedb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the data read from the MAX31855 in bytes.  <br /></td></tr>
+<tr class="separator:a2cff8f153d67c6e61c5ecbc1920dedb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4124160c2739acd9f7398414a9afec2b" id="r_a4124160c2739acd9f7398414a9afec2b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4124160c2739acd9f7398414a9afec2b">MAX31855_THERMOCOUPLE_SIGN_SHIFT</a>&#160;&#160;&#160;(31)</td></tr>
+<tr class="memdesc:a4124160c2739acd9f7398414a9afec2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift value for the thermocouple sign bit.  <br /></td></tr>
+<tr class="separator:a4124160c2739acd9f7398414a9afec2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f03e1de6a0ef5943a7dc798eecfc7f3" id="r_a3f03e1de6a0ef5943a7dc798eecfc7f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f03e1de6a0ef5943a7dc798eecfc7f3">MAX31855_THERMOCOUPLE_SIGN_MASK</a>&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#a4124160c2739acd9f7398414a9afec2b">MAX31855_THERMOCOUPLE_SIGN_SHIFT</a>)</td></tr>
+<tr class="memdesc:a3f03e1de6a0ef5943a7dc798eecfc7f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask value for the thermocouple sign bit.  <br /></td></tr>
+<tr class="separator:a3f03e1de6a0ef5943a7dc798eecfc7f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73137b33d6a5b11896b18da56845a141" id="r_a73137b33d6a5b11896b18da56845a141"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73137b33d6a5b11896b18da56845a141">MAX31855_THERMOCOUPLE_INTEGER_SHIFT</a>&#160;&#160;&#160;(20)</td></tr>
+<tr class="memdesc:a73137b33d6a5b11896b18da56845a141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift value for the thermocouple integer bits.  <br /></td></tr>
+<tr class="separator:a73137b33d6a5b11896b18da56845a141"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8393f2990f63ad9d32b559766baf127" id="r_af8393f2990f63ad9d32b559766baf127"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8393f2990f63ad9d32b559766baf127">MAX31855_THERMOCOUPLE_INTEGER_MASK</a>&#160;&#160;&#160;(0x7FFUL &lt;&lt; <a class="el" href="#a73137b33d6a5b11896b18da56845a141">MAX31855_THERMOCOUPLE_INTEGER_SHIFT</a>)</td></tr>
+<tr class="memdesc:af8393f2990f63ad9d32b559766baf127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask value for the thermocouple integer bits.  <br /></td></tr>
+<tr class="separator:af8393f2990f63ad9d32b559766baf127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab14225370d254acf59cc18a96884f70d" id="r_ab14225370d254acf59cc18a96884f70d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab14225370d254acf59cc18a96884f70d">MAX31855_THERMOCOUPLE_FRACTIONAL_HALF_SHIFT</a>&#160;&#160;&#160;(19)</td></tr>
+<tr class="memdesc:ab14225370d254acf59cc18a96884f70d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift value for the thermocouple fractional half degree bit.  <br /></td></tr>
+<tr class="separator:ab14225370d254acf59cc18a96884f70d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a026544c0032e564737c0279cd19c5a" id="r_a1a026544c0032e564737c0279cd19c5a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a026544c0032e564737c0279cd19c5a">MAX31855_THERMOCOUPLE_FRACTIONAL_HALF_MASK</a>&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#ab14225370d254acf59cc18a96884f70d">MAX31855_THERMOCOUPLE_FRACTIONAL_HALF_SHIFT</a>)</td></tr>
+<tr class="memdesc:a1a026544c0032e564737c0279cd19c5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask value for the thermocouple fractional half degree bit.  <br /></td></tr>
+<tr class="separator:a1a026544c0032e564737c0279cd19c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bdd028dde363090a66791e1058f394f" id="r_a3bdd028dde363090a66791e1058f394f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bdd028dde363090a66791e1058f394f">MAX31855_THERMOCOUPLE_FRACTIONAL_QUARTER_SHIFT</a>&#160;&#160;&#160;(18)</td></tr>
+<tr class="memdesc:a3bdd028dde363090a66791e1058f394f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift value for the thermocouple fractional quarter degree bit.  <br /></td></tr>
+<tr class="separator:a3bdd028dde363090a66791e1058f394f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a8e073639a78ec34ad43ea50407847b" id="r_a2a8e073639a78ec34ad43ea50407847b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a8e073639a78ec34ad43ea50407847b">MAX31855_THERMOCOUPLE_FRACTIONAL_QUARTER_MASK</a>&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#a3bdd028dde363090a66791e1058f394f">MAX31855_THERMOCOUPLE_FRACTIONAL_QUARTER_SHIFT</a>)</td></tr>
+<tr class="memdesc:a2a8e073639a78ec34ad43ea50407847b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask value for the thermocouple fractional quarter degree bit.  <br /></td></tr>
+<tr class="separator:a2a8e073639a78ec34ad43ea50407847b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada0fc1eb6657708863aa2fbf33574a74" id="r_ada0fc1eb6657708863aa2fbf33574a74"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada0fc1eb6657708863aa2fbf33574a74">MAX31855_INTERNAL_SIGN_SHIFT</a>&#160;&#160;&#160;(15)</td></tr>
+<tr class="memdesc:ada0fc1eb6657708863aa2fbf33574a74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift value for the internal sign bit.  <br /></td></tr>
+<tr class="separator:ada0fc1eb6657708863aa2fbf33574a74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17aeff0667143526a6bec909e2dcc899" id="r_a17aeff0667143526a6bec909e2dcc899"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17aeff0667143526a6bec909e2dcc899">MAX31855_INTERNAL_SIGN_MASK</a>&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#ada0fc1eb6657708863aa2fbf33574a74">MAX31855_INTERNAL_SIGN_SHIFT</a>)</td></tr>
+<tr class="memdesc:a17aeff0667143526a6bec909e2dcc899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask value for the internal sign bit.  <br /></td></tr>
+<tr class="separator:a17aeff0667143526a6bec909e2dcc899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a101f21c89a334bf887072f1581730a4c" id="r_a101f21c89a334bf887072f1581730a4c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a101f21c89a334bf887072f1581730a4c">MAX31855_INTERNAL_INTEGER_SHIFT</a>&#160;&#160;&#160;(8)</td></tr>
+<tr class="memdesc:a101f21c89a334bf887072f1581730a4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift value for the internal integer bits.  <br /></td></tr>
+<tr class="separator:a101f21c89a334bf887072f1581730a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcb62a1e5cf2644b31e63a48e8365222" id="r_afcb62a1e5cf2644b31e63a48e8365222"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcb62a1e5cf2644b31e63a48e8365222">MAX31855_INTERNAL_INTEGER_MASK</a>&#160;&#160;&#160;(0x7FUL &lt;&lt; <a class="el" href="#a101f21c89a334bf887072f1581730a4c">MAX31855_INTERNAL_INTEGER_SHIFT</a>)</td></tr>
+<tr class="memdesc:afcb62a1e5cf2644b31e63a48e8365222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask value for the internal integer bits.  <br /></td></tr>
+<tr class="separator:afcb62a1e5cf2644b31e63a48e8365222"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78bc79484df9e0a8cddbe98e2de3852d" id="r_a78bc79484df9e0a8cddbe98e2de3852d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78bc79484df9e0a8cddbe98e2de3852d">MAX31855_INTERNAL_FRACTIONAL_HALF_SHIFT</a>&#160;&#160;&#160;(7)</td></tr>
+<tr class="memdesc:a78bc79484df9e0a8cddbe98e2de3852d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift value for the internal fractional half degree bit.  <br /></td></tr>
+<tr class="separator:a78bc79484df9e0a8cddbe98e2de3852d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab545edc51a880cee38f55053e45048a8" id="r_ab545edc51a880cee38f55053e45048a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab545edc51a880cee38f55053e45048a8">MAX31855_INTERNAL_FRACTIONAL_HALF_MASK</a>&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#a78bc79484df9e0a8cddbe98e2de3852d">MAX31855_INTERNAL_FRACTIONAL_HALF_SHIFT</a>)</td></tr>
+<tr class="memdesc:ab545edc51a880cee38f55053e45048a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask value for the internal fractional half degree bit.  <br /></td></tr>
+<tr class="separator:ab545edc51a880cee38f55053e45048a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49daa243feffcd027161e4bc4d1d7cfd" id="r_a49daa243feffcd027161e4bc4d1d7cfd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49daa243feffcd027161e4bc4d1d7cfd">MAX31855_INTERNAL_FRACTIONAL_QUARTER_SHIFT</a>&#160;&#160;&#160;(6)</td></tr>
+<tr class="memdesc:a49daa243feffcd027161e4bc4d1d7cfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift value for the internal fractional quarter degree bit.  <br /></td></tr>
+<tr class="separator:a49daa243feffcd027161e4bc4d1d7cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ad38f3732b08162d83ad90a96644c30" id="r_a3ad38f3732b08162d83ad90a96644c30"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ad38f3732b08162d83ad90a96644c30">MAX31855_INTERNAL_FRACTIONAL_QUARTER_MASK</a>&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#a49daa243feffcd027161e4bc4d1d7cfd">MAX31855_INTERNAL_FRACTIONAL_QUARTER_SHIFT</a>)</td></tr>
+<tr class="memdesc:a3ad38f3732b08162d83ad90a96644c30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask value for the internal fractional quarter degree bit.  <br /></td></tr>
+<tr class="separator:a3ad38f3732b08162d83ad90a96644c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa33916936a32f376e7029433359ae6d3" id="r_aa33916936a32f376e7029433359ae6d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa33916936a32f376e7029433359ae6d3">MAX31855_INTERNAL_FRACTIONAL_EIGHTH_SHIFT</a>&#160;&#160;&#160;(5)</td></tr>
+<tr class="memdesc:aa33916936a32f376e7029433359ae6d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift value for the internal fractional eighth degree bit.  <br /></td></tr>
+<tr class="separator:aa33916936a32f376e7029433359ae6d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96a50e15ed2c7aab9304bc62b5647ed3" id="r_a96a50e15ed2c7aab9304bc62b5647ed3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96a50e15ed2c7aab9304bc62b5647ed3">MAX31855_INTERNAL_FRACTIONAL_EIGHTH_MASK</a>&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#aa33916936a32f376e7029433359ae6d3">MAX31855_INTERNAL_FRACTIONAL_EIGHTH_SHIFT</a>)</td></tr>
+<tr class="memdesc:a96a50e15ed2c7aab9304bc62b5647ed3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift value for the internal fractional eighth degree bit.  <br /></td></tr>
+<tr class="separator:a96a50e15ed2c7aab9304bc62b5647ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97d907fdeaf3b7428db72271d7e3e04c" id="r_a97d907fdeaf3b7428db72271d7e3e04c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97d907fdeaf3b7428db72271d7e3e04c">MAX31855_INTERNAL_FRACTIONAL_SIXTEENTH_SHIFT</a>&#160;&#160;&#160;(4)</td></tr>
+<tr class="memdesc:a97d907fdeaf3b7428db72271d7e3e04c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift value for the internal fractional sixteenth degree bit.  <br /></td></tr>
+<tr class="separator:a97d907fdeaf3b7428db72271d7e3e04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c3296aef314cdf14d569a562947d018" id="r_a3c3296aef314cdf14d569a562947d018"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c3296aef314cdf14d569a562947d018">MAX31855_INTERNAL_FRACTIONAL_SIXTEENTH_MASK</a>&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#a97d907fdeaf3b7428db72271d7e3e04c">MAX31855_INTERNAL_FRACTIONAL_SIXTEENTH_SHIFT</a>)</td></tr>
+<tr class="memdesc:a3c3296aef314cdf14d569a562947d018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift value for the internal fractional sixteenth degree bit.  <br /></td></tr>
+<tr class="separator:a3c3296aef314cdf14d569a562947d018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eb6db7a9d9a2bfce81d5eed755dad9b" id="r_a6eb6db7a9d9a2bfce81d5eed755dad9b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6eb6db7a9d9a2bfce81d5eed755dad9b">MAX31855_FAULT_VCC_SHORT_SHIFT</a>&#160;&#160;&#160;(2)</td></tr>
+<tr class="memdesc:a6eb6db7a9d9a2bfce81d5eed755dad9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift value for the fault bit indicating a VCC short.  <br /></td></tr>
+<tr class="separator:a6eb6db7a9d9a2bfce81d5eed755dad9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae40bee6c2f6eb73cd8db2d653742fab8" id="r_ae40bee6c2f6eb73cd8db2d653742fab8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae40bee6c2f6eb73cd8db2d653742fab8">MAX31855_FAULT_VCC_SHORT_MASK</a>&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#a6eb6db7a9d9a2bfce81d5eed755dad9b">MAX31855_FAULT_VCC_SHORT_SHIFT</a>)</td></tr>
+<tr class="memdesc:ae40bee6c2f6eb73cd8db2d653742fab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask value for the fault bit indicating a VCC short.  <br /></td></tr>
+<tr class="separator:ae40bee6c2f6eb73cd8db2d653742fab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f65da721d3246390495c6615e436433" id="r_a1f65da721d3246390495c6615e436433"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f65da721d3246390495c6615e436433">MAX31855_FAULT_GND_SHORT_SHIFT</a>&#160;&#160;&#160;(1)</td></tr>
+<tr class="memdesc:a1f65da721d3246390495c6615e436433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift value for the fault bit indicating a GND short.  <br /></td></tr>
+<tr class="separator:a1f65da721d3246390495c6615e436433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a911d20542c883ae5ba8135df42f18831" id="r_a911d20542c883ae5ba8135df42f18831"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a911d20542c883ae5ba8135df42f18831">MAX31855_FAULT_GND_SHORT_MASK</a>&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#a1f65da721d3246390495c6615e436433">MAX31855_FAULT_GND_SHORT_SHIFT</a>)</td></tr>
+<tr class="memdesc:a911d20542c883ae5ba8135df42f18831"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask value for the fault bit indicating a GND short.  <br /></td></tr>
+<tr class="separator:a911d20542c883ae5ba8135df42f18831"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40b11a66306dcf8a1f74ac469956d09a" id="r_a40b11a66306dcf8a1f74ac469956d09a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40b11a66306dcf8a1f74ac469956d09a">MAX31855_FAULT_OPEN_CIRCUIT_SHIFT</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:a40b11a66306dcf8a1f74ac469956d09a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shift value for the fault bit indicating an open circuit.  <br /></td></tr>
+<tr class="separator:a40b11a66306dcf8a1f74ac469956d09a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f81c6cd82bf3ab0229a0e991cf7d205" id="r_a6f81c6cd82bf3ab0229a0e991cf7d205"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f81c6cd82bf3ab0229a0e991cf7d205">MAX31855_FAULT_OPEN_CIRCUIT_MASK</a>&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#a40b11a66306dcf8a1f74ac469956d09a">MAX31855_FAULT_OPEN_CIRCUIT_SHIFT</a>)</td></tr>
+<tr class="memdesc:a6f81c6cd82bf3ab0229a0e991cf7d205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask value for the fault bit indicating an open circuit.  <br /></td></tr>
+<tr class="separator:a6f81c6cd82bf3ab0229a0e991cf7d205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae01dcaccfe58655c4f092f0104ef352" id="r_aae01dcaccfe58655c4f092f0104ef352"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae01dcaccfe58655c4f092f0104ef352">MAX31855_FAULT_MASK</a></td></tr>
+<tr class="memdesc:aae01dcaccfe58655c4f092f0104ef352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask value for the fault bits.  <br /></td></tr>
+<tr class="separator:aae01dcaccfe58655c4f092f0104ef352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a2cff8f153d67c6e61c5ecbc1920dedb2" name="a2cff8f153d67c6e61c5ecbc1920dedb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cff8f153d67c6e61c5ecbc1920dedb2">&#9670;&#160;</a></span>MAX31855_DATA_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_DATA_SIZE&#160;&#160;&#160;(4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Size of the data read from the MAX31855 in bytes. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00029">29</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a911d20542c883ae5ba8135df42f18831" name="a911d20542c883ae5ba8135df42f18831"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a911d20542c883ae5ba8135df42f18831">&#9670;&#160;</a></span>MAX31855_FAULT_GND_SHORT_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_FAULT_GND_SHORT_MASK&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#a1f65da721d3246390495c6615e436433">MAX31855_FAULT_GND_SHORT_SHIFT</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mask value for the fault bit indicating a GND short. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00149">149</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a1f65da721d3246390495c6615e436433" name="a1f65da721d3246390495c6615e436433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f65da721d3246390495c6615e436433">&#9670;&#160;</a></span>MAX31855_FAULT_GND_SHORT_SHIFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_FAULT_GND_SHORT_SHIFT&#160;&#160;&#160;(1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift value for the fault bit indicating a GND short. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00144">144</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="aae01dcaccfe58655c4f092f0104ef352" name="aae01dcaccfe58655c4f092f0104ef352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae01dcaccfe58655c4f092f0104ef352">&#9670;&#160;</a></span>MAX31855_FAULT_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_FAULT_MASK</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">                             (<a class="code hl_define" href="#ae40bee6c2f6eb73cd8db2d653742fab8">MAX31855_FAULT_VCC_SHORT_MASK</a> | \</div>
+<div class="line">                             <a class="code hl_define" href="#a911d20542c883ae5ba8135df42f18831">MAX31855_FAULT_GND_SHORT_MASK</a> | \</div>
+<div class="line">                             <a class="code hl_define" href="#a6f81c6cd82bf3ab0229a0e991cf7d205">MAX31855_FAULT_OPEN_CIRCUIT_MASK</a>)</div>
+<div class="ttc" id="amax31855__constants_8h_html_a6f81c6cd82bf3ab0229a0e991cf7d205"><div class="ttname"><a href="#a6f81c6cd82bf3ab0229a0e991cf7d205">MAX31855_FAULT_OPEN_CIRCUIT_MASK</a></div><div class="ttdeci">#define MAX31855_FAULT_OPEN_CIRCUIT_MASK</div><div class="ttdoc">Mask value for the fault bit indicating an open circuit.</div><div class="ttdef"><b>Definition</b> <a href="max31855__constants_8h_source.html#l00159">max31855_constants.h:159</a></div></div>
+<div class="ttc" id="amax31855__constants_8h_html_a911d20542c883ae5ba8135df42f18831"><div class="ttname"><a href="#a911d20542c883ae5ba8135df42f18831">MAX31855_FAULT_GND_SHORT_MASK</a></div><div class="ttdeci">#define MAX31855_FAULT_GND_SHORT_MASK</div><div class="ttdoc">Mask value for the fault bit indicating a GND short.</div><div class="ttdef"><b>Definition</b> <a href="max31855__constants_8h_source.html#l00149">max31855_constants.h:149</a></div></div>
+<div class="ttc" id="amax31855__constants_8h_html_ae40bee6c2f6eb73cd8db2d653742fab8"><div class="ttname"><a href="#ae40bee6c2f6eb73cd8db2d653742fab8">MAX31855_FAULT_VCC_SHORT_MASK</a></div><div class="ttdeci">#define MAX31855_FAULT_VCC_SHORT_MASK</div><div class="ttdoc">Mask value for the fault bit indicating a VCC short.</div><div class="ttdef"><b>Definition</b> <a href="max31855__constants_8h_source.html#l00139">max31855_constants.h:139</a></div></div>
+</div><!-- fragment -->
+<p>Mask value for the fault bits. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00164">164</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a6f81c6cd82bf3ab0229a0e991cf7d205" name="a6f81c6cd82bf3ab0229a0e991cf7d205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f81c6cd82bf3ab0229a0e991cf7d205">&#9670;&#160;</a></span>MAX31855_FAULT_OPEN_CIRCUIT_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_FAULT_OPEN_CIRCUIT_MASK&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#a40b11a66306dcf8a1f74ac469956d09a">MAX31855_FAULT_OPEN_CIRCUIT_SHIFT</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mask value for the fault bit indicating an open circuit. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00159">159</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a40b11a66306dcf8a1f74ac469956d09a" name="a40b11a66306dcf8a1f74ac469956d09a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40b11a66306dcf8a1f74ac469956d09a">&#9670;&#160;</a></span>MAX31855_FAULT_OPEN_CIRCUIT_SHIFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_FAULT_OPEN_CIRCUIT_SHIFT&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift value for the fault bit indicating an open circuit. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00154">154</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="ae40bee6c2f6eb73cd8db2d653742fab8" name="ae40bee6c2f6eb73cd8db2d653742fab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae40bee6c2f6eb73cd8db2d653742fab8">&#9670;&#160;</a></span>MAX31855_FAULT_VCC_SHORT_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_FAULT_VCC_SHORT_MASK&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#a6eb6db7a9d9a2bfce81d5eed755dad9b">MAX31855_FAULT_VCC_SHORT_SHIFT</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mask value for the fault bit indicating a VCC short. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00139">139</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a6eb6db7a9d9a2bfce81d5eed755dad9b" name="a6eb6db7a9d9a2bfce81d5eed755dad9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eb6db7a9d9a2bfce81d5eed755dad9b">&#9670;&#160;</a></span>MAX31855_FAULT_VCC_SHORT_SHIFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_FAULT_VCC_SHORT_SHIFT&#160;&#160;&#160;(2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift value for the fault bit indicating a VCC short. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00134">134</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a96a50e15ed2c7aab9304bc62b5647ed3" name="a96a50e15ed2c7aab9304bc62b5647ed3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96a50e15ed2c7aab9304bc62b5647ed3">&#9670;&#160;</a></span>MAX31855_INTERNAL_FRACTIONAL_EIGHTH_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_INTERNAL_FRACTIONAL_EIGHTH_MASK&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#aa33916936a32f376e7029433359ae6d3">MAX31855_INTERNAL_FRACTIONAL_EIGHTH_SHIFT</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift value for the internal fractional eighth degree bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00119">119</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="aa33916936a32f376e7029433359ae6d3" name="aa33916936a32f376e7029433359ae6d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa33916936a32f376e7029433359ae6d3">&#9670;&#160;</a></span>MAX31855_INTERNAL_FRACTIONAL_EIGHTH_SHIFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_INTERNAL_FRACTIONAL_EIGHTH_SHIFT&#160;&#160;&#160;(5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift value for the internal fractional eighth degree bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00114">114</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="ab545edc51a880cee38f55053e45048a8" name="ab545edc51a880cee38f55053e45048a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab545edc51a880cee38f55053e45048a8">&#9670;&#160;</a></span>MAX31855_INTERNAL_FRACTIONAL_HALF_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_INTERNAL_FRACTIONAL_HALF_MASK&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#a78bc79484df9e0a8cddbe98e2de3852d">MAX31855_INTERNAL_FRACTIONAL_HALF_SHIFT</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mask value for the internal fractional half degree bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00099">99</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a78bc79484df9e0a8cddbe98e2de3852d" name="a78bc79484df9e0a8cddbe98e2de3852d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78bc79484df9e0a8cddbe98e2de3852d">&#9670;&#160;</a></span>MAX31855_INTERNAL_FRACTIONAL_HALF_SHIFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_INTERNAL_FRACTIONAL_HALF_SHIFT&#160;&#160;&#160;(7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift value for the internal fractional half degree bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00094">94</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a3ad38f3732b08162d83ad90a96644c30" name="a3ad38f3732b08162d83ad90a96644c30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ad38f3732b08162d83ad90a96644c30">&#9670;&#160;</a></span>MAX31855_INTERNAL_FRACTIONAL_QUARTER_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_INTERNAL_FRACTIONAL_QUARTER_MASK&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#a49daa243feffcd027161e4bc4d1d7cfd">MAX31855_INTERNAL_FRACTIONAL_QUARTER_SHIFT</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mask value for the internal fractional quarter degree bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00109">109</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a49daa243feffcd027161e4bc4d1d7cfd" name="a49daa243feffcd027161e4bc4d1d7cfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49daa243feffcd027161e4bc4d1d7cfd">&#9670;&#160;</a></span>MAX31855_INTERNAL_FRACTIONAL_QUARTER_SHIFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_INTERNAL_FRACTIONAL_QUARTER_SHIFT&#160;&#160;&#160;(6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift value for the internal fractional quarter degree bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00104">104</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a3c3296aef314cdf14d569a562947d018" name="a3c3296aef314cdf14d569a562947d018"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c3296aef314cdf14d569a562947d018">&#9670;&#160;</a></span>MAX31855_INTERNAL_FRACTIONAL_SIXTEENTH_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_INTERNAL_FRACTIONAL_SIXTEENTH_MASK&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#a97d907fdeaf3b7428db72271d7e3e04c">MAX31855_INTERNAL_FRACTIONAL_SIXTEENTH_SHIFT</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift value for the internal fractional sixteenth degree bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00129">129</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a97d907fdeaf3b7428db72271d7e3e04c" name="a97d907fdeaf3b7428db72271d7e3e04c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97d907fdeaf3b7428db72271d7e3e04c">&#9670;&#160;</a></span>MAX31855_INTERNAL_FRACTIONAL_SIXTEENTH_SHIFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_INTERNAL_FRACTIONAL_SIXTEENTH_SHIFT&#160;&#160;&#160;(4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift value for the internal fractional sixteenth degree bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00124">124</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="afcb62a1e5cf2644b31e63a48e8365222" name="afcb62a1e5cf2644b31e63a48e8365222"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcb62a1e5cf2644b31e63a48e8365222">&#9670;&#160;</a></span>MAX31855_INTERNAL_INTEGER_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_INTERNAL_INTEGER_MASK&#160;&#160;&#160;(0x7FUL &lt;&lt; <a class="el" href="#a101f21c89a334bf887072f1581730a4c">MAX31855_INTERNAL_INTEGER_SHIFT</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mask value for the internal integer bits. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00089">89</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a101f21c89a334bf887072f1581730a4c" name="a101f21c89a334bf887072f1581730a4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a101f21c89a334bf887072f1581730a4c">&#9670;&#160;</a></span>MAX31855_INTERNAL_INTEGER_SHIFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_INTERNAL_INTEGER_SHIFT&#160;&#160;&#160;(8)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift value for the internal integer bits. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00084">84</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a17aeff0667143526a6bec909e2dcc899" name="a17aeff0667143526a6bec909e2dcc899"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17aeff0667143526a6bec909e2dcc899">&#9670;&#160;</a></span>MAX31855_INTERNAL_SIGN_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_INTERNAL_SIGN_MASK&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#ada0fc1eb6657708863aa2fbf33574a74">MAX31855_INTERNAL_SIGN_SHIFT</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mask value for the internal sign bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00079">79</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="ada0fc1eb6657708863aa2fbf33574a74" name="ada0fc1eb6657708863aa2fbf33574a74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada0fc1eb6657708863aa2fbf33574a74">&#9670;&#160;</a></span>MAX31855_INTERNAL_SIGN_SHIFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_INTERNAL_SIGN_SHIFT&#160;&#160;&#160;(15)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift value for the internal sign bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00074">74</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a1a026544c0032e564737c0279cd19c5a" name="a1a026544c0032e564737c0279cd19c5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a026544c0032e564737c0279cd19c5a">&#9670;&#160;</a></span>MAX31855_THERMOCOUPLE_FRACTIONAL_HALF_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_THERMOCOUPLE_FRACTIONAL_HALF_MASK&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#ab14225370d254acf59cc18a96884f70d">MAX31855_THERMOCOUPLE_FRACTIONAL_HALF_SHIFT</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mask value for the thermocouple fractional half degree bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00059">59</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="ab14225370d254acf59cc18a96884f70d" name="ab14225370d254acf59cc18a96884f70d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab14225370d254acf59cc18a96884f70d">&#9670;&#160;</a></span>MAX31855_THERMOCOUPLE_FRACTIONAL_HALF_SHIFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_THERMOCOUPLE_FRACTIONAL_HALF_SHIFT&#160;&#160;&#160;(19)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift value for the thermocouple fractional half degree bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00054">54</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a2a8e073639a78ec34ad43ea50407847b" name="a2a8e073639a78ec34ad43ea50407847b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a8e073639a78ec34ad43ea50407847b">&#9670;&#160;</a></span>MAX31855_THERMOCOUPLE_FRACTIONAL_QUARTER_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_THERMOCOUPLE_FRACTIONAL_QUARTER_MASK&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#a3bdd028dde363090a66791e1058f394f">MAX31855_THERMOCOUPLE_FRACTIONAL_QUARTER_SHIFT</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mask value for the thermocouple fractional quarter degree bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00069">69</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a3bdd028dde363090a66791e1058f394f" name="a3bdd028dde363090a66791e1058f394f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bdd028dde363090a66791e1058f394f">&#9670;&#160;</a></span>MAX31855_THERMOCOUPLE_FRACTIONAL_QUARTER_SHIFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_THERMOCOUPLE_FRACTIONAL_QUARTER_SHIFT&#160;&#160;&#160;(18)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift value for the thermocouple fractional quarter degree bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00064">64</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="af8393f2990f63ad9d32b559766baf127" name="af8393f2990f63ad9d32b559766baf127"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8393f2990f63ad9d32b559766baf127">&#9670;&#160;</a></span>MAX31855_THERMOCOUPLE_INTEGER_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_THERMOCOUPLE_INTEGER_MASK&#160;&#160;&#160;(0x7FFUL &lt;&lt; <a class="el" href="#a73137b33d6a5b11896b18da56845a141">MAX31855_THERMOCOUPLE_INTEGER_SHIFT</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mask value for the thermocouple integer bits. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00049">49</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a73137b33d6a5b11896b18da56845a141" name="a73137b33d6a5b11896b18da56845a141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73137b33d6a5b11896b18da56845a141">&#9670;&#160;</a></span>MAX31855_THERMOCOUPLE_INTEGER_SHIFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_THERMOCOUPLE_INTEGER_SHIFT&#160;&#160;&#160;(20)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift value for the thermocouple integer bits. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00044">44</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a3f03e1de6a0ef5943a7dc798eecfc7f3" name="a3f03e1de6a0ef5943a7dc798eecfc7f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f03e1de6a0ef5943a7dc798eecfc7f3">&#9670;&#160;</a></span>MAX31855_THERMOCOUPLE_SIGN_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_THERMOCOUPLE_SIGN_MASK&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#a4124160c2739acd9f7398414a9afec2b">MAX31855_THERMOCOUPLE_SIGN_SHIFT</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mask value for the thermocouple sign bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00039">39</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a4124160c2739acd9f7398414a9afec2b" name="a4124160c2739acd9f7398414a9afec2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4124160c2739acd9f7398414a9afec2b">&#9670;&#160;</a></span>MAX31855_THERMOCOUPLE_SIGN_SHIFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX31855_THERMOCOUPLE_SIGN_SHIFT&#160;&#160;&#160;(31)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shift value for the thermocouple sign bit. </p>
+
+<p class="definition">Definition at line <a class="el" href="max31855__constants_8h_source.html#l00034">34</a> of file <a class="el" href="max31855__constants_8h_source.html">max31855_constants.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

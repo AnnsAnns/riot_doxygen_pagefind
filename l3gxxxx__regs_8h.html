@@ -1,0 +1,2947 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/l3gxxxx/include/l3gxxxx_regs.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('l3gxxxx__regs_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">l3gxxxx_regs.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a> &#124; <a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> &raquo; <a class="el" href="group__drivers__l3gxxxx.html">L3Gxxxx 3-axis gyroscope sensor family</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Register definitions for ST L3Gxxxx 3-axis gyroscope sensor family.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Register definitions for ST L3Gxxxx 3-axis gyroscope sensor family. </p>
+<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span class="obfuscator">.nosp@m.</span>@sch<span class="obfuscator">.nosp@m.</span>orcht<span class="obfuscator">.nosp@m.</span>.net</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="l3gxxxx__regs_8h__dep__incl.svg" width="196" height="224"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="l3gxxxx__regs_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Register addresses</h2></td></tr>
+<tr class="memitem:a091a77f2b6d1a697e132764181538dfa" id="r_a091a77f2b6d1a697e132764181538dfa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a091a77f2b6d1a697e132764181538dfa">L3GXXXX_REG_WHO_AM_I</a>&#160;&#160;&#160;(0x0f)</td></tr>
+<tr class="memdesc:a091a77f2b6d1a697e132764181538dfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address WHO_AM_I.  <br /></td></tr>
+<tr class="separator:a091a77f2b6d1a697e132764181538dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b7487b9481627f578c3b9f321f14c4e" id="r_a0b7487b9481627f578c3b9f321f14c4e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b7487b9481627f578c3b9f321f14c4e">L3GXXXX_REG_CTRL1</a>&#160;&#160;&#160;(0x20)</td></tr>
+<tr class="memdesc:a0b7487b9481627f578c3b9f321f14c4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address CTRL1.  <br /></td></tr>
+<tr class="separator:a0b7487b9481627f578c3b9f321f14c4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81d250c12fd5aa86b02f625e05fc4d06" id="r_a81d250c12fd5aa86b02f625e05fc4d06"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81d250c12fd5aa86b02f625e05fc4d06">L3GXXXX_REG_CTRL2</a>&#160;&#160;&#160;(0x21)</td></tr>
+<tr class="memdesc:a81d250c12fd5aa86b02f625e05fc4d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address CTRL2.  <br /></td></tr>
+<tr class="separator:a81d250c12fd5aa86b02f625e05fc4d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68b00cb8d0bbf4421ddd529e9b13128c" id="r_a68b00cb8d0bbf4421ddd529e9b13128c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68b00cb8d0bbf4421ddd529e9b13128c">L3GXXXX_REG_CTRL3</a>&#160;&#160;&#160;(0x22)</td></tr>
+<tr class="memdesc:a68b00cb8d0bbf4421ddd529e9b13128c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address CTRL3.  <br /></td></tr>
+<tr class="separator:a68b00cb8d0bbf4421ddd529e9b13128c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcb451e61acd4d5d8f9b4a99dcab5cf3" id="r_afcb451e61acd4d5d8f9b4a99dcab5cf3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcb451e61acd4d5d8f9b4a99dcab5cf3">L3GXXXX_REG_CTRL4</a>&#160;&#160;&#160;(0x23)</td></tr>
+<tr class="memdesc:afcb451e61acd4d5d8f9b4a99dcab5cf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address CTRL4.  <br /></td></tr>
+<tr class="separator:afcb451e61acd4d5d8f9b4a99dcab5cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2c9e7ce61f0be5a6a653f9e9ef241ef" id="r_aa2c9e7ce61f0be5a6a653f9e9ef241ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2c9e7ce61f0be5a6a653f9e9ef241ef">L3GXXXX_REG_CTRL5</a>&#160;&#160;&#160;(0x24)</td></tr>
+<tr class="memdesc:aa2c9e7ce61f0be5a6a653f9e9ef241ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address CTRL5.  <br /></td></tr>
+<tr class="separator:aa2c9e7ce61f0be5a6a653f9e9ef241ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae951870588fd619cbc651738abcbe90b" id="r_ae951870588fd619cbc651738abcbe90b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae951870588fd619cbc651738abcbe90b">L3GXXXX_REG_REFERENCE</a>&#160;&#160;&#160;(0x25)</td></tr>
+<tr class="memdesc:ae951870588fd619cbc651738abcbe90b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address REFERENCE.  <br /></td></tr>
+<tr class="separator:ae951870588fd619cbc651738abcbe90b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc7c59ecda6437fdcec7d39303385e20" id="r_abc7c59ecda6437fdcec7d39303385e20"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc7c59ecda6437fdcec7d39303385e20">L3GXXXX_REG_OUT_TEMP</a>&#160;&#160;&#160;(0x26)</td></tr>
+<tr class="memdesc:abc7c59ecda6437fdcec7d39303385e20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address OUT_TEMP.  <br /></td></tr>
+<tr class="separator:abc7c59ecda6437fdcec7d39303385e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf0e312c42811287e3365b4ba5954f9c" id="r_abf0e312c42811287e3365b4ba5954f9c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf0e312c42811287e3365b4ba5954f9c">L3GXXXX_REG_STATUS</a>&#160;&#160;&#160;(0x27)</td></tr>
+<tr class="memdesc:abf0e312c42811287e3365b4ba5954f9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address STATUS.  <br /></td></tr>
+<tr class="separator:abf0e312c42811287e3365b4ba5954f9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d4eabe2f53ced257ebe10ee87f6c884" id="r_a3d4eabe2f53ced257ebe10ee87f6c884"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d4eabe2f53ced257ebe10ee87f6c884">L3GXXXX_REG_OUT_X_L</a>&#160;&#160;&#160;(0x28)</td></tr>
+<tr class="memdesc:a3d4eabe2f53ced257ebe10ee87f6c884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address OUT_X_L.  <br /></td></tr>
+<tr class="separator:a3d4eabe2f53ced257ebe10ee87f6c884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab30bf125bde16a71348cb5b52473d12c" id="r_ab30bf125bde16a71348cb5b52473d12c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab30bf125bde16a71348cb5b52473d12c">L3GXXXX_REG_OUT_X_H</a>&#160;&#160;&#160;(0x29)</td></tr>
+<tr class="memdesc:ab30bf125bde16a71348cb5b52473d12c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address OUT_X_H.  <br /></td></tr>
+<tr class="separator:ab30bf125bde16a71348cb5b52473d12c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab164fa5da101792932f610956ce96c9c" id="r_ab164fa5da101792932f610956ce96c9c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab164fa5da101792932f610956ce96c9c">L3GXXXX_REG_OUT_Y_L</a>&#160;&#160;&#160;(0x2a)</td></tr>
+<tr class="memdesc:ab164fa5da101792932f610956ce96c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address OUT_Y_L.  <br /></td></tr>
+<tr class="separator:ab164fa5da101792932f610956ce96c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a922af47e743bf21e34338892dad0773f" id="r_a922af47e743bf21e34338892dad0773f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a922af47e743bf21e34338892dad0773f">L3GXXXX_REG_OUT_Y_H</a>&#160;&#160;&#160;(0x2b)</td></tr>
+<tr class="memdesc:a922af47e743bf21e34338892dad0773f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address OUT_Y_H.  <br /></td></tr>
+<tr class="separator:a922af47e743bf21e34338892dad0773f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b3a2053b410ad9f844e7f7a44a7413a" id="r_a0b3a2053b410ad9f844e7f7a44a7413a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b3a2053b410ad9f844e7f7a44a7413a">L3GXXXX_REG_OUT_Z_L</a>&#160;&#160;&#160;(0x2c)</td></tr>
+<tr class="memdesc:a0b3a2053b410ad9f844e7f7a44a7413a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address OUT_Z_L.  <br /></td></tr>
+<tr class="separator:a0b3a2053b410ad9f844e7f7a44a7413a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeb6c839bc055efc656d79a74ea55af4" id="r_adeb6c839bc055efc656d79a74ea55af4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adeb6c839bc055efc656d79a74ea55af4">L3GXXXX_REG_OUT_Z_H</a>&#160;&#160;&#160;(0x2d)</td></tr>
+<tr class="memdesc:adeb6c839bc055efc656d79a74ea55af4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address OUT_Z_H.  <br /></td></tr>
+<tr class="separator:adeb6c839bc055efc656d79a74ea55af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d6316137827131d446a920586eaa871" id="r_a2d6316137827131d446a920586eaa871"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d6316137827131d446a920586eaa871">L3GXXXX_REG_FIFO_CTRL</a>&#160;&#160;&#160;(0x2e)</td></tr>
+<tr class="memdesc:a2d6316137827131d446a920586eaa871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address FIFO_CTRL.  <br /></td></tr>
+<tr class="separator:a2d6316137827131d446a920586eaa871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12665b4f96e1c532e57d912684ff7596" id="r_a12665b4f96e1c532e57d912684ff7596"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12665b4f96e1c532e57d912684ff7596">L3GXXXX_REG_FIFO_SRC</a>&#160;&#160;&#160;(0x2f)</td></tr>
+<tr class="memdesc:a12665b4f96e1c532e57d912684ff7596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address FIFO_SRC.  <br /></td></tr>
+<tr class="separator:a12665b4f96e1c532e57d912684ff7596"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56c46c5f5cc8a5e1d7b182947d6aabe5" id="r_a56c46c5f5cc8a5e1d7b182947d6aabe5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56c46c5f5cc8a5e1d7b182947d6aabe5">L3GXXXX_REG_IG_CFG</a>&#160;&#160;&#160;(0x30)</td></tr>
+<tr class="memdesc:a56c46c5f5cc8a5e1d7b182947d6aabe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address IG_CFG.  <br /></td></tr>
+<tr class="separator:a56c46c5f5cc8a5e1d7b182947d6aabe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16703f3568f5ce130a94c766b74a095c" id="r_a16703f3568f5ce130a94c766b74a095c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16703f3568f5ce130a94c766b74a095c">L3GXXXX_REG_IG_SRC</a>&#160;&#160;&#160;(0x31)</td></tr>
+<tr class="memdesc:a16703f3568f5ce130a94c766b74a095c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address IG_SRC.  <br /></td></tr>
+<tr class="separator:a16703f3568f5ce130a94c766b74a095c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72804302e6cd2da86d584ab116a83e7c" id="r_a72804302e6cd2da86d584ab116a83e7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72804302e6cd2da86d584ab116a83e7c">L3GXXXX_REG_IG_THS_XH</a>&#160;&#160;&#160;(0x32)</td></tr>
+<tr class="memdesc:a72804302e6cd2da86d584ab116a83e7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address IG_THS_XH.  <br /></td></tr>
+<tr class="separator:a72804302e6cd2da86d584ab116a83e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa21a7e60d212ef43af660cc8153681fc" id="r_aa21a7e60d212ef43af660cc8153681fc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa21a7e60d212ef43af660cc8153681fc">L3GXXXX_REG_IG_THS_XL</a>&#160;&#160;&#160;(0x33)</td></tr>
+<tr class="memdesc:aa21a7e60d212ef43af660cc8153681fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address IG_THS_XL.  <br /></td></tr>
+<tr class="separator:aa21a7e60d212ef43af660cc8153681fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87d4fa846c2cf263e8a66ecbdcf44fc8" id="r_a87d4fa846c2cf263e8a66ecbdcf44fc8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87d4fa846c2cf263e8a66ecbdcf44fc8">L3GXXXX_REG_IG_THS_YH</a>&#160;&#160;&#160;(0x34)</td></tr>
+<tr class="memdesc:a87d4fa846c2cf263e8a66ecbdcf44fc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address IG_THS_YH.  <br /></td></tr>
+<tr class="separator:a87d4fa846c2cf263e8a66ecbdcf44fc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c012c65602f1710702e1105b590dbbd" id="r_a0c012c65602f1710702e1105b590dbbd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c012c65602f1710702e1105b590dbbd">L3GXXXX_REG_IG_THS_YL</a>&#160;&#160;&#160;(0x35)</td></tr>
+<tr class="memdesc:a0c012c65602f1710702e1105b590dbbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address IG_THS_YL.  <br /></td></tr>
+<tr class="separator:a0c012c65602f1710702e1105b590dbbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc847821769f3a5fc57f5991d1014aec" id="r_afc847821769f3a5fc57f5991d1014aec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc847821769f3a5fc57f5991d1014aec">L3GXXXX_REG_IG_THS_ZH</a>&#160;&#160;&#160;(0x36)</td></tr>
+<tr class="memdesc:afc847821769f3a5fc57f5991d1014aec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address IG_THS_ZH.  <br /></td></tr>
+<tr class="separator:afc847821769f3a5fc57f5991d1014aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f4126c0c543d0c49a5de7d755fc139a" id="r_a3f4126c0c543d0c49a5de7d755fc139a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f4126c0c543d0c49a5de7d755fc139a">L3GXXXX_REG_IG_THS_ZL</a>&#160;&#160;&#160;(0x37)</td></tr>
+<tr class="memdesc:a3f4126c0c543d0c49a5de7d755fc139a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address IG_THS_ZL.  <br /></td></tr>
+<tr class="separator:a3f4126c0c543d0c49a5de7d755fc139a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5213800c97b4959aa766925d144a9938" id="r_a5213800c97b4959aa766925d144a9938"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5213800c97b4959aa766925d144a9938">L3GXXXX_REG_IG_DURATION</a>&#160;&#160;&#160;(0x38)</td></tr>
+<tr class="memdesc:a5213800c97b4959aa766925d144a9938"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address IG_DURATION.  <br /></td></tr>
+<tr class="separator:a5213800c97b4959aa766925d144a9938"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ba317d2bc8c7fe093ce793f60fbc4b0" id="r_a9ba317d2bc8c7fe093ce793f60fbc4b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ba317d2bc8c7fe093ce793f60fbc4b0">L3GXXXX_REG_LOW_ODR</a>&#160;&#160;&#160;(0x39)</td></tr>
+<tr class="memdesc:a9ba317d2bc8c7fe093ce793f60fbc4b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register address LOW_ODR.  <br /></td></tr>
+<tr class="separator:a9ba317d2bc8c7fe093ce793f60fbc4b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Register structure definitions</h2></td></tr>
+<tr class="memitem:a8458dc5dc509511cba2680e7672665c4" id="r_a8458dc5dc509511cba2680e7672665c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8458dc5dc509511cba2680e7672665c4">L3GXXXX_ZYXOR</a>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="memdesc:a8458dc5dc509511cba2680e7672665c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_STATUS&lt;7&gt;  <br /></td></tr>
+<tr class="separator:a8458dc5dc509511cba2680e7672665c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc2dd56f868ad2fe74533b9a0e1a5708" id="r_adc2dd56f868ad2fe74533b9a0e1a5708"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc2dd56f868ad2fe74533b9a0e1a5708">L3GXXXX_ZOR</a>&#160;&#160;&#160;(0x40)</td></tr>
+<tr class="memdesc:adc2dd56f868ad2fe74533b9a0e1a5708"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_STATUS&lt;6&gt;  <br /></td></tr>
+<tr class="separator:adc2dd56f868ad2fe74533b9a0e1a5708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af00fc8df71d6500fd2d1db8d077b2adb" id="r_af00fc8df71d6500fd2d1db8d077b2adb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af00fc8df71d6500fd2d1db8d077b2adb">L3GXXXX_YOR</a>&#160;&#160;&#160;(0x20)</td></tr>
+<tr class="memdesc:af00fc8df71d6500fd2d1db8d077b2adb"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_STATUS&lt;5&gt;  <br /></td></tr>
+<tr class="separator:af00fc8df71d6500fd2d1db8d077b2adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a588be735dbffc3539c700ffa86a19e4f" id="r_a588be735dbffc3539c700ffa86a19e4f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a588be735dbffc3539c700ffa86a19e4f">L3GXXXX_XOR</a>&#160;&#160;&#160;(0x10)</td></tr>
+<tr class="memdesc:a588be735dbffc3539c700ffa86a19e4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_STATUS&lt;4&gt;  <br /></td></tr>
+<tr class="separator:a588be735dbffc3539c700ffa86a19e4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa7be3b2afbded9d868cc1d0a213b273" id="r_afa7be3b2afbded9d868cc1d0a213b273"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa7be3b2afbded9d868cc1d0a213b273">L3GXXXX_ZYXDA</a>&#160;&#160;&#160;(0x08)</td></tr>
+<tr class="memdesc:afa7be3b2afbded9d868cc1d0a213b273"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_STATUS&lt;3&gt;  <br /></td></tr>
+<tr class="separator:afa7be3b2afbded9d868cc1d0a213b273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99d25c5b65fa43116a49b80ec71c53b5" id="r_a99d25c5b65fa43116a49b80ec71c53b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99d25c5b65fa43116a49b80ec71c53b5">L3GXXXX_ZDA</a>&#160;&#160;&#160;(0x04)</td></tr>
+<tr class="memdesc:a99d25c5b65fa43116a49b80ec71c53b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_STATUS&lt;2&gt;  <br /></td></tr>
+<tr class="separator:a99d25c5b65fa43116a49b80ec71c53b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a9aac93ffad9e4aae0690aff48b525f" id="r_a7a9aac93ffad9e4aae0690aff48b525f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a9aac93ffad9e4aae0690aff48b525f">L3GXXXX_YDA</a>&#160;&#160;&#160;(0x02)</td></tr>
+<tr class="memdesc:a7a9aac93ffad9e4aae0690aff48b525f"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_STATUS&lt;1&gt;  <br /></td></tr>
+<tr class="separator:a7a9aac93ffad9e4aae0690aff48b525f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae080eb16edebc62a2e7c6891833c17f2" id="r_ae080eb16edebc62a2e7c6891833c17f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae080eb16edebc62a2e7c6891833c17f2">L3GXXXX_XDA</a>&#160;&#160;&#160;(0x01)</td></tr>
+<tr class="memdesc:ae080eb16edebc62a2e7c6891833c17f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_STATUS&lt;0&gt;  <br /></td></tr>
+<tr class="separator:ae080eb16edebc62a2e7c6891833c17f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2970d92131dfbf4c1351aac0b26cff97" id="r_a2970d92131dfbf4c1351aac0b26cff97"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2970d92131dfbf4c1351aac0b26cff97">L3GXXXX_ANY_DATA_READY</a>&#160;&#160;&#160;(0x07)</td></tr>
+<tr class="memdesc:a2970d92131dfbf4c1351aac0b26cff97"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_STATUS&lt;2:0&gt;  <br /></td></tr>
+<tr class="separator:a2970d92131dfbf4c1351aac0b26cff97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4c7d2baf5d0488c32ef0f6c16af8a9d" id="r_aa4c7d2baf5d0488c32ef0f6c16af8a9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4c7d2baf5d0488c32ef0f6c16af8a9d">L3GXXXX_ANY_DATA_READY_S</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:aa4c7d2baf5d0488c32ef0f6c16af8a9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_STATUS&lt;2:0&gt;  <br /></td></tr>
+<tr class="separator:aa4c7d2baf5d0488c32ef0f6c16af8a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a8973e01a666c0a204c2521920da9ec" id="r_a0a8973e01a666c0a204c2521920da9ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a8973e01a666c0a204c2521920da9ec">L3GXXXX_ODR</a>&#160;&#160;&#160;(0xc0)</td></tr>
+<tr class="memdesc:a0a8973e01a666c0a204c2521920da9ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL1&lt;7:6&gt;  <br /></td></tr>
+<tr class="separator:a0a8973e01a666c0a204c2521920da9ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abace64141d3e08ded8cb8f19e1b28360" id="r_abace64141d3e08ded8cb8f19e1b28360"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abace64141d3e08ded8cb8f19e1b28360">L3GXXXX_BW</a>&#160;&#160;&#160;(0x30)</td></tr>
+<tr class="memdesc:abace64141d3e08ded8cb8f19e1b28360"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL1&lt;5:4&gt;  <br /></td></tr>
+<tr class="separator:abace64141d3e08ded8cb8f19e1b28360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa49f62aa8f217a076bc5eced32e5cc99" id="r_aa49f62aa8f217a076bc5eced32e5cc99"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa49f62aa8f217a076bc5eced32e5cc99">L3GXXXX_ODR_BW</a>&#160;&#160;&#160;(0xf0)</td></tr>
+<tr class="memdesc:aa49f62aa8f217a076bc5eced32e5cc99"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL1&lt;7:4&gt;  <br /></td></tr>
+<tr class="separator:aa49f62aa8f217a076bc5eced32e5cc99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa519dad48812f578662e572a410a5ba4" id="r_aa519dad48812f578662e572a410a5ba4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa519dad48812f578662e572a410a5ba4">L3GXXXX_POWER_MODE</a>&#160;&#160;&#160;(0x08)</td></tr>
+<tr class="memdesc:aa519dad48812f578662e572a410a5ba4"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL1&lt;3&gt;  <br /></td></tr>
+<tr class="separator:aa519dad48812f578662e572a410a5ba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae05eb4b377963d3936aa1c820c84fb09" id="r_ae05eb4b377963d3936aa1c820c84fb09"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae05eb4b377963d3936aa1c820c84fb09">L3GXXXX_Z_ENABLED</a>&#160;&#160;&#160;(0x04)</td></tr>
+<tr class="memdesc:ae05eb4b377963d3936aa1c820c84fb09"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL1&lt;2&gt;  <br /></td></tr>
+<tr class="separator:ae05eb4b377963d3936aa1c820c84fb09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81c25571a3c81deafc914cd5fdc964c0" id="r_a81c25571a3c81deafc914cd5fdc964c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81c25571a3c81deafc914cd5fdc964c0">L3GXXXX_Y_ENABLED</a>&#160;&#160;&#160;(0x02)</td></tr>
+<tr class="memdesc:a81c25571a3c81deafc914cd5fdc964c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL1&lt;1&gt;  <br /></td></tr>
+<tr class="separator:a81c25571a3c81deafc914cd5fdc964c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6386f2226835651fe103b0e6aaab2b33" id="r_a6386f2226835651fe103b0e6aaab2b33"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6386f2226835651fe103b0e6aaab2b33">L3GXXXX_X_ENABLED</a>&#160;&#160;&#160;(0x01)</td></tr>
+<tr class="memdesc:a6386f2226835651fe103b0e6aaab2b33"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL1&lt;0&gt;  <br /></td></tr>
+<tr class="separator:a6386f2226835651fe103b0e6aaab2b33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5434a5d44a7571368c9a940526e2647" id="r_aa5434a5d44a7571368c9a940526e2647"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5434a5d44a7571368c9a940526e2647">L3GXXXX_XYZ_ENABLED</a>&#160;&#160;&#160;(0x07)</td></tr>
+<tr class="memdesc:aa5434a5d44a7571368c9a940526e2647"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL1&lt;2:0&gt;  <br /></td></tr>
+<tr class="separator:aa5434a5d44a7571368c9a940526e2647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac82d457dbff6798840e623e4a5461d8b" id="r_ac82d457dbff6798840e623e4a5461d8b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac82d457dbff6798840e623e4a5461d8b">L3GXXXX_ODR_S</a>&#160;&#160;&#160;(6)</td></tr>
+<tr class="memdesc:ac82d457dbff6798840e623e4a5461d8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL1&lt;7:6&gt;  <br /></td></tr>
+<tr class="separator:ac82d457dbff6798840e623e4a5461d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73f0fd29e84f9b55fe3193292414ccc2" id="r_a73f0fd29e84f9b55fe3193292414ccc2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73f0fd29e84f9b55fe3193292414ccc2">L3GXXXX_BW_S</a>&#160;&#160;&#160;(4)</td></tr>
+<tr class="memdesc:a73f0fd29e84f9b55fe3193292414ccc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL1&lt;5:4&gt;  <br /></td></tr>
+<tr class="separator:a73f0fd29e84f9b55fe3193292414ccc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a3204f88dedc6054744d7df84f94032" id="r_a2a3204f88dedc6054744d7df84f94032"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a3204f88dedc6054744d7df84f94032">L3GXXXX_ODR_BW_S</a>&#160;&#160;&#160;(4)</td></tr>
+<tr class="memdesc:a2a3204f88dedc6054744d7df84f94032"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL1&lt;7:4&gt;  <br /></td></tr>
+<tr class="separator:a2a3204f88dedc6054744d7df84f94032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32c150dc088adbbf1fde983357d2decf" id="r_a32c150dc088adbbf1fde983357d2decf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32c150dc088adbbf1fde983357d2decf">L3GXXXX_POWER_MODE_S</a>&#160;&#160;&#160;(3)</td></tr>
+<tr class="memdesc:a32c150dc088adbbf1fde983357d2decf"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL1&lt;3&gt;  <br /></td></tr>
+<tr class="separator:a32c150dc088adbbf1fde983357d2decf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96704fe607b7e8693233891ec8abd601" id="r_a96704fe607b7e8693233891ec8abd601"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96704fe607b7e8693233891ec8abd601">L3GXXXX_Z_ENABLED_S</a>&#160;&#160;&#160;(2)</td></tr>
+<tr class="memdesc:a96704fe607b7e8693233891ec8abd601"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL1&lt;2&gt;  <br /></td></tr>
+<tr class="separator:a96704fe607b7e8693233891ec8abd601"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19cfa7a8e96a9ea55afcd446468e6219" id="r_a19cfa7a8e96a9ea55afcd446468e6219"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19cfa7a8e96a9ea55afcd446468e6219">L3GXXXX_Y_ENABLED_S</a>&#160;&#160;&#160;(1)</td></tr>
+<tr class="memdesc:a19cfa7a8e96a9ea55afcd446468e6219"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL1&lt;1&gt;  <br /></td></tr>
+<tr class="separator:a19cfa7a8e96a9ea55afcd446468e6219"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22cce956d58345d34c5fda6b43e4423a" id="r_a22cce956d58345d34c5fda6b43e4423a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22cce956d58345d34c5fda6b43e4423a">L3GXXXX_X_ENABLED_S</a>&#160;&#160;&#160;(1)</td></tr>
+<tr class="memdesc:a22cce956d58345d34c5fda6b43e4423a"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL1&lt;0&gt;  <br /></td></tr>
+<tr class="separator:a22cce956d58345d34c5fda6b43e4423a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f400a69b9b7d059ebb49a8d3cc33947" id="r_a6f400a69b9b7d059ebb49a8d3cc33947"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f400a69b9b7d059ebb49a8d3cc33947">L3GXXXX_XYZ_ENABLED_S</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:a6f400a69b9b7d059ebb49a8d3cc33947"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL1&lt;2:0&gt;  <br /></td></tr>
+<tr class="separator:a6f400a69b9b7d059ebb49a8d3cc33947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a463ca0a8c6add0279f3aab4128100e17" id="r_a463ca0a8c6add0279f3aab4128100e17"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a463ca0a8c6add0279f3aab4128100e17">L3GXXXX_EXTR_EN</a>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="memdesc:a463ca0a8c6add0279f3aab4128100e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL2&lt;7&gt;  <br /></td></tr>
+<tr class="separator:a463ca0a8c6add0279f3aab4128100e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e9cf2a6fb0e5f9749235282030c320e" id="r_a4e9cf2a6fb0e5f9749235282030c320e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e9cf2a6fb0e5f9749235282030c320e">L3GXXXX_LVL_EN</a>&#160;&#160;&#160;(0x40)</td></tr>
+<tr class="memdesc:a4e9cf2a6fb0e5f9749235282030c320e"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL2&lt;6&gt;  <br /></td></tr>
+<tr class="separator:a4e9cf2a6fb0e5f9749235282030c320e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add6363d5b865eed224cb263362359ed0" id="r_add6363d5b865eed224cb263362359ed0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add6363d5b865eed224cb263362359ed0">L3GXXXX_HPF_MODE</a>&#160;&#160;&#160;(0x30)</td></tr>
+<tr class="memdesc:add6363d5b865eed224cb263362359ed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL2&lt;5:4&gt;  <br /></td></tr>
+<tr class="separator:add6363d5b865eed224cb263362359ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15fb800532867499d0f354940428a222" id="r_a15fb800532867499d0f354940428a222"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15fb800532867499d0f354940428a222">L3GXXXX_HPF_CUTOFF</a>&#160;&#160;&#160;(0x0f)</td></tr>
+<tr class="memdesc:a15fb800532867499d0f354940428a222"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL2&lt;3:0&gt;  <br /></td></tr>
+<tr class="separator:a15fb800532867499d0f354940428a222"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fc5c4d3bdea81955df39479a41120ca" id="r_a5fc5c4d3bdea81955df39479a41120ca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5fc5c4d3bdea81955df39479a41120ca">L3GXXXX_EXTR_EN_S</a>&#160;&#160;&#160;(7)</td></tr>
+<tr class="memdesc:a5fc5c4d3bdea81955df39479a41120ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL2&lt;7&gt;  <br /></td></tr>
+<tr class="separator:a5fc5c4d3bdea81955df39479a41120ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a315219c7a9cce0aa6044ea460f1df704" id="r_a315219c7a9cce0aa6044ea460f1df704"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a315219c7a9cce0aa6044ea460f1df704">L3GXXXX_LVL_EN_S</a>&#160;&#160;&#160;(6)</td></tr>
+<tr class="memdesc:a315219c7a9cce0aa6044ea460f1df704"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL2&lt;6&gt;  <br /></td></tr>
+<tr class="separator:a315219c7a9cce0aa6044ea460f1df704"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a8391e30772f329d57c05a5653f1acb" id="r_a8a8391e30772f329d57c05a5653f1acb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a8391e30772f329d57c05a5653f1acb">L3GXXXX_HPF_MODE_S</a>&#160;&#160;&#160;(4)</td></tr>
+<tr class="memdesc:a8a8391e30772f329d57c05a5653f1acb"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL2&lt;5:4&gt;  <br /></td></tr>
+<tr class="separator:a8a8391e30772f329d57c05a5653f1acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af11914976f48f8752db128c4cef76ab8" id="r_af11914976f48f8752db128c4cef76ab8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af11914976f48f8752db128c4cef76ab8">L3GXXXX_INT1_IG</a>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="memdesc:af11914976f48f8752db128c4cef76ab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL3&lt;7&gt;  <br /></td></tr>
+<tr class="separator:af11914976f48f8752db128c4cef76ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7f38da4d8e94d2ccf2757560fcd1fda" id="r_ac7f38da4d8e94d2ccf2757560fcd1fda"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7f38da4d8e94d2ccf2757560fcd1fda">L3GXXXX_INT1_BOOT</a>&#160;&#160;&#160;(0x40)</td></tr>
+<tr class="memdesc:ac7f38da4d8e94d2ccf2757560fcd1fda"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL3&lt;6&gt;  <br /></td></tr>
+<tr class="separator:ac7f38da4d8e94d2ccf2757560fcd1fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09df617838a6d2115d6492d2a9aaa157" id="r_a09df617838a6d2115d6492d2a9aaa157"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09df617838a6d2115d6492d2a9aaa157">L3GXXXX_HL_ACTIVE</a>&#160;&#160;&#160;(0x20)</td></tr>
+<tr class="memdesc:a09df617838a6d2115d6492d2a9aaa157"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL3&lt;5&gt;  <br /></td></tr>
+<tr class="separator:a09df617838a6d2115d6492d2a9aaa157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a6e6721d73a1a4f5f6ce194dbf4d246" id="r_a8a6e6721d73a1a4f5f6ce194dbf4d246"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a6e6721d73a1a4f5f6ce194dbf4d246">L3GXXXX_PP_OD</a>&#160;&#160;&#160;(0x10)</td></tr>
+<tr class="memdesc:a8a6e6721d73a1a4f5f6ce194dbf4d246"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL3&lt;4&gt;  <br /></td></tr>
+<tr class="separator:a8a6e6721d73a1a4f5f6ce194dbf4d246"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbf69db12a4f9112aff66c63ed4217b5" id="r_abbf69db12a4f9112aff66c63ed4217b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbf69db12a4f9112aff66c63ed4217b5">L3GXXXX_INT2_DRDY</a>&#160;&#160;&#160;(0x08)</td></tr>
+<tr class="memdesc:abbf69db12a4f9112aff66c63ed4217b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL3&lt;3&gt;  <br /></td></tr>
+<tr class="separator:abbf69db12a4f9112aff66c63ed4217b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c02a96abd90932347357a8f234aa7e9" id="r_a0c02a96abd90932347357a8f234aa7e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c02a96abd90932347357a8f234aa7e9">L3GXXXX_INT2_WTM</a>&#160;&#160;&#160;(0x04)</td></tr>
+<tr class="memdesc:a0c02a96abd90932347357a8f234aa7e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL3&lt;2&gt;  <br /></td></tr>
+<tr class="separator:a0c02a96abd90932347357a8f234aa7e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1104e6b6b62658164c0b387ac36eb614" id="r_a1104e6b6b62658164c0b387ac36eb614"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1104e6b6b62658164c0b387ac36eb614">L3GXXXX_INT2_ORUN</a>&#160;&#160;&#160;(0x02)</td></tr>
+<tr class="memdesc:a1104e6b6b62658164c0b387ac36eb614"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL3&lt;1&gt;  <br /></td></tr>
+<tr class="separator:a1104e6b6b62658164c0b387ac36eb614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fe0c566a469691b1cb808c3e89b5ef2" id="r_a2fe0c566a469691b1cb808c3e89b5ef2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2fe0c566a469691b1cb808c3e89b5ef2">L3GXXXX_INT2_EMPTY</a>&#160;&#160;&#160;(0x01)</td></tr>
+<tr class="memdesc:a2fe0c566a469691b1cb808c3e89b5ef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL3&lt;0&gt;  <br /></td></tr>
+<tr class="separator:a2fe0c566a469691b1cb808c3e89b5ef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc293f57705d5c95cb907b8d489bd404" id="r_adc293f57705d5c95cb907b8d489bd404"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc293f57705d5c95cb907b8d489bd404">L3GXXXX_INT1_IG_S</a>&#160;&#160;&#160;(7)</td></tr>
+<tr class="memdesc:adc293f57705d5c95cb907b8d489bd404"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL3&lt;7&gt;  <br /></td></tr>
+<tr class="separator:adc293f57705d5c95cb907b8d489bd404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5ea6fd7b004be40fe39ed53297b128c" id="r_aa5ea6fd7b004be40fe39ed53297b128c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5ea6fd7b004be40fe39ed53297b128c">L3GXXXX_INT1_BOOT_S</a>&#160;&#160;&#160;(6)</td></tr>
+<tr class="memdesc:aa5ea6fd7b004be40fe39ed53297b128c"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL3&lt;6&gt;  <br /></td></tr>
+<tr class="separator:aa5ea6fd7b004be40fe39ed53297b128c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75006062fca9dd2cc57fae1806ae2956" id="r_a75006062fca9dd2cc57fae1806ae2956"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75006062fca9dd2cc57fae1806ae2956">L3GXXXX_HL_ACTIVE_S</a>&#160;&#160;&#160;(5)</td></tr>
+<tr class="memdesc:a75006062fca9dd2cc57fae1806ae2956"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL3&lt;5&gt;  <br /></td></tr>
+<tr class="separator:a75006062fca9dd2cc57fae1806ae2956"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11206fb55a785d4aabfbd27708c42531" id="r_a11206fb55a785d4aabfbd27708c42531"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11206fb55a785d4aabfbd27708c42531">L3GXXXX_PP_OD_S</a>&#160;&#160;&#160;(4)</td></tr>
+<tr class="memdesc:a11206fb55a785d4aabfbd27708c42531"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL3&lt;4&gt;  <br /></td></tr>
+<tr class="separator:a11206fb55a785d4aabfbd27708c42531"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc8f1e4dfb2a12ab1a81465d3f5a3193" id="r_abc8f1e4dfb2a12ab1a81465d3f5a3193"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc8f1e4dfb2a12ab1a81465d3f5a3193">L3GXXXX_INT2_DRDY_S</a>&#160;&#160;&#160;(3)</td></tr>
+<tr class="memdesc:abc8f1e4dfb2a12ab1a81465d3f5a3193"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL3&lt;3&gt;  <br /></td></tr>
+<tr class="separator:abc8f1e4dfb2a12ab1a81465d3f5a3193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ecf1074d4b6290df7af054211f7e618" id="r_a1ecf1074d4b6290df7af054211f7e618"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ecf1074d4b6290df7af054211f7e618">L3GXXXX_INT2_WTM_S</a>&#160;&#160;&#160;(2)</td></tr>
+<tr class="memdesc:a1ecf1074d4b6290df7af054211f7e618"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL3&lt;2&gt;  <br /></td></tr>
+<tr class="separator:a1ecf1074d4b6290df7af054211f7e618"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50c235eba37dc2dba11cfdede519271e" id="r_a50c235eba37dc2dba11cfdede519271e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50c235eba37dc2dba11cfdede519271e">L3GXXXX_INT2_ORUN_S</a>&#160;&#160;&#160;(1)</td></tr>
+<tr class="memdesc:a50c235eba37dc2dba11cfdede519271e"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL3&lt;1&gt;  <br /></td></tr>
+<tr class="separator:a50c235eba37dc2dba11cfdede519271e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a239c64d1ffca99833ea84e72df7982d0" id="r_a239c64d1ffca99833ea84e72df7982d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a239c64d1ffca99833ea84e72df7982d0">L3GXXXX_INT2_EMPTY_S</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:a239c64d1ffca99833ea84e72df7982d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL3&lt;0&gt;  <br /></td></tr>
+<tr class="separator:a239c64d1ffca99833ea84e72df7982d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1acc2dcb71c948b66dc502b0c40baaab" id="r_a1acc2dcb71c948b66dc502b0c40baaab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1acc2dcb71c948b66dc502b0c40baaab">L3GXXXX_BLOCK_DATA_UPDATE</a>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="memdesc:a1acc2dcb71c948b66dc502b0c40baaab"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL4&lt;7&gt;  <br /></td></tr>
+<tr class="separator:a1acc2dcb71c948b66dc502b0c40baaab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc05bbbb108893604539734429fdba78" id="r_afc05bbbb108893604539734429fdba78"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc05bbbb108893604539734429fdba78">L3GXXXX_BIG_LITTLE_ENDIAN</a>&#160;&#160;&#160;(0x40)</td></tr>
+<tr class="memdesc:afc05bbbb108893604539734429fdba78"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL4&lt;6&gt;  <br /></td></tr>
+<tr class="separator:afc05bbbb108893604539734429fdba78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41a6eb017298f517964f9eeec095539b" id="r_a41a6eb017298f517964f9eeec095539b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41a6eb017298f517964f9eeec095539b">L3GXXXX_FULL_SCALE</a>&#160;&#160;&#160;(0x30)</td></tr>
+<tr class="memdesc:a41a6eb017298f517964f9eeec095539b"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL4&lt;5:4&gt;  <br /></td></tr>
+<tr class="separator:a41a6eb017298f517964f9eeec095539b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af231164a70acf2bc1ee80a6a26c54f8f" id="r_af231164a70acf2bc1ee80a6a26c54f8f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af231164a70acf2bc1ee80a6a26c54f8f">L3GXXXX_FULL_SCALE_S</a>&#160;&#160;&#160;(4)</td></tr>
+<tr class="memdesc:af231164a70acf2bc1ee80a6a26c54f8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL4&lt;5:4&gt;  <br /></td></tr>
+<tr class="separator:af231164a70acf2bc1ee80a6a26c54f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45fcb2bc63da6721255580d4c0c6781d" id="r_a45fcb2bc63da6721255580d4c0c6781d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45fcb2bc63da6721255580d4c0c6781d">L3GXXXX_BOOT</a>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="memdesc:a45fcb2bc63da6721255580d4c0c6781d"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL5&lt;7&gt;  <br /></td></tr>
+<tr class="separator:a45fcb2bc63da6721255580d4c0c6781d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86fc19c2fb315f0b2f85efbf3c19cd86" id="r_a86fc19c2fb315f0b2f85efbf3c19cd86"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86fc19c2fb315f0b2f85efbf3c19cd86">L3GXXXX_FIFO_EN</a>&#160;&#160;&#160;(0x40)</td></tr>
+<tr class="memdesc:a86fc19c2fb315f0b2f85efbf3c19cd86"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL5&lt;6&gt;  <br /></td></tr>
+<tr class="separator:a86fc19c2fb315f0b2f85efbf3c19cd86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa453d9fc1fbf781cd6b08a9590738896" id="r_aa453d9fc1fbf781cd6b08a9590738896"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa453d9fc1fbf781cd6b08a9590738896">L3GXXXX_STOP_ON_WTM</a>&#160;&#160;&#160;(0x20)</td></tr>
+<tr class="memdesc:aa453d9fc1fbf781cd6b08a9590738896"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL5&lt;5&gt;  <br /></td></tr>
+<tr class="separator:aa453d9fc1fbf781cd6b08a9590738896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf0deba9557a493adeea4d5e591b9cb3" id="r_adf0deba9557a493adeea4d5e591b9cb3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf0deba9557a493adeea4d5e591b9cb3">L3GXXXX_HP_ENABLED</a>&#160;&#160;&#160;(0x10)</td></tr>
+<tr class="memdesc:adf0deba9557a493adeea4d5e591b9cb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL5&lt;4&gt;  <br /></td></tr>
+<tr class="separator:adf0deba9557a493adeea4d5e591b9cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae472b2862568952366a33103b0766309" id="r_ae472b2862568952366a33103b0766309"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae472b2862568952366a33103b0766309">L3GXXXX_IG_SEL</a>&#160;&#160;&#160;(0x0c)</td></tr>
+<tr class="memdesc:ae472b2862568952366a33103b0766309"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL5&lt;3:2&gt;  <br /></td></tr>
+<tr class="separator:ae472b2862568952366a33103b0766309"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c3a120d1d1db9a2cfdf1d14515581dd" id="r_a4c3a120d1d1db9a2cfdf1d14515581dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c3a120d1d1db9a2cfdf1d14515581dd">L3GXXXX_OUT_SEL</a>&#160;&#160;&#160;(0x03)</td></tr>
+<tr class="memdesc:a4c3a120d1d1db9a2cfdf1d14515581dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL5&lt;1:0&gt;  <br /></td></tr>
+<tr class="separator:a4c3a120d1d1db9a2cfdf1d14515581dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8664b584d32abc8c583cb01bc551a94" id="r_ac8664b584d32abc8c583cb01bc551a94"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8664b584d32abc8c583cb01bc551a94">L3GXXXX_BOOT_S</a>&#160;&#160;&#160;(7)</td></tr>
+<tr class="memdesc:ac8664b584d32abc8c583cb01bc551a94"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL5&lt;7&gt;  <br /></td></tr>
+<tr class="separator:ac8664b584d32abc8c583cb01bc551a94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6929df8cea682943bb0b323b779bbcd" id="r_af6929df8cea682943bb0b323b779bbcd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6929df8cea682943bb0b323b779bbcd">L3GXXXX_FIFO_EN_S</a>&#160;&#160;&#160;(6)</td></tr>
+<tr class="memdesc:af6929df8cea682943bb0b323b779bbcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL5&lt;6&gt;  <br /></td></tr>
+<tr class="separator:af6929df8cea682943bb0b323b779bbcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07d5203af021295223f93364bb486797" id="r_a07d5203af021295223f93364bb486797"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07d5203af021295223f93364bb486797">L3GXXXX_STOP_ON_WTM_S</a>&#160;&#160;&#160;(5)</td></tr>
+<tr class="memdesc:a07d5203af021295223f93364bb486797"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL5&lt;5&gt;  <br /></td></tr>
+<tr class="separator:a07d5203af021295223f93364bb486797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a712943ad9255d0e66e271dfc23ff2904" id="r_a712943ad9255d0e66e271dfc23ff2904"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a712943ad9255d0e66e271dfc23ff2904">L3GXXXX_HP_ENABLED_S</a>&#160;&#160;&#160;(4)</td></tr>
+<tr class="memdesc:a712943ad9255d0e66e271dfc23ff2904"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL5&lt;4&gt;  <br /></td></tr>
+<tr class="separator:a712943ad9255d0e66e271dfc23ff2904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c91377115834188e35f6ac29eabdc00" id="r_a3c91377115834188e35f6ac29eabdc00"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c91377115834188e35f6ac29eabdc00">L3GXXXX_IG_SEL_S</a>&#160;&#160;&#160;(2)</td></tr>
+<tr class="memdesc:a3c91377115834188e35f6ac29eabdc00"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL5&lt;3:2&gt;  <br /></td></tr>
+<tr class="separator:a3c91377115834188e35f6ac29eabdc00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e90a3af4d73eab2e7f820fe5e6f0ac2" id="r_a7e90a3af4d73eab2e7f820fe5e6f0ac2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e90a3af4d73eab2e7f820fe5e6f0ac2">L3GXXXX_OUT_SEL_S</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:a7e90a3af4d73eab2e7f820fe5e6f0ac2"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_CTRL5&lt;1:0&gt;  <br /></td></tr>
+<tr class="separator:a7e90a3af4d73eab2e7f820fe5e6f0ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef6e2c64d0842bf90e7a812036f486f5" id="r_aef6e2c64d0842bf90e7a812036f486f5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef6e2c64d0842bf90e7a812036f486f5">L3GXXXX_FIFO_MODE</a>&#160;&#160;&#160;(0xe0)</td></tr>
+<tr class="memdesc:aef6e2c64d0842bf90e7a812036f486f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_FIFO_CTRL&lt;7:5&gt;  <br /></td></tr>
+<tr class="separator:aef6e2c64d0842bf90e7a812036f486f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04fb6a6f33f9c1e454bbd4f3aea1b413" id="r_a04fb6a6f33f9c1e454bbd4f3aea1b413"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04fb6a6f33f9c1e454bbd4f3aea1b413">L3GXXXX_FIFO_WATERMARK</a>&#160;&#160;&#160;(0x1f)</td></tr>
+<tr class="memdesc:a04fb6a6f33f9c1e454bbd4f3aea1b413"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_FIFO_CTRL&lt;4:0&gt;  <br /></td></tr>
+<tr class="separator:a04fb6a6f33f9c1e454bbd4f3aea1b413"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92f5e1fa335e44097b581a21d6c2857f" id="r_a92f5e1fa335e44097b581a21d6c2857f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92f5e1fa335e44097b581a21d6c2857f">L3GXXXX_FIFO_MODE_S</a>&#160;&#160;&#160;(5)</td></tr>
+<tr class="memdesc:a92f5e1fa335e44097b581a21d6c2857f"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_FIFO_CTRL&lt;7:5&gt;  <br /></td></tr>
+<tr class="separator:a92f5e1fa335e44097b581a21d6c2857f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf6a1faa9333ff4c50ae06d91e9681b5" id="r_acf6a1faa9333ff4c50ae06d91e9681b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf6a1faa9333ff4c50ae06d91e9681b5">L3GXXXX_FIFO_WATERMARK_S</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:acf6a1faa9333ff4c50ae06d91e9681b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_FIFO_CTRL&lt;4:0&gt;  <br /></td></tr>
+<tr class="separator:acf6a1faa9333ff4c50ae06d91e9681b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb70bb4b0588035b82a4dd9e5c7f9dad" id="r_aeb70bb4b0588035b82a4dd9e5c7f9dad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb70bb4b0588035b82a4dd9e5c7f9dad">L3GXXXX_FIFO_WTM</a>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="memdesc:aeb70bb4b0588035b82a4dd9e5c7f9dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_FIFO_SRC&lt;7&gt;  <br /></td></tr>
+<tr class="separator:aeb70bb4b0588035b82a4dd9e5c7f9dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72b61117311b71e01f8fbc18cd2e65f6" id="r_a72b61117311b71e01f8fbc18cd2e65f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72b61117311b71e01f8fbc18cd2e65f6">L3GXXXX_FIFO_OVR</a>&#160;&#160;&#160;(0x40)</td></tr>
+<tr class="memdesc:a72b61117311b71e01f8fbc18cd2e65f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_FIFO_SRC&lt;6&gt;  <br /></td></tr>
+<tr class="separator:a72b61117311b71e01f8fbc18cd2e65f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d3e0e742511b1322cf4ea37dc71cb9d" id="r_a9d3e0e742511b1322cf4ea37dc71cb9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d3e0e742511b1322cf4ea37dc71cb9d">L3GXXXX_FIFO_EMPTY</a>&#160;&#160;&#160;(0x20)</td></tr>
+<tr class="memdesc:a9d3e0e742511b1322cf4ea37dc71cb9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_FIFO_SRC&lt;5&gt;  <br /></td></tr>
+<tr class="separator:a9d3e0e742511b1322cf4ea37dc71cb9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81c9d19b47fd84b64e939c8a9c8a6bbf" id="r_a81c9d19b47fd84b64e939c8a9c8a6bbf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81c9d19b47fd84b64e939c8a9c8a6bbf">L3GXXXX_FIFO_FFS</a>&#160;&#160;&#160;(0x1f)</td></tr>
+<tr class="memdesc:a81c9d19b47fd84b64e939c8a9c8a6bbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_FIFO_SRC&lt;4:0&gt;  <br /></td></tr>
+<tr class="separator:a81c9d19b47fd84b64e939c8a9c8a6bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac82f2f51148d175393c1961cc00917dc" id="r_ac82f2f51148d175393c1961cc00917dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac82f2f51148d175393c1961cc00917dc">L3GXXXX_FIFO_WTM_S</a>&#160;&#160;&#160;(7)</td></tr>
+<tr class="memdesc:ac82f2f51148d175393c1961cc00917dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_FIFO_SRC&lt;7&gt;  <br /></td></tr>
+<tr class="separator:ac82f2f51148d175393c1961cc00917dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acad3efadb6eddf334948c4f5f89d8da2" id="r_acad3efadb6eddf334948c4f5f89d8da2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acad3efadb6eddf334948c4f5f89d8da2">L3GXXXX_FIFO_OVR_S</a>&#160;&#160;&#160;(6)</td></tr>
+<tr class="memdesc:acad3efadb6eddf334948c4f5f89d8da2"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_FIFO_SRC&lt;6&gt;  <br /></td></tr>
+<tr class="separator:acad3efadb6eddf334948c4f5f89d8da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62258f19a9abec2af06d9f3e95827e9d" id="r_a62258f19a9abec2af06d9f3e95827e9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62258f19a9abec2af06d9f3e95827e9d">L3GXXXX_FIFO_EMPTY_S</a>&#160;&#160;&#160;(5)</td></tr>
+<tr class="memdesc:a62258f19a9abec2af06d9f3e95827e9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_FIFO_SRC&lt;5&gt;  <br /></td></tr>
+<tr class="separator:a62258f19a9abec2af06d9f3e95827e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2eb747352dd46b6bc57e731c8c3d221" id="r_ad2eb747352dd46b6bc57e731c8c3d221"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2eb747352dd46b6bc57e731c8c3d221">L3GXXXX_FIFO_FFS_S</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:ad2eb747352dd46b6bc57e731c8c3d221"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_FIFO_SRC&lt;4:0&gt;  <br /></td></tr>
+<tr class="separator:ad2eb747352dd46b6bc57e731c8c3d221"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1961c7c21dc74d14389730b40166e971" id="r_a1961c7c21dc74d14389730b40166e971"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1961c7c21dc74d14389730b40166e971">L3GXXXX_INT1_AND_OR</a>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="memdesc:a1961c7c21dc74d14389730b40166e971"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_CFG&lt;7&gt;  <br /></td></tr>
+<tr class="separator:a1961c7c21dc74d14389730b40166e971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8cb43c2925cd615930033a01ab09600" id="r_ad8cb43c2925cd615930033a01ab09600"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8cb43c2925cd615930033a01ab09600">L3GXXXX_INT1_LATCH</a>&#160;&#160;&#160;(0x40)</td></tr>
+<tr class="memdesc:ad8cb43c2925cd615930033a01ab09600"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_CFG&lt;6&gt;  <br /></td></tr>
+<tr class="separator:ad8cb43c2925cd615930033a01ab09600"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1c0bcd457e1a44fb74021f60b8b579f" id="r_ac1c0bcd457e1a44fb74021f60b8b579f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1c0bcd457e1a44fb74021f60b8b579f">L3GXXXX_INT1_Z_HIGH</a>&#160;&#160;&#160;(0x20)</td></tr>
+<tr class="memdesc:ac1c0bcd457e1a44fb74021f60b8b579f"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_CFG&lt;5&gt;, L3GXXXX_REG_IG_SRC&lt;5&gt;  <br /></td></tr>
+<tr class="separator:ac1c0bcd457e1a44fb74021f60b8b579f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f7d77a8ca9faf30efdf8fcb5913fe95" id="r_a5f7d77a8ca9faf30efdf8fcb5913fe95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f7d77a8ca9faf30efdf8fcb5913fe95">L3GXXXX_INT1_Z_LOW</a>&#160;&#160;&#160;(0x10)</td></tr>
+<tr class="memdesc:a5f7d77a8ca9faf30efdf8fcb5913fe95"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_CFG&lt;4&gt;, L3GXXXX_REG_IG_SRC&lt;4&gt;  <br /></td></tr>
+<tr class="separator:a5f7d77a8ca9faf30efdf8fcb5913fe95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a89b7d3214897187365832804265eb4" id="r_a3a89b7d3214897187365832804265eb4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a89b7d3214897187365832804265eb4">L3GXXXX_INT1_Y_HIGH</a>&#160;&#160;&#160;(0x08)</td></tr>
+<tr class="memdesc:a3a89b7d3214897187365832804265eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_CFG&lt;3&gt;, L3GXXXX_REG_IG_SRC&lt;3&gt;  <br /></td></tr>
+<tr class="separator:a3a89b7d3214897187365832804265eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4275310e5aa4893eac96522c88c00532" id="r_a4275310e5aa4893eac96522c88c00532"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4275310e5aa4893eac96522c88c00532">L3GXXXX_INT1_Y_LOW</a>&#160;&#160;&#160;(0x04)</td></tr>
+<tr class="memdesc:a4275310e5aa4893eac96522c88c00532"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_CFG&lt;2&gt;, L3GXXXX_REG_IG_SRC&lt;2&gt;  <br /></td></tr>
+<tr class="separator:a4275310e5aa4893eac96522c88c00532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a716578d46354df1010ba073075b7a3ca" id="r_a716578d46354df1010ba073075b7a3ca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a716578d46354df1010ba073075b7a3ca">L3GXXXX_INT1_X_HIGH</a>&#160;&#160;&#160;(0x02)</td></tr>
+<tr class="memdesc:a716578d46354df1010ba073075b7a3ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_CFG&lt;1&gt;, L3GXXXX_REG_IG_SRC&lt;1&gt;  <br /></td></tr>
+<tr class="separator:a716578d46354df1010ba073075b7a3ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95b22b764c4699b4a11d1676d2d25f9c" id="r_a95b22b764c4699b4a11d1676d2d25f9c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95b22b764c4699b4a11d1676d2d25f9c">L3GXXXX_INT1_X_LOW</a>&#160;&#160;&#160;(0x01)</td></tr>
+<tr class="memdesc:a95b22b764c4699b4a11d1676d2d25f9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_CFG&lt;0&gt;, L3GXXXX_REG_IG_SRC&lt;0&gt;  <br /></td></tr>
+<tr class="separator:a95b22b764c4699b4a11d1676d2d25f9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5a026529f1e4a5bcd194417c7c295b5" id="r_af5a026529f1e4a5bcd194417c7c295b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5a026529f1e4a5bcd194417c7c295b5">L3GXXXX_INT1_AND_OR_S</a>&#160;&#160;&#160;(7)</td></tr>
+<tr class="memdesc:af5a026529f1e4a5bcd194417c7c295b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_CFG&lt;7&gt;  <br /></td></tr>
+<tr class="separator:af5a026529f1e4a5bcd194417c7c295b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d1416a19ab5ad1f2b6cf9a26641361e" id="r_a3d1416a19ab5ad1f2b6cf9a26641361e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d1416a19ab5ad1f2b6cf9a26641361e">L3GXXXX_INT1_LATCH_S</a>&#160;&#160;&#160;(6)</td></tr>
+<tr class="memdesc:a3d1416a19ab5ad1f2b6cf9a26641361e"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_CFG&lt;6&gt;  <br /></td></tr>
+<tr class="separator:a3d1416a19ab5ad1f2b6cf9a26641361e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a40c9b1b5bf4b2ffd18382f974b618e" id="r_a2a40c9b1b5bf4b2ffd18382f974b618e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a40c9b1b5bf4b2ffd18382f974b618e">L3GXXXX_INT1_Z_HIGH_S</a>&#160;&#160;&#160;(5)</td></tr>
+<tr class="memdesc:a2a40c9b1b5bf4b2ffd18382f974b618e"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_CFG&lt;5&gt;, L3GXXXX_REG_IG_SRC&lt;5&gt;  <br /></td></tr>
+<tr class="separator:a2a40c9b1b5bf4b2ffd18382f974b618e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31596633e85be4859da9e8a64fceb9dc" id="r_a31596633e85be4859da9e8a64fceb9dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31596633e85be4859da9e8a64fceb9dc">L3GXXXX_INT1_Z_LOW_S</a>&#160;&#160;&#160;(4)</td></tr>
+<tr class="memdesc:a31596633e85be4859da9e8a64fceb9dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_CFG&lt;4&gt;, L3GXXXX_REG_IG_SRC&lt;4&gt;  <br /></td></tr>
+<tr class="separator:a31596633e85be4859da9e8a64fceb9dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9942eeedf9c3f5e12997e0887121cbf4" id="r_a9942eeedf9c3f5e12997e0887121cbf4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9942eeedf9c3f5e12997e0887121cbf4">L3GXXXX_INT1_Y_HIGH_S</a>&#160;&#160;&#160;(3)</td></tr>
+<tr class="memdesc:a9942eeedf9c3f5e12997e0887121cbf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_CFG&lt;3&gt;, L3GXXXX_REG_IG_SRC&lt;3&gt;  <br /></td></tr>
+<tr class="separator:a9942eeedf9c3f5e12997e0887121cbf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addb2da7a146c4c3dece402c5e65d4d2a" id="r_addb2da7a146c4c3dece402c5e65d4d2a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#addb2da7a146c4c3dece402c5e65d4d2a">L3GXXXX_INT1_Y_LOW_S</a>&#160;&#160;&#160;(2)</td></tr>
+<tr class="memdesc:addb2da7a146c4c3dece402c5e65d4d2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_CFG&lt;2&gt;, L3GXXXX_REG_IG_SRC&lt;2&gt;  <br /></td></tr>
+<tr class="separator:addb2da7a146c4c3dece402c5e65d4d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a014ec2d1533fad2567dd534e300a1fdf" id="r_a014ec2d1533fad2567dd534e300a1fdf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a014ec2d1533fad2567dd534e300a1fdf">L3GXXXX_INT1_X_HIGH_S</a>&#160;&#160;&#160;(1)</td></tr>
+<tr class="memdesc:a014ec2d1533fad2567dd534e300a1fdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_CFG&lt;1&gt;, L3GXXXX_REG_IG_SRC&lt;1&gt;  <br /></td></tr>
+<tr class="separator:a014ec2d1533fad2567dd534e300a1fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a818fd67474428aeedf65a520240bbf8d" id="r_a818fd67474428aeedf65a520240bbf8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a818fd67474428aeedf65a520240bbf8d">L3GXXXX_INT1_X_LOW_S</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:a818fd67474428aeedf65a520240bbf8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_CFG&lt;0&gt;, L3GXXXX_REG_IG_SRC&lt;0&gt;  <br /></td></tr>
+<tr class="separator:a818fd67474428aeedf65a520240bbf8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c25c1b11f41971d941306f7c3893878" id="r_a2c25c1b11f41971d941306f7c3893878"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c25c1b11f41971d941306f7c3893878">L3GXXXX_INT1_ACTIVE</a>&#160;&#160;&#160;(0x40)</td></tr>
+<tr class="memdesc:a2c25c1b11f41971d941306f7c3893878"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_SRC&lt;6&gt;  <br /></td></tr>
+<tr class="separator:a2c25c1b11f41971d941306f7c3893878"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fd58be78046e90cc20860a787765507" id="r_a3fd58be78046e90cc20860a787765507"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fd58be78046e90cc20860a787765507">L3GXXXX_INT1_WAIT</a>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="memdesc:a3fd58be78046e90cc20860a787765507"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_DURATION&lt;7&gt;  <br /></td></tr>
+<tr class="separator:a3fd58be78046e90cc20860a787765507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3247ce82cbbff2b5d3feeb672bd2acbb" id="r_a3247ce82cbbff2b5d3feeb672bd2acbb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3247ce82cbbff2b5d3feeb672bd2acbb">L3GXXXX_INT1_DURATION</a>&#160;&#160;&#160;(0x3f)</td></tr>
+<tr class="memdesc:a3247ce82cbbff2b5d3feeb672bd2acbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_DURATION&lt;6:0&gt;  <br /></td></tr>
+<tr class="separator:a3247ce82cbbff2b5d3feeb672bd2acbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a514d65c3addc7cb7c556ecb72e0dbb8b" id="r_a514d65c3addc7cb7c556ecb72e0dbb8b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a514d65c3addc7cb7c556ecb72e0dbb8b">L3GXXXX_INT1_WAIT_S</a>&#160;&#160;&#160;(7)</td></tr>
+<tr class="memdesc:a514d65c3addc7cb7c556ecb72e0dbb8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_DURATION&lt;7&gt;  <br /></td></tr>
+<tr class="separator:a514d65c3addc7cb7c556ecb72e0dbb8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa399b792c4f7aafc1db1f0090ee952f4" id="r_aa399b792c4f7aafc1db1f0090ee952f4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa399b792c4f7aafc1db1f0090ee952f4">L3GXXXX_INT1_DURATION_S</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:aa399b792c4f7aafc1db1f0090ee952f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_IG_DURATION&lt;6:0&gt;  <br /></td></tr>
+<tr class="separator:aa399b792c4f7aafc1db1f0090ee952f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cbcf9fff7c098bd5d4dd13021521610" id="r_a6cbcf9fff7c098bd5d4dd13021521610"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6cbcf9fff7c098bd5d4dd13021521610">L3GXXXX_DRDY_HL</a>&#160;&#160;&#160;(0x20)</td></tr>
+<tr class="memdesc:a6cbcf9fff7c098bd5d4dd13021521610"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_LOW_ODR&lt;5&gt;  <br /></td></tr>
+<tr class="separator:a6cbcf9fff7c098bd5d4dd13021521610"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa96fbe64d8871ca2e9a18dd982123a03" id="r_aa96fbe64d8871ca2e9a18dd982123a03"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa96fbe64d8871ca2e9a18dd982123a03">L3GXXXX_SW_RESET</a>&#160;&#160;&#160;(0x04)</td></tr>
+<tr class="memdesc:aa96fbe64d8871ca2e9a18dd982123a03"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_LOW_ODR&lt;2&gt;  <br /></td></tr>
+<tr class="separator:aa96fbe64d8871ca2e9a18dd982123a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a3bdf83e9f4a1796cf1c96a864757f0" id="r_a6a3bdf83e9f4a1796cf1c96a864757f0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a3bdf83e9f4a1796cf1c96a864757f0">L3GXXXX_LOW_ODR</a>&#160;&#160;&#160;(0x01)</td></tr>
+<tr class="memdesc:a6a3bdf83e9f4a1796cf1c96a864757f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_LOW_ODR&lt;0&gt;  <br /></td></tr>
+<tr class="separator:a6a3bdf83e9f4a1796cf1c96a864757f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aed13ae344ea913f6cad9ff387e6371" id="r_a4aed13ae344ea913f6cad9ff387e6371"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4aed13ae344ea913f6cad9ff387e6371">L3GXXXX_DRDY_HL_S</a>&#160;&#160;&#160;(5)</td></tr>
+<tr class="memdesc:a4aed13ae344ea913f6cad9ff387e6371"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_LOW_ODR&lt;5&gt;  <br /></td></tr>
+<tr class="separator:a4aed13ae344ea913f6cad9ff387e6371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b710de3e863170b7e620fe4aa09ebec" id="r_a4b710de3e863170b7e620fe4aa09ebec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b710de3e863170b7e620fe4aa09ebec">L3GXXXX_SW_RESET_S</a>&#160;&#160;&#160;(2)</td></tr>
+<tr class="memdesc:a4b710de3e863170b7e620fe4aa09ebec"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_LOW_ODR&lt;2&gt;  <br /></td></tr>
+<tr class="separator:a4b710de3e863170b7e620fe4aa09ebec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80534cc4bcde503bf9133e38a7aed1e7" id="r_a80534cc4bcde503bf9133e38a7aed1e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80534cc4bcde503bf9133e38a7aed1e7">L3GXXXX_LOW_ODR_S</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:a80534cc4bcde503bf9133e38a7aed1e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">L3GXXXX_REG_LOW_ODR&lt;0&gt;  <br /></td></tr>
+<tr class="separator:a80534cc4bcde503bf9133e38a7aed1e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a2970d92131dfbf4c1351aac0b26cff97" name="a2970d92131dfbf4c1351aac0b26cff97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2970d92131dfbf4c1351aac0b26cff97">&#9670;&#160;</a></span>L3GXXXX_ANY_DATA_READY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_ANY_DATA_READY&#160;&#160;&#160;(0x07)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_STATUS&lt;2:0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00071">71</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="aa4c7d2baf5d0488c32ef0f6c16af8a9d" name="aa4c7d2baf5d0488c32ef0f6c16af8a9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4c7d2baf5d0488c32ef0f6c16af8a9d">&#9670;&#160;</a></span>L3GXXXX_ANY_DATA_READY_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_ANY_DATA_READY_S&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_STATUS&lt;2:0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00072">72</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="afc05bbbb108893604539734429fdba78" name="afc05bbbb108893604539734429fdba78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc05bbbb108893604539734429fdba78">&#9670;&#160;</a></span>L3GXXXX_BIG_LITTLE_ENDIAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_BIG_LITTLE_ENDIAN&#160;&#160;&#160;(0x40)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL4&lt;6&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00120">120</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a1acc2dcb71c948b66dc502b0c40baaab" name="a1acc2dcb71c948b66dc502b0c40baaab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1acc2dcb71c948b66dc502b0c40baaab">&#9670;&#160;</a></span>L3GXXXX_BLOCK_DATA_UPDATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_BLOCK_DATA_UPDATE&#160;&#160;&#160;(0x80)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL4&lt;7&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00119">119</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a45fcb2bc63da6721255580d4c0c6781d" name="a45fcb2bc63da6721255580d4c0c6781d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45fcb2bc63da6721255580d4c0c6781d">&#9670;&#160;</a></span>L3GXXXX_BOOT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_BOOT&#160;&#160;&#160;(0x80)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL5&lt;7&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00125">125</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ac8664b584d32abc8c583cb01bc551a94" name="ac8664b584d32abc8c583cb01bc551a94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8664b584d32abc8c583cb01bc551a94">&#9670;&#160;</a></span>L3GXXXX_BOOT_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_BOOT_S&#160;&#160;&#160;(7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL5&lt;7&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00132">132</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="abace64141d3e08ded8cb8f19e1b28360" name="abace64141d3e08ded8cb8f19e1b28360"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abace64141d3e08ded8cb8f19e1b28360">&#9670;&#160;</a></span>L3GXXXX_BW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_BW&#160;&#160;&#160;(0x30)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL1&lt;5:4&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00075">75</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a73f0fd29e84f9b55fe3193292414ccc2" name="a73f0fd29e84f9b55fe3193292414ccc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73f0fd29e84f9b55fe3193292414ccc2">&#9670;&#160;</a></span>L3GXXXX_BW_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_BW_S&#160;&#160;&#160;(4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL1&lt;5:4&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00084">84</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a6cbcf9fff7c098bd5d4dd13021521610" name="a6cbcf9fff7c098bd5d4dd13021521610"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cbcf9fff7c098bd5d4dd13021521610">&#9670;&#160;</a></span>L3GXXXX_DRDY_HL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_DRDY_HL&#160;&#160;&#160;(0x20)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_LOW_ODR&lt;5&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00181">181</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a4aed13ae344ea913f6cad9ff387e6371" name="a4aed13ae344ea913f6cad9ff387e6371"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aed13ae344ea913f6cad9ff387e6371">&#9670;&#160;</a></span>L3GXXXX_DRDY_HL_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_DRDY_HL_S&#160;&#160;&#160;(5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_LOW_ODR&lt;5&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00185">185</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a463ca0a8c6add0279f3aab4128100e17" name="a463ca0a8c6add0279f3aab4128100e17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a463ca0a8c6add0279f3aab4128100e17">&#9670;&#160;</a></span>L3GXXXX_EXTR_EN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_EXTR_EN&#160;&#160;&#160;(0x80)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL2&lt;7&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00092">92</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a5fc5c4d3bdea81955df39479a41120ca" name="a5fc5c4d3bdea81955df39479a41120ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fc5c4d3bdea81955df39479a41120ca">&#9670;&#160;</a></span>L3GXXXX_EXTR_EN_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_EXTR_EN_S&#160;&#160;&#160;(7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL2&lt;7&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00097">97</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a9d3e0e742511b1322cf4ea37dc71cb9d" name="a9d3e0e742511b1322cf4ea37dc71cb9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d3e0e742511b1322cf4ea37dc71cb9d">&#9670;&#160;</a></span>L3GXXXX_FIFO_EMPTY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_FIFO_EMPTY&#160;&#160;&#160;(0x20)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_FIFO_SRC&lt;5&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00147">147</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a62258f19a9abec2af06d9f3e95827e9d" name="a62258f19a9abec2af06d9f3e95827e9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62258f19a9abec2af06d9f3e95827e9d">&#9670;&#160;</a></span>L3GXXXX_FIFO_EMPTY_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_FIFO_EMPTY_S&#160;&#160;&#160;(5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_FIFO_SRC&lt;5&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00152">152</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a86fc19c2fb315f0b2f85efbf3c19cd86" name="a86fc19c2fb315f0b2f85efbf3c19cd86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86fc19c2fb315f0b2f85efbf3c19cd86">&#9670;&#160;</a></span>L3GXXXX_FIFO_EN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_FIFO_EN&#160;&#160;&#160;(0x40)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL5&lt;6&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00126">126</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="af6929df8cea682943bb0b323b779bbcd" name="af6929df8cea682943bb0b323b779bbcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6929df8cea682943bb0b323b779bbcd">&#9670;&#160;</a></span>L3GXXXX_FIFO_EN_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_FIFO_EN_S&#160;&#160;&#160;(6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL5&lt;6&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00133">133</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a81c9d19b47fd84b64e939c8a9c8a6bbf" name="a81c9d19b47fd84b64e939c8a9c8a6bbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81c9d19b47fd84b64e939c8a9c8a6bbf">&#9670;&#160;</a></span>L3GXXXX_FIFO_FFS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_FIFO_FFS&#160;&#160;&#160;(0x1f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_FIFO_SRC&lt;4:0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00148">148</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ad2eb747352dd46b6bc57e731c8c3d221" name="ad2eb747352dd46b6bc57e731c8c3d221"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2eb747352dd46b6bc57e731c8c3d221">&#9670;&#160;</a></span>L3GXXXX_FIFO_FFS_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_FIFO_FFS_S&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_FIFO_SRC&lt;4:0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00153">153</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="aef6e2c64d0842bf90e7a812036f486f5" name="aef6e2c64d0842bf90e7a812036f486f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef6e2c64d0842bf90e7a812036f486f5">&#9670;&#160;</a></span>L3GXXXX_FIFO_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_FIFO_MODE&#160;&#160;&#160;(0xe0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_FIFO_CTRL&lt;7:5&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00139">139</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a92f5e1fa335e44097b581a21d6c2857f" name="a92f5e1fa335e44097b581a21d6c2857f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92f5e1fa335e44097b581a21d6c2857f">&#9670;&#160;</a></span>L3GXXXX_FIFO_MODE_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_FIFO_MODE_S&#160;&#160;&#160;(5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_FIFO_CTRL&lt;7:5&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00142">142</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a72b61117311b71e01f8fbc18cd2e65f6" name="a72b61117311b71e01f8fbc18cd2e65f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72b61117311b71e01f8fbc18cd2e65f6">&#9670;&#160;</a></span>L3GXXXX_FIFO_OVR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_FIFO_OVR&#160;&#160;&#160;(0x40)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_FIFO_SRC&lt;6&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00146">146</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="acad3efadb6eddf334948c4f5f89d8da2" name="acad3efadb6eddf334948c4f5f89d8da2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acad3efadb6eddf334948c4f5f89d8da2">&#9670;&#160;</a></span>L3GXXXX_FIFO_OVR_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_FIFO_OVR_S&#160;&#160;&#160;(6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_FIFO_SRC&lt;6&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00151">151</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a04fb6a6f33f9c1e454bbd4f3aea1b413" name="a04fb6a6f33f9c1e454bbd4f3aea1b413"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04fb6a6f33f9c1e454bbd4f3aea1b413">&#9670;&#160;</a></span>L3GXXXX_FIFO_WATERMARK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_FIFO_WATERMARK&#160;&#160;&#160;(0x1f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_FIFO_CTRL&lt;4:0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00140">140</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="acf6a1faa9333ff4c50ae06d91e9681b5" name="acf6a1faa9333ff4c50ae06d91e9681b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf6a1faa9333ff4c50ae06d91e9681b5">&#9670;&#160;</a></span>L3GXXXX_FIFO_WATERMARK_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_FIFO_WATERMARK_S&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_FIFO_CTRL&lt;4:0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00143">143</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="aeb70bb4b0588035b82a4dd9e5c7f9dad" name="aeb70bb4b0588035b82a4dd9e5c7f9dad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb70bb4b0588035b82a4dd9e5c7f9dad">&#9670;&#160;</a></span>L3GXXXX_FIFO_WTM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_FIFO_WTM&#160;&#160;&#160;(0x80)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_FIFO_SRC&lt;7&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00145">145</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ac82f2f51148d175393c1961cc00917dc" name="ac82f2f51148d175393c1961cc00917dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac82f2f51148d175393c1961cc00917dc">&#9670;&#160;</a></span>L3GXXXX_FIFO_WTM_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_FIFO_WTM_S&#160;&#160;&#160;(7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_FIFO_SRC&lt;7&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00150">150</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a41a6eb017298f517964f9eeec095539b" name="a41a6eb017298f517964f9eeec095539b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41a6eb017298f517964f9eeec095539b">&#9670;&#160;</a></span>L3GXXXX_FULL_SCALE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_FULL_SCALE&#160;&#160;&#160;(0x30)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL4&lt;5:4&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00121">121</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="af231164a70acf2bc1ee80a6a26c54f8f" name="af231164a70acf2bc1ee80a6a26c54f8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af231164a70acf2bc1ee80a6a26c54f8f">&#9670;&#160;</a></span>L3GXXXX_FULL_SCALE_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_FULL_SCALE_S&#160;&#160;&#160;(4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL4&lt;5:4&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00123">123</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a09df617838a6d2115d6492d2a9aaa157" name="a09df617838a6d2115d6492d2a9aaa157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09df617838a6d2115d6492d2a9aaa157">&#9670;&#160;</a></span>L3GXXXX_HL_ACTIVE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_HL_ACTIVE&#160;&#160;&#160;(0x20)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL3&lt;5&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00103">103</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a75006062fca9dd2cc57fae1806ae2956" name="a75006062fca9dd2cc57fae1806ae2956"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75006062fca9dd2cc57fae1806ae2956">&#9670;&#160;</a></span>L3GXXXX_HL_ACTIVE_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_HL_ACTIVE_S&#160;&#160;&#160;(5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL3&lt;5&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00112">112</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="adf0deba9557a493adeea4d5e591b9cb3" name="adf0deba9557a493adeea4d5e591b9cb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf0deba9557a493adeea4d5e591b9cb3">&#9670;&#160;</a></span>L3GXXXX_HP_ENABLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_HP_ENABLED&#160;&#160;&#160;(0x10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL5&lt;4&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00128">128</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a712943ad9255d0e66e271dfc23ff2904" name="a712943ad9255d0e66e271dfc23ff2904"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a712943ad9255d0e66e271dfc23ff2904">&#9670;&#160;</a></span>L3GXXXX_HP_ENABLED_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_HP_ENABLED_S&#160;&#160;&#160;(4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL5&lt;4&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00135">135</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a15fb800532867499d0f354940428a222" name="a15fb800532867499d0f354940428a222"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15fb800532867499d0f354940428a222">&#9670;&#160;</a></span>L3GXXXX_HPF_CUTOFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_HPF_CUTOFF&#160;&#160;&#160;(0x0f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL2&lt;3:0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00095">95</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="add6363d5b865eed224cb263362359ed0" name="add6363d5b865eed224cb263362359ed0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add6363d5b865eed224cb263362359ed0">&#9670;&#160;</a></span>L3GXXXX_HPF_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_HPF_MODE&#160;&#160;&#160;(0x30)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL2&lt;5:4&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00094">94</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a8a8391e30772f329d57c05a5653f1acb" name="a8a8391e30772f329d57c05a5653f1acb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a8391e30772f329d57c05a5653f1acb">&#9670;&#160;</a></span>L3GXXXX_HPF_MODE_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_HPF_MODE_S&#160;&#160;&#160;(4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL2&lt;5:4&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00099">99</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ae472b2862568952366a33103b0766309" name="ae472b2862568952366a33103b0766309"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae472b2862568952366a33103b0766309">&#9670;&#160;</a></span>L3GXXXX_IG_SEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_IG_SEL&#160;&#160;&#160;(0x0c)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL5&lt;3:2&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00129">129</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a3c91377115834188e35f6ac29eabdc00" name="a3c91377115834188e35f6ac29eabdc00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c91377115834188e35f6ac29eabdc00">&#9670;&#160;</a></span>L3GXXXX_IG_SEL_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_IG_SEL_S&#160;&#160;&#160;(2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL5&lt;3:2&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00136">136</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a2c25c1b11f41971d941306f7c3893878" name="a2c25c1b11f41971d941306f7c3893878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c25c1b11f41971d941306f7c3893878">&#9670;&#160;</a></span>L3GXXXX_INT1_ACTIVE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_ACTIVE&#160;&#160;&#160;(0x40)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_SRC&lt;6&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00173">173</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a1961c7c21dc74d14389730b40166e971" name="a1961c7c21dc74d14389730b40166e971"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1961c7c21dc74d14389730b40166e971">&#9670;&#160;</a></span>L3GXXXX_INT1_AND_OR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_AND_OR&#160;&#160;&#160;(0x80)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_CFG&lt;7&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00155">155</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="af5a026529f1e4a5bcd194417c7c295b5" name="af5a026529f1e4a5bcd194417c7c295b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5a026529f1e4a5bcd194417c7c295b5">&#9670;&#160;</a></span>L3GXXXX_INT1_AND_OR_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_AND_OR_S&#160;&#160;&#160;(7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_CFG&lt;7&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00164">164</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ac7f38da4d8e94d2ccf2757560fcd1fda" name="ac7f38da4d8e94d2ccf2757560fcd1fda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7f38da4d8e94d2ccf2757560fcd1fda">&#9670;&#160;</a></span>L3GXXXX_INT1_BOOT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_BOOT&#160;&#160;&#160;(0x40)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL3&lt;6&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00102">102</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="aa5ea6fd7b004be40fe39ed53297b128c" name="aa5ea6fd7b004be40fe39ed53297b128c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5ea6fd7b004be40fe39ed53297b128c">&#9670;&#160;</a></span>L3GXXXX_INT1_BOOT_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_BOOT_S&#160;&#160;&#160;(6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL3&lt;6&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00111">111</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a3247ce82cbbff2b5d3feeb672bd2acbb" name="a3247ce82cbbff2b5d3feeb672bd2acbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3247ce82cbbff2b5d3feeb672bd2acbb">&#9670;&#160;</a></span>L3GXXXX_INT1_DURATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_DURATION&#160;&#160;&#160;(0x3f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_DURATION&lt;6:0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00176">176</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="aa399b792c4f7aafc1db1f0090ee952f4" name="aa399b792c4f7aafc1db1f0090ee952f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa399b792c4f7aafc1db1f0090ee952f4">&#9670;&#160;</a></span>L3GXXXX_INT1_DURATION_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_DURATION_S&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_DURATION&lt;6:0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00179">179</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="af11914976f48f8752db128c4cef76ab8" name="af11914976f48f8752db128c4cef76ab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af11914976f48f8752db128c4cef76ab8">&#9670;&#160;</a></span>L3GXXXX_INT1_IG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_IG&#160;&#160;&#160;(0x80)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL3&lt;7&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00101">101</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="adc293f57705d5c95cb907b8d489bd404" name="adc293f57705d5c95cb907b8d489bd404"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc293f57705d5c95cb907b8d489bd404">&#9670;&#160;</a></span>L3GXXXX_INT1_IG_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_IG_S&#160;&#160;&#160;(7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL3&lt;7&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00110">110</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ad8cb43c2925cd615930033a01ab09600" name="ad8cb43c2925cd615930033a01ab09600"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8cb43c2925cd615930033a01ab09600">&#9670;&#160;</a></span>L3GXXXX_INT1_LATCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_LATCH&#160;&#160;&#160;(0x40)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_CFG&lt;6&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00156">156</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a3d1416a19ab5ad1f2b6cf9a26641361e" name="a3d1416a19ab5ad1f2b6cf9a26641361e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d1416a19ab5ad1f2b6cf9a26641361e">&#9670;&#160;</a></span>L3GXXXX_INT1_LATCH_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_LATCH_S&#160;&#160;&#160;(6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_CFG&lt;6&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00165">165</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a3fd58be78046e90cc20860a787765507" name="a3fd58be78046e90cc20860a787765507"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fd58be78046e90cc20860a787765507">&#9670;&#160;</a></span>L3GXXXX_INT1_WAIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_WAIT&#160;&#160;&#160;(0x80)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_DURATION&lt;7&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00175">175</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a514d65c3addc7cb7c556ecb72e0dbb8b" name="a514d65c3addc7cb7c556ecb72e0dbb8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a514d65c3addc7cb7c556ecb72e0dbb8b">&#9670;&#160;</a></span>L3GXXXX_INT1_WAIT_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_WAIT_S&#160;&#160;&#160;(7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_DURATION&lt;7&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00178">178</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a716578d46354df1010ba073075b7a3ca" name="a716578d46354df1010ba073075b7a3ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a716578d46354df1010ba073075b7a3ca">&#9670;&#160;</a></span>L3GXXXX_INT1_X_HIGH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_X_HIGH&#160;&#160;&#160;(0x02)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_CFG&lt;1&gt;, L3GXXXX_REG_IG_SRC&lt;1&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00161">161</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a014ec2d1533fad2567dd534e300a1fdf" name="a014ec2d1533fad2567dd534e300a1fdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a014ec2d1533fad2567dd534e300a1fdf">&#9670;&#160;</a></span>L3GXXXX_INT1_X_HIGH_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_X_HIGH_S&#160;&#160;&#160;(1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_CFG&lt;1&gt;, L3GXXXX_REG_IG_SRC&lt;1&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00170">170</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a95b22b764c4699b4a11d1676d2d25f9c" name="a95b22b764c4699b4a11d1676d2d25f9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95b22b764c4699b4a11d1676d2d25f9c">&#9670;&#160;</a></span>L3GXXXX_INT1_X_LOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_X_LOW&#160;&#160;&#160;(0x01)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_CFG&lt;0&gt;, L3GXXXX_REG_IG_SRC&lt;0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00162">162</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a818fd67474428aeedf65a520240bbf8d" name="a818fd67474428aeedf65a520240bbf8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a818fd67474428aeedf65a520240bbf8d">&#9670;&#160;</a></span>L3GXXXX_INT1_X_LOW_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_X_LOW_S&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_CFG&lt;0&gt;, L3GXXXX_REG_IG_SRC&lt;0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00171">171</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a3a89b7d3214897187365832804265eb4" name="a3a89b7d3214897187365832804265eb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a89b7d3214897187365832804265eb4">&#9670;&#160;</a></span>L3GXXXX_INT1_Y_HIGH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_Y_HIGH&#160;&#160;&#160;(0x08)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_CFG&lt;3&gt;, L3GXXXX_REG_IG_SRC&lt;3&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00159">159</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a9942eeedf9c3f5e12997e0887121cbf4" name="a9942eeedf9c3f5e12997e0887121cbf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9942eeedf9c3f5e12997e0887121cbf4">&#9670;&#160;</a></span>L3GXXXX_INT1_Y_HIGH_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_Y_HIGH_S&#160;&#160;&#160;(3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_CFG&lt;3&gt;, L3GXXXX_REG_IG_SRC&lt;3&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00168">168</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a4275310e5aa4893eac96522c88c00532" name="a4275310e5aa4893eac96522c88c00532"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4275310e5aa4893eac96522c88c00532">&#9670;&#160;</a></span>L3GXXXX_INT1_Y_LOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_Y_LOW&#160;&#160;&#160;(0x04)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_CFG&lt;2&gt;, L3GXXXX_REG_IG_SRC&lt;2&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00160">160</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="addb2da7a146c4c3dece402c5e65d4d2a" name="addb2da7a146c4c3dece402c5e65d4d2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addb2da7a146c4c3dece402c5e65d4d2a">&#9670;&#160;</a></span>L3GXXXX_INT1_Y_LOW_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_Y_LOW_S&#160;&#160;&#160;(2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_CFG&lt;2&gt;, L3GXXXX_REG_IG_SRC&lt;2&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00169">169</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ac1c0bcd457e1a44fb74021f60b8b579f" name="ac1c0bcd457e1a44fb74021f60b8b579f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1c0bcd457e1a44fb74021f60b8b579f">&#9670;&#160;</a></span>L3GXXXX_INT1_Z_HIGH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_Z_HIGH&#160;&#160;&#160;(0x20)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_CFG&lt;5&gt;, L3GXXXX_REG_IG_SRC&lt;5&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00157">157</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a2a40c9b1b5bf4b2ffd18382f974b618e" name="a2a40c9b1b5bf4b2ffd18382f974b618e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a40c9b1b5bf4b2ffd18382f974b618e">&#9670;&#160;</a></span>L3GXXXX_INT1_Z_HIGH_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_Z_HIGH_S&#160;&#160;&#160;(5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_CFG&lt;5&gt;, L3GXXXX_REG_IG_SRC&lt;5&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00166">166</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a5f7d77a8ca9faf30efdf8fcb5913fe95" name="a5f7d77a8ca9faf30efdf8fcb5913fe95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f7d77a8ca9faf30efdf8fcb5913fe95">&#9670;&#160;</a></span>L3GXXXX_INT1_Z_LOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_Z_LOW&#160;&#160;&#160;(0x10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_CFG&lt;4&gt;, L3GXXXX_REG_IG_SRC&lt;4&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00158">158</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a31596633e85be4859da9e8a64fceb9dc" name="a31596633e85be4859da9e8a64fceb9dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31596633e85be4859da9e8a64fceb9dc">&#9670;&#160;</a></span>L3GXXXX_INT1_Z_LOW_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT1_Z_LOW_S&#160;&#160;&#160;(4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_IG_CFG&lt;4&gt;, L3GXXXX_REG_IG_SRC&lt;4&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00167">167</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="abbf69db12a4f9112aff66c63ed4217b5" name="abbf69db12a4f9112aff66c63ed4217b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbf69db12a4f9112aff66c63ed4217b5">&#9670;&#160;</a></span>L3GXXXX_INT2_DRDY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT2_DRDY&#160;&#160;&#160;(0x08)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL3&lt;3&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00105">105</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="abc8f1e4dfb2a12ab1a81465d3f5a3193" name="abc8f1e4dfb2a12ab1a81465d3f5a3193"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc8f1e4dfb2a12ab1a81465d3f5a3193">&#9670;&#160;</a></span>L3GXXXX_INT2_DRDY_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT2_DRDY_S&#160;&#160;&#160;(3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL3&lt;3&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00114">114</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a2fe0c566a469691b1cb808c3e89b5ef2" name="a2fe0c566a469691b1cb808c3e89b5ef2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fe0c566a469691b1cb808c3e89b5ef2">&#9670;&#160;</a></span>L3GXXXX_INT2_EMPTY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT2_EMPTY&#160;&#160;&#160;(0x01)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL3&lt;0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00108">108</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a239c64d1ffca99833ea84e72df7982d0" name="a239c64d1ffca99833ea84e72df7982d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a239c64d1ffca99833ea84e72df7982d0">&#9670;&#160;</a></span>L3GXXXX_INT2_EMPTY_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT2_EMPTY_S&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL3&lt;0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00117">117</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a1104e6b6b62658164c0b387ac36eb614" name="a1104e6b6b62658164c0b387ac36eb614"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1104e6b6b62658164c0b387ac36eb614">&#9670;&#160;</a></span>L3GXXXX_INT2_ORUN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT2_ORUN&#160;&#160;&#160;(0x02)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL3&lt;1&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00107">107</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a50c235eba37dc2dba11cfdede519271e" name="a50c235eba37dc2dba11cfdede519271e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50c235eba37dc2dba11cfdede519271e">&#9670;&#160;</a></span>L3GXXXX_INT2_ORUN_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT2_ORUN_S&#160;&#160;&#160;(1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL3&lt;1&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00116">116</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a0c02a96abd90932347357a8f234aa7e9" name="a0c02a96abd90932347357a8f234aa7e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c02a96abd90932347357a8f234aa7e9">&#9670;&#160;</a></span>L3GXXXX_INT2_WTM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT2_WTM&#160;&#160;&#160;(0x04)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL3&lt;2&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00106">106</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a1ecf1074d4b6290df7af054211f7e618" name="a1ecf1074d4b6290df7af054211f7e618"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ecf1074d4b6290df7af054211f7e618">&#9670;&#160;</a></span>L3GXXXX_INT2_WTM_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_INT2_WTM_S&#160;&#160;&#160;(2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL3&lt;2&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00115">115</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a6a3bdf83e9f4a1796cf1c96a864757f0" name="a6a3bdf83e9f4a1796cf1c96a864757f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a3bdf83e9f4a1796cf1c96a864757f0">&#9670;&#160;</a></span>L3GXXXX_LOW_ODR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_LOW_ODR&#160;&#160;&#160;(0x01)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_LOW_ODR&lt;0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00183">183</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a80534cc4bcde503bf9133e38a7aed1e7" name="a80534cc4bcde503bf9133e38a7aed1e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80534cc4bcde503bf9133e38a7aed1e7">&#9670;&#160;</a></span>L3GXXXX_LOW_ODR_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_LOW_ODR_S&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_LOW_ODR&lt;0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00187">187</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a4e9cf2a6fb0e5f9749235282030c320e" name="a4e9cf2a6fb0e5f9749235282030c320e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e9cf2a6fb0e5f9749235282030c320e">&#9670;&#160;</a></span>L3GXXXX_LVL_EN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_LVL_EN&#160;&#160;&#160;(0x40)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL2&lt;6&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00093">93</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a315219c7a9cce0aa6044ea460f1df704" name="a315219c7a9cce0aa6044ea460f1df704"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a315219c7a9cce0aa6044ea460f1df704">&#9670;&#160;</a></span>L3GXXXX_LVL_EN_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_LVL_EN_S&#160;&#160;&#160;(6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL2&lt;6&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00098">98</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a0a8973e01a666c0a204c2521920da9ec" name="a0a8973e01a666c0a204c2521920da9ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a8973e01a666c0a204c2521920da9ec">&#9670;&#160;</a></span>L3GXXXX_ODR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_ODR&#160;&#160;&#160;(0xc0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL1&lt;7:6&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00074">74</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="aa49f62aa8f217a076bc5eced32e5cc99" name="aa49f62aa8f217a076bc5eced32e5cc99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa49f62aa8f217a076bc5eced32e5cc99">&#9670;&#160;</a></span>L3GXXXX_ODR_BW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_ODR_BW&#160;&#160;&#160;(0xf0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL1&lt;7:4&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00076">76</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a2a3204f88dedc6054744d7df84f94032" name="a2a3204f88dedc6054744d7df84f94032"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a3204f88dedc6054744d7df84f94032">&#9670;&#160;</a></span>L3GXXXX_ODR_BW_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_ODR_BW_S&#160;&#160;&#160;(4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL1&lt;7:4&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00085">85</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ac82d457dbff6798840e623e4a5461d8b" name="ac82d457dbff6798840e623e4a5461d8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac82d457dbff6798840e623e4a5461d8b">&#9670;&#160;</a></span>L3GXXXX_ODR_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_ODR_S&#160;&#160;&#160;(6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL1&lt;7:6&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00083">83</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a4c3a120d1d1db9a2cfdf1d14515581dd" name="a4c3a120d1d1db9a2cfdf1d14515581dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c3a120d1d1db9a2cfdf1d14515581dd">&#9670;&#160;</a></span>L3GXXXX_OUT_SEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_OUT_SEL&#160;&#160;&#160;(0x03)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL5&lt;1:0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00130">130</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a7e90a3af4d73eab2e7f820fe5e6f0ac2" name="a7e90a3af4d73eab2e7f820fe5e6f0ac2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e90a3af4d73eab2e7f820fe5e6f0ac2">&#9670;&#160;</a></span>L3GXXXX_OUT_SEL_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_OUT_SEL_S&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL5&lt;1:0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00137">137</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="aa519dad48812f578662e572a410a5ba4" name="aa519dad48812f578662e572a410a5ba4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa519dad48812f578662e572a410a5ba4">&#9670;&#160;</a></span>L3GXXXX_POWER_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_POWER_MODE&#160;&#160;&#160;(0x08)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL1&lt;3&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00077">77</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a32c150dc088adbbf1fde983357d2decf" name="a32c150dc088adbbf1fde983357d2decf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32c150dc088adbbf1fde983357d2decf">&#9670;&#160;</a></span>L3GXXXX_POWER_MODE_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_POWER_MODE_S&#160;&#160;&#160;(3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL1&lt;3&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00086">86</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a8a6e6721d73a1a4f5f6ce194dbf4d246" name="a8a6e6721d73a1a4f5f6ce194dbf4d246"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a6e6721d73a1a4f5f6ce194dbf4d246">&#9670;&#160;</a></span>L3GXXXX_PP_OD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_PP_OD&#160;&#160;&#160;(0x10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL3&lt;4&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00104">104</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a11206fb55a785d4aabfbd27708c42531" name="a11206fb55a785d4aabfbd27708c42531"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11206fb55a785d4aabfbd27708c42531">&#9670;&#160;</a></span>L3GXXXX_PP_OD_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_PP_OD_S&#160;&#160;&#160;(4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL3&lt;4&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00113">113</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a0b7487b9481627f578c3b9f321f14c4e" name="a0b7487b9481627f578c3b9f321f14c4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b7487b9481627f578c3b9f321f14c4e">&#9670;&#160;</a></span>L3GXXXX_REG_CTRL1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_CTRL1&#160;&#160;&#160;(0x20)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address CTRL1. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00030">30</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a81d250c12fd5aa86b02f625e05fc4d06" name="a81d250c12fd5aa86b02f625e05fc4d06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81d250c12fd5aa86b02f625e05fc4d06">&#9670;&#160;</a></span>L3GXXXX_REG_CTRL2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_CTRL2&#160;&#160;&#160;(0x21)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address CTRL2. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00031">31</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a68b00cb8d0bbf4421ddd529e9b13128c" name="a68b00cb8d0bbf4421ddd529e9b13128c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68b00cb8d0bbf4421ddd529e9b13128c">&#9670;&#160;</a></span>L3GXXXX_REG_CTRL3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_CTRL3&#160;&#160;&#160;(0x22)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address CTRL3. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00032">32</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="afcb451e61acd4d5d8f9b4a99dcab5cf3" name="afcb451e61acd4d5d8f9b4a99dcab5cf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcb451e61acd4d5d8f9b4a99dcab5cf3">&#9670;&#160;</a></span>L3GXXXX_REG_CTRL4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_CTRL4&#160;&#160;&#160;(0x23)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address CTRL4. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00033">33</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="aa2c9e7ce61f0be5a6a653f9e9ef241ef" name="aa2c9e7ce61f0be5a6a653f9e9ef241ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2c9e7ce61f0be5a6a653f9e9ef241ef">&#9670;&#160;</a></span>L3GXXXX_REG_CTRL5</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_CTRL5&#160;&#160;&#160;(0x24)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address CTRL5. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00034">34</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a2d6316137827131d446a920586eaa871" name="a2d6316137827131d446a920586eaa871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d6316137827131d446a920586eaa871">&#9670;&#160;</a></span>L3GXXXX_REG_FIFO_CTRL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_FIFO_CTRL&#160;&#160;&#160;(0x2e)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address FIFO_CTRL. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00044">44</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a12665b4f96e1c532e57d912684ff7596" name="a12665b4f96e1c532e57d912684ff7596"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12665b4f96e1c532e57d912684ff7596">&#9670;&#160;</a></span>L3GXXXX_REG_FIFO_SRC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_FIFO_SRC&#160;&#160;&#160;(0x2f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address FIFO_SRC. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00045">45</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a56c46c5f5cc8a5e1d7b182947d6aabe5" name="a56c46c5f5cc8a5e1d7b182947d6aabe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56c46c5f5cc8a5e1d7b182947d6aabe5">&#9670;&#160;</a></span>L3GXXXX_REG_IG_CFG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_IG_CFG&#160;&#160;&#160;(0x30)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address IG_CFG. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00046">46</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a5213800c97b4959aa766925d144a9938" name="a5213800c97b4959aa766925d144a9938"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5213800c97b4959aa766925d144a9938">&#9670;&#160;</a></span>L3GXXXX_REG_IG_DURATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_IG_DURATION&#160;&#160;&#160;(0x38)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address IG_DURATION. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00054">54</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a16703f3568f5ce130a94c766b74a095c" name="a16703f3568f5ce130a94c766b74a095c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16703f3568f5ce130a94c766b74a095c">&#9670;&#160;</a></span>L3GXXXX_REG_IG_SRC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_IG_SRC&#160;&#160;&#160;(0x31)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address IG_SRC. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00047">47</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a72804302e6cd2da86d584ab116a83e7c" name="a72804302e6cd2da86d584ab116a83e7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72804302e6cd2da86d584ab116a83e7c">&#9670;&#160;</a></span>L3GXXXX_REG_IG_THS_XH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_IG_THS_XH&#160;&#160;&#160;(0x32)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address IG_THS_XH. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00048">48</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="aa21a7e60d212ef43af660cc8153681fc" name="aa21a7e60d212ef43af660cc8153681fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa21a7e60d212ef43af660cc8153681fc">&#9670;&#160;</a></span>L3GXXXX_REG_IG_THS_XL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_IG_THS_XL&#160;&#160;&#160;(0x33)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address IG_THS_XL. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00049">49</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a87d4fa846c2cf263e8a66ecbdcf44fc8" name="a87d4fa846c2cf263e8a66ecbdcf44fc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87d4fa846c2cf263e8a66ecbdcf44fc8">&#9670;&#160;</a></span>L3GXXXX_REG_IG_THS_YH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_IG_THS_YH&#160;&#160;&#160;(0x34)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address IG_THS_YH. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00050">50</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a0c012c65602f1710702e1105b590dbbd" name="a0c012c65602f1710702e1105b590dbbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c012c65602f1710702e1105b590dbbd">&#9670;&#160;</a></span>L3GXXXX_REG_IG_THS_YL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_IG_THS_YL&#160;&#160;&#160;(0x35)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address IG_THS_YL. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00051">51</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="afc847821769f3a5fc57f5991d1014aec" name="afc847821769f3a5fc57f5991d1014aec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc847821769f3a5fc57f5991d1014aec">&#9670;&#160;</a></span>L3GXXXX_REG_IG_THS_ZH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_IG_THS_ZH&#160;&#160;&#160;(0x36)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address IG_THS_ZH. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00052">52</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a3f4126c0c543d0c49a5de7d755fc139a" name="a3f4126c0c543d0c49a5de7d755fc139a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f4126c0c543d0c49a5de7d755fc139a">&#9670;&#160;</a></span>L3GXXXX_REG_IG_THS_ZL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_IG_THS_ZL&#160;&#160;&#160;(0x37)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address IG_THS_ZL. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00053">53</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a9ba317d2bc8c7fe093ce793f60fbc4b0" name="a9ba317d2bc8c7fe093ce793f60fbc4b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ba317d2bc8c7fe093ce793f60fbc4b0">&#9670;&#160;</a></span>L3GXXXX_REG_LOW_ODR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_LOW_ODR&#160;&#160;&#160;(0x39)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address LOW_ODR. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00055">55</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="abc7c59ecda6437fdcec7d39303385e20" name="abc7c59ecda6437fdcec7d39303385e20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc7c59ecda6437fdcec7d39303385e20">&#9670;&#160;</a></span>L3GXXXX_REG_OUT_TEMP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_OUT_TEMP&#160;&#160;&#160;(0x26)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address OUT_TEMP. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00036">36</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ab30bf125bde16a71348cb5b52473d12c" name="ab30bf125bde16a71348cb5b52473d12c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab30bf125bde16a71348cb5b52473d12c">&#9670;&#160;</a></span>L3GXXXX_REG_OUT_X_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_OUT_X_H&#160;&#160;&#160;(0x29)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address OUT_X_H. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00039">39</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a3d4eabe2f53ced257ebe10ee87f6c884" name="a3d4eabe2f53ced257ebe10ee87f6c884"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d4eabe2f53ced257ebe10ee87f6c884">&#9670;&#160;</a></span>L3GXXXX_REG_OUT_X_L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_OUT_X_L&#160;&#160;&#160;(0x28)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address OUT_X_L. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00038">38</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a922af47e743bf21e34338892dad0773f" name="a922af47e743bf21e34338892dad0773f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a922af47e743bf21e34338892dad0773f">&#9670;&#160;</a></span>L3GXXXX_REG_OUT_Y_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_OUT_Y_H&#160;&#160;&#160;(0x2b)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address OUT_Y_H. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00041">41</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ab164fa5da101792932f610956ce96c9c" name="ab164fa5da101792932f610956ce96c9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab164fa5da101792932f610956ce96c9c">&#9670;&#160;</a></span>L3GXXXX_REG_OUT_Y_L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_OUT_Y_L&#160;&#160;&#160;(0x2a)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address OUT_Y_L. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00040">40</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="adeb6c839bc055efc656d79a74ea55af4" name="adeb6c839bc055efc656d79a74ea55af4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adeb6c839bc055efc656d79a74ea55af4">&#9670;&#160;</a></span>L3GXXXX_REG_OUT_Z_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_OUT_Z_H&#160;&#160;&#160;(0x2d)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address OUT_Z_H. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00043">43</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a0b3a2053b410ad9f844e7f7a44a7413a" name="a0b3a2053b410ad9f844e7f7a44a7413a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b3a2053b410ad9f844e7f7a44a7413a">&#9670;&#160;</a></span>L3GXXXX_REG_OUT_Z_L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_OUT_Z_L&#160;&#160;&#160;(0x2c)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address OUT_Z_L. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00042">42</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ae951870588fd619cbc651738abcbe90b" name="ae951870588fd619cbc651738abcbe90b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae951870588fd619cbc651738abcbe90b">&#9670;&#160;</a></span>L3GXXXX_REG_REFERENCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_REFERENCE&#160;&#160;&#160;(0x25)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address REFERENCE. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00035">35</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="abf0e312c42811287e3365b4ba5954f9c" name="abf0e312c42811287e3365b4ba5954f9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf0e312c42811287e3365b4ba5954f9c">&#9670;&#160;</a></span>L3GXXXX_REG_STATUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_STATUS&#160;&#160;&#160;(0x27)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address STATUS. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00037">37</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a091a77f2b6d1a697e132764181538dfa" name="a091a77f2b6d1a697e132764181538dfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a091a77f2b6d1a697e132764181538dfa">&#9670;&#160;</a></span>L3GXXXX_REG_WHO_AM_I</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_REG_WHO_AM_I&#160;&#160;&#160;(0x0f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register address WHO_AM_I. </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00029">29</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="aa453d9fc1fbf781cd6b08a9590738896" name="aa453d9fc1fbf781cd6b08a9590738896"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa453d9fc1fbf781cd6b08a9590738896">&#9670;&#160;</a></span>L3GXXXX_STOP_ON_WTM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_STOP_ON_WTM&#160;&#160;&#160;(0x20)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL5&lt;5&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00127">127</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a07d5203af021295223f93364bb486797" name="a07d5203af021295223f93364bb486797"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07d5203af021295223f93364bb486797">&#9670;&#160;</a></span>L3GXXXX_STOP_ON_WTM_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_STOP_ON_WTM_S&#160;&#160;&#160;(5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL5&lt;5&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00134">134</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="aa96fbe64d8871ca2e9a18dd982123a03" name="aa96fbe64d8871ca2e9a18dd982123a03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa96fbe64d8871ca2e9a18dd982123a03">&#9670;&#160;</a></span>L3GXXXX_SW_RESET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_SW_RESET&#160;&#160;&#160;(0x04)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_LOW_ODR&lt;2&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00182">182</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a4b710de3e863170b7e620fe4aa09ebec" name="a4b710de3e863170b7e620fe4aa09ebec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b710de3e863170b7e620fe4aa09ebec">&#9670;&#160;</a></span>L3GXXXX_SW_RESET_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_SW_RESET_S&#160;&#160;&#160;(2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_LOW_ODR&lt;2&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00186">186</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a6386f2226835651fe103b0e6aaab2b33" name="a6386f2226835651fe103b0e6aaab2b33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6386f2226835651fe103b0e6aaab2b33">&#9670;&#160;</a></span>L3GXXXX_X_ENABLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_X_ENABLED&#160;&#160;&#160;(0x01)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL1&lt;0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00080">80</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a22cce956d58345d34c5fda6b43e4423a" name="a22cce956d58345d34c5fda6b43e4423a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22cce956d58345d34c5fda6b43e4423a">&#9670;&#160;</a></span>L3GXXXX_X_ENABLED_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_X_ENABLED_S&#160;&#160;&#160;(1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL1&lt;0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00089">89</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ae080eb16edebc62a2e7c6891833c17f2" name="ae080eb16edebc62a2e7c6891833c17f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae080eb16edebc62a2e7c6891833c17f2">&#9670;&#160;</a></span>L3GXXXX_XDA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_XDA&#160;&#160;&#160;(0x01)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_STATUS&lt;0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00069">69</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a588be735dbffc3539c700ffa86a19e4f" name="a588be735dbffc3539c700ffa86a19e4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a588be735dbffc3539c700ffa86a19e4f">&#9670;&#160;</a></span>L3GXXXX_XOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_XOR&#160;&#160;&#160;(0x10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_STATUS&lt;4&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00065">65</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="aa5434a5d44a7571368c9a940526e2647" name="aa5434a5d44a7571368c9a940526e2647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5434a5d44a7571368c9a940526e2647">&#9670;&#160;</a></span>L3GXXXX_XYZ_ENABLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_XYZ_ENABLED&#160;&#160;&#160;(0x07)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL1&lt;2:0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00081">81</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a6f400a69b9b7d059ebb49a8d3cc33947" name="a6f400a69b9b7d059ebb49a8d3cc33947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f400a69b9b7d059ebb49a8d3cc33947">&#9670;&#160;</a></span>L3GXXXX_XYZ_ENABLED_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_XYZ_ENABLED_S&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL1&lt;2:0&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00090">90</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a81c25571a3c81deafc914cd5fdc964c0" name="a81c25571a3c81deafc914cd5fdc964c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81c25571a3c81deafc914cd5fdc964c0">&#9670;&#160;</a></span>L3GXXXX_Y_ENABLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_Y_ENABLED&#160;&#160;&#160;(0x02)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL1&lt;1&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00079">79</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a19cfa7a8e96a9ea55afcd446468e6219" name="a19cfa7a8e96a9ea55afcd446468e6219"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19cfa7a8e96a9ea55afcd446468e6219">&#9670;&#160;</a></span>L3GXXXX_Y_ENABLED_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_Y_ENABLED_S&#160;&#160;&#160;(1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL1&lt;1&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00088">88</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a7a9aac93ffad9e4aae0690aff48b525f" name="a7a9aac93ffad9e4aae0690aff48b525f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a9aac93ffad9e4aae0690aff48b525f">&#9670;&#160;</a></span>L3GXXXX_YDA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_YDA&#160;&#160;&#160;(0x02)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_STATUS&lt;1&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00068">68</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="af00fc8df71d6500fd2d1db8d077b2adb" name="af00fc8df71d6500fd2d1db8d077b2adb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af00fc8df71d6500fd2d1db8d077b2adb">&#9670;&#160;</a></span>L3GXXXX_YOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_YOR&#160;&#160;&#160;(0x20)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_STATUS&lt;5&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00064">64</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ae05eb4b377963d3936aa1c820c84fb09" name="ae05eb4b377963d3936aa1c820c84fb09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae05eb4b377963d3936aa1c820c84fb09">&#9670;&#160;</a></span>L3GXXXX_Z_ENABLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_Z_ENABLED&#160;&#160;&#160;(0x04)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL1&lt;2&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00078">78</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a96704fe607b7e8693233891ec8abd601" name="a96704fe607b7e8693233891ec8abd601"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96704fe607b7e8693233891ec8abd601">&#9670;&#160;</a></span>L3GXXXX_Z_ENABLED_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_Z_ENABLED_S&#160;&#160;&#160;(2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_CTRL1&lt;2&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00087">87</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a99d25c5b65fa43116a49b80ec71c53b5" name="a99d25c5b65fa43116a49b80ec71c53b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99d25c5b65fa43116a49b80ec71c53b5">&#9670;&#160;</a></span>L3GXXXX_ZDA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_ZDA&#160;&#160;&#160;(0x04)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_STATUS&lt;2&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00067">67</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="adc2dd56f868ad2fe74533b9a0e1a5708" name="adc2dd56f868ad2fe74533b9a0e1a5708"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc2dd56f868ad2fe74533b9a0e1a5708">&#9670;&#160;</a></span>L3GXXXX_ZOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_ZOR&#160;&#160;&#160;(0x40)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_STATUS&lt;6&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00063">63</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="afa7be3b2afbded9d868cc1d0a213b273" name="afa7be3b2afbded9d868cc1d0a213b273"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa7be3b2afbded9d868cc1d0a213b273">&#9670;&#160;</a></span>L3GXXXX_ZYXDA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_ZYXDA&#160;&#160;&#160;(0x08)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_STATUS&lt;3&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00066">66</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a8458dc5dc509511cba2680e7672665c4" name="a8458dc5dc509511cba2680e7672665c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8458dc5dc509511cba2680e7672665c4">&#9670;&#160;</a></span>L3GXXXX_ZYXOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define L3GXXXX_ZYXOR&#160;&#160;&#160;(0x80)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>L3GXXXX_REG_STATUS&lt;7&gt; </p>
+
+<p class="definition">Definition at line <a class="el" href="l3gxxxx__regs_8h_source.html#l00062">62</a> of file <a class="el" href="l3gxxxx__regs_8h_source.html">l3gxxxx_regs.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

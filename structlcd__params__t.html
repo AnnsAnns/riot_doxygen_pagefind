@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>lcd_params_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structlcd__params__t.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">lcd_params_t Struct Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__display.html">Display Device Drivers</a> &raquo; <a class="el" href="group__drivers__lcd.html">LCD display driver</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Device initialization parameters.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Device initialization parameters. </p>
+<dl class="section note"><dt>Note</dt><dd>The device driver can be used simultaneously for displays with SPI serial interface and parallel MCU 8080 8-/16-bit interfaces if the modules <code>lcd_spi</code> and <code>lcd_parallel</code> or <code>lcd_parallel_16bit</code> are enabled at the same time. In this case the interface parameters for the SPI serial interface and the MCU 8080 parallel 8-/16-bit interfaces are defined. <a class="el" href="#ab603c9671e060ceab30589e96b29f04d">lcd_params_t::spi</a> must then be set to <a class="el" href="atxmega_2include_2periph__cpu_8h.html#a0d0505b52e78af9251f6a1921d30214e">SPI_UNDEF</a> for displays that use the MCU-8080-parallel-8-/16-bit interface, i.e. <a class="el" href="#ab603c9671e060ceab30589e96b29f04d">lcd_params_t::spi</a> is then used to detect the interface mode. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00113">113</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="lcd_8h_source.html">lcd.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:ab603c9671e060ceab30589e96b29f04d" id="r_ab603c9671e060ceab30589e96b29f04d"><td class="memItemLeft" align="right" valign="top">spi_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab603c9671e060ceab30589e96b29f04d">spi</a></td></tr>
+<tr class="memdesc:ab603c9671e060ceab30589e96b29f04d"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI device that the display is connected to.  <br /></td></tr>
+<tr class="separator:ab603c9671e060ceab30589e96b29f04d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e29a96454979adb06f582be28322ba1" id="r_a0e29a96454979adb06f582be28322ba1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="atxmega_2include_2periph__cpu_8h.html#a17adf016c33fa2f2e36c9bec898bc0c8">spi_clk_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e29a96454979adb06f582be28322ba1">spi_clk</a></td></tr>
+<tr class="memdesc:a0e29a96454979adb06f582be28322ba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI clock speed to use.  <br /></td></tr>
+<tr class="separator:a0e29a96454979adb06f582be28322ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a746b20f346200aa344fec027db2d75da" id="r_a746b20f346200aa344fec027db2d75da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="msp430_2include_2f2xx__g2xx_2periph__cpu_8h.html#ac4b206a51636d91c5cffcbcee458c3cb">spi_mode_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a746b20f346200aa344fec027db2d75da">spi_mode</a></td></tr>
+<tr class="memdesc:a746b20f346200aa344fec027db2d75da"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI mode.  <br /></td></tr>
+<tr class="separator:a746b20f346200aa344fec027db2d75da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a497335f556d95043bf6651863537b40c" id="r_a497335f556d95043bf6651863537b40c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__lcd.html#ga5cd382b72d7fc5ac8e66b598b584abc7">lcd_if_mode_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a497335f556d95043bf6651863537b40c">mode</a></td></tr>
+<tr class="memdesc:a497335f556d95043bf6651863537b40c"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD driver interface mode.  <br /></td></tr>
+<tr class="separator:a497335f556d95043bf6651863537b40c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72c8f572e5050a5126f367930dfac698" id="r_a72c8f572e5050a5126f367930dfac698"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72c8f572e5050a5126f367930dfac698">wrx_pin</a></td></tr>
+<tr class="memdesc:a72c8f572e5050a5126f367930dfac698"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the WRITE ENABLE line  <br /></td></tr>
+<tr class="separator:a72c8f572e5050a5126f367930dfac698"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa77d71c58308c441c35833106e62d4cc" id="r_aa77d71c58308c441c35833106e62d4cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa77d71c58308c441c35833106e62d4cc">rdx_pin</a></td></tr>
+<tr class="memdesc:aa77d71c58308c441c35833106e62d4cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the READ ENABLE line  <br /></td></tr>
+<tr class="separator:aa77d71c58308c441c35833106e62d4cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae55dcf16197623a611544a3da8341a26" id="r_ae55dcf16197623a611544a3da8341a26"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae55dcf16197623a611544a3da8341a26">d0_pin</a></td></tr>
+<tr class="memdesc:ae55dcf16197623a611544a3da8341a26"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the D0 line  <br /></td></tr>
+<tr class="separator:ae55dcf16197623a611544a3da8341a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afee4ae4a2ada449a444031ba61a8282d" id="r_afee4ae4a2ada449a444031ba61a8282d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afee4ae4a2ada449a444031ba61a8282d">d1_pin</a></td></tr>
+<tr class="memdesc:afee4ae4a2ada449a444031ba61a8282d"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the D1 line  <br /></td></tr>
+<tr class="separator:afee4ae4a2ada449a444031ba61a8282d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1cab0da3f739a77ff22f50f06303eba" id="r_ad1cab0da3f739a77ff22f50f06303eba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1cab0da3f739a77ff22f50f06303eba">d2_pin</a></td></tr>
+<tr class="memdesc:ad1cab0da3f739a77ff22f50f06303eba"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the D2 line  <br /></td></tr>
+<tr class="separator:ad1cab0da3f739a77ff22f50f06303eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad56f32a1765ba58692de90bda4169bf5" id="r_ad56f32a1765ba58692de90bda4169bf5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad56f32a1765ba58692de90bda4169bf5">d3_pin</a></td></tr>
+<tr class="memdesc:ad56f32a1765ba58692de90bda4169bf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the D3 line  <br /></td></tr>
+<tr class="separator:ad56f32a1765ba58692de90bda4169bf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4f886badbdf0491d3a80b8dd7d67e15" id="r_ab4f886badbdf0491d3a80b8dd7d67e15"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4f886badbdf0491d3a80b8dd7d67e15">d4_pin</a></td></tr>
+<tr class="memdesc:ab4f886badbdf0491d3a80b8dd7d67e15"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the D4 line  <br /></td></tr>
+<tr class="separator:ab4f886badbdf0491d3a80b8dd7d67e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac26247de02c0713d8d9198f466ec9171" id="r_ac26247de02c0713d8d9198f466ec9171"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac26247de02c0713d8d9198f466ec9171">d5_pin</a></td></tr>
+<tr class="memdesc:ac26247de02c0713d8d9198f466ec9171"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the D5 line  <br /></td></tr>
+<tr class="separator:ac26247de02c0713d8d9198f466ec9171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6dc37b22deaf13547cdaa0156e8f81a" id="r_ae6dc37b22deaf13547cdaa0156e8f81a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6dc37b22deaf13547cdaa0156e8f81a">d6_pin</a></td></tr>
+<tr class="memdesc:ae6dc37b22deaf13547cdaa0156e8f81a"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the D6 line  <br /></td></tr>
+<tr class="separator:ae6dc37b22deaf13547cdaa0156e8f81a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa582cc029e323b2ec2d61ebfac67f02" id="r_afa582cc029e323b2ec2d61ebfac67f02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa582cc029e323b2ec2d61ebfac67f02">d7_pin</a></td></tr>
+<tr class="memdesc:afa582cc029e323b2ec2d61ebfac67f02"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the D7 line  <br /></td></tr>
+<tr class="separator:afa582cc029e323b2ec2d61ebfac67f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef46d268e1e0ec6f1e6ae0d1b753d80b" id="r_aef46d268e1e0ec6f1e6ae0d1b753d80b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef46d268e1e0ec6f1e6ae0d1b753d80b">d8_pin</a></td></tr>
+<tr class="memdesc:aef46d268e1e0ec6f1e6ae0d1b753d80b"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the D8 line  <br /></td></tr>
+<tr class="separator:aef46d268e1e0ec6f1e6ae0d1b753d80b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d00f1a62696c6f28a23cb1bef025bcf" id="r_a1d00f1a62696c6f28a23cb1bef025bcf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d00f1a62696c6f28a23cb1bef025bcf">d9_pin</a></td></tr>
+<tr class="memdesc:a1d00f1a62696c6f28a23cb1bef025bcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the D9 line  <br /></td></tr>
+<tr class="separator:a1d00f1a62696c6f28a23cb1bef025bcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8da946baa2dafab416811912461928a3" id="r_a8da946baa2dafab416811912461928a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8da946baa2dafab416811912461928a3">d10_pin</a></td></tr>
+<tr class="memdesc:a8da946baa2dafab416811912461928a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the D10 line  <br /></td></tr>
+<tr class="separator:a8da946baa2dafab416811912461928a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67c17fd19c38603db392ac90df443464" id="r_a67c17fd19c38603db392ac90df443464"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67c17fd19c38603db392ac90df443464">d11_pin</a></td></tr>
+<tr class="memdesc:a67c17fd19c38603db392ac90df443464"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the D11 line  <br /></td></tr>
+<tr class="separator:a67c17fd19c38603db392ac90df443464"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a642be44b7cf54ca5c9fc5a5a5faa0681" id="r_a642be44b7cf54ca5c9fc5a5a5faa0681"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a642be44b7cf54ca5c9fc5a5a5faa0681">d12_pin</a></td></tr>
+<tr class="memdesc:a642be44b7cf54ca5c9fc5a5a5faa0681"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the D12 line  <br /></td></tr>
+<tr class="separator:a642be44b7cf54ca5c9fc5a5a5faa0681"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eff5a0d6fdea76604bacf474b04531d" id="r_a6eff5a0d6fdea76604bacf474b04531d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6eff5a0d6fdea76604bacf474b04531d">d13_pin</a></td></tr>
+<tr class="memdesc:a6eff5a0d6fdea76604bacf474b04531d"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the D13 line  <br /></td></tr>
+<tr class="separator:a6eff5a0d6fdea76604bacf474b04531d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17c42ca0ad56705663cf3a92ab81c7d9" id="r_a17c42ca0ad56705663cf3a92ab81c7d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17c42ca0ad56705663cf3a92ab81c7d9">d14_pin</a></td></tr>
+<tr class="memdesc:a17c42ca0ad56705663cf3a92ab81c7d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the D14 line  <br /></td></tr>
+<tr class="separator:a17c42ca0ad56705663cf3a92ab81c7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a119135228a2204eee7fe482ab374d486" id="r_a119135228a2204eee7fe482ab374d486"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a119135228a2204eee7fe482ab374d486">d15_pin</a></td></tr>
+<tr class="memdesc:a119135228a2204eee7fe482ab374d486"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the D15 line  <br /></td></tr>
+<tr class="separator:a119135228a2204eee7fe482ab374d486"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8926d7f5753ca8c1e5488bbbb780caa" id="r_af8926d7f5753ca8c1e5488bbbb780caa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8926d7f5753ca8c1e5488bbbb780caa">cs_pin</a></td></tr>
+<tr class="memdesc:af8926d7f5753ca8c1e5488bbbb780caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the CHIP SELECT line  <br /></td></tr>
+<tr class="separator:af8926d7f5753ca8c1e5488bbbb780caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38ff47531ea977fcb920b64a01ab9a57" id="r_a38ff47531ea977fcb920b64a01ab9a57"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38ff47531ea977fcb920b64a01ab9a57">dcx_pin</a></td></tr>
+<tr class="memdesc:a38ff47531ea977fcb920b64a01ab9a57"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the DC line  <br /></td></tr>
+<tr class="separator:a38ff47531ea977fcb920b64a01ab9a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23021eb7c71730d8f33cf6e78de4ccbb" id="r_a23021eb7c71730d8f33cf6e78de4ccbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23021eb7c71730d8f33cf6e78de4ccbb">rst_pin</a></td></tr>
+<tr class="memdesc:a23021eb7c71730d8f33cf6e78de4ccbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin connected to the RESET line  <br /></td></tr>
+<tr class="separator:a23021eb7c71730d8f33cf6e78de4ccbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ea14d2902cc4274fe42e93e39ef29fb" id="r_a2ea14d2902cc4274fe42e93e39ef29fb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ea14d2902cc4274fe42e93e39ef29fb">rgb</a></td></tr>
+<tr class="memdesc:a2ea14d2902cc4274fe42e93e39ef29fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">True when display is connected in RGB mode<br  />
+False when display is connected in BGR mode.  <br /></td></tr>
+<tr class="separator:a2ea14d2902cc4274fe42e93e39ef29fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae26fbf02e16757681aa6215ba9895be8" id="r_ae26fbf02e16757681aa6215ba9895be8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae26fbf02e16757681aa6215ba9895be8">inverted</a></td></tr>
+<tr class="memdesc:ae26fbf02e16757681aa6215ba9895be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display works in inverted color mode.  <br /></td></tr>
+<tr class="separator:ae26fbf02e16757681aa6215ba9895be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac5c75611050f265721494ef2e6e031b" id="r_aac5c75611050f265721494ef2e6e031b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac5c75611050f265721494ef2e6e031b">lines</a></td></tr>
+<tr class="memdesc:aac5c75611050f265721494ef2e6e031b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of lines, from 16 to the number of lines supported by the driver IC in 8 line steps.  <br /></td></tr>
+<tr class="separator:aac5c75611050f265721494ef2e6e031b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5236b65799d8d86c136ea25de8d4865b" id="r_a5236b65799d8d86c136ea25de8d4865b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5236b65799d8d86c136ea25de8d4865b">rgb_channels</a></td></tr>
+<tr class="memdesc:a5236b65799d8d86c136ea25de8d4865b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display rgb channels.  <br /></td></tr>
+<tr class="separator:a5236b65799d8d86c136ea25de8d4865b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c6ab0ffa0bd42423dff63a96b264187" id="r_a6c6ab0ffa0bd42423dff63a96b264187"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c6ab0ffa0bd42423dff63a96b264187">rotation</a></td></tr>
+<tr class="memdesc:a6c6ab0ffa0bd42423dff63a96b264187"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display rotation mode.  <br /></td></tr>
+<tr class="separator:a6c6ab0ffa0bd42423dff63a96b264187"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59d5b42c3b5560d7dc9399b7320ad644" id="r_a59d5b42c3b5560d7dc9399b7320ad644"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59d5b42c3b5560d7dc9399b7320ad644">offset_x</a></td></tr>
+<tr class="memdesc:a59d5b42c3b5560d7dc9399b7320ad644"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD offset to apply on x axis.  <br /></td></tr>
+<tr class="separator:a59d5b42c3b5560d7dc9399b7320ad644"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3946726d6853259a7f02156b219df64d" id="r_a3946726d6853259a7f02156b219df64d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3946726d6853259a7f02156b219df64d">offset_y</a></td></tr>
+<tr class="memdesc:a3946726d6853259a7f02156b219df64d"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD offset to apply on y axis.  <br /></td></tr>
+<tr class="separator:a3946726d6853259a7f02156b219df64d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d3c2f9c61bb67b40b08b92840ae8806" id="r_a5d3c2f9c61bb67b40b08b92840ae8806"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d3c2f9c61bb67b40b08b92840ae8806">cntrl</a></td></tr>
+<tr class="memdesc:a5d3c2f9c61bb67b40b08b92840ae8806"><td class="mdescLeft">&#160;</td><td class="mdescRight">controller variant used, if the controller- specific driver supports multiple controller variants  <br /></td></tr>
+<tr class="separator:a5d3c2f9c61bb67b40b08b92840ae8806"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a5d3c2f9c61bb67b40b08b92840ae8806" name="a5d3c2f9c61bb67b40b08b92840ae8806"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d3c2f9c61bb67b40b08b92840ae8806">&#9670;&#160;</a></span>cntrl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t lcd_params_t::cntrl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>controller variant used, if the controller- specific driver supports multiple controller variants </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00160">160</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="af8926d7f5753ca8c1e5488bbbb780caa" name="af8926d7f5753ca8c1e5488bbbb780caa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8926d7f5753ca8c1e5488bbbb780caa">&#9670;&#160;</a></span>cs_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::cs_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the CHIP SELECT line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00146">146</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="ae55dcf16197623a611544a3da8341a26" name="ae55dcf16197623a611544a3da8341a26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae55dcf16197623a611544a3da8341a26">&#9670;&#160;</a></span>d0_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::d0_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the D0 line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00125">125</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a8da946baa2dafab416811912461928a3" name="a8da946baa2dafab416811912461928a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8da946baa2dafab416811912461928a3">&#9670;&#160;</a></span>d10_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::d10_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the D10 line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00137">137</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a67c17fd19c38603db392ac90df443464" name="a67c17fd19c38603db392ac90df443464"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67c17fd19c38603db392ac90df443464">&#9670;&#160;</a></span>d11_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::d11_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the D11 line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00138">138</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a642be44b7cf54ca5c9fc5a5a5faa0681" name="a642be44b7cf54ca5c9fc5a5a5faa0681"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a642be44b7cf54ca5c9fc5a5a5faa0681">&#9670;&#160;</a></span>d12_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::d12_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the D12 line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00139">139</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a6eff5a0d6fdea76604bacf474b04531d" name="a6eff5a0d6fdea76604bacf474b04531d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eff5a0d6fdea76604bacf474b04531d">&#9670;&#160;</a></span>d13_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::d13_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the D13 line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00140">140</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a17c42ca0ad56705663cf3a92ab81c7d9" name="a17c42ca0ad56705663cf3a92ab81c7d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17c42ca0ad56705663cf3a92ab81c7d9">&#9670;&#160;</a></span>d14_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::d14_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the D14 line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00141">141</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a119135228a2204eee7fe482ab374d486" name="a119135228a2204eee7fe482ab374d486"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a119135228a2204eee7fe482ab374d486">&#9670;&#160;</a></span>d15_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::d15_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the D15 line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00142">142</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="afee4ae4a2ada449a444031ba61a8282d" name="afee4ae4a2ada449a444031ba61a8282d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afee4ae4a2ada449a444031ba61a8282d">&#9670;&#160;</a></span>d1_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::d1_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the D1 line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00126">126</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="ad1cab0da3f739a77ff22f50f06303eba" name="ad1cab0da3f739a77ff22f50f06303eba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1cab0da3f739a77ff22f50f06303eba">&#9670;&#160;</a></span>d2_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::d2_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the D2 line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00127">127</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="ad56f32a1765ba58692de90bda4169bf5" name="ad56f32a1765ba58692de90bda4169bf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad56f32a1765ba58692de90bda4169bf5">&#9670;&#160;</a></span>d3_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::d3_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the D3 line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00128">128</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="ab4f886badbdf0491d3a80b8dd7d67e15" name="ab4f886badbdf0491d3a80b8dd7d67e15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4f886badbdf0491d3a80b8dd7d67e15">&#9670;&#160;</a></span>d4_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::d4_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the D4 line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00129">129</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="ac26247de02c0713d8d9198f466ec9171" name="ac26247de02c0713d8d9198f466ec9171"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac26247de02c0713d8d9198f466ec9171">&#9670;&#160;</a></span>d5_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::d5_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the D5 line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00130">130</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="ae6dc37b22deaf13547cdaa0156e8f81a" name="ae6dc37b22deaf13547cdaa0156e8f81a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6dc37b22deaf13547cdaa0156e8f81a">&#9670;&#160;</a></span>d6_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::d6_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the D6 line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00131">131</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="afa582cc029e323b2ec2d61ebfac67f02" name="afa582cc029e323b2ec2d61ebfac67f02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa582cc029e323b2ec2d61ebfac67f02">&#9670;&#160;</a></span>d7_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::d7_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the D7 line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00132">132</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="aef46d268e1e0ec6f1e6ae0d1b753d80b" name="aef46d268e1e0ec6f1e6ae0d1b753d80b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef46d268e1e0ec6f1e6ae0d1b753d80b">&#9670;&#160;</a></span>d8_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::d8_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the D8 line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00135">135</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a1d00f1a62696c6f28a23cb1bef025bcf" name="a1d00f1a62696c6f28a23cb1bef025bcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d00f1a62696c6f28a23cb1bef025bcf">&#9670;&#160;</a></span>d9_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::d9_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the D9 line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00136">136</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a38ff47531ea977fcb920b64a01ab9a57" name="a38ff47531ea977fcb920b64a01ab9a57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38ff47531ea977fcb920b64a01ab9a57">&#9670;&#160;</a></span>dcx_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::dcx_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the DC line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00147">147</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="ae26fbf02e16757681aa6215ba9895be8" name="ae26fbf02e16757681aa6215ba9895be8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae26fbf02e16757681aa6215ba9895be8">&#9670;&#160;</a></span>inverted</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lcd_params_t::inverted</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Display works in inverted color mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00151">151</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="aac5c75611050f265721494ef2e6e031b" name="aac5c75611050f265721494ef2e6e031b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac5c75611050f265721494ef2e6e031b">&#9670;&#160;</a></span>lines</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t lcd_params_t::lines</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of lines, from 16 to the number of lines supported by the driver IC in 8 line steps. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00152">152</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a497335f556d95043bf6651863537b40c" name="a497335f556d95043bf6651863537b40c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a497335f556d95043bf6651863537b40c">&#9670;&#160;</a></span>mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__lcd.html#ga5cd382b72d7fc5ac8e66b598b584abc7">lcd_if_mode_t</a> lcd_params_t::mode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LCD driver interface mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00121">121</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a59d5b42c3b5560d7dc9399b7320ad644" name="a59d5b42c3b5560d7dc9399b7320ad644"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59d5b42c3b5560d7dc9399b7320ad644">&#9670;&#160;</a></span>offset_x</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t lcd_params_t::offset_x</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LCD offset to apply on x axis. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00157">157</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a3946726d6853259a7f02156b219df64d" name="a3946726d6853259a7f02156b219df64d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3946726d6853259a7f02156b219df64d">&#9670;&#160;</a></span>offset_y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t lcd_params_t::offset_y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LCD offset to apply on y axis. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00158">158</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="aa77d71c58308c441c35833106e62d4cc" name="aa77d71c58308c441c35833106e62d4cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa77d71c58308c441c35833106e62d4cc">&#9670;&#160;</a></span>rdx_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::rdx_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the READ ENABLE line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00124">124</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a2ea14d2902cc4274fe42e93e39ef29fb" name="a2ea14d2902cc4274fe42e93e39ef29fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ea14d2902cc4274fe42e93e39ef29fb">&#9670;&#160;</a></span>rgb</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lcd_params_t::rgb</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>True when display is connected in RGB mode<br  />
+False when display is connected in BGR mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00149">149</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a5236b65799d8d86c136ea25de8d4865b" name="a5236b65799d8d86c136ea25de8d4865b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5236b65799d8d86c136ea25de8d4865b">&#9670;&#160;</a></span>rgb_channels</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t lcd_params_t::rgb_channels</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Display rgb channels. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00155">155</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a6c6ab0ffa0bd42423dff63a96b264187" name="a6c6ab0ffa0bd42423dff63a96b264187"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c6ab0ffa0bd42423dff63a96b264187">&#9670;&#160;</a></span>rotation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t lcd_params_t::rotation</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Display rotation mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00156">156</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a23021eb7c71730d8f33cf6e78de4ccbb" name="a23021eb7c71730d8f33cf6e78de4ccbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23021eb7c71730d8f33cf6e78de4ccbb">&#9670;&#160;</a></span>rst_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::rst_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the RESET line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00148">148</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="ab603c9671e060ceab30589e96b29f04d" name="ab603c9671e060ceab30589e96b29f04d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab603c9671e060ceab30589e96b29f04d">&#9670;&#160;</a></span>spi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">spi_t lcd_params_t::spi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SPI device that the display is connected to. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00116">116</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a0e29a96454979adb06f582be28322ba1" name="a0e29a96454979adb06f582be28322ba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e29a96454979adb06f582be28322ba1">&#9670;&#160;</a></span>spi_clk</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="atxmega_2include_2periph__cpu_8h.html#a17adf016c33fa2f2e36c9bec898bc0c8">spi_clk_t</a> lcd_params_t::spi_clk</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SPI clock speed to use. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00117">117</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a746b20f346200aa344fec027db2d75da" name="a746b20f346200aa344fec027db2d75da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a746b20f346200aa344fec027db2d75da">&#9670;&#160;</a></span>spi_mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="msp430_2include_2f2xx__g2xx_2periph__cpu_8h.html#ac4b206a51636d91c5cffcbcee458c3cb">spi_mode_t</a> lcd_params_t::spi_mode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SPI mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00118">118</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a72c8f572e5050a5126f367930dfac698" name="a72c8f572e5050a5126f367930dfac698"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72c8f572e5050a5126f367930dfac698">&#9670;&#160;</a></span>wrx_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> lcd_params_t::wrx_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin connected to the WRITE ENABLE line </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00123">123</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>drivers/include/<a class="el" href="lcd_8h_source.html">lcd.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

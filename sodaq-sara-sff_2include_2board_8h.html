@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>boards/sodaq-sara-sff/include/board.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('sodaq-sara-sff_2include_2board_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle"><div class="title">board.h File Reference<div class="ingroups"><a class="el" href="group__boards.html">Boards</a> &raquo; <a class="el" href="group__boards__sodaq-sara-sff.html">SODAQ SARA SFF</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Board specific definitions for the SODAQ SARA SFF board.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Board specific definitions for the SODAQ SARA SFF board. </p>
+<dl class="section author"><dt>Author</dt><dd>Kees Bakker <a href="#" onclick="location.href='mai'+'lto:'+'kee'+'s@'+'sod'+'aq'+'.co'+'m'; return false;">kees@<span class="obfuscator">.nosp@m.</span>soda<span class="obfuscator">.nosp@m.</span>q.com</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;cpu.h&quot;</code><br />
+<code>#include &quot;board_common.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="drivers_2include_2periph_2gpio_8h_source.html">periph/gpio.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for board.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sodaq-sara-sff_2include_2board_8h__incl.svg" width="488" height="207"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sodaq-sara-sff_2include_2board_8h__dep__incl.svg" width="183" height="148"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="sodaq-sara-sff_2include_2board_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a66b09be6eb74f7e17d30ff8ad4f81f48" id="r_a66b09be6eb74f7e17d30ff8ad4f81f48"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66b09be6eb74f7e17d30ff8ad4f81f48">SARA_STATUS_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 28)</td></tr>
+<tr class="memdesc:a66b09be6eb74f7e17d30ff8ad4f81f48"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the V_INT of the board.  <br /></td></tr>
+<tr class="separator:a66b09be6eb74f7e17d30ff8ad4f81f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">LED pin definitions and handlers</h2></td></tr>
+<tr class="memitem:a3fc522fda449d6edde717d6a857429cf" id="r_a3fc522fda449d6edde717d6a857429cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fc522fda449d6edde717d6a857429cf">LED0_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 16)</td></tr>
+<tr class="separator:a3fc522fda449d6edde717d6a857429cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76914453bb5cda4ebca204e091e8f55c" id="r_a76914453bb5cda4ebca204e091e8f55c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76914453bb5cda4ebca204e091e8f55c">LED0_PORT</a>&#160;&#160;&#160;PORT-&gt;Group[<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>]</td></tr>
+<tr class="separator:a76914453bb5cda4ebca204e091e8f55c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfabde35a3e8b7ab50146a5e223bfead" id="r_abfabde35a3e8b7ab50146a5e223bfead"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfabde35a3e8b7ab50146a5e223bfead">LED0_MASK</a>&#160;&#160;&#160;(1 &lt;&lt; 16)</td></tr>
+<tr class="separator:abfabde35a3e8b7ab50146a5e223bfead"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef2e39b9fd343d0e437fac0463f3e02d" id="r_aef2e39b9fd343d0e437fac0463f3e02d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef2e39b9fd343d0e437fac0463f3e02d">LED0_OFF</a>&#160;&#160;&#160;(LED0_PORT.OUTSET.reg = LED0_MASK)</td></tr>
+<tr class="separator:aef2e39b9fd343d0e437fac0463f3e02d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e48dc02333bfc2e6ad3e5bd466eecd4" id="r_a1e48dc02333bfc2e6ad3e5bd466eecd4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e48dc02333bfc2e6ad3e5bd466eecd4">LED0_ON</a>&#160;&#160;&#160;(LED0_PORT.OUTCLR.reg = LED0_MASK)</td></tr>
+<tr class="separator:a1e48dc02333bfc2e6ad3e5bd466eecd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebc6389533d9fc8dcbe4d2129a4d5a45" id="r_aebc6389533d9fc8dcbe4d2129a4d5a45"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebc6389533d9fc8dcbe4d2129a4d5a45">LED0_TOGGLE</a>&#160;&#160;&#160;(LED0_PORT.OUTTGL.reg = LED0_MASK)</td></tr>
+<tr class="separator:aebc6389533d9fc8dcbe4d2129a4d5a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0539be032702009fb24beec89c6fa0c0" id="r_a0539be032702009fb24beec89c6fa0c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0539be032702009fb24beec89c6fa0c0">LED_GREEN_PIN</a>&#160;&#160;&#160;LED0_PIN</td></tr>
+<tr class="separator:a0539be032702009fb24beec89c6fa0c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7342b58673b510db5515b35528ab84ba" id="r_a7342b58673b510db5515b35528ab84ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7342b58673b510db5515b35528ab84ba">LED_GREEN_OFF</a>&#160;&#160;&#160;LED0_OFF</td></tr>
+<tr class="separator:a7342b58673b510db5515b35528ab84ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad356d9afb2945fd845d2491da1d3eebf" id="r_ad356d9afb2945fd845d2491da1d3eebf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad356d9afb2945fd845d2491da1d3eebf">LED_GREEN_ON</a>&#160;&#160;&#160;LED0_ON</td></tr>
+<tr class="separator:ad356d9afb2945fd845d2491da1d3eebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97f88a16836abee5a604aa793f07700e" id="r_a97f88a16836abee5a604aa793f07700e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97f88a16836abee5a604aa793f07700e">LED_GREEN_TOGGLE</a>&#160;&#160;&#160;LED0_TOGGLE</td></tr>
+<tr class="separator:a97f88a16836abee5a604aa793f07700e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a318aa17e5d40e2132d2c7f6269ce7f51" id="r_a318aa17e5d40e2132d2c7f6269ce7f51"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a318aa17e5d40e2132d2c7f6269ce7f51">LED1_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 14)</td></tr>
+<tr class="separator:a318aa17e5d40e2132d2c7f6269ce7f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c9d04655364826e039b03997bcfe19c" id="r_a1c9d04655364826e039b03997bcfe19c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c9d04655364826e039b03997bcfe19c">LED1_PORT</a>&#160;&#160;&#160;PORT-&gt;Group[<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>]</td></tr>
+<tr class="separator:a1c9d04655364826e039b03997bcfe19c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a669ed6e073140d069b30442bf4c08842" id="r_a669ed6e073140d069b30442bf4c08842"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>&#160;&#160;&#160;(1 &lt;&lt; 14)</td></tr>
+<tr class="separator:a669ed6e073140d069b30442bf4c08842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a343fd2d3ce61b84f88ddfaea32c67c58" id="r_a343fd2d3ce61b84f88ddfaea32c67c58"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a343fd2d3ce61b84f88ddfaea32c67c58">LED1_OFF</a>&#160;&#160;&#160;(LED1_PORT.OUTSET.reg = <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>)</td></tr>
+<tr class="separator:a343fd2d3ce61b84f88ddfaea32c67c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadd4c7ae0cd4e9bbb17f7055dd51fe08" id="r_aadd4c7ae0cd4e9bbb17f7055dd51fe08"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadd4c7ae0cd4e9bbb17f7055dd51fe08">LED1_ON</a>&#160;&#160;&#160;(LED1_PORT.OUTCLR.reg = <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>)</td></tr>
+<tr class="separator:aadd4c7ae0cd4e9bbb17f7055dd51fe08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a267fdbba1d750146b73da35c1731fd17" id="r_a267fdbba1d750146b73da35c1731fd17"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a267fdbba1d750146b73da35c1731fd17">LED1_TOGGLE</a>&#160;&#160;&#160;(LED1_PORT.OUTTGL.reg = <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>)</td></tr>
+<tr class="separator:a267fdbba1d750146b73da35c1731fd17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9824ab080c30006c1baaa0dd7e863c5" id="r_ab9824ab080c30006c1baaa0dd7e863c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9824ab080c30006c1baaa0dd7e863c5">LED_RED_PIN</a>&#160;&#160;&#160;<a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a318aa17e5d40e2132d2c7f6269ce7f51">LED1_PIN</a></td></tr>
+<tr class="separator:ab9824ab080c30006c1baaa0dd7e863c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b0dbb40e5c4b12fd3d79319a80d006d" id="r_a3b0dbb40e5c4b12fd3d79319a80d006d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b0dbb40e5c4b12fd3d79319a80d006d">LED_RED_OFF</a>&#160;&#160;&#160;<a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a343fd2d3ce61b84f88ddfaea32c67c58">LED1_OFF</a></td></tr>
+<tr class="separator:a3b0dbb40e5c4b12fd3d79319a80d006d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcbe07e8e8e9cbe1e7baeaab470a58ef" id="r_afcbe07e8e8e9cbe1e7baeaab470a58ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcbe07e8e8e9cbe1e7baeaab470a58ef">LED_RED_ON</a>&#160;&#160;&#160;<a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#aadd4c7ae0cd4e9bbb17f7055dd51fe08">LED1_ON</a></td></tr>
+<tr class="separator:afcbe07e8e8e9cbe1e7baeaab470a58ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeabcdd8d4e3bf35ce9ec2c9a6b295c72" id="r_aeabcdd8d4e3bf35ce9ec2c9a6b295c72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeabcdd8d4e3bf35ce9ec2c9a6b295c72">LED_RED_TOGGLE</a>&#160;&#160;&#160;<a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a267fdbba1d750146b73da35c1731fd17">LED1_TOGGLE</a></td></tr>
+<tr class="separator:aeabcdd8d4e3bf35ce9ec2c9a6b295c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6f84078113b55354d20585131b386f7" id="r_af6f84078113b55354d20585131b386f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6f84078113b55354d20585131b386f7">LED2_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 15)</td></tr>
+<tr class="separator:af6f84078113b55354d20585131b386f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fbb138c249c6c047524c7055dd5f1b7" id="r_a3fbb138c249c6c047524c7055dd5f1b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fbb138c249c6c047524c7055dd5f1b7">LED2_PORT</a>&#160;&#160;&#160;PORT-&gt;Group[<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>]</td></tr>
+<tr class="separator:a3fbb138c249c6c047524c7055dd5f1b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40f0f4b5ae7ea50d341105ddc740101e" id="r_a40f0f4b5ae7ea50d341105ddc740101e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>&#160;&#160;&#160;(1 &lt;&lt; 15)</td></tr>
+<tr class="separator:a40f0f4b5ae7ea50d341105ddc740101e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6468b1df4dfabcca0bb142044d6f976" id="r_ac6468b1df4dfabcca0bb142044d6f976"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6468b1df4dfabcca0bb142044d6f976">LED2_OFF</a>&#160;&#160;&#160;(LED2_PORT.OUTSET.reg = <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>)</td></tr>
+<tr class="separator:ac6468b1df4dfabcca0bb142044d6f976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab55f588eb2c5177d3f7806e60d379fba" id="r_ab55f588eb2c5177d3f7806e60d379fba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab55f588eb2c5177d3f7806e60d379fba">LED2_ON</a>&#160;&#160;&#160;(LED2_PORT.OUTCLR.reg = <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>)</td></tr>
+<tr class="separator:ab55f588eb2c5177d3f7806e60d379fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd16785845ce7004334b91a98707f8eb" id="r_acd16785845ce7004334b91a98707f8eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd16785845ce7004334b91a98707f8eb">LED2_TOGGLE</a>&#160;&#160;&#160;(LED2_PORT.OUTTGL.reg = <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>)</td></tr>
+<tr class="separator:acd16785845ce7004334b91a98707f8eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aec9d3b503fb1a30a21b16c7be86cff" id="r_a5aec9d3b503fb1a30a21b16c7be86cff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5aec9d3b503fb1a30a21b16c7be86cff">LED_BLUE_PIN</a>&#160;&#160;&#160;<a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#af6f84078113b55354d20585131b386f7">LED2_PIN</a></td></tr>
+<tr class="separator:a5aec9d3b503fb1a30a21b16c7be86cff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a430322d3250cf1fd426d19b5b35f71b5" id="r_a430322d3250cf1fd426d19b5b35f71b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a430322d3250cf1fd426d19b5b35f71b5">LED_BLUE_OFF</a>&#160;&#160;&#160;<a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#ac6468b1df4dfabcca0bb142044d6f976">LED2_OFF</a></td></tr>
+<tr class="separator:a430322d3250cf1fd426d19b5b35f71b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c88bf592798355e02e11534ed9b9cea" id="r_a0c88bf592798355e02e11534ed9b9cea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c88bf592798355e02e11534ed9b9cea">LED_BLUE_ON</a>&#160;&#160;&#160;<a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#ab55f588eb2c5177d3f7806e60d379fba">LED2_ON</a></td></tr>
+<tr class="separator:a0c88bf592798355e02e11534ed9b9cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adac963156151f878c160bec6c80e201d" id="r_adac963156151f878c160bec6c80e201d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adac963156151f878c160bec6c80e201d">LED_BLUE_TOGGLE</a>&#160;&#160;&#160;<a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#acd16785845ce7004334b91a98707f8eb">LED2_TOGGLE</a></td></tr>
+<tr class="separator:adac963156151f878c160bec6c80e201d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">User button</h2></td></tr>
+<tr class="memitem:aab5c3eca54046333af52593b9e360270" id="r_aab5c3eca54046333af52593b9e360270"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab5c3eca54046333af52593b9e360270">BTN0_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469a8b7dd81ba2f0d15957795457d92ce139">PB</a>, 8)</td></tr>
+<tr class="separator:aab5c3eca54046333af52593b9e360270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a904884feea8e03c30c9a85ca6d7a8e5c" id="r_a904884feea8e03c30c9a85ca6d7a8e5c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a904884feea8e03c30c9a85ca6d7a8e5c">BTN0_MODE</a>&#160;&#160;&#160;<a class="el" href="atxmega_2include_2periph__cpu_8h.html#a201df5e2845212d28c89e2cf3fdaa642a3343e227f62c4c536efff81438a8e155">GPIO_IN</a></td></tr>
+<tr class="separator:a904884feea8e03c30c9a85ca6d7a8e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">GPS Time Pulse</h2></td></tr>
+<tr class="memitem:adb08e08f70b3ae41d53adaba493bda81" id="r_adb08e08f70b3ae41d53adaba493bda81"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb08e08f70b3ae41d53adaba493bda81">GPS_TIMEPULSE_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 17)</td></tr>
+<tr class="separator:adb08e08f70b3ae41d53adaba493bda81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae48bb3aebdb9b02e60e3244f6cf51a92" id="r_ae48bb3aebdb9b02e60e3244f6cf51a92"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae48bb3aebdb9b02e60e3244f6cf51a92">GPS_TIMEPULSE_MODE</a>&#160;&#160;&#160;<a class="el" href="atxmega_2include_2periph__cpu_8h.html#a201df5e2845212d28c89e2cf3fdaa642a3343e227f62c4c536efff81438a8e155">GPIO_IN</a></td></tr>
+<tr class="separator:ae48bb3aebdb9b02e60e3244f6cf51a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">GPS Enable</h2></td></tr>
+<tr class="memitem:a68947b1590f9a900eb3bccac24bb69f3" id="r_a68947b1590f9a900eb3bccac24bb69f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68947b1590f9a900eb3bccac24bb69f3">GPS_ENABLE_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 18)</td></tr>
+<tr class="separator:a68947b1590f9a900eb3bccac24bb69f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3b25befe0aa02cddd3ad8ca5745b5ee" id="r_af3b25befe0aa02cddd3ad8ca5745b5ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3b25befe0aa02cddd3ad8ca5745b5ee">GPS_ENABLE_PORT</a>&#160;&#160;&#160;PORT-&gt;Group[<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>]</td></tr>
+<tr class="separator:af3b25befe0aa02cddd3ad8ca5745b5ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ae62207720632f92bfdbcf7f1704ef9" id="r_a1ae62207720632f92bfdbcf7f1704ef9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ae62207720632f92bfdbcf7f1704ef9">GPS_ENABLE_MASK</a>&#160;&#160;&#160;(1 &lt;&lt; 18)</td></tr>
+<tr class="separator:a1ae62207720632f92bfdbcf7f1704ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37959e2a3521727d08c882ac9996fa16" id="r_a37959e2a3521727d08c882ac9996fa16"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37959e2a3521727d08c882ac9996fa16">GPS_ENABLE_ON</a>&#160;&#160;&#160;(GPS_ENABLE_PORT.OUTSET.reg = GPS_ENABLE_MASK)</td></tr>
+<tr class="separator:a37959e2a3521727d08c882ac9996fa16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac95d4632bebbb06e13c6a7df90610776" id="r_ac95d4632bebbb06e13c6a7df90610776"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac95d4632bebbb06e13c6a7df90610776">GPS_ENABLE_OFF</a>&#160;&#160;&#160;(GPS_ENABLE_PORT.OUTCLR.reg = GPS_ENABLE_MASK)</td></tr>
+<tr class="separator:ac95d4632bebbb06e13c6a7df90610776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">SARA (UBlox) Enable</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>With this pin the power supply can be switched on or off. </p>
+</td></tr>
+<tr class="memitem:a5a528943185cdb5bf6059c892e4d517d" id="r_a5a528943185cdb5bf6059c892e4d517d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a528943185cdb5bf6059c892e4d517d">SARA_ENABLE_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 4)</td></tr>
+<tr class="separator:a5a528943185cdb5bf6059c892e4d517d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54f4400b5d7fbf1034a906f83666623a" id="r_a54f4400b5d7fbf1034a906f83666623a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54f4400b5d7fbf1034a906f83666623a">SARA_ENABLE_PORT</a>&#160;&#160;&#160;PORT-&gt;Group[<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>]</td></tr>
+<tr class="separator:a54f4400b5d7fbf1034a906f83666623a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adda7bc88eef36ee378cc8f2c3a4d1b97" id="r_adda7bc88eef36ee378cc8f2c3a4d1b97"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adda7bc88eef36ee378cc8f2c3a4d1b97">SARA_ENABLE_MASK</a>&#160;&#160;&#160;(1 &lt;&lt; 4)</td></tr>
+<tr class="separator:adda7bc88eef36ee378cc8f2c3a4d1b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab06c51e8d593fbfa43313e99cde32b1f" id="r_ab06c51e8d593fbfa43313e99cde32b1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab06c51e8d593fbfa43313e99cde32b1f">SARA_ENABLE_ON</a>&#160;&#160;&#160;(SARA_ENABLE_PORT.OUTSET.reg = SARA_ENABLE_MASK)</td></tr>
+<tr class="separator:ab06c51e8d593fbfa43313e99cde32b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89aeed029ad9a7cf09313a8f3469985e" id="r_a89aeed029ad9a7cf09313a8f3469985e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89aeed029ad9a7cf09313a8f3469985e">SARA_ENABLE_OFF</a>&#160;&#160;&#160;(SARA_ENABLE_PORT.OUTCLR.reg = SARA_ENABLE_MASK)</td></tr>
+<tr class="separator:a89aeed029ad9a7cf09313a8f3469985e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">SARA (UBlox) TX Enable</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>With this pin level shifters can be switched on or off. </p>
+</td></tr>
+<tr class="memitem:a8c8b8c74beed92c54f6d1ce02c0a58da" id="r_a8c8b8c74beed92c54f6d1ce02c0a58da"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c8b8c74beed92c54f6d1ce02c0a58da">SARA_TX_ENABLE_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 27)</td></tr>
+<tr class="separator:a8c8b8c74beed92c54f6d1ce02c0a58da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92870acaefdfa667a96f7fe5d6468714" id="r_a92870acaefdfa667a96f7fe5d6468714"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92870acaefdfa667a96f7fe5d6468714">SARA_TX_ENABLE_PORT</a>&#160;&#160;&#160;PORT-&gt;Group[<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>]</td></tr>
+<tr class="separator:a92870acaefdfa667a96f7fe5d6468714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7a428650669b94e2236122e89d067ed" id="r_af7a428650669b94e2236122e89d067ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7a428650669b94e2236122e89d067ed">SARA_TX_ENABLE_MASK</a>&#160;&#160;&#160;(1 &lt;&lt; 27)</td></tr>
+<tr class="separator:af7a428650669b94e2236122e89d067ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9318c57bc68cf27ec7be7d67f15d8638" id="r_a9318c57bc68cf27ec7be7d67f15d8638"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9318c57bc68cf27ec7be7d67f15d8638">SARA_TX_ENABLE_ON</a>&#160;&#160;&#160;(SARA_TX_ENABLE_PORT.OUTSET.reg = SARA_TX_ENABLE_MASK)</td></tr>
+<tr class="separator:a9318c57bc68cf27ec7be7d67f15d8638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3b84df4258a89234b62dac6c0af7f95" id="r_ad3b84df4258a89234b62dac6c0af7f95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3b84df4258a89234b62dac6c0af7f95">SARA_TX_ENABLE_OFF</a>&#160;&#160;&#160;(SARA_TX_ENABLE_PORT.OUTCLR.reg = SARA_TX_ENABLE_MASK)</td></tr>
+<tr class="separator:ad3b84df4258a89234b62dac6c0af7f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">SARA_R4XX PWR_ON</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>This is the PWR_ON pin of the UBlox.</p>
+<p>It can be used to switch the unit on or off by lowering this pin (at least for 0.15 seconds). This is needed to switch on from power-off mode and from PSM deep sleep. </p>
+</td></tr>
+<tr class="memitem:ab94054013fd0eb0807fb1c6e9e79619f" id="r_ab94054013fd0eb0807fb1c6e9e79619f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab94054013fd0eb0807fb1c6e9e79619f">SARA_R4XX_PWR_ON_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469a8b7dd81ba2f0d15957795457d92ce139">PB</a>, 10)</td></tr>
+<tr class="separator:ab94054013fd0eb0807fb1c6e9e79619f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebc04920d4d14bb7c1255e0a52dbcbdd" id="r_aebc04920d4d14bb7c1255e0a52dbcbdd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebc04920d4d14bb7c1255e0a52dbcbdd">SARA_R4XX_PWR_ON_PORT</a>&#160;&#160;&#160;PORT-&gt;Group[<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469a8b7dd81ba2f0d15957795457d92ce139">PB</a>]</td></tr>
+<tr class="separator:aebc04920d4d14bb7c1255e0a52dbcbdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46f3d8aeaa7d263b896e1ca8834587f7" id="r_a46f3d8aeaa7d263b896e1ca8834587f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46f3d8aeaa7d263b896e1ca8834587f7">SARA_R4XX_PWR_ON_MASK</a>&#160;&#160;&#160;(1 &lt;&lt; 10)</td></tr>
+<tr class="separator:a46f3d8aeaa7d263b896e1ca8834587f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4023143da9dbe3536c651dba3d80c5f2" id="r_a4023143da9dbe3536c651dba3d80c5f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4023143da9dbe3536c651dba3d80c5f2">SARA_R4XX_PWR_ON_ON</a>&#160;&#160;&#160;(SARA_R4XX_PWR_ON_PORT.OUTSET.reg = SARA_R4XX_PWR_ON_MASK)</td></tr>
+<tr class="separator:a4023143da9dbe3536c651dba3d80c5f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5aac365bc00d884f76878e0de65f0b4" id="r_af5aac365bc00d884f76878e0de65f0b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5aac365bc00d884f76878e0de65f0b4">SARA_R4XX_PWR_ON_OFF</a>&#160;&#160;&#160;(SARA_R4XX_PWR_ON_PORT.OUTCLR.reg = SARA_R4XX_PWR_ON_MASK)</td></tr>
+<tr class="separator:af5aac365bc00d884f76878e0de65f0b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">INT_MAG</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>The INT_MAG pin of the accelerometer (LSM303AGRTR) </p>
+</td></tr>
+<tr class="memitem:a38a3b75432b221a1e6ae6569899c36ef" id="r_a38a3b75432b221a1e6ae6569899c36ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38a3b75432b221a1e6ae6569899c36ef">INT_MAG_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 19)</td></tr>
+<tr class="separator:a38a3b75432b221a1e6ae6569899c36ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1ad748084f585063c111930f7e97249" id="r_ad1ad748084f585063c111930f7e97249"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1ad748084f585063c111930f7e97249">INT_MAG_MODE</a>&#160;&#160;&#160;<a class="el" href="atxmega_2include_2periph__cpu_8h.html#a201df5e2845212d28c89e2cf3fdaa642a3343e227f62c4c536efff81438a8e155">GPIO_IN</a></td></tr>
+<tr class="separator:ad1ad748084f585063c111930f7e97249"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">INT1_XL</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>The INT1_XL pin of the accelerometer (LSM303AGRTR) </p>
+</td></tr>
+<tr class="memitem:a6052b457c56604926570b4c1edcf9dd2" id="r_a6052b457c56604926570b4c1edcf9dd2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6052b457c56604926570b4c1edcf9dd2">INT1_XL_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 20)</td></tr>
+<tr class="separator:a6052b457c56604926570b4c1edcf9dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07e2919ad0b5513e6e58690ec0a123f1" id="r_a07e2919ad0b5513e6e58690ec0a123f1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07e2919ad0b5513e6e58690ec0a123f1">INT1_XL_MODE</a>&#160;&#160;&#160;<a class="el" href="atxmega_2include_2periph__cpu_8h.html#a201df5e2845212d28c89e2cf3fdaa642a3343e227f62c4c536efff81438a8e155">GPIO_IN</a></td></tr>
+<tr class="separator:a07e2919ad0b5513e6e58690ec0a123f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">INT2_XL</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>The INT2_XL pin of the accelerometer (LSM303AGRTR) </p>
+</td></tr>
+<tr class="memitem:a6c1260d942eccb665e67d07c03b8f6d7" id="r_a6c1260d942eccb665e67d07c03b8f6d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c1260d942eccb665e67d07c03b8f6d7">INT2_XL_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 21)</td></tr>
+<tr class="separator:a6c1260d942eccb665e67d07c03b8f6d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af14723bcd60ec08675279a5c50b0bbe4" id="r_af14723bcd60ec08675279a5c50b0bbe4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af14723bcd60ec08675279a5c50b0bbe4">INT2_XL_MODE</a>&#160;&#160;&#160;<a class="el" href="atxmega_2include_2periph__cpu_8h.html#a201df5e2845212d28c89e2cf3fdaa642a3343e227f62c4c536efff81438a8e155">GPIO_IN</a></td></tr>
+<tr class="separator:af14723bcd60ec08675279a5c50b0bbe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a904884feea8e03c30c9a85ca6d7a8e5c" name="a904884feea8e03c30c9a85ca6d7a8e5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a904884feea8e03c30c9a85ca6d7a8e5c">&#9670;&#160;</a></span>BTN0_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BTN0_MODE&#160;&#160;&#160;<a class="el" href="atxmega_2include_2periph__cpu_8h.html#a201df5e2845212d28c89e2cf3fdaa642a3343e227f62c4c536efff81438a8e155">GPIO_IN</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00079">79</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aab5c3eca54046333af52593b9e360270" name="aab5c3eca54046333af52593b9e360270"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab5c3eca54046333af52593b9e360270">&#9670;&#160;</a></span>BTN0_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BTN0_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469a8b7dd81ba2f0d15957795457d92ce139">PB</a>, 8)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00078">78</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a1ae62207720632f92bfdbcf7f1704ef9" name="a1ae62207720632f92bfdbcf7f1704ef9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ae62207720632f92bfdbcf7f1704ef9">&#9670;&#160;</a></span>GPS_ENABLE_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPS_ENABLE_MASK&#160;&#160;&#160;(1 &lt;&lt; 18)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00097">97</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ac95d4632bebbb06e13c6a7df90610776" name="ac95d4632bebbb06e13c6a7df90610776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac95d4632bebbb06e13c6a7df90610776">&#9670;&#160;</a></span>GPS_ENABLE_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPS_ENABLE_OFF&#160;&#160;&#160;(GPS_ENABLE_PORT.OUTCLR.reg = GPS_ENABLE_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00100">100</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a37959e2a3521727d08c882ac9996fa16" name="a37959e2a3521727d08c882ac9996fa16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37959e2a3521727d08c882ac9996fa16">&#9670;&#160;</a></span>GPS_ENABLE_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPS_ENABLE_ON&#160;&#160;&#160;(GPS_ENABLE_PORT.OUTSET.reg = GPS_ENABLE_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00099">99</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a68947b1590f9a900eb3bccac24bb69f3" name="a68947b1590f9a900eb3bccac24bb69f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68947b1590f9a900eb3bccac24bb69f3">&#9670;&#160;</a></span>GPS_ENABLE_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPS_ENABLE_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 18)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00094">94</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="af3b25befe0aa02cddd3ad8ca5745b5ee" name="af3b25befe0aa02cddd3ad8ca5745b5ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3b25befe0aa02cddd3ad8ca5745b5ee">&#9670;&#160;</a></span>GPS_ENABLE_PORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPS_ENABLE_PORT&#160;&#160;&#160;PORT-&gt;Group[<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00096">96</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ae48bb3aebdb9b02e60e3244f6cf51a92" name="ae48bb3aebdb9b02e60e3244f6cf51a92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae48bb3aebdb9b02e60e3244f6cf51a92">&#9670;&#160;</a></span>GPS_TIMEPULSE_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPS_TIMEPULSE_MODE&#160;&#160;&#160;<a class="el" href="atxmega_2include_2periph__cpu_8h.html#a201df5e2845212d28c89e2cf3fdaa642a3343e227f62c4c536efff81438a8e155">GPIO_IN</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00087">87</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="adb08e08f70b3ae41d53adaba493bda81" name="adb08e08f70b3ae41d53adaba493bda81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb08e08f70b3ae41d53adaba493bda81">&#9670;&#160;</a></span>GPS_TIMEPULSE_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPS_TIMEPULSE_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 17)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00086">86</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a07e2919ad0b5513e6e58690ec0a123f1" name="a07e2919ad0b5513e6e58690ec0a123f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07e2919ad0b5513e6e58690ec0a123f1">&#9670;&#160;</a></span>INT1_XL_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INT1_XL_MODE&#160;&#160;&#160;<a class="el" href="atxmega_2include_2periph__cpu_8h.html#a201df5e2845212d28c89e2cf3fdaa642a3343e227f62c4c536efff81438a8e155">GPIO_IN</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00169">169</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a6052b457c56604926570b4c1edcf9dd2" name="a6052b457c56604926570b4c1edcf9dd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6052b457c56604926570b4c1edcf9dd2">&#9670;&#160;</a></span>INT1_XL_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INT1_XL_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 20)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00168">168</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="af14723bcd60ec08675279a5c50b0bbe4" name="af14723bcd60ec08675279a5c50b0bbe4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af14723bcd60ec08675279a5c50b0bbe4">&#9670;&#160;</a></span>INT2_XL_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INT2_XL_MODE&#160;&#160;&#160;<a class="el" href="atxmega_2include_2periph__cpu_8h.html#a201df5e2845212d28c89e2cf3fdaa642a3343e227f62c4c536efff81438a8e155">GPIO_IN</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00179">179</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a6c1260d942eccb665e67d07c03b8f6d7" name="a6c1260d942eccb665e67d07c03b8f6d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c1260d942eccb665e67d07c03b8f6d7">&#9670;&#160;</a></span>INT2_XL_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INT2_XL_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 21)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00178">178</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ad1ad748084f585063c111930f7e97249" name="ad1ad748084f585063c111930f7e97249"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1ad748084f585063c111930f7e97249">&#9670;&#160;</a></span>INT_MAG_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INT_MAG_MODE&#160;&#160;&#160;<a class="el" href="atxmega_2include_2periph__cpu_8h.html#a201df5e2845212d28c89e2cf3fdaa642a3343e227f62c4c536efff81438a8e155">GPIO_IN</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00159">159</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a38a3b75432b221a1e6ae6569899c36ef" name="a38a3b75432b221a1e6ae6569899c36ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38a3b75432b221a1e6ae6569899c36ef">&#9670;&#160;</a></span>INT_MAG_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INT_MAG_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 19)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00158">158</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="abfabde35a3e8b7ab50146a5e223bfead" name="abfabde35a3e8b7ab50146a5e223bfead"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfabde35a3e8b7ab50146a5e223bfead">&#9670;&#160;</a></span>LED0_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_MASK&#160;&#160;&#160;(1 &lt;&lt; 16)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00036">36</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aef2e39b9fd343d0e437fac0463f3e02d" name="aef2e39b9fd343d0e437fac0463f3e02d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef2e39b9fd343d0e437fac0463f3e02d">&#9670;&#160;</a></span>LED0_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_OFF&#160;&#160;&#160;(LED0_PORT.OUTSET.reg = LED0_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00038">38</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a1e48dc02333bfc2e6ad3e5bd466eecd4" name="a1e48dc02333bfc2e6ad3e5bd466eecd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e48dc02333bfc2e6ad3e5bd466eecd4">&#9670;&#160;</a></span>LED0_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_ON&#160;&#160;&#160;(LED0_PORT.OUTCLR.reg = LED0_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00039">39</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a3fc522fda449d6edde717d6a857429cf" name="a3fc522fda449d6edde717d6a857429cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fc522fda449d6edde717d6a857429cf">&#9670;&#160;</a></span>LED0_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 16)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00034">34</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a76914453bb5cda4ebca204e091e8f55c" name="a76914453bb5cda4ebca204e091e8f55c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76914453bb5cda4ebca204e091e8f55c">&#9670;&#160;</a></span>LED0_PORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_PORT&#160;&#160;&#160;PORT-&gt;Group[<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00035">35</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aebc6389533d9fc8dcbe4d2129a4d5a45" name="aebc6389533d9fc8dcbe4d2129a4d5a45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebc6389533d9fc8dcbe4d2129a4d5a45">&#9670;&#160;</a></span>LED0_TOGGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_TOGGLE&#160;&#160;&#160;(LED0_PORT.OUTTGL.reg = LED0_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00040">40</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a669ed6e073140d069b30442bf4c08842" name="a669ed6e073140d069b30442bf4c08842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a669ed6e073140d069b30442bf4c08842">&#9670;&#160;</a></span>LED1_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED1_MASK&#160;&#160;&#160;(1 &lt;&lt; 14)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00049">49</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a343fd2d3ce61b84f88ddfaea32c67c58" name="a343fd2d3ce61b84f88ddfaea32c67c58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a343fd2d3ce61b84f88ddfaea32c67c58">&#9670;&#160;</a></span>LED1_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED1_OFF&#160;&#160;&#160;(LED1_PORT.OUTSET.reg = <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00051">51</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aadd4c7ae0cd4e9bbb17f7055dd51fe08" name="aadd4c7ae0cd4e9bbb17f7055dd51fe08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadd4c7ae0cd4e9bbb17f7055dd51fe08">&#9670;&#160;</a></span>LED1_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED1_ON&#160;&#160;&#160;(LED1_PORT.OUTCLR.reg = <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00052">52</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a318aa17e5d40e2132d2c7f6269ce7f51" name="a318aa17e5d40e2132d2c7f6269ce7f51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a318aa17e5d40e2132d2c7f6269ce7f51">&#9670;&#160;</a></span>LED1_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED1_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 14)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00047">47</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a1c9d04655364826e039b03997bcfe19c" name="a1c9d04655364826e039b03997bcfe19c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c9d04655364826e039b03997bcfe19c">&#9670;&#160;</a></span>LED1_PORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED1_PORT&#160;&#160;&#160;PORT-&gt;Group[<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00048">48</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a267fdbba1d750146b73da35c1731fd17" name="a267fdbba1d750146b73da35c1731fd17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a267fdbba1d750146b73da35c1731fd17">&#9670;&#160;</a></span>LED1_TOGGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED1_TOGGLE&#160;&#160;&#160;(LED1_PORT.OUTTGL.reg = <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00053">53</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a40f0f4b5ae7ea50d341105ddc740101e" name="a40f0f4b5ae7ea50d341105ddc740101e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40f0f4b5ae7ea50d341105ddc740101e">&#9670;&#160;</a></span>LED2_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED2_MASK&#160;&#160;&#160;(1 &lt;&lt; 15)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00062">62</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ac6468b1df4dfabcca0bb142044d6f976" name="ac6468b1df4dfabcca0bb142044d6f976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6468b1df4dfabcca0bb142044d6f976">&#9670;&#160;</a></span>LED2_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED2_OFF&#160;&#160;&#160;(LED2_PORT.OUTSET.reg = <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00064">64</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ab55f588eb2c5177d3f7806e60d379fba" name="ab55f588eb2c5177d3f7806e60d379fba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab55f588eb2c5177d3f7806e60d379fba">&#9670;&#160;</a></span>LED2_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED2_ON&#160;&#160;&#160;(LED2_PORT.OUTCLR.reg = <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00065">65</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="af6f84078113b55354d20585131b386f7" name="af6f84078113b55354d20585131b386f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6f84078113b55354d20585131b386f7">&#9670;&#160;</a></span>LED2_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED2_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 15)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00060">60</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a3fbb138c249c6c047524c7055dd5f1b7" name="a3fbb138c249c6c047524c7055dd5f1b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fbb138c249c6c047524c7055dd5f1b7">&#9670;&#160;</a></span>LED2_PORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED2_PORT&#160;&#160;&#160;PORT-&gt;Group[<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00061">61</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="acd16785845ce7004334b91a98707f8eb" name="acd16785845ce7004334b91a98707f8eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd16785845ce7004334b91a98707f8eb">&#9670;&#160;</a></span>LED2_TOGGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED2_TOGGLE&#160;&#160;&#160;(LED2_PORT.OUTTGL.reg = <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00066">66</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a430322d3250cf1fd426d19b5b35f71b5" name="a430322d3250cf1fd426d19b5b35f71b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a430322d3250cf1fd426d19b5b35f71b5">&#9670;&#160;</a></span>LED_BLUE_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED_BLUE_OFF&#160;&#160;&#160;<a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#ac6468b1df4dfabcca0bb142044d6f976">LED2_OFF</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00069">69</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a0c88bf592798355e02e11534ed9b9cea" name="a0c88bf592798355e02e11534ed9b9cea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c88bf592798355e02e11534ed9b9cea">&#9670;&#160;</a></span>LED_BLUE_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED_BLUE_ON&#160;&#160;&#160;<a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#ab55f588eb2c5177d3f7806e60d379fba">LED2_ON</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00070">70</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a5aec9d3b503fb1a30a21b16c7be86cff" name="a5aec9d3b503fb1a30a21b16c7be86cff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aec9d3b503fb1a30a21b16c7be86cff">&#9670;&#160;</a></span>LED_BLUE_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED_BLUE_PIN&#160;&#160;&#160;<a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#af6f84078113b55354d20585131b386f7">LED2_PIN</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00068">68</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="adac963156151f878c160bec6c80e201d" name="adac963156151f878c160bec6c80e201d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adac963156151f878c160bec6c80e201d">&#9670;&#160;</a></span>LED_BLUE_TOGGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED_BLUE_TOGGLE&#160;&#160;&#160;<a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#acd16785845ce7004334b91a98707f8eb">LED2_TOGGLE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00071">71</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a7342b58673b510db5515b35528ab84ba" name="a7342b58673b510db5515b35528ab84ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7342b58673b510db5515b35528ab84ba">&#9670;&#160;</a></span>LED_GREEN_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED_GREEN_OFF&#160;&#160;&#160;LED0_OFF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00043">43</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ad356d9afb2945fd845d2491da1d3eebf" name="ad356d9afb2945fd845d2491da1d3eebf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad356d9afb2945fd845d2491da1d3eebf">&#9670;&#160;</a></span>LED_GREEN_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED_GREEN_ON&#160;&#160;&#160;LED0_ON</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00044">44</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a0539be032702009fb24beec89c6fa0c0" name="a0539be032702009fb24beec89c6fa0c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0539be032702009fb24beec89c6fa0c0">&#9670;&#160;</a></span>LED_GREEN_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED_GREEN_PIN&#160;&#160;&#160;LED0_PIN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00042">42</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a97f88a16836abee5a604aa793f07700e" name="a97f88a16836abee5a604aa793f07700e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97f88a16836abee5a604aa793f07700e">&#9670;&#160;</a></span>LED_GREEN_TOGGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED_GREEN_TOGGLE&#160;&#160;&#160;LED0_TOGGLE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00045">45</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a3b0dbb40e5c4b12fd3d79319a80d006d" name="a3b0dbb40e5c4b12fd3d79319a80d006d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b0dbb40e5c4b12fd3d79319a80d006d">&#9670;&#160;</a></span>LED_RED_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED_RED_OFF&#160;&#160;&#160;<a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a343fd2d3ce61b84f88ddfaea32c67c58">LED1_OFF</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00056">56</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="afcbe07e8e8e9cbe1e7baeaab470a58ef" name="afcbe07e8e8e9cbe1e7baeaab470a58ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcbe07e8e8e9cbe1e7baeaab470a58ef">&#9670;&#160;</a></span>LED_RED_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED_RED_ON&#160;&#160;&#160;<a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#aadd4c7ae0cd4e9bbb17f7055dd51fe08">LED1_ON</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00057">57</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ab9824ab080c30006c1baaa0dd7e863c5" name="ab9824ab080c30006c1baaa0dd7e863c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9824ab080c30006c1baaa0dd7e863c5">&#9670;&#160;</a></span>LED_RED_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED_RED_PIN&#160;&#160;&#160;<a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a318aa17e5d40e2132d2c7f6269ce7f51">LED1_PIN</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00055">55</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aeabcdd8d4e3bf35ce9ec2c9a6b295c72" name="aeabcdd8d4e3bf35ce9ec2c9a6b295c72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeabcdd8d4e3bf35ce9ec2c9a6b295c72">&#9670;&#160;</a></span>LED_RED_TOGGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED_RED_TOGGLE&#160;&#160;&#160;<a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a267fdbba1d750146b73da35c1731fd17">LED1_TOGGLE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00058">58</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="adda7bc88eef36ee378cc8f2c3a4d1b97" name="adda7bc88eef36ee378cc8f2c3a4d1b97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adda7bc88eef36ee378cc8f2c3a4d1b97">&#9670;&#160;</a></span>SARA_ENABLE_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SARA_ENABLE_MASK&#160;&#160;&#160;(1 &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00112">112</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a89aeed029ad9a7cf09313a8f3469985e" name="a89aeed029ad9a7cf09313a8f3469985e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89aeed029ad9a7cf09313a8f3469985e">&#9670;&#160;</a></span>SARA_ENABLE_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SARA_ENABLE_OFF&#160;&#160;&#160;(SARA_ENABLE_PORT.OUTCLR.reg = SARA_ENABLE_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00115">115</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ab06c51e8d593fbfa43313e99cde32b1f" name="ab06c51e8d593fbfa43313e99cde32b1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab06c51e8d593fbfa43313e99cde32b1f">&#9670;&#160;</a></span>SARA_ENABLE_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SARA_ENABLE_ON&#160;&#160;&#160;(SARA_ENABLE_PORT.OUTSET.reg = SARA_ENABLE_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00114">114</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a5a528943185cdb5bf6059c892e4d517d" name="a5a528943185cdb5bf6059c892e4d517d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a528943185cdb5bf6059c892e4d517d">&#9670;&#160;</a></span>SARA_ENABLE_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SARA_ENABLE_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00109">109</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a54f4400b5d7fbf1034a906f83666623a" name="a54f4400b5d7fbf1034a906f83666623a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54f4400b5d7fbf1034a906f83666623a">&#9670;&#160;</a></span>SARA_ENABLE_PORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SARA_ENABLE_PORT&#160;&#160;&#160;PORT-&gt;Group[<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00111">111</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a46f3d8aeaa7d263b896e1ca8834587f7" name="a46f3d8aeaa7d263b896e1ca8834587f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46f3d8aeaa7d263b896e1ca8834587f7">&#9670;&#160;</a></span>SARA_R4XX_PWR_ON_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SARA_R4XX_PWR_ON_MASK&#160;&#160;&#160;(1 &lt;&lt; 10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00144">144</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="af5aac365bc00d884f76878e0de65f0b4" name="af5aac365bc00d884f76878e0de65f0b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5aac365bc00d884f76878e0de65f0b4">&#9670;&#160;</a></span>SARA_R4XX_PWR_ON_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SARA_R4XX_PWR_ON_OFF&#160;&#160;&#160;(SARA_R4XX_PWR_ON_PORT.OUTCLR.reg = SARA_R4XX_PWR_ON_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00147">147</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a4023143da9dbe3536c651dba3d80c5f2" name="a4023143da9dbe3536c651dba3d80c5f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4023143da9dbe3536c651dba3d80c5f2">&#9670;&#160;</a></span>SARA_R4XX_PWR_ON_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SARA_R4XX_PWR_ON_ON&#160;&#160;&#160;(SARA_R4XX_PWR_ON_PORT.OUTSET.reg = SARA_R4XX_PWR_ON_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00146">146</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ab94054013fd0eb0807fb1c6e9e79619f" name="ab94054013fd0eb0807fb1c6e9e79619f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab94054013fd0eb0807fb1c6e9e79619f">&#9670;&#160;</a></span>SARA_R4XX_PWR_ON_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SARA_R4XX_PWR_ON_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469a8b7dd81ba2f0d15957795457d92ce139">PB</a>, 10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00141">141</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aebc04920d4d14bb7c1255e0a52dbcbdd" name="aebc04920d4d14bb7c1255e0a52dbcbdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebc04920d4d14bb7c1255e0a52dbcbdd">&#9670;&#160;</a></span>SARA_R4XX_PWR_ON_PORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SARA_R4XX_PWR_ON_PORT&#160;&#160;&#160;PORT-&gt;Group[<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469a8b7dd81ba2f0d15957795457d92ce139">PB</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00143">143</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a66b09be6eb74f7e17d30ff8ad4f81f48" name="a66b09be6eb74f7e17d30ff8ad4f81f48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66b09be6eb74f7e17d30ff8ad4f81f48">&#9670;&#160;</a></span>SARA_STATUS_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SARA_STATUS_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 28)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is the V_INT of the board. </p>
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00150">150</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="af7a428650669b94e2236122e89d067ed" name="af7a428650669b94e2236122e89d067ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7a428650669b94e2236122e89d067ed">&#9670;&#160;</a></span>SARA_TX_ENABLE_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SARA_TX_ENABLE_MASK&#160;&#160;&#160;(1 &lt;&lt; 27)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00127">127</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ad3b84df4258a89234b62dac6c0af7f95" name="ad3b84df4258a89234b62dac6c0af7f95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3b84df4258a89234b62dac6c0af7f95">&#9670;&#160;</a></span>SARA_TX_ENABLE_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SARA_TX_ENABLE_OFF&#160;&#160;&#160;(SARA_TX_ENABLE_PORT.OUTCLR.reg = SARA_TX_ENABLE_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00130">130</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a9318c57bc68cf27ec7be7d67f15d8638" name="a9318c57bc68cf27ec7be7d67f15d8638"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9318c57bc68cf27ec7be7d67f15d8638">&#9670;&#160;</a></span>SARA_TX_ENABLE_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SARA_TX_ENABLE_ON&#160;&#160;&#160;(SARA_TX_ENABLE_PORT.OUTSET.reg = SARA_TX_ENABLE_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00129">129</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a8c8b8c74beed92c54f6d1ce02c0a58da" name="a8c8b8c74beed92c54f6d1ce02c0a58da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c8b8c74beed92c54f6d1ce02c0a58da">&#9670;&#160;</a></span>SARA_TX_ENABLE_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SARA_TX_ENABLE_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>, 27)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00124">124</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a92870acaefdfa667a96f7fe5d6468714" name="a92870acaefdfa667a96f7fe5d6468714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92870acaefdfa667a96f7fe5d6468714">&#9670;&#160;</a></span>SARA_TX_ENABLE_PORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SARA_TX_ENABLE_PORT&#160;&#160;&#160;PORT-&gt;Group[<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469ae3d8a811f3bf7196f361be4104db68db">PA</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html#l00126">126</a> of file <a class="el" href="sodaq-sara-sff_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:31 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

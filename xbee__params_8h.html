@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/xbee/include/xbee_params.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('xbee__params_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">xbee_params.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__netdev.html">Network Device Drivers</a> &raquo; <a class="el" href="group__drivers__xbee.html">XBee driver</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Default configuration for XBee devices.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Default configuration for XBee devices. </p>
+<dl class="section author"><dt>Author</dt><dd>Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span class="obfuscator">.nosp@m.</span>r@sc<span class="obfuscator">.nosp@m.</span>hleis<span class="obfuscator">.nosp@m.</span>er.d<span class="obfuscator">.nosp@m.</span>e</a> </dd>
+<dd>
+Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="xbee__params_8h_source.html">xbee_params.h</a>.</p>
+</div>
+<p><a href="xbee__params_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a976c0e83590db86da8d8d1c814744018" id="r_a976c0e83590db86da8d8d1c814744018"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structxbee__params__t.html">xbee_params_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a976c0e83590db86da8d8d1c814744018">xbee_params</a> []</td></tr>
+<tr class="memdesc:a976c0e83590db86da8d8d1c814744018"><td class="mdescLeft">&#160;</td><td class="mdescRight">XBee configuration.  <br /></td></tr>
+<tr class="separator:a976c0e83590db86da8d8d1c814744018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Set default configuration parameters for the XBee driver</h2></td></tr>
+<tr class="memitem:a326217fcc56996a7a0bccf85183555e2" id="r_a326217fcc56996a7a0bccf85183555e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a326217fcc56996a7a0bccf85183555e2">XBEE_PARAM_UART</a>&#160;&#160;&#160;(<a class="el" href="group__drivers__periph__uart.html#gafc5afd63560d27731d2517b3005f3294">UART_DEV</a>(1))</td></tr>
+<tr class="separator:a326217fcc56996a7a0bccf85183555e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95a2e7cbce8fa3df5c18f78852ea6d41" id="r_a95a2e7cbce8fa3df5c18f78852ea6d41"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95a2e7cbce8fa3df5c18f78852ea6d41">XBEE_PARAM_BR</a>&#160;&#160;&#160;(9600U)</td></tr>
+<tr class="separator:a95a2e7cbce8fa3df5c18f78852ea6d41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f8f98229528e2c55d275f3b91c60ed9" id="r_a1f8f98229528e2c55d275f3b91c60ed9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f8f98229528e2c55d275f3b91c60ed9">XBEE_PARAM_PIN_SLEEP</a>&#160;&#160;&#160;(<a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a>)</td></tr>
+<tr class="separator:a1f8f98229528e2c55d275f3b91c60ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc22f767e19f61524132a9742e88df11" id="r_afc22f767e19f61524132a9742e88df11"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc22f767e19f61524132a9742e88df11">XBEE_PARAM_PIN_RESET</a>&#160;&#160;&#160;(<a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a>)</td></tr>
+<tr class="separator:afc22f767e19f61524132a9742e88df11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a157a268827da8558c9f903c8a7895990" id="r_a157a268827da8558c9f903c8a7895990"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a157a268827da8558c9f903c8a7895990">XBEE_PARAMS</a></td></tr>
+<tr class="separator:a157a268827da8558c9f903c8a7895990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a95a2e7cbce8fa3df5c18f78852ea6d41" name="a95a2e7cbce8fa3df5c18f78852ea6d41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95a2e7cbce8fa3df5c18f78852ea6d41">&#9670;&#160;</a></span>XBEE_PARAM_BR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XBEE_PARAM_BR&#160;&#160;&#160;(9600U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="xbee__params_8h_source.html#l00036">36</a> of file <a class="el" href="xbee__params_8h_source.html">xbee_params.h</a>.</p>
+
+</div>
+</div>
+<a id="afc22f767e19f61524132a9742e88df11" name="afc22f767e19f61524132a9742e88df11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc22f767e19f61524132a9742e88df11">&#9670;&#160;</a></span>XBEE_PARAM_PIN_RESET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XBEE_PARAM_PIN_RESET&#160;&#160;&#160;(<a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="xbee__params_8h_source.html#l00042">42</a> of file <a class="el" href="xbee__params_8h_source.html">xbee_params.h</a>.</p>
+
+</div>
+</div>
+<a id="a1f8f98229528e2c55d275f3b91c60ed9" name="a1f8f98229528e2c55d275f3b91c60ed9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f8f98229528e2c55d275f3b91c60ed9">&#9670;&#160;</a></span>XBEE_PARAM_PIN_SLEEP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XBEE_PARAM_PIN_SLEEP&#160;&#160;&#160;(<a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="xbee__params_8h_source.html#l00039">39</a> of file <a class="el" href="xbee__params_8h_source.html">xbee_params.h</a>.</p>
+
+</div>
+</div>
+<a id="a326217fcc56996a7a0bccf85183555e2" name="a326217fcc56996a7a0bccf85183555e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a326217fcc56996a7a0bccf85183555e2">&#9670;&#160;</a></span>XBEE_PARAM_UART</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XBEE_PARAM_UART&#160;&#160;&#160;(<a class="el" href="group__drivers__periph__uart.html#gafc5afd63560d27731d2517b3005f3294">UART_DEV</a>(1))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="xbee__params_8h_source.html#l00033">33</a> of file <a class="el" href="xbee__params_8h_source.html">xbee_params.h</a>.</p>
+
+</div>
+</div>
+<a id="a157a268827da8558c9f903c8a7895990" name="a157a268827da8558c9f903c8a7895990"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a157a268827da8558c9f903c8a7895990">&#9670;&#160;</a></span>XBEE_PARAMS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XBEE_PARAMS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">                                  { .uart = XBEE_PARAM_UART, \</div>
+<div class="line">                                  .br = XBEE_PARAM_BR, \</div>
+<div class="line">                                  .pin_sleep = XBEE_PARAM_PIN_SLEEP, \</div>
+<div class="line">                                  .pin_reset = XBEE_PARAM_PIN_RESET }</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="xbee__params_8h_source.html#l00046">46</a> of file <a class="el" href="xbee__params_8h_source.html">xbee_params.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a976c0e83590db86da8d8d1c814744018" name="a976c0e83590db86da8d8d1c814744018"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a976c0e83590db86da8d8d1c814744018">&#9670;&#160;</a></span>xbee_params</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structxbee__params__t.html">xbee_params_t</a> xbee_params[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">{</div>
+<div class="line">    XBEE_PARAMS</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>XBee configuration. </p>
+
+<p class="definition">Definition at line <a class="el" href="xbee__params_8h_source.html#l00056">56</a> of file <a class="el" href="xbee__params_8h_source.html">xbee_params.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

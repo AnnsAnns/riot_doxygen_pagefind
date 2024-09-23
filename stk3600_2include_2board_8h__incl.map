@@ -1,0 +1,49 @@
+<map id="boards/stk3600/include/board.h" name="boards/stk3600/include/board.h">
+<area shape="rect" id="Node000001" title="Board specific definitions for the STK3600 starter kit." alt="" coords="443,5,616,50"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,174,62,201"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="443,48,346,71,242,101,151,135,74,169,72,164,149,130,241,95,345,66,442,43"/>
+<area shape="rect" id="Node000003" href="$boards_2stk3600_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the STK3600 starter kit." alt="" coords="254,98,362,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="472,53,359,95,357,90,470,48"/>
+<area shape="rect" id="Node000010" href="$adc_8h.html" title="Low&#45;level ADC peripheral driver interface definitions." alt="" coords="479,174,580,201"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="532,50,532,158,527,158,527,50"/>
+<area shape="rect" id="Node000013" href="$drivers_2include_2periph_2gpio_8h.html" title="Low&#45;level GPIO peripheral driver interface definitions." alt="" coords="604,174,711,201"/>
+<area shape="poly" id="edge16_Node000001_Node000013" title=" " alt="" coords="549,49,639,160,635,163,545,52"/>
+<area shape="rect" id="Node000014" href="$spi_8h.html" title="Low&#45;level SPI peripheral driver interface definition." alt="" coords="818,98,916,126"/>
+<area shape="poly" id="edge20_Node000001_Node000014" title=" " alt="" coords="617,47,804,93,802,98,615,52"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="255,129,77,175,76,170,253,124"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="389,249,494,277"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="323,124,367,172,423,236,419,239,364,175,319,128"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="264,174,353,201"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="311,126,311,158,306,158,306,126"/>
+<area shape="rect" id="Node000006" href="$usbdev__cfg__otg__fs_8h.html" title="Common configuration for EFM32 OTG FS peripheral." alt="" coords="86,174,240,201"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="283,129,203,169,201,164,281,124"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="213,199,378,242,377,248,212,204"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="22,249,152,277"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="151,204,113,240,109,237,147,200"/>
+<area shape="rect" id="Node000008" href="$usbdev__synopsys__dwc2_8h.html" title="Low level USB FS/HS driver definitions for MCUs with Synopsys DWC2 IP core." alt="" coords="176,249,366,277"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="184,200,241,238,238,243,181,204"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="777,325,847,353"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="366,275,762,328,761,333,365,280"/>
+<area shape="poly" id="edge14_Node000010_Node000004" title=" " alt="" coords="515,204,470,241,467,237,512,200"/>
+<area shape="poly" id="edge13_Node000010_Node000009" title=" " alt="" coords="532,201,538,238,546,258,558,275,592,293,646,309,762,329,761,334,645,314,590,298,554,279,541,261,533,240,527,202"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="568,249,638,277"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="544,200,581,236,577,240,541,204"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="662,249,770,277"/>
+<area shape="poly" id="edge15_Node000010_Node000012" title=" " alt="" coords="564,199,670,241,668,246,562,204"/>
+<area shape="poly" id="edge18_Node000013_Node000004" title=" " alt="" coords="620,204,495,247,493,241,618,199"/>
+<area shape="poly" id="edge17_Node000013_Node000011" title=" " alt="" coords="650,203,624,238,620,235,646,200"/>
+<area shape="poly" id="edge19_Node000013_Node000012" title=" " alt="" coords="670,200,698,235,694,239,666,204"/>
+<area shape="poly" id="edge27_Node000014_Node000004" title=" " alt="" coords="818,117,730,121,626,131,531,148,494,161,469,176,458,188,451,203,445,234,439,233,446,201,454,185,465,172,492,156,529,143,625,125,730,116,817,111"/>
+<area shape="poly" id="edge26_Node000014_Node000009" title=" " alt="" coords="917,116,966,125,1013,142,1032,153,1044,167,1048,183,1043,202,1026,227,1006,248,959,283,909,309,863,326,862,321,907,304,956,278,1002,244,1022,223,1038,200,1043,183,1039,169,1028,157,1011,146,965,131,916,121"/>
+<area shape="poly" id="edge28_Node000014_Node000012" title=" " alt="" coords="917,120,961,132,1001,149,1016,160,1026,173,1028,187,1020,203,1004,216,981,227,921,243,852,254,786,260,785,255,851,249,920,238,979,222,1001,211,1015,200,1022,186,1021,175,1013,164,999,154,959,137,915,125"/>
+<area shape="poly" id="edge29_Node000014_Node000013" title=" " alt="" coords="830,129,710,171,708,166,829,124"/>
+<area shape="rect" id="Node000015" href="$endian_8h.html" title="libc header for endian conversion" alt="" coords="1131,249,1208,277"/>
+<area shape="poly" id="edge21_Node000014_Node000015" title=" " alt="" coords="916,112,961,117,1013,127,1065,145,1114,172,1142,201,1161,234,1156,236,1138,204,1111,176,1063,150,1011,133,960,122,916,117"/>
+<area shape="rect" id="Node000016" href="$errno_8h.html" title=" " alt="" coords="734,174,802,201"/>
+<area shape="poly" id="edge23_Node000014_Node000016" title=" " alt="" coords="851,128,799,167,796,162,848,124"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="826,174,908,201"/>
+<area shape="poly" id="edge24_Node000014_Node000017" title=" " alt="" coords="870,126,870,158,864,158,864,126"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="932,174,1005,201"/>
+<area shape="poly" id="edge25_Node000014_Node000018" title=" " alt="" coords="887,124,939,162,936,167,883,128"/>
+<area shape="poly" id="edge22_Node000015_Node000009" title=" " alt="" coords="1131,276,1113,280,863,330,862,325,1112,274,1130,270"/>
+</map>

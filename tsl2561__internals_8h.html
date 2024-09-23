@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/tsl2561/include/tsl2561_internals.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('tsl2561__internals_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">tsl2561_internals.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a> &#124; <a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> &raquo; <a class="el" href="group__drivers__tsl2561.html">TSL2561 illuminance sensor</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Internal addresses, registers, constants for the TSL2561 sensor.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Internal addresses, registers, constants for the TSL2561 sensor. </p>
+<p>Internal addresses, registers, constants for the TSL2561 sensor.</p>
+<dl class="section author"><dt>Author</dt><dd>Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span class="obfuscator">.nosp@m.</span>ndre<span class="obfuscator">.nosp@m.</span>.abad<span class="obfuscator">.nosp@m.</span>ie@i<span class="obfuscator">.nosp@m.</span>nria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+</div>
+<p><a href="tsl2561__internals_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">TSL2561 identifier</h2></td></tr>
+<tr class="memitem:a8adc4ad2a7862f685e628a6430a63e86" id="r_a8adc4ad2a7862f685e628a6430a63e86"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8adc4ad2a7862f685e628a6430a63e86">TSL2561_ID</a>&#160;&#160;&#160;(0x50)</td></tr>
+<tr class="separator:a8adc4ad2a7862f685e628a6430a63e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">TSL2561 internals registers</h2></td></tr>
+<tr class="memitem:ac85dc12060aed0caf73f3bf297f893c4" id="r_ac85dc12060aed0caf73f3bf297f893c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac85dc12060aed0caf73f3bf297f893c4">TSL2561_REGISTER_CONTROL</a>&#160;&#160;&#160;(0x00)</td></tr>
+<tr class="separator:ac85dc12060aed0caf73f3bf297f893c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f952e9a1b2d45c8461677fe78dd0ed9" id="r_a4f952e9a1b2d45c8461677fe78dd0ed9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f952e9a1b2d45c8461677fe78dd0ed9">TSL2561_REGISTER_TIMING</a>&#160;&#160;&#160;(0x01)</td></tr>
+<tr class="separator:a4f952e9a1b2d45c8461677fe78dd0ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af90bf8b57f4fa8ccb0eba98fd62d8384" id="r_af90bf8b57f4fa8ccb0eba98fd62d8384"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af90bf8b57f4fa8ccb0eba98fd62d8384">TSL2561_REGISTER_THRESHOLDLOW</a>&#160;&#160;&#160;(0x02)</td></tr>
+<tr class="separator:af90bf8b57f4fa8ccb0eba98fd62d8384"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeb00797c99e2ef25125fbce9d571e81" id="r_aeeb00797c99e2ef25125fbce9d571e81"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeeb00797c99e2ef25125fbce9d571e81">TSL2561_REGISTER_THRESHOLDHIGH</a>&#160;&#160;&#160;(0x04)</td></tr>
+<tr class="separator:aeeb00797c99e2ef25125fbce9d571e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a322280e704c7ddc88487ea6ecaa8bc6c" id="r_a322280e704c7ddc88487ea6ecaa8bc6c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a322280e704c7ddc88487ea6ecaa8bc6c">TSL2561_REGISTER_INTERRUPT</a>&#160;&#160;&#160;(0x06)</td></tr>
+<tr class="separator:a322280e704c7ddc88487ea6ecaa8bc6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0e8ad601f9cf06e3c9f3439317648f5" id="r_af0e8ad601f9cf06e3c9f3439317648f5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0e8ad601f9cf06e3c9f3439317648f5">TSL2561_REGISTER_ID</a>&#160;&#160;&#160;(0x0A)</td></tr>
+<tr class="separator:af0e8ad601f9cf06e3c9f3439317648f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a98117944fc2ee14a63db9b7acceb6c" id="r_a4a98117944fc2ee14a63db9b7acceb6c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a98117944fc2ee14a63db9b7acceb6c">TSL2561_REGISTER_CHAN0</a>&#160;&#160;&#160;(0x0C)</td></tr>
+<tr class="separator:a4a98117944fc2ee14a63db9b7acceb6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85747d1e67b8c2272500e212e0e1ec4b" id="r_a85747d1e67b8c2272500e212e0e1ec4b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85747d1e67b8c2272500e212e0e1ec4b">TSL2561_REGISTER_CHAN1</a>&#160;&#160;&#160;(0x0E)</td></tr>
+<tr class="separator:a85747d1e67b8c2272500e212e0e1ec4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">TSL2561 commands</h2></td></tr>
+<tr class="memitem:ad82b0e63fb662fe086738a34701beb0b" id="r_ad82b0e63fb662fe086738a34701beb0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad82b0e63fb662fe086738a34701beb0b">TSL2561_COMMAND_MODE</a>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="separator:ad82b0e63fb662fe086738a34701beb0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0442b94677ad9de9cef43053bc8b28b" id="r_af0442b94677ad9de9cef43053bc8b28b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0442b94677ad9de9cef43053bc8b28b">TSL2561_COMMAND_CLEAR</a>&#160;&#160;&#160;(0x40)</td></tr>
+<tr class="separator:af0442b94677ad9de9cef43053bc8b28b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f567624c946cf82aea0722a75236002" id="r_a4f567624c946cf82aea0722a75236002"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f567624c946cf82aea0722a75236002">TSL2561_COMMAND_WORD</a>&#160;&#160;&#160;(0x20)</td></tr>
+<tr class="separator:a4f567624c946cf82aea0722a75236002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa740754a4d99b8199a9c58e7f037f3db" id="r_aa740754a4d99b8199a9c58e7f037f3db"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa740754a4d99b8199a9c58e7f037f3db">TSL2561_COMMAND_BLOCK</a>&#160;&#160;&#160;(0x10)</td></tr>
+<tr class="separator:aa740754a4d99b8199a9c58e7f037f3db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">TSL2561 controls</h2></td></tr>
+<tr class="memitem:a1465abbd34c333983420f5644f239fd7" id="r_a1465abbd34c333983420f5644f239fd7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1465abbd34c333983420f5644f239fd7">TSL2561_CONTROL_POWERON</a>&#160;&#160;&#160;(0x03)</td></tr>
+<tr class="separator:a1465abbd34c333983420f5644f239fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedfdafae91b044746ef8da6bb89b66ec" id="r_aedfdafae91b044746ef8da6bb89b66ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedfdafae91b044746ef8da6bb89b66ec">TSL2561_CONTROL_POWEROFF</a>&#160;&#160;&#160;(0x00)</td></tr>
+<tr class="separator:aedfdafae91b044746ef8da6bb89b66ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Internals constants</h2></td></tr>
+<tr class="memitem:ae13e1f1af8297d22242688b123ef4af0" id="r_ae13e1f1af8297d22242688b123ef4af0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae13e1f1af8297d22242688b123ef4af0">TSL2561_LUXSCALE</a>&#160;&#160;&#160;(14)      /* use 2e14 scaling */</td></tr>
+<tr class="separator:ae13e1f1af8297d22242688b123ef4af0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf046d37693ee992810f333c13a0df20" id="r_abf046d37693ee992810f333c13a0df20"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf046d37693ee992810f333c13a0df20">TSL2561_RATIOSCALE</a>&#160;&#160;&#160;(9)       /* use 2e9 scaling */</td></tr>
+<tr class="separator:abf046d37693ee992810f333c13a0df20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d0a9d125096946b51a3c7f057077b44" id="r_a7d0a9d125096946b51a3c7f057077b44"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d0a9d125096946b51a3c7f057077b44">TSL2561_CHSCALE</a></td></tr>
+<tr class="separator:a7d0a9d125096946b51a3c7f057077b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab04b47741cbeedcefd83151210ef1ed" id="r_aab04b47741cbeedcefd83151210ef1ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab04b47741cbeedcefd83151210ef1ed">TSL2561_CHSCALE_TINT0</a>&#160;&#160;&#160;(0x7517)</td></tr>
+<tr class="separator:aab04b47741cbeedcefd83151210ef1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c0390391ee3db7ea108658e98207c96" id="r_a8c0390391ee3db7ea108658e98207c96"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c0390391ee3db7ea108658e98207c96">TSL2561_CHSCALE_TINT1</a>&#160;&#160;&#160;(0x0FE7)</td></tr>
+<tr class="separator:a8c0390391ee3db7ea108658e98207c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7c8f04f3ee2f28701f6bd0145aa84a9" id="r_ab7c8f04f3ee2f28701f6bd0145aa84a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7c8f04f3ee2f28701f6bd0145aa84a9">TSL2561_K1T</a>&#160;&#160;&#160;(0x0040)</td></tr>
+<tr class="separator:ab7c8f04f3ee2f28701f6bd0145aa84a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d6c934ededc09e58fcbb3faf3d5744d" id="r_a7d6c934ededc09e58fcbb3faf3d5744d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d6c934ededc09e58fcbb3faf3d5744d">TSL2561_B1T</a>&#160;&#160;&#160;(0x01f2)</td></tr>
+<tr class="separator:a7d6c934ededc09e58fcbb3faf3d5744d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2855183d2dc922960e5b99efb8920efc" id="r_a2855183d2dc922960e5b99efb8920efc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2855183d2dc922960e5b99efb8920efc">TSL2561_M1T</a>&#160;&#160;&#160;(0x01be)</td></tr>
+<tr class="separator:a2855183d2dc922960e5b99efb8920efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a065131bb708ea9c7e27718f3fe60e954" id="r_a065131bb708ea9c7e27718f3fe60e954"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a065131bb708ea9c7e27718f3fe60e954">TSL2561_K2T</a>&#160;&#160;&#160;(0x0080)</td></tr>
+<tr class="separator:a065131bb708ea9c7e27718f3fe60e954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d342589aa798faa3f093cf1bd8a2fb9" id="r_a7d342589aa798faa3f093cf1bd8a2fb9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d342589aa798faa3f093cf1bd8a2fb9">TSL2561_B2T</a>&#160;&#160;&#160;(0x0214)</td></tr>
+<tr class="separator:a7d342589aa798faa3f093cf1bd8a2fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6af1b0df2b44953fa137f5eac29d2f86" id="r_a6af1b0df2b44953fa137f5eac29d2f86"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6af1b0df2b44953fa137f5eac29d2f86">TSL2561_M2T</a>&#160;&#160;&#160;(0x02d1)</td></tr>
+<tr class="separator:a6af1b0df2b44953fa137f5eac29d2f86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18a0d6223116de5776e2b0fc002132a4" id="r_a18a0d6223116de5776e2b0fc002132a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18a0d6223116de5776e2b0fc002132a4">TSL2561_K3T</a>&#160;&#160;&#160;(0x00c0)</td></tr>
+<tr class="separator:a18a0d6223116de5776e2b0fc002132a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a844453b00712e75370fe022318f133c7" id="r_a844453b00712e75370fe022318f133c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a844453b00712e75370fe022318f133c7">TSL2561_B3T</a>&#160;&#160;&#160;(0x023f)</td></tr>
+<tr class="separator:a844453b00712e75370fe022318f133c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11e7f09984a39b2239e450f5cc51b0e7" id="r_a11e7f09984a39b2239e450f5cc51b0e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11e7f09984a39b2239e450f5cc51b0e7">TSL2561_M3T</a>&#160;&#160;&#160;(0x037b)</td></tr>
+<tr class="separator:a11e7f09984a39b2239e450f5cc51b0e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac09846bd3103aa33999abda1b8304761" id="r_ac09846bd3103aa33999abda1b8304761"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac09846bd3103aa33999abda1b8304761">TSL2561_K4T</a>&#160;&#160;&#160;(0x0100)</td></tr>
+<tr class="separator:ac09846bd3103aa33999abda1b8304761"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cf3a5af51ed82d705f0d760bfe6b697" id="r_a6cf3a5af51ed82d705f0d760bfe6b697"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6cf3a5af51ed82d705f0d760bfe6b697">TSL2561_B4T</a>&#160;&#160;&#160;(0x0270)</td></tr>
+<tr class="separator:a6cf3a5af51ed82d705f0d760bfe6b697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09b8547565b7d7fa63b5edddf55c28ef" id="r_a09b8547565b7d7fa63b5edddf55c28ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09b8547565b7d7fa63b5edddf55c28ef">TSL2561_M4T</a>&#160;&#160;&#160;(0x03fe)</td></tr>
+<tr class="separator:a09b8547565b7d7fa63b5edddf55c28ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f5486c793db6d31d832f4e8d9cded95" id="r_a0f5486c793db6d31d832f4e8d9cded95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f5486c793db6d31d832f4e8d9cded95">TSL2561_K5T</a>&#160;&#160;&#160;(0x0138)</td></tr>
+<tr class="separator:a0f5486c793db6d31d832f4e8d9cded95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6c899f2a0cdde888b11777c4b72f1a9" id="r_aa6c899f2a0cdde888b11777c4b72f1a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6c899f2a0cdde888b11777c4b72f1a9">TSL2561_B5T</a>&#160;&#160;&#160;(0x016f)</td></tr>
+<tr class="separator:aa6c899f2a0cdde888b11777c4b72f1a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a175489f00e25d2c0d80fc4fac8035f2c" id="r_a175489f00e25d2c0d80fc4fac8035f2c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a175489f00e25d2c0d80fc4fac8035f2c">TSL2561_M5T</a>&#160;&#160;&#160;(0x01fc)</td></tr>
+<tr class="separator:a175489f00e25d2c0d80fc4fac8035f2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b5f554770bb9e5ecba270842181f2fc" id="r_a6b5f554770bb9e5ecba270842181f2fc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b5f554770bb9e5ecba270842181f2fc">TSL2561_K6T</a>&#160;&#160;&#160;(0x019a)</td></tr>
+<tr class="separator:a6b5f554770bb9e5ecba270842181f2fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66c4513a9cf7cbbaac7d1c852860b2c" id="r_ae66c4513a9cf7cbbaac7d1c852860b2c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66c4513a9cf7cbbaac7d1c852860b2c">TSL2561_B6T</a>&#160;&#160;&#160;(0x00d2)</td></tr>
+<tr class="separator:ae66c4513a9cf7cbbaac7d1c852860b2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac44f62baea0601c19b3e0dd997d78af0" id="r_ac44f62baea0601c19b3e0dd997d78af0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac44f62baea0601c19b3e0dd997d78af0">TSL2561_M6T</a>&#160;&#160;&#160;(0x00fb)</td></tr>
+<tr class="separator:ac44f62baea0601c19b3e0dd997d78af0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0ec876edc60fc6290d118e3694ed69c" id="r_ac0ec876edc60fc6290d118e3694ed69c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0ec876edc60fc6290d118e3694ed69c">TSL2561_K7T</a>&#160;&#160;&#160;(0x029a)</td></tr>
+<tr class="separator:ac0ec876edc60fc6290d118e3694ed69c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf11478ab8e723c215058680d8a2bce1" id="r_abf11478ab8e723c215058680d8a2bce1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf11478ab8e723c215058680d8a2bce1">TSL2561_B7T</a>&#160;&#160;&#160;(0x0018)</td></tr>
+<tr class="separator:abf11478ab8e723c215058680d8a2bce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafc89d687e37467bb50b79b99a97342f" id="r_aafc89d687e37467bb50b79b99a97342f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafc89d687e37467bb50b79b99a97342f">TSL2561_M7T</a>&#160;&#160;&#160;(0x0012)</td></tr>
+<tr class="separator:aafc89d687e37467bb50b79b99a97342f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3dc8f115d592512520582caad31157b" id="r_aa3dc8f115d592512520582caad31157b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3dc8f115d592512520582caad31157b">TSL2561_K8T</a>&#160;&#160;&#160;(0x029a)</td></tr>
+<tr class="separator:aa3dc8f115d592512520582caad31157b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a91f6b9530b16e5b694dcaf4bb67f04" id="r_a1a91f6b9530b16e5b694dcaf4bb67f04"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a91f6b9530b16e5b694dcaf4bb67f04">TSL2561_B8T</a>&#160;&#160;&#160;(0x0000)</td></tr>
+<tr class="separator:a1a91f6b9530b16e5b694dcaf4bb67f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10354b592c2795c1d1543f1f1fa1d877" id="r_a10354b592c2795c1d1543f1f1fa1d877"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10354b592c2795c1d1543f1f1fa1d877">TSL2561_M8T</a>&#160;&#160;&#160;(0x0000)</td></tr>
+<tr class="separator:a10354b592c2795c1d1543f1f1fa1d877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a7d6c934ededc09e58fcbb3faf3d5744d" name="a7d6c934ededc09e58fcbb3faf3d5744d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d6c934ededc09e58fcbb3faf3d5744d">&#9670;&#160;</a></span>TSL2561_B1T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_B1T&#160;&#160;&#160;(0x01f2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00077">77</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a7d342589aa798faa3f093cf1bd8a2fb9" name="a7d342589aa798faa3f093cf1bd8a2fb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d342589aa798faa3f093cf1bd8a2fb9">&#9670;&#160;</a></span>TSL2561_B2T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_B2T&#160;&#160;&#160;(0x0214)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00080">80</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a844453b00712e75370fe022318f133c7" name="a844453b00712e75370fe022318f133c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a844453b00712e75370fe022318f133c7">&#9670;&#160;</a></span>TSL2561_B3T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_B3T&#160;&#160;&#160;(0x023f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00083">83</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a6cf3a5af51ed82d705f0d760bfe6b697" name="a6cf3a5af51ed82d705f0d760bfe6b697"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cf3a5af51ed82d705f0d760bfe6b697">&#9670;&#160;</a></span>TSL2561_B4T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_B4T&#160;&#160;&#160;(0x0270)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00086">86</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="aa6c899f2a0cdde888b11777c4b72f1a9" name="aa6c899f2a0cdde888b11777c4b72f1a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6c899f2a0cdde888b11777c4b72f1a9">&#9670;&#160;</a></span>TSL2561_B5T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_B5T&#160;&#160;&#160;(0x016f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00089">89</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="ae66c4513a9cf7cbbaac7d1c852860b2c" name="ae66c4513a9cf7cbbaac7d1c852860b2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66c4513a9cf7cbbaac7d1c852860b2c">&#9670;&#160;</a></span>TSL2561_B6T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_B6T&#160;&#160;&#160;(0x00d2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00092">92</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="abf11478ab8e723c215058680d8a2bce1" name="abf11478ab8e723c215058680d8a2bce1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf11478ab8e723c215058680d8a2bce1">&#9670;&#160;</a></span>TSL2561_B7T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_B7T&#160;&#160;&#160;(0x0018)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00095">95</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a1a91f6b9530b16e5b694dcaf4bb67f04" name="a1a91f6b9530b16e5b694dcaf4bb67f04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a91f6b9530b16e5b694dcaf4bb67f04">&#9670;&#160;</a></span>TSL2561_B8T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_B8T&#160;&#160;&#160;(0x0000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00098">98</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a7d0a9d125096946b51a3c7f057077b44" name="a7d0a9d125096946b51a3c7f057077b44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d0a9d125096946b51a3c7f057077b44">&#9670;&#160;</a></span>TSL2561_CHSCALE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_CHSCALE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">                                                     (10)      <span class="comment">/* use 2e10 scaling on</span></div>
+<div class="line"><span class="comment">                                                     * channel values by */</span></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00072">72</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="aab04b47741cbeedcefd83151210ef1ed" name="aab04b47741cbeedcefd83151210ef1ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab04b47741cbeedcefd83151210ef1ed">&#9670;&#160;</a></span>TSL2561_CHSCALE_TINT0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_CHSCALE_TINT0&#160;&#160;&#160;(0x7517)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00073">73</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a8c0390391ee3db7ea108658e98207c96" name="a8c0390391ee3db7ea108658e98207c96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c0390391ee3db7ea108658e98207c96">&#9670;&#160;</a></span>TSL2561_CHSCALE_TINT1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_CHSCALE_TINT1&#160;&#160;&#160;(0x0FE7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00074">74</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="aa740754a4d99b8199a9c58e7f037f3db" name="aa740754a4d99b8199a9c58e7f037f3db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa740754a4d99b8199a9c58e7f037f3db">&#9670;&#160;</a></span>TSL2561_COMMAND_BLOCK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_COMMAND_BLOCK&#160;&#160;&#160;(0x10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00055">55</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="af0442b94677ad9de9cef43053bc8b28b" name="af0442b94677ad9de9cef43053bc8b28b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0442b94677ad9de9cef43053bc8b28b">&#9670;&#160;</a></span>TSL2561_COMMAND_CLEAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_COMMAND_CLEAR&#160;&#160;&#160;(0x40)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00053">53</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="ad82b0e63fb662fe086738a34701beb0b" name="ad82b0e63fb662fe086738a34701beb0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad82b0e63fb662fe086738a34701beb0b">&#9670;&#160;</a></span>TSL2561_COMMAND_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_COMMAND_MODE&#160;&#160;&#160;(0x80)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00052">52</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a4f567624c946cf82aea0722a75236002" name="a4f567624c946cf82aea0722a75236002"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f567624c946cf82aea0722a75236002">&#9670;&#160;</a></span>TSL2561_COMMAND_WORD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_COMMAND_WORD&#160;&#160;&#160;(0x20)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00054">54</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="aedfdafae91b044746ef8da6bb89b66ec" name="aedfdafae91b044746ef8da6bb89b66ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedfdafae91b044746ef8da6bb89b66ec">&#9670;&#160;</a></span>TSL2561_CONTROL_POWEROFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_CONTROL_POWEROFF&#160;&#160;&#160;(0x00)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00063">63</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a1465abbd34c333983420f5644f239fd7" name="a1465abbd34c333983420f5644f239fd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1465abbd34c333983420f5644f239fd7">&#9670;&#160;</a></span>TSL2561_CONTROL_POWERON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_CONTROL_POWERON&#160;&#160;&#160;(0x03)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00062">62</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a8adc4ad2a7862f685e628a6430a63e86" name="a8adc4ad2a7862f685e628a6430a63e86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8adc4ad2a7862f685e628a6430a63e86">&#9670;&#160;</a></span>TSL2561_ID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_ID&#160;&#160;&#160;(0x50)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00031">31</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="ab7c8f04f3ee2f28701f6bd0145aa84a9" name="ab7c8f04f3ee2f28701f6bd0145aa84a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7c8f04f3ee2f28701f6bd0145aa84a9">&#9670;&#160;</a></span>TSL2561_K1T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_K1T&#160;&#160;&#160;(0x0040)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00076">76</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a065131bb708ea9c7e27718f3fe60e954" name="a065131bb708ea9c7e27718f3fe60e954"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a065131bb708ea9c7e27718f3fe60e954">&#9670;&#160;</a></span>TSL2561_K2T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_K2T&#160;&#160;&#160;(0x0080)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00079">79</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a18a0d6223116de5776e2b0fc002132a4" name="a18a0d6223116de5776e2b0fc002132a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18a0d6223116de5776e2b0fc002132a4">&#9670;&#160;</a></span>TSL2561_K3T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_K3T&#160;&#160;&#160;(0x00c0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00082">82</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="ac09846bd3103aa33999abda1b8304761" name="ac09846bd3103aa33999abda1b8304761"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac09846bd3103aa33999abda1b8304761">&#9670;&#160;</a></span>TSL2561_K4T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_K4T&#160;&#160;&#160;(0x0100)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00085">85</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a0f5486c793db6d31d832f4e8d9cded95" name="a0f5486c793db6d31d832f4e8d9cded95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f5486c793db6d31d832f4e8d9cded95">&#9670;&#160;</a></span>TSL2561_K5T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_K5T&#160;&#160;&#160;(0x0138)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00088">88</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a6b5f554770bb9e5ecba270842181f2fc" name="a6b5f554770bb9e5ecba270842181f2fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b5f554770bb9e5ecba270842181f2fc">&#9670;&#160;</a></span>TSL2561_K6T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_K6T&#160;&#160;&#160;(0x019a)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00091">91</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="ac0ec876edc60fc6290d118e3694ed69c" name="ac0ec876edc60fc6290d118e3694ed69c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0ec876edc60fc6290d118e3694ed69c">&#9670;&#160;</a></span>TSL2561_K7T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_K7T&#160;&#160;&#160;(0x029a)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00094">94</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="aa3dc8f115d592512520582caad31157b" name="aa3dc8f115d592512520582caad31157b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3dc8f115d592512520582caad31157b">&#9670;&#160;</a></span>TSL2561_K8T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_K8T&#160;&#160;&#160;(0x029a)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00097">97</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="ae13e1f1af8297d22242688b123ef4af0" name="ae13e1f1af8297d22242688b123ef4af0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae13e1f1af8297d22242688b123ef4af0">&#9670;&#160;</a></span>TSL2561_LUXSCALE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_LUXSCALE&#160;&#160;&#160;(14)      /* use 2e14 scaling */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00070">70</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a2855183d2dc922960e5b99efb8920efc" name="a2855183d2dc922960e5b99efb8920efc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2855183d2dc922960e5b99efb8920efc">&#9670;&#160;</a></span>TSL2561_M1T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_M1T&#160;&#160;&#160;(0x01be)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00078">78</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a6af1b0df2b44953fa137f5eac29d2f86" name="a6af1b0df2b44953fa137f5eac29d2f86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6af1b0df2b44953fa137f5eac29d2f86">&#9670;&#160;</a></span>TSL2561_M2T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_M2T&#160;&#160;&#160;(0x02d1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00081">81</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a11e7f09984a39b2239e450f5cc51b0e7" name="a11e7f09984a39b2239e450f5cc51b0e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11e7f09984a39b2239e450f5cc51b0e7">&#9670;&#160;</a></span>TSL2561_M3T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_M3T&#160;&#160;&#160;(0x037b)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00084">84</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a09b8547565b7d7fa63b5edddf55c28ef" name="a09b8547565b7d7fa63b5edddf55c28ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09b8547565b7d7fa63b5edddf55c28ef">&#9670;&#160;</a></span>TSL2561_M4T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_M4T&#160;&#160;&#160;(0x03fe)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00087">87</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a175489f00e25d2c0d80fc4fac8035f2c" name="a175489f00e25d2c0d80fc4fac8035f2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a175489f00e25d2c0d80fc4fac8035f2c">&#9670;&#160;</a></span>TSL2561_M5T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_M5T&#160;&#160;&#160;(0x01fc)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00090">90</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="ac44f62baea0601c19b3e0dd997d78af0" name="ac44f62baea0601c19b3e0dd997d78af0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac44f62baea0601c19b3e0dd997d78af0">&#9670;&#160;</a></span>TSL2561_M6T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_M6T&#160;&#160;&#160;(0x00fb)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00093">93</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="aafc89d687e37467bb50b79b99a97342f" name="aafc89d687e37467bb50b79b99a97342f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafc89d687e37467bb50b79b99a97342f">&#9670;&#160;</a></span>TSL2561_M7T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_M7T&#160;&#160;&#160;(0x0012)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00096">96</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a10354b592c2795c1d1543f1f1fa1d877" name="a10354b592c2795c1d1543f1f1fa1d877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10354b592c2795c1d1543f1f1fa1d877">&#9670;&#160;</a></span>TSL2561_M8T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_M8T&#160;&#160;&#160;(0x0000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00099">99</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="abf046d37693ee992810f333c13a0df20" name="abf046d37693ee992810f333c13a0df20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf046d37693ee992810f333c13a0df20">&#9670;&#160;</a></span>TSL2561_RATIOSCALE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_RATIOSCALE&#160;&#160;&#160;(9)       /* use 2e9 scaling */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00071">71</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a4a98117944fc2ee14a63db9b7acceb6c" name="a4a98117944fc2ee14a63db9b7acceb6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a98117944fc2ee14a63db9b7acceb6c">&#9670;&#160;</a></span>TSL2561_REGISTER_CHAN0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_REGISTER_CHAN0&#160;&#160;&#160;(0x0C)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00044">44</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a85747d1e67b8c2272500e212e0e1ec4b" name="a85747d1e67b8c2272500e212e0e1ec4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85747d1e67b8c2272500e212e0e1ec4b">&#9670;&#160;</a></span>TSL2561_REGISTER_CHAN1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_REGISTER_CHAN1&#160;&#160;&#160;(0x0E)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00045">45</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="ac85dc12060aed0caf73f3bf297f893c4" name="ac85dc12060aed0caf73f3bf297f893c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac85dc12060aed0caf73f3bf297f893c4">&#9670;&#160;</a></span>TSL2561_REGISTER_CONTROL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_REGISTER_CONTROL&#160;&#160;&#160;(0x00)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00038">38</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="af0e8ad601f9cf06e3c9f3439317648f5" name="af0e8ad601f9cf06e3c9f3439317648f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0e8ad601f9cf06e3c9f3439317648f5">&#9670;&#160;</a></span>TSL2561_REGISTER_ID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_REGISTER_ID&#160;&#160;&#160;(0x0A)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00043">43</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a322280e704c7ddc88487ea6ecaa8bc6c" name="a322280e704c7ddc88487ea6ecaa8bc6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a322280e704c7ddc88487ea6ecaa8bc6c">&#9670;&#160;</a></span>TSL2561_REGISTER_INTERRUPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_REGISTER_INTERRUPT&#160;&#160;&#160;(0x06)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00042">42</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="aeeb00797c99e2ef25125fbce9d571e81" name="aeeb00797c99e2ef25125fbce9d571e81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeb00797c99e2ef25125fbce9d571e81">&#9670;&#160;</a></span>TSL2561_REGISTER_THRESHOLDHIGH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_REGISTER_THRESHOLDHIGH&#160;&#160;&#160;(0x04)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00041">41</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="af90bf8b57f4fa8ccb0eba98fd62d8384" name="af90bf8b57f4fa8ccb0eba98fd62d8384"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af90bf8b57f4fa8ccb0eba98fd62d8384">&#9670;&#160;</a></span>TSL2561_REGISTER_THRESHOLDLOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_REGISTER_THRESHOLDLOW&#160;&#160;&#160;(0x02)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00040">40</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+<a id="a4f952e9a1b2d45c8461677fe78dd0ed9" name="a4f952e9a1b2d45c8461677fe78dd0ed9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f952e9a1b2d45c8461677fe78dd0ed9">&#9670;&#160;</a></span>TSL2561_REGISTER_TIMING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSL2561_REGISTER_TIMING&#160;&#160;&#160;(0x01)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tsl2561__internals_8h_source.html#l00039">39</a> of file <a class="el" href="tsl2561__internals_8h_source.html">tsl2561_internals.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

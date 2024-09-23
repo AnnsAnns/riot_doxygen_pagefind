@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>USBUS Mass Storage Class functions</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group__usbus__msc.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a> &#124;
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle"><div class="title">USBUS Mass Storage Class functions<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__usb.html">USB</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="msc_8h.html">msc.h</a></td></tr>
+<tr class="memdesc:msc_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">USB Mass Storage Class functions definitions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usbus_2msc_8h.html">msc.h</a></td></tr>
+<tr class="memdesc:usbus_2msc_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS Mass Storage Class functions definitions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scsi_8h.html">scsi.h</a></td></tr>
+<tr class="memdesc:scsi_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">SCSI protocol definitions for USBUS. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga5356c691287026c2516dfe8cfa8e9123" id="r_ga5356c691287026c2516dfe8cfa8e9123"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5356c691287026c2516dfe8cfa8e9123">USB_MSC_CBW_FLAG_IN</a>&#160;&#160;&#160;0x80</td></tr>
+<tr class="memdesc:ga5356c691287026c2516dfe8cfa8e9123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command Block Wrapper flags.  <br /></td></tr>
+<tr class="separator:ga5356c691287026c2516dfe8cfa8e9123"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">USB Mass Storage Class subclass definitions</h2></td></tr>
+<tr><td class="ititle" colspan="2"><dl class="section see"><dt>See also</dt><dd>Table 1 — SubClass Codes Mapped to Command Block Specifications from Universal <a class="el" href="group__sys__arduino__api.html#ga92b379c51adb090644efd62a845977c7" title="Primary serial port (mapped to ARDUINO_UART_DEV)">Serial</a> Bus Mass Storage Class Specification Overview 1.4 </dd></dl>
+</td></tr>
+<tr class="memitem:ga3ff1c6a93d17c5eeec23e7d209107caa" id="r_ga3ff1c6a93d17c5eeec23e7d209107caa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3ff1c6a93d17c5eeec23e7d209107caa">USB_MSC_SUBCLASS_SCSI</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="memdesc:ga3ff1c6a93d17c5eeec23e7d209107caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">SCSI command set not reported.  <br /></td></tr>
+<tr class="separator:ga3ff1c6a93d17c5eeec23e7d209107caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0f63692d0ae71f387e0d4d1034b8d36a" id="r_ga0f63692d0ae71f387e0d4d1034b8d36a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0f63692d0ae71f387e0d4d1034b8d36a">USB_MSC_SUBCLASS_RBC</a>&#160;&#160;&#160;0x01</td></tr>
+<tr class="memdesc:ga0f63692d0ae71f387e0d4d1034b8d36a"><td class="mdescLeft">&#160;</td><td class="mdescRight">RBC allocated by USB-IF.  <br /></td></tr>
+<tr class="separator:ga0f63692d0ae71f387e0d4d1034b8d36a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabded5529253697b8cdb50306fac300c3" id="r_gabded5529253697b8cdb50306fac300c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabded5529253697b8cdb50306fac300c3">USB_MSC_SUBCLASS_MMC5</a>&#160;&#160;&#160;0x02</td></tr>
+<tr class="memdesc:gabded5529253697b8cdb50306fac300c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">MMC5 allocated by USB-IF.  <br /></td></tr>
+<tr class="separator:gabded5529253697b8cdb50306fac300c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga02c58c0626605b19d98e7002bfe2dc8e" id="r_ga02c58c0626605b19d98e7002bfe2dc8e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga02c58c0626605b19d98e7002bfe2dc8e">USB_MSC_SUBCLASS_UFI</a>&#160;&#160;&#160;0x04</td></tr>
+<tr class="memdesc:ga02c58c0626605b19d98e7002bfe2dc8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface Floppy Disk Drives.  <br /></td></tr>
+<tr class="separator:ga02c58c0626605b19d98e7002bfe2dc8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga43851d1e5d035a1413cab0fd2bf820c7" id="r_ga43851d1e5d035a1413cab0fd2bf820c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga43851d1e5d035a1413cab0fd2bf820c7">USB_MSC_SUBCLASS_SCSI_TCS</a>&#160;&#160;&#160;0x06</td></tr>
+<tr class="memdesc:ga43851d1e5d035a1413cab0fd2bf820c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">SCSI transparent command set.  <br /></td></tr>
+<tr class="separator:ga43851d1e5d035a1413cab0fd2bf820c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a362f4abcae6ab8eb5f6b3209c02b5f" id="r_ga5a362f4abcae6ab8eb5f6b3209c02b5f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5a362f4abcae6ab8eb5f6b3209c02b5f">USB_MSC_SUBCLASS_LSDFS</a>&#160;&#160;&#160;0x07</td></tr>
+<tr class="memdesc:ga5a362f4abcae6ab8eb5f6b3209c02b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Early negotiation access.  <br /></td></tr>
+<tr class="separator:ga5a362f4abcae6ab8eb5f6b3209c02b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e52ec8047151ce5b043e371af8cbb10" id="r_ga0e52ec8047151ce5b043e371af8cbb10"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0e52ec8047151ce5b043e371af8cbb10">USB_MSC_SUBCLASS_IEEE1667</a>&#160;&#160;&#160;0x08</td></tr>
+<tr class="memdesc:ga0e52ec8047151ce5b043e371af8cbb10"><td class="mdescLeft">&#160;</td><td class="mdescRight">IEEE1677 allocated by USB-IF.  <br /></td></tr>
+<tr class="separator:ga0e52ec8047151ce5b043e371af8cbb10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga16ca90e92280054db991e2034024a1d2" id="r_ga16ca90e92280054db991e2034024a1d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga16ca90e92280054db991e2034024a1d2">USB_MSC_SUBCLASS_VENDOR</a>&#160;&#160;&#160;0xFF</td></tr>
+<tr class="memdesc:ga16ca90e92280054db991e2034024a1d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vendor Specific.  <br /></td></tr>
+<tr class="separator:ga16ca90e92280054db991e2034024a1d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">USB Mass Storage Class protocol definitions</h2></td></tr>
+<tr><td class="ititle" colspan="2"><dl class="section see"><dt>See also</dt><dd>Table 2 — Mass Storage Transport Protocol from Universal <a class="el" href="group__sys__arduino__api.html#ga92b379c51adb090644efd62a845977c7" title="Primary serial port (mapped to ARDUINO_UART_DEV)">Serial</a> Bus Mass Storage Class Specification Overview 1.4 </dd></dl>
+</td></tr>
+<tr class="memitem:gaa4b07f7b3c399986966290dc8a8f3cd0" id="r_gaa4b07f7b3c399986966290dc8a8f3cd0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa4b07f7b3c399986966290dc8a8f3cd0">USB_MSC_PROTOCOL_CBI_CCI</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="memdesc:gaa4b07f7b3c399986966290dc8a8f3cd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">CBI transport with command completion interrupt.  <br /></td></tr>
+<tr class="separator:gaa4b07f7b3c399986966290dc8a8f3cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8008d5571fd9e3099bae16b2f4085a2" id="r_gac8008d5571fd9e3099bae16b2f4085a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac8008d5571fd9e3099bae16b2f4085a2">USB_MSC_PROTOCOL_CBI_NO_CCI</a>&#160;&#160;&#160;0x01</td></tr>
+<tr class="memdesc:gac8008d5571fd9e3099bae16b2f4085a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">CBI transport without command completion \ interrupt.  <br /></td></tr>
+<tr class="separator:gac8008d5571fd9e3099bae16b2f4085a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7be8e9c97cac52cc920173b38d7aae0d" id="r_ga7be8e9c97cac52cc920173b38d7aae0d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7be8e9c97cac52cc920173b38d7aae0d">USB_MSC_PROTOCOL_BBB</a>&#160;&#160;&#160;0x50</td></tr>
+<tr class="memdesc:ga7be8e9c97cac52cc920173b38d7aae0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bulk only (BBB) transport.  <br /></td></tr>
+<tr class="separator:ga7be8e9c97cac52cc920173b38d7aae0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0d795e73dccbdfbf68c83f32b9a3fb2f" id="r_ga0d795e73dccbdfbf68c83f32b9a3fb2f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0d795e73dccbdfbf68c83f32b9a3fb2f">USB_MSC_PROTOCOL_UAS</a>&#160;&#160;&#160;0x62</td></tr>
+<tr class="memdesc:ga0d795e73dccbdfbf68c83f32b9a3fb2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">UAS allocated by USB-IF.  <br /></td></tr>
+<tr class="separator:ga0d795e73dccbdfbf68c83f32b9a3fb2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2ff9647c1cfc822f8d99db47bad8caed" id="r_ga2ff9647c1cfc822f8d99db47bad8caed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2ff9647c1cfc822f8d99db47bad8caed">USB_MSC_PROTOCOL_VENDOR</a>&#160;&#160;&#160;0xFF</td></tr>
+<tr class="memdesc:ga2ff9647c1cfc822f8d99db47bad8caed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vendor Specific.  <br /></td></tr>
+<tr class="separator:ga2ff9647c1cfc822f8d99db47bad8caed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">USB Mass Storage Class request codes</h2></td></tr>
+<tr><td class="ititle" colspan="2"><dl class="section see"><dt>See also</dt><dd>Table 3 — Mass Storage Request Codes from Universal <a class="el" href="group__sys__arduino__api.html#ga92b379c51adb090644efd62a845977c7" title="Primary serial port (mapped to ARDUINO_UART_DEV)">Serial</a> Bus Mass Storage Class Specification Overview 1.4 </dd></dl>
+</td></tr>
+<tr class="memitem:gac77627d1827a256c2b4cb2765bef48e4" id="r_gac77627d1827a256c2b4cb2765bef48e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac77627d1827a256c2b4cb2765bef48e4">USB_MSC_SETUP_REQ_ADSC</a>&#160;&#160;&#160;0x01</td></tr>
+<tr class="memdesc:gac77627d1827a256c2b4cb2765bef48e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accept Device-Specific Command request.  <br /></td></tr>
+<tr class="separator:gac77627d1827a256c2b4cb2765bef48e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafc11358c04770404263f51535aa68e17" id="r_gafc11358c04770404263f51535aa68e17"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafc11358c04770404263f51535aa68e17">USB_MSC_SETUP_REQ_GET_REQ</a>&#160;&#160;&#160;0xFC</td></tr>
+<tr class="memdesc:gafc11358c04770404263f51535aa68e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Request.  <br /></td></tr>
+<tr class="separator:gafc11358c04770404263f51535aa68e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3693b5e2b2feaee7e0dacd4388da0a6e" id="r_ga3693b5e2b2feaee7e0dacd4388da0a6e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3693b5e2b2feaee7e0dacd4388da0a6e">USB_MSC_SETUP_REQ_PUT_REQ</a>&#160;&#160;&#160;0xFD</td></tr>
+<tr class="memdesc:ga3693b5e2b2feaee7e0dacd4388da0a6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put Request.  <br /></td></tr>
+<tr class="separator:ga3693b5e2b2feaee7e0dacd4388da0a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga629e698997e6a38f88c2cfd1364bcce1" id="r_ga629e698997e6a38f88c2cfd1364bcce1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga629e698997e6a38f88c2cfd1364bcce1">USB_MSC_SETUP_REQ_GML</a>&#160;&#160;&#160;0xFE</td></tr>
+<tr class="memdesc:ga629e698997e6a38f88c2cfd1364bcce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Max LUN request.  <br /></td></tr>
+<tr class="separator:ga629e698997e6a38f88c2cfd1364bcce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaceffdcc0dabd863f1081b39f0064542b" id="r_gaceffdcc0dabd863f1081b39f0064542b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaceffdcc0dabd863f1081b39f0064542b">USB_MSC_SETUP_REQ_BOMSR</a>&#160;&#160;&#160;0xFF</td></tr>
+<tr class="memdesc:gaceffdcc0dabd863f1081b39f0064542b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bulk-Only Mass Storage Reset request.  <br /></td></tr>
+<tr class="separator:gaceffdcc0dabd863f1081b39f0064542b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">USB Mass Storage Class CSW status code</h2></td></tr>
+<tr><td class="ititle" colspan="2"><dl class="section see"><dt>See also</dt><dd>Table 5.3 — Command Block Status Values from Universal <a class="el" href="group__sys__arduino__api.html#ga92b379c51adb090644efd62a845977c7" title="Primary serial port (mapped to ARDUINO_UART_DEV)">Serial</a> Bus Mass Storage Class Bulk-Only Transport </dd></dl>
+</td></tr>
+<tr class="memitem:ga069a6cab5a1f80dcc4a31015e18a50c0" id="r_ga069a6cab5a1f80dcc4a31015e18a50c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga069a6cab5a1f80dcc4a31015e18a50c0">USB_MSC_CSW_STATUS_COMMAND_PASSED</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="memdesc:ga069a6cab5a1f80dcc4a31015e18a50c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">CSW Status command successful.  <br /></td></tr>
+<tr class="separator:ga069a6cab5a1f80dcc4a31015e18a50c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga20d5db9d1644476a3dc1849c2e4248e8" id="r_ga20d5db9d1644476a3dc1849c2e4248e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga20d5db9d1644476a3dc1849c2e4248e8">USB_MSC_CSW_STATUS_COMMAND_FAILED</a>&#160;&#160;&#160;0x01</td></tr>
+<tr class="memdesc:ga20d5db9d1644476a3dc1849c2e4248e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">CSW Status command failure.  <br /></td></tr>
+<tr class="separator:ga20d5db9d1644476a3dc1849c2e4248e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5eae453d3250204a9fe9940bf2cf2aa1" id="r_ga5eae453d3250204a9fe9940bf2cf2aa1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5eae453d3250204a9fe9940bf2cf2aa1">USB_MSC_CSW_STATUS_COMMAND_PHASE_ERROR</a>&#160;&#160;&#160;0x02</td></tr>
+<tr class="memdesc:ga5eae453d3250204a9fe9940bf2cf2aa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">CSW Status command phase error.  <br /></td></tr>
+<tr class="separator:ga5eae453d3250204a9fe9940bf2cf2aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga5356c691287026c2516dfe8cfa8e9123" name="ga5356c691287026c2516dfe8cfa8e9123"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5356c691287026c2516dfe8cfa8e9123">&#9670;&#160;</a></span>USB_MSC_CBW_FLAG_IN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_CBW_FLAG_IN&#160;&#160;&#160;0x80</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Command Block Wrapper flags. </p>
+<dl class="section see"><dt>See also</dt><dd>Chap 5.1 — Command Block Wrapper (CBW) from Universal <a class="el" href="group__sys__arduino__api.html#ga92b379c51adb090644efd62a845977c7" title="Primary serial port (mapped to ARDUINO_UART_DEV)">Serial</a> Bus Mass Storage Class Bulk-Only Transport Indicate Device to Host direction </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00071">71</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="ga20d5db9d1644476a3dc1849c2e4248e8" name="ga20d5db9d1644476a3dc1849c2e4248e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga20d5db9d1644476a3dc1849c2e4248e8">&#9670;&#160;</a></span>USB_MSC_CSW_STATUS_COMMAND_FAILED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_CSW_STATUS_COMMAND_FAILED&#160;&#160;&#160;0x01</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CSW Status command failure. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00095">95</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="ga069a6cab5a1f80dcc4a31015e18a50c0" name="ga069a6cab5a1f80dcc4a31015e18a50c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga069a6cab5a1f80dcc4a31015e18a50c0">&#9670;&#160;</a></span>USB_MSC_CSW_STATUS_COMMAND_PASSED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_CSW_STATUS_COMMAND_PASSED&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CSW Status command successful. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00094">94</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="ga5eae453d3250204a9fe9940bf2cf2aa1" name="ga5eae453d3250204a9fe9940bf2cf2aa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5eae453d3250204a9fe9940bf2cf2aa1">&#9670;&#160;</a></span>USB_MSC_CSW_STATUS_COMMAND_PHASE_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_CSW_STATUS_COMMAND_PHASE_ERROR&#160;&#160;&#160;0x02</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CSW Status command phase error. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00096">96</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="ga7be8e9c97cac52cc920173b38d7aae0d" name="ga7be8e9c97cac52cc920173b38d7aae0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7be8e9c97cac52cc920173b38d7aae0d">&#9670;&#160;</a></span>USB_MSC_PROTOCOL_BBB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_PROTOCOL_BBB&#160;&#160;&#160;0x50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bulk only (BBB) transport. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00060">60</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="gaa4b07f7b3c399986966290dc8a8f3cd0" name="gaa4b07f7b3c399986966290dc8a8f3cd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa4b07f7b3c399986966290dc8a8f3cd0">&#9670;&#160;</a></span>USB_MSC_PROTOCOL_CBI_CCI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_PROTOCOL_CBI_CCI&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CBI transport with command completion interrupt. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00057">57</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="gac8008d5571fd9e3099bae16b2f4085a2" name="gac8008d5571fd9e3099bae16b2f4085a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac8008d5571fd9e3099bae16b2f4085a2">&#9670;&#160;</a></span>USB_MSC_PROTOCOL_CBI_NO_CCI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_PROTOCOL_CBI_NO_CCI&#160;&#160;&#160;0x01</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CBI transport without command completion \ interrupt. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00058">58</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="ga0d795e73dccbdfbf68c83f32b9a3fb2f" name="ga0d795e73dccbdfbf68c83f32b9a3fb2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0d795e73dccbdfbf68c83f32b9a3fb2f">&#9670;&#160;</a></span>USB_MSC_PROTOCOL_UAS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_PROTOCOL_UAS&#160;&#160;&#160;0x62</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UAS allocated by USB-IF. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00061">61</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="ga2ff9647c1cfc822f8d99db47bad8caed" name="ga2ff9647c1cfc822f8d99db47bad8caed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2ff9647c1cfc822f8d99db47bad8caed">&#9670;&#160;</a></span>USB_MSC_PROTOCOL_VENDOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_PROTOCOL_VENDOR&#160;&#160;&#160;0xFF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vendor Specific. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00062">62</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="gac77627d1827a256c2b4cb2765bef48e4" name="gac77627d1827a256c2b4cb2765bef48e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac77627d1827a256c2b4cb2765bef48e4">&#9670;&#160;</a></span>USB_MSC_SETUP_REQ_ADSC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_SETUP_REQ_ADSC&#160;&#160;&#160;0x01</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accept Device-Specific Command request. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00080">80</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="gaceffdcc0dabd863f1081b39f0064542b" name="gaceffdcc0dabd863f1081b39f0064542b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaceffdcc0dabd863f1081b39f0064542b">&#9670;&#160;</a></span>USB_MSC_SETUP_REQ_BOMSR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_SETUP_REQ_BOMSR&#160;&#160;&#160;0xFF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bulk-Only Mass Storage Reset request. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00084">84</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="gafc11358c04770404263f51535aa68e17" name="gafc11358c04770404263f51535aa68e17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafc11358c04770404263f51535aa68e17">&#9670;&#160;</a></span>USB_MSC_SETUP_REQ_GET_REQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_SETUP_REQ_GET_REQ&#160;&#160;&#160;0xFC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get Request. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00081">81</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="ga629e698997e6a38f88c2cfd1364bcce1" name="ga629e698997e6a38f88c2cfd1364bcce1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga629e698997e6a38f88c2cfd1364bcce1">&#9670;&#160;</a></span>USB_MSC_SETUP_REQ_GML</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_SETUP_REQ_GML&#160;&#160;&#160;0xFE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get Max LUN request. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00083">83</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="ga3693b5e2b2feaee7e0dacd4388da0a6e" name="ga3693b5e2b2feaee7e0dacd4388da0a6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3693b5e2b2feaee7e0dacd4388da0a6e">&#9670;&#160;</a></span>USB_MSC_SETUP_REQ_PUT_REQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_SETUP_REQ_PUT_REQ&#160;&#160;&#160;0xFD</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Put Request. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00082">82</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="ga0e52ec8047151ce5b043e371af8cbb10" name="ga0e52ec8047151ce5b043e371af8cbb10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0e52ec8047151ce5b043e371af8cbb10">&#9670;&#160;</a></span>USB_MSC_SUBCLASS_IEEE1667</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_SUBCLASS_IEEE1667&#160;&#160;&#160;0x08</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>IEEE1677 allocated by USB-IF. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00046">46</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="ga5a362f4abcae6ab8eb5f6b3209c02b5f" name="ga5a362f4abcae6ab8eb5f6b3209c02b5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5a362f4abcae6ab8eb5f6b3209c02b5f">&#9670;&#160;</a></span>USB_MSC_SUBCLASS_LSDFS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_SUBCLASS_LSDFS&#160;&#160;&#160;0x07</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Early negotiation access. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00045">45</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="gabded5529253697b8cdb50306fac300c3" name="gabded5529253697b8cdb50306fac300c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabded5529253697b8cdb50306fac300c3">&#9670;&#160;</a></span>USB_MSC_SUBCLASS_MMC5</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_SUBCLASS_MMC5&#160;&#160;&#160;0x02</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MMC5 allocated by USB-IF. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00042">42</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="ga0f63692d0ae71f387e0d4d1034b8d36a" name="ga0f63692d0ae71f387e0d4d1034b8d36a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0f63692d0ae71f387e0d4d1034b8d36a">&#9670;&#160;</a></span>USB_MSC_SUBCLASS_RBC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_SUBCLASS_RBC&#160;&#160;&#160;0x01</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RBC allocated by USB-IF. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00041">41</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="ga3ff1c6a93d17c5eeec23e7d209107caa" name="ga3ff1c6a93d17c5eeec23e7d209107caa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3ff1c6a93d17c5eeec23e7d209107caa">&#9670;&#160;</a></span>USB_MSC_SUBCLASS_SCSI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_SUBCLASS_SCSI&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SCSI command set not reported. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00040">40</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="ga43851d1e5d035a1413cab0fd2bf820c7" name="ga43851d1e5d035a1413cab0fd2bf820c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga43851d1e5d035a1413cab0fd2bf820c7">&#9670;&#160;</a></span>USB_MSC_SUBCLASS_SCSI_TCS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_SUBCLASS_SCSI_TCS&#160;&#160;&#160;0x06</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SCSI transparent command set. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00044">44</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="ga02c58c0626605b19d98e7002bfe2dc8e" name="ga02c58c0626605b19d98e7002bfe2dc8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga02c58c0626605b19d98e7002bfe2dc8e">&#9670;&#160;</a></span>USB_MSC_SUBCLASS_UFI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_SUBCLASS_UFI&#160;&#160;&#160;0x04</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interface Floppy Disk Drives. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00043">43</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<a id="ga16ca90e92280054db991e2034024a1d2" name="ga16ca90e92280054db991e2034024a1d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga16ca90e92280054db991e2034024a1d2">&#9670;&#160;</a></span>USB_MSC_SUBCLASS_VENDOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USB_MSC_SUBCLASS_VENDOR&#160;&#160;&#160;0xFF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vendor Specific. </p>
+
+<p class="definition">Definition at line <a class="el" href="msc_8h_source.html#l00047">47</a> of file <a class="el" href="msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:34 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

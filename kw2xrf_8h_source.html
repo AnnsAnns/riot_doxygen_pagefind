@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/include/kw2xrf.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('kw2xrf_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">kw2xrf.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="kw2xrf_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (C) 2016 Phytec Messtechnik GmbH</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * directory for more details.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#ifndef KW2XRF_H</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define KW2XRF_H</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;board.h&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &quot;<a class="code" href="spi_8h.html">periph/spi.h</a>&quot;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &quot;<a class="code" href="drivers_2include_2periph_2gpio_8h.html">periph/gpio.h</a>&quot;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;<a class="code" href="drivers_2include_2net_2netdev_8h.html">net/netdev.h</a>&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &quot;<a class="code" href="drivers_2include_2net_2netdev_2ieee802154_8h.html">net/netdev/ieee802154.h</a>&quot;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;<a class="code" href="nettype_8h.html">net/gnrc/nettype.h</a>&quot;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;thread.h&quot;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;net/ieee802154/radio.h&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="group__drivers__kw2xrf.html#ga0ba3a98d6567394981ceb57baa1b3b03">   44</a></span><span class="preprocessor">#define KW2XRF_MAX_PKT_LENGTH           (IEEE802154_FRAME_LEN_MAX)</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#ifndef KW2XRF_DEFAULT_CHANNEL</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="group__drivers__kw2xrf__config.html#gad4db2b0621d1abd687a2366f17c9ad1e">   55</a></span><span class="preprocessor">#define KW2XRF_DEFAULT_CHANNEL          (CONFIG_IEEE802154_DEFAULT_CHANNEL)</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#define KW2XRF_MIN_CHANNEL              (11U)</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#define KW2XRF_MAX_CHANNEL              (26U)</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="group__drivers__kw2xrf.html#gac8bc1778d5e265f4b53dcd10dee8cc61">   71</a></span><span class="preprocessor">#define KW2XRF_DEFAULT_TX_POWER         (CONFIG_IEEE802154_DEFAULT_TXPOWER)</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="group__drivers__kw2xrf.html#ga5a434749fb033efa0dbf1bf650d39b20">   76</a></span><span class="preprocessor">#define KW2XDRF_OUTPUT_POWER_MAX       (8)</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="group__drivers__kw2xrf.html#ga76fbd188cf55d0e37db30e6a29f2363f">   81</a></span><span class="preprocessor">#define KW2XDRF_OUTPUT_POWER_MIN       (-35)</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="group__drivers__kw2xrf.html#ga68c476618e4e27a37715787c62018eef">   91</a></span><span class="preprocessor">#define KW2XRF_OPT_SRC_ADDR_LONG    (NETDEV_IEEE802154_SRC_MODE_LONG)  </span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="group__drivers__kw2xrf.html#ga4d5e5ab8de7349a7dbc12eba60fcd2a5">   92</a></span><span class="preprocessor">#define KW2XRF_OPT_RAWDUMP          (NETDEV_IEEE802154_RAW)            </span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="group__drivers__kw2xrf.html#gadc98b58ebe81a2bf836db9d6e96cff2a">   93</a></span><span class="preprocessor">#define KW2XRF_OPT_ACK_REQ          (NETDEV_IEEE802154_ACK_REQ)        </span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="group__drivers__kw2xrf.html#gacdce0b9b29f1d4019ee7db5b5149ab3d">   95</a></span><span class="preprocessor">#define KW2XRF_OPT_AUTOCCA          (0x0100)    </span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="group__drivers__kw2xrf.html#ga49b9690a865a07dc7491846e2cc5c7b6">   96</a></span><span class="preprocessor">#define KW2XRF_OPT_PROMISCUOUS      (0x0200)    </span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="group__drivers__kw2xrf.html#ga9859eb6425aaefbdf613ba77195a7cf5">   98</a></span><span class="preprocessor">#define KW2XRF_OPT_PRELOADING       (0x0400)    </span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="group__drivers__kw2xrf.html#ga8df1191ab0c056e8464f192ae0155a09">   99</a></span><span class="preprocessor">#define KW2XRF_OPT_AUTOACK          (0x8000)    </span></div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="};">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="structkw2xrf__params.html">  106</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structkw2xrf__params.html">kw2xrf_params</a> {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="structkw2xrf__params.html#a6f5e97c89c8e421114440f5a83f72d4d">  107</a></span>    spi_t <a class="code hl_variable" href="structkw2xrf__params.html#a6f5e97c89c8e421114440f5a83f72d4d">spi</a>;                          </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="structkw2xrf__params.html#ad3627f0bf85d0376a93b5db0d8e2a9ba">  108</a></span>    <a class="code hl_enumeration" href="atxmega_2include_2periph__cpu_8h.html#a17adf016c33fa2f2e36c9bec898bc0c8">spi_clk_t</a> <a class="code hl_variable" href="structkw2xrf__params.html#ad3627f0bf85d0376a93b5db0d8e2a9ba">spi_clk</a>;                  </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="structkw2xrf__params.html#a60129e47d0bc5a1b96d9403081c261d2">  109</a></span>    <a class="code hl_typedef" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> <a class="code hl_variable" href="structkw2xrf__params.html#a60129e47d0bc5a1b96d9403081c261d2">cs_pin</a>;                      </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="structkw2xrf__params.html#ab6b91e6480298f8db17f1dede7fc8b81">  110</a></span>    <a class="code hl_typedef" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> <a class="code hl_variable" href="structkw2xrf__params.html#ab6b91e6480298f8db17f1dede7fc8b81">int_pin</a>;                     </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="structkw2xrf__params.html#ac03825bab73239c97498765220d744f3">  111</a></span>    <a class="code hl_typedef" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> <a class="code hl_variable" href="structkw2xrf__params.html#ac03825bab73239c97498765220d744f3">rst_pin</a>;                     </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="group__drivers__kw2xrf.html#gacc3cf59ccebcb1b07b2e498926feac13">  112</a></span>} <a class="code hl_typedef" href="group__drivers__kw2xrf.html#gacc3cf59ccebcb1b07b2e498926feac13">kw2xrf_params_t</a>;</div>
+</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="foldopen" id="foldopen00119" data-start="{" data-end="};">
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="structkw2xrf__t.html">  119</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="structkw2xrf__t.html#aaedd49b8324c94893b54e02a83dffc87">  124</a></span>    <a class="code hl_struct" href="struct__thread.html">thread_t</a> *<a class="code hl_variable" href="structkw2xrf__t.html#aaedd49b8324c94893b54e02a83dffc87">thread</a>;                   </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="structkw2xrf__t.html#ae72012cab8fdf97503a4cfc6f5c99761">  125</a></span>    <span class="keyword">const</span> <a class="code hl_struct" href="structkw2xrf__params.html">kw2xrf_params_t</a> *<a class="code hl_variable" href="structkw2xrf__t.html#ae72012cab8fdf97503a4cfc6f5c99761">params</a>;      </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="structkw2xrf__t.html#ab621d509d48c7e73eb0bea07d6c290cf">  126</a></span>    uint8_t buf[<a class="code hl_define" href="group__drivers__kw2xrf.html#ga0ba3a98d6567394981ceb57baa1b3b03">KW2XRF_MAX_PKT_LENGTH</a>]; </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="structkw2xrf__t.html#a0937d2c4f1f993d57f90257995bf0c25">  127</a></span>    uint8_t <a class="code hl_variable" href="structkw2xrf__t.html#a0937d2c4f1f993d57f90257995bf0c25">state</a>;                      </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="structkw2xrf__t.html#ae0a48e350dd499a111ae7bdb08840004">  128</a></span>    uint8_t <a class="code hl_variable" href="structkw2xrf__t.html#ae0a48e350dd499a111ae7bdb08840004">tx_frame_len</a>;               </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="structkw2xrf__t.html#aa15d6a02a57799077114f9551e621993">  129</a></span>    uint8_t <a class="code hl_variable" href="structkw2xrf__t.html#aa15d6a02a57799077114f9551e621993">idle_state</a>;                 </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="structkw2xrf__t.html#a6777e9ef9148432c12da100ae3ea57f1">  130</a></span>    uint8_t <a class="code hl_variable" href="structkw2xrf__t.html#a6777e9ef9148432c12da100ae3ea57f1">pending_tx</a>;                 </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="structkw2xrf__t.html#a6f7e3092d7de1c2dcc8af3e732bd4b38">  133</a></span>    int16_t <a class="code hl_variable" href="structkw2xrf__t.html#a6f7e3092d7de1c2dcc8af3e732bd4b38">tx_power</a>;                   </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="structkw2xrf__t.html#a594f1dff5ecb8cc728bee1baa64c49e1">  134</a></span>    <span class="keywordtype">bool</span>    <a class="code hl_variable" href="structkw2xrf__t.html#a594f1dff5ecb8cc728bee1baa64c49e1">ack_requested</a>;              </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="structkw2xrf__t.html#ac29f73aca6dfb5f0f8599c73a0f52b42">  135</a></span>    <span class="keywordtype">bool</span>    <a class="code hl_variable" href="structkw2xrf__t.html#ac29f73aca6dfb5f0f8599c73a0f52b42">ch_clear</a>;                   </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="structkw2xrf__t.html#a236180b9c3793dab9d88730761e159ed">  136</a></span>    <span class="keywordtype">bool</span>    <a class="code hl_variable" href="structkw2xrf__t.html#a236180b9c3793dab9d88730761e159ed">waiting_for_cca</a>;            </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="structkw2xrf__t.html#a04e9695fb001f617ef71a43a32ba7efb">  137</a></span>    <span class="keywordtype">bool</span>    <a class="code hl_variable" href="structkw2xrf__t.html#a04e9695fb001f617ef71a43a32ba7efb">tx_done</a>;                    </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="structkw2xrf__t.html#a27469f0964c154d77ee47284da0e0400">  138</a></span>    <span class="keywordtype">bool</span>    <a class="code hl_variable" href="structkw2xrf__t.html#a27469f0964c154d77ee47284da0e0400">ack_rcvd</a>;                   </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="structkw2xrf__t.html#abf91648cf14db4eea44e69420e410e36">  139</a></span>    <span class="keywordtype">bool</span>    <a class="code hl_variable" href="structkw2xrf__t.html#abf91648cf14db4eea44e69420e410e36">cca_before_tx</a>;              </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="structkw2xrf__t.html#a8dd00d52a805dcdcc6a99289ade8456c">  140</a></span>    <span class="keywordtype">bool</span>    <a class="code hl_variable" href="structkw2xrf__t.html#a8dd00d52a805dcdcc6a99289ade8456c">tx_cca_pending</a>;             </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>} <a class="code hl_struct" href="structkw2xrf__t.html">kw2xrf_t</a>;</div>
+</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="group__drivers__kw2xrf.html#ga880a63a4d32d3172d033a48dac0d1b9a">  155</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__drivers__kw2xrf.html#ga880a63a4d32d3172d033a48dac0d1b9a">kw2xrf_init</a>(<a class="code hl_struct" href="structkw2xrf__t.html">kw2xrf_t</a> *dev, <span class="keyword">const</span> <a class="code hl_struct" href="structkw2xrf__params.html">kw2xrf_params_t</a> *params, <a class="code hl_struct" href="structieee802154__dev.html">ieee802154_dev_t</a> *hal,</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                <a class="code hl_typedef" href="group__drivers__periph__gpio.html#ga06ceaaf4824f1504972babf0775dba92">gpio_cb_t</a> cb, <span class="keywordtype">void</span> *ctx);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="group__drivers__kw2xrf.html#ga43013f237994794fccbdd12237fa8dbb">  163</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__drivers__kw2xrf.html#ga43013f237994794fccbdd12237fa8dbb">kw2xrf_reset_phy</a>(<a class="code hl_struct" href="structkw2xrf__t.html">kw2xrf_t</a> *dev);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="group__drivers__kw2xrf.html#ga2dffb5cb0f3d0b6b11488b86d38018fa">  170</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__drivers__kw2xrf.html#ga2dffb5cb0f3d0b6b11488b86d38018fa">kw2xrf_radio_hal_irq_handler</a>(<span class="keywordtype">void</span> *dev);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>}</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="preprocessor">#endif </span><span class="comment">/* KW2XRF_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aatxmega_2include_2periph__cpu_8h_html_a17adf016c33fa2f2e36c9bec898bc0c8"><div class="ttname"><a href="atxmega_2include_2periph__cpu_8h.html#a17adf016c33fa2f2e36c9bec898bc0c8">spi_clk_t</a></div><div class="ttdeci">spi_clk_t</div><div class="ttdoc">SPI clock type.</div><div class="ttdef"><b>Definition</b> <a href="atxmega_2include_2periph__cpu_8h_source.html#l00352">periph_cpu.h:352</a></div></div>
+<div class="ttc" id="adrivers_2include_2net_2netdev_2ieee802154_8h_html"><div class="ttname"><a href="drivers_2include_2net_2netdev_2ieee802154_8h.html">ieee802154.h</a></div><div class="ttdoc">Definitions for netdev common IEEE 802.15.4 code.</div></div>
+<div class="ttc" id="adrivers_2include_2net_2netdev_8h_html"><div class="ttname"><a href="drivers_2include_2net_2netdev_8h.html">netdev.h</a></div><div class="ttdoc">Definitions low-level network driver interface.</div></div>
+<div class="ttc" id="adrivers_2include_2periph_2gpio_8h_html"><div class="ttname"><a href="drivers_2include_2periph_2gpio_8h.html">gpio.h</a></div><div class="ttdoc">Low-level GPIO peripheral driver interface definitions.</div></div>
+<div class="ttc" id="agroup__drivers__kw2xrf_html_ga0ba3a98d6567394981ceb57baa1b3b03"><div class="ttname"><a href="group__drivers__kw2xrf.html#ga0ba3a98d6567394981ceb57baa1b3b03">KW2XRF_MAX_PKT_LENGTH</a></div><div class="ttdeci">#define KW2XRF_MAX_PKT_LENGTH</div><div class="ttdoc">Maximum packet length.</div><div class="ttdef"><b>Definition</b> <a href="#l00044">kw2xrf.h:44</a></div></div>
+<div class="ttc" id="agroup__drivers__kw2xrf_html_ga2dffb5cb0f3d0b6b11488b86d38018fa"><div class="ttname"><a href="group__drivers__kw2xrf.html#ga2dffb5cb0f3d0b6b11488b86d38018fa">kw2xrf_radio_hal_irq_handler</a></div><div class="ttdeci">void kw2xrf_radio_hal_irq_handler(void *dev)</div><div class="ttdoc">IRQ Handler for the KW2XRF device.</div></div>
+<div class="ttc" id="agroup__drivers__kw2xrf_html_ga43013f237994794fccbdd12237fa8dbb"><div class="ttname"><a href="group__drivers__kw2xrf.html#ga43013f237994794fccbdd12237fa8dbb">kw2xrf_reset_phy</a></div><div class="ttdeci">void kw2xrf_reset_phy(kw2xrf_t *dev)</div><div class="ttdoc">Configure radio with default values.</div></div>
+<div class="ttc" id="agroup__drivers__kw2xrf_html_ga880a63a4d32d3172d033a48dac0d1b9a"><div class="ttname"><a href="group__drivers__kw2xrf.html#ga880a63a4d32d3172d033a48dac0d1b9a">kw2xrf_init</a></div><div class="ttdeci">int kw2xrf_init(kw2xrf_t *dev, const kw2xrf_params_t *params, ieee802154_dev_t *hal, gpio_cb_t cb, void *ctx)</div><div class="ttdoc">Initialize the given KW2XRF device.</div></div>
+<div class="ttc" id="agroup__drivers__kw2xrf_html_gacc3cf59ccebcb1b07b2e498926feac13"><div class="ttname"><a href="group__drivers__kw2xrf.html#gacc3cf59ccebcb1b07b2e498926feac13">kw2xrf_params_t</a></div><div class="ttdeci">struct kw2xrf_params kw2xrf_params_t</div><div class="ttdoc">Struct holding all params needed for device initialization.</div></div>
+<div class="ttc" id="agroup__drivers__periph__gpio_html_ga06ceaaf4824f1504972babf0775dba92"><div class="ttname"><a href="group__drivers__periph__gpio.html#ga06ceaaf4824f1504972babf0775dba92">gpio_cb_t</a></div><div class="ttdeci">void(* gpio_cb_t)(void *arg)</div><div class="ttdoc">Signature of event callback functions triggered from interrupts.</div><div class="ttdef"><b>Definition</b> <a href="drivers_2include_2periph_2gpio_8h_source.html#l00146">gpio.h:146</a></div></div>
+<div class="ttc" id="agroup__drivers__periph__gpio_html_gadacfc0deb08affff1e88f9549c8e2823"><div class="ttname"><a href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a></div><div class="ttdeci">uint16_t gpio_t</div><div class="ttdoc">GPIO type identifier.</div><div class="ttdef"><b>Definition</b> <a href="atxmega_2include_2periph__cpu_8h_source.html#l00117">periph_cpu.h:117</a></div></div>
+<div class="ttc" id="anettype_8h_html"><div class="ttname"><a href="nettype_8h.html">nettype.h</a></div><div class="ttdoc">Protocol type definitions.</div></div>
+<div class="ttc" id="aspi_8h_html"><div class="ttname"><a href="spi_8h.html">spi.h</a></div><div class="ttdoc">Low-level SPI peripheral driver interface definition.</div></div>
+<div class="ttc" id="astruct__thread_html"><div class="ttname"><a href="struct__thread.html">_thread</a></div><div class="ttdoc">thread_t holds thread's context data.</div><div class="ttdef"><b>Definition</b> <a href="core_2include_2thread_8h_source.html#l00168">thread.h:168</a></div></div>
+<div class="ttc" id="astructieee802154__dev_html"><div class="ttname"><a href="structieee802154__dev.html">ieee802154_dev</a></div><div class="ttdoc">the IEEE802.15.4 device descriptor</div><div class="ttdef"><b>Definition</b> <a href="radio_8h_source.html#l00415">radio.h:415</a></div></div>
+<div class="ttc" id="astructkw2xrf__params_html"><div class="ttname"><a href="structkw2xrf__params.html">kw2xrf_params</a></div><div class="ttdoc">Struct holding all params needed for device initialization.</div><div class="ttdef"><b>Definition</b> <a href="#l00106">kw2xrf.h:106</a></div></div>
+<div class="ttc" id="astructkw2xrf__params_html_a60129e47d0bc5a1b96d9403081c261d2"><div class="ttname"><a href="structkw2xrf__params.html#a60129e47d0bc5a1b96d9403081c261d2">kw2xrf_params::cs_pin</a></div><div class="ttdeci">gpio_t cs_pin</div><div class="ttdoc">GPIO pin connected to chip select.</div><div class="ttdef"><b>Definition</b> <a href="#l00109">kw2xrf.h:109</a></div></div>
+<div class="ttc" id="astructkw2xrf__params_html_a6f5e97c89c8e421114440f5a83f72d4d"><div class="ttname"><a href="structkw2xrf__params.html#a6f5e97c89c8e421114440f5a83f72d4d">kw2xrf_params::spi</a></div><div class="ttdeci">spi_t spi</div><div class="ttdoc">SPI bus the device is connected to.</div><div class="ttdef"><b>Definition</b> <a href="#l00107">kw2xrf.h:107</a></div></div>
+<div class="ttc" id="astructkw2xrf__params_html_ab6b91e6480298f8db17f1dede7fc8b81"><div class="ttname"><a href="structkw2xrf__params.html#ab6b91e6480298f8db17f1dede7fc8b81">kw2xrf_params::int_pin</a></div><div class="ttdeci">gpio_t int_pin</div><div class="ttdoc">GPIO pin connected to the interrupt pin.</div><div class="ttdef"><b>Definition</b> <a href="#l00110">kw2xrf.h:110</a></div></div>
+<div class="ttc" id="astructkw2xrf__params_html_ac03825bab73239c97498765220d744f3"><div class="ttname"><a href="structkw2xrf__params.html#ac03825bab73239c97498765220d744f3">kw2xrf_params::rst_pin</a></div><div class="ttdeci">gpio_t rst_pin</div><div class="ttdoc">GPIO pin connected to RST_B.</div><div class="ttdef"><b>Definition</b> <a href="#l00111">kw2xrf.h:111</a></div></div>
+<div class="ttc" id="astructkw2xrf__params_html_ad3627f0bf85d0376a93b5db0d8e2a9ba"><div class="ttname"><a href="structkw2xrf__params.html#ad3627f0bf85d0376a93b5db0d8e2a9ba">kw2xrf_params::spi_clk</a></div><div class="ttdeci">spi_clk_t spi_clk</div><div class="ttdoc">SPI clock speed to use.</div><div class="ttdef"><b>Definition</b> <a href="#l00108">kw2xrf.h:108</a></div></div>
+<div class="ttc" id="astructkw2xrf__t_html"><div class="ttname"><a href="structkw2xrf__t.html">kw2xrf_t</a></div><div class="ttdoc">Device descriptor for KW2XRF radio devices.</div><div class="ttdef"><b>Definition</b> <a href="#l00119">kw2xrf.h:119</a></div></div>
+<div class="ttc" id="astructkw2xrf__t_html_a04e9695fb001f617ef71a43a32ba7efb"><div class="ttname"><a href="structkw2xrf__t.html#a04e9695fb001f617ef71a43a32ba7efb">kw2xrf_t::tx_done</a></div><div class="ttdeci">bool tx_done</div><div class="ttdoc">Indicate whether TX completed.</div><div class="ttdef"><b>Definition</b> <a href="#l00137">kw2xrf.h:137</a></div></div>
+<div class="ttc" id="astructkw2xrf__t_html_a0937d2c4f1f993d57f90257995bf0c25"><div class="ttname"><a href="structkw2xrf__t.html#a0937d2c4f1f993d57f90257995bf0c25">kw2xrf_t::state</a></div><div class="ttdeci">uint8_t state</div><div class="ttdoc">current state of the radio</div><div class="ttdef"><b>Definition</b> <a href="#l00127">kw2xrf.h:127</a></div></div>
+<div class="ttc" id="astructkw2xrf__t_html_a236180b9c3793dab9d88730761e159ed"><div class="ttname"><a href="structkw2xrf__t.html#a236180b9c3793dab9d88730761e159ed">kw2xrf_t::waiting_for_cca</a></div><div class="ttdeci">bool waiting_for_cca</div><div class="ttdoc">Indicate whether CCA is still ongoing.</div><div class="ttdef"><b>Definition</b> <a href="#l00136">kw2xrf.h:136</a></div></div>
+<div class="ttc" id="astructkw2xrf__t_html_a27469f0964c154d77ee47284da0e0400"><div class="ttname"><a href="structkw2xrf__t.html#a27469f0964c154d77ee47284da0e0400">kw2xrf_t::ack_rcvd</a></div><div class="ttdeci">bool ack_rcvd</div><div class="ttdoc">Indicate if ACK was received for last transmission.</div><div class="ttdef"><b>Definition</b> <a href="#l00138">kw2xrf.h:138</a></div></div>
+<div class="ttc" id="astructkw2xrf__t_html_a594f1dff5ecb8cc728bee1baa64c49e1"><div class="ttname"><a href="structkw2xrf__t.html#a594f1dff5ecb8cc728bee1baa64c49e1">kw2xrf_t::ack_requested</a></div><div class="ttdeci">bool ack_requested</div><div class="ttdoc">ACK was requested for last frame.</div><div class="ttdef"><b>Definition</b> <a href="#l00134">kw2xrf.h:134</a></div></div>
+<div class="ttc" id="astructkw2xrf__t_html_a6777e9ef9148432c12da100ae3ea57f1"><div class="ttname"><a href="structkw2xrf__t.html#a6777e9ef9148432c12da100ae3ea57f1">kw2xrf_t::pending_tx</a></div><div class="ttdeci">uint8_t pending_tx</div><div class="ttdoc">keep track of pending TX calls this is required to know when to return to kw2xrf_t::idle_state</div><div class="ttdef"><b>Definition</b> <a href="#l00130">kw2xrf.h:130</a></div></div>
+<div class="ttc" id="astructkw2xrf__t_html_a6f7e3092d7de1c2dcc8af3e732bd4b38"><div class="ttname"><a href="structkw2xrf__t.html#a6f7e3092d7de1c2dcc8af3e732bd4b38">kw2xrf_t::tx_power</a></div><div class="ttdeci">int16_t tx_power</div><div class="ttdoc">The current tx-power setting of the device.</div><div class="ttdef"><b>Definition</b> <a href="#l00133">kw2xrf.h:133</a></div></div>
+<div class="ttc" id="astructkw2xrf__t_html_a8dd00d52a805dcdcc6a99289ade8456c"><div class="ttname"><a href="structkw2xrf__t.html#a8dd00d52a805dcdcc6a99289ade8456c">kw2xrf_t::tx_cca_pending</a></div><div class="ttdeci">bool tx_cca_pending</div><div class="ttdoc">true a manual CCA was started and a TX should be triggered on channel clear indication</div><div class="ttdef"><b>Definition</b> <a href="#l00140">kw2xrf.h:140</a></div></div>
+<div class="ttc" id="astructkw2xrf__t_html_aa15d6a02a57799077114f9551e621993"><div class="ttname"><a href="structkw2xrf__t.html#aa15d6a02a57799077114f9551e621993">kw2xrf_t::idle_state</a></div><div class="ttdeci">uint8_t idle_state</div><div class="ttdoc">state to return to after sending</div><div class="ttdef"><b>Definition</b> <a href="#l00129">kw2xrf.h:129</a></div></div>
+<div class="ttc" id="astructkw2xrf__t_html_aaedd49b8324c94893b54e02a83dffc87"><div class="ttname"><a href="structkw2xrf__t.html#aaedd49b8324c94893b54e02a83dffc87">kw2xrf_t::thread</a></div><div class="ttdeci">thread_t * thread</div><div class="ttdoc">device specific fields</div><div class="ttdef"><b>Definition</b> <a href="#l00124">kw2xrf.h:124</a></div></div>
+<div class="ttc" id="astructkw2xrf__t_html_abf91648cf14db4eea44e69420e410e36"><div class="ttname"><a href="structkw2xrf__t.html#abf91648cf14db4eea44e69420e410e36">kw2xrf_t::cca_before_tx</a></div><div class="ttdeci">bool cca_before_tx</div><div class="ttdoc">true if CCA shall be performed before TX</div><div class="ttdef"><b>Definition</b> <a href="#l00139">kw2xrf.h:139</a></div></div>
+<div class="ttc" id="astructkw2xrf__t_html_ac29f73aca6dfb5f0f8599c73a0f52b42"><div class="ttname"><a href="structkw2xrf__t.html#ac29f73aca6dfb5f0f8599c73a0f52b42">kw2xrf_t::ch_clear</a></div><div class="ttdeci">bool ch_clear</div><div class="ttdoc">CCA indicated channel clear.</div><div class="ttdef"><b>Definition</b> <a href="#l00135">kw2xrf.h:135</a></div></div>
+<div class="ttc" id="astructkw2xrf__t_html_ae0a48e350dd499a111ae7bdb08840004"><div class="ttname"><a href="structkw2xrf__t.html#ae0a48e350dd499a111ae7bdb08840004">kw2xrf_t::tx_frame_len</a></div><div class="ttdeci">uint8_t tx_frame_len</div><div class="ttdoc">length of the current TX frame</div><div class="ttdef"><b>Definition</b> <a href="#l00128">kw2xrf.h:128</a></div></div>
+<div class="ttc" id="astructkw2xrf__t_html_ae72012cab8fdf97503a4cfc6f5c99761"><div class="ttname"><a href="structkw2xrf__t.html#ae72012cab8fdf97503a4cfc6f5c99761">kw2xrf_t::params</a></div><div class="ttdeci">const kw2xrf_params_t * params</div><div class="ttdoc">parameters for initialization</div><div class="ttdef"><b>Definition</b> <a href="#l00125">kw2xrf.h:125</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:30 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

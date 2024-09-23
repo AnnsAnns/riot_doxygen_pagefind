@@ -1,0 +1,2919 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>utlist</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('group__sys__ut.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a> &#124;
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle"><div class="title">utlist<div class="ingroups"><a class="el" href="group__sys.html">System</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Basic linked list operation definitions  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Basic linked list operation definitions </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utlist_8h.html">utlist.h</a></td></tr>
+<tr class="memdesc:utlist_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macros for basic linked list operations. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga9f3779f3c49ddf609c97f1c3d1f29730" id="r_ga9f3779f3c49ddf609c97f1c3d1f29730"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9f3779f3c49ddf609c97f1c3d1f29730">UTLIST_VERSION</a>&#160;&#160;&#160;1.9.9</td></tr>
+<tr class="memdesc:ga9f3779f3c49ddf609c97f1c3d1f29730"><td class="mdescLeft">&#160;</td><td class="mdescRight">Version number.  <br /></td></tr>
+<tr class="separator:ga9f3779f3c49ddf609c97f1c3d1f29730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Compiler dependent defines</h2></td></tr>
+<tr><td class="ititle" colspan="2"><pre class="fragment">     These macros use decltype or the earlier __typeof GNU extension.
+     As decltype is only available in newer compilers (VS2010 or gcc 4.3+
+     when compiling c++ code), this code uses whatever method is needed
+     or, for VS2008 where neither is available, uses casting workarounds.
+
+     For VS2008 we use some workarounds to get around the lack of decltype,
+     namely, we always reassign our tmp variable to the list head if we need
+     to dereference its prev/next pointers, and save/restore the real head.
+</pre> </td></tr>
+<tr class="memitem:gae8c9864192170d02fd996abaa1589611" id="r_gae8c9864192170d02fd996abaa1589611"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae8c9864192170d02fd996abaa1589611">LDECLTYPE</a>(x)</td></tr>
+<tr class="separator:gae8c9864192170d02fd996abaa1589611"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9eded80a8b98df631e889eb72b77c7a4" id="r_ga9eded80a8b98df631e889eb72b77c7a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9eded80a8b98df631e889eb72b77c7a4">_SV</a>(elt,  list)</td></tr>
+<tr class="separator:ga9eded80a8b98df631e889eb72b77c7a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab79af156f04880b077b08b07711bd4e9" id="r_gab79af156f04880b077b08b07711bd4e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab79af156f04880b077b08b07711bd4e9">_NEXT</a>(elt,  list,  next)</td></tr>
+<tr class="separator:gab79af156f04880b077b08b07711bd4e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae45d8aa4fb2a827dda795c6f69723043" id="r_gae45d8aa4fb2a827dda795c6f69723043"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae45d8aa4fb2a827dda795c6f69723043">_NEXTASGN</a>(elt,  list,  to,  next)</td></tr>
+<tr class="separator:gae45d8aa4fb2a827dda795c6f69723043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9d84521388b0859794fa811d5709aa8e" id="r_ga9d84521388b0859794fa811d5709aa8e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9d84521388b0859794fa811d5709aa8e">_PREVASGN</a>(elt,  list,  to,  prev)</td></tr>
+<tr class="separator:ga9d84521388b0859794fa811d5709aa8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9916f2c26fd7f6f7edb1f6baf400f315" id="r_ga9916f2c26fd7f6f7edb1f6baf400f315"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9916f2c26fd7f6f7edb1f6baf400f315">_RS</a>(list)</td></tr>
+<tr class="separator:ga9916f2c26fd7f6f7edb1f6baf400f315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1eb4a3192390405087ef1bb6c57241e3" id="r_ga1eb4a3192390405087ef1bb6c57241e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1eb4a3192390405087ef1bb6c57241e3">_CASTASGN</a>(a,  b)</td></tr>
+<tr class="separator:ga1eb4a3192390405087ef1bb6c57241e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Mergesort based sort macros</h2></td></tr>
+<tr><td class="ititle" colspan="2"><pre class="fragment">     The sort macro is an adaptation of Simon Tatham's O(n log(n)) mergesort
+     Unwieldy variable names used here to avoid shadowing passed-in variables.
+</pre> </td></tr>
+<tr class="memitem:ga0b2137d4a0c157cb7a1a30d9340ece31" id="r_ga0b2137d4a0c157cb7a1a30d9340ece31"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0b2137d4a0c157cb7a1a30d9340ece31">LL_SORT</a>(list,  cmp)</td></tr>
+<tr class="separator:ga0b2137d4a0c157cb7a1a30d9340ece31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab073dee297f8614db97aa576832a3af1" id="r_gab073dee297f8614db97aa576832a3af1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab073dee297f8614db97aa576832a3af1">LL_SORT2</a>(list,  cmp,  next)</td></tr>
+<tr class="separator:gab073dee297f8614db97aa576832a3af1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad966f284f615a2ced4028258fa08f8f3" id="r_gad966f284f615a2ced4028258fa08f8f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad966f284f615a2ced4028258fa08f8f3">DL_SORT</a>(list,  cmp)</td></tr>
+<tr class="separator:gad966f284f615a2ced4028258fa08f8f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a9781c3fa134c9d3c1d190291212e05" id="r_ga1a9781c3fa134c9d3c1d190291212e05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1a9781c3fa134c9d3c1d190291212e05">DL_SORT2</a>(list,  cmp,  prev,  next)</td></tr>
+<tr class="separator:ga1a9781c3fa134c9d3c1d190291212e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga13add78e5524efe1ae6bfb1631b2dc17" id="r_ga13add78e5524efe1ae6bfb1631b2dc17"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga13add78e5524efe1ae6bfb1631b2dc17">CDL_SORT</a>(list,  cmp)</td></tr>
+<tr class="separator:ga13add78e5524efe1ae6bfb1631b2dc17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac4c600b3d7ca043e54692ff4bc143dee" id="r_gac4c600b3d7ca043e54692ff4bc143dee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac4c600b3d7ca043e54692ff4bc143dee">CDL_SORT2</a>(list,  cmp,  prev,  next)</td></tr>
+<tr class="separator:gac4c600b3d7ca043e54692ff4bc143dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Singly linked list macros (non-circular)</h2></td></tr>
+<tr class="memitem:ga851fb4b583b0dc000097eeee6dd551d4" id="r_ga851fb4b583b0dc000097eeee6dd551d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga851fb4b583b0dc000097eeee6dd551d4">LL_PREPEND</a>(head,  add)</td></tr>
+<tr class="memdesc:ga851fb4b583b0dc000097eeee6dd551d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">LL prepend element 'add' to list.  <br /></td></tr>
+<tr class="separator:ga851fb4b583b0dc000097eeee6dd551d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab2de55837ec70d7e467caee1ebe33b9a" id="r_gab2de55837ec70d7e467caee1ebe33b9a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab2de55837ec70d7e467caee1ebe33b9a">LL_PREPEND2</a>(head,  add,  next)</td></tr>
+<tr class="memdesc:gab2de55837ec70d7e467caee1ebe33b9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">LL prepend to list with alternative next ptr name 'next'.  <br /></td></tr>
+<tr class="separator:gab2de55837ec70d7e467caee1ebe33b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga404c4c80c250fc09c7a1a62b039efce7" id="r_ga404c4c80c250fc09c7a1a62b039efce7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga404c4c80c250fc09c7a1a62b039efce7">LL_CONCAT</a>(head1,  head2)</td></tr>
+<tr class="memdesc:ga404c4c80c250fc09c7a1a62b039efce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">LL concat to append second list to first.  <br /></td></tr>
+<tr class="separator:ga404c4c80c250fc09c7a1a62b039efce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaee8b209eb2ba3131a09d3e28e873dbd7" id="r_gaee8b209eb2ba3131a09d3e28e873dbd7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaee8b209eb2ba3131a09d3e28e873dbd7">LL_CONCAT2</a>(head1,  head2,  next)</td></tr>
+<tr class="memdesc:gaee8b209eb2ba3131a09d3e28e873dbd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">LL concat with alternative next ptr name 'next'.  <br /></td></tr>
+<tr class="separator:gaee8b209eb2ba3131a09d3e28e873dbd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gace33c571c3df78e721a99a4494983855" id="r_gace33c571c3df78e721a99a4494983855"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gace33c571c3df78e721a99a4494983855">LL_APPEND</a>(head,  add)</td></tr>
+<tr class="memdesc:gace33c571c3df78e721a99a4494983855"><td class="mdescLeft">&#160;</td><td class="mdescRight">LL append to append element 'add' to list.  <br /></td></tr>
+<tr class="separator:gace33c571c3df78e721a99a4494983855"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7e96b16a0e2dd86c8529fd794bbdbbb4" id="r_ga7e96b16a0e2dd86c8529fd794bbdbbb4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7e96b16a0e2dd86c8529fd794bbdbbb4">LL_APPEND2</a>(head,  add,  next)</td></tr>
+<tr class="memdesc:ga7e96b16a0e2dd86c8529fd794bbdbbb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">LL append with alternative next ptr name 'next'.  <br /></td></tr>
+<tr class="separator:ga7e96b16a0e2dd86c8529fd794bbdbbb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga34a4e54d488753465f6e87bb63b93c0e" id="r_ga34a4e54d488753465f6e87bb63b93c0e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga34a4e54d488753465f6e87bb63b93c0e">LL_DELETE</a>(head,  del)</td></tr>
+<tr class="memdesc:ga34a4e54d488753465f6e87bb63b93c0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">LL delete element 'del' from list.  <br /></td></tr>
+<tr class="separator:ga34a4e54d488753465f6e87bb63b93c0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2737a45962b8f6e79a7dda26f7ef50d8" id="r_ga2737a45962b8f6e79a7dda26f7ef50d8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2737a45962b8f6e79a7dda26f7ef50d8">LL_DELETE2</a>(head,  del,  next)</td></tr>
+<tr class="memdesc:ga2737a45962b8f6e79a7dda26f7ef50d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">LL delete with alternative next ptr name 'name'.  <br /></td></tr>
+<tr class="separator:ga2737a45962b8f6e79a7dda26f7ef50d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3c301ddde2cfd8c32df4137c902b66f3" id="r_ga3c301ddde2cfd8c32df4137c902b66f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3c301ddde2cfd8c32df4137c902b66f3">LL_APPEND_VS2008</a>(head,  add)</td></tr>
+<tr class="separator:ga3c301ddde2cfd8c32df4137c902b66f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacf275657ac7590615cd930f975b8472b" id="r_gacf275657ac7590615cd930f975b8472b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacf275657ac7590615cd930f975b8472b">LL_APPEND2_VS2008</a>(head,  add,  next)</td></tr>
+<tr class="separator:gacf275657ac7590615cd930f975b8472b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga832d4d46464fb2dada9e198ad4f70cdf" id="r_ga832d4d46464fb2dada9e198ad4f70cdf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga832d4d46464fb2dada9e198ad4f70cdf">LL_DELETE_VS2008</a>(head,  del)</td></tr>
+<tr class="separator:ga832d4d46464fb2dada9e198ad4f70cdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0fbcaa0892d4e741467fe1c0ce08f8dc" id="r_ga0fbcaa0892d4e741467fe1c0ce08f8dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0fbcaa0892d4e741467fe1c0ce08f8dc">LL_DELETE2_VS2008</a>(head,  del,  next)</td></tr>
+<tr class="separator:ga0fbcaa0892d4e741467fe1c0ce08f8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga48eab425b28abd2eef58a1e96ef2a145" id="r_ga48eab425b28abd2eef58a1e96ef2a145"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga48eab425b28abd2eef58a1e96ef2a145">LL_COUNT</a>(head,  el,  counter)</td></tr>
+<tr class="memdesc:ga48eab425b28abd2eef58a1e96ef2a145"><td class="mdescLeft">&#160;</td><td class="mdescRight">LL count list elements using 'counter'.  <br /></td></tr>
+<tr class="separator:ga48eab425b28abd2eef58a1e96ef2a145"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa26d31f3f3884088b0af0352b415844b" id="r_gaa26d31f3f3884088b0af0352b415844b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa26d31f3f3884088b0af0352b415844b">LL_COUNT2</a>(head,  el,  counter,  next)</td></tr>
+<tr class="memdesc:gaa26d31f3f3884088b0af0352b415844b"><td class="mdescLeft">&#160;</td><td class="mdescRight">LL count with alternative next ptr name 'next'.  <br /></td></tr>
+<tr class="separator:gaa26d31f3f3884088b0af0352b415844b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga487c0ce49f397e1743caae16a797e4bb" id="r_ga487c0ce49f397e1743caae16a797e4bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga487c0ce49f397e1743caae16a797e4bb">LL_FOREACH</a>(head,  el)</td></tr>
+<tr class="memdesc:ga487c0ce49f397e1743caae16a797e4bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">LL list iteration.  <br /></td></tr>
+<tr class="separator:ga487c0ce49f397e1743caae16a797e4bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga02e4d427da9697e0c8200850972f9a17" id="r_ga02e4d427da9697e0c8200850972f9a17"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga02e4d427da9697e0c8200850972f9a17">LL_FOREACH2</a>(head,  el,  next)</td></tr>
+<tr class="memdesc:ga02e4d427da9697e0c8200850972f9a17"><td class="mdescLeft">&#160;</td><td class="mdescRight">LL list iteration with alternative next ptr name 'next'.  <br /></td></tr>
+<tr class="separator:ga02e4d427da9697e0c8200850972f9a17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad0a695664d31f0b929fd50b39ebcf0ef" id="r_gad0a695664d31f0b929fd50b39ebcf0ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad0a695664d31f0b929fd50b39ebcf0ef">LL_FOREACH_SAFE</a>(head,  el,  tmp)</td></tr>
+<tr class="memdesc:gad0a695664d31f0b929fd50b39ebcf0ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">LL safe list iteration Use if list elements might be deleted while iterating.  <br /></td></tr>
+<tr class="separator:gad0a695664d31f0b929fd50b39ebcf0ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadeb880a3409df5b041f6a9d4ef084dc1" id="r_gadeb880a3409df5b041f6a9d4ef084dc1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadeb880a3409df5b041f6a9d4ef084dc1">LL_FOREACH_SAFE2</a>(head,  el,  tmp,  next)</td></tr>
+<tr class="memdesc:gadeb880a3409df5b041f6a9d4ef084dc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">LL safe list iteration with alternative ptr names.  <br /></td></tr>
+<tr class="separator:gadeb880a3409df5b041f6a9d4ef084dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8c5c97079c5b259e4c0ff7c563b0f8ed" id="r_ga8c5c97079c5b259e4c0ff7c563b0f8ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8c5c97079c5b259e4c0ff7c563b0f8ed">LL_SEARCH_SCALAR</a>(head,  out,  field,  val)</td></tr>
+<tr class="memdesc:ga8c5c97079c5b259e4c0ff7c563b0f8ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">LL scalar search for element with value 'val' for member 'field'.  <br /></td></tr>
+<tr class="separator:ga8c5c97079c5b259e4c0ff7c563b0f8ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga845ca1c4ffd9aa5511a7de108685cf41" id="r_ga845ca1c4ffd9aa5511a7de108685cf41"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga845ca1c4ffd9aa5511a7de108685cf41">LL_SEARCH_SCALAR2</a>(head,  out,  field,  val,  next)</td></tr>
+<tr class="memdesc:ga845ca1c4ffd9aa5511a7de108685cf41"><td class="mdescLeft">&#160;</td><td class="mdescRight">LL scalar search with alternative next ptr name 'next'.  <br /></td></tr>
+<tr class="separator:ga845ca1c4ffd9aa5511a7de108685cf41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf7a5ae66c9386c4b89403d9ca038adcb" id="r_gaf7a5ae66c9386c4b89403d9ca038adcb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf7a5ae66c9386c4b89403d9ca038adcb">LL_SEARCH</a>(head,  out,  elt,  cmp)</td></tr>
+<tr class="memdesc:gaf7a5ae66c9386c4b89403d9ca038adcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">LL search element 'elt' in list using function 'cmp'.  <br /></td></tr>
+<tr class="separator:gaf7a5ae66c9386c4b89403d9ca038adcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac32e87bb9e7e7ee5c50ddd765fec2202" id="r_gac32e87bb9e7e7ee5c50ddd765fec2202"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac32e87bb9e7e7ee5c50ddd765fec2202">LL_SEARCH2</a>(head,  out,  elt,  cmp,  next)</td></tr>
+<tr class="memdesc:gac32e87bb9e7e7ee5c50ddd765fec2202"><td class="mdescLeft">&#160;</td><td class="mdescRight">LL search with alternative next ptr name 'next'.  <br /></td></tr>
+<tr class="separator:gac32e87bb9e7e7ee5c50ddd765fec2202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga13dd262d32d5c66a5cf044e03b849b95" id="r_ga13dd262d32d5c66a5cf044e03b849b95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga13dd262d32d5c66a5cf044e03b849b95">LL_REPLACE_ELEM</a>(head,  el,  add)</td></tr>
+<tr class="memdesc:ga13dd262d32d5c66a5cf044e03b849b95"><td class="mdescLeft">&#160;</td><td class="mdescRight">LL replace element 'el' with element 'add' in list.  <br /></td></tr>
+<tr class="separator:ga13dd262d32d5c66a5cf044e03b849b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga77713cebaee4dc6bec6405e092854c60" id="r_ga77713cebaee4dc6bec6405e092854c60"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga77713cebaee4dc6bec6405e092854c60">LL_PREPEND_ELEM</a>(head,  el,  add)</td></tr>
+<tr class="memdesc:ga77713cebaee4dc6bec6405e092854c60"><td class="mdescLeft">&#160;</td><td class="mdescRight">LL prepend new element 'add' to element 'el' in list.  <br /></td></tr>
+<tr class="separator:ga77713cebaee4dc6bec6405e092854c60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Doubly linked list macros (non-circular)</h2></td></tr>
+<tr class="memitem:ga78be4dea3344ba1b1c7fe1b893c0fdfa" id="r_ga78be4dea3344ba1b1c7fe1b893c0fdfa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga78be4dea3344ba1b1c7fe1b893c0fdfa">DL_PREPEND</a>(head,  add)</td></tr>
+<tr class="memdesc:ga78be4dea3344ba1b1c7fe1b893c0fdfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL prepend element 'add' to list.  <br /></td></tr>
+<tr class="separator:ga78be4dea3344ba1b1c7fe1b893c0fdfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafefdf797fe1e3e3a48a8ff9b4afc8b50" id="r_gafefdf797fe1e3e3a48a8ff9b4afc8b50"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafefdf797fe1e3e3a48a8ff9b4afc8b50">DL_PREPEND2</a>(head,  add,  prev,  next)</td></tr>
+<tr class="memdesc:gafefdf797fe1e3e3a48a8ff9b4afc8b50"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL prepend to list with alternative ptr names.  <br /></td></tr>
+<tr class="separator:gafefdf797fe1e3e3a48a8ff9b4afc8b50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga17d40c945e1dc55490feb2fe160670c8" id="r_ga17d40c945e1dc55490feb2fe160670c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga17d40c945e1dc55490feb2fe160670c8">DL_APPEND</a>(head,  add)</td></tr>
+<tr class="memdesc:ga17d40c945e1dc55490feb2fe160670c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL append to append element 'add' to list.  <br /></td></tr>
+<tr class="separator:ga17d40c945e1dc55490feb2fe160670c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf1aa0473f0cf2a976eb9c2ef18f29531" id="r_gaf1aa0473f0cf2a976eb9c2ef18f29531"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf1aa0473f0cf2a976eb9c2ef18f29531">DL_APPEND2</a>(head,  add,  prev,  next)</td></tr>
+<tr class="memdesc:gaf1aa0473f0cf2a976eb9c2ef18f29531"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL append with alternative next ptr name 'next'.  <br /></td></tr>
+<tr class="separator:gaf1aa0473f0cf2a976eb9c2ef18f29531"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae46c0b5fd5a59cd5f889db7a0e6989bb" id="r_gae46c0b5fd5a59cd5f889db7a0e6989bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae46c0b5fd5a59cd5f889db7a0e6989bb">DL_CONCAT</a>(head1,  head2)</td></tr>
+<tr class="memdesc:gae46c0b5fd5a59cd5f889db7a0e6989bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL concat to append second list to first.  <br /></td></tr>
+<tr class="separator:gae46c0b5fd5a59cd5f889db7a0e6989bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa910e66e69c6d7a0738682c6d6d22764" id="r_gaa910e66e69c6d7a0738682c6d6d22764"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa910e66e69c6d7a0738682c6d6d22764">DL_CONCAT2</a>(head1,  head2,  prev,  next)</td></tr>
+<tr class="memdesc:gaa910e66e69c6d7a0738682c6d6d22764"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL concat with alternative next ptr name 'next'.  <br /></td></tr>
+<tr class="separator:gaa910e66e69c6d7a0738682c6d6d22764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaad429903354ffe8cdf4ca2e9d0ae89cc" id="r_gaad429903354ffe8cdf4ca2e9d0ae89cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaad429903354ffe8cdf4ca2e9d0ae89cc">DL_DELETE</a>(head,  del)</td></tr>
+<tr class="memdesc:gaad429903354ffe8cdf4ca2e9d0ae89cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL delete element 'del' from list.  <br /></td></tr>
+<tr class="separator:gaad429903354ffe8cdf4ca2e9d0ae89cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaba01e54c48a65b3774121fdd0029a6bc" id="r_gaba01e54c48a65b3774121fdd0029a6bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaba01e54c48a65b3774121fdd0029a6bc">DL_DELETE2</a>(head,  del,  prev,  next)</td></tr>
+<tr class="memdesc:gaba01e54c48a65b3774121fdd0029a6bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL delete with alternative ptr names.  <br /></td></tr>
+<tr class="separator:gaba01e54c48a65b3774121fdd0029a6bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga42b6fe6a8a8857d10ccccbade4c08a57" id="r_ga42b6fe6a8a8857d10ccccbade4c08a57"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga42b6fe6a8a8857d10ccccbade4c08a57">DL_COUNT</a>(head,  el,  counter)</td></tr>
+<tr class="memdesc:ga42b6fe6a8a8857d10ccccbade4c08a57"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL count list elements using 'counter'.  <br /></td></tr>
+<tr class="separator:ga42b6fe6a8a8857d10ccccbade4c08a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga695860c5f7a56893d91e30979de513b1" id="r_ga695860c5f7a56893d91e30979de513b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga695860c5f7a56893d91e30979de513b1">DL_COUNT2</a>(head,  el,  counter,  next)</td></tr>
+<tr class="memdesc:ga695860c5f7a56893d91e30979de513b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL count with alternative next ptr name 'next'.  <br /></td></tr>
+<tr class="separator:ga695860c5f7a56893d91e30979de513b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabb0c2851c5f0567be7b8827ce5168ef7" id="r_gabb0c2851c5f0567be7b8827ce5168ef7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabb0c2851c5f0567be7b8827ce5168ef7">DL_FOREACH</a>(head,  el)</td></tr>
+<tr class="memdesc:gabb0c2851c5f0567be7b8827ce5168ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL list iteration.  <br /></td></tr>
+<tr class="separator:gabb0c2851c5f0567be7b8827ce5168ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafa552d80a0e24c462756e5c7d714b590" id="r_gafa552d80a0e24c462756e5c7d714b590"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafa552d80a0e24c462756e5c7d714b590">DL_FOREACH2</a>(head,  el,  next)</td></tr>
+<tr class="memdesc:gafa552d80a0e24c462756e5c7d714b590"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL list iteration with alternative next ptr name 'next'.  <br /></td></tr>
+<tr class="separator:gafa552d80a0e24c462756e5c7d714b590"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3bb0c84a69846d2f019a97ea0b4709aa" id="r_ga3bb0c84a69846d2f019a97ea0b4709aa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3bb0c84a69846d2f019a97ea0b4709aa">DL_FOREACH_SAFE</a>(head,  el,  tmp)</td></tr>
+<tr class="memdesc:ga3bb0c84a69846d2f019a97ea0b4709aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL safe list iteration Use if list elements might be deleted while iterating.  <br /></td></tr>
+<tr class="separator:ga3bb0c84a69846d2f019a97ea0b4709aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacd1252a17e56e7d158488456ed541993" id="r_gacd1252a17e56e7d158488456ed541993"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacd1252a17e56e7d158488456ed541993">DL_FOREACH_SAFE2</a>(head,  el,  tmp,  next)</td></tr>
+<tr class="memdesc:gacd1252a17e56e7d158488456ed541993"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL safe list iteration with alternative ptr names.  <br /></td></tr>
+<tr class="separator:gacd1252a17e56e7d158488456ed541993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga172fce2d647fdedadf0f8080e0441c5b" id="r_ga172fce2d647fdedadf0f8080e0441c5b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga172fce2d647fdedadf0f8080e0441c5b">DL_SEARCH_SCALAR</a>&#160;&#160;&#160;<a class="el" href="#ga8c5c97079c5b259e4c0ff7c563b0f8ed">LL_SEARCH_SCALAR</a></td></tr>
+<tr class="memdesc:ga172fce2d647fdedadf0f8080e0441c5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL scalar search for element with value 'val' for member 'field' Identical to singly-linked counterpart.  <br /></td></tr>
+<tr class="separator:ga172fce2d647fdedadf0f8080e0441c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3d5f0ce5f79edb05478271dc9e20e6c5" id="r_ga3d5f0ce5f79edb05478271dc9e20e6c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3d5f0ce5f79edb05478271dc9e20e6c5">DL_SEARCH_SCALAR2</a>&#160;&#160;&#160;<a class="el" href="#ga845ca1c4ffd9aa5511a7de108685cf41">LL_SEARCH_SCALAR2</a></td></tr>
+<tr class="memdesc:ga3d5f0ce5f79edb05478271dc9e20e6c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL scalar search with alternative next ptr name 'next' Identical to singly-linked counterpart.  <br /></td></tr>
+<tr class="separator:ga3d5f0ce5f79edb05478271dc9e20e6c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga819373d14278b52c313b743acc292ba0" id="r_ga819373d14278b52c313b743acc292ba0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga819373d14278b52c313b743acc292ba0">DL_SEARCH</a>&#160;&#160;&#160;<a class="el" href="#gaf7a5ae66c9386c4b89403d9ca038adcb">LL_SEARCH</a></td></tr>
+<tr class="memdesc:ga819373d14278b52c313b743acc292ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL search element 'elt' in list using function 'cmp' Identical to singly-linked counterpart.  <br /></td></tr>
+<tr class="separator:ga819373d14278b52c313b743acc292ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae2197cbf3fb6d1f63eeb6992a137895a" id="r_gae2197cbf3fb6d1f63eeb6992a137895a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae2197cbf3fb6d1f63eeb6992a137895a">DL_SEARCH2</a>&#160;&#160;&#160;<a class="el" href="#gac32e87bb9e7e7ee5c50ddd765fec2202">LL_SEARCH2</a></td></tr>
+<tr class="memdesc:gae2197cbf3fb6d1f63eeb6992a137895a"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL search with alternative next ptr name 'next' Identical to singly-linked counterpart.  <br /></td></tr>
+<tr class="separator:gae2197cbf3fb6d1f63eeb6992a137895a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadd9446d548ad3917bdaaf5615c592e19" id="r_gadd9446d548ad3917bdaaf5615c592e19"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadd9446d548ad3917bdaaf5615c592e19">DL_REPLACE_ELEM</a>(head,  el,  add)</td></tr>
+<tr class="memdesc:gadd9446d548ad3917bdaaf5615c592e19"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL replace element 'el' with element 'add' in list.  <br /></td></tr>
+<tr class="separator:gadd9446d548ad3917bdaaf5615c592e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4287408f7b0e04773245b8cb462db259" id="r_ga4287408f7b0e04773245b8cb462db259"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4287408f7b0e04773245b8cb462db259">DL_PREPEND_ELEM</a>(head,  el,  add)</td></tr>
+<tr class="memdesc:ga4287408f7b0e04773245b8cb462db259"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL prepend new element 'add' to element 'el' in list.  <br /></td></tr>
+<tr class="separator:ga4287408f7b0e04773245b8cb462db259"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Circular doubly linked list macros</h2></td></tr>
+<tr class="memitem:ga6c6a7232d281eab4b18563b92e5653bd" id="r_ga6c6a7232d281eab4b18563b92e5653bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6c6a7232d281eab4b18563b92e5653bd">CDL_PREPEND</a>(head,  add)</td></tr>
+<tr class="memdesc:ga6c6a7232d281eab4b18563b92e5653bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDL prepend element 'add' to list.  <br /></td></tr>
+<tr class="separator:ga6c6a7232d281eab4b18563b92e5653bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeb32a87bf2738eb64394e8d2eebfacab" id="r_gaeb32a87bf2738eb64394e8d2eebfacab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaeb32a87bf2738eb64394e8d2eebfacab">CDL_PREPEND2</a>(head,  add,  prev,  next)</td></tr>
+<tr class="memdesc:gaeb32a87bf2738eb64394e8d2eebfacab"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDL prepend to list with alternative ptr names.  <br /></td></tr>
+<tr class="separator:gaeb32a87bf2738eb64394e8d2eebfacab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga60fd7696c4d0865f53a07579a7b08235" id="r_ga60fd7696c4d0865f53a07579a7b08235"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga60fd7696c4d0865f53a07579a7b08235">CDL_DELETE</a>(head,  del)</td></tr>
+<tr class="memdesc:ga60fd7696c4d0865f53a07579a7b08235"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDL delete element 'del' from list.  <br /></td></tr>
+<tr class="separator:ga60fd7696c4d0865f53a07579a7b08235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3c74342dfb410c3b8847a0752609ab3a" id="r_ga3c74342dfb410c3b8847a0752609ab3a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3c74342dfb410c3b8847a0752609ab3a">CDL_DELETE2</a>(head,  del,  prev,  next)</td></tr>
+<tr class="memdesc:ga3c74342dfb410c3b8847a0752609ab3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDL delete with alternative ptr names.  <br /></td></tr>
+<tr class="separator:ga3c74342dfb410c3b8847a0752609ab3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga62aadb45076ea124d2ed269d6cbf39cb" id="r_ga62aadb45076ea124d2ed269d6cbf39cb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga62aadb45076ea124d2ed269d6cbf39cb">CDL_COUNT</a>(head,  el,  counter)</td></tr>
+<tr class="memdesc:ga62aadb45076ea124d2ed269d6cbf39cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDL count list elements using 'counter'.  <br /></td></tr>
+<tr class="separator:ga62aadb45076ea124d2ed269d6cbf39cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga49b193f300aacde49996035292a1933a" id="r_ga49b193f300aacde49996035292a1933a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga49b193f300aacde49996035292a1933a">CDL_COUNT2</a>(head,  el,  counter,  next)</td></tr>
+<tr class="memdesc:ga49b193f300aacde49996035292a1933a"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDL count with alternative next ptr name 'next'.  <br /></td></tr>
+<tr class="separator:ga49b193f300aacde49996035292a1933a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga795df7857792d7e811709a060c911a36" id="r_ga795df7857792d7e811709a060c911a36"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga795df7857792d7e811709a060c911a36">CDL_FOREACH</a>(head,  el)</td></tr>
+<tr class="memdesc:ga795df7857792d7e811709a060c911a36"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDL list iteration.  <br /></td></tr>
+<tr class="separator:ga795df7857792d7e811709a060c911a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1cb1a7ba8af85112bd9080f2e5bc3989" id="r_ga1cb1a7ba8af85112bd9080f2e5bc3989"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1cb1a7ba8af85112bd9080f2e5bc3989">CDL_FOREACH2</a>(head,  el,  next)</td></tr>
+<tr class="memdesc:ga1cb1a7ba8af85112bd9080f2e5bc3989"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDL list iteration with alternative next ptr name 'next'.  <br /></td></tr>
+<tr class="separator:ga1cb1a7ba8af85112bd9080f2e5bc3989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabdb80106f7733e37fbe4f62e9d97ccfd" id="r_gabdb80106f7733e37fbe4f62e9d97ccfd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabdb80106f7733e37fbe4f62e9d97ccfd">CDL_FOREACH_SAFE</a>(head,  el,  tmp1,  tmp2)</td></tr>
+<tr class="memdesc:gabdb80106f7733e37fbe4f62e9d97ccfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDL safe list iteration Use if list elements might be deleted while iterating.  <br /></td></tr>
+<tr class="separator:gabdb80106f7733e37fbe4f62e9d97ccfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf70ec71fcb399dcef00f7b5a117e76b" id="r_gaaf70ec71fcb399dcef00f7b5a117e76b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaaf70ec71fcb399dcef00f7b5a117e76b">CDL_FOREACH_SAFE2</a>(head,  el,  tmp1,  tmp2,  prev,  next)</td></tr>
+<tr class="memdesc:gaaf70ec71fcb399dcef00f7b5a117e76b"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDL safe list iteration with alternative ptr names.  <br /></td></tr>
+<tr class="separator:gaaf70ec71fcb399dcef00f7b5a117e76b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad064cddb894b478b3c3cd23719f58651" id="r_gad064cddb894b478b3c3cd23719f58651"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad064cddb894b478b3c3cd23719f58651">CDL_SEARCH_SCALAR</a>(head,  out,  field,  val)</td></tr>
+<tr class="memdesc:gad064cddb894b478b3c3cd23719f58651"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDL scalar search for element with value 'val' for member 'field'.  <br /></td></tr>
+<tr class="separator:gad064cddb894b478b3c3cd23719f58651"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1e2a56abf454af235395317c6444f49f" id="r_ga1e2a56abf454af235395317c6444f49f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1e2a56abf454af235395317c6444f49f">CDL_SEARCH_SCALAR2</a>(head,  out,  field,  val,  next)</td></tr>
+<tr class="memdesc:ga1e2a56abf454af235395317c6444f49f"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDL scalar search with alternative next ptr name 'next'.  <br /></td></tr>
+<tr class="separator:ga1e2a56abf454af235395317c6444f49f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafb329a0bdf1fa0b644317e9d84082e1e" id="r_gafb329a0bdf1fa0b644317e9d84082e1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafb329a0bdf1fa0b644317e9d84082e1e">CDL_SEARCH</a>(head,  out,  elt,  cmp)</td></tr>
+<tr class="memdesc:gafb329a0bdf1fa0b644317e9d84082e1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDL search element 'elt' in list using function 'cmp'.  <br /></td></tr>
+<tr class="separator:gafb329a0bdf1fa0b644317e9d84082e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae5716446b8f83a5cefd4d49f65fb30d1" id="r_gae5716446b8f83a5cefd4d49f65fb30d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae5716446b8f83a5cefd4d49f65fb30d1">CDL_SEARCH2</a>(head,  out,  elt,  cmp,  next)</td></tr>
+<tr class="memdesc:gae5716446b8f83a5cefd4d49f65fb30d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDL search with alternative next ptr name 'next'.  <br /></td></tr>
+<tr class="separator:gae5716446b8f83a5cefd4d49f65fb30d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5481f46b63414b5da0d49d0545b80476" id="r_ga5481f46b63414b5da0d49d0545b80476"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5481f46b63414b5da0d49d0545b80476">CDL_REPLACE_ELEM</a>(head,  el,  add)</td></tr>
+<tr class="memdesc:ga5481f46b63414b5da0d49d0545b80476"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDL replace element 'el' with element 'add' in list.  <br /></td></tr>
+<tr class="separator:ga5481f46b63414b5da0d49d0545b80476"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga01cda67c0b827f7fafad4fb1253300f9" id="r_ga01cda67c0b827f7fafad4fb1253300f9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga01cda67c0b827f7fafad4fb1253300f9">CDL_PREPEND_ELEM</a>(head,  el,  add)</td></tr>
+<tr class="memdesc:ga01cda67c0b827f7fafad4fb1253300f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDL prepend new element 'add' to element 'el' in list.  <br /></td></tr>
+<tr class="separator:ga01cda67c0b827f7fafad4fb1253300f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga1eb4a3192390405087ef1bb6c57241e3" name="ga1eb4a3192390405087ef1bb6c57241e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1eb4a3192390405087ef1bb6c57241e3">&#9670;&#160;</a></span>_CASTASGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _CASTASGN</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(a)=(b)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00123">123</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gab79af156f04880b077b08b07711bd4e9" name="gab79af156f04880b077b08b07711bd4e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab79af156f04880b077b08b07711bd4e9">&#9670;&#160;</a></span>_NEXT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _NEXT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>elt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((elt)-&gt;next)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00118">118</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gae45d8aa4fb2a827dda795c6f69723043" name="gae45d8aa4fb2a827dda795c6f69723043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae45d8aa4fb2a827dda795c6f69723043">&#9670;&#160;</a></span>_NEXTASGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _NEXTASGN</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>elt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>to</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((elt)-&gt;next)=(to)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00119">119</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga9d84521388b0859794fa811d5709aa8e" name="ga9d84521388b0859794fa811d5709aa8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9d84521388b0859794fa811d5709aa8e">&#9670;&#160;</a></span>_PREVASGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _PREVASGN</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>elt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>to</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>prev</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((elt)-&gt;prev)=(to)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00121">121</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga9916f2c26fd7f6f7edb1f6baf400f315" name="ga9916f2c26fd7f6f7edb1f6baf400f315"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9916f2c26fd7f6f7edb1f6baf400f315">&#9670;&#160;</a></span>_RS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _RS</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>list</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00122">122</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga9eded80a8b98df631e889eb72b77c7a4" name="ga9eded80a8b98df631e889eb72b77c7a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9eded80a8b98df631e889eb72b77c7a4">&#9670;&#160;</a></span>_SV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _SV</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>elt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>list</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00117">117</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga62aadb45076ea124d2ed269d6cbf39cb" name="ga62aadb45076ea124d2ed269d6cbf39cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga62aadb45076ea124d2ed269d6cbf39cb">&#9670;&#160;</a></span>CDL_COUNT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CDL_COUNT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>counter</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#ga49b193f300aacde49996035292a1933a">CDL_COUNT2</a>(head,el,counter,next)                                                           \</div>
+<div class="ttc" id="agroup__sys__ut_html_ga49b193f300aacde49996035292a1933a"><div class="ttname"><a href="#ga49b193f300aacde49996035292a1933a">CDL_COUNT2</a></div><div class="ttdeci">#define CDL_COUNT2(head, el, counter, next)</div><div class="ttdoc">CDL count with alternative next ptr name 'next'.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00779">utlist.h:779</a></div></div>
+</div><!-- fragment -->
+<p>CDL count list elements using 'counter'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00775">775</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga49b193f300aacde49996035292a1933a" name="ga49b193f300aacde49996035292a1933a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga49b193f300aacde49996035292a1933a">&#9670;&#160;</a></span>CDL_COUNT2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CDL_COUNT2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>counter</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{                                                                                              \</div>
+<div class="line">    counter = 0;                                                                               \</div>
+<div class="line">    CDL_FOREACH2(head,el,next){ ++counter; }                                                   \</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>CDL count with alternative next ptr name 'next'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00779">779</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga60fd7696c4d0865f53a07579a7b08235" name="ga60fd7696c4d0865f53a07579a7b08235"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga60fd7696c4d0865f53a07579a7b08235">&#9670;&#160;</a></span>CDL_DELETE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CDL_DELETE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>del</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#ga3c74342dfb410c3b8847a0752609ab3a">CDL_DELETE2</a>(head,del,prev,next)</div>
+<div class="ttc" id="agroup__sys__ut_html_ga3c74342dfb410c3b8847a0752609ab3a"><div class="ttname"><a href="#ga3c74342dfb410c3b8847a0752609ab3a">CDL_DELETE2</a></div><div class="ttdeci">#define CDL_DELETE2(head, del, prev, next)</div><div class="ttdoc">CDL delete with alternative ptr names.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00763">utlist.h:763</a></div></div>
+</div><!-- fragment -->
+<p>CDL delete element 'del' from list. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00759">759</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga3c74342dfb410c3b8847a0752609ab3a" name="ga3c74342dfb410c3b8847a0752609ab3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3c74342dfb410c3b8847a0752609ab3a">&#9670;&#160;</a></span>CDL_DELETE2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CDL_DELETE2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>del</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>prev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line">  if ( ((head)==(del)) &amp;&amp; ((head)-&gt;next == (head))) {                                          \</div>
+<div class="line">      (head) = 0L;                                                                             \</div>
+<div class="line">  } <span class="keywordflow">else</span> {                                                                                     \</div>
+<div class="line">     (del)-&gt;next-&gt;prev = (del)-&gt;prev;                                                          \</div>
+<div class="line">     (del)-&gt;prev-&gt;next = (del)-&gt;next;                                                          \</div>
+<div class="line">     if ((del) == (head)) (head)=(del)-&gt;next;                                                  \</div>
+<div class="line">  }                                                                                            \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p>CDL delete with alternative ptr names. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00763">763</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga795df7857792d7e811709a060c911a36" name="ga795df7857792d7e811709a060c911a36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga795df7857792d7e811709a060c911a36">&#9670;&#160;</a></span>CDL_FOREACH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CDL_FOREACH</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#ga1cb1a7ba8af85112bd9080f2e5bc3989">CDL_FOREACH2</a>(head,el,next)</div>
+<div class="ttc" id="agroup__sys__ut_html_ga1cb1a7ba8af85112bd9080f2e5bc3989"><div class="ttname"><a href="#ga1cb1a7ba8af85112bd9080f2e5bc3989">CDL_FOREACH2</a></div><div class="ttdeci">#define CDL_FOREACH2(head, el, next)</div><div class="ttdoc">CDL list iteration with alternative next ptr name 'next'.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00790">utlist.h:790</a></div></div>
+</div><!-- fragment -->
+<p>CDL list iteration. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00786">786</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga1cb1a7ba8af85112bd9080f2e5bc3989" name="ga1cb1a7ba8af85112bd9080f2e5bc3989"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1cb1a7ba8af85112bd9080f2e5bc3989">&#9670;&#160;</a></span>CDL_FOREACH2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CDL_FOREACH2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">for</span>(el=head;el;el=((el)-&gt;next==head ? 0L : (el)-&gt;next))</div>
+</div><!-- fragment -->
+<p>CDL list iteration with alternative next ptr name 'next'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00790">790</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gabdb80106f7733e37fbe4f62e9d97ccfd" name="gabdb80106f7733e37fbe4f62e9d97ccfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabdb80106f7733e37fbe4f62e9d97ccfd">&#9670;&#160;</a></span>CDL_FOREACH_SAFE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CDL_FOREACH_SAFE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>tmp1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>tmp2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#gaaf70ec71fcb399dcef00f7b5a117e76b">CDL_FOREACH_SAFE2</a>(head,el,tmp1,tmp2,prev,next)</div>
+<div class="ttc" id="agroup__sys__ut_html_gaaf70ec71fcb399dcef00f7b5a117e76b"><div class="ttname"><a href="#gaaf70ec71fcb399dcef00f7b5a117e76b">CDL_FOREACH_SAFE2</a></div><div class="ttdeci">#define CDL_FOREACH_SAFE2(head, el, tmp1, tmp2, prev, next)</div><div class="ttdoc">CDL safe list iteration with alternative ptr names.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00801">utlist.h:801</a></div></div>
+</div><!-- fragment -->
+<p>CDL safe list iteration Use if list elements might be deleted while iterating. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00797">797</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gaaf70ec71fcb399dcef00f7b5a117e76b" name="gaaf70ec71fcb399dcef00f7b5a117e76b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaf70ec71fcb399dcef00f7b5a117e76b">&#9670;&#160;</a></span>CDL_FOREACH_SAFE2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CDL_FOREACH_SAFE2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>tmp1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>tmp2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>prev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">for</span>((el)=(head), ((tmp1)=(head)?((head)-&gt;prev):NULL);                                        \</div>
+<div class="line">      (el) &amp;&amp; ((tmp2)=(el)-&gt;next, 1);                                                          \</div>
+<div class="line">      ((el) = (((el)==(tmp1)) ? 0L : (tmp2))))</div>
+</div><!-- fragment -->
+<p>CDL safe list iteration with alternative ptr names. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00801">801</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga6c6a7232d281eab4b18563b92e5653bd" name="ga6c6a7232d281eab4b18563b92e5653bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c6a7232d281eab4b18563b92e5653bd">&#9670;&#160;</a></span>CDL_PREPEND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CDL_PREPEND</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>add</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#gaeb32a87bf2738eb64394e8d2eebfacab">CDL_PREPEND2</a>(head,add,prev,next)</div>
+<div class="ttc" id="agroup__sys__ut_html_gaeb32a87bf2738eb64394e8d2eebfacab"><div class="ttname"><a href="#gaeb32a87bf2738eb64394e8d2eebfacab">CDL_PREPEND2</a></div><div class="ttdeci">#define CDL_PREPEND2(head, add, prev, next)</div><div class="ttdoc">CDL prepend to list with alternative ptr names.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00744">utlist.h:744</a></div></div>
+</div><!-- fragment -->
+<p>CDL prepend element 'add' to list. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00740">740</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gaeb32a87bf2738eb64394e8d2eebfacab" name="gaeb32a87bf2738eb64394e8d2eebfacab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeb32a87bf2738eb64394e8d2eebfacab">&#9670;&#160;</a></span>CDL_PREPEND2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CDL_PREPEND2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>add</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>prev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line"> if (head) {                                                                                   \</div>
+<div class="line">   (add)-&gt;prev = (head)-&gt;prev;                                                                 \</div>
+<div class="line">   (add)-&gt;next = (head);                                                                       \</div>
+<div class="line">   (head)-&gt;prev = (add);                                                                       \</div>
+<div class="line">   (add)-&gt;prev-&gt;next = (add);                                                                  \</div>
+<div class="line"> } <span class="keywordflow">else</span> {                                                                                      \</div>
+<div class="line">   (add)-&gt;prev = (add);                                                                        \</div>
+<div class="line">   (add)-&gt;next = (add);                                                                        \</div>
+<div class="line"> }                                                                                             \</div>
+<div class="line">(head)=(add);                                                                                  \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p>CDL prepend to list with alternative ptr names. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00744">744</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga01cda67c0b827f7fafad4fb1253300f9" name="ga01cda67c0b827f7fafad4fb1253300f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga01cda67c0b827f7fafad4fb1253300f9">&#9670;&#160;</a></span>CDL_PREPEND_ELEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CDL_PREPEND_ELEM</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>add</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line"> assert(head != NULL);                                                                         \</div>
+<div class="line"> assert(el != NULL);                                                                           \</div>
+<div class="line"> assert(add != NULL);                                                                          \</div>
+<div class="line"> (add)-&gt;next = (el);                                                                           \</div>
+<div class="line"> (add)-&gt;prev = (el)-&gt;prev;                                                                     \</div>
+<div class="line"> (el)-&gt;prev = (add);                                                                           \</div>
+<div class="line"> (add)-&gt;prev-&gt;next = (add);                                                                    \</div>
+<div class="line"> if ((head) == (el)) {                                                                         \</div>
+<div class="line">  (head) = (add);                                                                              \</div>
+<div class="line"> }                                                                                             \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p>CDL prepend new element 'add' to element 'el' in list. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00852">852</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga5481f46b63414b5da0d49d0545b80476" name="ga5481f46b63414b5da0d49d0545b80476"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5481f46b63414b5da0d49d0545b80476">&#9670;&#160;</a></span>CDL_REPLACE_ELEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CDL_REPLACE_ELEM</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>add</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line"> assert(head != NULL);                                                                         \</div>
+<div class="line"> assert(el != NULL);                                                                           \</div>
+<div class="line"> assert(add != NULL);                                                                          \</div>
+<div class="line"> if ((el)-&gt;next == (el)) {                                                                     \</div>
+<div class="line">  (add)-&gt;next = (add);                                                                         \</div>
+<div class="line">  (add)-&gt;prev = (add);                                                                         \</div>
+<div class="line">  (head) = (add);                                                                              \</div>
+<div class="line"> } <span class="keywordflow">else</span> {                                                                                      \</div>
+<div class="line">  (add)-&gt;next = (el)-&gt;next;                                                                    \</div>
+<div class="line">  (add)-&gt;prev = (el)-&gt;prev;                                                                    \</div>
+<div class="line">  (add)-&gt;next-&gt;prev = (add);                                                                   \</div>
+<div class="line">  (add)-&gt;prev-&gt;next = (add);                                                                   \</div>
+<div class="line">  if ((head) == (el)) {                                                                        \</div>
+<div class="line">   (head) = (add);                                                                             \</div>
+<div class="line">  }                                                                                            \</div>
+<div class="line"> }                                                                                             \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p>CDL replace element 'el' with element 'add' in list. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00831">831</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gafb329a0bdf1fa0b644317e9d84082e1e" name="gafb329a0bdf1fa0b644317e9d84082e1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafb329a0bdf1fa0b644317e9d84082e1e">&#9670;&#160;</a></span>CDL_SEARCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CDL_SEARCH</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>elt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#gae5716446b8f83a5cefd4d49f65fb30d1">CDL_SEARCH2</a>(head,out,elt,cmp,next)</div>
+<div class="ttc" id="agroup__sys__ut_html_gae5716446b8f83a5cefd4d49f65fb30d1"><div class="ttname"><a href="#gae5716446b8f83a5cefd4d49f65fb30d1">CDL_SEARCH2</a></div><div class="ttdeci">#define CDL_SEARCH2(head, out, elt, cmp, next)</div><div class="ttdoc">CDL search with alternative next ptr name 'next'.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00823">utlist.h:823</a></div></div>
+</div><!-- fragment -->
+<p>CDL search element 'elt' in list using function 'cmp'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00819">819</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gae5716446b8f83a5cefd4d49f65fb30d1" name="gae5716446b8f83a5cefd4d49f65fb30d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae5716446b8f83a5cefd4d49f65fb30d1">&#9670;&#160;</a></span>CDL_SEARCH2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CDL_SEARCH2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>elt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line">    CDL_FOREACH2(head,out,next) {                                                              \</div>
+<div class="line">      if ((cmp(out,elt))==0) break;                                                            \</div>
+<div class="line">    }                                                                                          \</div>
+<div class="line">} while(0)</div>
+</div><!-- fragment -->
+<p>CDL search with alternative next ptr name 'next'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00823">823</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gad064cddb894b478b3c3cd23719f58651" name="gad064cddb894b478b3c3cd23719f58651"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad064cddb894b478b3c3cd23719f58651">&#9670;&#160;</a></span>CDL_SEARCH_SCALAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CDL_SEARCH_SCALAR</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>field</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>val</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#ga1e2a56abf454af235395317c6444f49f">CDL_SEARCH_SCALAR2</a>(head,out,field,val,next)</div>
+<div class="ttc" id="agroup__sys__ut_html_ga1e2a56abf454af235395317c6444f49f"><div class="ttname"><a href="#ga1e2a56abf454af235395317c6444f49f">CDL_SEARCH_SCALAR2</a></div><div class="ttdeci">#define CDL_SEARCH_SCALAR2(head, out, field, val, next)</div><div class="ttdoc">CDL scalar search with alternative next ptr name 'next'.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00811">utlist.h:811</a></div></div>
+</div><!-- fragment -->
+<p>CDL scalar search for element with value 'val' for member 'field'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00807">807</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga1e2a56abf454af235395317c6444f49f" name="ga1e2a56abf454af235395317c6444f49f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1e2a56abf454af235395317c6444f49f">&#9670;&#160;</a></span>CDL_SEARCH_SCALAR2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CDL_SEARCH_SCALAR2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>field</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line">    CDL_FOREACH2(head,out,next) {                                                              \</div>
+<div class="line">      if ((out)-&gt;field == (val)) <span class="keywordflow">break</span>;                                                        \</div>
+<div class="line">    }                                                                                          \</div>
+<div class="line">} <span class="keywordflow">while</span>(0)</div>
+</div><!-- fragment -->
+<p>CDL scalar search with alternative next ptr name 'next'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00811">811</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga13add78e5524efe1ae6bfb1631b2dc17" name="ga13add78e5524efe1ae6bfb1631b2dc17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga13add78e5524efe1ae6bfb1631b2dc17">&#9670;&#160;</a></span>CDL_SORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CDL_SORT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    CDL_SORT2(list, cmp, prev, next)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00258">258</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gac4c600b3d7ca043e54692ff4bc143dee" name="gac4c600b3d7ca043e54692ff4bc143dee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac4c600b3d7ca043e54692ff4bc143dee">&#9670;&#160;</a></span>CDL_SORT2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CDL_SORT2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>prev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00261">261</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga17d40c945e1dc55490feb2fe160670c8" name="ga17d40c945e1dc55490feb2fe160670c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga17d40c945e1dc55490feb2fe160670c8">&#9670;&#160;</a></span>DL_APPEND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_APPEND</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>add</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#gaf1aa0473f0cf2a976eb9c2ef18f29531">DL_APPEND2</a>(head,add,prev,next)</div>
+<div class="ttc" id="agroup__sys__ut_html_gaf1aa0473f0cf2a976eb9c2ef18f29531"><div class="ttname"><a href="#gaf1aa0473f0cf2a976eb9c2ef18f29531">DL_APPEND2</a></div><div class="ttdeci">#define DL_APPEND2(head, add, prev, next)</div><div class="ttdoc">DL append with alternative next ptr name 'next'.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00580">utlist.h:580</a></div></div>
+</div><!-- fragment -->
+<p>DL append to append element 'add' to list. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00576">576</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf1aa0473f0cf2a976eb9c2ef18f29531" name="gaf1aa0473f0cf2a976eb9c2ef18f29531"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf1aa0473f0cf2a976eb9c2ef18f29531">&#9670;&#160;</a></span>DL_APPEND2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_APPEND2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>add</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>prev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line">  if (head) {                                                                                  \</div>
+<div class="line">      (add)-&gt;prev = (head)-&gt;prev;                                                              \</div>
+<div class="line">      (head)-&gt;prev-&gt;next = (add);                                                              \</div>
+<div class="line">      (head)-&gt;prev = (add);                                                                    \</div>
+<div class="line">      (add)-&gt;next = NULL;                                                                      \</div>
+<div class="line">  } <span class="keywordflow">else</span> {                                                                                     \</div>
+<div class="line">      (head)=(add);                                                                            \</div>
+<div class="line">      (head)-&gt;prev = (head);                                                                   \</div>
+<div class="line">      (head)-&gt;next = NULL;                                                                     \</div>
+<div class="line">  }                                                                                            \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p>DL append with alternative next ptr name 'next'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00580">580</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gae46c0b5fd5a59cd5f889db7a0e6989bb" name="gae46c0b5fd5a59cd5f889db7a0e6989bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae46c0b5fd5a59cd5f889db7a0e6989bb">&#9670;&#160;</a></span>DL_CONCAT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_CONCAT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#gaa910e66e69c6d7a0738682c6d6d22764">DL_CONCAT2</a>(head1,head2,prev,next)</div>
+<div class="ttc" id="agroup__sys__ut_html_gaa910e66e69c6d7a0738682c6d6d22764"><div class="ttname"><a href="#gaa910e66e69c6d7a0738682c6d6d22764">DL_CONCAT2</a></div><div class="ttdeci">#define DL_CONCAT2(head1, head2, prev, next)</div><div class="ttdoc">DL concat with alternative next ptr name 'next'.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00599">utlist.h:599</a></div></div>
+</div><!-- fragment -->
+<p>DL concat to append second list to first. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00595">595</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gaa910e66e69c6d7a0738682c6d6d22764" name="gaa910e66e69c6d7a0738682c6d6d22764"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa910e66e69c6d7a0738682c6d6d22764">&#9670;&#160;</a></span>DL_CONCAT2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_CONCAT2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>prev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line">  LDECLTYPE(head1) _tmp;                                                                       \</div>
+<div class="line">  if (head2) {                                                                                 \</div>
+<div class="line">    if (head1) {                                                                               \</div>
+<div class="line">        _tmp = (head2)-&gt;prev;                                                                  \</div>
+<div class="line">        (head2)-&gt;prev = (head1)-&gt;prev;                                                         \</div>
+<div class="line">        (head1)-&gt;prev-&gt;next = (head2);                                                         \</div>
+<div class="line">        (head1)-&gt;prev = _tmp;                                                                  \</div>
+<div class="line">    } <span class="keywordflow">else</span> {                                                                                   \</div>
+<div class="line">        (head1)=(head2);                                                                       \</div>
+<div class="line">    }                                                                                          \</div>
+<div class="line">  }                                                                                            \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p>DL concat with alternative next ptr name 'next'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00599">599</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga42b6fe6a8a8857d10ccccbade4c08a57" name="ga42b6fe6a8a8857d10ccccbade4c08a57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga42b6fe6a8a8857d10ccccbade4c08a57">&#9670;&#160;</a></span>DL_COUNT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_COUNT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>counter</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#ga695860c5f7a56893d91e30979de513b1">DL_COUNT2</a>(head,el,counter,next)                                                            \</div>
+<div class="ttc" id="agroup__sys__ut_html_ga695860c5f7a56893d91e30979de513b1"><div class="ttname"><a href="#ga695860c5f7a56893d91e30979de513b1">DL_COUNT2</a></div><div class="ttdeci">#define DL_COUNT2(head, el, counter, next)</div><div class="ttdoc">DL count with alternative next ptr name 'next'.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00642">utlist.h:642</a></div></div>
+</div><!-- fragment -->
+<p>DL count list elements using 'counter'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00638">638</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga695860c5f7a56893d91e30979de513b1" name="ga695860c5f7a56893d91e30979de513b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga695860c5f7a56893d91e30979de513b1">&#9670;&#160;</a></span>DL_COUNT2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_COUNT2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>counter</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{                                                                                              \</div>
+<div class="line">    counter = 0;                                                                               \</div>
+<div class="line">    DL_FOREACH2(head,el,next){ ++counter; }                                                    \</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>DL count with alternative next ptr name 'next'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00642">642</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gaad429903354ffe8cdf4ca2e9d0ae89cc" name="gaad429903354ffe8cdf4ca2e9d0ae89cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaad429903354ffe8cdf4ca2e9d0ae89cc">&#9670;&#160;</a></span>DL_DELETE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_DELETE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>del</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#gaba01e54c48a65b3774121fdd0029a6bc">DL_DELETE2</a>(head,del,prev,next)</div>
+<div class="ttc" id="agroup__sys__ut_html_gaba01e54c48a65b3774121fdd0029a6bc"><div class="ttname"><a href="#gaba01e54c48a65b3774121fdd0029a6bc">DL_DELETE2</a></div><div class="ttdeci">#define DL_DELETE2(head, del, prev, next)</div><div class="ttdoc">DL delete with alternative ptr names.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00619">utlist.h:619</a></div></div>
+</div><!-- fragment -->
+<p>DL delete element 'del' from list. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00615">615</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gaba01e54c48a65b3774121fdd0029a6bc" name="gaba01e54c48a65b3774121fdd0029a6bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaba01e54c48a65b3774121fdd0029a6bc">&#9670;&#160;</a></span>DL_DELETE2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_DELETE2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>del</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>prev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line">  assert((del)-&gt;prev != NULL);                                                                 \</div>
+<div class="line">  if ((del)-&gt;prev == (del)) {                                                                  \</div>
+<div class="line">      (head)=NULL;                                                                             \</div>
+<div class="line">  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((del)==(head)) {                                                                  \</div>
+<div class="line">      (del)-&gt;next-&gt;prev = (del)-&gt;prev;                                                         \</div>
+<div class="line">      (head) = (del)-&gt;next;                                                                    \</div>
+<div class="line">  } <span class="keywordflow">else</span> {                                                                                     \</div>
+<div class="line">      (del)-&gt;prev-&gt;next = (del)-&gt;next;                                                         \</div>
+<div class="line">      if ((del)-&gt;next) {                                                                       \</div>
+<div class="line">          (del)-&gt;next-&gt;prev = (del)-&gt;prev;                                                     \</div>
+<div class="line">      } <span class="keywordflow">else</span> {                                                                                 \</div>
+<div class="line">          (head)-&gt;prev = (del)-&gt;prev;                                                          \</div>
+<div class="line">      }                                                                                        \</div>
+<div class="line">  }                                                                                            \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p>DL delete with alternative ptr names. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00619">619</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gabb0c2851c5f0567be7b8827ce5168ef7" name="gabb0c2851c5f0567be7b8827ce5168ef7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabb0c2851c5f0567be7b8827ce5168ef7">&#9670;&#160;</a></span>DL_FOREACH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_FOREACH</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#gafa552d80a0e24c462756e5c7d714b590">DL_FOREACH2</a>(head,el,next)</div>
+<div class="ttc" id="agroup__sys__ut_html_gafa552d80a0e24c462756e5c7d714b590"><div class="ttname"><a href="#gafa552d80a0e24c462756e5c7d714b590">DL_FOREACH2</a></div><div class="ttdeci">#define DL_FOREACH2(head, el, next)</div><div class="ttdoc">DL list iteration with alternative next ptr name 'next'.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00653">utlist.h:653</a></div></div>
+</div><!-- fragment -->
+<p>DL list iteration. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00649">649</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gafa552d80a0e24c462756e5c7d714b590" name="gafa552d80a0e24c462756e5c7d714b590"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafa552d80a0e24c462756e5c7d714b590">&#9670;&#160;</a></span>DL_FOREACH2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_FOREACH2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">for</span>(el=head;el;el=(el)-&gt;next)</div>
+</div><!-- fragment -->
+<p>DL list iteration with alternative next ptr name 'next'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00653">653</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga3bb0c84a69846d2f019a97ea0b4709aa" name="ga3bb0c84a69846d2f019a97ea0b4709aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3bb0c84a69846d2f019a97ea0b4709aa">&#9670;&#160;</a></span>DL_FOREACH_SAFE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_FOREACH_SAFE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>tmp</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#gacd1252a17e56e7d158488456ed541993">DL_FOREACH_SAFE2</a>(head,el,tmp,next)</div>
+<div class="ttc" id="agroup__sys__ut_html_gacd1252a17e56e7d158488456ed541993"><div class="ttname"><a href="#gacd1252a17e56e7d158488456ed541993">DL_FOREACH_SAFE2</a></div><div class="ttdeci">#define DL_FOREACH_SAFE2(head, el, tmp, next)</div><div class="ttdoc">DL safe list iteration with alternative ptr names.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00664">utlist.h:664</a></div></div>
+</div><!-- fragment -->
+<p>DL safe list iteration Use if list elements might be deleted while iterating. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00660">660</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gacd1252a17e56e7d158488456ed541993" name="gacd1252a17e56e7d158488456ed541993"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacd1252a17e56e7d158488456ed541993">&#9670;&#160;</a></span>DL_FOREACH_SAFE2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_FOREACH_SAFE2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>tmp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">for</span>((el)=(head);(el) &amp;&amp; (tmp = (el)-&gt;next, 1); (el) = tmp)</div>
+</div><!-- fragment -->
+<p>DL safe list iteration with alternative ptr names. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00664">664</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga78be4dea3344ba1b1c7fe1b893c0fdfa" name="ga78be4dea3344ba1b1c7fe1b893c0fdfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga78be4dea3344ba1b1c7fe1b893c0fdfa">&#9670;&#160;</a></span>DL_PREPEND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_PREPEND</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>add</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#gafefdf797fe1e3e3a48a8ff9b4afc8b50">DL_PREPEND2</a>(head,add,prev,next)</div>
+<div class="ttc" id="agroup__sys__ut_html_gafefdf797fe1e3e3a48a8ff9b4afc8b50"><div class="ttname"><a href="#gafefdf797fe1e3e3a48a8ff9b4afc8b50">DL_PREPEND2</a></div><div class="ttdeci">#define DL_PREPEND2(head, add, prev, next)</div><div class="ttdoc">DL prepend to list with alternative ptr names.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00563">utlist.h:563</a></div></div>
+</div><!-- fragment -->
+<p>DL prepend element 'add' to list. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00559">559</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gafefdf797fe1e3e3a48a8ff9b4afc8b50" name="gafefdf797fe1e3e3a48a8ff9b4afc8b50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafefdf797fe1e3e3a48a8ff9b4afc8b50">&#9670;&#160;</a></span>DL_PREPEND2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_PREPEND2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>add</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>prev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line"> (add)-&gt;next = head;                                                                           \</div>
+<div class="line"> if (head) {                                                                                   \</div>
+<div class="line">   (add)-&gt;prev = (head)-&gt;prev;                                                                 \</div>
+<div class="line">   (head)-&gt;prev = (add);                                                                       \</div>
+<div class="line"> } <span class="keywordflow">else</span> {                                                                                      \</div>
+<div class="line">   (add)-&gt;prev = (add);                                                                        \</div>
+<div class="line"> }                                                                                             \</div>
+<div class="line"> (head) = (add);                                                                               \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p>DL prepend to list with alternative ptr names. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00563">563</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga4287408f7b0e04773245b8cb462db259" name="ga4287408f7b0e04773245b8cb462db259"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4287408f7b0e04773245b8cb462db259">&#9670;&#160;</a></span>DL_PREPEND_ELEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_PREPEND_ELEM</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>add</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line"> assert(head != NULL);                                                                         \</div>
+<div class="line"> assert(el != NULL);                                                                           \</div>
+<div class="line"> assert(add != NULL);                                                                          \</div>
+<div class="line"> (add)-&gt;next = (el);                                                                           \</div>
+<div class="line"> (add)-&gt;prev = (el)-&gt;prev;                                                                     \</div>
+<div class="line"> (el)-&gt;prev = (add);                                                                           \</div>
+<div class="line"> if ((head) == (el)) {                                                                         \</div>
+<div class="line">  (head) = (add);                                                                              \</div>
+<div class="line"> } <span class="keywordflow">else</span> {                                                                                      \</div>
+<div class="line">  (add)-&gt;prev-&gt;next = (add);                                                                   \</div>
+<div class="line"> }                                                                                             \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p>DL prepend new element 'add' to element 'el' in list. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00719">719</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gadd9446d548ad3917bdaaf5615c592e19" name="gadd9446d548ad3917bdaaf5615c592e19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadd9446d548ad3917bdaaf5615c592e19">&#9670;&#160;</a></span>DL_REPLACE_ELEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_REPLACE_ELEM</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>add</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line"> assert(head != NULL);                                                                         \</div>
+<div class="line"> assert(el != NULL);                                                                           \</div>
+<div class="line"> assert(add != NULL);                                                                          \</div>
+<div class="line"> if ((head) == (el)) {                                                                         \</div>
+<div class="line">  (head) = (add);                                                                              \</div>
+<div class="line">  (add)-&gt;next = (el)-&gt;next;                                                                    \</div>
+<div class="line">  if ((el)-&gt;next == NULL) {                                                                    \</div>
+<div class="line">   (add)-&gt;prev = (add);                                                                        \</div>
+<div class="line">  } <span class="keywordflow">else</span> {                                                                                     \</div>
+<div class="line">   (add)-&gt;prev = (el)-&gt;prev;                                                                   \</div>
+<div class="line">   (add)-&gt;next-&gt;prev = (add);                                                                  \</div>
+<div class="line">  }                                                                                            \</div>
+<div class="line"> } <span class="keywordflow">else</span> {                                                                                      \</div>
+<div class="line">  (add)-&gt;next = (el)-&gt;next;                                                                    \</div>
+<div class="line">  (add)-&gt;prev = (el)-&gt;prev;                                                                    \</div>
+<div class="line">  (add)-&gt;prev-&gt;next = (add);                                                                   \</div>
+<div class="line">  if ((el)-&gt;next == NULL) {                                                                    \</div>
+<div class="line">   (head)-&gt;prev = (add);                                                                       \</div>
+<div class="line">  } <span class="keywordflow">else</span> {                                                                                     \</div>
+<div class="line">   (add)-&gt;next-&gt;prev = (add);                                                                  \</div>
+<div class="line">  }                                                                                            \</div>
+<div class="line"> }                                                                                             \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p>DL replace element 'el' with element 'add' in list. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00692">692</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga819373d14278b52c313b743acc292ba0" name="ga819373d14278b52c313b743acc292ba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga819373d14278b52c313b743acc292ba0">&#9670;&#160;</a></span>DL_SEARCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_SEARCH&#160;&#160;&#160;<a class="el" href="#gaf7a5ae66c9386c4b89403d9ca038adcb">LL_SEARCH</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DL search element 'elt' in list using function 'cmp' Identical to singly-linked counterpart. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00683">683</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gae2197cbf3fb6d1f63eeb6992a137895a" name="gae2197cbf3fb6d1f63eeb6992a137895a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae2197cbf3fb6d1f63eeb6992a137895a">&#9670;&#160;</a></span>DL_SEARCH2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_SEARCH2&#160;&#160;&#160;<a class="el" href="#gac32e87bb9e7e7ee5c50ddd765fec2202">LL_SEARCH2</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DL search with alternative next ptr name 'next' Identical to singly-linked counterpart. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00689">689</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga172fce2d647fdedadf0f8080e0441c5b" name="ga172fce2d647fdedadf0f8080e0441c5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga172fce2d647fdedadf0f8080e0441c5b">&#9670;&#160;</a></span>DL_SEARCH_SCALAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_SEARCH_SCALAR&#160;&#160;&#160;<a class="el" href="#ga8c5c97079c5b259e4c0ff7c563b0f8ed">LL_SEARCH_SCALAR</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DL scalar search for element with value 'val' for member 'field' Identical to singly-linked counterpart. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00671">671</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga3d5f0ce5f79edb05478271dc9e20e6c5" name="ga3d5f0ce5f79edb05478271dc9e20e6c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3d5f0ce5f79edb05478271dc9e20e6c5">&#9670;&#160;</a></span>DL_SEARCH_SCALAR2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_SEARCH_SCALAR2&#160;&#160;&#160;<a class="el" href="#ga845ca1c4ffd9aa5511a7de108685cf41">LL_SEARCH_SCALAR2</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DL scalar search with alternative next ptr name 'next' Identical to singly-linked counterpart. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00677">677</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gad966f284f615a2ced4028258fa08f8f3" name="gad966f284f615a2ced4028258fa08f8f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad966f284f615a2ced4028258fa08f8f3">&#9670;&#160;</a></span>DL_SORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_SORT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    DL_SORT2(list, cmp, prev, next)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00196">196</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga1a9781c3fa134c9d3c1d190291212e05" name="ga1a9781c3fa134c9d3c1d190291212e05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1a9781c3fa134c9d3c1d190291212e05">&#9670;&#160;</a></span>DL_SORT2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DL_SORT2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>prev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00199">199</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gae8c9864192170d02fd996abaa1589611" name="gae8c9864192170d02fd996abaa1589611"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae8c9864192170d02fd996abaa1589611">&#9670;&#160;</a></span>LDECLTYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LDECLTYPE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">__typeof(x)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00105">105</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gace33c571c3df78e721a99a4494983855" name="gace33c571c3df78e721a99a4494983855"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gace33c571c3df78e721a99a4494983855">&#9670;&#160;</a></span>LL_APPEND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_APPEND</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>add</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#ga7e96b16a0e2dd86c8529fd794bbdbbb4">LL_APPEND2</a>(head,add,next)</div>
+<div class="ttc" id="agroup__sys__ut_html_ga7e96b16a0e2dd86c8529fd794bbdbbb4"><div class="ttname"><a href="#ga7e96b16a0e2dd86c8529fd794bbdbbb4">LL_APPEND2</a></div><div class="ttdeci">#define LL_APPEND2(head, add, next)</div><div class="ttdoc">LL append with alternative next ptr name 'next'.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00372">utlist.h:372</a></div></div>
+</div><!-- fragment -->
+<p>LL append to append element 'add' to list. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00368">368</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga7e96b16a0e2dd86c8529fd794bbdbbb4" name="ga7e96b16a0e2dd86c8529fd794bbdbbb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7e96b16a0e2dd86c8529fd794bbdbbb4">&#9670;&#160;</a></span>LL_APPEND2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_APPEND2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>add</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line">  LDECLTYPE(head) _tmp;                                                                        \</div>
+<div class="line">  (add)-&gt;next=NULL;                                                                            \</div>
+<div class="line">  if (head) {                                                                                  \</div>
+<div class="line">    _tmp = head;                                                                               \</div>
+<div class="line">    while (_tmp-&gt;next) { _tmp = _tmp-&gt;next; }                                                  \</div>
+<div class="line">    _tmp-&gt;next=(add);                                                                          \</div>
+<div class="line">  } <span class="keywordflow">else</span> {                                                                                     \</div>
+<div class="line">    (head)=(add);                                                                              \</div>
+<div class="line">  }                                                                                            \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p>LL append with alternative next ptr name 'next'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00372">372</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gacf275657ac7590615cd930f975b8472b" name="gacf275657ac7590615cd930f975b8472b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacf275657ac7590615cd930f975b8472b">&#9670;&#160;</a></span>LL_APPEND2_VS2008</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_APPEND2_VS2008</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>add</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line">  if (head) {                                                                                  \</div>
+<div class="line">    (add)-&gt;next = head;     <span class="comment">/* use add-&gt;next as a temp variable */</span>                             \</div>
+<div class="line">    while ((add)-&gt;next-&gt;next) { (add)-&gt;next = (add)-&gt;next-&gt;next; }                             \</div>
+<div class="line">    (add)-&gt;next-&gt;next=(add);                                                                   \</div>
+<div class="line">  } <span class="keywordflow">else</span> {                                                                                     \</div>
+<div class="line">    (head)=(add);                                                                              \</div>
+<div class="line">  }                                                                                            \</div>
+<div class="line">  (add)-&gt;next=NULL;                                                                            \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00410">410</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga3c301ddde2cfd8c32df4137c902b66f3" name="ga3c301ddde2cfd8c32df4137c902b66f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3c301ddde2cfd8c32df4137c902b66f3">&#9670;&#160;</a></span>LL_APPEND_VS2008</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_APPEND_VS2008</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>add</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    LL_APPEND2_VS2008(head,add,next)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00407">407</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga404c4c80c250fc09c7a1a62b039efce7" name="ga404c4c80c250fc09c7a1a62b039efce7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga404c4c80c250fc09c7a1a62b039efce7">&#9670;&#160;</a></span>LL_CONCAT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_CONCAT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#gaee8b209eb2ba3131a09d3e28e873dbd7">LL_CONCAT2</a>(head1,head2,next)</div>
+<div class="ttc" id="agroup__sys__ut_html_gaee8b209eb2ba3131a09d3e28e873dbd7"><div class="ttname"><a href="#gaee8b209eb2ba3131a09d3e28e873dbd7">LL_CONCAT2</a></div><div class="ttdeci">#define LL_CONCAT2(head1, head2, next)</div><div class="ttdoc">LL concat with alternative next ptr name 'next'.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00355">utlist.h:355</a></div></div>
+</div><!-- fragment -->
+<p>LL concat to append second list to first. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00351">351</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gaee8b209eb2ba3131a09d3e28e873dbd7" name="gaee8b209eb2ba3131a09d3e28e873dbd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaee8b209eb2ba3131a09d3e28e873dbd7">&#9670;&#160;</a></span>LL_CONCAT2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_CONCAT2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line">  LDECLTYPE(head1) _tmp;                                                                       \</div>
+<div class="line">  if (head1) {                                                                                 \</div>
+<div class="line">    _tmp = head1;                                                                              \</div>
+<div class="line">    while (_tmp-&gt;next) { _tmp = _tmp-&gt;next; }                                                  \</div>
+<div class="line">    _tmp-&gt;next=(head2);                                                                        \</div>
+<div class="line">  } <span class="keywordflow">else</span> {                                                                                     \</div>
+<div class="line">    (head1)=(head2);                                                                           \</div>
+<div class="line">  }                                                                                            \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p>LL concat with alternative next ptr name 'next'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00355">355</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga48eab425b28abd2eef58a1e96ef2a145" name="ga48eab425b28abd2eef58a1e96ef2a145"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga48eab425b28abd2eef58a1e96ef2a145">&#9670;&#160;</a></span>LL_COUNT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_COUNT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>counter</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#gaa26d31f3f3884088b0af0352b415844b">LL_COUNT2</a>(head,el,counter,next)                                                            \</div>
+<div class="ttc" id="agroup__sys__ut_html_gaa26d31f3f3884088b0af0352b415844b"><div class="ttname"><a href="#gaa26d31f3f3884088b0af0352b415844b">LL_COUNT2</a></div><div class="ttdeci">#define LL_COUNT2(head, el, counter, next)</div><div class="ttdoc">LL count with alternative next ptr name 'next'.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00462">utlist.h:462</a></div></div>
+</div><!-- fragment -->
+<p>LL count list elements using 'counter'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00458">458</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gaa26d31f3f3884088b0af0352b415844b" name="gaa26d31f3f3884088b0af0352b415844b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa26d31f3f3884088b0af0352b415844b">&#9670;&#160;</a></span>LL_COUNT2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_COUNT2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>counter</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{                                                                                              \</div>
+<div class="line">    counter = 0;                                                                               \</div>
+<div class="line">    LL_FOREACH2(head,el,next){ ++counter; }                                                    \</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>LL count with alternative next ptr name 'next'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00462">462</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga34a4e54d488753465f6e87bb63b93c0e" name="ga34a4e54d488753465f6e87bb63b93c0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga34a4e54d488753465f6e87bb63b93c0e">&#9670;&#160;</a></span>LL_DELETE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_DELETE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>del</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#ga2737a45962b8f6e79a7dda26f7ef50d8">LL_DELETE2</a>(head,del,next)</div>
+<div class="ttc" id="agroup__sys__ut_html_ga2737a45962b8f6e79a7dda26f7ef50d8"><div class="ttname"><a href="#ga2737a45962b8f6e79a7dda26f7ef50d8">LL_DELETE2</a></div><div class="ttdeci">#define LL_DELETE2(head, del, next)</div><div class="ttdoc">LL delete with alternative next ptr name 'name'.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00390">utlist.h:390</a></div></div>
+</div><!-- fragment -->
+<p>LL delete element 'del' from list. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00386">386</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga2737a45962b8f6e79a7dda26f7ef50d8" name="ga2737a45962b8f6e79a7dda26f7ef50d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2737a45962b8f6e79a7dda26f7ef50d8">&#9670;&#160;</a></span>LL_DELETE2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_DELETE2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>del</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line">  LDECLTYPE(head) _tmp;                                                                        \</div>
+<div class="line">  if ((head) == (del)) {                                                                       \</div>
+<div class="line">    (head)=(head)-&gt;next;                                                                       \</div>
+<div class="line">  } <span class="keywordflow">else</span> {                                                                                     \</div>
+<div class="line">    _tmp = head;                                                                               \</div>
+<div class="line">    while (_tmp-&gt;next &amp;&amp; (_tmp-&gt;next != (del))) {                                              \</div>
+<div class="line">      _tmp = _tmp-&gt;next;                                                                       \</div>
+<div class="line">    }                                                                                          \</div>
+<div class="line">    if (_tmp-&gt;next) {                                                                          \</div>
+<div class="line">      _tmp-&gt;next = ((del)-&gt;next);                                                              \</div>
+<div class="line">    }                                                                                          \</div>
+<div class="line">  }                                                                                            \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p>LL delete with alternative next ptr name 'name'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00390">390</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga0fbcaa0892d4e741467fe1c0ce08f8dc" name="ga0fbcaa0892d4e741467fe1c0ce08f8dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0fbcaa0892d4e741467fe1c0ce08f8dc">&#9670;&#160;</a></span>LL_DELETE2_VS2008</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_DELETE2_VS2008</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>del</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line">  if ((head) == (del)) {                                                                       \</div>
+<div class="line">    (head)=(head)-&gt;next;                                                                       \</div>
+<div class="line">  } <span class="keywordflow">else</span> {                                                                                     \</div>
+<div class="line">    <span class="keywordtype">char</span> *_tmp = (<span class="keywordtype">char</span>*)(head);                                                                \</div>
+<div class="line">    while ((head)-&gt;next &amp;&amp; ((head)-&gt;next != (del))) {                                          \</div>
+<div class="line">      head = (head)-&gt;next;                                                                     \</div>
+<div class="line">    }                                                                                          \</div>
+<div class="line">    if ((head)-&gt;next) {                                                                        \</div>
+<div class="line">      (head)-&gt;next = ((del)-&gt;next);                                                            \</div>
+<div class="line">    }                                                                                          \</div>
+<div class="line">    {                                                                                          \</div>
+<div class="line">      <span class="keywordtype">char</span> **_head_alias = (<span class="keywordtype">char</span>**)&amp;(head);                                                    \</div>
+<div class="line">      *_head_alias = _tmp;                                                                     \</div>
+<div class="line">    }                                                                                          \</div>
+<div class="line">  }                                                                                            \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00425">425</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga832d4d46464fb2dada9e198ad4f70cdf" name="ga832d4d46464fb2dada9e198ad4f70cdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga832d4d46464fb2dada9e198ad4f70cdf">&#9670;&#160;</a></span>LL_DELETE_VS2008</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_DELETE_VS2008</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>del</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    LL_DELETE2_VS2008(head,del,next)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00422">422</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga487c0ce49f397e1743caae16a797e4bb" name="ga487c0ce49f397e1743caae16a797e4bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga487c0ce49f397e1743caae16a797e4bb">&#9670;&#160;</a></span>LL_FOREACH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_FOREACH</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#ga02e4d427da9697e0c8200850972f9a17">LL_FOREACH2</a>(head,el,next)</div>
+<div class="ttc" id="agroup__sys__ut_html_ga02e4d427da9697e0c8200850972f9a17"><div class="ttname"><a href="#ga02e4d427da9697e0c8200850972f9a17">LL_FOREACH2</a></div><div class="ttdeci">#define LL_FOREACH2(head, el, next)</div><div class="ttdoc">LL list iteration with alternative next ptr name 'next'.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00473">utlist.h:473</a></div></div>
+</div><!-- fragment -->
+<p>LL list iteration. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00469">469</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga02e4d427da9697e0c8200850972f9a17" name="ga02e4d427da9697e0c8200850972f9a17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga02e4d427da9697e0c8200850972f9a17">&#9670;&#160;</a></span>LL_FOREACH2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_FOREACH2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">for</span>(el=head;el;el=(el)-&gt;next)</div>
+</div><!-- fragment -->
+<p>LL list iteration with alternative next ptr name 'next'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00473">473</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gad0a695664d31f0b929fd50b39ebcf0ef" name="gad0a695664d31f0b929fd50b39ebcf0ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad0a695664d31f0b929fd50b39ebcf0ef">&#9670;&#160;</a></span>LL_FOREACH_SAFE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_FOREACH_SAFE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>tmp</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#gadeb880a3409df5b041f6a9d4ef084dc1">LL_FOREACH_SAFE2</a>(head,el,tmp,next)</div>
+<div class="ttc" id="agroup__sys__ut_html_gadeb880a3409df5b041f6a9d4ef084dc1"><div class="ttname"><a href="#gadeb880a3409df5b041f6a9d4ef084dc1">LL_FOREACH_SAFE2</a></div><div class="ttdeci">#define LL_FOREACH_SAFE2(head, el, tmp, next)</div><div class="ttdoc">LL safe list iteration with alternative ptr names.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00484">utlist.h:484</a></div></div>
+</div><!-- fragment -->
+<p>LL safe list iteration Use if list elements might be deleted while iterating. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00480">480</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gadeb880a3409df5b041f6a9d4ef084dc1" name="gadeb880a3409df5b041f6a9d4ef084dc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadeb880a3409df5b041f6a9d4ef084dc1">&#9670;&#160;</a></span>LL_FOREACH_SAFE2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_FOREACH_SAFE2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>tmp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">for</span>((el)=(head);(el) &amp;&amp; (tmp = (el)-&gt;next, 1); (el) = tmp)</div>
+</div><!-- fragment -->
+<p>LL safe list iteration with alternative ptr names. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00484">484</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga851fb4b583b0dc000097eeee6dd551d4" name="ga851fb4b583b0dc000097eeee6dd551d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga851fb4b583b0dc000097eeee6dd551d4">&#9670;&#160;</a></span>LL_PREPEND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_PREPEND</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>add</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#gab2de55837ec70d7e467caee1ebe33b9a">LL_PREPEND2</a>(head,add,next)</div>
+<div class="ttc" id="agroup__sys__ut_html_gab2de55837ec70d7e467caee1ebe33b9a"><div class="ttname"><a href="#gab2de55837ec70d7e467caee1ebe33b9a">LL_PREPEND2</a></div><div class="ttdeci">#define LL_PREPEND2(head, add, next)</div><div class="ttdoc">LL prepend to list with alternative next ptr name 'next'.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00344">utlist.h:344</a></div></div>
+</div><!-- fragment -->
+<p>LL prepend element 'add' to list. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00340">340</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gab2de55837ec70d7e467caee1ebe33b9a" name="gab2de55837ec70d7e467caee1ebe33b9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab2de55837ec70d7e467caee1ebe33b9a">&#9670;&#160;</a></span>LL_PREPEND2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_PREPEND2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>add</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line">  (add)-&gt;next = head;                                                                          \</div>
+<div class="line">  head = add;                                                                                  \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p>LL prepend to list with alternative next ptr name 'next'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00344">344</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga77713cebaee4dc6bec6405e092854c60" name="ga77713cebaee4dc6bec6405e092854c60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga77713cebaee4dc6bec6405e092854c60">&#9670;&#160;</a></span>LL_PREPEND_ELEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_PREPEND_ELEM</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>add</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line"> LDECLTYPE(head) _tmp;                                                                         \</div>
+<div class="line"> assert(head != NULL);                                                                         \</div>
+<div class="line"> assert(el != NULL);                                                                           \</div>
+<div class="line"> assert(add != NULL);                                                                          \</div>
+<div class="line"> (add)-&gt;next = (el);                                                                           \</div>
+<div class="line"> if ((head) == (el)) {                                                                         \</div>
+<div class="line">  (head) = (add);                                                                              \</div>
+<div class="line"> } <span class="keywordflow">else</span> {                                                                                      \</div>
+<div class="line">  _tmp = head;                                                                                 \</div>
+<div class="line">  while (_tmp-&gt;next &amp;&amp; (_tmp-&gt;next != (el))) {                                                 \</div>
+<div class="line">   _tmp = _tmp-&gt;next;                                                                          \</div>
+<div class="line">  }                                                                                            \</div>
+<div class="line">  if (_tmp-&gt;next) {                                                                            \</div>
+<div class="line">    _tmp-&gt;next = (add);                                                                        \</div>
+<div class="line">  }                                                                                            \</div>
+<div class="line"> }                                                                                             \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p>LL prepend new element 'add' to element 'el' in list. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00533">533</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga13dd262d32d5c66a5cf044e03b849b95" name="ga13dd262d32d5c66a5cf044e03b849b95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga13dd262d32d5c66a5cf044e03b849b95">&#9670;&#160;</a></span>LL_REPLACE_ELEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_REPLACE_ELEM</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>el</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>add</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line"> LDECLTYPE(head) _tmp;                                                                         \</div>
+<div class="line"> assert(head != NULL);                                                                         \</div>
+<div class="line"> assert(el != NULL);                                                                           \</div>
+<div class="line"> assert(add != NULL);                                                                          \</div>
+<div class="line"> (add)-&gt;next = (el)-&gt;next;                                                                     \</div>
+<div class="line"> if ((head) == (el)) {                                                                         \</div>
+<div class="line">  (head) = (add);                                                                              \</div>
+<div class="line"> } <span class="keywordflow">else</span> {                                                                                      \</div>
+<div class="line">  _tmp = head;                                                                                 \</div>
+<div class="line">  while (_tmp-&gt;next &amp;&amp; (_tmp-&gt;next != (el))) {                                                 \</div>
+<div class="line">   _tmp = _tmp-&gt;next;                                                                          \</div>
+<div class="line">  }                                                                                            \</div>
+<div class="line">  if (_tmp-&gt;next) {                                                                            \</div>
+<div class="line">    _tmp-&gt;next = (add);                                                                        \</div>
+<div class="line">  }                                                                                            \</div>
+<div class="line"> }                                                                                             \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p>LL replace element 'el' with element 'add' in list. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00512">512</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf7a5ae66c9386c4b89403d9ca038adcb" name="gaf7a5ae66c9386c4b89403d9ca038adcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf7a5ae66c9386c4b89403d9ca038adcb">&#9670;&#160;</a></span>LL_SEARCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_SEARCH</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>elt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#gac32e87bb9e7e7ee5c50ddd765fec2202">LL_SEARCH2</a>(head,out,elt,cmp,next)</div>
+<div class="ttc" id="agroup__sys__ut_html_gac32e87bb9e7e7ee5c50ddd765fec2202"><div class="ttname"><a href="#gac32e87bb9e7e7ee5c50ddd765fec2202">LL_SEARCH2</a></div><div class="ttdeci">#define LL_SEARCH2(head, out, elt, cmp, next)</div><div class="ttdoc">LL search with alternative next ptr name 'next'.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00504">utlist.h:504</a></div></div>
+</div><!-- fragment -->
+<p>LL search element 'elt' in list using function 'cmp'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00500">500</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gac32e87bb9e7e7ee5c50ddd765fec2202" name="gac32e87bb9e7e7ee5c50ddd765fec2202"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac32e87bb9e7e7ee5c50ddd765fec2202">&#9670;&#160;</a></span>LL_SEARCH2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_SEARCH2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>elt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line">    LL_FOREACH2(head,out,next) {                                                               \</div>
+<div class="line">      if ((cmp(out,elt))==0) break;                                                            \</div>
+<div class="line">    }                                                                                          \</div>
+<div class="line">} while(0)</div>
+</div><!-- fragment -->
+<p>LL search with alternative next ptr name 'next'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00504">504</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga8c5c97079c5b259e4c0ff7c563b0f8ed" name="ga8c5c97079c5b259e4c0ff7c563b0f8ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8c5c97079c5b259e4c0ff7c563b0f8ed">&#9670;&#160;</a></span>LL_SEARCH_SCALAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_SEARCH_SCALAR</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>field</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>val</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="#ga845ca1c4ffd9aa5511a7de108685cf41">LL_SEARCH_SCALAR2</a>(head,out,field,val,next)</div>
+<div class="ttc" id="agroup__sys__ut_html_ga845ca1c4ffd9aa5511a7de108685cf41"><div class="ttname"><a href="#ga845ca1c4ffd9aa5511a7de108685cf41">LL_SEARCH_SCALAR2</a></div><div class="ttdeci">#define LL_SEARCH_SCALAR2(head, out, field, val, next)</div><div class="ttdoc">LL scalar search with alternative next ptr name 'next'.</div><div class="ttdef"><b>Definition</b> <a href="utlist_8h_source.html#l00492">utlist.h:492</a></div></div>
+</div><!-- fragment -->
+<p>LL scalar search for element with value 'val' for member 'field'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00488">488</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga845ca1c4ffd9aa5511a7de108685cf41" name="ga845ca1c4ffd9aa5511a7de108685cf41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga845ca1c4ffd9aa5511a7de108685cf41">&#9670;&#160;</a></span>LL_SEARCH_SCALAR2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_SEARCH_SCALAR2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>head</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>field</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                                                           \</div>
+<div class="line">    LL_FOREACH2(head,out,next) {                                                               \</div>
+<div class="line">      if ((out)-&gt;field == (val)) <span class="keywordflow">break</span>;                                                        \</div>
+<div class="line">    }                                                                                          \</div>
+<div class="line">} <span class="keywordflow">while</span>(0)</div>
+</div><!-- fragment -->
+<p>LL scalar search with alternative next ptr name 'next'. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00492">492</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga0b2137d4a0c157cb7a1a30d9340ece31" name="ga0b2137d4a0c157cb7a1a30d9340ece31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0b2137d4a0c157cb7a1a30d9340ece31">&#9670;&#160;</a></span>LL_SORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_SORT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    LL_SORT2(list, cmp, next)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00134">134</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="gab073dee297f8614db97aa576832a3af1" name="gab073dee297f8614db97aa576832a3af1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab073dee297f8614db97aa576832a3af1">&#9670;&#160;</a></span>LL_SORT2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LL_SORT2</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>cmp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00137">137</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+<a id="ga9f3779f3c49ddf609c97f1c3d1f29730" name="ga9f3779f3c49ddf609c97f1c3d1f29730"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9f3779f3c49ddf609c97f1c3d1f29730">&#9670;&#160;</a></span>UTLIST_VERSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UTLIST_VERSION&#160;&#160;&#160;1.9.9</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Version number. </p>
+
+<p class="definition">Definition at line <a class="el" href="utlist_8h_source.html#l00041">41</a> of file <a class="el" href="utlist_8h_source.html">utlist.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

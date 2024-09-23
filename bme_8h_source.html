@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>cpu/kinetis/include/bme.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('bme_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">bme.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="bme_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (C) 2017 Eistec AB</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser General</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * Public License v2.1. See the file LICENSE in the top level directory for more</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * details.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#ifndef BME_H</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define BME_H</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="group__cpu__kinetis__bme.html#ga06145299a2769dfe171ac948a6c156c8">   35</a></span><span class="preprocessor">#define BITBAND_FUNCTIONS_PROVIDED 1</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="group__cpu__kinetis__bme.html#ga6c5269009a5f7be415464a1b11543a27">   37</a></span><span class="preprocessor">#define BME_AND_MASK        (1 &lt;&lt; 26) </span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="group__cpu__kinetis__bme.html#ga34b703e728f49f0947f7bde6a138b883">   38</a></span><span class="preprocessor">#define BME_OR_MASK         (1 &lt;&lt; 27) </span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="group__cpu__kinetis__bme.html#gae81f3a391e0f05c04d5e134f6a79d0ca">   39</a></span><span class="preprocessor">#define BME_XOR_MASK        (3 &lt;&lt; 26) </span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="group__cpu__kinetis__bme.html#gad780dfd08580952ca996dc3e2c729c1e">   40</a></span><span class="preprocessor">#define BME_LAC1_MASK(BIT)  ((1 &lt;&lt; 27) | ((BIT) &lt;&lt; 21)) </span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="group__cpu__kinetis__bme.html#gacb3302ecd0c8a708f503d07392b68f97">   41</a></span><span class="preprocessor">#define BME_LAS1_MASK(BIT)  ((3 &lt;&lt; 26) | ((BIT) &lt;&lt; 21)) </span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="group__cpu__kinetis__bme.html#ga24437b71b449d27ffdcdea6ee5fbd1ac">   49</a></span><span class="preprocessor">#define BME_BF_MASK(bit, width) ((1 &lt;&lt; 28) | ((bit) &lt;&lt; 23) | (((width) - 1 ) &lt;&lt; 19))</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="foldopen" id="foldopen00063" data-start="{" data-end="}">
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="group__cpu__kinetis__bme.html#ga40bb6e8ae79f5eb24b15eacdf8195b85">   63</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">volatile</span> <span class="keywordtype">void</span> *<a class="code hl_function" href="group__cpu__kinetis__bme.html#ga40bb6e8ae79f5eb24b15eacdf8195b85">bme_bf_addr</a>(<span class="keyword">volatile</span> <span class="keywordtype">void</span> *ptr, uintptr_t bit, uintptr_t width)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>{</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">return</span> (<span class="keyword">volatile</span> <span class="keywordtype">void</span> *)(((uintptr_t)ptr) | <a class="code hl_define" href="group__cpu__kinetis__bme.html#ga24437b71b449d27ffdcdea6ee5fbd1ac">BME_BF_MASK</a>(bit, width));</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="group__cpu__kinetis__bme.html#ga994bcfc4573c025e64f60dfebefd228f">   83</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">volatile</span> uint32_t *<a class="code hl_function" href="group__cpu__kinetis__bme.html#ga994bcfc4573c025e64f60dfebefd228f">bme_bitfield32</a>(<span class="keyword">volatile</span> uint32_t *ptr, uint8_t bit, uint8_t width)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>{</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> (<span class="keyword">volatile</span> uint32_t *)(<a class="code hl_function" href="group__cpu__kinetis__bme.html#ga40bb6e8ae79f5eb24b15eacdf8195b85">bme_bf_addr</a>(ptr, bit, width));</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
+</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="group__cpu__kinetis__bme.html#ga5575c5d11d5387f4f42ddbd0e34e8972">  103</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">volatile</span> uint16_t *<a class="code hl_function" href="group__cpu__kinetis__bme.html#ga5575c5d11d5387f4f42ddbd0e34e8972">bme_bitfield16</a>(<span class="keyword">volatile</span> uint16_t *ptr, uint8_t bit, uint8_t width)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>{</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">return</span> (<span class="keyword">volatile</span> uint16_t *)(<a class="code hl_function" href="group__cpu__kinetis__bme.html#ga40bb6e8ae79f5eb24b15eacdf8195b85">bme_bf_addr</a>(ptr, bit, width));</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
+</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="group__cpu__kinetis__bme.html#ga4aee264cc97337a95269acb50295b6ee">  123</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">volatile</span> uint8_t *<a class="code hl_function" href="group__cpu__kinetis__bme.html#ga4aee264cc97337a95269acb50295b6ee">bme_bitfield8</a>(<span class="keyword">volatile</span> uint8_t *ptr, uint8_t bit, uint8_t width)</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>{</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">return</span> (<span class="keyword">volatile</span> uint8_t *)(<a class="code hl_function" href="group__cpu__kinetis__bme.html#ga40bb6e8ae79f5eb24b15eacdf8195b85">bme_bf_addr</a>(ptr, bit, width));</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>}</div>
+</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment">/* For compatibility with the M3/M4 bitbanding macros: */</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="foldopen" id="foldopen00145" data-start="{" data-end="}">
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="group__cpu__kinetis__bme.html#ga6948507c7e8c7d511772fd621b3d1e70">  145</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__cpu__kinetis__bme.html#ga6948507c7e8c7d511772fd621b3d1e70">bit_set32</a>(<span class="keyword">volatile</span> uint32_t *ptr, uint8_t bit)</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>{</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    *((<span class="keyword">volatile</span> uint32_t *)(((uintptr_t)ptr) | <a class="code hl_define" href="group__cpu__kinetis__bme.html#ga34b703e728f49f0947f7bde6a138b883">BME_OR_MASK</a>)) = (uint32_t)((1ul &lt;&lt; bit));</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>}</div>
+</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="foldopen" id="foldopen00165" data-start="{" data-end="}">
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="group__cpu__kinetis__bme.html#ga270b85554e86dae115c1fa102431d8a2">  165</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__cpu__kinetis__bme.html#ga270b85554e86dae115c1fa102431d8a2">bit_set16</a>(<span class="keyword">volatile</span> uint16_t *ptr, uint8_t bit)</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>{</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    *((<span class="keyword">volatile</span> uint16_t *)(((uintptr_t)ptr) | <a class="code hl_define" href="group__cpu__kinetis__bme.html#ga34b703e728f49f0947f7bde6a138b883">BME_OR_MASK</a>)) = (uint16_t)((1ul &lt;&lt; bit));</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>}</div>
+</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="foldopen" id="foldopen00185" data-start="{" data-end="}">
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="group__cpu__kinetis__bme.html#ga3e8ece38e5528d3a78a04a9497381720">  185</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__cpu__kinetis__bme.html#ga3e8ece38e5528d3a78a04a9497381720">bit_set8</a>(<span class="keyword">volatile</span> uint8_t *ptr, uint8_t bit)</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>{</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    *((<span class="keyword">volatile</span> uint8_t *)(((uintptr_t)ptr) | <a class="code hl_define" href="group__cpu__kinetis__bme.html#ga34b703e728f49f0947f7bde6a138b883">BME_OR_MASK</a>)) = (uint8_t)((1ul &lt;&lt; bit));</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>}</div>
+</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="foldopen" id="foldopen00205" data-start="{" data-end="}">
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno"><a class="line" href="group__cpu__kinetis__bme.html#ga37a2f727e14b66792ce533119b764bc4">  205</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__cpu__kinetis__bme.html#ga37a2f727e14b66792ce533119b764bc4">bit_clear32</a>(<span class="keyword">volatile</span> uint32_t *ptr, uint8_t bit)</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>{</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    *((<span class="keyword">volatile</span> uint32_t *)(((uintptr_t)ptr) | <a class="code hl_define" href="group__cpu__kinetis__bme.html#ga6c5269009a5f7be415464a1b11543a27">BME_AND_MASK</a>)) = (uint32_t)(~(1ul &lt;&lt; bit));</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>}</div>
+</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="foldopen" id="foldopen00225" data-start="{" data-end="}">
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno"><a class="line" href="group__cpu__kinetis__bme.html#gac698c3aba1ec7262a017ef4ffc3f8c2a">  225</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__cpu__kinetis__bme.html#gac698c3aba1ec7262a017ef4ffc3f8c2a">bit_clear16</a>(<span class="keyword">volatile</span> uint16_t *ptr, uint8_t bit)</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>{</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    *((<span class="keyword">volatile</span> uint16_t *)(((uintptr_t)ptr) | <a class="code hl_define" href="group__cpu__kinetis__bme.html#ga6c5269009a5f7be415464a1b11543a27">BME_AND_MASK</a>)) = (uint16_t)(~(1ul &lt;&lt; bit));</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>}</div>
+</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="foldopen" id="foldopen00245" data-start="{" data-end="}">
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno"><a class="line" href="group__cpu__kinetis__bme.html#ga060bdc450aab2ab10da5a7a2acddd769">  245</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__cpu__kinetis__bme.html#ga060bdc450aab2ab10da5a7a2acddd769">bit_clear8</a>(<span class="keyword">volatile</span> uint8_t *ptr, uint8_t bit)</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>{</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    *((<span class="keyword">volatile</span> uint8_t *)(((uintptr_t)ptr) | <a class="code hl_define" href="group__cpu__kinetis__bme.html#ga6c5269009a5f7be415464a1b11543a27">BME_AND_MASK</a>)) = (uint8_t)(~(1ul &lt;&lt; bit));</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>}</div>
+</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>}</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span><span class="preprocessor">#endif </span><span class="comment">/* BME_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="ttc" id="agroup__cpu__kinetis__bme_html_ga060bdc450aab2ab10da5a7a2acddd769"><div class="ttname"><a href="group__cpu__kinetis__bme.html#ga060bdc450aab2ab10da5a7a2acddd769">bit_clear8</a></div><div class="ttdeci">static void bit_clear8(volatile uint8_t *ptr, uint8_t bit)</div><div class="ttdoc">Clear a single bit in the 8 bit byte pointed to by ptr.</div><div class="ttdef"><b>Definition</b> <a href="#l00245">bme.h:245</a></div></div>
+<div class="ttc" id="agroup__cpu__kinetis__bme_html_ga24437b71b449d27ffdcdea6ee5fbd1ac"><div class="ttname"><a href="group__cpu__kinetis__bme.html#ga24437b71b449d27ffdcdea6ee5fbd1ac">BME_BF_MASK</a></div><div class="ttdeci">#define BME_BF_MASK(bit, width)</div><div class="ttdoc">Bit field extraction bitmask.</div><div class="ttdef"><b>Definition</b> <a href="#l00049">bme.h:49</a></div></div>
+<div class="ttc" id="agroup__cpu__kinetis__bme_html_ga270b85554e86dae115c1fa102431d8a2"><div class="ttname"><a href="group__cpu__kinetis__bme.html#ga270b85554e86dae115c1fa102431d8a2">bit_set16</a></div><div class="ttdeci">static void bit_set16(volatile uint16_t *ptr, uint8_t bit)</div><div class="ttdoc">Set a single bit in the 16 bit word pointed to by ptr.</div><div class="ttdef"><b>Definition</b> <a href="#l00165">bme.h:165</a></div></div>
+<div class="ttc" id="agroup__cpu__kinetis__bme_html_ga34b703e728f49f0947f7bde6a138b883"><div class="ttname"><a href="group__cpu__kinetis__bme.html#ga34b703e728f49f0947f7bde6a138b883">BME_OR_MASK</a></div><div class="ttdeci">#define BME_OR_MASK</div><div class="ttdoc">OR decoration bitmask.</div><div class="ttdef"><b>Definition</b> <a href="#l00038">bme.h:38</a></div></div>
+<div class="ttc" id="agroup__cpu__kinetis__bme_html_ga37a2f727e14b66792ce533119b764bc4"><div class="ttname"><a href="group__cpu__kinetis__bme.html#ga37a2f727e14b66792ce533119b764bc4">bit_clear32</a></div><div class="ttdeci">static void bit_clear32(volatile uint32_t *ptr, uint8_t bit)</div><div class="ttdoc">Clear a single bit in the 32 bit word pointed to by ptr.</div><div class="ttdef"><b>Definition</b> <a href="#l00205">bme.h:205</a></div></div>
+<div class="ttc" id="agroup__cpu__kinetis__bme_html_ga3e8ece38e5528d3a78a04a9497381720"><div class="ttname"><a href="group__cpu__kinetis__bme.html#ga3e8ece38e5528d3a78a04a9497381720">bit_set8</a></div><div class="ttdeci">static void bit_set8(volatile uint8_t *ptr, uint8_t bit)</div><div class="ttdoc">Set a single bit in the 8 bit byte pointed to by ptr.</div><div class="ttdef"><b>Definition</b> <a href="#l00185">bme.h:185</a></div></div>
+<div class="ttc" id="agroup__cpu__kinetis__bme_html_ga40bb6e8ae79f5eb24b15eacdf8195b85"><div class="ttname"><a href="group__cpu__kinetis__bme.html#ga40bb6e8ae79f5eb24b15eacdf8195b85">bme_bf_addr</a></div><div class="ttdeci">static volatile void * bme_bf_addr(volatile void *ptr, uintptr_t bit, uintptr_t width)</div><div class="ttdoc">Bit field address macro.</div><div class="ttdef"><b>Definition</b> <a href="#l00063">bme.h:63</a></div></div>
+<div class="ttc" id="agroup__cpu__kinetis__bme_html_ga4aee264cc97337a95269acb50295b6ee"><div class="ttname"><a href="group__cpu__kinetis__bme.html#ga4aee264cc97337a95269acb50295b6ee">bme_bitfield8</a></div><div class="ttdeci">static volatile uint8_t * bme_bitfield8(volatile uint8_t *ptr, uint8_t bit, uint8_t width)</div><div class="ttdoc">Access a bitfield (8 bit load/store)</div><div class="ttdef"><b>Definition</b> <a href="#l00123">bme.h:123</a></div></div>
+<div class="ttc" id="agroup__cpu__kinetis__bme_html_ga5575c5d11d5387f4f42ddbd0e34e8972"><div class="ttname"><a href="group__cpu__kinetis__bme.html#ga5575c5d11d5387f4f42ddbd0e34e8972">bme_bitfield16</a></div><div class="ttdeci">static volatile uint16_t * bme_bitfield16(volatile uint16_t *ptr, uint8_t bit, uint8_t width)</div><div class="ttdoc">Access a bitfield (16 bit load/store)</div><div class="ttdef"><b>Definition</b> <a href="#l00103">bme.h:103</a></div></div>
+<div class="ttc" id="agroup__cpu__kinetis__bme_html_ga6948507c7e8c7d511772fd621b3d1e70"><div class="ttname"><a href="group__cpu__kinetis__bme.html#ga6948507c7e8c7d511772fd621b3d1e70">bit_set32</a></div><div class="ttdeci">static void bit_set32(volatile uint32_t *ptr, uint8_t bit)</div><div class="ttdoc">Set a single bit in the 32 bit word pointed to by ptr.</div><div class="ttdef"><b>Definition</b> <a href="#l00145">bme.h:145</a></div></div>
+<div class="ttc" id="agroup__cpu__kinetis__bme_html_ga6c5269009a5f7be415464a1b11543a27"><div class="ttname"><a href="group__cpu__kinetis__bme.html#ga6c5269009a5f7be415464a1b11543a27">BME_AND_MASK</a></div><div class="ttdeci">#define BME_AND_MASK</div><div class="ttdoc">AND decoration bitmask.</div><div class="ttdef"><b>Definition</b> <a href="#l00037">bme.h:37</a></div></div>
+<div class="ttc" id="agroup__cpu__kinetis__bme_html_ga994bcfc4573c025e64f60dfebefd228f"><div class="ttname"><a href="group__cpu__kinetis__bme.html#ga994bcfc4573c025e64f60dfebefd228f">bme_bitfield32</a></div><div class="ttdeci">static volatile uint32_t * bme_bitfield32(volatile uint32_t *ptr, uint8_t bit, uint8_t width)</div><div class="ttdoc">Access a bitfield (32 bit load/store)</div><div class="ttdef"><b>Definition</b> <a href="#l00083">bme.h:83</a></div></div>
+<div class="ttc" id="agroup__cpu__kinetis__bme_html_gac698c3aba1ec7262a017ef4ffc3f8c2a"><div class="ttname"><a href="group__cpu__kinetis__bme.html#gac698c3aba1ec7262a017ef4ffc3f8c2a">bit_clear16</a></div><div class="ttdeci">static void bit_clear16(volatile uint16_t *ptr, uint8_t bit)</div><div class="ttdoc">Clear a single bit in the 16 bit word pointed to by ptr.</div><div class="ttdef"><b>Definition</b> <a href="#l00225">bme.h:225</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:29 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

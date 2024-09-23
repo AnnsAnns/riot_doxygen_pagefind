@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>cpu/msp430/include/x1xx/msp430_regs.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('x1xx_2msp430__regs_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">msp430_regs.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="x1xx_2msp430__regs_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (C) 2015 Freie Universität Berlin</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * directory for more details.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#ifndef X1XX_MSP430_REGS_H</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define X1XX_MSP430_REGS_H</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;<a class="code" href="msp430__regs__common_8h.html">msp430_regs_common.h</a>&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_struct" href="structmsp430__port__t.html">msp430_port_t</a> base; </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_define" href="atmega__regs__common_8h.html#aaa0d3e6a102c69ac36d1a145d01024c6">REG8</a>    IFG;        </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_define" href="atmega__regs__common_8h.html#aaa0d3e6a102c69ac36d1a145d01024c6">REG8</a>    IES;        </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_define" href="atmega__regs__common_8h.html#aaa0d3e6a102c69ac36d1a145d01024c6">REG8</a>    IE;         </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_define" href="atmega__regs__common_8h.html#aaa0d3e6a102c69ac36d1a145d01024c6">REG8</a>    SEL;        </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>} <a class="code hl_struct" href="structmsp430__port__p1__p2__t.html">msp430_port_p1_p2_t</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="structmsp430__usart__t.html">   48</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="structmsp430__usart__t.html#a4eaa3a20dbc3f30f2dd3c8358ef00b95">   49</a></span>    <a class="code hl_define" href="atmega__regs__common_8h.html#aaa0d3e6a102c69ac36d1a145d01024c6">REG8</a>    <a class="code hl_variable" href="structmsp430__usart__t.html#a4eaa3a20dbc3f30f2dd3c8358ef00b95">CTL</a>;        </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structmsp430__usart__t.html#a1a5d15a73a790829169335336b2b6e31">   50</a></span>    <a class="code hl_define" href="atmega__regs__common_8h.html#aaa0d3e6a102c69ac36d1a145d01024c6">REG8</a>    <a class="code hl_variable" href="structmsp430__usart__t.html#a1a5d15a73a790829169335336b2b6e31">TCTL</a>;       </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structmsp430__usart__t.html#ad5e1f6d79451b97878b2949a32b24f27">   51</a></span>    <a class="code hl_define" href="atmega__regs__common_8h.html#aaa0d3e6a102c69ac36d1a145d01024c6">REG8</a>    <a class="code hl_variable" href="structmsp430__usart__t.html#ad5e1f6d79451b97878b2949a32b24f27">RCTL</a>;       </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="structmsp430__usart__t.html#ab18afda7adc670f2a239394985717cb5">   52</a></span>    <a class="code hl_define" href="atmega__regs__common_8h.html#aaa0d3e6a102c69ac36d1a145d01024c6">REG8</a>    <a class="code hl_variable" href="structmsp430__usart__t.html#ab18afda7adc670f2a239394985717cb5">MCTL</a>;       </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structmsp430__usart__t.html#a88dd54dc6eb67b794e0d8d0c2cf6edb2">   53</a></span>    <a class="code hl_define" href="atmega__regs__common_8h.html#aaa0d3e6a102c69ac36d1a145d01024c6">REG8</a>    <a class="code hl_variable" href="structmsp430__usart__t.html#a88dd54dc6eb67b794e0d8d0c2cf6edb2">BR0</a>;        </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structmsp430__usart__t.html#ae6b2bac54ba1559d92a946c0c3edda36">   54</a></span>    <a class="code hl_define" href="atmega__regs__common_8h.html#aaa0d3e6a102c69ac36d1a145d01024c6">REG8</a>    <a class="code hl_variable" href="structmsp430__usart__t.html#ae6b2bac54ba1559d92a946c0c3edda36">BR1</a>;        </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="structmsp430__usart__t.html#a3285f4188ce5b8dc3f80fb5c6249bbf3">   55</a></span>    <a class="code hl_define" href="atmega__regs__common_8h.html#aaa0d3e6a102c69ac36d1a145d01024c6">REG8</a>    <a class="code hl_variable" href="structmsp430__usart__t.html#a3285f4188ce5b8dc3f80fb5c6249bbf3">RXBUF</a>;      </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structmsp430__usart__t.html#a9d4fee18ced592cfa84c9e902e231f72">   56</a></span>    <a class="code hl_define" href="atmega__regs__common_8h.html#aaa0d3e6a102c69ac36d1a145d01024c6">REG8</a>    <a class="code hl_variable" href="structmsp430__usart__t.html#a9d4fee18ced592cfa84c9e902e231f72">TXBUF</a>;      </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>} <a class="code hl_struct" href="structmsp430__usart__t.html">msp430_usart_t</a>;</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="};">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structmsp430__usart__sfr__t.html">   70</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="structmsp430__usart__sfr__t.html#a8200f24dd34ea4907543b3edbcaa6e24">   71</a></span>    <a class="code hl_define" href="atmega__regs__common_8h.html#aaa0d3e6a102c69ac36d1a145d01024c6">REG8</a>    <a class="code hl_variable" href="structmsp430__usart__sfr__t.html#a8200f24dd34ea4907543b3edbcaa6e24">IE</a>;         </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="structmsp430__usart__sfr__t.html#a9471e548bb646549114aed484fd91772">   72</a></span>    <span class="keyword">const</span> uint8_t <a class="code hl_variable" href="structmsp430__usart__sfr__t.html#a9471e548bb646549114aed484fd91772">_pad1</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="structmsp430__usart__sfr__t.html#ac6d46ea3b5893b52d5e6f4e6b4996097">   73</a></span>    <a class="code hl_define" href="atmega__regs__common_8h.html#aaa0d3e6a102c69ac36d1a145d01024c6">REG8</a>    <a class="code hl_variable" href="structmsp430__usart__sfr__t.html#ac6d46ea3b5893b52d5e6f4e6b4996097">IFG</a>;        </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="structmsp430__usart__sfr__t.html#a710bc0269321aaf2983340081c0263c2">   74</a></span>    <span class="keyword">const</span> uint8_t <a class="code hl_variable" href="structmsp430__usart__sfr__t.html#a710bc0269321aaf2983340081c0263c2">_pad2</a>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structmsp430__usart__sfr__t.html#aa329d889fe02eeb1a246a2a90c71190b">   75</a></span>    <a class="code hl_define" href="atmega__regs__common_8h.html#aaa0d3e6a102c69ac36d1a145d01024c6">REG8</a>    <a class="code hl_variable" href="structmsp430__usart__sfr__t.html#aa329d889fe02eeb1a246a2a90c71190b">ME</a>;         </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>} <a class="code hl_struct" href="structmsp430__usart__sfr__t.html">msp430_usart_sfr_t</a>;</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="x1xx_2msp430__regs_8h.html#a873642a06bdcda64534fb8ca919280c4">   87</a></span><span class="preprocessor">#define UXTCTL_SSEL_UCLKI   0               </span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="x1xx_2msp430__regs_8h.html#a2ac7f267bfb9de7c4fb375490745b84f">   88</a></span><span class="preprocessor">#define UXTCTL_SSEL_ACLK    SSEL0           </span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="x1xx_2msp430__regs_8h.html#a9724ac0b51842dede7a954aa67f228e7">   89</a></span><span class="preprocessor">#define UXTCTL_SSEL_SMCLK   SSEL1           </span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="x1xx_2msp430__regs_8h.html#a6d3f2e9fa7adad39c48e13f7325748d7">   90</a></span><span class="preprocessor">#define UXTCTL_SSEL_MASK    (SSEL0 | SSEL1) </span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keyword">extern</span> <a class="code hl_struct" href="structmsp430__usart__sfr__t.html">msp430_usart_sfr_t</a> <a class="code hl_variable" href="x1xx_2msp430__regs_8h.html#ab6bff49861a04b765cc9d64fccf94fd0">USART_0_SFR</a>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keyword">extern</span> <a class="code hl_struct" href="structmsp430__usart__sfr__t.html">msp430_usart_sfr_t</a> <a class="code hl_variable" href="x1xx_2msp430__regs_8h.html#a005d8aba35fe2fc79f20c11b6f305300">USART_1_SFR</a>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keyword">extern</span> <a class="code hl_struct" href="structmsp430__usart__t.html">msp430_usart_t</a> <a class="code hl_variable" href="x1xx_2msp430__regs_8h.html#a6ddf01fd8ccca76ed82b6cafe0545506">USART_0</a>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keyword">extern</span> <a class="code hl_struct" href="structmsp430__usart__t.html">msp430_usart_t</a> <a class="code hl_variable" href="x1xx_2msp430__regs_8h.html#a6dda8e2c86a3dcdba6d91fa445bae52e">USART_1</a>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>}</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#endif </span><span class="comment">/* X1XX_MSP430_REGS_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aatmega__regs__common_8h_html_aaa0d3e6a102c69ac36d1a145d01024c6"><div class="ttname"><a href="atmega__regs__common_8h.html#aaa0d3e6a102c69ac36d1a145d01024c6">REG8</a></div><div class="ttdeci">#define REG8</div><div class="ttdoc">Register types.</div><div class="ttdef"><b>Definition</b> <a href="atmega__regs__common_8h_source.html#l00040">atmega_regs_common.h:40</a></div></div>
+<div class="ttc" id="amsp430__regs__common_8h_html"><div class="ttname"><a href="msp430__regs__common_8h.html">msp430_regs_common.h</a></div><div class="ttdoc">Cortex CMSIS style definition of MSP430 registers.</div></div>
+<div class="ttc" id="astructmsp430__port__p1__p2__t_html"><div class="ttname"><a href="structmsp430__port__p1__p2__t.html">msp430_port_p1_p2_t</a></div><div class="ttdoc">GPIO Port 1/2 (with interrupt functionality)</div><div class="ttdef"><b>Definition</b> <a href="f2xx__g2xx_2msp430__regs_8h_source.html#l00063">msp430_regs.h:63</a></div></div>
+<div class="ttc" id="astructmsp430__port__t_html"><div class="ttname"><a href="structmsp430__port__t.html">msp430_port_t</a></div><div class="ttdoc">Common MSP GPIO Port Registers.</div><div class="ttdef"><b>Definition</b> <a href="msp430__regs__common_8h_source.html#l00089">msp430_regs_common.h:89</a></div></div>
+<div class="ttc" id="astructmsp430__usart__sfr__t_html"><div class="ttname"><a href="structmsp430__usart__sfr__t.html">msp430_usart_sfr_t</a></div><div class="ttdoc">USART Special Function Registers (SFR)</div><div class="ttdef"><b>Definition</b> <a href="#l00070">msp430_regs.h:70</a></div></div>
+<div class="ttc" id="astructmsp430__usart__sfr__t_html_a710bc0269321aaf2983340081c0263c2"><div class="ttname"><a href="structmsp430__usart__sfr__t.html#a710bc0269321aaf2983340081c0263c2">msp430_usart_sfr_t::_pad2</a></div><div class="ttdeci">const uint8_t _pad2</div><div class="ttdoc">Padding.</div><div class="ttdef"><b>Definition</b> <a href="#l00074">msp430_regs.h:74</a></div></div>
+<div class="ttc" id="astructmsp430__usart__sfr__t_html_a8200f24dd34ea4907543b3edbcaa6e24"><div class="ttname"><a href="structmsp430__usart__sfr__t.html#a8200f24dd34ea4907543b3edbcaa6e24">msp430_usart_sfr_t::IE</a></div><div class="ttdeci">REG8 IE</div><div class="ttdoc">USART Interrupt Enable Register.</div><div class="ttdef"><b>Definition</b> <a href="#l00071">msp430_regs.h:71</a></div></div>
+<div class="ttc" id="astructmsp430__usart__sfr__t_html_a9471e548bb646549114aed484fd91772"><div class="ttname"><a href="structmsp430__usart__sfr__t.html#a9471e548bb646549114aed484fd91772">msp430_usart_sfr_t::_pad1</a></div><div class="ttdeci">const uint8_t _pad1</div><div class="ttdoc">Padding.</div><div class="ttdef"><b>Definition</b> <a href="#l00072">msp430_regs.h:72</a></div></div>
+<div class="ttc" id="astructmsp430__usart__sfr__t_html_aa329d889fe02eeb1a246a2a90c71190b"><div class="ttname"><a href="structmsp430__usart__sfr__t.html#aa329d889fe02eeb1a246a2a90c71190b">msp430_usart_sfr_t::ME</a></div><div class="ttdeci">REG8 ME</div><div class="ttdoc">Module Enable Register.</div><div class="ttdef"><b>Definition</b> <a href="#l00075">msp430_regs.h:75</a></div></div>
+<div class="ttc" id="astructmsp430__usart__sfr__t_html_ac6d46ea3b5893b52d5e6f4e6b4996097"><div class="ttname"><a href="structmsp430__usart__sfr__t.html#ac6d46ea3b5893b52d5e6f4e6b4996097">msp430_usart_sfr_t::IFG</a></div><div class="ttdeci">REG8 IFG</div><div class="ttdoc">USART Interrupt Flag Register.</div><div class="ttdef"><b>Definition</b> <a href="#l00073">msp430_regs.h:73</a></div></div>
+<div class="ttc" id="astructmsp430__usart__t_html"><div class="ttname"><a href="structmsp430__usart__t.html">msp430_usart_t</a></div><div class="ttdoc">USART (UART, SPI and I2C) Registers.</div><div class="ttdef"><b>Definition</b> <a href="#l00048">msp430_regs.h:48</a></div></div>
+<div class="ttc" id="astructmsp430__usart__t_html_a1a5d15a73a790829169335336b2b6e31"><div class="ttname"><a href="structmsp430__usart__t.html#a1a5d15a73a790829169335336b2b6e31">msp430_usart_t::TCTL</a></div><div class="ttdeci">REG8 TCTL</div><div class="ttdoc">transmit control</div><div class="ttdef"><b>Definition</b> <a href="#l00050">msp430_regs.h:50</a></div></div>
+<div class="ttc" id="astructmsp430__usart__t_html_a3285f4188ce5b8dc3f80fb5c6249bbf3"><div class="ttname"><a href="structmsp430__usart__t.html#a3285f4188ce5b8dc3f80fb5c6249bbf3">msp430_usart_t::RXBUF</a></div><div class="ttdeci">REG8 RXBUF</div><div class="ttdoc">receive buffer</div><div class="ttdef"><b>Definition</b> <a href="#l00055">msp430_regs.h:55</a></div></div>
+<div class="ttc" id="astructmsp430__usart__t_html_a4eaa3a20dbc3f30f2dd3c8358ef00b95"><div class="ttname"><a href="structmsp430__usart__t.html#a4eaa3a20dbc3f30f2dd3c8358ef00b95">msp430_usart_t::CTL</a></div><div class="ttdeci">REG8 CTL</div><div class="ttdoc">USART control.</div><div class="ttdef"><b>Definition</b> <a href="#l00049">msp430_regs.h:49</a></div></div>
+<div class="ttc" id="astructmsp430__usart__t_html_a88dd54dc6eb67b794e0d8d0c2cf6edb2"><div class="ttname"><a href="structmsp430__usart__t.html#a88dd54dc6eb67b794e0d8d0c2cf6edb2">msp430_usart_t::BR0</a></div><div class="ttdeci">REG8 BR0</div><div class="ttdoc">baud rate control 0</div><div class="ttdef"><b>Definition</b> <a href="#l00053">msp430_regs.h:53</a></div></div>
+<div class="ttc" id="astructmsp430__usart__t_html_a9d4fee18ced592cfa84c9e902e231f72"><div class="ttname"><a href="structmsp430__usart__t.html#a9d4fee18ced592cfa84c9e902e231f72">msp430_usart_t::TXBUF</a></div><div class="ttdeci">REG8 TXBUF</div><div class="ttdoc">transmit buffer</div><div class="ttdef"><b>Definition</b> <a href="#l00056">msp430_regs.h:56</a></div></div>
+<div class="ttc" id="astructmsp430__usart__t_html_ab18afda7adc670f2a239394985717cb5"><div class="ttname"><a href="structmsp430__usart__t.html#ab18afda7adc670f2a239394985717cb5">msp430_usart_t::MCTL</a></div><div class="ttdeci">REG8 MCTL</div><div class="ttdoc">modulation control</div><div class="ttdef"><b>Definition</b> <a href="#l00052">msp430_regs.h:52</a></div></div>
+<div class="ttc" id="astructmsp430__usart__t_html_ad5e1f6d79451b97878b2949a32b24f27"><div class="ttname"><a href="structmsp430__usart__t.html#ad5e1f6d79451b97878b2949a32b24f27">msp430_usart_t::RCTL</a></div><div class="ttdeci">REG8 RCTL</div><div class="ttdoc">receive control</div><div class="ttdef"><b>Definition</b> <a href="#l00051">msp430_regs.h:51</a></div></div>
+<div class="ttc" id="astructmsp430__usart__t_html_ae6b2bac54ba1559d92a946c0c3edda36"><div class="ttname"><a href="structmsp430__usart__t.html#ae6b2bac54ba1559d92a946c0c3edda36">msp430_usart_t::BR1</a></div><div class="ttdeci">REG8 BR1</div><div class="ttdoc">baud rate control 1</div><div class="ttdef"><b>Definition</b> <a href="#l00054">msp430_regs.h:54</a></div></div>
+<div class="ttc" id="ax1xx_2msp430__regs_8h_html_a005d8aba35fe2fc79f20c11b6f305300"><div class="ttname"><a href="x1xx_2msp430__regs_8h.html#a005d8aba35fe2fc79f20c11b6f305300">USART_1_SFR</a></div><div class="ttdeci">msp430_usart_sfr_t USART_1_SFR</div><div class="ttdoc">USART 1 SFR register map.</div></div>
+<div class="ttc" id="ax1xx_2msp430__regs_8h_html_a6dda8e2c86a3dcdba6d91fa445bae52e"><div class="ttname"><a href="x1xx_2msp430__regs_8h.html#a6dda8e2c86a3dcdba6d91fa445bae52e">USART_1</a></div><div class="ttdeci">msp430_usart_t USART_1</div><div class="ttdoc">USART 1 register map.</div></div>
+<div class="ttc" id="ax1xx_2msp430__regs_8h_html_a6ddf01fd8ccca76ed82b6cafe0545506"><div class="ttname"><a href="x1xx_2msp430__regs_8h.html#a6ddf01fd8ccca76ed82b6cafe0545506">USART_0</a></div><div class="ttdeci">msp430_usart_t USART_0</div><div class="ttdoc">USART 0 register map.</div></div>
+<div class="ttc" id="ax1xx_2msp430__regs_8h_html_ab6bff49861a04b765cc9d64fccf94fd0"><div class="ttname"><a href="x1xx_2msp430__regs_8h.html#ab6bff49861a04b765cc9d64fccf94fd0">USART_0_SFR</a></div><div class="ttdeci">msp430_usart_sfr_t USART_0_SFR</div><div class="ttdoc">USART 0 SFR register map.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:29 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

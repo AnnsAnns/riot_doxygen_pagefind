@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>pkg/mynewt-core/include/os/os.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('os_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">os.h File Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &raquo; <a class="el" href="group__pkg__mynewt__core.html">mynewt-core</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Apache Mynewt Copyright 2015-2021 The Apache Software Foundation.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Apache Mynewt Copyright 2015-2021 The Apache Software Foundation. </p>
+<p>This product includes software developed at The Apache Software Foundation (<a href="http://www.apache.org/">http://www.apache.org/</a>).</p>
+<p>Portions of this software were developed at Runtime Inc, copyright 2015.</p>
+<p>Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. See the NOTICE file distributed with this work for additional information regarding copyright ownership. The ASF licenses this file to you under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at</p>
+<p><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>
+<p>mynewt-core error types </p>
+
+<p class="definition">Definition in file <a class="el" href="os_8h_source.html">os.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;<a class="el" href="assert_8h_source.html">assert.h</a>&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="irq_8h_source.html">irq.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="os__types_8h_source.html">os/os_types.h</a>&quot;</code><br />
+<code>#include &quot;os/os_error.h&quot;</code><br />
+<code>#include &quot;os/endian.h&quot;</code><br />
+<code>#include &quot;os/os_callout.h&quot;</code><br />
+<code>#include &quot;os/os_cputime.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="os__dev_8h_source.html">os/os_dev.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="os__eventq_8h_source.html">os/os_eventq.h</a>&quot;</code><br />
+<code>#include &quot;os/os_mbuf.h&quot;</code><br />
+<code>#include &quot;os/os_mempool.h&quot;</code><br />
+<code>#include &quot;os/os_mutex.h&quot;</code><br />
+<code>#include &quot;os/os_sem.h&quot;</code><br />
+<code>#include &quot;os/os_task.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="os__time_8h_source.html">os/os_time.h</a>&quot;</code><br />
+<code>#include &quot;os/os_trace_api.h&quot;</code><br />
+<code>#include &quot;os/queue.h&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for os.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="os_8h__incl.svg" width="2519" height="888"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="os_8h__dep__incl.svg" width="587" height="242"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="os_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:aeedf55078f246e78a7e7242a2b90065f" id="r_aeedf55078f246e78a7e7242a2b90065f"><td class="memItemLeft" align="right" valign="top">typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeedf55078f246e78a7e7242a2b90065f">os_sr_t</a></td></tr>
+<tr class="memdesc:aeedf55078f246e78a7e7242a2b90065f"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU status register.  <br /></td></tr>
+<tr class="separator:aeedf55078f246e78a7e7242a2b90065f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ac77d85f4e1f11bc3c258e787a7cc4e26" id="r_ac77d85f4e1f11bc3c258e787a7cc4e26"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac77d85f4e1f11bc3c258e787a7cc4e26">os_hw_enter_critical</a> (void)</td></tr>
+<tr class="memdesc:ac77d85f4e1f11bc3c258e787a7cc4e26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable ISRs.  <br /></td></tr>
+<tr class="separator:ac77d85f4e1f11bc3c258e787a7cc4e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2283b4c2206b2d7a66add092aa883507" id="r_a2283b4c2206b2d7a66add092aa883507"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2283b4c2206b2d7a66add092aa883507">os_hw_exit_critical</a> (uint32_t ctx)</td></tr>
+<tr class="memdesc:a2283b4c2206b2d7a66add092aa883507"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restores ISR context.  <br /></td></tr>
+<tr class="separator:a2283b4c2206b2d7a66add092aa883507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a031835d258a81220b95d7f8a376ee4bd" id="r_a031835d258a81220b95d7f8a376ee4bd"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a031835d258a81220b95d7f8a376ee4bd">os_hw_is_in_critical</a> (void)</td></tr>
+<tr class="memdesc:a031835d258a81220b95d7f8a376ee4bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if is in critical section.  <br /></td></tr>
+<tr class="separator:a031835d258a81220b95d7f8a376ee4bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">MyNewt os/%.h required macros</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>PLEASE NOTE: Following macro definitions where copied directly from apache/mynewt-core and are under the copyright specified in the header. </p>
+</td></tr>
+<tr class="memitem:ac6afabdc09a49a433ee19d8a9486056d" id="r_ac6afabdc09a49a433ee19d8a9486056d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6afabdc09a49a433ee19d8a9486056d">min</a>(a,  b)</td></tr>
+<tr class="separator:ac6afabdc09a49a433ee19d8a9486056d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affe776513b24d84b39af8ab0930fef7f" id="r_affe776513b24d84b39af8ab0930fef7f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affe776513b24d84b39af8ab0930fef7f">max</a>(a,  b)</td></tr>
+<tr class="separator:affe776513b24d84b39af8ab0930fef7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a238184fb3d52ded70a2e5025b0f8a3eb" id="r_a238184fb3d52ded70a2e5025b0f8a3eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a238184fb3d52ded70a2e5025b0f8a3eb">OS_ALIGN</a>(__n,  __a)</td></tr>
+<tr class="separator:a238184fb3d52ded70a2e5025b0f8a3eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f66b437c5b00930341d03e010e5ba5f" id="r_a8f66b437c5b00930341d03e010e5ba5f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f66b437c5b00930341d03e010e5ba5f">OS_ALIGNMENT</a>&#160;&#160;&#160;(4)</td></tr>
+<tr class="separator:a8f66b437c5b00930341d03e010e5ba5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Entering and exiting critical section defines</h2></td></tr>
+<tr class="memitem:a5071f4b33c214523816c4a5ac51194bd" id="r_a5071f4b33c214523816c4a5ac51194bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5071f4b33c214523816c4a5ac51194bd">OS_ENTER_CRITICAL</a>(_sr)</td></tr>
+<tr class="separator:a5071f4b33c214523816c4a5ac51194bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a009b4e5f1ab94d3c4ae49584eb3fc0" id="r_a8a009b4e5f1ab94d3c4ae49584eb3fc0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a009b4e5f1ab94d3c4ae49584eb3fc0">OS_EXIT_CRITICAL</a>(_sr)</td></tr>
+<tr class="separator:a8a009b4e5f1ab94d3c4ae49584eb3fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a820f638235d2ac6ce4c51bf627dd3182" id="r_a820f638235d2ac6ce4c51bf627dd3182"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a820f638235d2ac6ce4c51bf627dd3182">OS_ASSERT_CRITICAL</a>()</td></tr>
+<tr class="separator:a820f638235d2ac6ce4c51bf627dd3182"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="affe776513b24d84b39af8ab0930fef7f" name="affe776513b24d84b39af8ab0930fef7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affe776513b24d84b39af8ab0930fef7f">&#9670;&#160;</a></span>max</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define max</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((a)&gt;(b)?(a):(b))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="os_8h_source.html#l00067">67</a> of file <a class="el" href="os_8h_source.html">os.h</a>.</p>
+
+</div>
+</div>
+<a id="ac6afabdc09a49a433ee19d8a9486056d" name="ac6afabdc09a49a433ee19d8a9486056d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6afabdc09a49a433ee19d8a9486056d">&#9670;&#160;</a></span>min</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define min</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((a)&lt;(b)?(a):(b))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="os_8h_source.html#l00063">63</a> of file <a class="el" href="os_8h_source.html">os.h</a>.</p>
+
+</div>
+</div>
+<a id="a238184fb3d52ded70a2e5025b0f8a3eb" name="a238184fb3d52ded70a2e5025b0f8a3eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a238184fb3d52ded70a2e5025b0f8a3eb">&#9670;&#160;</a></span>OS_ALIGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OS_ALIGN</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__a</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">        (                             \</div>
+<div class="line">        (((__n) &amp; ((__a) - 1)) == 0)                   ? \</div>
+<div class="line">            (__n)                                      : \</div>
+<div class="line">            ((__n) + ((__a) - ((__n) &amp; ((__a) - 1))))    \</div>
+<div class="line">        )</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="os_8h_source.html#l00070">70</a> of file <a class="el" href="os_8h_source.html">os.h</a>.</p>
+
+</div>
+</div>
+<a id="a8f66b437c5b00930341d03e010e5ba5f" name="a8f66b437c5b00930341d03e010e5ba5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f66b437c5b00930341d03e010e5ba5f">&#9670;&#160;</a></span>OS_ALIGNMENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OS_ALIGNMENT&#160;&#160;&#160;(4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="os_8h_source.html#l00075">75</a> of file <a class="el" href="os_8h_source.html">os.h</a>.</p>
+
+</div>
+</div>
+<a id="a820f638235d2ac6ce4c51bf627dd3182" name="a820f638235d2ac6ce4c51bf627dd3182"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a820f638235d2ac6ce4c51bf627dd3182">&#9670;&#160;</a></span>OS_ASSERT_CRITICAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OS_ASSERT_CRITICAL</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="assert_8h.html#a3153a272f18d0f805028fce7e4337b53">assert</a>(<a class="code hl_function" href="#a031835d258a81220b95d7f8a376ee4bd">os_hw_is_in_critical</a>())</div>
+<div class="ttc" id="aassert_8h_html_a3153a272f18d0f805028fce7e4337b53"><div class="ttname"><a href="assert_8h.html#a3153a272f18d0f805028fce7e4337b53">assert</a></div><div class="ttdeci">#define assert(cond)</div><div class="ttdoc">abort the program if assertion is false</div><div class="ttdef"><b>Definition</b> <a href="assert_8h_source.html#l00136">assert.h:136</a></div></div>
+<div class="ttc" id="aos_8h_html_a031835d258a81220b95d7f8a376ee4bd"><div class="ttname"><a href="#a031835d258a81220b95d7f8a376ee4bd">os_hw_is_in_critical</a></div><div class="ttdeci">static bool os_hw_is_in_critical(void)</div><div class="ttdoc">Check if is in critical section.</div><div class="ttdef"><b>Definition</b> <a href="os_8h_source.html#l00118">os.h:118</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="os_8h_source.html#l00089">89</a> of file <a class="el" href="os_8h_source.html">os.h</a>.</p>
+
+</div>
+</div>
+<a id="a5071f4b33c214523816c4a5ac51194bd" name="a5071f4b33c214523816c4a5ac51194bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5071f4b33c214523816c4a5ac51194bd">&#9670;&#160;</a></span>OS_ENTER_CRITICAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OS_ENTER_CRITICAL</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_sr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(_sr = <a class="code hl_function" href="#ac77d85f4e1f11bc3c258e787a7cc4e26">os_hw_enter_critical</a>())</div>
+<div class="ttc" id="aos_8h_html_ac77d85f4e1f11bc3c258e787a7cc4e26"><div class="ttname"><a href="#ac77d85f4e1f11bc3c258e787a7cc4e26">os_hw_enter_critical</a></div><div class="ttdeci">static uint32_t os_hw_enter_critical(void)</div><div class="ttdoc">Disable ISRs.</div><div class="ttdef"><b>Definition</b> <a href="os_8h_source.html#l00097">os.h:97</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="os_8h_source.html#l00087">87</a> of file <a class="el" href="os_8h_source.html">os.h</a>.</p>
+
+</div>
+</div>
+<a id="a8a009b4e5f1ab94d3c4ae49584eb3fc0" name="a8a009b4e5f1ab94d3c4ae49584eb3fc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a009b4e5f1ab94d3c4ae49584eb3fc0">&#9670;&#160;</a></span>OS_EXIT_CRITICAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OS_EXIT_CRITICAL</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_sr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(<a class="code hl_function" href="#a2283b4c2206b2d7a66add092aa883507">os_hw_exit_critical</a>(_sr))</div>
+<div class="ttc" id="aos_8h_html_a2283b4c2206b2d7a66add092aa883507"><div class="ttname"><a href="#a2283b4c2206b2d7a66add092aa883507">os_hw_exit_critical</a></div><div class="ttdeci">static void os_hw_exit_critical(uint32_t ctx)</div><div class="ttdoc">Restores ISR context.</div><div class="ttdef"><b>Definition</b> <a href="os_8h_source.html#l00108">os.h:108</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="os_8h_source.html#l00088">88</a> of file <a class="el" href="os_8h_source.html">os.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="aeedf55078f246e78a7e7242a2b90065f" name="aeedf55078f246e78a7e7242a2b90065f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeedf55078f246e78a7e7242a2b90065f">&#9670;&#160;</a></span>os_sr_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint32_t <a class="el" href="#aeedf55078f246e78a7e7242a2b90065f">os_sr_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CPU status register. </p>
+
+<p class="definition">Definition at line <a class="el" href="os_8h_source.html#l00081">81</a> of file <a class="el" href="os_8h_source.html">os.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ac77d85f4e1f11bc3c258e787a7cc4e26" name="ac77d85f4e1f11bc3c258e787a7cc4e26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac77d85f4e1f11bc3c258e787a7cc4e26">&#9670;&#160;</a></span>os_hw_enter_critical()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t os_hw_enter_critical </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Disable ISRs. </p>
+<dl class="section return"><dt>Returns</dt><dd>current isr context </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="os_8h_source.html#l00097">97</a> of file <a class="el" href="os_8h_source.html">os.h</a>.</p>
+
+</div>
+</div>
+<a id="a2283b4c2206b2d7a66add092aa883507" name="a2283b4c2206b2d7a66add092aa883507"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2283b4c2206b2d7a66add092aa883507">&#9670;&#160;</a></span>os_hw_exit_critical()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void os_hw_exit_critical </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Restores ISR context. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>ISR context to restore. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="os_8h_source.html#l00108">108</a> of file <a class="el" href="os_8h_source.html">os.h</a>.</p>
+
+</div>
+</div>
+<a id="a031835d258a81220b95d7f8a376ee4bd" name="a031835d258a81220b95d7f8a376ee4bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a031835d258a81220b95d7f8a376ee4bd">&#9670;&#160;</a></span>os_hw_is_in_critical()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool os_hw_is_in_critical </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if is in critical section. </p>
+<dl class="section return"><dt>Returns</dt><dd>true, if in critical section, false otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="os_8h_source.html#l00118">118</a> of file <a class="el" href="os_8h_source.html">os.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

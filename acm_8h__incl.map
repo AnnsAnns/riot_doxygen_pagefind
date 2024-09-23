@@ -1,0 +1,85 @@
+<map id="sys/include/usb/usbus/cdc/acm.h" name="sys/include/usb/usbus/cdc/acm.h">
+<area shape="rect" id="Node000001" title="Interface and definitions for USB CDC ACM type interfaces in USBUS." alt="" coords="277,5,441,50"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="890,476,961,504"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="277,34,191,44,146,55,104,70,66,90,37,115,17,147,10,186,10,340,10,389,17,408,34,426,71,436,152,445,397,462,875,484,875,490,397,468,152,450,70,441,31,431,13,411,5,390,4,340,4,186,12,145,32,112,63,85,102,65,145,50,190,39,277,28"/>
+<area shape="rect" id="Node000003" href="$cdc_8h.html" title="Definition for USB CDC interfaces." alt="" coords="178,325,260,353"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="352,51,233,312,229,310,347,49"/>
+<area shape="rect" id="Node000008" href="$usbus_8h.html" title="USBUS basic interface." alt="" coords="594,98,692,126"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="435,48,584,91,582,96,434,53"/>
+<area shape="rect" id="Node000028" href="$tsrb_8h.html" title="Thread&#45;safe ringbuffer interface definition." alt="" coords="1224,325,1283,353"/>
+<area shape="poly" id="edge47_Node000001_Node000028" title=" " alt="" coords="441,30,625,41,853,66,965,85,1066,108,1149,137,1182,153,1207,172,1232,203,1246,240,1254,277,1257,309,1251,309,1249,278,1241,241,1227,206,1204,176,1179,158,1147,142,1065,113,964,90,852,71,625,47,441,35"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="219,353,218,391,223,410,234,426,247,434,268,441,331,453,514,471,717,481,875,485,875,491,717,486,514,476,331,458,266,446,244,439,230,430,218,412,213,391,214,353"/>
+<area shape="rect" id="Node000004" href="$usb_8h.html" title="Definition of global compile time configuration options." alt="" coords="244,401,300,428"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="231,352,256,386,252,390,226,355"/>
+<area shape="rect" id="Node000006" href="$descriptor_8h.html" title="Definitions for USB protocol messages." alt="" coords="44,401,170,428"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="200,355,141,394,138,390,197,351"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="237,476,307,504"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="275,429,275,461,270,461,270,429"/>
+<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="170,423,189,426,387,446,583,463,875,483,875,489,583,468,387,452,188,431,170,429"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="378,476,460,504"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="164,426,364,473,362,478,162,432"/>
+<area shape="poly" id="edge10_Node000008_Node000002" title=" " alt="" coords="693,113,827,126,908,137,991,152,1067,171,1130,195,1154,209,1173,225,1185,242,1190,262,1190,340,1188,368,1183,391,1172,410,1153,430,1111,458,1065,475,1019,486,977,490,976,485,1018,480,1064,470,1109,453,1149,426,1168,407,1178,389,1183,368,1184,340,1184,262,1180,245,1169,228,1151,214,1127,200,1065,176,990,157,908,142,826,131,692,119"/>
+<area shape="poly" id="edge36_Node000008_Node000004" title=" " alt="" coords="599,129,550,148,499,176,434,229,375,288,327,345,292,390,288,387,322,342,371,285,430,225,496,171,547,143,598,124"/>
+<area shape="poly" id="edge46_Node000008_Node000006" title=" " alt="" coords="594,127,506,152,394,192,335,219,275,250,219,286,167,327,141,357,122,388,118,385,137,354,164,323,216,282,273,245,332,214,392,187,505,146,593,122"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="656,174,726,201"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="654,125,676,159,672,162,649,128"/>
+<area shape="rect" id="Node000010" href="$clist_8h.html" title="Circular linked list." alt="" coords="370,325,430,353"/>
+<area shape="poly" id="edge12_Node000008_Node000010" title=" " alt="" coords="612,129,572,149,531,176,496,210,465,247,418,313,413,310,460,244,492,206,528,172,569,144,609,124"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="749,174,819,201"/>
+<area shape="poly" id="edge16_Node000008_Node000013" title=" " alt="" coords="669,124,747,164,744,169,667,129"/>
+<area shape="rect" id="Node000014" href="$sched_8h.html" title="Scheduler API definition." alt="" coords="561,174,632,201"/>
+<area shape="poly" id="edge17_Node000008_Node000014" title=" " alt="" coords="637,128,615,162,610,159,632,125"/>
+<area shape="rect" id="Node000017" href="$modules_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="1060,325,1149,353"/>
+<area shape="poly" id="edge33_Node000008_Node000017" title=" " alt="" coords="693,113,773,120,868,131,956,148,991,159,1016,171,1048,202,1072,239,1089,277,1100,309,1095,311,1084,279,1067,242,1044,205,1013,176,989,164,955,153,868,136,773,125,692,119"/>
+<area shape="rect" id="Node000023" title=" " alt="" coords="843,174,904,201"/>
+<area shape="poly" id="edge34_Node000008_Node000023" title=" " alt="" coords="685,124,829,169,827,174,683,129"/>
+<area shape="rect" id="Node000024" title=" " alt="" coords="928,174,1003,201"/>
+<area shape="poly" id="edge35_Node000008_Node000024" title=" " alt="" coords="693,121,913,170,912,175,692,126"/>
+<area shape="rect" id="Node000025" href="$usbdev_8h.html" title="Definitions low&#45;level USB driver interface." alt="" coords="454,325,578,353"/>
+<area shape="poly" id="edge37_Node000008_Node000025" title=" " alt="" coords="611,128,578,148,550,175,534,208,524,244,518,310,513,309,519,243,529,206,546,172,575,143,609,124"/>
+<area shape="poly" id="edge13_Node000010_Node000007" title=" " alt="" coords="390,355,368,388,363,408,365,427,377,447,392,464,388,468,372,450,360,429,358,407,364,386,386,352"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="814,401,888,428"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="431,347,442,350,540,367,619,375,699,382,800,398,799,403,698,388,619,380,540,373,441,355,430,353"/>
+<area shape="rect" id="Node000012" href="$list_8h.html" title="Intrusive linked list." alt="" coords="375,401,428,428"/>
+<area shape="poly" id="edge15_Node000010_Node000012" title=" " alt="" coords="403,353,404,385,398,385,398,353"/>
+<area shape="poly" id="edge32_Node000014_Node000010" title=" " alt="" coords="581,204,431,318,427,313,578,200"/>
+<area shape="poly" id="edge18_Node000014_Node000011" title=" " alt="" coords="599,202,600,232,606,272,619,315,630,334,643,350,701,370,800,397,799,402,699,375,640,355,625,337,614,317,600,274,594,233,593,202"/>
+<area shape="rect" id="Node000015" href="$inttypes_8h.html" title="Adds include for missing inttype definitions." alt="" coords="640,249,726,277"/>
+<area shape="poly" id="edge19_Node000014_Node000015" title=" " alt="" coords="613,200,658,237,654,241,610,204"/>
+<area shape="rect" id="Node000016" href="$kernel__defines_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="893,249,1022,277"/>
+<area shape="poly" id="edge20_Node000014_Node000016" title=" " alt="" coords="633,196,645,199,879,245,878,251,644,204,632,201"/>
+<area shape="rect" id="Node000022" href="$native__sched_8h.html" title="Add definitions required on the native board." alt="" coords="750,249,869,277"/>
+<area shape="poly" id="edge31_Node000014_Node000022" title=" " alt="" coords="633,199,758,241,756,246,632,204"/>
+<area shape="poly" id="edge21_Node000016_Node000017" title=" " alt="" coords="985,275,1066,315,1064,320,983,280"/>
+<area shape="rect" id="Node000018" href="$riot__version_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="772,325,882,353"/>
+<area shape="poly" id="edge22_Node000016_Node000018" title=" " alt="" coords="936,280,865,319,862,315,933,275"/>
+<area shape="rect" id="Node000019" href="$compiler__hints_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="906,325,1036,353"/>
+<area shape="poly" id="edge24_Node000016_Node000019" title=" " alt="" coords="963,277,968,309,963,310,957,278"/>
+<area shape="rect" id="Node000021" href="$container_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="653,325,747,353"/>
+<area shape="poly" id="edge28_Node000016_Node000021" title=" " alt="" coords="912,280,761,323,760,318,911,275"/>
+<area shape="poly" id="edge23_Node000018_Node000002" title=" " alt="" coords="880,351,917,369,933,383,947,399,952,415,952,432,943,463,938,462,947,431,947,416,942,402,929,386,914,374,877,356"/>
+<area shape="poly" id="edge27_Node000019_Node000002" title=" " alt="" coords="982,352,998,387,1002,408,997,429,982,452,963,469,960,465,978,448,992,427,996,408,993,389,977,354"/>
+<area shape="rect" id="Node000020" href="$assert_8h.html" title="POSIX.1&#45;2008 compliant version of the assert macro." alt="" coords="1065,401,1138,428"/>
+<area shape="poly" id="edge25_Node000019_Node000020" title=" " alt="" coords="996,351,1066,391,1064,395,993,356"/>
+<area shape="poly" id="edge26_Node000020_Node000002" title=" " alt="" coords="1071,431,972,473,970,468,1069,426"/>
+<area shape="poly" id="edge30_Node000021_Node000002" title=" " alt="" coords="748,349,842,375,881,388,902,399,913,413,920,429,927,460,922,462,915,430,908,415,899,403,879,393,840,380,747,355"/>
+<area shape="poly" id="edge29_Node000021_Node000011" title=" " alt="" coords="728,351,812,391,809,396,726,356"/>
+<area shape="poly" id="edge39_Node000025_Node000002" title=" " alt="" coords="519,353,523,390,531,410,543,426,567,441,602,453,692,470,791,480,875,485,875,490,791,485,692,475,601,458,565,445,540,430,526,413,518,392,513,354"/>
+<area shape="poly" id="edge43_Node000025_Node000004" title=" " alt="" coords="473,356,316,403,315,398,472,351"/>
+<area shape="poly" id="edge38_Node000025_Node000007" title=" " alt="" coords="510,354,438,465,434,462,506,351"/>
+<area shape="poly" id="edge40_Node000025_Node000011" title=" " alt="" coords="580,350,799,397,798,402,579,355"/>
+<area shape="poly" id="edge41_Node000025_Node000020" title=" " alt="" coords="579,345,1050,404,1049,409,579,351"/>
+<area shape="rect" id="Node000026" title=" " alt="" coords="682,401,790,428"/>
+<area shape="poly" id="edge42_Node000025_Node000026" title=" " alt="" coords="556,351,683,393,682,398,555,356"/>
+<area shape="rect" id="Node000027" href="$usbopt_8h.html" title="Definition of global USB peripheral and USB peripheral endpoint configuration options." alt="" coords="553,401,658,428"/>
+<area shape="poly" id="edge44_Node000025_Node000027" title=" " alt="" coords="534,351,580,389,576,393,531,355"/>
+<area shape="poly" id="edge45_Node000027_Node000002" title=" " alt="" coords="659,425,876,475,874,480,657,430"/>
+<area shape="poly" id="edge50_Node000028_Node000002" title=" " alt="" coords="1253,354,1238,392,1225,413,1207,431,1165,449,1104,465,977,486,976,480,1103,460,1164,444,1204,426,1220,410,1233,390,1248,352"/>
+<area shape="poly" id="edge49_Node000028_Node000011" title=" " alt="" coords="1224,348,903,406,903,401,1224,343"/>
+<area shape="poly" id="edge48_Node000028_Node000020" title=" " alt="" coords="1228,356,1143,396,1141,391,1225,351"/>
+<area shape="rect" id="Node000029" href="$irq_8h.html" title="IRQ driver interface." alt="" coords="1275,401,1325,428"/>
+<area shape="poly" id="edge51_Node000028_Node000029" title=" " alt="" coords="1264,352,1286,386,1282,389,1260,355"/>
+<area shape="poly" id="edge52_Node000029_Node000007" title=" " alt="" coords="1275,421,1151,431,476,487,475,482,1151,426,1275,415"/>
+<area shape="rect" id="Node000030" title=" " alt="" coords="1255,476,1345,504"/>
+<area shape="poly" id="edge53_Node000029_Node000030" title=" " alt="" coords="1303,429,1303,461,1298,461,1298,429"/>
+</map>

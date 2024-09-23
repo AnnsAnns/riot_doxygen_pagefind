@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>dsme::DSMEMessage Class Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classdsme_1_1DSMEMessage.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Data Fields</a> &#124;
+<a href="#friends">Friends</a>  </div>
+  <div class="headertitle"><div class="title">dsme::DSMEMessage Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>DSME Message interface implementation for GNRC.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>DSME Message interface implementation for GNRC. </p>
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00050">50</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:acec9c9db694c5569337189556b2b9b13" id="r_acec9c9db694c5569337189556b2b9b13"><td class="memItemLeft" align="right" valign="top"><a id="acec9c9db694c5569337189556b2b9b13" name="acec9c9db694c5569337189556b2b9b13"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>prependFrom</b> (DSMEMessageElement *msg) override</td></tr>
+<tr class="memdesc:acec9c9db694c5569337189556b2b9b13"><td class="mdescLeft">&#160;</td><td class="mdescRight">prepend a header to current message <br /></td></tr>
+<tr class="separator:acec9c9db694c5569337189556b2b9b13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f56e47aa36f21b02d4fdee52c43c0f6" id="r_a8f56e47aa36f21b02d4fdee52c43c0f6"><td class="memItemLeft" align="right" valign="top"><a id="a8f56e47aa36f21b02d4fdee52c43c0f6" name="a8f56e47aa36f21b02d4fdee52c43c0f6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>decapsulateTo</b> (DSMEMessageElement *msg) override</td></tr>
+<tr class="memdesc:a8f56e47aa36f21b02d4fdee52c43c0f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">decapsulate header to a message <br /></td></tr>
+<tr class="separator:a8f56e47aa36f21b02d4fdee52c43c0f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a604bfe23520f2c9069ef5393740ea918" id="r_a604bfe23520f2c9069ef5393740ea918"><td class="memItemLeft" align="right" valign="top"><a id="a604bfe23520f2c9069ef5393740ea918" name="a604bfe23520f2c9069ef5393740ea918"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>copyTo</b> (DSMEMessageElement *msg)</td></tr>
+<tr class="memdesc:a604bfe23520f2c9069ef5393740ea918"><td class="mdescLeft">&#160;</td><td class="mdescRight">copy payload to DSME Message Element <br /></td></tr>
+<tr class="separator:a604bfe23520f2c9069ef5393740ea918"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a27e7225ca5217e109a01f8619deb63" id="r_a0a27e7225ca5217e109a01f8619deb63"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a27e7225ca5217e109a01f8619deb63">hasPayload</a> () override</td></tr>
+<tr class="memdesc:a0a27e7225ca5217e109a01f8619deb63"><td class="mdescLeft">&#160;</td><td class="mdescRight">check whether the message has payload  <br /></td></tr>
+<tr class="separator:a0a27e7225ca5217e109a01f8619deb63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accdd3561d690b73bea7215534f3c2dc5" id="r_accdd3561d690b73bea7215534f3c2dc5"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#accdd3561d690b73bea7215534f3c2dc5">getStartOfFrameDelimiterSymbolCounter</a> () override</td></tr>
+<tr class="memdesc:accdd3561d690b73bea7215534f3c2dc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the symbol counter at the end of the SFD  <br /></td></tr>
+<tr class="separator:accdd3561d690b73bea7215534f3c2dc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80a5212ad5ca41a60c7015cc72d2b6bb" id="r_a80a5212ad5ca41a60c7015cc72d2b6bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80a5212ad5ca41a60c7015cc72d2b6bb">setStartOfFrameDelimiterSymbolCounter</a> (uint32_t symbolCounter) override</td></tr>
+<tr class="memdesc:a80a5212ad5ca41a60c7015cc72d2b6bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the symbol counter at the end of the SFD  <br /></td></tr>
+<tr class="separator:a80a5212ad5ca41a60c7015cc72d2b6bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96edfe5e865b0b4b2d73cbdc08289767" id="r_a96edfe5e865b0b4b2d73cbdc08289767"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96edfe5e865b0b4b2d73cbdc08289767">getTotalSymbols</a> () override</td></tr>
+<tr class="memdesc:a96edfe5e865b0b4b2d73cbdc08289767"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the total number of symbols in current frame  <br /></td></tr>
+<tr class="separator:a96edfe5e865b0b4b2d73cbdc08289767"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6b8206aa63d50a8a304244220482e0a" id="r_aa6b8206aa63d50a8a304244220482e0a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6b8206aa63d50a8a304244220482e0a">getMPDUSymbols</a> () override</td></tr>
+<tr class="memdesc:aa6b8206aa63d50a8a304244220482e0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">get number of MPDU Symbols  <br /></td></tr>
+<tr class="separator:aa6b8206aa63d50a8a304244220482e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab48d74cb11124076ac9919ffbfa6fc54" id="r_ab48d74cb11124076ac9919ffbfa6fc54"><td class="memItemLeft" align="right" valign="top">IEEE802154eMACHeader &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab48d74cb11124076ac9919ffbfa6fc54">getHeader</a> () override</td></tr>
+<tr class="memdesc:ab48d74cb11124076ac9919ffbfa6fc54"><td class="mdescLeft">&#160;</td><td class="mdescRight">get IEEE 802.15.4 header  <br /></td></tr>
+<tr class="separator:ab48d74cb11124076ac9919ffbfa6fc54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e1af8ffb01375470e8e8251d3ca5722" id="r_a2e1af8ffb01375470e8e8251d3ca5722"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e1af8ffb01375470e8e8251d3ca5722">getLQI</a> () override</td></tr>
+<tr class="memdesc:a2e1af8ffb01375470e8e8251d3ca5722"><td class="mdescLeft">&#160;</td><td class="mdescRight">get LQI of the message  <br /></td></tr>
+<tr class="separator:a2e1af8ffb01375470e8e8251d3ca5722"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78e2dc69ab2f94ec7c128d36c2ae1997" id="r_a78e2dc69ab2f94ec7c128d36c2ae1997"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78e2dc69ab2f94ec7c128d36c2ae1997">getReceivedViaMCPS</a> () override</td></tr>
+<tr class="memdesc:a78e2dc69ab2f94ec7c128d36c2ae1997"><td class="mdescLeft">&#160;</td><td class="mdescRight">check whether the message was received via MCPS  <br /></td></tr>
+<tr class="separator:a78e2dc69ab2f94ec7c128d36c2ae1997"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69928e74b145865b129151819f153f60" id="r_a69928e74b145865b129151819f153f60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69928e74b145865b129151819f153f60">setReceivedViaMCPS</a> (bool receivedViaMCPS) override</td></tr>
+<tr class="memdesc:a69928e74b145865b129151819f153f60"><td class="mdescLeft">&#160;</td><td class="mdescRight">indicated that message was received via MCPS  <br /></td></tr>
+<tr class="separator:a69928e74b145865b129151819f153f60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade51cf9b2327a156974c296df97a1604" id="r_ade51cf9b2327a156974c296df97a1604"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade51cf9b2327a156974c296df97a1604">getCurrentlySending</a> () override</td></tr>
+<tr class="memdesc:ade51cf9b2327a156974c296df97a1604"><td class="mdescLeft">&#160;</td><td class="mdescRight">whether the message is being sent  <br /></td></tr>
+<tr class="separator:ade51cf9b2327a156974c296df97a1604"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2403b0664870d0a422c696aaddf94a7f" id="r_a2403b0664870d0a422c696aaddf94a7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2403b0664870d0a422c696aaddf94a7f">setCurrentlySending</a> (bool currentlySending) override</td></tr>
+<tr class="memdesc:a2403b0664870d0a422c696aaddf94a7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">indicate that the message is being sent  <br /></td></tr>
+<tr class="separator:a2403b0664870d0a422c696aaddf94a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19d32c956e3db6a54b76f404a30b0510" id="r_a19d32c956e3db6a54b76f404a30b0510"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19d32c956e3db6a54b76f404a30b0510">increaseRetryCounter</a> () override</td></tr>
+<tr class="memdesc:a19d32c956e3db6a54b76f404a30b0510"><td class="mdescLeft">&#160;</td><td class="mdescRight">increase retry counter for current message  <br /></td></tr>
+<tr class="separator:a19d32c956e3db6a54b76f404a30b0510"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b5c5669e4fc68a927f869defca859ca" id="r_a1b5c5669e4fc68a927f869defca859ca"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b5c5669e4fc68a927f869defca859ca">getRetryCounter</a> () override</td></tr>
+<tr class="memdesc:a1b5c5669e4fc68a927f869defca859ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">get retry counter  <br /></td></tr>
+<tr class="separator:a1b5c5669e4fc68a927f869defca859ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9165b55f087620aa2275a11df5f72da2" id="r_a9165b55f087620aa2275a11df5f72da2"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9165b55f087620aa2275a11df5f72da2">getPayloadLength</a> ()</td></tr>
+<tr class="memdesc:a9165b55f087620aa2275a11df5f72da2"><td class="mdescLeft">&#160;</td><td class="mdescRight">get payload length  <br /></td></tr>
+<tr class="separator:a9165b55f087620aa2275a11df5f72da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a630bf8006034ef090b702724b643914b" id="r_a630bf8006034ef090b702724b643914b"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a630bf8006034ef090b702724b643914b">getRSSI</a> () override</td></tr>
+<tr class="memdesc:a630bf8006034ef090b702724b643914b"><td class="mdescLeft">&#160;</td><td class="mdescRight">get RSSI of frame  <br /></td></tr>
+<tr class="separator:a630bf8006034ef090b702724b643914b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73a73f79f4e4f8560f7bbfb7aa635933" id="r_a73a73f79f4e4f8560f7bbfb7aa635933"><td class="memItemLeft" align="right" valign="top"><a id="a73a73f79f4e4f8560f7bbfb7aa635933" name="a73a73f79f4e4f8560f7bbfb7aa635933"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>loadBuffer</b> (size_t len)</td></tr>
+<tr class="memdesc:a73a73f79f4e4f8560f7bbfb7aa635933"><td class="mdescLeft">&#160;</td><td class="mdescRight">preallocate buffer with a given length <br /></td></tr>
+<tr class="separator:a73a73f79f4e4f8560f7bbfb7aa635933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87dfb48543744c0d247e886c4eec8a78" id="r_a87dfb48543744c0d247e886c4eec8a78"><td class="memItemLeft" align="right" valign="top"><a id="a87dfb48543744c0d247e886c4eec8a78" name="a87dfb48543744c0d247e886c4eec8a78"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>loadBuffer</b> (<a class="el" href="group__sys__iolist.html#gaa17f91ef26edec149cd806d8457aa3a0">iolist_t</a> *pkt)</td></tr>
+<tr class="memdesc:a87dfb48543744c0d247e886c4eec8a78"><td class="mdescLeft">&#160;</td><td class="mdescRight">load a GNRC packet into the internal openDSME message representation <br /></td></tr>
+<tr class="separator:a87dfb48543744c0d247e886c4eec8a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0c17bf6985e96f5720ce3cfa7940d6f" id="r_af0c17bf6985e96f5720ce3cfa7940d6f"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0c17bf6985e96f5720ce3cfa7940d6f">getPayload</a> ()</td></tr>
+<tr class="memdesc:af0c17bf6985e96f5720ce3cfa7940d6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">get buffer associated to the current payload  <br /></td></tr>
+<tr class="separator:af0c17bf6985e96f5720ce3cfa7940d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55fbdd2b759587611b74a77b2933a16c" id="r_a55fbdd2b759587611b74a77b2933a16c"><td class="memItemLeft" align="right" valign="top"><a id="a55fbdd2b759587611b74a77b2933a16c" name="a55fbdd2b759587611b74a77b2933a16c"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>dropHdr</b> (size_t len)</td></tr>
+<tr class="memdesc:a55fbdd2b759587611b74a77b2933a16c"><td class="mdescLeft">&#160;</td><td class="mdescRight">drop a number of bytes from the header <br /></td></tr>
+<tr class="separator:a55fbdd2b759587611b74a77b2933a16c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec183ddfec08d8ed6ad2f208190b4447" id="r_aec183ddfec08d8ed6ad2f208190b4447"><td class="memItemLeft" align="right" valign="top"><a id="aec183ddfec08d8ed6ad2f208190b4447" name="aec183ddfec08d8ed6ad2f208190b4447"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>releaseMessage</b> ()</td></tr>
+<tr class="memdesc:aec183ddfec08d8ed6ad2f208190b4447"><td class="mdescLeft">&#160;</td><td class="mdescRight">release the message <br /></td></tr>
+<tr class="separator:aec183ddfec08d8ed6ad2f208190b4447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5dae8aebd20ea7d54bae708cc9d266a" id="r_ab5dae8aebd20ea7d54bae708cc9d266a"><td class="memItemLeft" align="right" valign="top"><a id="ab5dae8aebd20ea7d54bae708cc9d266a" name="ab5dae8aebd20ea7d54bae708cc9d266a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>dispatchMessage</b> ()</td></tr>
+<tr class="memdesc:ab5dae8aebd20ea7d54bae708cc9d266a"><td class="mdescLeft">&#160;</td><td class="mdescRight">dispatch the message to upper layers <br /></td></tr>
+<tr class="separator:ab5dae8aebd20ea7d54bae708cc9d266a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac82bf9f7c24dbab25fe77d02d1fdab39" id="r_ac82bf9f7c24dbab25fe77d02d1fdab39"><td class="memItemLeft" align="right" valign="top"><a id="ac82bf9f7c24dbab25fe77d02d1fdab39" name="ac82bf9f7c24dbab25fe77d02d1fdab39"></a>
+<a class="el" href="group__sys__iolist.html#gaa17f91ef26edec149cd806d8457aa3a0">iolist_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getIolPayload</b> ()</td></tr>
+<tr class="memdesc:ac82bf9f7c24dbab25fe77d02d1fdab39"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the IOLIST representation of the message <br /></td></tr>
+<tr class="separator:ac82bf9f7c24dbab25fe77d02d1fdab39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a9710482dfc962632bf1ec77f114602" id="r_a3a9710482dfc962632bf1ec77f114602"><td class="memItemLeft" align="right" valign="top"><a id="a3a9710482dfc962632bf1ec77f114602" name="a3a9710482dfc962632bf1ec77f114602"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clearMessage</b> ()</td></tr>
+<tr class="memdesc:a3a9710482dfc962632bf1ec77f114602"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear the message <br /></td></tr>
+<tr class="separator:a3a9710482dfc962632bf1ec77f114602"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a7584a72d991d71da9f16c8102b22adc9" id="r_a7584a72d991d71da9f16c8102b22adc9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7584a72d991d71da9f16c8102b22adc9">firstTry</a></td></tr>
+<tr class="memdesc:a7584a72d991d71da9f16c8102b22adc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">whether the message is being sent on the first try  <br /></td></tr>
+<tr class="separator:a7584a72d991d71da9f16c8102b22adc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ca8d03ce6a1f101a25a845253f99bc3" id="r_a2ca8d03ce6a1f101a25a845253f99bc3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ca8d03ce6a1f101a25a845253f99bc3">free</a></td></tr>
+<tr class="memdesc:a2ca8d03ce6a1f101a25a845253f99bc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">whether the message is free  <br /></td></tr>
+<tr class="separator:a2ca8d03ce6a1f101a25a845253f99bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:afce7aa3c4ba6cd24cbc28cc6a561bf17" id="r_afce7aa3c4ba6cd24cbc28cc6a561bf17"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afce7aa3c4ba6cd24cbc28cc6a561bf17">DSMEPlatform</a></td></tr>
+<tr class="separator:afce7aa3c4ba6cd24cbc28cc6a561bf17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab57a162fa02172bd42e4d4ebbc5b09a7" id="r_ab57a162fa02172bd42e4d4ebbc5b09a7"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab57a162fa02172bd42e4d4ebbc5b09a7">DSMEMessageElement</a></td></tr>
+<tr class="separator:ab57a162fa02172bd42e4d4ebbc5b09a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12a9737875b94cb4e0404d795c8f24c7" id="r_a12a9737875b94cb4e0404d795c8f24c7"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12a9737875b94cb4e0404d795c8f24c7">DSMEPlatformBase</a></td></tr>
+<tr class="separator:a12a9737875b94cb4e0404d795c8f24c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8c6b1db5f0df79f7b719922e947e402" id="r_ae8c6b1db5f0df79f7b719922e947e402"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8c6b1db5f0df79f7b719922e947e402">DSMEMessageBuffer</a></td></tr>
+<tr class="separator:ae8c6b1db5f0df79f7b719922e947e402"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ade51cf9b2327a156974c296df97a1604" name="ade51cf9b2327a156974c296df97a1604"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade51cf9b2327a156974c296df97a1604">&#9670;&#160;</a></span>getCurrentlySending()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool dsme::DSMEMessage::getCurrentlySending </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>whether the message is being sent </p>
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00151">151</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<a id="ab48d74cb11124076ac9919ffbfa6fc54" name="ab48d74cb11124076ac9919ffbfa6fc54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab48d74cb11124076ac9919ffbfa6fc54">&#9670;&#160;</a></span>getHeader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEEE802154eMACHeader &amp; dsme::DSMEMessage::getHeader </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get IEEE 802.15.4 header </p>
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00119">119</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<a id="a2e1af8ffb01375470e8e8251d3ca5722" name="a2e1af8ffb01375470e8e8251d3ca5722"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e1af8ffb01375470e8e8251d3ca5722">&#9670;&#160;</a></span>getLQI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t dsme::DSMEMessage::getLQI </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get LQI of the message </p>
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00127">127</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<a id="aa6b8206aa63d50a8a304244220482e0a" name="aa6b8206aa63d50a8a304244220482e0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6b8206aa63d50a8a304244220482e0a">&#9670;&#160;</a></span>getMPDUSymbols()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t dsme::DSMEMessage::getMPDUSymbols </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get number of MPDU Symbols </p>
+<dl class="section note"><dt>Note</dt><dd>not used by openDSME </dd></dl>
+
+</div>
+</div>
+<a id="af0c17bf6985e96f5720ce3cfa7940d6f" name="af0c17bf6985e96f5720ce3cfa7940d6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0c17bf6985e96f5720ce3cfa7940d6f">&#9670;&#160;</a></span>getPayload()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t * dsme::DSMEMessage::getPayload </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get buffer associated to the current payload </p>
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00210">210</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<a id="a9165b55f087620aa2275a11df5f72da2" name="a9165b55f087620aa2275a11df5f72da2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9165b55f087620aa2275a11df5f72da2">&#9670;&#160;</a></span>getPayloadLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t dsme::DSMEMessage::getPayloadLength </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get payload length </p>
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00183">183</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<a id="a78e2dc69ab2f94ec7c128d36c2ae1997" name="a78e2dc69ab2f94ec7c128d36c2ae1997"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78e2dc69ab2f94ec7c128d36c2ae1997">&#9670;&#160;</a></span>getReceivedViaMCPS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool dsme::DSMEMessage::getReceivedViaMCPS </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>check whether the message was received via MCPS </p>
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00135">135</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<a id="a1b5c5669e4fc68a927f869defca859ca" name="a1b5c5669e4fc68a927f869defca859ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b5c5669e4fc68a927f869defca859ca">&#9670;&#160;</a></span>getRetryCounter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t dsme::DSMEMessage::getRetryCounter </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get retry counter </p>
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00175">175</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<a id="a630bf8006034ef090b702724b643914b" name="a630bf8006034ef090b702724b643914b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a630bf8006034ef090b702724b643914b">&#9670;&#160;</a></span>getRSSI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t dsme::DSMEMessage::getRSSI </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get RSSI of frame </p>
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00192">192</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<a id="accdd3561d690b73bea7215534f3c2dc5" name="accdd3561d690b73bea7215534f3c2dc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accdd3561d690b73bea7215534f3c2dc5">&#9670;&#160;</a></span>getStartOfFrameDelimiterSymbolCounter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t dsme::DSMEMessage::getStartOfFrameDelimiterSymbolCounter </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get the symbol counter at the end of the SFD </p>
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00080">80</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<a id="a96edfe5e865b0b4b2d73cbdc08289767" name="a96edfe5e865b0b4b2d73cbdc08289767"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96edfe5e865b0b4b2d73cbdc08289767">&#9670;&#160;</a></span>getTotalSymbols()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t dsme::DSMEMessage::getTotalSymbols </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get the total number of symbols in current frame </p>
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00096">96</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<a id="a0a27e7225ca5217e109a01f8619deb63" name="a0a27e7225ca5217e109a01f8619deb63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a27e7225ca5217e109a01f8619deb63">&#9670;&#160;</a></span>hasPayload()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool dsme::DSMEMessage::hasPayload </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>check whether the message has payload </p>
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00072">72</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<a id="a19d32c956e3db6a54b76f404a30b0510" name="a19d32c956e3db6a54b76f404a30b0510"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19d32c956e3db6a54b76f404a30b0510">&#9670;&#160;</a></span>increaseRetryCounter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dsme::DSMEMessage::increaseRetryCounter </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>increase retry counter for current message </p>
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00167">167</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<a id="a2403b0664870d0a422c696aaddf94a7f" name="a2403b0664870d0a422c696aaddf94a7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2403b0664870d0a422c696aaddf94a7f">&#9670;&#160;</a></span>setCurrentlySending()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dsme::DSMEMessage::setCurrentlySending </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>currentlySending</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>indicate that the message is being sent </p>
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00159">159</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<a id="a69928e74b145865b129151819f153f60" name="a69928e74b145865b129151819f153f60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69928e74b145865b129151819f153f60">&#9670;&#160;</a></span>setReceivedViaMCPS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dsme::DSMEMessage::setReceivedViaMCPS </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>receivedViaMCPS</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>indicated that message was received via MCPS </p>
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00143">143</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<a id="a80a5212ad5ca41a60c7015cc72d2b6bb" name="a80a5212ad5ca41a60c7015cc72d2b6bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80a5212ad5ca41a60c7015cc72d2b6bb">&#9670;&#160;</a></span>setStartOfFrameDelimiterSymbolCounter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dsme::DSMEMessage::setStartOfFrameDelimiterSymbolCounter </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>symbolCounter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>set the symbol counter at the end of the SFD </p>
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00088">88</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="ae8c6b1db5f0df79f7b719922e947e402" name="ae8c6b1db5f0df79f7b719922e947e402"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8c6b1db5f0df79f7b719922e947e402">&#9670;&#160;</a></span>DSMEMessageBuffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class DSMEMessageBuffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00330">330</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<a id="ab57a162fa02172bd42e4d4ebbc5b09a7" name="ab57a162fa02172bd42e4d4ebbc5b09a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab57a162fa02172bd42e4d4ebbc5b09a7">&#9670;&#160;</a></span>DSMEMessageElement</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class DSMEMessageElement</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00328">328</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<a id="afce7aa3c4ba6cd24cbc28cc6a561bf17" name="afce7aa3c4ba6cd24cbc28cc6a561bf17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afce7aa3c4ba6cd24cbc28cc6a561bf17">&#9670;&#160;</a></span>DSMEPlatform</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classdsme_1_1DSMEPlatform.html">DSMEPlatform</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00327">327</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<a id="a12a9737875b94cb4e0404d795c8f24c7" name="a12a9737875b94cb4e0404d795c8f24c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12a9737875b94cb4e0404d795c8f24c7">&#9670;&#160;</a></span>DSMEPlatformBase</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class DSMEPlatformBase</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00329">329</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a7584a72d991d71da9f16c8102b22adc9" name="a7584a72d991d71da9f16c8102b22adc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7584a72d991d71da9f16c8102b22adc9">&#9670;&#160;</a></span>firstTry</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool dsme::DSMEMessage::firstTry</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>whether the message is being sent on the first try </p>
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00244">244</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<a id="a2ca8d03ce6a1f101a25a845253f99bc3" name="a2ca8d03ce6a1f101a25a845253f99bc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ca8d03ce6a1f101a25a845253f99bc3">&#9670;&#160;</a></span>free</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool dsme::DSMEMessage::free</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>whether the message is free </p>
+
+<p class="definition">Definition at line <a class="el" href="DSMEMessage_8h_source.html#l00249">249</a> of file <a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>pkg/opendsme/include/opendsme/<a class="el" href="DSMEMessage_8h_source.html">DSMEMessage.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/usb/hid.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('hid_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">hid.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="hid_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (C) 2021 Nils Ollrogge</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser General</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * Public License v2.1. See the file LICENSE in the top level directory for</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * more details.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#ifndef USB_HID_H</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define USB_HID_H</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &quot;<a class="code" href="hid__usage_8h.html">usb/hid/hid_usage.h</a>&quot;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="group__usb__hid.html#gaab5c5e83422608016feb4ccadec4fabd">   36</a></span><span class="preprocessor">#define USB_TYPE_DESCRIPTOR_HID      0x21</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="group__usb__hid.html#gad6e17d0b8c7c055dbbe198dd1584ba30">   41</a></span><span class="preprocessor">#define USB_HID_VERSION_BCD          0x0110</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#define USB_HID_SUBCLASS_NONE 0x0</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#define USB_HID_SUBCLASS_BOOT 0x1</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#define USB_HID_PROTOCOL_NONE       0x0</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#define USB_HID_PROTOCOL_KEYBOARD   0x1</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#define USB_HID_PROTOCOL_MOUSE      0x2</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#define USB_HID_DESCR_HID       0x21</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#define USB_HID_DESCR_REPORT    0x22</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#define USB_HID_DESCR_PHYSICAL  0x23</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="group__usb__hid.html#gacaf661389b65fee118ad183cc92ee0c6">   72</a></span><span class="preprocessor">#define USB_HID_COUNTRY_CODE_NOTSUPPORTED 0x00</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#define USB_HID_REQUEST_GET_REPORT    0x01</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#define USB_HID_REQUEST_GET_IDLE      0x02</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#define USB_HID_REQUEST_GET_PROTOCOL  0x03</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">#define USB_HID_REQUEST_SET_REPORT    0x09</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#define USB_HID_REQUEST_SET_IDLE      0x0a</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#define USB_HID_REQUEST_SET_PROTOCOL  0x0b</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="group__usb__hid.html#gaa8decfcf5173f981b3c12c3a6e967bc1">   89</a></span><span class="preprocessor">#define USBUS_HID_EP_IN_REQUIRED_NUMOF   1</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="group__usb__hid.html#ga1ad9ad3ef302792415ba0fa1f982a0ff">   94</a></span><span class="preprocessor">#define USBUS_HID_EP_OUT_REQUIRED_NUMOF  1</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="foldopen" id="foldopen00101" data-start="{" data-end="};">
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="structusb__desc__hid__t.html">  101</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>__attribute__((packed)){</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="structusb__desc__hid__t.html#acaecc91f6c5c509bfdaedc612513aa0c">  102</a></span>    uint8_t <a class="code hl_variable" href="structusb__desc__hid__t.html#acaecc91f6c5c509bfdaedc612513aa0c">length</a>;         </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="structusb__desc__hid__t.html#a97281bc8cc14ae7eacc623c88215035e">  104</a></span>    uint8_t <a class="code hl_variable" href="structusb__desc__hid__t.html#a97281bc8cc14ae7eacc623c88215035e">desc_type</a>;      </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="structusb__desc__hid__t.html#ad5946132c01ca744404fd92e608205cd">  107</a></span>    uint16_t <a class="code hl_variable" href="structusb__desc__hid__t.html#ad5946132c01ca744404fd92e608205cd">bcd_hid</a>;       </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="structusb__desc__hid__t.html#a67ebb021e18d903cce0a2a3000e63e8c">  109</a></span>    uint8_t <a class="code hl_variable" href="structusb__desc__hid__t.html#a67ebb021e18d903cce0a2a3000e63e8c">country_code</a>;   </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="structusb__desc__hid__t.html#adc8178f7d8376cfd102a78ed29197af1">  111</a></span>    uint8_t <a class="code hl_variable" href="structusb__desc__hid__t.html#adc8178f7d8376cfd102a78ed29197af1">num_descrs</a>;     </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="structusb__desc__hid__t.html#a5090401fdcdd8ae56577572cac56e7d0">  114</a></span>    uint8_t <a class="code hl_variable" href="structusb__desc__hid__t.html#a5090401fdcdd8ae56577572cac56e7d0">report_type</a>;    </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="structusb__desc__hid__t.html#a955092df532ca328c7d5ab801fa9c288">  115</a></span>    uint16_t <a class="code hl_variable" href="structusb__desc__hid__t.html#a955092df532ca328c7d5ab801fa9c288">report_length</a>; </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>} <a class="code hl_struct" href="structusb__desc__hid__t.html">usb_desc_hid_t</a>;</div>
+</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga6225a899a3c79ae73b9b24f795cfc87f">  130</a></span><span class="preprocessor">#define USB_HID_ITEM_TYPE_MAIN      0x0</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#gac127517817352d468a086c170825e357">  135</a></span><span class="preprocessor">#define USB_HID_ITEM_TYPE_GLOBAL        0x1</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga2f3e000725267a8b7f3b8e9a92838200">  140</a></span><span class="preprocessor">#define USB_HID_ITEM_TYPE_LOCAL     0x2</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga0e13f4780ca0e7c375b45bfb1126b4cf">  145</a></span><span class="preprocessor">#define USB_HID_ITEM_TAG_INPUT      0x8</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga08e5a91632eb6c198fd063bfbf8694c9">  150</a></span><span class="preprocessor">#define USB_HID_ITEM_TAG_OUTPUT     0x9</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga57777fece329852ec7074baae70f92cb">  155</a></span><span class="preprocessor">#define USB_HID_ITEM_TAG_COLLECTION     0xA</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga8716ab204ca81f70484802f7b0f90686">  160</a></span><span class="preprocessor">#define USB_HID_ITEM_TAG_FEATURE        0xB</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga31881e3d19b5cfe6b3c31c14a352b396">  165</a></span><span class="preprocessor">#define USB_HID_ITEM_TAG_COLLECTION_END 0xC</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga2fceab899fc7dea78967c681216ebbdf">  170</a></span><span class="preprocessor">#define USB_HID_ITEM_TAG_USAGE_PAGE     0x0</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#gaeda73f4fb4590a051cb8fc050d1405a7">  174</a></span><span class="preprocessor">#define USB_HID_ITEM_TAG_LOGICAL_MIN    0x1</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga3967e0edcf3397fe70a71dc1f9e7f56c">  179</a></span><span class="preprocessor">#define USB_HID_ITEM_TAG_LOGICAL_MAX    0x2</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#gabb01f971a18ffaf93050712bfa736b34">  184</a></span><span class="preprocessor">#define USB_HID_ITEM_TAG_PHYSICAL_MIN   0x3</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga94a0c494c8db1fe30fbacc662c34786f">  189</a></span><span class="preprocessor">#define USB_HID_ITEM_TAG_PHYSICAL_MAX   0x4</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga3b09428f1a1ba0c790fdcdc4a7d3e9f2">  194</a></span><span class="preprocessor">#define USB_HID_ITEM_TAG_UNIT_EXPONENT  0x5</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#gaf84e69ddee7dfddeca290c6894dcc3ad">  199</a></span><span class="preprocessor">#define USB_HID_ITEM_TAG_UNIT       0x6</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga070361b79b8bb765fcd0e6ca9ae70bad">  204</a></span><span class="preprocessor">#define USB_HID_ITEM_TAG_REPORT_SIZE    0x7</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga2a9b87ccfb8a1e073ef067db22397613">  209</a></span><span class="preprocessor">#define USB_HID_ITEM_TAG_REPORT_ID      0x8</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#gaa3ddfad5577877d9a5bb28d1db437ec1">  214</a></span><span class="preprocessor">#define USB_HID_ITEM_TAG_REPORT_COUNT   0x9</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga164829d87b0960897cd5b1ebc36f270a">  219</a></span><span class="preprocessor">#define USB_HID_ITEM_TAG_USAGE      0x0</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga53c10903144cee8e9d6b7e746edeab33">  224</a></span><span class="preprocessor">#define USB_HID_ITEM_TAG_USAGE_MIN      0x1</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#gaab7eeb9fb09648c797e99adb10d8f754">  229</a></span><span class="preprocessor">#define USB_HID_ITEM_TAG_USAGE_MAX      0x2</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#gae01a0674bf98efe3cc8300d378ed04ef">  234</a></span><span class="preprocessor">#define USB_HID_COLLECTION_PHYSICAL     0x00</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#gacffd9b2a364afa701f92054cbc3ada45">  239</a></span><span class="preprocessor">#define USB_HID_COLLECTION_APPLICATION  0x01</span></div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga33ef755598b110f6878de6be37eccde3">  244</a></span><span class="preprocessor">#define USB_HID_COLLECTION_LOGICAL      0x02</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga0619a8b42ee56b0f9e1b64072247ae6e">  249</a></span><span class="preprocessor">#define USB_HID_COLLECTION_REPORT       0x03</span></div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga1894f5b9125d1c9fd1eb2c8a6b6a32fc">  254</a></span><span class="preprocessor">#define USB_HID_COLLECTION_NAMED_ARRAY  0x04</span></div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#gaa803d7309cc65c8891824ec307604d24">  259</a></span><span class="preprocessor">#define USB_HID_COLLECTION_USAGE_SWITCH 0x05</span></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#gaa85d9444614ddb634a13e78335685355">  264</a></span><span class="preprocessor">#define USB_HID_COLLECTION_USAGE_MOD    0x06</span></div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
+<div class="foldopen" id="foldopen00273" data-start="" data-end="">
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga42be0b292023b6daaa80f2f7faf808ea">  273</a></span><span class="preprocessor">#define USB_HID_ITEM(tag, type, size) \</span></div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="preprocessor">    (((tag &amp; 0xF) &lt;&lt; 4) | ((type &amp; 0x3) &lt;&lt; 2) | (size &amp; 0x3))</span></div>
+</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
+<div class="foldopen" id="foldopen00283" data-start="" data-end="">
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga2fef4e98b16242d2bd353217c538e579">  283</a></span><span class="preprocessor">#define USB_HID_INPUT(input)  \</span></div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_INPUT, USB_HID_ITEM_TYPE_MAIN, 1), \</span></div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="preprocessor">    input</span></div>
+</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
+<div class="foldopen" id="foldopen00294" data-start="" data-end="">
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga5dc2dd5b34d50c864c14e6986178cc22">  294</a></span><span class="preprocessor">#define USB_HID_OUTPUT(output) \</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_OUTPUT, USB_HID_ITEM_TYPE_MAIN, 1), \</span></div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="preprocessor">    output</span></div>
+</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
+<div class="foldopen" id="foldopen00306" data-start="" data-end="">
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#gaeea57be546225ce9608ed315af47daf2">  306</a></span><span class="preprocessor">#define USB_HID_FEATURE(feature) \</span></div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_FEATURE, USB_HID_ITEM_TYPE_MAIN, 1), \</span></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span><span class="preprocessor">    feature</span></div>
+</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
+<div class="foldopen" id="foldopen00317" data-start="" data-end="">
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga7765c349b8bdbdba2d38c9fc5707cb7e">  317</a></span><span class="preprocessor">#define USB_HID_COLLECTION(collection) \</span></div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_COLLECTION, USB_HID_ITEM_TYPE_MAIN, 1), \</span></div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span><span class="preprocessor">    collection</span></div>
+</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
+<div class="foldopen" id="foldopen00324" data-start="" data-end="">
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga488fdd22a033a14800eff0c8f407a664">  324</a></span><span class="preprocessor">#define USB_HID_END_COLLECTION \</span></div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_COLLECTION_END, USB_HID_ITEM_TYPE_MAIN, 0)</span></div>
+</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span> </div>
+<div class="foldopen" id="foldopen00334" data-start="" data-end="">
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#gafdd3f908edfaeafd7b8801b0f4b7f474">  334</a></span><span class="preprocessor">#define USB_HID_USAGE_PAGE(page) \</span></div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_USAGE_PAGE, USB_HID_ITEM_TYPE_GLOBAL, 1), \</span></div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span><span class="preprocessor">    page</span></div>
+</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
+<div class="foldopen" id="foldopen00345" data-start="" data-end="">
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga5b6c04a58bc9d01fcef851c9ddfcf483">  345</a></span><span class="preprocessor">#define USB_HID_USAGE_PAGE16(page) \</span></div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_USAGE_PAGE, USB_HID_ITEM_TYPE_GLOBAL, 2), \</span></div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span><span class="preprocessor">    page &amp; 0xff, (page &gt;&gt; 8)</span></div>
+</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span> </div>
+<div class="foldopen" id="foldopen00356" data-start="" data-end="">
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga7b66fddb6b9300d9d65490a333ac3c68">  356</a></span><span class="preprocessor">#define USB_HID_LOGICAL_MIN8(minimum) \</span></div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_LOGICAL_MIN, USB_HID_ITEM_TYPE_GLOBAL, 1), \</span></div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span><span class="preprocessor">    minimum</span></div>
+</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span> </div>
+<div class="foldopen" id="foldopen00367" data-start="" data-end="">
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#gac1d5ac623b4136af8eab30b03488b3ea">  367</a></span><span class="preprocessor">#define USB_HID_LOGICAL_MIN16(minimum) \</span></div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_LOGICAL_MIN, USB_HID_ITEM_TYPE_GLOBAL, 2), \</span></div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span><span class="preprocessor">    minimum &amp; 0xff, (minimum &gt;&gt; 8)</span></div>
+</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span> </div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span> </div>
+<div class="foldopen" id="foldopen00379" data-start="" data-end="">
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga346f1650290f6116b0ffdddcaabc50b1">  379</a></span><span class="preprocessor">#define USB_HID_LOGICAL_MIN32(minimum) \</span></div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_LOGICAL_MIN, USB_HID_ITEM_TYPE_GLOBAL, 3), \</span></div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span><span class="preprocessor">    minimum &amp; 0xff, \</span></div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span><span class="preprocessor">    (minimum &gt;&gt; 8) &amp; 0xff, \</span></div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span><span class="preprocessor">    (minimum &gt;&gt; 16) &amp; 0xff, \</span></div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span><span class="preprocessor">    (minimum &gt;&gt; 24) &amp; 0xff</span></div>
+</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span> </div>
+<div class="foldopen" id="foldopen00393" data-start="" data-end="">
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga9f56d93c111e89d722ce9e5cdb138af5">  393</a></span><span class="preprocessor">#define USB_HID_LOGICAL_MAX8(maximum) \</span></div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_LOGICAL_MAX, USB_HID_ITEM_TYPE_GLOBAL, 1), \</span></div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span><span class="preprocessor">    maximum</span></div>
+</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span> </div>
+<div class="foldopen" id="foldopen00404" data-start="" data-end="">
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga6d8b610c93b500b2d32413c6a8d942d3">  404</a></span><span class="preprocessor">#define USB_HID_LOGICAL_MAX16(maximum) \</span></div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_LOGICAL_MAX, USB_HID_ITEM_TYPE_GLOBAL, 2), \</span></div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span><span class="preprocessor">    (maximum &amp; 0xff), (maximum &gt;&gt; 8)</span></div>
+</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span> </div>
+<div class="foldopen" id="foldopen00415" data-start="" data-end="">
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga53e42e6b6245e617d4268cf209c6b54e">  415</a></span><span class="preprocessor">#define USB_HID_LOGICAL_MAX32(maximum) \</span></div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_LOGICAL_MAX, USB_HID_ITEM_TYPE_GLOBAL, 3), \</span></div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span><span class="preprocessor">    maximum &amp; 0xff, \</span></div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span><span class="preprocessor">    (maximum &gt;&gt; 8) &amp; 0xff, \</span></div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span><span class="preprocessor">    (maximum &gt;&gt; 16) &amp; 0xff, \</span></div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span><span class="preprocessor">    (maximum &gt;&gt; 24) &amp; 0xff</span></div>
+</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span> </div>
+<div class="foldopen" id="foldopen00429" data-start="" data-end="">
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#gadd27ea8fd880a04c52b0d40b8a6d0a2f">  429</a></span><span class="preprocessor">#define USB_HID_REPORT_SIZE(size)       \</span></div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_REPORT_SIZE, USB_HID_ITEM_TYPE_GLOBAL, 1), \</span></div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span><span class="preprocessor">    size</span></div>
+</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span> </div>
+<div class="foldopen" id="foldopen00440" data-start="" data-end="">
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga3d4e7b7ed9992944f84c90dd568f24d4">  440</a></span><span class="preprocessor">#define USB_HID_REPORT_ID(id)       \</span></div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_REPORT_ID, USB_HID_ITEM_TYPE_GLOBAL, 1), \</span></div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span><span class="preprocessor">    id</span></div>
+</div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span> </div>
+<div class="foldopen" id="foldopen00451" data-start="" data-end="">
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#gad64f6666338df2a319fa786c8f2587ee">  451</a></span><span class="preprocessor">#define USB_HID_REPORT_COUNT(count)     \</span></div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_REPORT_COUNT, USB_HID_ITEM_TYPE_GLOBAL, 1), \</span></div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span><span class="preprocessor">    count</span></div>
+</div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span> </div>
+<div class="foldopen" id="foldopen00462" data-start="" data-end="">
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga7c8c59d5f465c79ff649fe4e47c9c5aa">  462</a></span><span class="preprocessor">#define USB_HID_USAGE(index)            \</span></div>
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_USAGE, USB_HID_ITEM_TYPE_LOCAL, 1), \</span></div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span><span class="preprocessor">    index</span></div>
+</div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span> </div>
+<div class="foldopen" id="foldopen00473" data-start="" data-end="">
+<div class="line"><a id="l00473" name="l00473"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga98d2811f3eb00363622be7382b9405e1">  473</a></span><span class="preprocessor">#define USB_HID_USAGE_MIN8(start)       \</span></div>
+<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_USAGE_MIN, USB_HID_ITEM_TYPE_LOCAL, 1), \</span></div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span><span class="preprocessor">    start</span></div>
+</div>
+<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span> </div>
+<div class="foldopen" id="foldopen00484" data-start="" data-end="">
+<div class="line"><a id="l00484" name="l00484"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga538fd2c8063352919c84b9ede8ff8f4a">  484</a></span><span class="preprocessor">#define USB_HID_USAGE_MIN16(start)      \</span></div>
+<div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_USAGE_MIN, USB_HID_ITEM_TYPE_LOCAL, 2), \</span></div>
+<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span><span class="preprocessor">    start &amp; 0xff, (start &gt;&gt; 8) &amp; 0xff</span></div>
+</div>
+<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span> </div>
+<div class="foldopen" id="foldopen00495" data-start="" data-end="">
+<div class="line"><a id="l00495" name="l00495"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#ga287f4ccba4b4a28715b2ab4b5d0634fe">  495</a></span><span class="preprocessor">#define USB_HID_USAGE_MAX8(end)     \</span></div>
+<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_USAGE_MAX, USB_HID_ITEM_TYPE_LOCAL, 1), \</span></div>
+<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span><span class="preprocessor">    end</span></div>
+</div>
+<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span> </div>
+<div class="foldopen" id="foldopen00506" data-start="" data-end="">
+<div class="line"><a id="l00506" name="l00506"></a><span class="lineno"><a class="line" href="group__usb__hid__descriptor.html#gac18934556da57f2648edd1b7a7362246">  506</a></span><span class="preprocessor">#define USB_HID_USAGE_MAX16(end)      \</span></div>
+<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span><span class="preprocessor">    USB_HID_ITEM(USB_HID_ITEM_TAG_USAGE_MAX, USB_HID_ITEM_TYPE_LOCAL, 2), \</span></div>
+<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span><span class="preprocessor">    end &amp; 0xff, (end &gt;&gt; 8) &amp; 0xff</span></div>
+</div>
+<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span> </div>
+<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>}</div>
+<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span> </div>
+<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span><span class="preprocessor">#endif </span><span class="comment">/* USB_HID_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="ahid__usage_8h_html"><div class="ttname"><a href="hid__usage_8h.html">hid_usage.h</a></div><div class="ttdoc">Definition for USB HID usage tables.</div></div>
+<div class="ttc" id="astructusb__desc__hid__t_html"><div class="ttname"><a href="structusb__desc__hid__t.html">usb_desc_hid_t</a></div><div class="ttdoc">USB HID descriptor struct.</div><div class="ttdef"><b>Definition</b> <a href="#l00101">hid.h:101</a></div></div>
+<div class="ttc" id="astructusb__desc__hid__t_html_a5090401fdcdd8ae56577572cac56e7d0"><div class="ttname"><a href="structusb__desc__hid__t.html#a5090401fdcdd8ae56577572cac56e7d0">usb_desc_hid_t::report_type</a></div><div class="ttdeci">uint8_t report_type</div><div class="ttdoc">Type of HID class report.</div><div class="ttdef"><b>Definition</b> <a href="#l00114">hid.h:114</a></div></div>
+<div class="ttc" id="astructusb__desc__hid__t_html_a67ebb021e18d903cce0a2a3000e63e8c"><div class="ttname"><a href="structusb__desc__hid__t.html#a67ebb021e18d903cce0a2a3000e63e8c">usb_desc_hid_t::country_code</a></div><div class="ttdeci">uint8_t country_code</div><div class="ttdoc">Numeric expression identifying country code of the localized hardware.</div><div class="ttdef"><b>Definition</b> <a href="#l00109">hid.h:109</a></div></div>
+<div class="ttc" id="astructusb__desc__hid__t_html_a955092df532ca328c7d5ab801fa9c288"><div class="ttname"><a href="structusb__desc__hid__t.html#a955092df532ca328c7d5ab801fa9c288">usb_desc_hid_t::report_length</a></div><div class="ttdeci">uint16_t report_length</div><div class="ttdoc">the total size of the Report descriptor.</div><div class="ttdef"><b>Definition</b> <a href="#l00115">hid.h:115</a></div></div>
+<div class="ttc" id="astructusb__desc__hid__t_html_a97281bc8cc14ae7eacc623c88215035e"><div class="ttname"><a href="structusb__desc__hid__t.html#a97281bc8cc14ae7eacc623c88215035e">usb_desc_hid_t::desc_type</a></div><div class="ttdeci">uint8_t desc_type</div><div class="ttdoc">Constant name specifying type of HID descriptor.</div><div class="ttdef"><b>Definition</b> <a href="#l00104">hid.h:104</a></div></div>
+<div class="ttc" id="astructusb__desc__hid__t_html_acaecc91f6c5c509bfdaedc612513aa0c"><div class="ttname"><a href="structusb__desc__hid__t.html#acaecc91f6c5c509bfdaedc612513aa0c">usb_desc_hid_t::length</a></div><div class="ttdeci">uint8_t length</div><div class="ttdoc">Numeric expression that is the total size of the HID descriptor.</div><div class="ttdef"><b>Definition</b> <a href="#l00102">hid.h:102</a></div></div>
+<div class="ttc" id="astructusb__desc__hid__t_html_ad5946132c01ca744404fd92e608205cd"><div class="ttname"><a href="structusb__desc__hid__t.html#ad5946132c01ca744404fd92e608205cd">usb_desc_hid_t::bcd_hid</a></div><div class="ttdeci">uint16_t bcd_hid</div><div class="ttdoc">Numeric expression identifying the HID Class Specification release.</div><div class="ttdef"><b>Definition</b> <a href="#l00107">hid.h:107</a></div></div>
+<div class="ttc" id="astructusb__desc__hid__t_html_adc8178f7d8376cfd102a78ed29197af1"><div class="ttname"><a href="structusb__desc__hid__t.html#adc8178f7d8376cfd102a78ed29197af1">usb_desc_hid_t::num_descrs</a></div><div class="ttdeci">uint8_t num_descrs</div><div class="ttdoc">Numeric expression specifying the number of class descriptors.</div><div class="ttdef"><b>Definition</b> <a href="#l00111">hid.h:111</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:30 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>spi_conf_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structspi__conf__t.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">spi_conf_t Struct Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>SPI device configuration.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>SPI device configuration. </p>
+<p>SPI configuration data.</p>
+<p>Configuration details for an SPI interface needed by the RPX0XX peripheral.</p>
+<p>SPI configuration values.</p>
+<p>MSP430 x1xx SPI configuration, board level.</p>
+<p>MSP430 F2xx/G2xx SPI configuration, board level.</p>
+<p>SPI configuration data structure.</p>
+<p>SPI module configuration options.</p>
+<p>Structure for SPI configuration data.</p>
+<p>SPI configuration structure type. </p>
+
+<p class="definition">Definition at line <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html#l00337">337</a> of file <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="atxmega_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a3bf2b03b4dbcce607423d7c17f093f1c" id="r_a3bf2b03b4dbcce607423d7c17f093f1c"><td class="memItemLeft" align="right" valign="top">SPI_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bf2b03b4dbcce607423d7c17f093f1c">dev</a></td></tr>
+<tr class="memdesc:a3bf2b03b4dbcce607423d7c17f093f1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the used SPI device  <br /></td></tr>
+<tr class="separator:a3bf2b03b4dbcce607423d7c17f093f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a137c77c4f73013eebdca09a9ea41a764" id="r_a137c77c4f73013eebdca09a9ea41a764"><td class="memItemLeft" align="right" valign="top"><a class="el" href="atxmega_2include_2periph__cpu_8h.html#a84dd39eddad92f5ea43b0368b47ed1d8">pwr_reduction_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a137c77c4f73013eebdca09a9ea41a764">pwr</a></td></tr>
+<tr class="memdesc:a137c77c4f73013eebdca09a9ea41a764"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power Management.  <br /></td></tr>
+<tr class="separator:a137c77c4f73013eebdca09a9ea41a764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40cf220c63dfe486b8641f9016caacf1" id="r_a40cf220c63dfe486b8641f9016caacf1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40cf220c63dfe486b8641f9016caacf1">sck_pin</a></td></tr>
+<tr class="memdesc:a40cf220c63dfe486b8641f9016caacf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin used for SCK  <br /></td></tr>
+<tr class="separator:a40cf220c63dfe486b8641f9016caacf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08f0caabef68efa3f08b8ace090567fc" id="r_a08f0caabef68efa3f08b8ace090567fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08f0caabef68efa3f08b8ace090567fc">miso_pin</a></td></tr>
+<tr class="memdesc:a08f0caabef68efa3f08b8ace090567fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin used for MISO  <br /></td></tr>
+<tr class="separator:a08f0caabef68efa3f08b8ace090567fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25ed4ae03d33739ed9db9842489ded32" id="r_a25ed4ae03d33739ed9db9842489ded32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25ed4ae03d33739ed9db9842489ded32">mosi_pin</a></td></tr>
+<tr class="memdesc:a25ed4ae03d33739ed9db9842489ded32"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin used for MOSI  <br /></td></tr>
+<tr class="separator:a25ed4ae03d33739ed9db9842489ded32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2be018ca333e24521a18612895d42c18" id="r_a2be018ca333e24521a18612895d42c18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2be018ca333e24521a18612895d42c18">ss_pin</a></td></tr>
+<tr class="memdesc:a2be018ca333e24521a18612895d42c18"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin used for SS line  <br /></td></tr>
+<tr class="separator:a2be018ca333e24521a18612895d42c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2017820cefc8c6c5e99b8506f4c7a3ce" id="r_a2017820cefc8c6c5e99b8506f4c7a3ce"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2017820cefc8c6c5e99b8506f4c7a3ce">num</a></td></tr>
+<tr class="memdesc:a2017820cefc8c6c5e99b8506f4c7a3ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of SSI device, i.e.  <br /></td></tr>
+<tr class="separator:a2017820cefc8c6c5e99b8506f4c7a3ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a409653518424bf6b74de21624f438ea4" id="r_a409653518424bf6b74de21624f438ea4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__spi.html#gaf5fbaf43946646c588c9372e8906c99e">spi_cs_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a409653518424bf6b74de21624f438ea4">cs_pin</a></td></tr>
+<tr class="memdesc:a409653518424bf6b74de21624f438ea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin used for CS  <br /></td></tr>
+<tr class="separator:a409653518424bf6b74de21624f438ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a878d6b89412aff891338a75cc88971a3" id="r_a878d6b89412aff891338a75cc88971a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="esp8266_2include_2periph__cpu_8h.html#ad268301d3b918e279269ec49f803488d">spi_ctrl_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a878d6b89412aff891338a75cc88971a3">ctrl</a></td></tr>
+<tr class="memdesc:a878d6b89412aff891338a75cc88971a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI controller used for the interface.  <br /></td></tr>
+<tr class="separator:a878d6b89412aff891338a75cc88971a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0e7f02aa9f7d14179222a735d328383" id="r_af0e7f02aa9f7d14179222a735d328383"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0e7f02aa9f7d14179222a735d328383">sck</a></td></tr>
+<tr class="memdesc:af0e7f02aa9f7d14179222a735d328383"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO used as SCK pin.  <br /></td></tr>
+<tr class="separator:af0e7f02aa9f7d14179222a735d328383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e5bf2c53c3ab5a1be4c341f2a106281" id="r_a2e5bf2c53c3ab5a1be4c341f2a106281"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e5bf2c53c3ab5a1be4c341f2a106281">mosi</a></td></tr>
+<tr class="memdesc:a2e5bf2c53c3ab5a1be4c341f2a106281"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO used as MOSI pin.  <br /></td></tr>
+<tr class="separator:a2e5bf2c53c3ab5a1be4c341f2a106281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade92d9d7a11051017f3147050616c47c" id="r_ade92d9d7a11051017f3147050616c47c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade92d9d7a11051017f3147050616c47c">miso</a></td></tr>
+<tr class="memdesc:ade92d9d7a11051017f3147050616c47c"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO used as MISO pin.  <br /></td></tr>
+<tr class="separator:ade92d9d7a11051017f3147050616c47c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4044c7635abde0d283a125a52eeaa62" id="r_ad4044c7635abde0d283a125a52eeaa62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4044c7635abde0d283a125a52eeaa62">cs</a></td></tr>
+<tr class="memdesc:ad4044c7635abde0d283a125a52eeaa62"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO used as CS0 pin.  <br /></td></tr>
+<tr class="separator:ad4044c7635abde0d283a125a52eeaa62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36fd0678709649017a06e530fa9a8f53" id="r_a36fd0678709649017a06e530fa9a8f53"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36fd0678709649017a06e530fa9a8f53">addr</a></td></tr>
+<tr class="memdesc:a36fd0678709649017a06e530fa9a8f53"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI control register address.  <br /></td></tr>
+<tr class="separator:a36fd0678709649017a06e530fa9a8f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a607aff14059c230a78734a2f9e79f050" id="r_a607aff14059c230a78734a2f9e79f050"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a607aff14059c230a78734a2f9e79f050">sclk</a></td></tr>
+<tr class="memdesc:a607aff14059c230a78734a2f9e79f050"><td class="mdescLeft">&#160;</td><td class="mdescRight">SCLK pin.  <br /></td></tr>
+<tr class="separator:a607aff14059c230a78734a2f9e79f050"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa204cbc22f2d457b5cc34283200ce047" id="r_aa204cbc22f2d457b5cc34283200ce047"><td class="memItemLeft" align="right" valign="top">SPI_Type *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa204cbc22f2d457b5cc34283200ce047">dev</a></td></tr>
+<tr class="memdesc:aa204cbc22f2d457b5cc34283200ce047"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI device base register address.  <br /></td></tr>
+<tr class="separator:aa204cbc22f2d457b5cc34283200ce047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b628e0d41b5ef6bf96e03f77732e3cf" id="r_a3b628e0d41b5ef6bf96e03f77732e3cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b628e0d41b5ef6bf96e03f77732e3cf">sclk_pin</a></td></tr>
+<tr class="memdesc:a3b628e0d41b5ef6bf96e03f77732e3cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">SCLK pin.  <br /></td></tr>
+<tr class="separator:a3b628e0d41b5ef6bf96e03f77732e3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20af8d9fa5abbc4158271f0380bb5955" id="r_a20af8d9fa5abbc4158271f0380bb5955"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20af8d9fa5abbc4158271f0380bb5955">rcumask</a></td></tr>
+<tr class="memdesc:a20af8d9fa5abbc4158271f0380bb5955"><td class="mdescLeft">&#160;</td><td class="mdescRight">bit in the RCC peripheral enable register  <br /></td></tr>
+<tr class="separator:a20af8d9fa5abbc4158271f0380bb5955"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44f7310cef18296dcda0dee4d7ed54eb" id="r_a44f7310cef18296dcda0dee4d7ed54eb"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44f7310cef18296dcda0dee4d7ed54eb">apbbus</a></td></tr>
+<tr class="memdesc:a44f7310cef18296dcda0dee4d7ed54eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">APBx bus the device is connected to.  <br /></td></tr>
+<tr class="separator:a44f7310cef18296dcda0dee4d7ed54eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad164c5097a356f7e6d689aca7ae4886f" id="r_ad164c5097a356f7e6d689aca7ae4886f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad164c5097a356f7e6d689aca7ae4886f">pin_miso</a></td></tr>
+<tr class="memdesc:ad164c5097a356f7e6d689aca7ae4886f"><td class="mdescLeft">&#160;</td><td class="mdescRight">MISO pin used.  <br /></td></tr>
+<tr class="separator:ad164c5097a356f7e6d689aca7ae4886f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abca93220430f0cd3db6ec2e05c84a7c8" id="r_abca93220430f0cd3db6ec2e05c84a7c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abca93220430f0cd3db6ec2e05c84a7c8">pin_mosi</a></td></tr>
+<tr class="memdesc:abca93220430f0cd3db6ec2e05c84a7c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">MOSI pin used.  <br /></td></tr>
+<tr class="separator:abca93220430f0cd3db6ec2e05c84a7c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a130da9e93f34758a665d4099fecc1a74" id="r_a130da9e93f34758a665d4099fecc1a74"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a130da9e93f34758a665d4099fecc1a74">pin_clk</a></td></tr>
+<tr class="memdesc:a130da9e93f34758a665d4099fecc1a74"><td class="mdescLeft">&#160;</td><td class="mdescRight">CLK pin used.  <br /></td></tr>
+<tr class="separator:a130da9e93f34758a665d4099fecc1a74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1666d1cea7276b2ad957bd6a367792be" id="r_a1666d1cea7276b2ad957bd6a367792be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__spi.html#gaf5fbaf43946646c588c9372e8906c99e">spi_cs_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1666d1cea7276b2ad957bd6a367792be">pin_cs</a> [<a class="el" href="kinetis_2include_2periph__cpu_8h.html#ad200812f13922152c349607617703b5e">SPI_HWCS_NUMOF</a>]</td></tr>
+<tr class="memdesc:a1666d1cea7276b2ad957bd6a367792be"><td class="mdescLeft">&#160;</td><td class="mdescRight">pins used for HW cs lines  <br /></td></tr>
+<tr class="separator:a1666d1cea7276b2ad957bd6a367792be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5547aecdb2dd55a4b10a35e8cb8c2d0" id="r_af5547aecdb2dd55a4b10a35e8cb8c2d0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5547aecdb2dd55a4b10a35e8cb8c2d0">simmask</a></td></tr>
+<tr class="memdesc:af5547aecdb2dd55a4b10a35e8cb8c2d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">bit in the SIM register  <br /></td></tr>
+<tr class="separator:af5547aecdb2dd55a4b10a35e8cb8c2d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeec13877aa9b45d8bed6e7e15456188" id="r_afeec13877aa9b45d8bed6e7e15456188"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afeec13877aa9b45d8bed6e7e15456188">ssi_sysctl</a></td></tr>
+<tr class="memdesc:afeec13877aa9b45d8bed6e7e15456188"><td class="mdescLeft">&#160;</td><td class="mdescRight">SSI device in sysctl.  <br /></td></tr>
+<tr class="separator:afeec13877aa9b45d8bed6e7e15456188"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa73359c9b6be9c4bfb508680ee427915" id="r_aa73359c9b6be9c4bfb508680ee427915"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa73359c9b6be9c4bfb508680ee427915">ssi_base</a></td></tr>
+<tr class="memdesc:aa73359c9b6be9c4bfb508680ee427915"><td class="mdescLeft">&#160;</td><td class="mdescRight">SSI base address.  <br /></td></tr>
+<tr class="separator:aa73359c9b6be9c4bfb508680ee427915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a593ad4b0b2ae0e69c8414ae510c09883" id="r_a593ad4b0b2ae0e69c8414ae510c09883"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a593ad4b0b2ae0e69c8414ae510c09883">gpio_sysctl</a></td></tr>
+<tr class="memdesc:a593ad4b0b2ae0e69c8414ae510c09883"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO device in sysctl.  <br /></td></tr>
+<tr class="separator:a593ad4b0b2ae0e69c8414ae510c09883"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3e5516cdc0ece325e674c01716a0ef3" id="r_ae3e5516cdc0ece325e674c01716a0ef3"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3e5516cdc0ece325e674c01716a0ef3">gpio_port</a></td></tr>
+<tr class="memdesc:ae3e5516cdc0ece325e674c01716a0ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO port.  <br /></td></tr>
+<tr class="separator:ae3e5516cdc0ece325e674c01716a0ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad73a779bc8face8a09c411c2ae872d0a" id="r_ad73a779bc8face8a09c411c2ae872d0a"><td class="memItemLeft" ><a id="ad73a779bc8face8a09c411c2ae872d0a" name="ad73a779bc8face8a09c411c2ae872d0a"></a>
+struct {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f7bab241279fadb0ae10bbb401b16f8" id="r_a1f7bab241279fadb0ae10bbb401b16f8"><td class="memItemLeft" >&#160;&#160;&#160;unsigned long&#160;&#160;&#160;<a class="el" href="#a4739dc6f15a028cc338c48571b75c3e7">clk</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a1f7bab241279fadb0ae10bbb401b16f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin used for SCK  <a href="#a4739dc6f15a028cc338c48571b75c3e7">More...</a><br /></td></tr>
+<tr class="separator:a1f7bab241279fadb0ae10bbb401b16f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6aad465c96873d84c15d5c2f27869a9" id="r_af6aad465c96873d84c15d5c2f27869a9"><td class="memItemLeft" >&#160;&#160;&#160;unsigned long&#160;&#160;&#160;<a class="el" href="#a0c139fca4b233c5acefdc289ec3f2e7e">fss</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:af6aad465c96873d84c15d5c2f27869a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin used for FSS  <a href="#a0c139fca4b233c5acefdc289ec3f2e7e">More...</a><br /></td></tr>
+<tr class="separator:af6aad465c96873d84c15d5c2f27869a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a661c644323c0de5db38ba8278c498e5f" id="r_a661c644323c0de5db38ba8278c498e5f"><td class="memItemLeft" >&#160;&#160;&#160;unsigned long&#160;&#160;&#160;<a class="el" href="#a7b17221ca571410b0b07607a8f8ce7d8">rx</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a661c644323c0de5db38ba8278c498e5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin used for MISO  <a href="#a7b17221ca571410b0b07607a8f8ce7d8">More...</a><br /></td></tr>
+<tr class="separator:a661c644323c0de5db38ba8278c498e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af95e4bf7baeb3a3570f6beebca9495b7" id="r_af95e4bf7baeb3a3570f6beebca9495b7"><td class="memItemLeft" >&#160;&#160;&#160;unsigned long&#160;&#160;&#160;<a class="el" href="#a2c3b4281a647ab045477afb85a7933ae">tx</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:af95e4bf7baeb3a3570f6beebca9495b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin used for MOSI  <a href="#a2c3b4281a647ab045477afb85a7933ae">More...</a><br /></td></tr>
+<tr class="separator:af95e4bf7baeb3a3570f6beebca9495b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b7e3ca1e02dbd240dc30ec7d03e1cb5" id="r_a7b7e3ca1e02dbd240dc30ec7d03e1cb5"><td class="memItemLeft" >&#160;&#160;&#160;unsigned long&#160;&#160;&#160;<a class="el" href="#a53cbdbe08e38cf5170cdcd894c7059fe">mask</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a7b7e3ca1e02dbd240dc30ec7d03e1cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin mask.  <a href="#a53cbdbe08e38cf5170cdcd894c7059fe">More...</a><br /></td></tr>
+<tr class="separator:a7b7e3ca1e02dbd240dc30ec7d03e1cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad73a779bc8face8a09c411c2ae872d0a" id="r_ad73a779bc8face8a09c411c2ae872d0a"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><b>pins</b>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:ad73a779bc8face8a09c411c2ae872d0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin setting. <br /></td></tr>
+<tr class="separator:ad73a779bc8face8a09c411c2ae872d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a369573a70285f4a74c5fd5e11a7d1f75" id="r_a369573a70285f4a74c5fd5e11a7d1f75"><td class="memItemLeft" align="right" valign="top">lpc23xx_spi_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a369573a70285f4a74c5fd5e11a7d1f75">dev</a></td></tr>
+<tr class="memdesc:a369573a70285f4a74c5fd5e11a7d1f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the SPI device  <br /></td></tr>
+<tr class="separator:a369573a70285f4a74c5fd5e11a7d1f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93dda206b26fb2b3f2a1dde564479219" id="r_a93dda206b26fb2b3f2a1dde564479219"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93dda206b26fb2b3f2a1dde564479219">pinsel_mosi</a></td></tr>
+<tr class="memdesc:a93dda206b26fb2b3f2a1dde564479219"><td class="mdescLeft">&#160;</td><td class="mdescRight">PINSEL# of the MOSI pin <br  />
+  <br /></td></tr>
+<tr class="separator:a93dda206b26fb2b3f2a1dde564479219"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bfe7faf772f0af056e764057fcdee7e" id="r_a3bfe7faf772f0af056e764057fcdee7e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bfe7faf772f0af056e764057fcdee7e">pinsel_miso</a></td></tr>
+<tr class="memdesc:a3bfe7faf772f0af056e764057fcdee7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">PINSEL# of the MISO pin <br  />
+  <br /></td></tr>
+<tr class="separator:a3bfe7faf772f0af056e764057fcdee7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7042cf7c0d3cde2ca5edb6eb1bbd6ec2" id="r_a7042cf7c0d3cde2ca5edb6eb1bbd6ec2"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7042cf7c0d3cde2ca5edb6eb1bbd6ec2">pinsel_clk</a></td></tr>
+<tr class="memdesc:a7042cf7c0d3cde2ca5edb6eb1bbd6ec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">PINSEL# of the CLK pin <br  />
+  <br /></td></tr>
+<tr class="separator:a7042cf7c0d3cde2ca5edb6eb1bbd6ec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0cb77c9097797b13a77758cab3d884a" id="r_aa0cb77c9097797b13a77758cab3d884a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0cb77c9097797b13a77758cab3d884a">pinsel_msk_mosi</a></td></tr>
+<tr class="memdesc:aa0cb77c9097797b13a77758cab3d884a"><td class="mdescLeft">&#160;</td><td class="mdescRight">MOSI PINSEL Mask <br  />
+  <br /></td></tr>
+<tr class="separator:aa0cb77c9097797b13a77758cab3d884a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af022d250680d8db3bd8e31237a8bd289" id="r_af022d250680d8db3bd8e31237a8bd289"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af022d250680d8db3bd8e31237a8bd289">pinsel_msk_miso</a></td></tr>
+<tr class="memdesc:af022d250680d8db3bd8e31237a8bd289"><td class="mdescLeft">&#160;</td><td class="mdescRight">MISO PINSEL Mask <br  />
+  <br /></td></tr>
+<tr class="separator:af022d250680d8db3bd8e31237a8bd289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d316123db273c3ad8343ce1309a6909" id="r_a4d316123db273c3ad8343ce1309a6909"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d316123db273c3ad8343ce1309a6909">pinsel_msk_clk</a></td></tr>
+<tr class="memdesc:a4d316123db273c3ad8343ce1309a6909"><td class="mdescLeft">&#160;</td><td class="mdescRight">CLK PINSEL Mask <br  />
+  <br /></td></tr>
+<tr class="separator:a4d316123db273c3ad8343ce1309a6909"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5083afeb3da082f1173c01eb14563f62" id="r_a5083afeb3da082f1173c01eb14563f62"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structmsp430__usci__spi__params__t.html">msp430_usci_spi_params_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5083afeb3da082f1173c01eb14563f62">spi</a></td></tr>
+<tr class="memdesc:a5083afeb3da082f1173c01eb14563f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">The SPI configuration to use.  <br /></td></tr>
+<tr class="separator:a5083afeb3da082f1173c01eb14563f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77f95de5887d76b71da74288938214df" id="r_a77f95de5887d76b71da74288938214df"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structmsp430__usart__spi__params__t.html">msp430_usart_spi_params_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77f95de5887d76b71da74288938214df">spi</a></td></tr>
+<tr class="memdesc:a77f95de5887d76b71da74288938214df"><td class="mdescLeft">&#160;</td><td class="mdescRight">The SPI configuration to use.  <br /></td></tr>
+<tr class="separator:a77f95de5887d76b71da74288938214df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48a4c6c45e25bf037fc90d56b2ba1dbe" id="r_a48a4c6c45e25bf037fc90d56b2ba1dbe"><td class="memItemLeft" align="right" valign="top">NRF_SPI_Type *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48a4c6c45e25bf037fc90d56b2ba1dbe">dev</a></td></tr>
+<tr class="memdesc:a48a4c6c45e25bf037fc90d56b2ba1dbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI device used.  <br /></td></tr>
+<tr class="separator:a48a4c6c45e25bf037fc90d56b2ba1dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46809bbcca10c5eca6d347967ea15420" id="r_a46809bbcca10c5eca6d347967ea15420"><td class="memItemLeft" align="right" valign="top">NRF_SPIM_Type *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46809bbcca10c5eca6d347967ea15420">dev</a></td></tr>
+<tr class="memdesc:a46809bbcca10c5eca6d347967ea15420"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI device used.  <br /></td></tr>
+<tr class="separator:a46809bbcca10c5eca6d347967ea15420"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11b49ab5ec630aac939642818daaba58" id="r_a11b49ab5ec630aac939642818daaba58"><td class="memItemLeft" align="right" valign="top">SPI0_Type *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11b49ab5ec630aac939642818daaba58">dev</a></td></tr>
+<tr class="memdesc:a11b49ab5ec630aac939642818daaba58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base address of the I/O registers of the device.  <br /></td></tr>
+<tr class="separator:a11b49ab5ec630aac939642818daaba58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae60e58d40b0fcd5c9fddb44b299ef378" id="r_ae60e58d40b0fcd5c9fddb44b299ef378"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae60e58d40b0fcd5c9fddb44b299ef378">clk_pin</a></td></tr>
+<tr class="memdesc:ae60e58d40b0fcd5c9fddb44b299ef378"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO pin to use for CLK.  <br /></td></tr>
+<tr class="separator:ae60e58d40b0fcd5c9fddb44b299ef378"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add3c63df66ab36b3412eacaff507f021" id="r_add3c63df66ab36b3412eacaff507f021"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add3c63df66ab36b3412eacaff507f021">dev</a></td></tr>
+<tr class="memdesc:add3c63df66ab36b3412eacaff507f021"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the used SPI device  <br /></td></tr>
+<tr class="separator:add3c63df66ab36b3412eacaff507f021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20a4efb785a4d691684256b9a5729a6e" id="r_a20a4efb785a4d691684256b9a5729a6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0">gpio_mux_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20a4efb785a4d691684256b9a5729a6e">miso_mux</a></td></tr>
+<tr class="memdesc:a20a4efb785a4d691684256b9a5729a6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">alternate function for MISO pin (mux)  <br /></td></tr>
+<tr class="separator:a20a4efb785a4d691684256b9a5729a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0204b479d36682a0e033b4680634637" id="r_aa0204b479d36682a0e033b4680634637"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0">gpio_mux_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0204b479d36682a0e033b4680634637">mosi_mux</a></td></tr>
+<tr class="memdesc:aa0204b479d36682a0e033b4680634637"><td class="mdescLeft">&#160;</td><td class="mdescRight">alternate function for MOSI pin (mux)  <br /></td></tr>
+<tr class="separator:aa0204b479d36682a0e033b4680634637"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c7f88f94d31f93e892373352257a331" id="r_a6c7f88f94d31f93e892373352257a331"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0">gpio_mux_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c7f88f94d31f93e892373352257a331">clk_mux</a></td></tr>
+<tr class="memdesc:a6c7f88f94d31f93e892373352257a331"><td class="mdescLeft">&#160;</td><td class="mdescRight">alternate function for CLK pin (mux)  <br /></td></tr>
+<tr class="separator:a6c7f88f94d31f93e892373352257a331"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ce47aa22b1223afb0bc8cce05a6749d" id="r_a5ce47aa22b1223afb0bc8cce05a6749d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a5f3aefc5ac5917dd4a5c71ca3b624b29">spi_misopad_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ce47aa22b1223afb0bc8cce05a6749d">miso_pad</a></td></tr>
+<tr class="memdesc:a5ce47aa22b1223afb0bc8cce05a6749d"><td class="mdescLeft">&#160;</td><td class="mdescRight">pad to use for MISO line  <br /></td></tr>
+<tr class="separator:a5ce47aa22b1223afb0bc8cce05a6749d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7377c7511c4c05efd8d50526f9cf9981" id="r_a7377c7511c4c05efd8d50526f9cf9981"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#aecd093a68bc8af5fd8df392bc9e7d598">spi_mosipad_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7377c7511c4c05efd8d50526f9cf9981">mosi_pad</a></td></tr>
+<tr class="memdesc:a7377c7511c4c05efd8d50526f9cf9981"><td class="mdescLeft">&#160;</td><td class="mdescRight">pad to use for MOSI and CLK line  <br /></td></tr>
+<tr class="separator:a7377c7511c4c05efd8d50526f9cf9981"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4f71d7d16d2538d402b033ac582748b" id="r_aa4f71d7d16d2538d402b033ac582748b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4f71d7d16d2538d402b033ac582748b">gclk_src</a></td></tr>
+<tr class="memdesc:aa4f71d7d16d2538d402b033ac582748b"><td class="mdescLeft">&#160;</td><td class="mdescRight">GCLK source which supplys SERCOM.  <br /></td></tr>
+<tr class="separator:aa4f71d7d16d2538d402b033ac582748b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7756f5188159cfbacc49a02d6a98097f" id="r_a7756f5188159cfbacc49a02d6a98097f"><td class="memItemLeft" align="right" valign="top">Spi *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7756f5188159cfbacc49a02d6a98097f">dev</a></td></tr>
+<tr class="memdesc:a7756f5188159cfbacc49a02d6a98097f"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI module to use.  <br /></td></tr>
+<tr class="separator:a7756f5188159cfbacc49a02d6a98097f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dd46eca3b16395cf63e4ecd09fdcde4" id="r_a1dd46eca3b16395cf63e4ecd09fdcde4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1dd46eca3b16395cf63e4ecd09fdcde4">id</a></td></tr>
+<tr class="memdesc:a1dd46eca3b16395cf63e4ecd09fdcde4"><td class="mdescLeft">&#160;</td><td class="mdescRight">corresponding ID of that module  <br /></td></tr>
+<tr class="separator:a1dd46eca3b16395cf63e4ecd09fdcde4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af66ca0f79636ed99dbe2bd846331fb51" id="r_af66ca0f79636ed99dbe2bd846331fb51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af66ca0f79636ed99dbe2bd846331fb51">clk</a></td></tr>
+<tr class="memdesc:af66ca0f79636ed99dbe2bd846331fb51"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin mapped to the CLK line  <br /></td></tr>
+<tr class="separator:af66ca0f79636ed99dbe2bd846331fb51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a67bdd9f44900846f54d15e8dc9e8a2" id="r_a1a67bdd9f44900846f54d15e8dc9e8a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0">gpio_mux_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a67bdd9f44900846f54d15e8dc9e8a2">mux</a></td></tr>
+<tr class="memdesc:a1a67bdd9f44900846f54d15e8dc9e8a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">pin MUX setting  <br /></td></tr>
+<tr class="separator:a1a67bdd9f44900846f54d15e8dc9e8a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31bda124233f47b74c2bdd4a6e81f7e1" id="r_a31bda124233f47b74c2bdd4a6e81f7e1"><td class="memItemLeft" align="right" valign="top">SPI_TypeDef *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31bda124233f47b74c2bdd4a6e81f7e1">dev</a></td></tr>
+<tr class="memdesc:a31bda124233f47b74c2bdd4a6e81f7e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI device base register address.  <br /></td></tr>
+<tr class="separator:a31bda124233f47b74c2bdd4a6e81f7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91b2db5fabdc17ed5b314c3d228f666a" id="r_a91b2db5fabdc17ed5b314c3d228f666a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gd32v_2include_2periph__cpu_8h.html#a06ed6aad7d9b996fee989c31338138cd">gpio_af_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91b2db5fabdc17ed5b314c3d228f666a">mosi_af</a></td></tr>
+<tr class="memdesc:a91b2db5fabdc17ed5b314c3d228f666a"><td class="mdescLeft">&#160;</td><td class="mdescRight">MOSI pin alternate function.  <br /></td></tr>
+<tr class="separator:a91b2db5fabdc17ed5b314c3d228f666a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22755e9078feb95feeefbc77361ed9c3" id="r_a22755e9078feb95feeefbc77361ed9c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gd32v_2include_2periph__cpu_8h.html#a06ed6aad7d9b996fee989c31338138cd">gpio_af_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22755e9078feb95feeefbc77361ed9c3">miso_af</a></td></tr>
+<tr class="memdesc:a22755e9078feb95feeefbc77361ed9c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">MISO pin alternate function.  <br /></td></tr>
+<tr class="separator:a22755e9078feb95feeefbc77361ed9c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f38816d39c76b681f86b38506e8abb5" id="r_a4f38816d39c76b681f86b38506e8abb5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gd32v_2include_2periph__cpu_8h.html#a06ed6aad7d9b996fee989c31338138cd">gpio_af_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f38816d39c76b681f86b38506e8abb5">sclk_af</a></td></tr>
+<tr class="memdesc:a4f38816d39c76b681f86b38506e8abb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">SCLK pin alternate function.  <br /></td></tr>
+<tr class="separator:a4f38816d39c76b681f86b38506e8abb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63e10a24b42ceedce24a8e5cf2069a01" id="r_a63e10a24b42ceedce24a8e5cf2069a01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gd32v_2include_2periph__cpu_8h.html#a06ed6aad7d9b996fee989c31338138cd">gpio_af_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63e10a24b42ceedce24a8e5cf2069a01">cs_af</a></td></tr>
+<tr class="memdesc:a63e10a24b42ceedce24a8e5cf2069a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">HWCS pin alternate function.  <br /></td></tr>
+<tr class="separator:a63e10a24b42ceedce24a8e5cf2069a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d857abedbcc6a3cf3f7477d3edd4e2e" id="r_a0d857abedbcc6a3cf3f7477d3edd4e2e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d857abedbcc6a3cf3f7477d3edd4e2e">rccmask</a></td></tr>
+<tr class="memdesc:a0d857abedbcc6a3cf3f7477d3edd4e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">bit in the RCC peripheral enable register  <br /></td></tr>
+<tr class="separator:a0d857abedbcc6a3cf3f7477d3edd4e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a36fd0678709649017a06e530fa9a8f53" name="a36fd0678709649017a06e530fa9a8f53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36fd0678709649017a06e530fa9a8f53">&#9670;&#160;</a></span>addr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t spi_conf_t::addr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SPI control register address. </p>
+
+<p class="definition">Definition at line <a class="el" href="fe310_2include_2periph__cpu_8h_source.html#l00087">87</a> of file <a class="el" href="fe310_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a44f7310cef18296dcda0dee4d7ed54eb" name="a44f7310cef18296dcda0dee4d7ed54eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44f7310cef18296dcda0dee4d7ed54eb">&#9670;&#160;</a></span>apbbus</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t spi_conf_t::apbbus</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>APBx bus the device is connected to. </p>
+
+<p class="definition">Definition at line <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html#l00416">416</a> of file <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a4739dc6f15a028cc338c48571b75c3e7" name="a4739dc6f15a028cc338c48571b75c3e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4739dc6f15a028cc338c48571b75c3e7">&#9670;&#160;</a></span>clk <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long spi_conf_t::clk</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin used for SCK </p>
+
+<p class="definition">Definition at line <a class="el" href="lm4f120_2include_2periph__cpu_8h_source.html#l00137">137</a> of file <a class="el" href="lm4f120_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="af66ca0f79636ed99dbe2bd846331fb51" name="af66ca0f79636ed99dbe2bd846331fb51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af66ca0f79636ed99dbe2bd846331fb51">&#9670;&#160;</a></span>clk <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> spi_conf_t::clk</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin mapped to the CLK line </p>
+
+<p class="definition">Definition at line <a class="el" href="sam3_2include_2periph__cpu_8h_source.html#l00229">229</a> of file <a class="el" href="sam3_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a6c7f88f94d31f93e892373352257a331" name="a6c7f88f94d31f93e892373352257a331"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c7f88f94d31f93e892373352257a331">&#9670;&#160;</a></span>clk_mux</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0">gpio_mux_t</a> spi_conf_t::clk_mux</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>alternate function for CLK pin (mux) </p>
+
+<p class="definition">Definition at line <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00505">505</a> of file <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="ae60e58d40b0fcd5c9fddb44b299ef378" name="ae60e58d40b0fcd5c9fddb44b299ef378"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae60e58d40b0fcd5c9fddb44b299ef378">&#9670;&#160;</a></span>clk_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> spi_conf_t::clk_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO pin to use for CLK. </p>
+<p>used CLK pin </p>
+
+<p class="definition">Definition at line <a class="el" href="rpx0xx_2include_2periph__cpu_8h_source.html#l00808">808</a> of file <a class="el" href="rpx0xx_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="ad4044c7635abde0d283a125a52eeaa62" name="ad4044c7635abde0d283a125a52eeaa62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4044c7635abde0d283a125a52eeaa62">&#9670;&#160;</a></span>cs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> spi_conf_t::cs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO used as CS0 pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="esp32_2include_2periph__cpu_8h_source.html#l00868">868</a> of file <a class="el" href="esp32_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a63e10a24b42ceedce24a8e5cf2069a01" name="a63e10a24b42ceedce24a8e5cf2069a01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63e10a24b42ceedce24a8e5cf2069a01">&#9670;&#160;</a></span>cs_af</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gd32v_2include_2periph__cpu_8h.html#a06ed6aad7d9b996fee989c31338138cd">gpio_af_t</a> spi_conf_t::cs_af</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>HWCS pin alternate function. </p>
+
+<p class="definition">Definition at line <a class="el" href="cpu__spi_8h_source.html#l00116">116</a> of file <a class="el" href="cpu__spi_8h_source.html">cpu_spi.h</a>.</p>
+
+</div>
+</div>
+<a id="a409653518424bf6b74de21624f438ea4" name="a409653518424bf6b74de21624f438ea4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a409653518424bf6b74de21624f438ea4">&#9670;&#160;</a></span>cs_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__spi.html#gaf5fbaf43946646c588c9372e8906c99e">spi_cs_t</a> spi_conf_t::cs_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin used for CS </p>
+<p>HWCS pin, set to SPI_CS_UNDEF if not mapped. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538_2include_2periph__cpu_8h_source.html#l00300">300</a> of file <a class="el" href="cc2538_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a878d6b89412aff891338a75cc88971a3" name="a878d6b89412aff891338a75cc88971a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a878d6b89412aff891338a75cc88971a3">&#9670;&#160;</a></span>ctrl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="esp8266_2include_2periph__cpu_8h.html#ad268301d3b918e279269ec49f803488d">spi_ctrl_t</a> spi_conf_t::ctrl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SPI controller used for the interface. </p>
+
+<p class="definition">Definition at line <a class="el" href="esp32_2include_2periph__cpu_8h_source.html#l00864">864</a> of file <a class="el" href="esp32_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a3bf2b03b4dbcce607423d7c17f093f1c" name="a3bf2b03b4dbcce607423d7c17f093f1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bf2b03b4dbcce607423d7c17f093f1c">&#9670;&#160;</a></span>dev <span class="overload">[1/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPI_Type * spi_conf_t::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pointer to the used SPI device </p>
+<p>SPI device to use. </p>
+
+<p class="definition">Definition at line <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html#l00338">338</a> of file <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="aa204cbc22f2d457b5cc34283200ce047" name="aa204cbc22f2d457b5cc34283200ce047"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa204cbc22f2d457b5cc34283200ce047">&#9670;&#160;</a></span>dev <span class="overload">[2/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPI_Type* spi_conf_t::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SPI device base register address. </p>
+<p>SPI device to use. </p>
+
+<p class="definition">Definition at line <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html#l00410">410</a> of file <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a369573a70285f4a74c5fd5e11a7d1f75" name="a369573a70285f4a74c5fd5e11a7d1f75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a369573a70285f4a74c5fd5e11a7d1f75">&#9670;&#160;</a></span>dev <span class="overload">[3/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lpc23xx_spi_t* spi_conf_t::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pointer to the SPI device </p>
+
+<p class="definition">Definition at line <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html#l00118">118</a> of file <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a48a4c6c45e25bf037fc90d56b2ba1dbe" name="a48a4c6c45e25bf037fc90d56b2ba1dbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48a4c6c45e25bf037fc90d56b2ba1dbe">&#9670;&#160;</a></span>dev <span class="overload">[4/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NRF_SPI_Type* spi_conf_t::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SPI device used. </p>
+
+<p class="definition">Definition at line <a class="el" href="nrf51_2include_2periph__cpu_8h_source.html#l00105">105</a> of file <a class="el" href="nrf51_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a46809bbcca10c5eca6d347967ea15420" name="a46809bbcca10c5eca6d347967ea15420"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46809bbcca10c5eca6d347967ea15420">&#9670;&#160;</a></span>dev <span class="overload">[5/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NRF_SPIM_Type* spi_conf_t::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SPI device used. </p>
+
+<p class="definition">Definition at line <a class="el" href="nrf5x__common_2include_2periph__cpu__common_8h_source.html#l00483">483</a> of file <a class="el" href="nrf5x__common_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="a11b49ab5ec630aac939642818daaba58" name="a11b49ab5ec630aac939642818daaba58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11b49ab5ec630aac939642818daaba58">&#9670;&#160;</a></span>dev <span class="overload">[6/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPI0_Type* spi_conf_t::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Base address of the I/O registers of the device. </p>
+
+<p class="definition">Definition at line <a class="el" href="rpx0xx_2include_2periph__cpu_8h_source.html#l00805">805</a> of file <a class="el" href="rpx0xx_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="add3c63df66ab36b3412eacaff507f021" name="add3c63df66ab36b3412eacaff507f021"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add3c63df66ab36b3412eacaff507f021">&#9670;&#160;</a></span>dev <span class="overload">[7/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* spi_conf_t::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pointer to the used SPI device </p>
+
+<p class="definition">Definition at line <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00499">499</a> of file <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="a7756f5188159cfbacc49a02d6a98097f" name="a7756f5188159cfbacc49a02d6a98097f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7756f5188159cfbacc49a02d6a98097f">&#9670;&#160;</a></span>dev <span class="overload">[8/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Spi* spi_conf_t::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SPI module to use. </p>
+
+<p class="definition">Definition at line <a class="el" href="sam3_2include_2periph__cpu_8h_source.html#l00227">227</a> of file <a class="el" href="sam3_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a31bda124233f47b74c2bdd4a6e81f7e1" name="a31bda124233f47b74c2bdd4a6e81f7e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31bda124233f47b74c2bdd4a6e81f7e1">&#9670;&#160;</a></span>dev <span class="overload">[9/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SPI_TypeDef* spi_conf_t::dev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SPI device base register address. </p>
+
+<p class="definition">Definition at line <a class="el" href="cpu__spi_8h_source.html#l00107">107</a> of file <a class="el" href="cpu__spi_8h_source.html">cpu_spi.h</a>.</p>
+
+</div>
+</div>
+<a id="a0c139fca4b233c5acefdc289ec3f2e7e" name="a0c139fca4b233c5acefdc289ec3f2e7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c139fca4b233c5acefdc289ec3f2e7e">&#9670;&#160;</a></span>fss</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long spi_conf_t::fss</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin used for FSS </p>
+
+<p class="definition">Definition at line <a class="el" href="lm4f120_2include_2periph__cpu_8h_source.html#l00138">138</a> of file <a class="el" href="lm4f120_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="aa4f71d7d16d2538d402b033ac582748b" name="aa4f71d7d16d2538d402b033ac582748b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4f71d7d16d2538d402b033ac582748b">&#9670;&#160;</a></span>gclk_src</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t spi_conf_t::gclk_src</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GCLK source which supplys SERCOM. </p>
+
+<p class="definition">Definition at line <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00508">508</a> of file <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="ae3e5516cdc0ece325e674c01716a0ef3" name="ae3e5516cdc0ece325e674c01716a0ef3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3e5516cdc0ece325e674c01716a0ef3">&#9670;&#160;</a></span>gpio_port</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long spi_conf_t::gpio_port</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO port. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm4f120_2include_2periph__cpu_8h_source.html#l00135">135</a> of file <a class="el" href="lm4f120_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a593ad4b0b2ae0e69c8414ae510c09883" name="a593ad4b0b2ae0e69c8414ae510c09883"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a593ad4b0b2ae0e69c8414ae510c09883">&#9670;&#160;</a></span>gpio_sysctl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long spi_conf_t::gpio_sysctl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO device in sysctl. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm4f120_2include_2periph__cpu_8h_source.html#l00134">134</a> of file <a class="el" href="lm4f120_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a1dd46eca3b16395cf63e4ecd09fdcde4" name="a1dd46eca3b16395cf63e4ecd09fdcde4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dd46eca3b16395cf63e4ecd09fdcde4">&#9670;&#160;</a></span>id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t spi_conf_t::id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>corresponding ID of that module </p>
+
+<p class="definition">Definition at line <a class="el" href="sam3_2include_2periph__cpu_8h_source.html#l00228">228</a> of file <a class="el" href="sam3_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a53cbdbe08e38cf5170cdcd894c7059fe" name="a53cbdbe08e38cf5170cdcd894c7059fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53cbdbe08e38cf5170cdcd894c7059fe">&#9670;&#160;</a></span>mask</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long spi_conf_t::mask</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pin mask. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm4f120_2include_2periph__cpu_8h_source.html#l00141">141</a> of file <a class="el" href="lm4f120_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="ade92d9d7a11051017f3147050616c47c" name="ade92d9d7a11051017f3147050616c47c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade92d9d7a11051017f3147050616c47c">&#9670;&#160;</a></span>miso</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> spi_conf_t::miso</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO used as MISO pin. </p>
+<p>pin mapped to the MISO line</p>
+<p>MISO pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="esp32_2include_2periph__cpu_8h_source.html#l00867">867</a> of file <a class="el" href="esp32_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a22755e9078feb95feeefbc77361ed9c3" name="a22755e9078feb95feeefbc77361ed9c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22755e9078feb95feeefbc77361ed9c3">&#9670;&#160;</a></span>miso_af</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gd32v_2include_2periph__cpu_8h.html#a06ed6aad7d9b996fee989c31338138cd">gpio_af_t</a> spi_conf_t::miso_af</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MISO pin alternate function. </p>
+
+<p class="definition">Definition at line <a class="el" href="cpu__spi_8h_source.html#l00114">114</a> of file <a class="el" href="cpu__spi_8h_source.html">cpu_spi.h</a>.</p>
+
+</div>
+</div>
+<a id="a20a4efb785a4d691684256b9a5729a6e" name="a20a4efb785a4d691684256b9a5729a6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20a4efb785a4d691684256b9a5729a6e">&#9670;&#160;</a></span>miso_mux</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0">gpio_mux_t</a> spi_conf_t::miso_mux</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>alternate function for MISO pin (mux) </p>
+
+<p class="definition">Definition at line <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00503">503</a> of file <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="a5ce47aa22b1223afb0bc8cce05a6749d" name="a5ce47aa22b1223afb0bc8cce05a6749d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ce47aa22b1223afb0bc8cce05a6749d">&#9670;&#160;</a></span>miso_pad</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a5f3aefc5ac5917dd4a5c71ca3b624b29">spi_misopad_t</a> spi_conf_t::miso_pad</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pad to use for MISO line </p>
+
+<p class="definition">Definition at line <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00506">506</a> of file <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="a08f0caabef68efa3f08b8ace090567fc" name="a08f0caabef68efa3f08b8ace090567fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08f0caabef68efa3f08b8ace090567fc">&#9670;&#160;</a></span>miso_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> spi_conf_t::miso_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin used for MISO </p>
+<p>used MISO pin</p>
+<p>GPIO pin to use for MISO.</p>
+<p>MISO pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html#l00341">341</a> of file <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a2e5bf2c53c3ab5a1be4c341f2a106281" name="a2e5bf2c53c3ab5a1be4c341f2a106281"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e5bf2c53c3ab5a1be4c341f2a106281">&#9670;&#160;</a></span>mosi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> spi_conf_t::mosi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO used as MOSI pin. </p>
+<p>pin mapped to the MOSI line</p>
+<p>MOSI pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="esp32_2include_2periph__cpu_8h_source.html#l00866">866</a> of file <a class="el" href="esp32_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a91b2db5fabdc17ed5b314c3d228f666a" name="a91b2db5fabdc17ed5b314c3d228f666a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91b2db5fabdc17ed5b314c3d228f666a">&#9670;&#160;</a></span>mosi_af</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gd32v_2include_2periph__cpu_8h.html#a06ed6aad7d9b996fee989c31338138cd">gpio_af_t</a> spi_conf_t::mosi_af</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MOSI pin alternate function. </p>
+
+<p class="definition">Definition at line <a class="el" href="cpu__spi_8h_source.html#l00113">113</a> of file <a class="el" href="cpu__spi_8h_source.html">cpu_spi.h</a>.</p>
+
+</div>
+</div>
+<a id="aa0204b479d36682a0e033b4680634637" name="aa0204b479d36682a0e033b4680634637"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0204b479d36682a0e033b4680634637">&#9670;&#160;</a></span>mosi_mux</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0">gpio_mux_t</a> spi_conf_t::mosi_mux</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>alternate function for MOSI pin (mux) </p>
+
+<p class="definition">Definition at line <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00504">504</a> of file <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="a7377c7511c4c05efd8d50526f9cf9981" name="a7377c7511c4c05efd8d50526f9cf9981"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7377c7511c4c05efd8d50526f9cf9981">&#9670;&#160;</a></span>mosi_pad</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#aecd093a68bc8af5fd8df392bc9e7d598">spi_mosipad_t</a> spi_conf_t::mosi_pad</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pad to use for MOSI and CLK line </p>
+
+<p class="definition">Definition at line <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html#l00507">507</a> of file <a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="a25ed4ae03d33739ed9db9842489ded32" name="a25ed4ae03d33739ed9db9842489ded32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25ed4ae03d33739ed9db9842489ded32">&#9670;&#160;</a></span>mosi_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> spi_conf_t::mosi_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin used for MOSI </p>
+<p>used MOSI pin</p>
+<p>GPIO pin to use for MOSI.</p>
+<p>MOSI pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html#l00342">342</a> of file <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a1a67bdd9f44900846f54d15e8dc9e8a2" name="a1a67bdd9f44900846f54d15e8dc9e8a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a67bdd9f44900846f54d15e8dc9e8a2">&#9670;&#160;</a></span>mux</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#ac86e130e5617ffe35f2aa1169d8a67c0">gpio_mux_t</a> spi_conf_t::mux</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin MUX setting </p>
+
+<p class="definition">Definition at line <a class="el" href="sam3_2include_2periph__cpu_8h_source.html#l00232">232</a> of file <a class="el" href="sam3_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a2017820cefc8c6c5e99b8506f4c7a3ce" name="a2017820cefc8c6c5e99b8506f4c7a3ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2017820cefc8c6c5e99b8506f4c7a3ce">&#9670;&#160;</a></span>num</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t spi_conf_t::num</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>number of SSI device, i.e. </p>
+<p>0 or 1 </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538_2include_2periph__cpu_8h_source.html#l00296">296</a> of file <a class="el" href="cc2538_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a130da9e93f34758a665d4099fecc1a74" name="a130da9e93f34758a665d4099fecc1a74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a130da9e93f34758a665d4099fecc1a74">&#9670;&#160;</a></span>pin_clk</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> spi_conf_t::pin_clk</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CLK pin used. </p>
+
+<p class="definition">Definition at line <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html#l00476">476</a> of file <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a1666d1cea7276b2ad957bd6a367792be" name="a1666d1cea7276b2ad957bd6a367792be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1666d1cea7276b2ad957bd6a367792be">&#9670;&#160;</a></span>pin_cs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__spi.html#gaf5fbaf43946646c588c9372e8906c99e">spi_cs_t</a> spi_conf_t::pin_cs[<a class="el" href="kinetis_2include_2periph__cpu_8h.html#ad200812f13922152c349607617703b5e">SPI_HWCS_NUMOF</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pins used for HW cs lines </p>
+
+<p class="definition">Definition at line <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html#l00477">477</a> of file <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="ad164c5097a356f7e6d689aca7ae4886f" name="ad164c5097a356f7e6d689aca7ae4886f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad164c5097a356f7e6d689aca7ae4886f">&#9670;&#160;</a></span>pin_miso</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> spi_conf_t::pin_miso</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MISO pin used. </p>
+
+<p class="definition">Definition at line <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html#l00474">474</a> of file <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="abca93220430f0cd3db6ec2e05c84a7c8" name="abca93220430f0cd3db6ec2e05c84a7c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abca93220430f0cd3db6ec2e05c84a7c8">&#9670;&#160;</a></span>pin_mosi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> spi_conf_t::pin_mosi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MOSI pin used. </p>
+
+<p class="definition">Definition at line <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html#l00475">475</a> of file <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a7042cf7c0d3cde2ca5edb6eb1bbd6ec2" name="a7042cf7c0d3cde2ca5edb6eb1bbd6ec2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7042cf7c0d3cde2ca5edb6eb1bbd6ec2">&#9670;&#160;</a></span>pinsel_clk</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t spi_conf_t::pinsel_clk</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PINSEL# of the CLK pin <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html#l00121">121</a> of file <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a3bfe7faf772f0af056e764057fcdee7e" name="a3bfe7faf772f0af056e764057fcdee7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bfe7faf772f0af056e764057fcdee7e">&#9670;&#160;</a></span>pinsel_miso</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t spi_conf_t::pinsel_miso</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PINSEL# of the MISO pin <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html#l00120">120</a> of file <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a93dda206b26fb2b3f2a1dde564479219" name="a93dda206b26fb2b3f2a1dde564479219"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93dda206b26fb2b3f2a1dde564479219">&#9670;&#160;</a></span>pinsel_mosi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t spi_conf_t::pinsel_mosi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PINSEL# of the MOSI pin <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html#l00119">119</a> of file <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a4d316123db273c3ad8343ce1309a6909" name="a4d316123db273c3ad8343ce1309a6909"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d316123db273c3ad8343ce1309a6909">&#9670;&#160;</a></span>pinsel_msk_clk</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t spi_conf_t::pinsel_msk_clk</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CLK PINSEL Mask <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html#l00124">124</a> of file <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="af022d250680d8db3bd8e31237a8bd289" name="af022d250680d8db3bd8e31237a8bd289"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af022d250680d8db3bd8e31237a8bd289">&#9670;&#160;</a></span>pinsel_msk_miso</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t spi_conf_t::pinsel_msk_miso</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MISO PINSEL Mask <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html#l00123">123</a> of file <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="aa0cb77c9097797b13a77758cab3d884a" name="aa0cb77c9097797b13a77758cab3d884a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0cb77c9097797b13a77758cab3d884a">&#9670;&#160;</a></span>pinsel_msk_mosi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t spi_conf_t::pinsel_msk_mosi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MOSI PINSEL Mask <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html#l00122">122</a> of file <a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a137c77c4f73013eebdca09a9ea41a764" name="a137c77c4f73013eebdca09a9ea41a764"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a137c77c4f73013eebdca09a9ea41a764">&#9670;&#160;</a></span>pwr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="atxmega_2include_2periph__cpu_8h.html#a84dd39eddad92f5ea43b0368b47ed1d8">pwr_reduction_t</a> spi_conf_t::pwr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Power Management. </p>
+
+<p class="definition">Definition at line <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html#l00339">339</a> of file <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a0d857abedbcc6a3cf3f7477d3edd4e2e" name="a0d857abedbcc6a3cf3f7477d3edd4e2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d857abedbcc6a3cf3f7477d3edd4e2e">&#9670;&#160;</a></span>rccmask</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t spi_conf_t::rccmask</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>bit in the RCC peripheral enable register </p>
+
+<p class="definition">Definition at line <a class="el" href="cpu__spi_8h_source.html#l00118">118</a> of file <a class="el" href="cpu__spi_8h_source.html">cpu_spi.h</a>.</p>
+
+</div>
+</div>
+<a id="a20af8d9fa5abbc4158271f0380bb5955" name="a20af8d9fa5abbc4158271f0380bb5955"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20af8d9fa5abbc4158271f0380bb5955">&#9670;&#160;</a></span>rcumask</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t spi_conf_t::rcumask</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>bit in the RCC peripheral enable register </p>
+
+<p class="definition">Definition at line <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html#l00415">415</a> of file <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a7b17221ca571410b0b07607a8f8ce7d8" name="a7b17221ca571410b0b07607a8f8ce7d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b17221ca571410b0b07607a8f8ce7d8">&#9670;&#160;</a></span>rx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long spi_conf_t::rx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin used for MISO </p>
+
+<p class="definition">Definition at line <a class="el" href="lm4f120_2include_2periph__cpu_8h_source.html#l00139">139</a> of file <a class="el" href="lm4f120_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="af0e7f02aa9f7d14179222a735d328383" name="af0e7f02aa9f7d14179222a735d328383"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0e7f02aa9f7d14179222a735d328383">&#9670;&#160;</a></span>sck</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> spi_conf_t::sck</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO used as SCK pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="esp32_2include_2periph__cpu_8h_source.html#l00865">865</a> of file <a class="el" href="esp32_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a40cf220c63dfe486b8641f9016caacf1" name="a40cf220c63dfe486b8641f9016caacf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40cf220c63dfe486b8641f9016caacf1">&#9670;&#160;</a></span>sck_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> spi_conf_t::sck_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin used for SCK </p>
+
+<p class="definition">Definition at line <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html#l00340">340</a> of file <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a607aff14059c230a78734a2f9e79f050" name="a607aff14059c230a78734a2f9e79f050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a607aff14059c230a78734a2f9e79f050">&#9670;&#160;</a></span>sclk</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> spi_conf_t::sclk</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SCLK pin. </p>
+<p>CLK pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="fe310_2include_2periph__cpu_8h_source.html#l00090">90</a> of file <a class="el" href="fe310_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a4f38816d39c76b681f86b38506e8abb5" name="a4f38816d39c76b681f86b38506e8abb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f38816d39c76b681f86b38506e8abb5">&#9670;&#160;</a></span>sclk_af</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gd32v_2include_2periph__cpu_8h.html#a06ed6aad7d9b996fee989c31338138cd">gpio_af_t</a> spi_conf_t::sclk_af</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SCLK pin alternate function. </p>
+
+<p class="definition">Definition at line <a class="el" href="cpu__spi_8h_source.html#l00115">115</a> of file <a class="el" href="cpu__spi_8h_source.html">cpu_spi.h</a>.</p>
+
+</div>
+</div>
+<a id="a3b628e0d41b5ef6bf96e03f77732e3cf" name="a3b628e0d41b5ef6bf96e03f77732e3cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b628e0d41b5ef6bf96e03f77732e3cf">&#9670;&#160;</a></span>sclk_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> spi_conf_t::sclk_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SCLK pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html#l00413">413</a> of file <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="af5547aecdb2dd55a4b10a35e8cb8c2d0" name="af5547aecdb2dd55a4b10a35e8cb8c2d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5547aecdb2dd55a4b10a35e8cb8c2d0">&#9670;&#160;</a></span>simmask</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t spi_conf_t::simmask</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>bit in the SIM register </p>
+
+<p class="definition">Definition at line <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html#l00486">486</a> of file <a class="el" href="kinetis_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a5083afeb3da082f1173c01eb14563f62" name="a5083afeb3da082f1173c01eb14563f62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5083afeb3da082f1173c01eb14563f62">&#9670;&#160;</a></span>spi <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structmsp430__usci__spi__params__t.html">msp430_usci_spi_params_t</a>* spi_conf_t::spi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The SPI configuration to use. </p>
+
+<p class="definition">Definition at line <a class="el" href="msp430_2include_2f2xx__g2xx_2periph__cpu_8h_source.html#l00183">183</a> of file <a class="el" href="msp430_2include_2f2xx__g2xx_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a77f95de5887d76b71da74288938214df" name="a77f95de5887d76b71da74288938214df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77f95de5887d76b71da74288938214df">&#9670;&#160;</a></span>spi <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structmsp430__usart__spi__params__t.html">msp430_usart_spi_params_t</a>* spi_conf_t::spi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The SPI configuration to use. </p>
+
+<p class="definition">Definition at line <a class="el" href="msp430_2include_2x1xx_2periph__cpu_8h_source.html#l00204">204</a> of file <a class="el" href="msp430_2include_2x1xx_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a2be018ca333e24521a18612895d42c18" name="a2be018ca333e24521a18612895d42c18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2be018ca333e24521a18612895d42c18">&#9670;&#160;</a></span>ss_pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> spi_conf_t::ss_pin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin used for SS line </p>
+
+<p class="definition">Definition at line <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html#l00343">343</a> of file <a class="el" href="atxmega_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="aa73359c9b6be9c4bfb508680ee427915" name="aa73359c9b6be9c4bfb508680ee427915"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa73359c9b6be9c4bfb508680ee427915">&#9670;&#160;</a></span>ssi_base</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long spi_conf_t::ssi_base</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SSI base address. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm4f120_2include_2periph__cpu_8h_source.html#l00133">133</a> of file <a class="el" href="lm4f120_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="afeec13877aa9b45d8bed6e7e15456188" name="afeec13877aa9b45d8bed6e7e15456188"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afeec13877aa9b45d8bed6e7e15456188">&#9670;&#160;</a></span>ssi_sysctl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long spi_conf_t::ssi_sysctl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SSI device in sysctl. </p>
+
+<p class="definition">Definition at line <a class="el" href="lm4f120_2include_2periph__cpu_8h_source.html#l00132">132</a> of file <a class="el" href="lm4f120_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a2c3b4281a647ab045477afb85a7933ae" name="a2c3b4281a647ab045477afb85a7933ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c3b4281a647ab045477afb85a7933ae">&#9670;&#160;</a></span>tx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long spi_conf_t::tx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>pin used for MOSI </p>
+
+<p class="definition">Definition at line <a class="el" href="lm4f120_2include_2periph__cpu_8h_source.html#l00140">140</a> of file <a class="el" href="lm4f120_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
+<li>cpu/atxmega/include/<a class="el" href="atxmega_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/cc2538/include/<a class="el" href="cc2538_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/esp32/include/<a class="el" href="esp32_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/esp8266/include/<a class="el" href="esp8266_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/fe310/include/<a class="el" href="fe310_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/gd32v/include/<a class="el" href="gd32v_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/kinetis/include/<a class="el" href="kinetis_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/lm4f120/include/<a class="el" href="lm4f120_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/lpc23xx/include/<a class="el" href="lpc23xx_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/msp430/include/f2xx_g2xx/<a class="el" href="msp430_2include_2f2xx__g2xx_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/msp430/include/x1xx/<a class="el" href="msp430_2include_2x1xx_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/nrf51/include/<a class="el" href="nrf51_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/nrf5x_common/include/<a class="el" href="nrf5x__common_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a></li>
+<li>cpu/rpx0xx/include/<a class="el" href="rpx0xx_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/sam0_common/include/<a class="el" href="sam0__common_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a></li>
+<li>cpu/sam3/include/<a class="el" href="sam3_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/stm32/include/periph/<a class="el" href="cpu__spi_8h_source.html">cpu_spi.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

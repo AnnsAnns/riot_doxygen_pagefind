@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sam0_aux_cfg_mapping Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structsam0__aux__cfg__mapping.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">sam0_aux_cfg_mapping Struct Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>NVM User Row Mapping - Dedicated Entries Config values will be applied at power-on.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>NVM User Row Mapping - Dedicated Entries Config values will be applied at power-on. </p>
+<p>NVM User Page Mapping - Dedicated Entries Config values will be applied at power-on. </p>
+
+<p class="definition">Definition at line <a class="el" href="samd21_2include_2periph__cpu_8h_source.html#l00177">177</a> of file <a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a70f3458e3fa71d94abcc1e4ae908674e" id="r_a70f3458e3fa71d94abcc1e4ae908674e"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70f3458e3fa71d94abcc1e4ae908674e">bootloader_size</a>: 3</td></tr>
+<tr class="memdesc:a70f3458e3fa71d94abcc1e4ae908674e"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOOTPROT: Bootloader Size <br  />
+  <br /></td></tr>
+<tr class="separator:a70f3458e3fa71d94abcc1e4ae908674e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f0683ff07f15761dc1fcd9de0a6281f" id="r_a8f0683ff07f15761dc1fcd9de0a6281f"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f0683ff07f15761dc1fcd9de0a6281f">reserved_0</a>: 1</td></tr>
+<tr class="memdesc:a8f0683ff07f15761dc1fcd9de0a6281f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory settings - do not change.  <br /></td></tr>
+<tr class="separator:a8f0683ff07f15761dc1fcd9de0a6281f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88b8230dcf8238e23f6ca1f25a6823be" id="r_a88b8230dcf8238e23f6ca1f25a6823be"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88b8230dcf8238e23f6ca1f25a6823be">eeprom_size</a>: 3</td></tr>
+<tr class="memdesc:a88b8230dcf8238e23f6ca1f25a6823be"><td class="mdescLeft">&#160;</td><td class="mdescRight">one of eight different EEPROM sizes <br  />
+  <br /></td></tr>
+<tr class="separator:a88b8230dcf8238e23f6ca1f25a6823be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc91c442bae2e80ebfb34c4777df1f0d" id="r_abc91c442bae2e80ebfb34c4777df1f0d"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc91c442bae2e80ebfb34c4777df1f0d">reserved_1</a>: 1</td></tr>
+<tr class="memdesc:abc91c442bae2e80ebfb34c4777df1f0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory settings - do not change.  <br /></td></tr>
+<tr class="separator:abc91c442bae2e80ebfb34c4777df1f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a027c71bad7b453a29e340dc6d867b88e" id="r_a027c71bad7b453a29e340dc6d867b88e"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a027c71bad7b453a29e340dc6d867b88e">bod33_level</a>: 6</td></tr>
+<tr class="memdesc:a027c71bad7b453a29e340dc6d867b88e"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOD33 threshold level at power-on.  <br /></td></tr>
+<tr class="separator:a027c71bad7b453a29e340dc6d867b88e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b24690123b91a10d6d80984a8d629e5" id="r_a5b24690123b91a10d6d80984a8d629e5"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b24690123b91a10d6d80984a8d629e5">bod33_enable</a>: 1</td></tr>
+<tr class="memdesc:a5b24690123b91a10d6d80984a8d629e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOD33 Enable at power-on.  <br /></td></tr>
+<tr class="separator:a5b24690123b91a10d6d80984a8d629e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a446a9ef0ebd1dde6d783555293b9c69a" id="r_a446a9ef0ebd1dde6d783555293b9c69a"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a446a9ef0ebd1dde6d783555293b9c69a">bod33_action</a>: 2</td></tr>
+<tr class="memdesc:a446a9ef0ebd1dde6d783555293b9c69a"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOD33 Action at power-on.  <br /></td></tr>
+<tr class="separator:a446a9ef0ebd1dde6d783555293b9c69a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66c7ff73a5bb150b54aa6d70647489cf" id="r_a66c7ff73a5bb150b54aa6d70647489cf"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66c7ff73a5bb150b54aa6d70647489cf">reserved_2</a>: 8</td></tr>
+<tr class="memdesc:a66c7ff73a5bb150b54aa6d70647489cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory settings - do not change.  <br /></td></tr>
+<tr class="separator:a66c7ff73a5bb150b54aa6d70647489cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af88a3b074a95628559c2e41851162430" id="r_af88a3b074a95628559c2e41851162430"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af88a3b074a95628559c2e41851162430">wdt_enable</a>: 1</td></tr>
+<tr class="memdesc:af88a3b074a95628559c2e41851162430"><td class="mdescLeft">&#160;</td><td class="mdescRight">WDT Enable at power-on.  <br /></td></tr>
+<tr class="separator:af88a3b074a95628559c2e41851162430"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8a22b45276cf50e28d26cc77e1803e5" id="r_ac8a22b45276cf50e28d26cc77e1803e5"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8a22b45276cf50e28d26cc77e1803e5">wdt_always_on</a>: 1</td></tr>
+<tr class="memdesc:ac8a22b45276cf50e28d26cc77e1803e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">WDT Always-On at power-on.  <br /></td></tr>
+<tr class="separator:ac8a22b45276cf50e28d26cc77e1803e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cfb73495e0a9ff46cc942f9c384ec15" id="r_a5cfb73495e0a9ff46cc942f9c384ec15"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cfb73495e0a9ff46cc942f9c384ec15">wdt_period</a>: 4</td></tr>
+<tr class="memdesc:a5cfb73495e0a9ff46cc942f9c384ec15"><td class="mdescLeft">&#160;</td><td class="mdescRight">WDT Period at power-on.  <br /></td></tr>
+<tr class="separator:a5cfb73495e0a9ff46cc942f9c384ec15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15cd1d57413a9cf7a6f1c965fee7777b" id="r_a15cd1d57413a9cf7a6f1c965fee7777b"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15cd1d57413a9cf7a6f1c965fee7777b">wdt_window</a>: 4</td></tr>
+<tr class="memdesc:a15cd1d57413a9cf7a6f1c965fee7777b"><td class="mdescLeft">&#160;</td><td class="mdescRight">WDT Window at power-on.  <br /></td></tr>
+<tr class="separator:a15cd1d57413a9cf7a6f1c965fee7777b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a800fddde214decc3ecd231c49abe35b0" id="r_a800fddde214decc3ecd231c49abe35b0"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a800fddde214decc3ecd231c49abe35b0">wdt_ewoffset</a>: 4</td></tr>
+<tr class="memdesc:a800fddde214decc3ecd231c49abe35b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">WDT Early Warning Interrupt Offset <br  />
+  <br /></td></tr>
+<tr class="separator:a800fddde214decc3ecd231c49abe35b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a310d5a9f6558dac32ad9cb145d287a74" id="r_a310d5a9f6558dac32ad9cb145d287a74"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a310d5a9f6558dac32ad9cb145d287a74">wdt_window_enable</a>: 1</td></tr>
+<tr class="memdesc:a310d5a9f6558dac32ad9cb145d287a74"><td class="mdescLeft">&#160;</td><td class="mdescRight">WDT Window mode enabled on power-on <br  />
+  <br /></td></tr>
+<tr class="separator:a310d5a9f6558dac32ad9cb145d287a74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a375f046eed70d0d32e291191c515293e" id="r_a375f046eed70d0d32e291191c515293e"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a375f046eed70d0d32e291191c515293e">bod33_hysteresis</a>: 1</td></tr>
+<tr class="memdesc:a375f046eed70d0d32e291191c515293e"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOD33 Hysteresis configuration <br  />
+  <br /></td></tr>
+<tr class="separator:a375f046eed70d0d32e291191c515293e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adff34bb4064cca847cb85066702a7126" id="r_adff34bb4064cca847cb85066702a7126"><td class="memItemLeft" align="right" valign="top">const uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adff34bb4064cca847cb85066702a7126">bod12_calibration</a>: 1</td></tr>
+<tr class="memdesc:adff34bb4064cca847cb85066702a7126"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory settings - do not change.  <br /></td></tr>
+<tr class="separator:adff34bb4064cca847cb85066702a7126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2cac465461c38cf49fb19c66d06ab09" id="r_ae2cac465461c38cf49fb19c66d06ab09"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2cac465461c38cf49fb19c66d06ab09">reserved_3</a>: 6</td></tr>
+<tr class="memdesc:ae2cac465461c38cf49fb19c66d06ab09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory settings - do not change.  <br /></td></tr>
+<tr class="separator:ae2cac465461c38cf49fb19c66d06ab09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a356c9b6acae85b8445d6ef186b378ce9" id="r_a356c9b6acae85b8445d6ef186b378ce9"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a356c9b6acae85b8445d6ef186b378ce9">nvm_locks</a>: 16</td></tr>
+<tr class="memdesc:a356c9b6acae85b8445d6ef186b378ce9"><td class="mdescLeft">&#160;</td><td class="mdescRight">NVM Region Lock Bits.  <br /></td></tr>
+<tr class="separator:a356c9b6acae85b8445d6ef186b378ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f17aeaac5b30c8e4bea18e01ebdce5e" id="r_a8f17aeaac5b30c8e4bea18e01ebdce5e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f17aeaac5b30c8e4bea18e01ebdce5e">bod33_disable</a>: 1</td></tr>
+<tr class="memdesc:a8f17aeaac5b30c8e4bea18e01ebdce5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOD33 Disable at power-on.  <br /></td></tr>
+<tr class="separator:a8f17aeaac5b30c8e4bea18e01ebdce5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75a5b7d466fa4a069ef6ed2a64fb346a" id="r_a75a5b7d466fa4a069ef6ed2a64fb346a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75a5b7d466fa4a069ef6ed2a64fb346a">bod33_level</a>: 8</td></tr>
+<tr class="memdesc:a75a5b7d466fa4a069ef6ed2a64fb346a"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOD33 threshold level at power-on.  <br /></td></tr>
+<tr class="separator:a75a5b7d466fa4a069ef6ed2a64fb346a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af05cfafc97f4a613175e4debf3c5041a" id="r_af05cfafc97f4a613175e4debf3c5041a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af05cfafc97f4a613175e4debf3c5041a">bod33_action</a>: 2</td></tr>
+<tr class="memdesc:af05cfafc97f4a613175e4debf3c5041a"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOD33 Action at power-on.  <br /></td></tr>
+<tr class="separator:af05cfafc97f4a613175e4debf3c5041a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac72a70be8147b936cc46b06b9ae0c8ad" id="r_ac72a70be8147b936cc46b06b9ae0c8ad"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac72a70be8147b936cc46b06b9ae0c8ad">bod33_hysteresis</a>: 4</td></tr>
+<tr class="memdesc:ac72a70be8147b936cc46b06b9ae0c8ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOD33 Hysteresis configuration <br  />
+  <br /></td></tr>
+<tr class="separator:ac72a70be8147b936cc46b06b9ae0c8ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adff34bb4064cca847cb85066702a7126" id="r_adff34bb4064cca847cb85066702a7126"><td class="memItemLeft" align="right" valign="top">const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adff34bb4064cca847cb85066702a7126">bod12_calibration</a>: 11</td></tr>
+<tr class="memdesc:adff34bb4064cca847cb85066702a7126"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory settings - do not change.  <br /></td></tr>
+<tr class="separator:adff34bb4064cca847cb85066702a7126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af40b60c6bb3f600e3d8a9d910ab49d24" id="r_af40b60c6bb3f600e3d8a9d910ab49d24"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af40b60c6bb3f600e3d8a9d910ab49d24">nvm_boot_size</a>: 4</td></tr>
+<tr class="memdesc:af40b60c6bb3f600e3d8a9d910ab49d24"><td class="mdescLeft">&#160;</td><td class="mdescRight">NVM Bootloader Size <br  />
+  <br /></td></tr>
+<tr class="separator:af40b60c6bb3f600e3d8a9d910ab49d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ab2869367c8dc006e46b4c68ebba033" id="r_a5ab2869367c8dc006e46b4c68ebba033"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ab2869367c8dc006e46b4c68ebba033">reserved_0</a>: 2</td></tr>
+<tr class="memdesc:a5ab2869367c8dc006e46b4c68ebba033"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory settings - do not change.  <br /></td></tr>
+<tr class="separator:a5ab2869367c8dc006e46b4c68ebba033"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48d95153fca1f5ae8091368a543f07f5" id="r_a48d95153fca1f5ae8091368a543f07f5"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48d95153fca1f5ae8091368a543f07f5">smart_eeprom_blocks</a>: 4</td></tr>
+<tr class="memdesc:a48d95153fca1f5ae8091368a543f07f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">NVM Blocks per SmartEEPROM sector <br  />
+  <br /></td></tr>
+<tr class="separator:a48d95153fca1f5ae8091368a543f07f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e591bc14b5eeffbfb9678e12dc14dce" id="r_a2e591bc14b5eeffbfb9678e12dc14dce"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e591bc14b5eeffbfb9678e12dc14dce">smart_eeprom_page_size</a>: 3</td></tr>
+<tr class="memdesc:a2e591bc14b5eeffbfb9678e12dc14dce"><td class="mdescLeft">&#160;</td><td class="mdescRight">SmartEEPROM Page Size <br  />
+  <br /></td></tr>
+<tr class="separator:a2e591bc14b5eeffbfb9678e12dc14dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa3ab0b872943fd43daf8527b49362f7" id="r_aaa3ab0b872943fd43daf8527b49362f7"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa3ab0b872943fd43daf8527b49362f7">ram_eccdis</a>: 1</td></tr>
+<tr class="memdesc:aaa3ab0b872943fd43daf8527b49362f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">RAM ECC Disable <br  />
+  <br /></td></tr>
+<tr class="separator:aaa3ab0b872943fd43daf8527b49362f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab31beee4f94956daa86d9601b7e52c5" id="r_aab31beee4f94956daa86d9601b7e52c5"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab31beee4f94956daa86d9601b7e52c5">reserved_1</a>: 8</td></tr>
+<tr class="memdesc:aab31beee4f94956daa86d9601b7e52c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory settings - do not change.  <br /></td></tr>
+<tr class="separator:aab31beee4f94956daa86d9601b7e52c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16780da8aba8cb09dec3484bd51fe49b" id="r_a16780da8aba8cb09dec3484bd51fe49b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16780da8aba8cb09dec3484bd51fe49b">wdt_enable</a>: 1</td></tr>
+<tr class="memdesc:a16780da8aba8cb09dec3484bd51fe49b"><td class="mdescLeft">&#160;</td><td class="mdescRight">WDT Enable at power-on.  <br /></td></tr>
+<tr class="separator:a16780da8aba8cb09dec3484bd51fe49b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4193a6e689d437394ea8605536a1a0a" id="r_af4193a6e689d437394ea8605536a1a0a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4193a6e689d437394ea8605536a1a0a">wdt_always_on</a>: 1</td></tr>
+<tr class="memdesc:af4193a6e689d437394ea8605536a1a0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">WDT Always-On at power-on.  <br /></td></tr>
+<tr class="separator:af4193a6e689d437394ea8605536a1a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d8dc1b65f1f9f6cb9d7b8e933f65e53" id="r_a8d8dc1b65f1f9f6cb9d7b8e933f65e53"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d8dc1b65f1f9f6cb9d7b8e933f65e53">wdt_period</a>: 4</td></tr>
+<tr class="memdesc:a8d8dc1b65f1f9f6cb9d7b8e933f65e53"><td class="mdescLeft">&#160;</td><td class="mdescRight">WDT Period at power-on.  <br /></td></tr>
+<tr class="separator:a8d8dc1b65f1f9f6cb9d7b8e933f65e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af820dfb257bd1f049dd6c210231ae9e2" id="r_af820dfb257bd1f049dd6c210231ae9e2"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af820dfb257bd1f049dd6c210231ae9e2">wdt_window</a>: 4</td></tr>
+<tr class="memdesc:af820dfb257bd1f049dd6c210231ae9e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">WDT Window at power-on.  <br /></td></tr>
+<tr class="separator:af820dfb257bd1f049dd6c210231ae9e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa093801e3da9839b8662563b703a9979" id="r_aa093801e3da9839b8662563b703a9979"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa093801e3da9839b8662563b703a9979">wdt_ewoffset</a>: 4</td></tr>
+<tr class="memdesc:aa093801e3da9839b8662563b703a9979"><td class="mdescLeft">&#160;</td><td class="mdescRight">WDT Early Warning Interrupt Offset <br  />
+  <br /></td></tr>
+<tr class="separator:aa093801e3da9839b8662563b703a9979"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84975009d3c17f70271851806b85f072" id="r_a84975009d3c17f70271851806b85f072"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84975009d3c17f70271851806b85f072">wdt_window_enable</a>: 1</td></tr>
+<tr class="memdesc:a84975009d3c17f70271851806b85f072"><td class="mdescLeft">&#160;</td><td class="mdescRight">WDT Window mode enabled on power-on <br  />
+  <br /></td></tr>
+<tr class="separator:a84975009d3c17f70271851806b85f072"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad11b957f5a61ba6ac1916752a8a620ff" id="r_ad11b957f5a61ba6ac1916752a8a620ff"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad11b957f5a61ba6ac1916752a8a620ff">reserved_2</a>: 1</td></tr>
+<tr class="memdesc:ad11b957f5a61ba6ac1916752a8a620ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory settings - do not change.  <br /></td></tr>
+<tr class="separator:ad11b957f5a61ba6ac1916752a8a620ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b6341da5f0fee644f41d23b2bcfdb5a" id="r_a2b6341da5f0fee644f41d23b2bcfdb5a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b6341da5f0fee644f41d23b2bcfdb5a">nvm_locks</a></td></tr>
+<tr class="memdesc:a2b6341da5f0fee644f41d23b2bcfdb5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">NVM Region Lock Bits.  <br /></td></tr>
+<tr class="separator:a2b6341da5f0fee644f41d23b2bcfdb5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a331e0f04bdf22a2e486fc07a51d41f8a" id="r_a331e0f04bdf22a2e486fc07a51d41f8a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a331e0f04bdf22a2e486fc07a51d41f8a">user_page</a></td></tr>
+<tr class="memdesc:a331e0f04bdf22a2e486fc07a51d41f8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">User page <br  />
+  <br /></td></tr>
+<tr class="separator:a331e0f04bdf22a2e486fc07a51d41f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09aec2de23f38254d5ec5a5c6cd3dce4" id="r_a09aec2de23f38254d5ec5a5c6cd3dce4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09aec2de23f38254d5ec5a5c6cd3dce4">reserved_3</a></td></tr>
+<tr class="memdesc:a09aec2de23f38254d5ec5a5c6cd3dce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory settings - do not change.  <br /></td></tr>
+<tr class="separator:a09aec2de23f38254d5ec5a5c6cd3dce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abce77c27faf72751fab3ec1e1eb27875" id="r_abce77c27faf72751fab3ec1e1eb27875"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abce77c27faf72751fab3ec1e1eb27875">user_pages</a> [3]</td></tr>
+<tr class="memdesc:abce77c27faf72751fab3ec1e1eb27875"><td class="mdescLeft">&#160;</td><td class="mdescRight">User pages <br  />
+  <br /></td></tr>
+<tr class="separator:abce77c27faf72751fab3ec1e1eb27875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe41f8fbd54b626cb90bfd49f0cbf16c" id="r_afe41f8fbd54b626cb90bfd49f0cbf16c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe41f8fbd54b626cb90bfd49f0cbf16c">secure_region_unlock</a>: 3</td></tr>
+<tr class="memdesc:afe41f8fbd54b626cb90bfd49f0cbf16c"><td class="mdescLeft">&#160;</td><td class="mdescRight">NVM Secure Region UnLock Bits <br  />
+  <br /></td></tr>
+<tr class="separator:afe41f8fbd54b626cb90bfd49f0cbf16c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f0e2a23e17a0a7019844a587676aea6" id="r_a5f0e2a23e17a0a7019844a587676aea6"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f0e2a23e17a0a7019844a587676aea6">non_secure_region_unlock</a>: 3</td></tr>
+<tr class="memdesc:a5f0e2a23e17a0a7019844a587676aea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">NVM Non-Secure Region UnLock Bits <br  />
+  <br /></td></tr>
+<tr class="separator:a5f0e2a23e17a0a7019844a587676aea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60dce17f53ea9383d0a3edd0d3770146" id="r_a60dce17f53ea9383d0a3edd0d3770146"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60dce17f53ea9383d0a3edd0d3770146">wdt_run_standby</a>: 1</td></tr>
+<tr class="memdesc:a60dce17f53ea9383d0a3edd0d3770146"><td class="mdescLeft">&#160;</td><td class="mdescRight">WDT Runstdby at power-on <br  />
+  <br /></td></tr>
+<tr class="separator:a60dce17f53ea9383d0a3edd0d3770146"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcc29b37ad92ba6f2ef28b98cd3f22f0" id="r_abcc29b37ad92ba6f2ef28b98cd3f22f0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abcc29b37ad92ba6f2ef28b98cd3f22f0">ram_execute_never</a>: 1</td></tr>
+<tr class="memdesc:abcc29b37ad92ba6f2ef28b98cd3f22f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">RAM is eXecute Never <br  />
+  <br /></td></tr>
+<tr class="separator:abcc29b37ad92ba6f2ef28b98cd3f22f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c2a8aa7cba4cc016856b01340ba350f" id="r_a2c2a8aa7cba4cc016856b01340ba350f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c2a8aa7cba4cc016856b01340ba350f">data_execute_never</a>: 1</td></tr>
+<tr class="memdesc:a2c2a8aa7cba4cc016856b01340ba350f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data Flash is eXecute Never <br  />
+  <br /></td></tr>
+<tr class="separator:a2c2a8aa7cba4cc016856b01340ba350f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e3f904ebccf9ec94e94d7bddcabe8c4" id="r_a0e3f904ebccf9ec94e94d7bddcabe8c4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e3f904ebccf9ec94e94d7bddcabe8c4">secure_flash_as_size</a>: 8</td></tr>
+<tr class="memdesc:a0e3f904ebccf9ec94e94d7bddcabe8c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Secure Flash (AS region) Size = AS*0x100.  <br /></td></tr>
+<tr class="separator:a0e3f904ebccf9ec94e94d7bddcabe8c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae01357d60c6a4970098f08c1a4e1f9ed" id="r_ae01357d60c6a4970098f08c1a4e1f9ed"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae01357d60c6a4970098f08c1a4e1f9ed">nsc_size</a>: 6</td></tr>
+<tr class="memdesc:ae01357d60c6a4970098f08c1a4e1f9ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-Secure Callable Flash (APPLICATION region) Size = ANSC*0x20.  <br /></td></tr>
+<tr class="separator:ae01357d60c6a4970098f08c1a4e1f9ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ade76727f68977fea7d2dccbe5ccc60" id="r_a7ade76727f68977fea7d2dccbe5ccc60"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ade76727f68977fea7d2dccbe5ccc60">secure_flash_data_size</a>: 4</td></tr>
+<tr class="memdesc:a7ade76727f68977fea7d2dccbe5ccc60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Secure Data Flash Size = DS*0x100 <br  />
+  <br /></td></tr>
+<tr class="separator:a7ade76727f68977fea7d2dccbe5ccc60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b69a5e08bff557e5a4223c0080ad838" id="r_a5b69a5e08bff557e5a4223c0080ad838"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b69a5e08bff557e5a4223c0080ad838">reserved_4</a>: 4</td></tr>
+<tr class="memdesc:a5b69a5e08bff557e5a4223c0080ad838"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved <br  />
+  <br /></td></tr>
+<tr class="separator:a5b69a5e08bff557e5a4223c0080ad838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7bad9426354c883d0252c2d1cd63bc6" id="r_ac7bad9426354c883d0252c2d1cd63bc6"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7bad9426354c883d0252c2d1cd63bc6">secure_ram_size</a>: 7</td></tr>
+<tr class="memdesc:ac7bad9426354c883d0252c2d1cd63bc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Secure SRAM Size = RS*0x80 <br  />
+  <br /></td></tr>
+<tr class="separator:ac7bad9426354c883d0252c2d1cd63bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affa2a42b3a6a0590f0291eb9bcb38191" id="r_affa2a42b3a6a0590f0291eb9bcb38191"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affa2a42b3a6a0590f0291eb9bcb38191">reserved_5</a>: 1</td></tr>
+<tr class="memdesc:affa2a42b3a6a0590f0291eb9bcb38191"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved <br  />
+  <br /></td></tr>
+<tr class="separator:affa2a42b3a6a0590f0291eb9bcb38191"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a2e8c728a036935d9d80fe9b6a93bfb" id="r_a8a2e8c728a036935d9d80fe9b6a93bfb"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a2e8c728a036935d9d80fe9b6a93bfb">user_row_write_enable</a>: 1</td></tr>
+<tr class="memdesc:a8a2e8c728a036935d9d80fe9b6a93bfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">User Row Write Enable <br  />
+  <br /></td></tr>
+<tr class="separator:a8a2e8c728a036935d9d80fe9b6a93bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38dd7fe84c5510046f9b52be506ce8c0" id="r_a38dd7fe84c5510046f9b52be506ce8c0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38dd7fe84c5510046f9b52be506ce8c0">reserved_6</a>: 31</td></tr>
+<tr class="memdesc:a38dd7fe84c5510046f9b52be506ce8c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved <br  />
+  <br /></td></tr>
+<tr class="separator:a38dd7fe84c5510046f9b52be506ce8c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8da4ab687ca4ea4eb2d5509a20946a3" id="r_ae8da4ab687ca4ea4eb2d5509a20946a3"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8da4ab687ca4ea4eb2d5509a20946a3">nonsec_a</a></td></tr>
+<tr class="memdesc:ae8da4ab687ca4ea4eb2d5509a20946a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peripherals Non-Secure Status Fuses for Bridge A.  <br /></td></tr>
+<tr class="separator:ae8da4ab687ca4ea4eb2d5509a20946a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20d6ccbc8b0bf837be371f916de4ff71" id="r_a20d6ccbc8b0bf837be371f916de4ff71"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20d6ccbc8b0bf837be371f916de4ff71">nonsec_b</a></td></tr>
+<tr class="memdesc:a20d6ccbc8b0bf837be371f916de4ff71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peripherals Non-Secure Status Fuses for Bridge B.  <br /></td></tr>
+<tr class="separator:a20d6ccbc8b0bf837be371f916de4ff71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4514c92c5c7da9d32652330f33737bf" id="r_af4514c92c5c7da9d32652330f33737bf"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4514c92c5c7da9d32652330f33737bf">nonsec_c</a></td></tr>
+<tr class="memdesc:af4514c92c5c7da9d32652330f33737bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peripherals Non-Secure Status Fuses for Bridge C.  <br /></td></tr>
+<tr class="separator:af4514c92c5c7da9d32652330f33737bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a861805f501a94c1077a32623195ec069" id="r_a861805f501a94c1077a32623195ec069"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a861805f501a94c1077a32623195ec069">user_crc</a></td></tr>
+<tr class="memdesc:a861805f501a94c1077a32623195ec069"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC of NVM User Row bits 223:64 (words 2…6) <br  />
+  <br /></td></tr>
+<tr class="separator:a861805f501a94c1077a32623195ec069"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="adff34bb4064cca847cb85066702a7126" name="adff34bb4064cca847cb85066702a7126"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adff34bb4064cca847cb85066702a7126">&#9670;&#160;</a></span>bod12_calibration <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint32_t sam0_aux_cfg_mapping::bod12_calibration</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Factory settings - do not change. </p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd21_2include_2periph__cpu_8h_source.html#l00193">193</a> of file <a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="adff34bb4064cca847cb85066702a7126" name="adff34bb4064cca847cb85066702a7126"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adff34bb4064cca847cb85066702a7126">&#9670;&#160;</a></span>bod12_calibration <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint32_t sam0_aux_cfg_mapping::bod12_calibration</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Factory settings - do not change. </p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00240">240</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a446a9ef0ebd1dde6d783555293b9c69a" name="a446a9ef0ebd1dde6d783555293b9c69a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a446a9ef0ebd1dde6d783555293b9c69a">&#9670;&#160;</a></span>bod33_action <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t sam0_aux_cfg_mapping::bod33_action</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BOD33 Action at power-on. </p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd21_2include_2periph__cpu_8h_source.html#l00184">184</a> of file <a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="af05cfafc97f4a613175e4debf3c5041a" name="af05cfafc97f4a613175e4debf3c5041a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af05cfafc97f4a613175e4debf3c5041a">&#9670;&#160;</a></span>bod33_action <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::bod33_action</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BOD33 Action at power-on. </p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00238">238</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a8f17aeaac5b30c8e4bea18e01ebdce5e" name="a8f17aeaac5b30c8e4bea18e01ebdce5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f17aeaac5b30c8e4bea18e01ebdce5e">&#9670;&#160;</a></span>bod33_disable</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::bod33_disable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BOD33 Disable at power-on. </p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00236">236</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a5b24690123b91a10d6d80984a8d629e5" name="a5b24690123b91a10d6d80984a8d629e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b24690123b91a10d6d80984a8d629e5">&#9670;&#160;</a></span>bod33_enable</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t sam0_aux_cfg_mapping::bod33_enable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BOD33 Enable at power-on. </p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd21_2include_2periph__cpu_8h_source.html#l00183">183</a> of file <a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a375f046eed70d0d32e291191c515293e" name="a375f046eed70d0d32e291191c515293e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a375f046eed70d0d32e291191c515293e">&#9670;&#160;</a></span>bod33_hysteresis <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t sam0_aux_cfg_mapping::bod33_hysteresis</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BOD33 Hysteresis configuration <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd21_2include_2periph__cpu_8h_source.html#l00192">192</a> of file <a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="ac72a70be8147b936cc46b06b9ae0c8ad" name="ac72a70be8147b936cc46b06b9ae0c8ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac72a70be8147b936cc46b06b9ae0c8ad">&#9670;&#160;</a></span>bod33_hysteresis <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::bod33_hysteresis</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BOD33 Hysteresis configuration <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00239">239</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a027c71bad7b453a29e340dc6d867b88e" name="a027c71bad7b453a29e340dc6d867b88e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a027c71bad7b453a29e340dc6d867b88e">&#9670;&#160;</a></span>bod33_level <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t sam0_aux_cfg_mapping::bod33_level</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BOD33 threshold level at power-on. </p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd21_2include_2periph__cpu_8h_source.html#l00182">182</a> of file <a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a75a5b7d466fa4a069ef6ed2a64fb346a" name="a75a5b7d466fa4a069ef6ed2a64fb346a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75a5b7d466fa4a069ef6ed2a64fb346a">&#9670;&#160;</a></span>bod33_level <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::bod33_level</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BOD33 threshold level at power-on. </p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00237">237</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a70f3458e3fa71d94abcc1e4ae908674e" name="a70f3458e3fa71d94abcc1e4ae908674e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70f3458e3fa71d94abcc1e4ae908674e">&#9670;&#160;</a></span>bootloader_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t sam0_aux_cfg_mapping::bootloader_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BOOTPROT: Bootloader Size <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd21_2include_2periph__cpu_8h_source.html#l00178">178</a> of file <a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a2c2a8aa7cba4cc016856b01340ba350f" name="a2c2a8aa7cba4cc016856b01340ba350f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c2a8aa7cba4cc016856b01340ba350f">&#9670;&#160;</a></span>data_execute_never</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::data_execute_never</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Data Flash is eXecute Never <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html#l00135">135</a> of file <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a88b8230dcf8238e23f6ca1f25a6823be" name="a88b8230dcf8238e23f6ca1f25a6823be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88b8230dcf8238e23f6ca1f25a6823be">&#9670;&#160;</a></span>eeprom_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t sam0_aux_cfg_mapping::eeprom_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>one of eight different EEPROM sizes <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd21_2include_2periph__cpu_8h_source.html#l00180">180</a> of file <a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a5f0e2a23e17a0a7019844a587676aea6" name="a5f0e2a23e17a0a7019844a587676aea6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f0e2a23e17a0a7019844a587676aea6">&#9670;&#160;</a></span>non_secure_region_unlock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::non_secure_region_unlock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>NVM Non-Secure Region UnLock Bits <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html#l00118">118</a> of file <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="ae8da4ab687ca4ea4eb2d5509a20946a3" name="ae8da4ab687ca4ea4eb2d5509a20946a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8da4ab687ca4ea4eb2d5509a20946a3">&#9670;&#160;</a></span>nonsec_a</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::nonsec_a</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Peripherals Non-Secure Status Fuses for Bridge A. </p>
+
+<p class="definition">Definition at line <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html#l00149">149</a> of file <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a20d6ccbc8b0bf837be371f916de4ff71" name="a20d6ccbc8b0bf837be371f916de4ff71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20d6ccbc8b0bf837be371f916de4ff71">&#9670;&#160;</a></span>nonsec_b</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::nonsec_b</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Peripherals Non-Secure Status Fuses for Bridge B. </p>
+
+<p class="definition">Definition at line <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html#l00151">151</a> of file <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="af4514c92c5c7da9d32652330f33737bf" name="af4514c92c5c7da9d32652330f33737bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4514c92c5c7da9d32652330f33737bf">&#9670;&#160;</a></span>nonsec_c</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::nonsec_c</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Peripherals Non-Secure Status Fuses for Bridge C. </p>
+
+<p class="definition">Definition at line <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html#l00153">153</a> of file <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="ae01357d60c6a4970098f08c1a4e1f9ed" name="ae01357d60c6a4970098f08c1a4e1f9ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae01357d60c6a4970098f08c1a4e1f9ed">&#9670;&#160;</a></span>nsc_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::nsc_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Non-Secure Callable Flash (APPLICATION region) Size = ANSC*0x20. </p>
+
+<p class="definition">Definition at line <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html#l00139">139</a> of file <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="af40b60c6bb3f600e3d8a9d910ab49d24" name="af40b60c6bb3f600e3d8a9d910ab49d24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af40b60c6bb3f600e3d8a9d910ab49d24">&#9670;&#160;</a></span>nvm_boot_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::nvm_boot_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>NVM Bootloader Size <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00241">241</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a356c9b6acae85b8445d6ef186b378ce9" name="a356c9b6acae85b8445d6ef186b378ce9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a356c9b6acae85b8445d6ef186b378ce9">&#9670;&#160;</a></span>nvm_locks <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t sam0_aux_cfg_mapping::nvm_locks</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>NVM Region Lock Bits. </p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd21_2include_2periph__cpu_8h_source.html#l00195">195</a> of file <a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a2b6341da5f0fee644f41d23b2bcfdb5a" name="a2b6341da5f0fee644f41d23b2bcfdb5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b6341da5f0fee644f41d23b2bcfdb5a">&#9670;&#160;</a></span>nvm_locks <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::nvm_locks</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>NVM Region Lock Bits. </p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00256">256</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="aaa3ab0b872943fd43daf8527b49362f7" name="aaa3ab0b872943fd43daf8527b49362f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa3ab0b872943fd43daf8527b49362f7">&#9670;&#160;</a></span>ram_eccdis</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::ram_eccdis</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RAM ECC Disable <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00246">246</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="abcc29b37ad92ba6f2ef28b98cd3f22f0" name="abcc29b37ad92ba6f2ef28b98cd3f22f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcc29b37ad92ba6f2ef28b98cd3f22f0">&#9670;&#160;</a></span>ram_execute_never</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::ram_execute_never</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RAM is eXecute Never <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html#l00134">134</a> of file <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a8f0683ff07f15761dc1fcd9de0a6281f" name="a8f0683ff07f15761dc1fcd9de0a6281f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f0683ff07f15761dc1fcd9de0a6281f">&#9670;&#160;</a></span>reserved_0 <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t sam0_aux_cfg_mapping::reserved_0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Factory settings - do not change. </p>
+<p>Reserved <br  />
+</p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd21_2include_2periph__cpu_8h_source.html#l00179">179</a> of file <a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a5ab2869367c8dc006e46b4c68ebba033" name="a5ab2869367c8dc006e46b4c68ebba033"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ab2869367c8dc006e46b4c68ebba033">&#9670;&#160;</a></span>reserved_0 <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::reserved_0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Factory settings - do not change. </p>
+<p>Reserved <br  />
+</p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00242">242</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="abc91c442bae2e80ebfb34c4777df1f0d" name="abc91c442bae2e80ebfb34c4777df1f0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc91c442bae2e80ebfb34c4777df1f0d">&#9670;&#160;</a></span>reserved_1 <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t sam0_aux_cfg_mapping::reserved_1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Factory settings - do not change. </p>
+<p>Reserved <br  />
+</p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd21_2include_2periph__cpu_8h_source.html#l00181">181</a> of file <a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="aab31beee4f94956daa86d9601b7e52c5" name="aab31beee4f94956daa86d9601b7e52c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab31beee4f94956daa86d9601b7e52c5">&#9670;&#160;</a></span>reserved_1 <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::reserved_1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Factory settings - do not change. </p>
+<p>Reserved <br  />
+</p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00247">247</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a66c7ff73a5bb150b54aa6d70647489cf" name="a66c7ff73a5bb150b54aa6d70647489cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66c7ff73a5bb150b54aa6d70647489cf">&#9670;&#160;</a></span>reserved_2 <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t sam0_aux_cfg_mapping::reserved_2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Factory settings - do not change. </p>
+<p>Reserved <br  />
+</p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd21_2include_2periph__cpu_8h_source.html#l00185">185</a> of file <a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="ad11b957f5a61ba6ac1916752a8a620ff" name="ad11b957f5a61ba6ac1916752a8a620ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad11b957f5a61ba6ac1916752a8a620ff">&#9670;&#160;</a></span>reserved_2 <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::reserved_2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Factory settings - do not change. </p>
+<p>Reserved <br  />
+</p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00254">254</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="ae2cac465461c38cf49fb19c66d06ab09" name="ae2cac465461c38cf49fb19c66d06ab09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2cac465461c38cf49fb19c66d06ab09">&#9670;&#160;</a></span>reserved_3 <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t sam0_aux_cfg_mapping::reserved_3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Factory settings - do not change. </p>
+<p>Reserved <br  />
+</p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd21_2include_2periph__cpu_8h_source.html#l00194">194</a> of file <a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a09aec2de23f38254d5ec5a5c6cd3dce4" name="a09aec2de23f38254d5ec5a5c6cd3dce4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09aec2de23f38254d5ec5a5c6cd3dce4">&#9670;&#160;</a></span>reserved_3 <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::reserved_3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Factory settings - do not change. </p>
+<p>Reserved <br  />
+</p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00260">260</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a5b69a5e08bff557e5a4223c0080ad838" name="a5b69a5e08bff557e5a4223c0080ad838"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b69a5e08bff557e5a4223c0080ad838">&#9670;&#160;</a></span>reserved_4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::reserved_4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html#l00142">142</a> of file <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="affa2a42b3a6a0590f0291eb9bcb38191" name="affa2a42b3a6a0590f0291eb9bcb38191"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affa2a42b3a6a0590f0291eb9bcb38191">&#9670;&#160;</a></span>reserved_5</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::reserved_5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html#l00144">144</a> of file <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a38dd7fe84c5510046f9b52be506ce8c0" name="a38dd7fe84c5510046f9b52be506ce8c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38dd7fe84c5510046f9b52be506ce8c0">&#9670;&#160;</a></span>reserved_6</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::reserved_6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html#l00147">147</a> of file <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a0e3f904ebccf9ec94e94d7bddcabe8c4" name="a0e3f904ebccf9ec94e94d7bddcabe8c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e3f904ebccf9ec94e94d7bddcabe8c4">&#9670;&#160;</a></span>secure_flash_as_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::secure_flash_as_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Secure Flash (AS region) Size = AS*0x100. </p>
+
+<p class="definition">Definition at line <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html#l00138">138</a> of file <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a7ade76727f68977fea7d2dccbe5ccc60" name="a7ade76727f68977fea7d2dccbe5ccc60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ade76727f68977fea7d2dccbe5ccc60">&#9670;&#160;</a></span>secure_flash_data_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::secure_flash_data_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Secure Data Flash Size = DS*0x100 <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html#l00141">141</a> of file <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="ac7bad9426354c883d0252c2d1cd63bc6" name="ac7bad9426354c883d0252c2d1cd63bc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7bad9426354c883d0252c2d1cd63bc6">&#9670;&#160;</a></span>secure_ram_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::secure_ram_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Secure SRAM Size = RS*0x80 <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html#l00143">143</a> of file <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="afe41f8fbd54b626cb90bfd49f0cbf16c" name="afe41f8fbd54b626cb90bfd49f0cbf16c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe41f8fbd54b626cb90bfd49f0cbf16c">&#9670;&#160;</a></span>secure_region_unlock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::secure_region_unlock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>NVM Secure Region UnLock Bits <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html#l00117">117</a> of file <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a48d95153fca1f5ae8091368a543f07f5" name="a48d95153fca1f5ae8091368a543f07f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48d95153fca1f5ae8091368a543f07f5">&#9670;&#160;</a></span>smart_eeprom_blocks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::smart_eeprom_blocks</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>NVM Blocks per SmartEEPROM sector <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00244">244</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a2e591bc14b5eeffbfb9678e12dc14dce" name="a2e591bc14b5eeffbfb9678e12dc14dce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e591bc14b5eeffbfb9678e12dc14dce">&#9670;&#160;</a></span>smart_eeprom_page_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::smart_eeprom_page_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SmartEEPROM Page Size <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00245">245</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a861805f501a94c1077a32623195ec069" name="a861805f501a94c1077a32623195ec069"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a861805f501a94c1077a32623195ec069">&#9670;&#160;</a></span>user_crc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::user_crc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CRC of NVM User Row bits 223:64 (words 2…6) <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html#l00155">155</a> of file <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a331e0f04bdf22a2e486fc07a51d41f8a" name="a331e0f04bdf22a2e486fc07a51d41f8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a331e0f04bdf22a2e486fc07a51d41f8a">&#9670;&#160;</a></span>user_page</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::user_page</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>User page <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00258">258</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="abce77c27faf72751fab3ec1e1eb27875" name="abce77c27faf72751fab3ec1e1eb27875"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abce77c27faf72751fab3ec1e1eb27875">&#9670;&#160;</a></span>user_pages</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::user_pages[3]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>User pages <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00262">262</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a8a2e8c728a036935d9d80fe9b6a93bfb" name="a8a2e8c728a036935d9d80fe9b6a93bfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a2e8c728a036935d9d80fe9b6a93bfb">&#9670;&#160;</a></span>user_row_write_enable</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::user_row_write_enable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>User Row Write Enable <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html#l00146">146</a> of file <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="ac8a22b45276cf50e28d26cc77e1803e5" name="ac8a22b45276cf50e28d26cc77e1803e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8a22b45276cf50e28d26cc77e1803e5">&#9670;&#160;</a></span>wdt_always_on <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t sam0_aux_cfg_mapping::wdt_always_on</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>WDT Always-On at power-on. </p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd21_2include_2periph__cpu_8h_source.html#l00187">187</a> of file <a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="af4193a6e689d437394ea8605536a1a0a" name="af4193a6e689d437394ea8605536a1a0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4193a6e689d437394ea8605536a1a0a">&#9670;&#160;</a></span>wdt_always_on <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::wdt_always_on</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>WDT Always-On at power-on. </p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00249">249</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="af88a3b074a95628559c2e41851162430" name="af88a3b074a95628559c2e41851162430"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af88a3b074a95628559c2e41851162430">&#9670;&#160;</a></span>wdt_enable <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t sam0_aux_cfg_mapping::wdt_enable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>WDT Enable at power-on. </p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd21_2include_2periph__cpu_8h_source.html#l00186">186</a> of file <a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a16780da8aba8cb09dec3484bd51fe49b" name="a16780da8aba8cb09dec3484bd51fe49b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16780da8aba8cb09dec3484bd51fe49b">&#9670;&#160;</a></span>wdt_enable <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::wdt_enable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>WDT Enable at power-on. </p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00248">248</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a800fddde214decc3ecd231c49abe35b0" name="a800fddde214decc3ecd231c49abe35b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a800fddde214decc3ecd231c49abe35b0">&#9670;&#160;</a></span>wdt_ewoffset <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t sam0_aux_cfg_mapping::wdt_ewoffset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>WDT Early Warning Interrupt Offset <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd21_2include_2periph__cpu_8h_source.html#l00190">190</a> of file <a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="aa093801e3da9839b8662563b703a9979" name="aa093801e3da9839b8662563b703a9979"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa093801e3da9839b8662563b703a9979">&#9670;&#160;</a></span>wdt_ewoffset <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::wdt_ewoffset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>WDT Early Warning Interrupt Offset <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00252">252</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a5cfb73495e0a9ff46cc942f9c384ec15" name="a5cfb73495e0a9ff46cc942f9c384ec15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cfb73495e0a9ff46cc942f9c384ec15">&#9670;&#160;</a></span>wdt_period <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t sam0_aux_cfg_mapping::wdt_period</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>WDT Period at power-on. </p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd21_2include_2periph__cpu_8h_source.html#l00188">188</a> of file <a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a8d8dc1b65f1f9f6cb9d7b8e933f65e53" name="a8d8dc1b65f1f9f6cb9d7b8e933f65e53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d8dc1b65f1f9f6cb9d7b8e933f65e53">&#9670;&#160;</a></span>wdt_period <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::wdt_period</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>WDT Period at power-on. </p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00250">250</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a60dce17f53ea9383d0a3edd0d3770146" name="a60dce17f53ea9383d0a3edd0d3770146"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60dce17f53ea9383d0a3edd0d3770146">&#9670;&#160;</a></span>wdt_run_standby</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::wdt_run_standby</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>WDT Runstdby at power-on <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html#l00124">124</a> of file <a class="el" href="saml1x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a15cd1d57413a9cf7a6f1c965fee7777b" name="a15cd1d57413a9cf7a6f1c965fee7777b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15cd1d57413a9cf7a6f1c965fee7777b">&#9670;&#160;</a></span>wdt_window <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t sam0_aux_cfg_mapping::wdt_window</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>WDT Window at power-on. </p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd21_2include_2periph__cpu_8h_source.html#l00189">189</a> of file <a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="af820dfb257bd1f049dd6c210231ae9e2" name="af820dfb257bd1f049dd6c210231ae9e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af820dfb257bd1f049dd6c210231ae9e2">&#9670;&#160;</a></span>wdt_window <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::wdt_window</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>WDT Window at power-on. </p>
+<p><br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00251">251</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a310d5a9f6558dac32ad9cb145d287a74" name="a310d5a9f6558dac32ad9cb145d287a74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a310d5a9f6558dac32ad9cb145d287a74">&#9670;&#160;</a></span>wdt_window_enable <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t sam0_aux_cfg_mapping::wdt_window_enable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>WDT Window mode enabled on power-on <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd21_2include_2periph__cpu_8h_source.html#l00191">191</a> of file <a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="a84975009d3c17f70271851806b85f072" name="a84975009d3c17f70271851806b85f072"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84975009d3c17f70271851806b85f072">&#9670;&#160;</a></span>wdt_window_enable <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t sam0_aux_cfg_mapping::wdt_window_enable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>WDT Window mode enabled on power-on <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html#l00253">253</a> of file <a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
+<li>cpu/samd21/include/<a class="el" href="samd21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/samd5x/include/<a class="el" href="samd5x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/saml1x/include/<a class="el" href="saml1x_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+<li>cpu/saml21/include/<a class="el" href="saml21_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

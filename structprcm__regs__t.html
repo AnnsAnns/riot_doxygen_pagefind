@@ -1,0 +1,2083 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>prcm_regs_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structprcm__regs__t.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">prcm_regs_t Struct Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>PRCM registers.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>PRCM registers. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00236">236</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a791b8f66ee913ee26e46ad8685bf6fad" id="r_a791b8f66ee913ee26e46ad8685bf6fad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a791b8f66ee913ee26e46ad8685bf6fad">INFRCLKDIVR</a></td></tr>
+<tr class="memdesc:a791b8f66ee913ee26e46ad8685bf6fad"><td class="mdescLeft">&#160;</td><td class="mdescRight">infrastructure clock division factor for run mode  <br /></td></tr>
+<tr class="separator:a791b8f66ee913ee26e46ad8685bf6fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3770e6f245f27249ff2cf3618fb5ffcb" id="r_a3770e6f245f27249ff2cf3618fb5ffcb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3770e6f245f27249ff2cf3618fb5ffcb">INFRCLKDIVS</a></td></tr>
+<tr class="memdesc:a3770e6f245f27249ff2cf3618fb5ffcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">infrastructure clock division factor for sleep mode  <br /></td></tr>
+<tr class="separator:a3770e6f245f27249ff2cf3618fb5ffcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb67725210b3203522249bb70e0d066f" id="r_adb67725210b3203522249bb70e0d066f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb67725210b3203522249bb70e0d066f">INFRCLKDIVDS</a></td></tr>
+<tr class="memdesc:adb67725210b3203522249bb70e0d066f"><td class="mdescLeft">&#160;</td><td class="mdescRight">infrastructure clock division factor for deep sleep mode  <br /></td></tr>
+<tr class="separator:adb67725210b3203522249bb70e0d066f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21fb44bb70f192bb09a50c1929601369" id="r_a21fb44bb70f192bb09a50c1929601369"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21fb44bb70f192bb09a50c1929601369">VDCTL</a></td></tr>
+<tr class="memdesc:a21fb44bb70f192bb09a50c1929601369"><td class="mdescLeft">&#160;</td><td class="mdescRight">MCU voltage domain control.  <br /></td></tr>
+<tr class="separator:a21fb44bb70f192bb09a50c1929601369"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad95137fb3aa28fed72302e70431fed1d" id="r_ad95137fb3aa28fed72302e70431fed1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad95137fb3aa28fed72302e70431fed1d">__reserved1</a> [6]</td></tr>
+<tr class="memdesc:ad95137fb3aa28fed72302e70431fed1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved.  <br /></td></tr>
+<tr class="separator:ad95137fb3aa28fed72302e70431fed1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1486ab448bb67791403d9a70357536f" id="r_af1486ab448bb67791403d9a70357536f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1486ab448bb67791403d9a70357536f">CLKLOADCTL</a></td></tr>
+<tr class="memdesc:af1486ab448bb67791403d9a70357536f"><td class="mdescLeft">&#160;</td><td class="mdescRight">clock load control  <br /></td></tr>
+<tr class="separator:af1486ab448bb67791403d9a70357536f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d9d938d1e02c940fe3caac305037adf" id="r_a6d9d938d1e02c940fe3caac305037adf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d9d938d1e02c940fe3caac305037adf">RFCCLKG</a></td></tr>
+<tr class="memdesc:a6d9d938d1e02c940fe3caac305037adf"><td class="mdescLeft">&#160;</td><td class="mdescRight">RFC clock gate.  <br /></td></tr>
+<tr class="separator:a6d9d938d1e02c940fe3caac305037adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2158d0dfd5ab5b46b8383c97b91bb635" id="r_a2158d0dfd5ab5b46b8383c97b91bb635"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2158d0dfd5ab5b46b8383c97b91bb635">VIMSCLKG</a></td></tr>
+<tr class="memdesc:a2158d0dfd5ab5b46b8383c97b91bb635"><td class="mdescLeft">&#160;</td><td class="mdescRight">VIMS clock gate.  <br /></td></tr>
+<tr class="separator:a2158d0dfd5ab5b46b8383c97b91bb635"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeafd4a229f20ac5beb97342a162bd0a8" id="r_aeafd4a229f20ac5beb97342a162bd0a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeafd4a229f20ac5beb97342a162bd0a8">__reserved2</a> [2]</td></tr>
+<tr class="memdesc:aeafd4a229f20ac5beb97342a162bd0a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved.  <br /></td></tr>
+<tr class="separator:aeafd4a229f20ac5beb97342a162bd0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cc186ed9433a262db330cf335bde49c" id="r_a5cc186ed9433a262db330cf335bde49c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cc186ed9433a262db330cf335bde49c">SECDMACLKGR</a></td></tr>
+<tr class="memdesc:a5cc186ed9433a262db330cf335bde49c"><td class="mdescLeft">&#160;</td><td class="mdescRight">TRNG, CRYPTO, and UDMA clock gate for run mode.  <br /></td></tr>
+<tr class="separator:a5cc186ed9433a262db330cf335bde49c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2c3297fc73fd5714ef4f5b797f53b37" id="r_af2c3297fc73fd5714ef4f5b797f53b37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2c3297fc73fd5714ef4f5b797f53b37">SECDMACLKGS</a></td></tr>
+<tr class="memdesc:af2c3297fc73fd5714ef4f5b797f53b37"><td class="mdescLeft">&#160;</td><td class="mdescRight">TRNG, CRYPTO, and UDMA clock gate for sleep mode.  <br /></td></tr>
+<tr class="separator:af2c3297fc73fd5714ef4f5b797f53b37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca386259feb737c9a3e6c5d610649efe" id="r_aca386259feb737c9a3e6c5d610649efe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca386259feb737c9a3e6c5d610649efe">SECDMACLKGDS</a></td></tr>
+<tr class="memdesc:aca386259feb737c9a3e6c5d610649efe"><td class="mdescLeft">&#160;</td><td class="mdescRight">TRNG, CRYPTO, and UDMA clock gate for deep sleep mode.  <br /></td></tr>
+<tr class="separator:aca386259feb737c9a3e6c5d610649efe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1e5e31aa4f14e0b77cb0f45555c7698" id="r_ab1e5e31aa4f14e0b77cb0f45555c7698"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1e5e31aa4f14e0b77cb0f45555c7698">GPIOCLKGR</a></td></tr>
+<tr class="memdesc:ab1e5e31aa4f14e0b77cb0f45555c7698"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO clock gate for run mode.  <br /></td></tr>
+<tr class="separator:ab1e5e31aa4f14e0b77cb0f45555c7698"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec684a4aa6d63488127a71fda6e0a99d" id="r_aec684a4aa6d63488127a71fda6e0a99d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec684a4aa6d63488127a71fda6e0a99d">GPIOCLKGS</a></td></tr>
+<tr class="memdesc:aec684a4aa6d63488127a71fda6e0a99d"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO clock gate for sleep mode.  <br /></td></tr>
+<tr class="separator:aec684a4aa6d63488127a71fda6e0a99d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a565e4e431e3cb4f88006d678dfd21e" id="r_a5a565e4e431e3cb4f88006d678dfd21e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a565e4e431e3cb4f88006d678dfd21e">GPIOCLKGDS</a></td></tr>
+<tr class="memdesc:a5a565e4e431e3cb4f88006d678dfd21e"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO clock gate for deep sleep mode.  <br /></td></tr>
+<tr class="separator:a5a565e4e431e3cb4f88006d678dfd21e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a529b44980b3a561911b917c2b8520818" id="r_a529b44980b3a561911b917c2b8520818"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a529b44980b3a561911b917c2b8520818">GPTCLKGR</a></td></tr>
+<tr class="memdesc:a529b44980b3a561911b917c2b8520818"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPT clock gate for run mode.  <br /></td></tr>
+<tr class="separator:a529b44980b3a561911b917c2b8520818"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93280415f871c8fafe60f0fc303c194c" id="r_a93280415f871c8fafe60f0fc303c194c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93280415f871c8fafe60f0fc303c194c">GPTCLKGS</a></td></tr>
+<tr class="memdesc:a93280415f871c8fafe60f0fc303c194c"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPT clock gate for sleep mode.  <br /></td></tr>
+<tr class="separator:a93280415f871c8fafe60f0fc303c194c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a177193f14e3f31189629aa92a1c86ad4" id="r_a177193f14e3f31189629aa92a1c86ad4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a177193f14e3f31189629aa92a1c86ad4">GPTCLKGDS</a></td></tr>
+<tr class="memdesc:a177193f14e3f31189629aa92a1c86ad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPT clock gate for deep sleep mode.  <br /></td></tr>
+<tr class="separator:a177193f14e3f31189629aa92a1c86ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a661363423c9ecd5d3e1286b000e5a570" id="r_a661363423c9ecd5d3e1286b000e5a570"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a661363423c9ecd5d3e1286b000e5a570">I2CCLKGR</a></td></tr>
+<tr class="memdesc:a661363423c9ecd5d3e1286b000e5a570"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C clock gate for run mode.  <br /></td></tr>
+<tr class="separator:a661363423c9ecd5d3e1286b000e5a570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa3ed9260dc37bf570b208a5aa8333d5" id="r_aaa3ed9260dc37bf570b208a5aa8333d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa3ed9260dc37bf570b208a5aa8333d5">I2CCLKGS</a></td></tr>
+<tr class="memdesc:aaa3ed9260dc37bf570b208a5aa8333d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C clock gate for sleep mode.  <br /></td></tr>
+<tr class="separator:aaa3ed9260dc37bf570b208a5aa8333d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe0fe24b7547fa3bedf86437573657d8" id="r_afe0fe24b7547fa3bedf86437573657d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe0fe24b7547fa3bedf86437573657d8">I2CCLKGDS</a></td></tr>
+<tr class="memdesc:afe0fe24b7547fa3bedf86437573657d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C clock gate for deep sleep mode.  <br /></td></tr>
+<tr class="separator:afe0fe24b7547fa3bedf86437573657d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae94156999a374dd0f4bdc4a7e1afe8fc" id="r_ae94156999a374dd0f4bdc4a7e1afe8fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae94156999a374dd0f4bdc4a7e1afe8fc">UARTCLKGR</a></td></tr>
+<tr class="memdesc:ae94156999a374dd0f4bdc4a7e1afe8fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART clock gate for run mode.  <br /></td></tr>
+<tr class="separator:ae94156999a374dd0f4bdc4a7e1afe8fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c99018ce00d89e7f5ef64eb466c3da7" id="r_a5c99018ce00d89e7f5ef64eb466c3da7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c99018ce00d89e7f5ef64eb466c3da7">UARTCLKGS</a></td></tr>
+<tr class="memdesc:a5c99018ce00d89e7f5ef64eb466c3da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART clock gate for sleep mode.  <br /></td></tr>
+<tr class="separator:a5c99018ce00d89e7f5ef64eb466c3da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27a65e6ba81eb7d85c833529d4e5d07b" id="r_a27a65e6ba81eb7d85c833529d4e5d07b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27a65e6ba81eb7d85c833529d4e5d07b">UARTCLKGDS</a></td></tr>
+<tr class="memdesc:a27a65e6ba81eb7d85c833529d4e5d07b"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART clock gate for deep sleep mode.  <br /></td></tr>
+<tr class="separator:a27a65e6ba81eb7d85c833529d4e5d07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c57becb44ac289b01a9f575e66f5bbe" id="r_a9c57becb44ac289b01a9f575e66f5bbe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c57becb44ac289b01a9f575e66f5bbe">SSICLKGR</a></td></tr>
+<tr class="memdesc:a9c57becb44ac289b01a9f575e66f5bbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">SSI clock gate for run mode.  <br /></td></tr>
+<tr class="separator:a9c57becb44ac289b01a9f575e66f5bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a621e2410afe7c2350f968b658497ec59" id="r_a621e2410afe7c2350f968b658497ec59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a621e2410afe7c2350f968b658497ec59">SSICLKGS</a></td></tr>
+<tr class="memdesc:a621e2410afe7c2350f968b658497ec59"><td class="mdescLeft">&#160;</td><td class="mdescRight">SSI clock gate for sleep mode.  <br /></td></tr>
+<tr class="separator:a621e2410afe7c2350f968b658497ec59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af51ec8578167ff8059b4bb67ef2bf1d3" id="r_af51ec8578167ff8059b4bb67ef2bf1d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af51ec8578167ff8059b4bb67ef2bf1d3">SSICLKGDS</a></td></tr>
+<tr class="memdesc:af51ec8578167ff8059b4bb67ef2bf1d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">SSI clock gate for deep sleep mode.  <br /></td></tr>
+<tr class="separator:af51ec8578167ff8059b4bb67ef2bf1d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a369df875ec1d10da9d8fa20e065cb64b" id="r_a369df875ec1d10da9d8fa20e065cb64b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a369df875ec1d10da9d8fa20e065cb64b">I2SCLKGR</a></td></tr>
+<tr class="memdesc:a369df875ec1d10da9d8fa20e065cb64b"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2S clock gate for run mode.  <br /></td></tr>
+<tr class="separator:a369df875ec1d10da9d8fa20e065cb64b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8316acdbe407c6c2dec593fd01366971" id="r_a8316acdbe407c6c2dec593fd01366971"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8316acdbe407c6c2dec593fd01366971">I2SCLKGS</a></td></tr>
+<tr class="memdesc:a8316acdbe407c6c2dec593fd01366971"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2S clock gate for sleep mode.  <br /></td></tr>
+<tr class="separator:a8316acdbe407c6c2dec593fd01366971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87e72cc8f7f035d137d166b801f1302c" id="r_a87e72cc8f7f035d137d166b801f1302c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87e72cc8f7f035d137d166b801f1302c">I2SCLKGDS</a></td></tr>
+<tr class="memdesc:a87e72cc8f7f035d137d166b801f1302c"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2S clock gate for deep sleep mode.  <br /></td></tr>
+<tr class="separator:a87e72cc8f7f035d137d166b801f1302c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac93d4ecb1b3254dfbe03d1ea1a2fe87" id="r_aac93d4ecb1b3254dfbe03d1ea1a2fe87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac93d4ecb1b3254dfbe03d1ea1a2fe87">__reserved3</a> [10]</td></tr>
+<tr class="memdesc:aac93d4ecb1b3254dfbe03d1ea1a2fe87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved.  <br /></td></tr>
+<tr class="separator:aac93d4ecb1b3254dfbe03d1ea1a2fe87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36b1023c724991d47aa456f4f7ae5522" id="r_a36b1023c724991d47aa456f4f7ae5522"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36b1023c724991d47aa456f4f7ae5522">CPUCLKDIV</a></td></tr>
+<tr class="memdesc:a36b1023c724991d47aa456f4f7ae5522"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU clock division factor.  <br /></td></tr>
+<tr class="separator:a36b1023c724991d47aa456f4f7ae5522"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac88143959475347f251b85fa505d9278" id="r_ac88143959475347f251b85fa505d9278"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac88143959475347f251b85fa505d9278">__reserved4</a> [3]</td></tr>
+<tr class="memdesc:ac88143959475347f251b85fa505d9278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved.  <br /></td></tr>
+<tr class="separator:ac88143959475347f251b85fa505d9278"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3662384fc3e08c6d9ec732b2d45a05e6" id="r_a3662384fc3e08c6d9ec732b2d45a05e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3662384fc3e08c6d9ec732b2d45a05e6">I2SBCLKSEL</a></td></tr>
+<tr class="memdesc:a3662384fc3e08c6d9ec732b2d45a05e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2S clock select.  <br /></td></tr>
+<tr class="separator:a3662384fc3e08c6d9ec732b2d45a05e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af627b503ead1ae5678335c51569cd944" id="r_af627b503ead1ae5678335c51569cd944"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af627b503ead1ae5678335c51569cd944">GPTCLKDIV</a></td></tr>
+<tr class="memdesc:af627b503ead1ae5678335c51569cd944"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPT scalar.  <br /></td></tr>
+<tr class="separator:af627b503ead1ae5678335c51569cd944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e2959d4b11826a557f05eb86265b233" id="r_a6e2959d4b11826a557f05eb86265b233"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e2959d4b11826a557f05eb86265b233">I2SCLKCTL</a></td></tr>
+<tr class="memdesc:a6e2959d4b11826a557f05eb86265b233"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2S clock control.  <br /></td></tr>
+<tr class="separator:a6e2959d4b11826a557f05eb86265b233"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7af58cca190d299893c92a689f78b0f8" id="r_a7af58cca190d299893c92a689f78b0f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7af58cca190d299893c92a689f78b0f8">I2SMCLKDIV</a></td></tr>
+<tr class="memdesc:a7af58cca190d299893c92a689f78b0f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">MCLK division ratio.  <br /></td></tr>
+<tr class="separator:a7af58cca190d299893c92a689f78b0f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0283d96bd04f98132670ee2297780239" id="r_a0283d96bd04f98132670ee2297780239"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0283d96bd04f98132670ee2297780239">I2SBCLKDIV</a></td></tr>
+<tr class="memdesc:a0283d96bd04f98132670ee2297780239"><td class="mdescLeft">&#160;</td><td class="mdescRight">BCLK division ratio.  <br /></td></tr>
+<tr class="separator:a0283d96bd04f98132670ee2297780239"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad37a72fe311925014bff7a73a7265b8c" id="r_ad37a72fe311925014bff7a73a7265b8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad37a72fe311925014bff7a73a7265b8c">I2SWCLKDIV</a></td></tr>
+<tr class="memdesc:ad37a72fe311925014bff7a73a7265b8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">WCLK division ratio.  <br /></td></tr>
+<tr class="separator:ad37a72fe311925014bff7a73a7265b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a959cdd7880849189561b8996df59d364" id="r_a959cdd7880849189561b8996df59d364"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a959cdd7880849189561b8996df59d364">__reserved5</a> [11]</td></tr>
+<tr class="memdesc:a959cdd7880849189561b8996df59d364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved.  <br /></td></tr>
+<tr class="separator:a959cdd7880849189561b8996df59d364"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28b12bc3060c0741f5f9fbf28af730c1" id="r_a28b12bc3060c0741f5f9fbf28af730c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28b12bc3060c0741f5f9fbf28af730c1">SWRESET</a></td></tr>
+<tr class="memdesc:a28b12bc3060c0741f5f9fbf28af730c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">SW initiated resets.  <br /></td></tr>
+<tr class="separator:a28b12bc3060c0741f5f9fbf28af730c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab89edde7c14da1d0973d02c919fc6d00" id="r_ab89edde7c14da1d0973d02c919fc6d00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab89edde7c14da1d0973d02c919fc6d00">WARMRESET</a></td></tr>
+<tr class="memdesc:ab89edde7c14da1d0973d02c919fc6d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">WARM reset control and status.  <br /></td></tr>
+<tr class="separator:ab89edde7c14da1d0973d02c919fc6d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae87c6c5e33d3e3397faa1935d0c58ec0" id="r_ae87c6c5e33d3e3397faa1935d0c58ec0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae87c6c5e33d3e3397faa1935d0c58ec0">__reserved6</a> [6]</td></tr>
+<tr class="memdesc:ae87c6c5e33d3e3397faa1935d0c58ec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved.  <br /></td></tr>
+<tr class="separator:ae87c6c5e33d3e3397faa1935d0c58ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfc6d13e7a881c0d425a789a217e9b17" id="r_abfc6d13e7a881c0d425a789a217e9b17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfc6d13e7a881c0d425a789a217e9b17">PDCTL0</a></td></tr>
+<tr class="memdesc:abfc6d13e7a881c0d425a789a217e9b17"><td class="mdescLeft">&#160;</td><td class="mdescRight">power domain control  <br /></td></tr>
+<tr class="separator:abfc6d13e7a881c0d425a789a217e9b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89a6caba8511d17e8eccbee1b4b19d29" id="r_a89a6caba8511d17e8eccbee1b4b19d29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89a6caba8511d17e8eccbee1b4b19d29">PDCTL0RFC</a></td></tr>
+<tr class="memdesc:a89a6caba8511d17e8eccbee1b4b19d29"><td class="mdescLeft">&#160;</td><td class="mdescRight">RFC power domain control.  <br /></td></tr>
+<tr class="separator:a89a6caba8511d17e8eccbee1b4b19d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a916c25f3eaedf55286a93610e0d3979c" id="r_a916c25f3eaedf55286a93610e0d3979c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a916c25f3eaedf55286a93610e0d3979c">PDCTL0SERIAL</a></td></tr>
+<tr class="memdesc:a916c25f3eaedf55286a93610e0d3979c"><td class="mdescLeft">&#160;</td><td class="mdescRight">SERIAL power domain control.  <br /></td></tr>
+<tr class="separator:a916c25f3eaedf55286a93610e0d3979c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3e80f5f9caf31ec6d6359c0a15add52" id="r_ab3e80f5f9caf31ec6d6359c0a15add52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3e80f5f9caf31ec6d6359c0a15add52">PDCTL0PERIPH</a></td></tr>
+<tr class="memdesc:ab3e80f5f9caf31ec6d6359c0a15add52"><td class="mdescLeft">&#160;</td><td class="mdescRight">PERIPH power domain control.  <br /></td></tr>
+<tr class="separator:ab3e80f5f9caf31ec6d6359c0a15add52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71b0e04783fa55affb2768dec7b31559" id="r_a71b0e04783fa55affb2768dec7b31559"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71b0e04783fa55affb2768dec7b31559">__reserved7</a></td></tr>
+<tr class="memdesc:a71b0e04783fa55affb2768dec7b31559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved.  <br /></td></tr>
+<tr class="separator:a71b0e04783fa55affb2768dec7b31559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d314b089f07bb46e971f111ed358bb7" id="r_a5d314b089f07bb46e971f111ed358bb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d314b089f07bb46e971f111ed358bb7">PDSTAT0</a></td></tr>
+<tr class="memdesc:a5d314b089f07bb46e971f111ed358bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">power domain status  <br /></td></tr>
+<tr class="separator:a5d314b089f07bb46e971f111ed358bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a452bcd721f733db1bd17144d226acb36" id="r_a452bcd721f733db1bd17144d226acb36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a452bcd721f733db1bd17144d226acb36">PDSTAT0RFC</a></td></tr>
+<tr class="memdesc:a452bcd721f733db1bd17144d226acb36"><td class="mdescLeft">&#160;</td><td class="mdescRight">RFC power domain status.  <br /></td></tr>
+<tr class="separator:a452bcd721f733db1bd17144d226acb36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55e242c84912de210f09d60eb658e2a8" id="r_a55e242c84912de210f09d60eb658e2a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55e242c84912de210f09d60eb658e2a8">PDSTAT0SERIAL</a></td></tr>
+<tr class="memdesc:a55e242c84912de210f09d60eb658e2a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">SERIAL power domain status.  <br /></td></tr>
+<tr class="separator:a55e242c84912de210f09d60eb658e2a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac02e40b3907dcb5b5f6687ecfcdab9be" id="r_ac02e40b3907dcb5b5f6687ecfcdab9be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac02e40b3907dcb5b5f6687ecfcdab9be">PDSTAT0PERIPH</a></td></tr>
+<tr class="memdesc:ac02e40b3907dcb5b5f6687ecfcdab9be"><td class="mdescLeft">&#160;</td><td class="mdescRight">PERIPH power domain status.  <br /></td></tr>
+<tr class="separator:ac02e40b3907dcb5b5f6687ecfcdab9be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11e9b063a354983e2a5f906a6b5d1821" id="r_a11e9b063a354983e2a5f906a6b5d1821"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11e9b063a354983e2a5f906a6b5d1821">__reserved8</a> [11]</td></tr>
+<tr class="memdesc:a11e9b063a354983e2a5f906a6b5d1821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved.  <br /></td></tr>
+<tr class="separator:a11e9b063a354983e2a5f906a6b5d1821"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a175ab1a770de9397a8da6a255ee42455" id="r_a175ab1a770de9397a8da6a255ee42455"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a175ab1a770de9397a8da6a255ee42455">PDCTL1</a></td></tr>
+<tr class="memdesc:a175ab1a770de9397a8da6a255ee42455"><td class="mdescLeft">&#160;</td><td class="mdescRight">power domain control  <br /></td></tr>
+<tr class="separator:a175ab1a770de9397a8da6a255ee42455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6520c9c6288c847d523e10acccd6f5b4" id="r_a6520c9c6288c847d523e10acccd6f5b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6520c9c6288c847d523e10acccd6f5b4">__reserved9</a></td></tr>
+<tr class="memdesc:a6520c9c6288c847d523e10acccd6f5b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">power domain control  <br /></td></tr>
+<tr class="separator:a6520c9c6288c847d523e10acccd6f5b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aff6fc1c10aba537d27de8a9b7febf8" id="r_a6aff6fc1c10aba537d27de8a9b7febf8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6aff6fc1c10aba537d27de8a9b7febf8">PDCTL1CPU</a></td></tr>
+<tr class="memdesc:a6aff6fc1c10aba537d27de8a9b7febf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU power domain control.  <br /></td></tr>
+<tr class="separator:a6aff6fc1c10aba537d27de8a9b7febf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdb9d4f1bfbd06bd34f28297991f0791" id="r_afdb9d4f1bfbd06bd34f28297991f0791"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afdb9d4f1bfbd06bd34f28297991f0791">PDCTL1RFC</a></td></tr>
+<tr class="memdesc:afdb9d4f1bfbd06bd34f28297991f0791"><td class="mdescLeft">&#160;</td><td class="mdescRight">RFC power domain control.  <br /></td></tr>
+<tr class="separator:afdb9d4f1bfbd06bd34f28297991f0791"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0924b1cb221ee35f72666701c6c45b20" id="r_a0924b1cb221ee35f72666701c6c45b20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0924b1cb221ee35f72666701c6c45b20">PDCTL1VIMS</a></td></tr>
+<tr class="memdesc:a0924b1cb221ee35f72666701c6c45b20"><td class="mdescLeft">&#160;</td><td class="mdescRight">VIMS power domain control.  <br /></td></tr>
+<tr class="separator:a0924b1cb221ee35f72666701c6c45b20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9be7ddfac984b4eeec2c810584481e7" id="r_ad9be7ddfac984b4eeec2c810584481e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9be7ddfac984b4eeec2c810584481e7">__reserved10</a></td></tr>
+<tr class="memdesc:ad9be7ddfac984b4eeec2c810584481e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved.  <br /></td></tr>
+<tr class="separator:ad9be7ddfac984b4eeec2c810584481e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad450395710538928ca7b241d8ff17192" id="r_ad450395710538928ca7b241d8ff17192"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad450395710538928ca7b241d8ff17192">PDSTAT1</a></td></tr>
+<tr class="memdesc:ad450395710538928ca7b241d8ff17192"><td class="mdescLeft">&#160;</td><td class="mdescRight">power domain status  <br /></td></tr>
+<tr class="separator:ad450395710538928ca7b241d8ff17192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9df6c6eaefd4c15d5a34de49622c7e2e" id="r_a9df6c6eaefd4c15d5a34de49622c7e2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9df6c6eaefd4c15d5a34de49622c7e2e">PDSTAT1BUS</a></td></tr>
+<tr class="memdesc:a9df6c6eaefd4c15d5a34de49622c7e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">BUS power domain status.  <br /></td></tr>
+<tr class="separator:a9df6c6eaefd4c15d5a34de49622c7e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae99b638d551b14037658f94287591ab3" id="r_ae99b638d551b14037658f94287591ab3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae99b638d551b14037658f94287591ab3">PDSTAT1RFC</a></td></tr>
+<tr class="memdesc:ae99b638d551b14037658f94287591ab3"><td class="mdescLeft">&#160;</td><td class="mdescRight">RFC power domain status.  <br /></td></tr>
+<tr class="separator:ae99b638d551b14037658f94287591ab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7a2b90559f3b9378ac8bb7219c6c8c2" id="r_ab7a2b90559f3b9378ac8bb7219c6c8c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7a2b90559f3b9378ac8bb7219c6c8c2">PDSTAT1CPU</a></td></tr>
+<tr class="memdesc:ab7a2b90559f3b9378ac8bb7219c6c8c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU power domain status.  <br /></td></tr>
+<tr class="separator:ab7a2b90559f3b9378ac8bb7219c6c8c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafc0fe8a8b40cef38a1547de3cc7cf7b" id="r_aafc0fe8a8b40cef38a1547de3cc7cf7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafc0fe8a8b40cef38a1547de3cc7cf7b">PDSTAT1VIMS</a></td></tr>
+<tr class="memdesc:aafc0fe8a8b40cef38a1547de3cc7cf7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">VIMS power domain status.  <br /></td></tr>
+<tr class="separator:aafc0fe8a8b40cef38a1547de3cc7cf7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05be3f27a5d6acdfc42b554cd717b37e" id="r_a05be3f27a5d6acdfc42b554cd717b37e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05be3f27a5d6acdfc42b554cd717b37e">__reserved11</a> [10]</td></tr>
+<tr class="memdesc:a05be3f27a5d6acdfc42b554cd717b37e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved.  <br /></td></tr>
+<tr class="separator:a05be3f27a5d6acdfc42b554cd717b37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9bc97a3d934897b22e9f64f045d5adc" id="r_af9bc97a3d934897b22e9f64f045d5adc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9bc97a3d934897b22e9f64f045d5adc">RFCMODESEL</a></td></tr>
+<tr class="memdesc:af9bc97a3d934897b22e9f64f045d5adc"><td class="mdescLeft">&#160;</td><td class="mdescRight">selected RFC mode  <br /></td></tr>
+<tr class="separator:af9bc97a3d934897b22e9f64f045d5adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa58e7f9dfdea22aa68425cfe1c70b4f5" id="r_aa58e7f9dfdea22aa68425cfe1c70b4f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa58e7f9dfdea22aa68425cfe1c70b4f5">__reserved12</a> [20]</td></tr>
+<tr class="memdesc:aa58e7f9dfdea22aa68425cfe1c70b4f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved.  <br /></td></tr>
+<tr class="separator:aa58e7f9dfdea22aa68425cfe1c70b4f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad95e382a99e60b86988a498a970cdd4a" id="r_ad95e382a99e60b86988a498a970cdd4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad95e382a99e60b86988a498a970cdd4a">RAMRETEN</a></td></tr>
+<tr class="memdesc:ad95e382a99e60b86988a498a970cdd4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">memory retention control  <br /></td></tr>
+<tr class="separator:ad95e382a99e60b86988a498a970cdd4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aed40484f3f64ced30e4248a6742025" id="r_a6aed40484f3f64ced30e4248a6742025"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6aed40484f3f64ced30e4248a6742025">__reserved13</a></td></tr>
+<tr class="memdesc:a6aed40484f3f64ced30e4248a6742025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved.  <br /></td></tr>
+<tr class="separator:a6aed40484f3f64ced30e4248a6742025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab07d6c14c209158e4730460d7e99397a" id="r_ab07d6c14c209158e4730460d7e99397a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab07d6c14c209158e4730460d7e99397a">PDRETEN</a></td></tr>
+<tr class="memdesc:ab07d6c14c209158e4730460d7e99397a"><td class="mdescLeft">&#160;</td><td class="mdescRight">power domain retention (undocumented)  <br /></td></tr>
+<tr class="separator:ab07d6c14c209158e4730460d7e99397a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d4ac9225ce6e8b3aabbfbc1a93a233d" id="r_a6d4ac9225ce6e8b3aabbfbc1a93a233d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d4ac9225ce6e8b3aabbfbc1a93a233d">__reserved14</a> [8]</td></tr>
+<tr class="memdesc:a6d4ac9225ce6e8b3aabbfbc1a93a233d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved.  <br /></td></tr>
+<tr class="separator:a6d4ac9225ce6e8b3aabbfbc1a93a233d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3890c820de885c911dab9ce8b10ee1a" id="r_ab3890c820de885c911dab9ce8b10ee1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3890c820de885c911dab9ce8b10ee1a">RAMHWOPT</a></td></tr>
+<tr class="memdesc:ab3890c820de885c911dab9ce8b10ee1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">undocumented  <br /></td></tr>
+<tr class="separator:ab3890c820de885c911dab9ce8b10ee1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fc7d6bade3f0d622daf7aa4e169925d" id="r_a8fc7d6bade3f0d622daf7aa4e169925d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fc7d6bade3f0d622daf7aa4e169925d">SYSBUSCLKDIV</a></td></tr>
+<tr class="memdesc:a8fc7d6bade3f0d622daf7aa4e169925d"><td class="mdescLeft">&#160;</td><td class="mdescRight">System bus clock division factor.  <br /></td></tr>
+<tr class="separator:a8fc7d6bade3f0d622daf7aa4e169925d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afff5d96ca54731aecbcacd3010267cb5" id="r_afff5d96ca54731aecbcacd3010267cb5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afff5d96ca54731aecbcacd3010267cb5">PERBUSCPUCLKDIV</a></td></tr>
+<tr class="memdesc:afff5d96ca54731aecbcacd3010267cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peripheral bus division factor.  <br /></td></tr>
+<tr class="separator:afff5d96ca54731aecbcacd3010267cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af64d1265dab919a8c3e3d823a8cb0704" id="r_af64d1265dab919a8c3e3d823a8cb0704"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af64d1265dab919a8c3e3d823a8cb0704">PERDMACLKDIV</a></td></tr>
+<tr class="memdesc:af64d1265dab919a8c3e3d823a8cb0704"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA clock division factor.  <br /></td></tr>
+<tr class="separator:af64d1265dab919a8c3e3d823a8cb0704"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e507e0b962441a21b4cd69843b98fbc" id="r_a5e507e0b962441a21b4cd69843b98fbc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e507e0b962441a21b4cd69843b98fbc">RESETSECDMA</a></td></tr>
+<tr class="memdesc:a5e507e0b962441a21b4cd69843b98fbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset SEC and UDMA.  <br /></td></tr>
+<tr class="separator:a5e507e0b962441a21b4cd69843b98fbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09d3725bcffedd734baee6e20ef4bc27" id="r_a09d3725bcffedd734baee6e20ef4bc27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09d3725bcffedd734baee6e20ef4bc27">RESETGPIO</a></td></tr>
+<tr class="memdesc:a09d3725bcffedd734baee6e20ef4bc27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset GPIO.  <br /></td></tr>
+<tr class="separator:a09d3725bcffedd734baee6e20ef4bc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa233840c980c898aa47cda83da786cd7" id="r_aa233840c980c898aa47cda83da786cd7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa233840c980c898aa47cda83da786cd7">RESETGPT</a></td></tr>
+<tr class="memdesc:aa233840c980c898aa47cda83da786cd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset GPTs.  <br /></td></tr>
+<tr class="separator:aa233840c980c898aa47cda83da786cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75d57d0af55c34decd400193cbfa1c80" id="r_a75d57d0af55c34decd400193cbfa1c80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75d57d0af55c34decd400193cbfa1c80">RESETI2C</a></td></tr>
+<tr class="memdesc:a75d57d0af55c34decd400193cbfa1c80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset I2C.  <br /></td></tr>
+<tr class="separator:a75d57d0af55c34decd400193cbfa1c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2080a1730289c68018a09aeaf7b6ab0a" id="r_a2080a1730289c68018a09aeaf7b6ab0a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2080a1730289c68018a09aeaf7b6ab0a">RESETUART</a></td></tr>
+<tr class="memdesc:a2080a1730289c68018a09aeaf7b6ab0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset UART.  <br /></td></tr>
+<tr class="separator:a2080a1730289c68018a09aeaf7b6ab0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01051769b5bae89a9891fe89b43c1f3b" id="r_a01051769b5bae89a9891fe89b43c1f3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01051769b5bae89a9891fe89b43c1f3b">RESETSSI</a></td></tr>
+<tr class="memdesc:a01051769b5bae89a9891fe89b43c1f3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset SSI.  <br /></td></tr>
+<tr class="separator:a01051769b5bae89a9891fe89b43c1f3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a537da8fa76f66c6084571717a6b982e1" id="r_a537da8fa76f66c6084571717a6b982e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a537da8fa76f66c6084571717a6b982e1">RESETI2S</a></td></tr>
+<tr class="memdesc:a537da8fa76f66c6084571717a6b982e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset I2S.  <br /></td></tr>
+<tr class="separator:a537da8fa76f66c6084571717a6b982e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67660a6a3bda8766640b66a3ef25478f" id="r_a67660a6a3bda8766640b66a3ef25478f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67660a6a3bda8766640b66a3ef25478f">RFCBITS</a></td></tr>
+<tr class="memdesc:a67660a6a3bda8766640b66a3ef25478f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control to RFC.  <br /></td></tr>
+<tr class="separator:a67660a6a3bda8766640b66a3ef25478f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32f3e1ba5724e44f495bbf4731070269" id="r_a32f3e1ba5724e44f495bbf4731070269"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32f3e1ba5724e44f495bbf4731070269">RFCMODEHWOPT</a></td></tr>
+<tr class="memdesc:a32f3e1ba5724e44f495bbf4731070269"><td class="mdescLeft">&#160;</td><td class="mdescRight">allowed RFC modes  <br /></td></tr>
+<tr class="separator:a32f3e1ba5724e44f495bbf4731070269"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef661c232a61fce8ffd9c5b00a6ac055" id="r_aef661c232a61fce8ffd9c5b00a6ac055"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef661c232a61fce8ffd9c5b00a6ac055">PWRPROFSTAT</a></td></tr>
+<tr class="memdesc:aef661c232a61fce8ffd9c5b00a6ac055"><td class="mdescLeft">&#160;</td><td class="mdescRight">power profiler register  <br /></td></tr>
+<tr class="separator:aef661c232a61fce8ffd9c5b00a6ac055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0d6a4c6a49e3532c471417ecebe50b7" id="r_ae0d6a4c6a49e3532c471417ecebe50b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0d6a4c6a49e3532c471417ecebe50b7">MCUSRAMCFG</a></td></tr>
+<tr class="memdesc:ae0d6a4c6a49e3532c471417ecebe50b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">MCU SRAM configuration.  <br /></td></tr>
+<tr class="separator:ae0d6a4c6a49e3532c471417ecebe50b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae61e60b8816580fe40686d9816a446fc" id="r_ae61e60b8816580fe40686d9816a446fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae61e60b8816580fe40686d9816a446fc">__reserved15</a> [27]</td></tr>
+<tr class="memdesc:ae61e60b8816580fe40686d9816a446fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved.  <br /></td></tr>
+<tr class="separator:ae61e60b8816580fe40686d9816a446fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a546a1375c03fc948fce54c029f5ae834" id="r_a546a1375c03fc948fce54c029f5ae834"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a546a1375c03fc948fce54c029f5ae834">OSCIMSC</a></td></tr>
+<tr class="memdesc:a546a1375c03fc948fce54c029f5ae834"><td class="mdescLeft">&#160;</td><td class="mdescRight">oscillator interrupt mask  <br /></td></tr>
+<tr class="separator:a546a1375c03fc948fce54c029f5ae834"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57600d664d774222f326a6f85502b749" id="r_a57600d664d774222f326a6f85502b749"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57600d664d774222f326a6f85502b749">OSCRIS</a></td></tr>
+<tr class="memdesc:a57600d664d774222f326a6f85502b749"><td class="mdescLeft">&#160;</td><td class="mdescRight">oscillator raw interrupt status  <br /></td></tr>
+<tr class="separator:a57600d664d774222f326a6f85502b749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2c5b84c61c7e02312b124ca543f64a3" id="r_ac2c5b84c61c7e02312b124ca543f64a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2c5b84c61c7e02312b124ca543f64a3">OSCICR</a></td></tr>
+<tr class="memdesc:ac2c5b84c61c7e02312b124ca543f64a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">oscillator raw interrupt clear  <br /></td></tr>
+<tr class="separator:ac2c5b84c61c7e02312b124ca543f64a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="ad95137fb3aa28fed72302e70431fed1d" name="ad95137fb3aa28fed72302e70431fed1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad95137fb3aa28fed72302e70431fed1d">&#9670;&#160;</a></span>__reserved1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::__reserved1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00241">241</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="ad9be7ddfac984b4eeec2c810584481e7" name="ad9be7ddfac984b4eeec2c810584481e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9be7ddfac984b4eeec2c810584481e7">&#9670;&#160;</a></span>__reserved10</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::__reserved10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00295">295</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a05be3f27a5d6acdfc42b554cd717b37e" name="a05be3f27a5d6acdfc42b554cd717b37e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05be3f27a5d6acdfc42b554cd717b37e">&#9670;&#160;</a></span>__reserved11</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::__reserved11</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00301">301</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="aa58e7f9dfdea22aa68425cfe1c70b4f5" name="aa58e7f9dfdea22aa68425cfe1c70b4f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa58e7f9dfdea22aa68425cfe1c70b4f5">&#9670;&#160;</a></span>__reserved12</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::__reserved12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00303">303</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a6aed40484f3f64ced30e4248a6742025" name="a6aed40484f3f64ced30e4248a6742025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aed40484f3f64ced30e4248a6742025">&#9670;&#160;</a></span>__reserved13</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::__reserved13</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00305">305</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a6d4ac9225ce6e8b3aabbfbc1a93a233d" name="a6d4ac9225ce6e8b3aabbfbc1a93a233d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d4ac9225ce6e8b3aabbfbc1a93a233d">&#9670;&#160;</a></span>__reserved14</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::__reserved14</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00307">307</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="ae61e60b8816580fe40686d9816a446fc" name="ae61e60b8816580fe40686d9816a446fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae61e60b8816580fe40686d9816a446fc">&#9670;&#160;</a></span>__reserved15</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::__reserved15[27]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html#l00328">328</a> of file <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html">cc26x2_cc13x2_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="aeafd4a229f20ac5beb97342a162bd0a8" name="aeafd4a229f20ac5beb97342a162bd0a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeafd4a229f20ac5beb97342a162bd0a8">&#9670;&#160;</a></span>__reserved2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::__reserved2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00245">245</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="aac93d4ecb1b3254dfbe03d1ea1a2fe87" name="aac93d4ecb1b3254dfbe03d1ea1a2fe87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac93d4ecb1b3254dfbe03d1ea1a2fe87">&#9670;&#160;</a></span>__reserved3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::__reserved3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00267">267</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="ac88143959475347f251b85fa505d9278" name="ac88143959475347f251b85fa505d9278"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac88143959475347f251b85fa505d9278">&#9670;&#160;</a></span>__reserved4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::__reserved4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00269">269</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a959cdd7880849189561b8996df59d364" name="a959cdd7880849189561b8996df59d364"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a959cdd7880849189561b8996df59d364">&#9670;&#160;</a></span>__reserved5</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::__reserved5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00276">276</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="ae87c6c5e33d3e3397faa1935d0c58ec0" name="ae87c6c5e33d3e3397faa1935d0c58ec0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae87c6c5e33d3e3397faa1935d0c58ec0">&#9670;&#160;</a></span>__reserved6</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::__reserved6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00279">279</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a71b0e04783fa55affb2768dec7b31559" name="a71b0e04783fa55affb2768dec7b31559"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71b0e04783fa55affb2768dec7b31559">&#9670;&#160;</a></span>__reserved7</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::__reserved7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00284">284</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a11e9b063a354983e2a5f906a6b5d1821" name="a11e9b063a354983e2a5f906a6b5d1821"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11e9b063a354983e2a5f906a6b5d1821">&#9670;&#160;</a></span>__reserved8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::__reserved8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00289">289</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a6520c9c6288c847d523e10acccd6f5b4" name="a6520c9c6288c847d523e10acccd6f5b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6520c9c6288c847d523e10acccd6f5b4">&#9670;&#160;</a></span>__reserved9</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::__reserved9</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>power domain control </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00291">291</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="af1486ab448bb67791403d9a70357536f" name="af1486ab448bb67791403d9a70357536f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1486ab448bb67791403d9a70357536f">&#9670;&#160;</a></span>CLKLOADCTL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::CLKLOADCTL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>clock load control </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00242">242</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a36b1023c724991d47aa456f4f7ae5522" name="a36b1023c724991d47aa456f4f7ae5522"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36b1023c724991d47aa456f4f7ae5522">&#9670;&#160;</a></span>CPUCLKDIV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::CPUCLKDIV</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CPU clock division factor. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00268">268</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a5a565e4e431e3cb4f88006d678dfd21e" name="a5a565e4e431e3cb4f88006d678dfd21e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a565e4e431e3cb4f88006d678dfd21e">&#9670;&#160;</a></span>GPIOCLKGDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::GPIOCLKGDS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO clock gate for deep sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00251">251</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="ab1e5e31aa4f14e0b77cb0f45555c7698" name="ab1e5e31aa4f14e0b77cb0f45555c7698"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1e5e31aa4f14e0b77cb0f45555c7698">&#9670;&#160;</a></span>GPIOCLKGR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::GPIOCLKGR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO clock gate for run mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00249">249</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="aec684a4aa6d63488127a71fda6e0a99d" name="aec684a4aa6d63488127a71fda6e0a99d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec684a4aa6d63488127a71fda6e0a99d">&#9670;&#160;</a></span>GPIOCLKGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::GPIOCLKGS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO clock gate for sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00250">250</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="af627b503ead1ae5678335c51569cd944" name="af627b503ead1ae5678335c51569cd944"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af627b503ead1ae5678335c51569cd944">&#9670;&#160;</a></span>GPTCLKDIV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::GPTCLKDIV</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPT scalar. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00271">271</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a177193f14e3f31189629aa92a1c86ad4" name="a177193f14e3f31189629aa92a1c86ad4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a177193f14e3f31189629aa92a1c86ad4">&#9670;&#160;</a></span>GPTCLKGDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::GPTCLKGDS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPT clock gate for deep sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00254">254</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a529b44980b3a561911b917c2b8520818" name="a529b44980b3a561911b917c2b8520818"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a529b44980b3a561911b917c2b8520818">&#9670;&#160;</a></span>GPTCLKGR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::GPTCLKGR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPT clock gate for run mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00252">252</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a93280415f871c8fafe60f0fc303c194c" name="a93280415f871c8fafe60f0fc303c194c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93280415f871c8fafe60f0fc303c194c">&#9670;&#160;</a></span>GPTCLKGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::GPTCLKGS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPT clock gate for sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00253">253</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="afe0fe24b7547fa3bedf86437573657d8" name="afe0fe24b7547fa3bedf86437573657d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe0fe24b7547fa3bedf86437573657d8">&#9670;&#160;</a></span>I2CCLKGDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::I2CCLKGDS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>I2C clock gate for deep sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00257">257</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a661363423c9ecd5d3e1286b000e5a570" name="a661363423c9ecd5d3e1286b000e5a570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a661363423c9ecd5d3e1286b000e5a570">&#9670;&#160;</a></span>I2CCLKGR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::I2CCLKGR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>I2C clock gate for run mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00255">255</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="aaa3ed9260dc37bf570b208a5aa8333d5" name="aaa3ed9260dc37bf570b208a5aa8333d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa3ed9260dc37bf570b208a5aa8333d5">&#9670;&#160;</a></span>I2CCLKGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::I2CCLKGS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>I2C clock gate for sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00256">256</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a0283d96bd04f98132670ee2297780239" name="a0283d96bd04f98132670ee2297780239"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0283d96bd04f98132670ee2297780239">&#9670;&#160;</a></span>I2SBCLKDIV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::I2SBCLKDIV</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BCLK division ratio. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00274">274</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a3662384fc3e08c6d9ec732b2d45a05e6" name="a3662384fc3e08c6d9ec732b2d45a05e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3662384fc3e08c6d9ec732b2d45a05e6">&#9670;&#160;</a></span>I2SBCLKSEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::I2SBCLKSEL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>I2S clock select. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00270">270</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a6e2959d4b11826a557f05eb86265b233" name="a6e2959d4b11826a557f05eb86265b233"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e2959d4b11826a557f05eb86265b233">&#9670;&#160;</a></span>I2SCLKCTL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::I2SCLKCTL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>I2S clock control. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00272">272</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a87e72cc8f7f035d137d166b801f1302c" name="a87e72cc8f7f035d137d166b801f1302c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87e72cc8f7f035d137d166b801f1302c">&#9670;&#160;</a></span>I2SCLKGDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::I2SCLKGDS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>I2S clock gate for deep sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00266">266</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a369df875ec1d10da9d8fa20e065cb64b" name="a369df875ec1d10da9d8fa20e065cb64b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a369df875ec1d10da9d8fa20e065cb64b">&#9670;&#160;</a></span>I2SCLKGR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::I2SCLKGR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>I2S clock gate for run mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00264">264</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a8316acdbe407c6c2dec593fd01366971" name="a8316acdbe407c6c2dec593fd01366971"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8316acdbe407c6c2dec593fd01366971">&#9670;&#160;</a></span>I2SCLKGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::I2SCLKGS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>I2S clock gate for sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00265">265</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a7af58cca190d299893c92a689f78b0f8" name="a7af58cca190d299893c92a689f78b0f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7af58cca190d299893c92a689f78b0f8">&#9670;&#160;</a></span>I2SMCLKDIV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::I2SMCLKDIV</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MCLK division ratio. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00273">273</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="ad37a72fe311925014bff7a73a7265b8c" name="ad37a72fe311925014bff7a73a7265b8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad37a72fe311925014bff7a73a7265b8c">&#9670;&#160;</a></span>I2SWCLKDIV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::I2SWCLKDIV</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>WCLK division ratio. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00275">275</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="adb67725210b3203522249bb70e0d066f" name="adb67725210b3203522249bb70e0d066f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb67725210b3203522249bb70e0d066f">&#9670;&#160;</a></span>INFRCLKDIVDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::INFRCLKDIVDS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>infrastructure clock division factor for deep sleep mode </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00239">239</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a791b8f66ee913ee26e46ad8685bf6fad" name="a791b8f66ee913ee26e46ad8685bf6fad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a791b8f66ee913ee26e46ad8685bf6fad">&#9670;&#160;</a></span>INFRCLKDIVR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::INFRCLKDIVR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>infrastructure clock division factor for run mode </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00237">237</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a3770e6f245f27249ff2cf3618fb5ffcb" name="a3770e6f245f27249ff2cf3618fb5ffcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3770e6f245f27249ff2cf3618fb5ffcb">&#9670;&#160;</a></span>INFRCLKDIVS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::INFRCLKDIVS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>infrastructure clock division factor for sleep mode </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00238">238</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="ae0d6a4c6a49e3532c471417ecebe50b7" name="ae0d6a4c6a49e3532c471417ecebe50b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0d6a4c6a49e3532c471417ecebe50b7">&#9670;&#160;</a></span>MCUSRAMCFG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::MCUSRAMCFG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MCU SRAM configuration. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html#l00325">325</a> of file <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html">cc26x2_cc13x2_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="ac2c5b84c61c7e02312b124ca543f64a3" name="ac2c5b84c61c7e02312b124ca543f64a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2c5b84c61c7e02312b124ca543f64a3">&#9670;&#160;</a></span>OSCICR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::OSCICR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>oscillator raw interrupt clear </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html#l00331">331</a> of file <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html">cc26x2_cc13x2_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a546a1375c03fc948fce54c029f5ae834" name="a546a1375c03fc948fce54c029f5ae834"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a546a1375c03fc948fce54c029f5ae834">&#9670;&#160;</a></span>OSCIMSC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::OSCIMSC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>oscillator interrupt mask </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html#l00329">329</a> of file <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html">cc26x2_cc13x2_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a57600d664d774222f326a6f85502b749" name="a57600d664d774222f326a6f85502b749"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57600d664d774222f326a6f85502b749">&#9670;&#160;</a></span>OSCRIS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::OSCRIS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>oscillator raw interrupt status </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html#l00330">330</a> of file <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html">cc26x2_cc13x2_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="abfc6d13e7a881c0d425a789a217e9b17" name="abfc6d13e7a881c0d425a789a217e9b17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfc6d13e7a881c0d425a789a217e9b17">&#9670;&#160;</a></span>PDCTL0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PDCTL0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>power domain control </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00280">280</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="ab3e80f5f9caf31ec6d6359c0a15add52" name="ab3e80f5f9caf31ec6d6359c0a15add52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3e80f5f9caf31ec6d6359c0a15add52">&#9670;&#160;</a></span>PDCTL0PERIPH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PDCTL0PERIPH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PERIPH power domain control. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00283">283</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a89a6caba8511d17e8eccbee1b4b19d29" name="a89a6caba8511d17e8eccbee1b4b19d29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89a6caba8511d17e8eccbee1b4b19d29">&#9670;&#160;</a></span>PDCTL0RFC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PDCTL0RFC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RFC power domain control. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00281">281</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a916c25f3eaedf55286a93610e0d3979c" name="a916c25f3eaedf55286a93610e0d3979c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a916c25f3eaedf55286a93610e0d3979c">&#9670;&#160;</a></span>PDCTL0SERIAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PDCTL0SERIAL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SERIAL power domain control. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00282">282</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a175ab1a770de9397a8da6a255ee42455" name="a175ab1a770de9397a8da6a255ee42455"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a175ab1a770de9397a8da6a255ee42455">&#9670;&#160;</a></span>PDCTL1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PDCTL1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>power domain control </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00290">290</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a6aff6fc1c10aba537d27de8a9b7febf8" name="a6aff6fc1c10aba537d27de8a9b7febf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aff6fc1c10aba537d27de8a9b7febf8">&#9670;&#160;</a></span>PDCTL1CPU</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PDCTL1CPU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CPU power domain control. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00292">292</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="afdb9d4f1bfbd06bd34f28297991f0791" name="afdb9d4f1bfbd06bd34f28297991f0791"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdb9d4f1bfbd06bd34f28297991f0791">&#9670;&#160;</a></span>PDCTL1RFC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PDCTL1RFC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RFC power domain control. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00293">293</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a0924b1cb221ee35f72666701c6c45b20" name="a0924b1cb221ee35f72666701c6c45b20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0924b1cb221ee35f72666701c6c45b20">&#9670;&#160;</a></span>PDCTL1VIMS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PDCTL1VIMS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>VIMS power domain control. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00294">294</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="ab07d6c14c209158e4730460d7e99397a" name="ab07d6c14c209158e4730460d7e99397a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab07d6c14c209158e4730460d7e99397a">&#9670;&#160;</a></span>PDRETEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PDRETEN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>power domain retention (undocumented) </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00306">306</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a5d314b089f07bb46e971f111ed358bb7" name="a5d314b089f07bb46e971f111ed358bb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d314b089f07bb46e971f111ed358bb7">&#9670;&#160;</a></span>PDSTAT0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PDSTAT0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>power domain status </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00285">285</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="ac02e40b3907dcb5b5f6687ecfcdab9be" name="ac02e40b3907dcb5b5f6687ecfcdab9be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac02e40b3907dcb5b5f6687ecfcdab9be">&#9670;&#160;</a></span>PDSTAT0PERIPH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PDSTAT0PERIPH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PERIPH power domain status. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00288">288</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a452bcd721f733db1bd17144d226acb36" name="a452bcd721f733db1bd17144d226acb36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a452bcd721f733db1bd17144d226acb36">&#9670;&#160;</a></span>PDSTAT0RFC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PDSTAT0RFC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RFC power domain status. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00286">286</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a55e242c84912de210f09d60eb658e2a8" name="a55e242c84912de210f09d60eb658e2a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55e242c84912de210f09d60eb658e2a8">&#9670;&#160;</a></span>PDSTAT0SERIAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PDSTAT0SERIAL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SERIAL power domain status. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00287">287</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="ad450395710538928ca7b241d8ff17192" name="ad450395710538928ca7b241d8ff17192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad450395710538928ca7b241d8ff17192">&#9670;&#160;</a></span>PDSTAT1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PDSTAT1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>power domain status </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00296">296</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a9df6c6eaefd4c15d5a34de49622c7e2e" name="a9df6c6eaefd4c15d5a34de49622c7e2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9df6c6eaefd4c15d5a34de49622c7e2e">&#9670;&#160;</a></span>PDSTAT1BUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PDSTAT1BUS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BUS power domain status. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00297">297</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="ab7a2b90559f3b9378ac8bb7219c6c8c2" name="ab7a2b90559f3b9378ac8bb7219c6c8c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7a2b90559f3b9378ac8bb7219c6c8c2">&#9670;&#160;</a></span>PDSTAT1CPU</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PDSTAT1CPU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CPU power domain status. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00299">299</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="ae99b638d551b14037658f94287591ab3" name="ae99b638d551b14037658f94287591ab3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae99b638d551b14037658f94287591ab3">&#9670;&#160;</a></span>PDSTAT1RFC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PDSTAT1RFC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RFC power domain status. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00298">298</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="aafc0fe8a8b40cef38a1547de3cc7cf7b" name="aafc0fe8a8b40cef38a1547de3cc7cf7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafc0fe8a8b40cef38a1547de3cc7cf7b">&#9670;&#160;</a></span>PDSTAT1VIMS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PDSTAT1VIMS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>VIMS power domain status. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00300">300</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="afff5d96ca54731aecbcacd3010267cb5" name="afff5d96ca54731aecbcacd3010267cb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afff5d96ca54731aecbcacd3010267cb5">&#9670;&#160;</a></span>PERBUSCPUCLKDIV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PERBUSCPUCLKDIV</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Peripheral bus division factor. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html#l00279">279</a> of file <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html">cc26x2_cc13x2_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="af64d1265dab919a8c3e3d823a8cb0704" name="af64d1265dab919a8c3e3d823a8cb0704"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af64d1265dab919a8c3e3d823a8cb0704">&#9670;&#160;</a></span>PERDMACLKDIV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PERDMACLKDIV</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DMA clock division factor. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html#l00281">281</a> of file <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html">cc26x2_cc13x2_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="aef661c232a61fce8ffd9c5b00a6ac055" name="aef661c232a61fce8ffd9c5b00a6ac055"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef661c232a61fce8ffd9c5b00a6ac055">&#9670;&#160;</a></span>PWRPROFSTAT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::PWRPROFSTAT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>power profiler register </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html#l00323">323</a> of file <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html">cc26x2_cc13x2_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="ab3890c820de885c911dab9ce8b10ee1a" name="ab3890c820de885c911dab9ce8b10ee1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3890c820de885c911dab9ce8b10ee1a">&#9670;&#160;</a></span>RAMHWOPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::RAMHWOPT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>undocumented </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00308">308</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="ad95e382a99e60b86988a498a970cdd4a" name="ad95e382a99e60b86988a498a970cdd4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad95e382a99e60b86988a498a970cdd4a">&#9670;&#160;</a></span>RAMRETEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::RAMRETEN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>memory retention control </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00304">304</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a09d3725bcffedd734baee6e20ef4bc27" name="a09d3725bcffedd734baee6e20ef4bc27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09d3725bcffedd734baee6e20ef4bc27">&#9670;&#160;</a></span>RESETGPIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::RESETGPIO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset GPIO. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html#l00290">290</a> of file <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html">cc26x2_cc13x2_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="aa233840c980c898aa47cda83da786cd7" name="aa233840c980c898aa47cda83da786cd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa233840c980c898aa47cda83da786cd7">&#9670;&#160;</a></span>RESETGPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::RESETGPT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset GPTs. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html#l00291">291</a> of file <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html">cc26x2_cc13x2_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a75d57d0af55c34decd400193cbfa1c80" name="a75d57d0af55c34decd400193cbfa1c80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75d57d0af55c34decd400193cbfa1c80">&#9670;&#160;</a></span>RESETI2C</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::RESETI2C</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset I2C. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html#l00292">292</a> of file <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html">cc26x2_cc13x2_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a537da8fa76f66c6084571717a6b982e1" name="a537da8fa76f66c6084571717a6b982e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a537da8fa76f66c6084571717a6b982e1">&#9670;&#160;</a></span>RESETI2S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::RESETI2S</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset I2S. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html#l00295">295</a> of file <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html">cc26x2_cc13x2_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a5e507e0b962441a21b4cd69843b98fbc" name="a5e507e0b962441a21b4cd69843b98fbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e507e0b962441a21b4cd69843b98fbc">&#9670;&#160;</a></span>RESETSECDMA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::RESETSECDMA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset SEC and UDMA. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html#l00289">289</a> of file <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html">cc26x2_cc13x2_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a01051769b5bae89a9891fe89b43c1f3b" name="a01051769b5bae89a9891fe89b43c1f3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01051769b5bae89a9891fe89b43c1f3b">&#9670;&#160;</a></span>RESETSSI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::RESETSSI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset SSI. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html#l00294">294</a> of file <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html">cc26x2_cc13x2_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a2080a1730289c68018a09aeaf7b6ab0a" name="a2080a1730289c68018a09aeaf7b6ab0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2080a1730289c68018a09aeaf7b6ab0a">&#9670;&#160;</a></span>RESETUART</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::RESETUART</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset UART. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html#l00293">293</a> of file <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html">cc26x2_cc13x2_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a67660a6a3bda8766640b66a3ef25478f" name="a67660a6a3bda8766640b66a3ef25478f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67660a6a3bda8766640b66a3ef25478f">&#9670;&#160;</a></span>RFCBITS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::RFCBITS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Control to RFC. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html#l00319">319</a> of file <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html">cc26x2_cc13x2_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a6d9d938d1e02c940fe3caac305037adf" name="a6d9d938d1e02c940fe3caac305037adf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d9d938d1e02c940fe3caac305037adf">&#9670;&#160;</a></span>RFCCLKG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::RFCCLKG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RFC clock gate. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00243">243</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a32f3e1ba5724e44f495bbf4731070269" name="a32f3e1ba5724e44f495bbf4731070269"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32f3e1ba5724e44f495bbf4731070269">&#9670;&#160;</a></span>RFCMODEHWOPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::RFCMODEHWOPT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>allowed RFC modes </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html#l00321">321</a> of file <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html">cc26x2_cc13x2_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="af9bc97a3d934897b22e9f64f045d5adc" name="af9bc97a3d934897b22e9f64f045d5adc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9bc97a3d934897b22e9f64f045d5adc">&#9670;&#160;</a></span>RFCMODESEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::RFCMODESEL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>selected RFC mode </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00302">302</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="aca386259feb737c9a3e6c5d610649efe" name="aca386259feb737c9a3e6c5d610649efe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca386259feb737c9a3e6c5d610649efe">&#9670;&#160;</a></span>SECDMACLKGDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::SECDMACLKGDS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TRNG, CRYPTO, and UDMA clock gate for deep sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00248">248</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a5cc186ed9433a262db330cf335bde49c" name="a5cc186ed9433a262db330cf335bde49c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cc186ed9433a262db330cf335bde49c">&#9670;&#160;</a></span>SECDMACLKGR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::SECDMACLKGR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TRNG, CRYPTO, and UDMA clock gate for run mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00246">246</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="af2c3297fc73fd5714ef4f5b797f53b37" name="af2c3297fc73fd5714ef4f5b797f53b37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2c3297fc73fd5714ef4f5b797f53b37">&#9670;&#160;</a></span>SECDMACLKGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::SECDMACLKGS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TRNG, CRYPTO, and UDMA clock gate for sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00247">247</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="af51ec8578167ff8059b4bb67ef2bf1d3" name="af51ec8578167ff8059b4bb67ef2bf1d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af51ec8578167ff8059b4bb67ef2bf1d3">&#9670;&#160;</a></span>SSICLKGDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::SSICLKGDS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SSI clock gate for deep sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00263">263</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a9c57becb44ac289b01a9f575e66f5bbe" name="a9c57becb44ac289b01a9f575e66f5bbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c57becb44ac289b01a9f575e66f5bbe">&#9670;&#160;</a></span>SSICLKGR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::SSICLKGR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SSI clock gate for run mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00261">261</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a621e2410afe7c2350f968b658497ec59" name="a621e2410afe7c2350f968b658497ec59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a621e2410afe7c2350f968b658497ec59">&#9670;&#160;</a></span>SSICLKGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::SSICLKGS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SSI clock gate for sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00262">262</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a28b12bc3060c0741f5f9fbf28af730c1" name="a28b12bc3060c0741f5f9fbf28af730c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28b12bc3060c0741f5f9fbf28af730c1">&#9670;&#160;</a></span>SWRESET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::SWRESET</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SW initiated resets. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00277">277</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a8fc7d6bade3f0d622daf7aa4e169925d" name="a8fc7d6bade3f0d622daf7aa4e169925d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fc7d6bade3f0d622daf7aa4e169925d">&#9670;&#160;</a></span>SYSBUSCLKDIV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::SYSBUSCLKDIV</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>System bus clock division factor. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html#l00277">277</a> of file <a class="el" href="cc26x2__cc13x2__prcm_8h_source.html">cc26x2_cc13x2_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a27a65e6ba81eb7d85c833529d4e5d07b" name="a27a65e6ba81eb7d85c833529d4e5d07b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27a65e6ba81eb7d85c833529d4e5d07b">&#9670;&#160;</a></span>UARTCLKGDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::UARTCLKGDS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UART clock gate for deep sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00260">260</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="ae94156999a374dd0f4bdc4a7e1afe8fc" name="ae94156999a374dd0f4bdc4a7e1afe8fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae94156999a374dd0f4bdc4a7e1afe8fc">&#9670;&#160;</a></span>UARTCLKGR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::UARTCLKGR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UART clock gate for run mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00258">258</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a5c99018ce00d89e7f5ef64eb466c3da7" name="a5c99018ce00d89e7f5ef64eb466c3da7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c99018ce00d89e7f5ef64eb466c3da7">&#9670;&#160;</a></span>UARTCLKGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::UARTCLKGS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UART clock gate for sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00259">259</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a21fb44bb70f192bb09a50c1929601369" name="a21fb44bb70f192bb09a50c1929601369"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21fb44bb70f192bb09a50c1929601369">&#9670;&#160;</a></span>VDCTL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::VDCTL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MCU voltage domain control. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00240">240</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="a2158d0dfd5ab5b46b8383c97b91bb635" name="a2158d0dfd5ab5b46b8383c97b91bb635"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2158d0dfd5ab5b46b8383c97b91bb635">&#9670;&#160;</a></span>VIMSCLKG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::VIMSCLKG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>VIMS clock gate. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00244">244</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<a id="ab89edde7c14da1d0973d02c919fc6d00" name="ab89edde7c14da1d0973d02c919fc6d00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab89edde7c14da1d0973d02c919fc6d00">&#9670;&#160;</a></span>WARMRESET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> prcm_regs_t::WARMRESET</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>WARM reset control and status. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html#l00278">278</a> of file <a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
+<li>cpu/cc26x0_cc13x0/include/<a class="el" href="cc26x0__cc13x0__prcm_8h_source.html">cc26x0_cc13x0_prcm.h</a></li>
+<li>cpu/cc26x2_cc13x2/include/<a class="el" href="cc26x2__cc13x2__prcm_8h_source.html">cc26x2_cc13x2_prcm.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

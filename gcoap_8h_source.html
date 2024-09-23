@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/net/gcoap.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('gcoap_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">gcoap.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="gcoap_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (c) 2015-2017 Ken Bannister. All rights reserved.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *               2017 Freie Universität Berlin</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * directory for more details.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span><span class="preprocessor">#ifndef NET_GCOAP_H</span></div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span><span class="preprocessor">#define NET_GCOAP_H</span></div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span> </div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span> </div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span><span class="preprocessor">#include &quot;<a class="code" href="callback_8h.html">event/callback.h</a>&quot;</span></div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span><span class="preprocessor">#include &quot;<a class="code" href="event_2timeout_8h.html">event/timeout.h</a>&quot;</span></div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span><span class="preprocessor">#include &quot;<a class="code" href="ipv6_2addr_8h.html">net/ipv6/addr.h</a>&quot;</span></div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span><span class="preprocessor">#include &quot;<a class="code" href="sock_2udp_8h.html">net/sock/udp.h</a>&quot;</span></div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span><span class="preprocessor">#if IS_USED(MODULE_GCOAP_DTLS)</span></div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span><span class="preprocessor">#include &quot;<a class="code" href="sock_2dtls_8h.html">net/sock/dtls.h</a>&quot;</span></div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span><span class="preprocessor">#include &quot;<a class="code" href="nanocoap_8h.html">net/nanocoap.h</a>&quot;</span></div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span><span class="preprocessor">#include &quot;<a class="code" href="nanocoap_2cache_8h.html">net/nanocoap/cache.h</a>&quot;</span></div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span><span class="preprocessor">#include &quot;<a class="code" href="timex_8h.html">timex.h</a>&quot;</span></div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span> </div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span> </div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span><span class="preprocessor">#ifndef CONFIG_GCOAP_PORT</span></div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno"><a class="line" href="group__net__gcoap__conf.html#ga789282d659dac059a3fc60777d7edc1c">  427</a></span><span class="preprocessor">#define CONFIG_GCOAP_PORT              (5683)</span></div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span><span class="preprocessor">#ifndef CONFIG_GCOAPS_PORT</span></div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno"><a class="line" href="group__net__gcoap__conf.html#gaf5938e047aea61b213c08ac9abccfa5c">  433</a></span><span class="preprocessor">#define CONFIG_GCOAPS_PORT             (5684)</span></div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span> </div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span><span class="preprocessor">#ifndef CONFIG_GCOAP_DTLS_HANDSHAKE_TIMEOUT_MSEC</span></div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno"><a class="line" href="group__net__gcoap__conf.html#gaf0c53cff7ab5df4402b5d2d411d07067">  440</a></span><span class="preprocessor">#define CONFIG_GCOAP_DTLS_HANDSHAKE_TIMEOUT_MSEC    (3 * MS_PER_SEC)</span></div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span> </div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span><span class="preprocessor">#ifndef CONFIG_GCOAP_DTLS_MINIMUM_AVAILABLE_SESSIONS</span></div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno"><a class="line" href="group__net__gcoap__conf.html#ga97653f76836851237e66347832814045">  449</a></span><span class="preprocessor">#define CONFIG_GCOAP_DTLS_MINIMUM_AVAILABLE_SESSIONS  (1)</span></div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span> </div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span><span class="preprocessor">#ifndef CONFIG_GCOAP_DTLS_MINIMUM_AVAILABLE_SESSIONS_TIMEOUT_MSEC</span></div>
+<div class="line"><a id="l00457" name="l00457"></a><span class="lineno"><a class="line" href="group__net__gcoap__conf.html#ga1e0d669b48b974bfc1b8652bdfa58110">  457</a></span><span class="preprocessor">#define CONFIG_GCOAP_DTLS_MINIMUM_AVAILABLE_SESSIONS_TIMEOUT_MSEC  (15 * MS_PER_SEC)</span></div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span> </div>
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span><span class="preprocessor">#ifndef CONFIG_GCOAP_PDU_BUF_SIZE</span></div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno"><a class="line" href="group__net__gcoap__conf.html#ga6e17d0741db5fa6da38b769ecdd4c80d">  464</a></span><span class="preprocessor">#define CONFIG_GCOAP_PDU_BUF_SIZE      (128)</span></div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span> </div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span><span class="preprocessor">#ifndef CONFIG_GCOAP_REQ_WAITING_MAX</span></div>
+<div class="line"><a id="l00471" name="l00471"></a><span class="lineno"><a class="line" href="group__net__gcoap__conf.html#ga9e08066a3ac288241d4baebd28771c5c">  471</a></span><span class="preprocessor">#define CONFIG_GCOAP_REQ_WAITING_MAX   (2)</span></div>
+<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00478" name="l00478"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga2f4f23b08bfc7b5bbc578235b1b3ab0e">  478</a></span><span class="preprocessor">#define GCOAP_TOKENLEN_MAX      (8)</span></div>
+<div class="line"><a id="l00479" name="l00479"></a><span class="lineno">  479</span> </div>
+<div class="line"><a id="l00483" name="l00483"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga786670f21b2ced965003e06a68846e01">  483</a></span><span class="preprocessor">#define GCOAP_HEADER_MAXLEN     (sizeof(coap_hdr_t) + GCOAP_TOKENLEN_MAX)</span></div>
+<div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span> </div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span><span class="preprocessor">#ifndef CONFIG_GCOAP_TOKENLEN</span></div>
+<div class="line"><a id="l00492" name="l00492"></a><span class="lineno"><a class="line" href="group__net__gcoap__conf.html#gab35593870a7e60761ab889faef41c0cc">  492</a></span><span class="preprocessor">#define CONFIG_GCOAP_TOKENLEN          (2)</span></div>
+<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span> </div>
+<div class="line"><a id="l00498" name="l00498"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga4c1bb0c0f347c809b1bd168fbce65151">  498</a></span><span class="preprocessor">#define GCOAP_PAYLOAD_MARKER    (0xFF)</span></div>
+<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span> </div>
+<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span><span class="preprocessor">#ifndef CONFIG_GCOAP_NO_AUTO_INIT</span></div>
+<div class="line"><a id="l00507" name="l00507"></a><span class="lineno"><a class="line" href="group__net__gcoap__conf.html#gaa7a1fc3b2ea6cf4bc3271e54730b30eb">  507</a></span><span class="preprocessor">#define CONFIG_GCOAP_NO_AUTO_INIT      0</span></div>
+<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span> </div>
+<div class="line"><a id="l00514" name="l00514"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#gae67f6e2e4ac7fc4ed2fd92a9e5450b38">  514</a></span><span class="preprocessor">#define GCOAP_MEMO_UNUSED       (0)     </span></div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga1b4e68653f2a23e231f9b8262d0970b2">  515</a></span><span class="preprocessor">#define GCOAP_MEMO_RETRANSMIT   (1)     </span></div>
+<div class="line"><a id="l00516" name="l00516"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga5c6eedf1d089acf408866a7510741d9b">  516</a></span><span class="preprocessor">#define GCOAP_MEMO_WAIT         (2)     </span></div>
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga6ac030a4adb19a46fcf5ab50722b4365">  517</a></span><span class="preprocessor">#define GCOAP_MEMO_RESP         (3)     </span></div>
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga94c3f5b193a7a264523b6064fb490047">  518</a></span><span class="preprocessor">#define GCOAP_MEMO_TIMEOUT      (4)     </span></div>
+<div class="line"><a id="l00519" name="l00519"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga3033a685118de6cb5e1e629a31b51dbb">  519</a></span><span class="preprocessor">#define GCOAP_MEMO_ERR          (5)     </span></div>
+<div class="line"><a id="l00520" name="l00520"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#gaba8bd3308ea0887b87ed521cd9b1fa9c">  520</a></span><span class="preprocessor">#define GCOAP_MEMO_RESP_TRUNC   (6)     </span></div>
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga9718f9727abd645f0c99cb58cf32c76f">  527</a></span><span class="preprocessor">#define GCOAP_SEND_LIMIT_NON    (-1)</span></div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span> </div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span><span class="preprocessor">#ifdef DOXYGEN</span></div>
+<div class="line"><a id="l00539" name="l00539"></a><span class="lineno"><a class="line" href="group__net__gcoap__conf.html#ga495e88f650478dfe30806c896789f650">  539</a></span><span class="preprocessor">#define CONFIG_GCOAP_NO_RETRANS_BACKOFF</span></div>
+<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span> </div>
+<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span><span class="preprocessor">#ifndef CONFIG_GCOAP_NON_TIMEOUT_MSEC</span></div>
+<div class="line"><a id="l00549" name="l00549"></a><span class="lineno"><a class="line" href="group__net__gcoap__conf.html#ga66f1549148730319c05c1df3d8a7de1e">  549</a></span><span class="preprocessor">#define CONFIG_GCOAP_NON_TIMEOUT_MSEC       (5000U)</span></div>
+<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span> </div>
+<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span><span class="preprocessor">#ifndef CONFIG_GCOAP_OBS_CLIENTS_MAX</span></div>
+<div class="line"><a id="l00561" name="l00561"></a><span class="lineno"><a class="line" href="group__net__gcoap__conf.html#ga506bf2591899bce02caf82574c77b5e1">  561</a></span><span class="preprocessor">#define CONFIG_GCOAP_OBS_CLIENTS_MAX   (2)</span></div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span> </div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span><span class="preprocessor">#ifndef CONFIG_GCOAP_OBS_NOTIFIERS_MAX</span></div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno"><a class="line" href="group__net__gcoap__conf.html#ga3a86d9dad2e66b5f5329b263035c31e1">  574</a></span><span class="preprocessor">#define CONFIG_GCOAP_OBS_NOTIFIERS_MAX  (2)</span></div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span> </div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span><span class="preprocessor">#ifndef CONFIG_GCOAP_OBS_REGISTRATIONS_MAX</span></div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno"><a class="line" href="group__net__gcoap__conf.html#ga063121204878b641058a4ef6ccfaad0a">  586</a></span><span class="preprocessor">#define CONFIG_GCOAP_OBS_REGISTRATIONS_MAX     (2)</span></div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span> </div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga4479f5af8a6165713cf47f1fb2d87be5">  593</a></span><span class="preprocessor">#define GCOAP_OBS_MEMO_UNUSED   (0) </span></div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga6d4212d88dac27b70bc0393c4aca7ac7">  594</a></span><span class="preprocessor">#define GCOAP_OBS_MEMO_IDLE     (1) </span></div>
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga784fe0fe1e6233d281bf4493745041ba">  595</a></span><span class="preprocessor">#define GCOAP_OBS_MEMO_PENDING  (2) </span></div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span><span class="preprocessor">#ifndef CONFIG_GCOAP_OBS_VALUE_WIDTH</span></div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno"><a class="line" href="group__net__gcoap__conf.html#ga1b7723c1e821302e2eaeac148acc5e0c">  619</a></span><span class="preprocessor">#define CONFIG_GCOAP_OBS_VALUE_WIDTH   (3)</span></div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span> </div>
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span><span class="preprocessor">#if (CONFIG_GCOAP_OBS_VALUE_WIDTH == 3)</span></div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span><span class="preprocessor">#define GCOAP_OBS_TICK_EXPONENT (0)</span></div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span><span class="preprocessor">#elif (CONFIG_GCOAP_OBS_VALUE_WIDTH == 2)</span></div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span><span class="preprocessor">#define GCOAP_OBS_TICK_EXPONENT (6)</span></div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span><span class="preprocessor">#elif (CONFIG_GCOAP_OBS_VALUE_WIDTH == 1)</span></div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span><span class="preprocessor">#define GCOAP_OBS_TICK_EXPONENT (14)</span></div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span> </div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span><span class="preprocessor">#define GCOAP_OBS_INIT_OK       (0)</span></div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span><span class="preprocessor">#define GCOAP_OBS_INIT_ERR      (-1)</span></div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span><span class="preprocessor">#define GCOAP_OBS_INIT_UNUSED   (-2)</span></div>
+<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span><span class="preprocessor">#ifndef GCOAP_DTLS_EXTRA_STACKSIZE</span></div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span><span class="preprocessor">#if IS_USED(MODULE_GCOAP_DTLS)</span></div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span><span class="preprocessor">#define GCOAP_DTLS_EXTRA_STACKSIZE  (THREAD_STACKSIZE_DEFAULT)</span></div>
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00650" name="l00650"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga81aa255e1071fbdcba931ffb9bc70436">  650</a></span><span class="preprocessor">#define GCOAP_DTLS_EXTRA_STACKSIZE  (0)</span></div>
+<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span> </div>
+<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span><span class="preprocessor">#if IS_USED(MODULE_GCOAP_FILESERVER)</span></div>
+<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span><span class="preprocessor">#include &quot;vfs.h&quot;</span></div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span><span class="preprocessor">#define GCOAP_VFS_EXTRA_STACKSIZE   (VFS_DIR_BUFFER_SIZE + VFS_FILE_BUFFER_SIZE)</span></div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#gafb13d18c1f178eb63502159f37fac143">  661</a></span><span class="preprocessor">#define GCOAP_VFS_EXTRA_STACKSIZE   (0)</span></div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span> </div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span><span class="preprocessor">#ifndef GCOAP_STACK_SIZE</span></div>
+<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span><span class="preprocessor">#define GCOAP_STACK_SIZE (THREAD_STACKSIZE_DEFAULT + DEBUG_EXTRA_STACKSIZE \</span></div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span><span class="preprocessor">                          + sizeof(coap_pkt_t) + GCOAP_DTLS_EXTRA_STACKSIZE \</span></div>
+<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span><span class="preprocessor">                          + GCOAP_VFS_EXTRA_STACKSIZE)</span></div>
+<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span><span class="preprocessor">#ifndef CONFIG_GCOAP_RESEND_BUFS_MAX</span></div>
+<div class="line"><a id="l00676" name="l00676"></a><span class="lineno"><a class="line" href="group__net__gcoap__conf.html#ga54809827d25375c917f1313567cc5439">  676</a></span><span class="preprocessor">#define CONFIG_GCOAP_RESEND_BUFS_MAX      (1)</span></div>
+<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span> </div>
+<div class="line"><a id="l00684" name="l00684"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#gaf417674bbd24b487a00f04b5ba35492d">  684</a></span><span class="preprocessor">#define COAP_LINK_FLAG_INIT_RESLIST  (1)  </span></div>
+<div class="foldopen" id="foldopen00692" data-start="{" data-end="};">
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno"><a class="line" href="structcoap__link__encoder__ctx__t.html">  692</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno"><a class="line" href="structcoap__link__encoder__ctx__t.html#a3daa989ec80bd9378e9400e2f02d363c">  693</a></span>    <span class="keywordtype">unsigned</span> <a class="code hl_variable" href="structcoap__link__encoder__ctx__t.html#a3daa989ec80bd9378e9400e2f02d363c">content_format</a>;            </div>
+<div class="line"><a id="l00694" name="l00694"></a><span class="lineno"><a class="line" href="structcoap__link__encoder__ctx__t.html#a874a25a8958b02f4a3f1e12bc71a544d">  694</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structcoap__link__encoder__ctx__t.html#a874a25a8958b02f4a3f1e12bc71a544d">link_pos</a>;                    </div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno"><a class="line" href="structcoap__link__encoder__ctx__t.html#a92eea6256214d415ecc74f5b2add2f4e">  695</a></span>    uint16_t <a class="code hl_variable" href="structcoap__link__encoder__ctx__t.html#a92eea6256214d415ecc74f5b2add2f4e">flags</a>;                     </div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>} <a class="code hl_struct" href="structcoap__link__encoder__ctx__t.html">coap_link_encoder_ctx_t</a>;</div>
+</div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span> </div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga197edc062a2d88fec4bd649cc6999abc">  710</a></span><span class="keyword">typedef</span> ssize_t (*<a class="code hl_typedef" href="group__net__gcoap.html#ga197edc062a2d88fec4bd649cc6999abc">gcoap_link_encoder_t</a>)(<span class="keyword">const</span> <a class="code hl_struct" href="structcoap__resource__t.html">coap_resource_t</a> *resource, <span class="keywordtype">char</span> *buf,</div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>                                        <span class="keywordtype">size_t</span> maxlen, <a class="code hl_struct" href="structcoap__link__encoder__ctx__t.html">coap_link_encoder_ctx_t</a> *context);</div>
+<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span> </div>
+<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span><span class="preprocessor">#define GCOAP_RESOURCE_FOUND        (0)</span></div>
+<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span><span class="preprocessor">#define GCOAP_RESOURCE_WRONG_METHOD (1)</span></div>
+<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span><span class="preprocessor">#define GCOAP_RESOURCE_NO_PATH      (2)</span></div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span><span class="preprocessor">#define GCOAP_RESOURCE_ERROR        (3)</span></div>
+<div class="line"><a id="l00726" name="l00726"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#gab43a2584b0419d611e774d10f073c18f">  726</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structgcoap__listener.html">gcoap_listener</a> <a class="code hl_struct" href="structgcoap__listener.html">gcoap_listener_t</a>;</div>
+<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span> </div>
+<div class="line"><a id="l00740" name="l00740"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#gad801d3224e621cb182e3861c581903a6">  740</a></span><span class="keyword">typedef</span> int (*<a class="code hl_typedef" href="group__net__gcoap.html#gad801d3224e621cb182e3861c581903a6">gcoap_request_matcher_t</a>)(<a class="code hl_struct" href="structgcoap__listener.html">gcoap_listener_t</a> *listener,</div>
+<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>                                       <span class="keyword">const</span> <a class="code hl_struct" href="structcoap__resource__t.html">coap_resource_t</a> **resource,</div>
+<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>                                       <a class="code hl_struct" href="structcoap__pkt__t.html">coap_pkt_t</a> *pdu);</div>
+<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span> </div>
+<div class="foldopen" id="foldopen00750" data-start="{" data-end="};">
+<div class="line"><a id="l00750" name="l00750"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga34f7408f6a5a8313a1937bf2697fdaf1">  750</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00751" name="l00751"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#gga34f7408f6a5a8313a1937bf2697fdaf1a49638e0c48f336388176798cca6887b8">  751</a></span>    <a class="code hl_enumvalue" href="group__net__gcoap.html#gga34f7408f6a5a8313a1937bf2697fdaf1a49638e0c48f336388176798cca6887b8">GCOAP_SOCKET_TYPE_UNDEF</a> = 0x0,      </div>
+<div class="line"><a id="l00752" name="l00752"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#gga34f7408f6a5a8313a1937bf2697fdaf1a233043974ee492e2181bf9f435ac1709">  752</a></span>    <a class="code hl_enumvalue" href="group__net__gcoap.html#gga34f7408f6a5a8313a1937bf2697fdaf1a233043974ee492e2181bf9f435ac1709">GCOAP_SOCKET_TYPE_UDP</a> = 0x1,        </div>
+<div class="line"><a id="l00753" name="l00753"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#gga34f7408f6a5a8313a1937bf2697fdaf1a74916be84a7cbeddbe2f8a36a5045a95">  753</a></span>    <a class="code hl_enumvalue" href="group__net__gcoap.html#gga34f7408f6a5a8313a1937bf2697fdaf1a74916be84a7cbeddbe2f8a36a5045a95">GCOAP_SOCKET_TYPE_DTLS</a> = 0x2,       </div>
+<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>} <a class="code hl_enumeration" href="group__net__gcoap.html#ga34f7408f6a5a8313a1937bf2697fdaf1">gcoap_socket_type_t</a>;</div>
+</div>
+<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span> </div>
+<div class="foldopen" id="foldopen00759" data-start="{" data-end="};">
+<div class="line"><a id="l00759" name="l00759"></a><span class="lineno"><a class="line" href="structgcoap__socket__t.html">  759</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00760" name="l00760"></a><span class="lineno"><a class="line" href="structgcoap__socket__t.html#a118d7df877a1067fa8c19734e3f84fbb">  760</a></span>    <a class="code hl_enumeration" href="group__net__gcoap.html#ga34f7408f6a5a8313a1937bf2697fdaf1">gcoap_socket_type_t</a> <a class="code hl_variable" href="structgcoap__socket__t.html#a118d7df877a1067fa8c19734e3f84fbb">type</a>;                </div>
+<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>    <span class="keyword">union </span>{</div>
+<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>        <a class="code hl_struct" href="structsock__udp.html">sock_udp_t</a> *udp;</div>
+<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span><span class="preprocessor">#if IS_USED(MODULE_GCOAP_DTLS) || defined(DOXYGEN)</span></div>
+<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>        <a class="code hl_struct" href="structsock__dtls.html">sock_dtls_t</a> *dtls;</div>
+<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00766" name="l00766"></a><span class="lineno"><a class="line" href="structgcoap__socket__t.html#aedd9ce0d272d756c46f5c1fbd730082a">  766</a></span>    } <a class="code hl_function" href="group__posix__sockets.html#gaf4e0711877c45a41168ac677b0670ccd">socket</a>;                               </div>
+<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span><span class="preprocessor">#if IS_USED(MODULE_GCOAP_DTLS) || defined(DOXYGEN)</span></div>
+<div class="line"><a id="l00768" name="l00768"></a><span class="lineno"><a class="line" href="structgcoap__socket__t.html#a69fc19d24f754a761c322a99809fa1a1">  768</a></span>    <a class="code hl_struct" href="structsock__dtls__session.html">sock_dtls_session_t</a> <a class="code hl_variable" href="structgcoap__socket__t.html#a69fc19d24f754a761c322a99809fa1a1">ctx_dtls_session</a>;   </div>
+<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>} <a class="code hl_struct" href="structgcoap__socket__t.html">gcoap_socket_t</a>;</div>
+</div>
+<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span> </div>
+<div class="foldopen" id="foldopen00777" data-start="{" data-end="};">
+<div class="line"><a id="l00777" name="l00777"></a><span class="lineno"><a class="line" href="structgcoap__listener.html">  777</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structgcoap__listener.html">gcoap_listener</a> {</div>
+<div class="line"><a id="l00778" name="l00778"></a><span class="lineno"><a class="line" href="structgcoap__listener.html#ae678911791d95c1ac8a2bba450fcc4e5">  778</a></span>    <span class="keyword">const</span> <a class="code hl_struct" href="structcoap__resource__t.html">coap_resource_t</a> *<a class="code hl_variable" href="structgcoap__listener.html#ae678911791d95c1ac8a2bba450fcc4e5">resources</a>;   </div>
+<div class="line"><a id="l00779" name="l00779"></a><span class="lineno"><a class="line" href="structgcoap__listener.html#aa00120f72c63d89cf4f1617b5062a5fe">  779</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structgcoap__listener.html#aa00120f72c63d89cf4f1617b5062a5fe">resources_len</a>;               </div>
+<div class="line"><a id="l00789" name="l00789"></a><span class="lineno"><a class="line" href="structgcoap__listener.html#abc8cd3d3d94a3df1f8ba8921d96b81ca">  789</a></span>    <a class="code hl_enumeration" href="group__net__gcoap.html#ga34f7408f6a5a8313a1937bf2697fdaf1">gcoap_socket_type_t</a> <a class="code hl_variable" href="structgcoap__listener.html#abc8cd3d3d94a3df1f8ba8921d96b81ca">tl_type</a>;</div>
+<div class="line"><a id="l00790" name="l00790"></a><span class="lineno"><a class="line" href="structgcoap__listener.html#a421a44a3e85080e78ed5d0459a231f90">  790</a></span>    <a class="code hl_typedef" href="group__net__gcoap.html#ga197edc062a2d88fec4bd649cc6999abc">gcoap_link_encoder_t</a> <a class="code hl_variable" href="structgcoap__listener.html#a421a44a3e85080e78ed5d0459a231f90">link_encoder</a>;  </div>
+<div class="line"><a id="l00791" name="l00791"></a><span class="lineno"><a class="line" href="structgcoap__listener.html#a4b6a3de4bc60238b8e56bec6fcb845da">  791</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structgcoap__listener.html">gcoap_listener</a> *<a class="code hl_variable" href="structgcoap__listener.html#a4b6a3de4bc60238b8e56bec6fcb845da">next</a>;        </div>
+<div class="line"><a id="l00803" name="l00803"></a><span class="lineno"><a class="line" href="structgcoap__listener.html#ae87b5004abacfa03fd9bdf07b6200923">  803</a></span>    <a class="code hl_typedef" href="group__net__gcoap.html#gad801d3224e621cb182e3861c581903a6">gcoap_request_matcher_t</a> <a class="code hl_variable" href="structgcoap__listener.html#ae87b5004abacfa03fd9bdf07b6200923">request_matcher</a>;</div>
+<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>};</div>
+</div>
+<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span> </div>
+<div class="line"><a id="l00809" name="l00809"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#gaab3719619577e1617098101d5c96c04e">  809</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structgcoap__request__memo.html">gcoap_request_memo</a> <a class="code hl_struct" href="structgcoap__request__memo.html">gcoap_request_memo_t</a>;</div>
+<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span> </div>
+<div class="line"><a id="l00817" name="l00817"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga8f62887693fa63a7595565e44156806d">  817</a></span><span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="group__net__gcoap.html#ga8f62887693fa63a7595565e44156806d">gcoap_resp_handler_t</a>)(<span class="keyword">const</span> <a class="code hl_struct" href="structgcoap__request__memo.html">gcoap_request_memo_t</a> *memo,</div>
+<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>                                     <a class="code hl_struct" href="structcoap__pkt__t.html">coap_pkt_t</a>* pdu,</div>
+<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>                                     <span class="keyword">const</span> <a class="code hl_struct" href="struct__sock__tl__ep.html">sock_udp_ep_t</a> *remote);</div>
+<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span> </div>
+<div class="foldopen" id="foldopen00824" data-start="{" data-end="};">
+<div class="line"><a id="l00824" name="l00824"></a><span class="lineno"><a class="line" href="structgcoap__resend__t.html">  824</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00825" name="l00825"></a><span class="lineno"><a class="line" href="structgcoap__resend__t.html#a39b197eac01083da8a77c69cac1b6317">  825</a></span>    uint8_t *<a class="code hl_variable" href="structgcoap__resend__t.html#a39b197eac01083da8a77c69cac1b6317">pdu_buf</a>;                   </div>
+<div class="line"><a id="l00826" name="l00826"></a><span class="lineno"><a class="line" href="structgcoap__resend__t.html#ada0209e1da388efbf403c9823af7c696">  826</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structgcoap__resend__t.html#ada0209e1da388efbf403c9823af7c696">pdu_len</a>;                     </div>
+<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>} <a class="code hl_struct" href="structgcoap__resend__t.html">gcoap_resend_t</a>;</div>
+</div>
+<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span> </div>
+<div class="foldopen" id="foldopen00832" data-start="{" data-end="};">
+<div class="line"><a id="l00832" name="l00832"></a><span class="lineno"><a class="line" href="structgcoap__request__memo.html">  832</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structgcoap__request__memo.html">gcoap_request_memo</a> {</div>
+<div class="line"><a id="l00833" name="l00833"></a><span class="lineno"><a class="line" href="structgcoap__request__memo.html#a827a2d6aafaedc3267e557dbd7da865b">  833</a></span>    <span class="keywordtype">unsigned</span> <a class="code hl_variable" href="structgcoap__request__memo.html#a827a2d6aafaedc3267e557dbd7da865b">state</a>;                     </div>
+<div class="line"><a id="l00834" name="l00834"></a><span class="lineno"><a class="line" href="structgcoap__request__memo.html#a986e6bf0f0f641f0f8ad9f1e7e18ff9c">  834</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structgcoap__request__memo.html#a986e6bf0f0f641f0f8ad9f1e7e18ff9c">send_limit</a>;                     </div>
+<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span>    <span class="keyword">union </span>{</div>
+<div class="line"><a id="l00837" name="l00837"></a><span class="lineno"><a class="line" href="structgcoap__request__memo.html#ad87c340a7e9968c99da0df8286a68079">  837</a></span>        uint8_t <a class="code hl_variable" href="structgcoap__request__memo.html#ad87c340a7e9968c99da0df8286a68079">hdr_buf</a>[<a class="code hl_define" href="group__net__gcoap.html#ga786670f21b2ced965003e06a68846e01">GCOAP_HEADER_MAXLEN</a>];</div>
+<div class="line"><a id="l00839" name="l00839"></a><span class="lineno"><a class="line" href="structgcoap__request__memo.html#aa1d37911fa0fe55e5c4eb9b2760b4b53">  839</a></span>        <a class="code hl_struct" href="structgcoap__resend__t.html">gcoap_resend_t</a> <a class="code hl_variable" href="structgcoap__request__memo.html#aa1d37911fa0fe55e5c4eb9b2760b4b53">data</a>;            </div>
+<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span>    } <a class="code hl_variable" href="structgcoap__request__memo.html#a5db1721a5b392c9b1f7f993e8a7ddb51">msg</a>;                              </div>
+<div class="line"><a id="l00842" name="l00842"></a><span class="lineno"><a class="line" href="structgcoap__request__memo.html#ac4ba7534970a4095667fa47ec8c1debb">  842</a></span>    <a class="code hl_struct" href="struct__sock__tl__ep.html">sock_udp_ep_t</a> <a class="code hl_variable" href="structgcoap__request__memo.html#ac4ba7534970a4095667fa47ec8c1debb">remote_ep</a>;            </div>
+<div class="line"><a id="l00843" name="l00843"></a><span class="lineno"><a class="line" href="structgcoap__request__memo.html#a51b9798ea9d4b6df2ece6b713ae15199">  843</a></span>    <a class="code hl_typedef" href="group__net__gcoap.html#ga8f62887693fa63a7595565e44156806d">gcoap_resp_handler_t</a> <a class="code hl_variable" href="structgcoap__request__memo.html#a51b9798ea9d4b6df2ece6b713ae15199">resp_handler</a>;  </div>
+<div class="line"><a id="l00844" name="l00844"></a><span class="lineno"><a class="line" href="structgcoap__request__memo.html#a04aef945243bb921e864987e7b3b1e28">  844</a></span>    <span class="keywordtype">void</span> *<a class="code hl_variable" href="structgcoap__request__memo.html#a04aef945243bb921e864987e7b3b1e28">context</a>;                      </div>
+<div class="line"><a id="l00845" name="l00845"></a><span class="lineno"><a class="line" href="structgcoap__request__memo.html#aed2479f0fe1f8e33f387e5fd937333d2">  845</a></span>    <a class="code hl_struct" href="structevent__timeout__t.html">event_timeout_t</a> <a class="code hl_variable" href="structgcoap__request__memo.html#aed2479f0fe1f8e33f387e5fd937333d2">resp_evt_tmout</a>;     </div>
+<div class="line"><a id="l00846" name="l00846"></a><span class="lineno"><a class="line" href="structgcoap__request__memo.html#a59628714666650179d6e4783b3e90384">  846</a></span>    <a class="code hl_struct" href="structevent__callback__t.html">event_callback_t</a> <a class="code hl_variable" href="structgcoap__request__memo.html#a59628714666650179d6e4783b3e90384">resp_tmout_cb</a>;     </div>
+<div class="line"><a id="l00847" name="l00847"></a><span class="lineno"><a class="line" href="structgcoap__request__memo.html#ad2968836aebc4075ce28978cf470e819">  847</a></span>    <a class="code hl_struct" href="structgcoap__socket__t.html">gcoap_socket_t</a> <a class="code hl_variable" href="structgcoap__request__memo.html#ad2968836aebc4075ce28978cf470e819">socket</a>;              </div>
+<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span><span class="preprocessor">#if IS_USED(MODULE_NANOCOAP_CACHE) || DOXYGEN</span></div>
+<div class="line"><a id="l00854" name="l00854"></a><span class="lineno"><a class="line" href="structgcoap__request__memo.html#aa96b12c83f9d24f5895ac4f932ff0b20">  854</a></span>    uint8_t <a class="code hl_variable" href="structgcoap__request__memo.html#aa96b12c83f9d24f5895ac4f932ff0b20">cache_key</a>[<a class="code hl_define" href="group__net__nanocoap__cache.html#gad60bd944954e7a04e43bb6d449151881">CONFIG_NANOCOAP_CACHE_KEY_LENGTH</a>];</div>
+<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>};</div>
+</div>
+<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span> </div>
+<div class="foldopen" id="foldopen00861" data-start="{" data-end="};">
+<div class="line"><a id="l00861" name="l00861"></a><span class="lineno"><a class="line" href="structgcoap__observe__memo__t.html">  861</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00862" name="l00862"></a><span class="lineno"><a class="line" href="structgcoap__observe__memo__t.html#aa63dbec93af8e16744d93b938df83fc6">  862</a></span>    <a class="code hl_struct" href="struct__sock__tl__ep.html">sock_udp_ep_t</a> *<a class="code hl_variable" href="structgcoap__observe__memo__t.html#aa63dbec93af8e16744d93b938df83fc6">observer</a>;            </div>
+<div class="line"><a id="l00863" name="l00863"></a><span class="lineno"><a class="line" href="structgcoap__observe__memo__t.html#a98965f70405532d01608520c491b6852">  863</a></span>    <a class="code hl_struct" href="struct__sock__tl__ep.html">sock_udp_ep_t</a> *<a class="code hl_variable" href="structgcoap__observe__memo__t.html#a98965f70405532d01608520c491b6852">notifier</a>;            </div>
+<div class="line"><a id="l00864" name="l00864"></a><span class="lineno"><a class="line" href="structgcoap__observe__memo__t.html#a9140bff73e4eb90d492402576586c8f2">  864</a></span>    <span class="keyword">const</span> <a class="code hl_struct" href="structcoap__resource__t.html">coap_resource_t</a> *<a class="code hl_variable" href="structgcoap__observe__memo__t.html#a9140bff73e4eb90d492402576586c8f2">resource</a>;    </div>
+<div class="line"><a id="l00865" name="l00865"></a><span class="lineno"><a class="line" href="structgcoap__observe__memo__t.html#a5c4c622c8af8d8609337f56957213a4f">  865</a></span>    uint8_t token[<a class="code hl_define" href="group__net__gcoap.html#ga2f4f23b08bfc7b5bbc578235b1b3ab0e">GCOAP_TOKENLEN_MAX</a>];  </div>
+<div class="line"><a id="l00866" name="l00866"></a><span class="lineno"><a class="line" href="structgcoap__observe__memo__t.html#aa59ec1d0490632de1ec73c580896d3ed">  866</a></span>    uint16_t <a class="code hl_variable" href="structgcoap__observe__memo__t.html#aa59ec1d0490632de1ec73c580896d3ed">last_msgid</a>;                </div>
+<div class="line"><a id="l00867" name="l00867"></a><span class="lineno"><a class="line" href="structgcoap__observe__memo__t.html#a009624ea22e42b910e9649a622f997ab">  867</a></span>    <span class="keywordtype">unsigned</span> <a class="code hl_variable" href="structgcoap__observe__memo__t.html#a009624ea22e42b910e9649a622f997ab">token_len</a>;                 </div>
+<div class="line"><a id="l00868" name="l00868"></a><span class="lineno"><a class="line" href="structgcoap__observe__memo__t.html#a6e786807f7169b9048eb20704de9043c">  868</a></span>    <a class="code hl_struct" href="structgcoap__socket__t.html">gcoap_socket_t</a> <a class="code hl_variable" href="structgcoap__observe__memo__t.html#a6e786807f7169b9048eb20704de9043c">socket</a>;              </div>
+<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span>} <a class="code hl_struct" href="structgcoap__observe__memo__t.html">gcoap_observe_memo_t</a>;</div>
+</div>
+<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span> </div>
+<div class="line"><a id="l00880" name="l00880"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#gae4fa464865a37f897cfab4d3e679bdb1">  880</a></span><a class="code hl_typedef" href="group__core__sched.html#ga8375139300d7cbf23bd8bd89ddddbe84">kernel_pid_t</a> <a class="code hl_function" href="group__net__gcoap.html#gae4fa464865a37f897cfab4d3e679bdb1">gcoap_init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span> </div>
+<div class="line"><a id="l00897" name="l00897"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga1c3b10922136af0308bd70c7bb6f0e52">  897</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__net__gcoap.html#ga1c3b10922136af0308bd70c7bb6f0e52">gcoap_register_listener</a>(<a class="code hl_struct" href="structgcoap__listener.html">gcoap_listener_t</a> *listener);</div>
+<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span> </div>
+<div class="line"><a id="l00911" name="l00911"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga5a06c7c20d6ae6db9748f4b988c923e4">  911</a></span><span class="keyword">const</span> <a class="code hl_struct" href="structcoap__resource__t.html">coap_resource_t</a> *<a class="code hl_function" href="group__net__gcoap.html#ga5a06c7c20d6ae6db9748f4b988c923e4">gcoap_get_resource_by_path_iterator</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structgcoap__listener.html">gcoap_listener_t</a> **last_listener,</div>
+<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span>                                                           <span class="keyword">const</span> <a class="code hl_struct" href="structcoap__resource__t.html">coap_resource_t</a> *last_resource,</div>
+<div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span>                                                           <span class="keyword">const</span> <span class="keywordtype">char</span> *uri_path);</div>
+<div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span> </div>
+<div class="line"><a id="l00941" name="l00941"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga034e3fe03d8398845e317a29c72d9605">  941</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__net__gcoap.html#ga034e3fe03d8398845e317a29c72d9605">gcoap_req_init_path_buffer</a>(<a class="code hl_struct" href="structcoap__pkt__t.html">coap_pkt_t</a> *pdu, uint8_t *buf, <span class="keywordtype">size_t</span> len,</div>
+<div class="line"><a id="l00942" name="l00942"></a><span class="lineno">  942</span>                               <span class="keywordtype">unsigned</span> code, <span class="keyword">const</span> <span class="keywordtype">char</span> *path,</div>
+<div class="line"><a id="l00943" name="l00943"></a><span class="lineno">  943</span>                               <span class="keywordtype">size_t</span> path_len);</div>
+<div class="line"><a id="l00944" name="l00944"></a><span class="lineno">  944</span> </div>
+<div class="foldopen" id="foldopen00969" data-start="{" data-end="}">
+<div class="line"><a id="l00969" name="l00969"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga291fd969b90b9571118c5739706b0c50">  969</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="group__net__gcoap.html#ga291fd969b90b9571118c5739706b0c50">gcoap_req_init</a>(<a class="code hl_struct" href="structcoap__pkt__t.html">coap_pkt_t</a> *pdu, uint8_t *buf, <span class="keywordtype">size_t</span> len,</div>
+<div class="line"><a id="l00970" name="l00970"></a><span class="lineno">  970</span>                                 <span class="keywordtype">unsigned</span> code, <span class="keyword">const</span> <span class="keywordtype">char</span> *path)</div>
+<div class="line"><a id="l00971" name="l00971"></a><span class="lineno">  971</span>{</div>
+<div class="line"><a id="l00972" name="l00972"></a><span class="lineno">  972</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__net__gcoap.html#ga034e3fe03d8398845e317a29c72d9605">gcoap_req_init_path_buffer</a>(pdu, buf, len, code, path,</div>
+<div class="line"><a id="l00973" name="l00973"></a><span class="lineno">  973</span>                                      (path) ? strlen(path) : 0U);</div>
+<div class="line"><a id="l00974" name="l00974"></a><span class="lineno">  974</span>}</div>
+</div>
+<div class="line"><a id="l00975" name="l00975"></a><span class="lineno">  975</span> </div>
+<div class="foldopen" id="foldopen00988" data-start="{" data-end="}">
+<div class="line"><a id="l00988" name="l00988"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#gaf635d01732aa7c620271d05949103497">  988</a></span><span class="keyword">static</span> <span class="keyword">inline</span> ssize_t <a class="code hl_function" href="group__net__gcoap.html#gaf635d01732aa7c620271d05949103497">gcoap_request</a>(<a class="code hl_struct" href="structcoap__pkt__t.html">coap_pkt_t</a> *pdu, uint8_t *buf, <span class="keywordtype">size_t</span> len,</div>
+<div class="line"><a id="l00989" name="l00989"></a><span class="lineno">  989</span>                                    <span class="keywordtype">unsigned</span> code, <span class="keywordtype">char</span> *path)</div>
+<div class="line"><a id="l00990" name="l00990"></a><span class="lineno">  990</span>{</div>
+<div class="line"><a id="l00991" name="l00991"></a><span class="lineno">  991</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="group__net__gcoap.html#ga291fd969b90b9571118c5739706b0c50">gcoap_req_init</a>(pdu, buf, len, code, path) == 0) {</div>
+<div class="line"><a id="l00992" name="l00992"></a><span class="lineno">  992</span>        <span class="keywordflow">if</span> (<a class="code hl_define" href="modules_8h.html#a185d252af6cac906c5bdf5a7171b85f4">IS_USED</a>(MODULE_NANOCOAP_CACHE)) {</div>
+<div class="line"><a id="l00993" name="l00993"></a><span class="lineno">  993</span>            <span class="comment">/* remove ETag option slack added for cache validation */</span></div>
+<div class="line"><a id="l00994" name="l00994"></a><span class="lineno">  994</span>            <a class="code hl_function" href="group__net__nanocoap.html#gadec4dd6f9ab2fdc45c73cc8774255b54">coap_opt_remove</a>(pdu, COAP_OPT_ETAG);</div>
+<div class="line"><a id="l00995" name="l00995"></a><span class="lineno">  995</span>        }</div>
+<div class="line"><a id="l00996" name="l00996"></a><span class="lineno">  996</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012">coap_opt_finish</a>(pdu, <a class="code hl_define" href="group__net__nanocoap.html#ga88497b423bb62815a4f06345b9bd1e0f">COAP_OPT_FINISH_NONE</a>);</div>
+<div class="line"><a id="l00997" name="l00997"></a><span class="lineno">  997</span>    }</div>
+<div class="line"><a id="l00998" name="l00998"></a><span class="lineno">  998</span>    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00999" name="l00999"></a><span class="lineno">  999</span>}</div>
+</div>
+<div class="line"><a id="l01000" name="l01000"></a><span class="lineno"> 1000</span> </div>
+<div class="line"><a id="l01023" name="l01023"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga3ea1c9c80e663d07e8b8fddc7e272d07"> 1023</a></span>ssize_t <a class="code hl_function" href="group__net__gcoap.html#ga3ea1c9c80e663d07e8b8fddc7e272d07">gcoap_req_send</a>(<span class="keyword">const</span> uint8_t *buf, <span class="keywordtype">size_t</span> len,</div>
+<div class="line"><a id="l01024" name="l01024"></a><span class="lineno"> 1024</span>                       <span class="keyword">const</span> <a class="code hl_struct" href="struct__sock__tl__ep.html">sock_udp_ep_t</a> *remote, <span class="keyword">const</span> <a class="code hl_struct" href="struct__sock__tl__ep.html">sock_udp_ep_t</a> *local,</div>
+<div class="line"><a id="l01025" name="l01025"></a><span class="lineno"> 1025</span>                       <a class="code hl_typedef" href="group__net__gcoap.html#ga8f62887693fa63a7595565e44156806d">gcoap_resp_handler_t</a> resp_handler, <span class="keywordtype">void</span> *context,</div>
+<div class="line"><a id="l01026" name="l01026"></a><span class="lineno"> 1026</span>                       <a class="code hl_enumeration" href="group__net__gcoap.html#ga34f7408f6a5a8313a1937bf2697fdaf1">gcoap_socket_type_t</a> tl_type);</div>
+<div class="line"><a id="l01027" name="l01027"></a><span class="lineno"> 1027</span> </div>
+<div class="foldopen" id="foldopen01048" data-start="{" data-end="}">
+<div class="line"><a id="l01048" name="l01048"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga213397078b15675b001a2fff0a2838b6"> 1048</a></span><span class="keyword">static</span> <span class="keyword">inline</span> ssize_t <a class="code hl_function" href="group__net__gcoap.html#ga213397078b15675b001a2fff0a2838b6">gcoap_req_send_tl</a>(<span class="keyword">const</span> uint8_t *buf, <span class="keywordtype">size_t</span> len,</div>
+<div class="line"><a id="l01049" name="l01049"></a><span class="lineno"> 1049</span>                                        <span class="keyword">const</span> <a class="code hl_struct" href="struct__sock__tl__ep.html">sock_udp_ep_t</a> *remote,</div>
+<div class="line"><a id="l01050" name="l01050"></a><span class="lineno"> 1050</span>                                        <a class="code hl_typedef" href="group__net__gcoap.html#ga8f62887693fa63a7595565e44156806d">gcoap_resp_handler_t</a> resp_handler, <span class="keywordtype">void</span> *context,</div>
+<div class="line"><a id="l01051" name="l01051"></a><span class="lineno"> 1051</span>                                        <a class="code hl_enumeration" href="group__net__gcoap.html#ga34f7408f6a5a8313a1937bf2697fdaf1">gcoap_socket_type_t</a> tl_type)</div>
+<div class="line"><a id="l01052" name="l01052"></a><span class="lineno"> 1052</span>{</div>
+<div class="line"><a id="l01053" name="l01053"></a><span class="lineno"> 1053</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__net__gcoap.html#ga3ea1c9c80e663d07e8b8fddc7e272d07">gcoap_req_send</a>(buf, len, remote, NULL, resp_handler, context, tl_type);</div>
+<div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span>}</div>
+</div>
+<div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span> </div>
+<div class="line"><a id="l01069" name="l01069"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga1900ec9205ee6844b422312a0af5896a"> 1069</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__net__gcoap.html#ga1900ec9205ee6844b422312a0af5896a">gcoap_resp_init</a>(<a class="code hl_struct" href="structcoap__pkt__t.html">coap_pkt_t</a> *pdu, uint8_t *buf, <span class="keywordtype">size_t</span> len, <span class="keywordtype">unsigned</span> code);</div>
+<div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span> </div>
+<div class="foldopen" id="foldopen01082" data-start="{" data-end="}">
+<div class="line"><a id="l01082" name="l01082"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#gace6fa0e224d1cd07211e22e3af75f8bd"> 1082</a></span><span class="keyword">static</span> <span class="keyword">inline</span> ssize_t <a class="code hl_function" href="group__net__gcoap.html#gace6fa0e224d1cd07211e22e3af75f8bd">gcoap_response</a>(<a class="code hl_struct" href="structcoap__pkt__t.html">coap_pkt_t</a> *pdu, uint8_t *buf,</div>
+<div class="line"><a id="l01083" name="l01083"></a><span class="lineno"> 1083</span>                                     <span class="keywordtype">size_t</span> len, <span class="keywordtype">unsigned</span> code)</div>
+<div class="line"><a id="l01084" name="l01084"></a><span class="lineno"> 1084</span>{</div>
+<div class="line"><a id="l01085" name="l01085"></a><span class="lineno"> 1085</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="group__net__gcoap.html#ga1900ec9205ee6844b422312a0af5896a">gcoap_resp_init</a>(pdu, buf, len, code) == 0)</div>
+<div class="line"><a id="l01086" name="l01086"></a><span class="lineno"> 1086</span>                ? <a class="code hl_function" href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012">coap_opt_finish</a>(pdu, <a class="code hl_define" href="group__net__nanocoap.html#ga88497b423bb62815a4f06345b9bd1e0f">COAP_OPT_FINISH_NONE</a>)</div>
+<div class="line"><a id="l01087" name="l01087"></a><span class="lineno"> 1087</span>                : -1;</div>
+<div class="line"><a id="l01088" name="l01088"></a><span class="lineno"> 1088</span>}</div>
+</div>
+<div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span> </div>
+<div class="line"><a id="l01108" name="l01108"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga3918d03f99a7312946bc28d5fdb7b610"> 1108</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__net__gcoap.html#ga3918d03f99a7312946bc28d5fdb7b610">gcoap_obs_init</a>(<a class="code hl_struct" href="structcoap__pkt__t.html">coap_pkt_t</a> *pdu, uint8_t *buf, <span class="keywordtype">size_t</span> len,</div>
+<div class="line"><a id="l01109" name="l01109"></a><span class="lineno"> 1109</span>                   <span class="keyword">const</span> <a class="code hl_struct" href="structcoap__resource__t.html">coap_resource_t</a> *resource);</div>
+<div class="line"><a id="l01110" name="l01110"></a><span class="lineno"> 1110</span> </div>
+<div class="line"><a id="l01124" name="l01124"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#gab89faee1f2f999f4d6088ec91ca620bd"> 1124</a></span><span class="keywordtype">size_t</span> <a class="code hl_function" href="group__net__gcoap.html#gab89faee1f2f999f4d6088ec91ca620bd">gcoap_obs_send</a>(<span class="keyword">const</span> uint8_t *buf, <span class="keywordtype">size_t</span> len,</div>
+<div class="line"><a id="l01125" name="l01125"></a><span class="lineno"> 1125</span>                      <span class="keyword">const</span> <a class="code hl_struct" href="structcoap__resource__t.html">coap_resource_t</a> *resource);</div>
+<div class="line"><a id="l01126" name="l01126"></a><span class="lineno"> 1126</span> </div>
+<div class="line"><a id="l01155" name="l01155"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#gabf21f078560b6c9f8d2dbad222d24579"> 1155</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__net__gcoap.html#gabf21f078560b6c9f8d2dbad222d24579">gcoap_obs_req_forget</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct__sock__tl__ep.html">sock_udp_ep_t</a> *remote, <span class="keyword">const</span> uint8_t *token,</div>
+<div class="line"><a id="l01156" name="l01156"></a><span class="lineno"> 1156</span>                         <span class="keywordtype">size_t</span> tokenlen);</div>
+<div class="line"><a id="l01157" name="l01157"></a><span class="lineno"> 1157</span> </div>
+<div class="line"><a id="l01165" name="l01165"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#gaef16b142f138806dfa5d1c5a38794ebd"> 1165</a></span>uint8_t <a class="code hl_function" href="group__net__gcoap.html#gaef16b142f138806dfa5d1c5a38794ebd">gcoap_op_state</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l01166" name="l01166"></a><span class="lineno"> 1166</span> </div>
+<div class="line"><a id="l01189" name="l01189"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga11a540b3a52dcf95535100f47ce1370e"> 1189</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group__net__gcoap.html#ga11a540b3a52dcf95535100f47ce1370e">gcoap_get_resource_list</a>(<span class="keywordtype">void</span> *buf, <span class="keywordtype">size_t</span> maxlen, uint8_t cf,</div>
+<div class="line"><a id="l01190" name="l01190"></a><span class="lineno"> 1190</span>                               <a class="code hl_enumeration" href="group__net__gcoap.html#ga34f7408f6a5a8313a1937bf2697fdaf1">gcoap_socket_type_t</a> tl_type);</div>
+<div class="line"><a id="l01191" name="l01191"></a><span class="lineno"> 1191</span> </div>
+<div class="line"><a id="l01205" name="l01205"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#gaa097b4388e04ab265cf79cf38c493d07"> 1205</a></span>ssize_t <a class="code hl_function" href="group__net__gcoap.html#gaa097b4388e04ab265cf79cf38c493d07">gcoap_encode_link</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structcoap__resource__t.html">coap_resource_t</a> *resource, <span class="keywordtype">char</span> *buf,</div>
+<div class="line"><a id="l01206" name="l01206"></a><span class="lineno"> 1206</span>                          <span class="keywordtype">size_t</span> maxlen, <a class="code hl_struct" href="structcoap__link__encoder__ctx__t.html">coap_link_encoder_ctx_t</a> *context);</div>
+<div class="line"><a id="l01207" name="l01207"></a><span class="lineno"> 1207</span> </div>
+<div class="line"><a id="l01208" name="l01208"></a><span class="lineno"> 1208</span><span class="preprocessor">#if IS_USED(MODULE_GCOAP_DTLS) || defined(DOXYGEN)</span></div>
+<div class="line"><a id="l01216" name="l01216"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga7a65749835295b471d80f85d63e9ba95"> 1216</a></span><a class="code hl_struct" href="structsock__dtls.html">sock_dtls_t</a> *<a class="code hl_function" href="group__net__gcoap.html#ga7a65749835295b471d80f85d63e9ba95">gcoap_get_sock_dtls</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l01217" name="l01217"></a><span class="lineno"> 1217</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01218" name="l01218"></a><span class="lineno"> 1218</span> </div>
+<div class="foldopen" id="foldopen01226" data-start="{" data-end="}">
+<div class="line"><a id="l01226" name="l01226"></a><span class="lineno"><a class="line" href="group__net__gcoap.html#ga1d2a05a38a9ebdf97a9a33fea3803bf6"> 1226</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <a class="code hl_struct" href="structcoap__hdr__t.html">coap_hdr_t</a> *<a class="code hl_function" href="group__net__gcoap.html#ga1d2a05a38a9ebdf97a9a33fea3803bf6">gcoap_request_memo_get_hdr</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structgcoap__request__memo.html">gcoap_request_memo_t</a> *memo)</div>
+<div class="line"><a id="l01227" name="l01227"></a><span class="lineno"> 1227</span>{</div>
+<div class="line"><a id="l01228" name="l01228"></a><span class="lineno"> 1228</span>    <span class="keywordflow">if</span> (memo-&gt;<a class="code hl_variable" href="structgcoap__request__memo.html#a986e6bf0f0f641f0f8ad9f1e7e18ff9c">send_limit</a> == <a class="code hl_define" href="group__net__gcoap.html#ga9718f9727abd645f0c99cb58cf32c76f">GCOAP_SEND_LIMIT_NON</a>) {</div>
+<div class="line"><a id="l01229" name="l01229"></a><span class="lineno"> 1229</span>        <span class="keywordflow">return</span> (<a class="code hl_struct" href="structcoap__hdr__t.html">coap_hdr_t</a> *)&amp;memo-&gt;<a class="code hl_variable" href="structgcoap__request__memo.html#a5db1721a5b392c9b1f7f993e8a7ddb51">msg</a>.<a class="code hl_variable" href="structgcoap__request__memo.html#ad87c340a7e9968c99da0df8286a68079">hdr_buf</a>[0];</div>
+<div class="line"><a id="l01230" name="l01230"></a><span class="lineno"> 1230</span>    }</div>
+<div class="line"><a id="l01231" name="l01231"></a><span class="lineno"> 1231</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l01232" name="l01232"></a><span class="lineno"> 1232</span>        <span class="keywordflow">return</span> (<a class="code hl_struct" href="structcoap__hdr__t.html">coap_hdr_t</a> *)memo-&gt;<a class="code hl_variable" href="structgcoap__request__memo.html#a5db1721a5b392c9b1f7f993e8a7ddb51">msg</a>.<a class="code hl_variable" href="structgcoap__request__memo.html#aa1d37911fa0fe55e5c4eb9b2760b4b53">data</a>.<a class="code hl_variable" href="structgcoap__resend__t.html#a39b197eac01083da8a77c69cac1b6317">pdu_buf</a>;</div>
+<div class="line"><a id="l01233" name="l01233"></a><span class="lineno"> 1233</span>    }</div>
+<div class="line"><a id="l01234" name="l01234"></a><span class="lineno"> 1234</span>}</div>
+</div>
+<div class="line"><a id="l01235" name="l01235"></a><span class="lineno"> 1235</span> </div>
+<div class="line"><a id="l01236" name="l01236"></a><span class="lineno"> 1236</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l01237" name="l01237"></a><span class="lineno"> 1237</span>}</div>
+<div class="line"><a id="l01238" name="l01238"></a><span class="lineno"> 1238</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01239" name="l01239"></a><span class="lineno"> 1239</span> </div>
+<div class="line"><a id="l01240" name="l01240"></a><span class="lineno"> 1240</span><span class="preprocessor">#endif </span><span class="comment">/* NET_GCOAP_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="acallback_8h_html"><div class="ttname"><a href="callback_8h.html">callback.h</a></div><div class="ttdoc">Provides a callback-with-argument event type.</div></div>
+<div class="ttc" id="aevent_2timeout_8h_html"><div class="ttname"><a href="event_2timeout_8h.html">timeout.h</a></div><div class="ttdoc">Provides functionality to trigger events after timeout.</div></div>
+<div class="ttc" id="agroup__core__sched_html_ga8375139300d7cbf23bd8bd89ddddbe84"><div class="ttname"><a href="group__core__sched.html#ga8375139300d7cbf23bd8bd89ddddbe84">kernel_pid_t</a></div><div class="ttdeci">int16_t kernel_pid_t</div><div class="ttdoc">Unique process identifier.</div><div class="ttdef"><b>Definition</b> <a href="sched_8h_source.html#l00139">sched.h:139</a></div></div>
+<div class="ttc" id="agroup__net__gcoap_html_ga034e3fe03d8398845e317a29c72d9605"><div class="ttname"><a href="group__net__gcoap.html#ga034e3fe03d8398845e317a29c72d9605">gcoap_req_init_path_buffer</a></div><div class="ttdeci">int gcoap_req_init_path_buffer(coap_pkt_t *pdu, uint8_t *buf, size_t len, unsigned code, const char *path, size_t path_len)</div><div class="ttdoc">Initializes a CoAP request PDU on a buffer.</div></div>
+<div class="ttc" id="agroup__net__gcoap_html_ga11a540b3a52dcf95535100f47ce1370e"><div class="ttname"><a href="group__net__gcoap.html#ga11a540b3a52dcf95535100f47ce1370e">gcoap_get_resource_list</a></div><div class="ttdeci">int gcoap_get_resource_list(void *buf, size_t maxlen, uint8_t cf, gcoap_socket_type_t tl_type)</div><div class="ttdoc">Get the resource list, currently only CoRE Link Format (COAP_FORMAT_LINK) supported.</div></div>
+<div class="ttc" id="agroup__net__gcoap_html_ga1900ec9205ee6844b422312a0af5896a"><div class="ttname"><a href="group__net__gcoap.html#ga1900ec9205ee6844b422312a0af5896a">gcoap_resp_init</a></div><div class="ttdeci">int gcoap_resp_init(coap_pkt_t *pdu, uint8_t *buf, size_t len, unsigned code)</div><div class="ttdoc">Initializes a CoAP response packet on a buffer.</div></div>
+<div class="ttc" id="agroup__net__gcoap_html_ga197edc062a2d88fec4bd649cc6999abc"><div class="ttname"><a href="group__net__gcoap.html#ga197edc062a2d88fec4bd649cc6999abc">gcoap_link_encoder_t</a></div><div class="ttdeci">ssize_t(* gcoap_link_encoder_t)(const coap_resource_t *resource, char *buf, size_t maxlen, coap_link_encoder_ctx_t *context)</div><div class="ttdoc">Handler function to write a resource link.</div><div class="ttdef"><b>Definition</b> <a href="#l00710">gcoap.h:710</a></div></div>
+<div class="ttc" id="agroup__net__gcoap_html_ga1c3b10922136af0308bd70c7bb6f0e52"><div class="ttname"><a href="group__net__gcoap.html#ga1c3b10922136af0308bd70c7bb6f0e52">gcoap_register_listener</a></div><div class="ttdeci">void gcoap_register_listener(gcoap_listener_t *listener)</div><div class="ttdoc">Starts listening for resource paths.</div></div>
+<div class="ttc" id="agroup__net__gcoap_html_ga1d2a05a38a9ebdf97a9a33fea3803bf6"><div class="ttname"><a href="group__net__gcoap.html#ga1d2a05a38a9ebdf97a9a33fea3803bf6">gcoap_request_memo_get_hdr</a></div><div class="ttdeci">static coap_hdr_t * gcoap_request_memo_get_hdr(const gcoap_request_memo_t *memo)</div><div class="ttdoc">Get the header of a request from a gcoap_request_memo_t.</div><div class="ttdef"><b>Definition</b> <a href="#l01226">gcoap.h:1226</a></div></div>
+<div class="ttc" id="agroup__net__gcoap_html_ga213397078b15675b001a2fff0a2838b6"><div class="ttname"><a href="group__net__gcoap.html#ga213397078b15675b001a2fff0a2838b6">gcoap_req_send_tl</a></div><div class="ttdeci">static ssize_t gcoap_req_send_tl(const uint8_t *buf, size_t len, const sock_udp_ep_t *remote, gcoap_resp_handler_t resp_handler, void *context, gcoap_socket_type_t tl_type)</div><div class="ttdoc">Sends a buffer containing a CoAP request to the provided endpoint.</div><div class="ttdef"><b>Definition</b> <a href="#l01048">gcoap.h:1048</a></div></div>
+<div class="ttc" id="agroup__net__gcoap_html_ga291fd969b90b9571118c5739706b0c50"><div class="ttname"><a href="group__net__gcoap.html#ga291fd969b90b9571118c5739706b0c50">gcoap_req_init</a></div><div class="ttdeci">static int gcoap_req_init(coap_pkt_t *pdu, uint8_t *buf, size_t len, unsigned code, const char *path)</div><div class="ttdoc">Initializes a CoAP request PDU on a buffer.</div><div class="ttdef"><b>Definition</b> <a href="#l00969">gcoap.h:969</a></div></div>
+<div class="ttc" id="agroup__net__gcoap_html_ga2f4f23b08bfc7b5bbc578235b1b3ab0e"><div class="ttname"><a href="group__net__gcoap.html#ga2f4f23b08bfc7b5bbc578235b1b3ab0e">GCOAP_TOKENLEN_MAX</a></div><div class="ttdeci">#define GCOAP_TOKENLEN_MAX</div><div class="ttdoc">Maximum length in bytes for a token.</div><div class="ttdef"><b>Definition</b> <a href="#l00478">gcoap.h:478</a></div></div>
+<div class="ttc" id="agroup__net__gcoap_html_ga34f7408f6a5a8313a1937bf2697fdaf1"><div class="ttname"><a href="group__net__gcoap.html#ga34f7408f6a5a8313a1937bf2697fdaf1">gcoap_socket_type_t</a></div><div class="ttdeci">gcoap_socket_type_t</div><div class="ttdoc">CoAP socket types.</div><div class="ttdef"><b>Definition</b> <a href="#l00750">gcoap.h:750</a></div></div>
+<div class="ttc" id="agroup__net__gcoap_html_ga3918d03f99a7312946bc28d5fdb7b610"><div class="ttname"><a href="group__net__gcoap.html#ga3918d03f99a7312946bc28d5fdb7b610">gcoap_obs_init</a></div><div class="ttdeci">int gcoap_obs_init(coap_pkt_t *pdu, uint8_t *buf, size_t len, const coap_resource_t *resource)</div><div class="ttdoc">Initializes a CoAP Observe notification packet on a buffer, for the observer registered for a resourc...</div></div>
+<div class="ttc" id="agroup__net__gcoap_html_ga3ea1c9c80e663d07e8b8fddc7e272d07"><div class="ttname"><a href="group__net__gcoap.html#ga3ea1c9c80e663d07e8b8fddc7e272d07">gcoap_req_send</a></div><div class="ttdeci">ssize_t gcoap_req_send(const uint8_t *buf, size_t len, const sock_udp_ep_t *remote, const sock_udp_ep_t *local, gcoap_resp_handler_t resp_handler, void *context, gcoap_socket_type_t tl_type)</div><div class="ttdoc">Sends a buffer containing a CoAP request to the provided endpoint.</div></div>
+<div class="ttc" id="agroup__net__gcoap_html_ga5a06c7c20d6ae6db9748f4b988c923e4"><div class="ttname"><a href="group__net__gcoap.html#ga5a06c7c20d6ae6db9748f4b988c923e4">gcoap_get_resource_by_path_iterator</a></div><div class="ttdeci">const coap_resource_t * gcoap_get_resource_by_path_iterator(const gcoap_listener_t **last_listener, const coap_resource_t *last_resource, const char *uri_path)</div><div class="ttdoc">Iterate through all registered listeners and check for a resource, matching by uri_path.</div></div>
+<div class="ttc" id="agroup__net__gcoap_html_ga786670f21b2ced965003e06a68846e01"><div class="ttname"><a href="group__net__gcoap.html#ga786670f21b2ced965003e06a68846e01">GCOAP_HEADER_MAXLEN</a></div><div class="ttdeci">#define GCOAP_HEADER_MAXLEN</div><div class="ttdoc">Maximum length in bytes for a header, including the token.</div><div class="ttdef"><b>Definition</b> <a href="#l00483">gcoap.h:483</a></div></div>
+<div class="ttc" id="agroup__net__gcoap_html_ga7a65749835295b471d80f85d63e9ba95"><div class="ttname"><a href="group__net__gcoap.html#ga7a65749835295b471d80f85d63e9ba95">gcoap_get_sock_dtls</a></div><div class="ttdeci">sock_dtls_t * gcoap_get_sock_dtls(void)</div><div class="ttdoc">Get the underlying DTLS socket of gcoap.</div></div>
+<div class="ttc" id="agroup__net__gcoap_html_ga8f62887693fa63a7595565e44156806d"><div class="ttname"><a href="group__net__gcoap.html#ga8f62887693fa63a7595565e44156806d">gcoap_resp_handler_t</a></div><div class="ttdeci">void(* gcoap_resp_handler_t)(const gcoap_request_memo_t *memo, coap_pkt_t *pdu, const sock_udp_ep_t *remote)</div><div class="ttdoc">Handler function for a server response, including the state for the originating request.</div><div class="ttdef"><b>Definition</b> <a href="#l00817">gcoap.h:817</a></div></div>
+<div class="ttc" id="agroup__net__gcoap_html_ga9718f9727abd645f0c99cb58cf32c76f"><div class="ttname"><a href="group__net__gcoap.html#ga9718f9727abd645f0c99cb58cf32c76f">GCOAP_SEND_LIMIT_NON</a></div><div class="ttdeci">#define GCOAP_SEND_LIMIT_NON</div><div class="ttdoc">Value for send_limit in request memo when non-confirmable type.</div><div class="ttdef"><b>Definition</b> <a href="#l00527">gcoap.h:527</a></div></div>
+<div class="ttc" id="agroup__net__gcoap_html_gaa097b4388e04ab265cf79cf38c493d07"><div class="ttname"><a href="group__net__gcoap.html#gaa097b4388e04ab265cf79cf38c493d07">gcoap_encode_link</a></div><div class="ttdeci">ssize_t gcoap_encode_link(const coap_resource_t *resource, char *buf, size_t maxlen, coap_link_encoder_ctx_t *context)</div><div class="ttdoc">Writes a resource in CoRE Link Format to a provided buffer.</div></div>
+<div class="ttc" id="agroup__net__gcoap_html_gab89faee1f2f999f4d6088ec91ca620bd"><div class="ttname"><a href="group__net__gcoap.html#gab89faee1f2f999f4d6088ec91ca620bd">gcoap_obs_send</a></div><div class="ttdeci">size_t gcoap_obs_send(const uint8_t *buf, size_t len, const coap_resource_t *resource)</div><div class="ttdoc">Sends a buffer containing a CoAP Observe notification to the observer registered for a resource.</div></div>
+<div class="ttc" id="agroup__net__gcoap_html_gabf21f078560b6c9f8d2dbad222d24579"><div class="ttname"><a href="group__net__gcoap.html#gabf21f078560b6c9f8d2dbad222d24579">gcoap_obs_req_forget</a></div><div class="ttdeci">int gcoap_obs_req_forget(const sock_udp_ep_t *remote, const uint8_t *token, size_t tokenlen)</div><div class="ttdoc">Forgets (invalidates) an existing observe request.</div></div>
+<div class="ttc" id="agroup__net__gcoap_html_gace6fa0e224d1cd07211e22e3af75f8bd"><div class="ttname"><a href="group__net__gcoap.html#gace6fa0e224d1cd07211e22e3af75f8bd">gcoap_response</a></div><div class="ttdeci">static ssize_t gcoap_response(coap_pkt_t *pdu, uint8_t *buf, size_t len, unsigned code)</div><div class="ttdoc">Writes a complete CoAP response PDU when there is no payload.</div><div class="ttdef"><b>Definition</b> <a href="#l01082">gcoap.h:1082</a></div></div>
+<div class="ttc" id="agroup__net__gcoap_html_gad801d3224e621cb182e3861c581903a6"><div class="ttname"><a href="group__net__gcoap.html#gad801d3224e621cb182e3861c581903a6">gcoap_request_matcher_t</a></div><div class="ttdeci">int(* gcoap_request_matcher_t)(gcoap_listener_t *listener, const coap_resource_t **resource, coap_pkt_t *pdu)</div><div class="ttdoc">Handler function for the request matcher strategy.</div><div class="ttdef"><b>Definition</b> <a href="#l00740">gcoap.h:740</a></div></div>
+<div class="ttc" id="agroup__net__gcoap_html_gae4fa464865a37f897cfab4d3e679bdb1"><div class="ttname"><a href="group__net__gcoap.html#gae4fa464865a37f897cfab4d3e679bdb1">gcoap_init</a></div><div class="ttdeci">kernel_pid_t gcoap_init(void)</div><div class="ttdoc">Initializes the gcoap thread and device.</div></div>
+<div class="ttc" id="agroup__net__gcoap_html_gaef16b142f138806dfa5d1c5a38794ebd"><div class="ttname"><a href="group__net__gcoap.html#gaef16b142f138806dfa5d1c5a38794ebd">gcoap_op_state</a></div><div class="ttdeci">uint8_t gcoap_op_state(void)</div><div class="ttdoc">Provides important operational statistics.</div></div>
+<div class="ttc" id="agroup__net__gcoap_html_gaf635d01732aa7c620271d05949103497"><div class="ttname"><a href="group__net__gcoap.html#gaf635d01732aa7c620271d05949103497">gcoap_request</a></div><div class="ttdeci">static ssize_t gcoap_request(coap_pkt_t *pdu, uint8_t *buf, size_t len, unsigned code, char *path)</div><div class="ttdoc">Writes a complete CoAP request PDU when there is not a payload.</div><div class="ttdef"><b>Definition</b> <a href="#l00988">gcoap.h:988</a></div></div>
+<div class="ttc" id="agroup__net__gcoap_html_gga34f7408f6a5a8313a1937bf2697fdaf1a233043974ee492e2181bf9f435ac1709"><div class="ttname"><a href="group__net__gcoap.html#gga34f7408f6a5a8313a1937bf2697fdaf1a233043974ee492e2181bf9f435ac1709">GCOAP_SOCKET_TYPE_UDP</a></div><div class="ttdeci">@ GCOAP_SOCKET_TYPE_UDP</div><div class="ttdoc">Unencrypted UDP transport.</div><div class="ttdef"><b>Definition</b> <a href="#l00752">gcoap.h:752</a></div></div>
+<div class="ttc" id="agroup__net__gcoap_html_gga34f7408f6a5a8313a1937bf2697fdaf1a49638e0c48f336388176798cca6887b8"><div class="ttname"><a href="group__net__gcoap.html#gga34f7408f6a5a8313a1937bf2697fdaf1a49638e0c48f336388176798cca6887b8">GCOAP_SOCKET_TYPE_UNDEF</a></div><div class="ttdeci">@ GCOAP_SOCKET_TYPE_UNDEF</div><div class="ttdoc">undefined</div><div class="ttdef"><b>Definition</b> <a href="#l00751">gcoap.h:751</a></div></div>
+<div class="ttc" id="agroup__net__gcoap_html_gga34f7408f6a5a8313a1937bf2697fdaf1a74916be84a7cbeddbe2f8a36a5045a95"><div class="ttname"><a href="group__net__gcoap.html#gga34f7408f6a5a8313a1937bf2697fdaf1a74916be84a7cbeddbe2f8a36a5045a95">GCOAP_SOCKET_TYPE_DTLS</a></div><div class="ttdeci">@ GCOAP_SOCKET_TYPE_DTLS</div><div class="ttdoc">DTLS-over-UDP transport.</div><div class="ttdef"><b>Definition</b> <a href="#l00753">gcoap.h:753</a></div></div>
+<div class="ttc" id="agroup__net__nanocoap__cache_html_gad60bd944954e7a04e43bb6d449151881"><div class="ttname"><a href="group__net__nanocoap__cache.html#gad60bd944954e7a04e43bb6d449151881">CONFIG_NANOCOAP_CACHE_KEY_LENGTH</a></div><div class="ttdeci">#define CONFIG_NANOCOAP_CACHE_KEY_LENGTH</div><div class="ttdoc">The length of the cache key in bytes.</div><div class="ttdef"><b>Definition</b> <a href="nanocoap_2cache_8h_source.html#l00048">cache.h:48</a></div></div>
+<div class="ttc" id="agroup__net__nanocoap_html_ga88497b423bb62815a4f06345b9bd1e0f"><div class="ttname"><a href="group__net__nanocoap.html#ga88497b423bb62815a4f06345b9bd1e0f">COAP_OPT_FINISH_NONE</a></div><div class="ttdeci">#define COAP_OPT_FINISH_NONE</div><div class="ttdoc">no special handling required</div><div class="ttdef"><b>Definition</b> <a href="nanocoap_8h_source.html#l00193">nanocoap.h:193</a></div></div>
+<div class="ttc" id="agroup__net__nanocoap_html_gadec4dd6f9ab2fdc45c73cc8774255b54"><div class="ttname"><a href="group__net__nanocoap.html#gadec4dd6f9ab2fdc45c73cc8774255b54">coap_opt_remove</a></div><div class="ttdeci">ssize_t coap_opt_remove(coap_pkt_t *pkt, uint16_t optnum)</div><div class="ttdoc">Removes an option previously added with function in the coap_opt_add_...() group.</div></div>
+<div class="ttc" id="agroup__net__nanocoap_html_gaf94c66182f7412d256c32c66d1d7a012"><div class="ttname"><a href="group__net__nanocoap.html#gaf94c66182f7412d256c32c66d1d7a012">coap_opt_finish</a></div><div class="ttdeci">ssize_t coap_opt_finish(coap_pkt_t *pkt, uint16_t flags)</div><div class="ttdoc">Finalizes options as required and prepares for payload.</div></div>
+<div class="ttc" id="agroup__posix__sockets_html_gaf4e0711877c45a41168ac677b0670ccd"><div class="ttname"><a href="group__posix__sockets.html#gaf4e0711877c45a41168ac677b0670ccd">socket</a></div><div class="ttdeci">int socket(int domain, int type, int protocol)</div><div class="ttdoc">Create an endpoint for communication.</div></div>
+<div class="ttc" id="aipv6_2addr_8h_html"><div class="ttname"><a href="ipv6_2addr_8h.html">addr.h</a></div><div class="ttdoc">Definitions for IPv6 addresses.</div></div>
+<div class="ttc" id="amodules_8h_html_a185d252af6cac906c5bdf5a7171b85f4"><div class="ttname"><a href="modules_8h.html#a185d252af6cac906c5bdf5a7171b85f4">IS_USED</a></div><div class="ttdeci">#define IS_USED(module)</div><div class="ttdoc">Checks whether a module is being used or not.</div><div class="ttdef"><b>Definition</b> <a href="modules_8h_source.html#l00071">modules.h:71</a></div></div>
+<div class="ttc" id="ananocoap_2cache_8h_html"><div class="ttname"><a href="nanocoap_2cache_8h.html">cache.h</a></div><div class="ttdoc">nanocoap-cache API</div></div>
+<div class="ttc" id="ananocoap_8h_html"><div class="ttname"><a href="nanocoap_8h.html">nanocoap.h</a></div><div class="ttdoc">nanocoap API</div></div>
+<div class="ttc" id="asock_2dtls_8h_html"><div class="ttname"><a href="sock_2dtls_8h.html">dtls.h</a></div><div class="ttdoc">DTLS sock definitions.</div></div>
+<div class="ttc" id="asock_2udp_8h_html"><div class="ttname"><a href="sock_2udp_8h.html">udp.h</a></div><div class="ttdoc">UDP sock definitions.</div></div>
+<div class="ttc" id="astruct__sock__tl__ep_html"><div class="ttname"><a href="struct__sock__tl__ep.html">_sock_tl_ep</a></div><div class="ttdoc">Common IP-based transport layer end point.</div><div class="ttdef"><b>Definition</b> <a href="sock_8h_source.html#l00215">sock.h:215</a></div></div>
+<div class="ttc" id="astructcoap__hdr__t_html"><div class="ttname"><a href="structcoap__hdr__t.html">coap_hdr_t</a></div><div class="ttdoc">Raw CoAP PDU header structure.</div><div class="ttdef"><b>Definition</b> <a href="nanocoap_8h_source.html#l00201">nanocoap.h:201</a></div></div>
+<div class="ttc" id="astructcoap__link__encoder__ctx__t_html"><div class="ttname"><a href="structcoap__link__encoder__ctx__t.html">coap_link_encoder_ctx_t</a></div><div class="ttdoc">Context information required to write a resource link.</div><div class="ttdef"><b>Definition</b> <a href="#l00692">gcoap.h:692</a></div></div>
+<div class="ttc" id="astructcoap__link__encoder__ctx__t_html_a3daa989ec80bd9378e9400e2f02d363c"><div class="ttname"><a href="structcoap__link__encoder__ctx__t.html#a3daa989ec80bd9378e9400e2f02d363c">coap_link_encoder_ctx_t::content_format</a></div><div class="ttdeci">unsigned content_format</div><div class="ttdoc">link format</div><div class="ttdef"><b>Definition</b> <a href="#l00693">gcoap.h:693</a></div></div>
+<div class="ttc" id="astructcoap__link__encoder__ctx__t_html_a874a25a8958b02f4a3f1e12bc71a544d"><div class="ttname"><a href="structcoap__link__encoder__ctx__t.html#a874a25a8958b02f4a3f1e12bc71a544d">coap_link_encoder_ctx_t::link_pos</a></div><div class="ttdeci">size_t link_pos</div><div class="ttdoc">position of link within listener</div><div class="ttdef"><b>Definition</b> <a href="#l00694">gcoap.h:694</a></div></div>
+<div class="ttc" id="astructcoap__link__encoder__ctx__t_html_a92eea6256214d415ecc74f5b2add2f4e"><div class="ttname"><a href="structcoap__link__encoder__ctx__t.html#a92eea6256214d415ecc74f5b2add2f4e">coap_link_encoder_ctx_t::flags</a></div><div class="ttdeci">uint16_t flags</div><div class="ttdoc">encoder switches; see COAP_LINK_FLAG_ constants</div><div class="ttdef"><b>Definition</b> <a href="#l00695">gcoap.h:695</a></div></div>
+<div class="ttc" id="astructcoap__pkt__t_html"><div class="ttname"><a href="structcoap__pkt__t.html">coap_pkt_t</a></div><div class="ttdoc">CoAP PDU parsing context structure.</div><div class="ttdef"><b>Definition</b> <a href="nanocoap_8h_source.html#l00232">nanocoap.h:232</a></div></div>
+<div class="ttc" id="astructcoap__resource__t_html"><div class="ttname"><a href="structcoap__resource__t.html">coap_resource_t</a></div><div class="ttdoc">Type for CoAP resource entry.</div><div class="ttdef"><b>Definition</b> <a href="nanocoap_8h_source.html#l00311">nanocoap.h:311</a></div></div>
+<div class="ttc" id="astructevent__callback__t_html"><div class="ttname"><a href="structevent__callback__t.html">event_callback_t</a></div><div class="ttdoc">Callback Event structure definition.</div><div class="ttdef"><b>Definition</b> <a href="callback_8h_source.html#l00048">callback.h:48</a></div></div>
+<div class="ttc" id="astructevent__timeout__t_html"><div class="ttname"><a href="structevent__timeout__t.html">event_timeout_t</a></div><div class="ttdoc">Timeout Event structure.</div><div class="ttdef"><b>Definition</b> <a href="event_2timeout_8h_source.html#l00050">timeout.h:50</a></div></div>
+<div class="ttc" id="astructgcoap__listener_html"><div class="ttname"><a href="structgcoap__listener.html">gcoap_listener</a></div><div class="ttdoc">A modular collection of resources for a server.</div><div class="ttdef"><b>Definition</b> <a href="#l00777">gcoap.h:777</a></div></div>
+<div class="ttc" id="astructgcoap__listener_html_a421a44a3e85080e78ed5d0459a231f90"><div class="ttname"><a href="structgcoap__listener.html#a421a44a3e85080e78ed5d0459a231f90">gcoap_listener::link_encoder</a></div><div class="ttdeci">gcoap_link_encoder_t link_encoder</div><div class="ttdoc">Writes a link for a resource.</div><div class="ttdef"><b>Definition</b> <a href="#l00790">gcoap.h:790</a></div></div>
+<div class="ttc" id="astructgcoap__listener_html_a4b6a3de4bc60238b8e56bec6fcb845da"><div class="ttname"><a href="structgcoap__listener.html#a4b6a3de4bc60238b8e56bec6fcb845da">gcoap_listener::next</a></div><div class="ttdeci">struct gcoap_listener * next</div><div class="ttdoc">Next listener in list.</div><div class="ttdef"><b>Definition</b> <a href="#l00791">gcoap.h:791</a></div></div>
+<div class="ttc" id="astructgcoap__listener_html_aa00120f72c63d89cf4f1617b5062a5fe"><div class="ttname"><a href="structgcoap__listener.html#aa00120f72c63d89cf4f1617b5062a5fe">gcoap_listener::resources_len</a></div><div class="ttdeci">size_t resources_len</div><div class="ttdoc">Length of array.</div><div class="ttdef"><b>Definition</b> <a href="#l00779">gcoap.h:779</a></div></div>
+<div class="ttc" id="astructgcoap__listener_html_abc8cd3d3d94a3df1f8ba8921d96b81ca"><div class="ttname"><a href="structgcoap__listener.html#abc8cd3d3d94a3df1f8ba8921d96b81ca">gcoap_listener::tl_type</a></div><div class="ttdeci">gcoap_socket_type_t tl_type</div><div class="ttdoc">Transport type for the listener.</div><div class="ttdef"><b>Definition</b> <a href="#l00789">gcoap.h:789</a></div></div>
+<div class="ttc" id="astructgcoap__listener_html_ae678911791d95c1ac8a2bba450fcc4e5"><div class="ttname"><a href="structgcoap__listener.html#ae678911791d95c1ac8a2bba450fcc4e5">gcoap_listener::resources</a></div><div class="ttdeci">const coap_resource_t * resources</div><div class="ttdoc">First element in the array of resources.</div><div class="ttdef"><b>Definition</b> <a href="#l00778">gcoap.h:778</a></div></div>
+<div class="ttc" id="astructgcoap__listener_html_ae87b5004abacfa03fd9bdf07b6200923"><div class="ttname"><a href="structgcoap__listener.html#ae87b5004abacfa03fd9bdf07b6200923">gcoap_listener::request_matcher</a></div><div class="ttdeci">gcoap_request_matcher_t request_matcher</div><div class="ttdoc">Function that picks a suitable request handler from a request.</div><div class="ttdef"><b>Definition</b> <a href="#l00803">gcoap.h:803</a></div></div>
+<div class="ttc" id="astructgcoap__observe__memo__t_html"><div class="ttname"><a href="structgcoap__observe__memo__t.html">gcoap_observe_memo_t</a></div><div class="ttdoc">Memo for Observe registration and notifications.</div><div class="ttdef"><b>Definition</b> <a href="#l00861">gcoap.h:861</a></div></div>
+<div class="ttc" id="astructgcoap__observe__memo__t_html_a009624ea22e42b910e9649a622f997ab"><div class="ttname"><a href="structgcoap__observe__memo__t.html#a009624ea22e42b910e9649a622f997ab">gcoap_observe_memo_t::token_len</a></div><div class="ttdeci">unsigned token_len</div><div class="ttdoc">Actual length of token attribute.</div><div class="ttdef"><b>Definition</b> <a href="#l00867">gcoap.h:867</a></div></div>
+<div class="ttc" id="astructgcoap__observe__memo__t_html_a6e786807f7169b9048eb20704de9043c"><div class="ttname"><a href="structgcoap__observe__memo__t.html#a6e786807f7169b9048eb20704de9043c">gcoap_observe_memo_t::socket</a></div><div class="ttdeci">gcoap_socket_t socket</div><div class="ttdoc">Transport type to observer.</div><div class="ttdef"><b>Definition</b> <a href="#l00868">gcoap.h:868</a></div></div>
+<div class="ttc" id="astructgcoap__observe__memo__t_html_a9140bff73e4eb90d492402576586c8f2"><div class="ttname"><a href="structgcoap__observe__memo__t.html#a9140bff73e4eb90d492402576586c8f2">gcoap_observe_memo_t::resource</a></div><div class="ttdeci">const coap_resource_t * resource</div><div class="ttdoc">Entity being observed.</div><div class="ttdef"><b>Definition</b> <a href="#l00864">gcoap.h:864</a></div></div>
+<div class="ttc" id="astructgcoap__observe__memo__t_html_a98965f70405532d01608520c491b6852"><div class="ttname"><a href="structgcoap__observe__memo__t.html#a98965f70405532d01608520c491b6852">gcoap_observe_memo_t::notifier</a></div><div class="ttdeci">sock_udp_ep_t * notifier</div><div class="ttdoc">Local endpoint to send notifications.</div><div class="ttdef"><b>Definition</b> <a href="#l00863">gcoap.h:863</a></div></div>
+<div class="ttc" id="astructgcoap__observe__memo__t_html_aa59ec1d0490632de1ec73c580896d3ed"><div class="ttname"><a href="structgcoap__observe__memo__t.html#aa59ec1d0490632de1ec73c580896d3ed">gcoap_observe_memo_t::last_msgid</a></div><div class="ttdeci">uint16_t last_msgid</div><div class="ttdoc">Message ID of last notification.</div><div class="ttdef"><b>Definition</b> <a href="#l00866">gcoap.h:866</a></div></div>
+<div class="ttc" id="astructgcoap__observe__memo__t_html_aa63dbec93af8e16744d93b938df83fc6"><div class="ttname"><a href="structgcoap__observe__memo__t.html#aa63dbec93af8e16744d93b938df83fc6">gcoap_observe_memo_t::observer</a></div><div class="ttdeci">sock_udp_ep_t * observer</div><div class="ttdoc">Client endpoint; unused if null.</div><div class="ttdef"><b>Definition</b> <a href="#l00862">gcoap.h:862</a></div></div>
+<div class="ttc" id="astructgcoap__request__memo_html"><div class="ttname"><a href="structgcoap__request__memo.html">gcoap_request_memo</a></div><div class="ttdoc">Memo to handle a response for a request.</div><div class="ttdef"><b>Definition</b> <a href="#l00832">gcoap.h:832</a></div></div>
+<div class="ttc" id="astructgcoap__request__memo_html_a04aef945243bb921e864987e7b3b1e28"><div class="ttname"><a href="structgcoap__request__memo.html#a04aef945243bb921e864987e7b3b1e28">gcoap_request_memo::context</a></div><div class="ttdeci">void * context</div><div class="ttdoc">ptr to user defined context data</div><div class="ttdef"><b>Definition</b> <a href="#l00844">gcoap.h:844</a></div></div>
+<div class="ttc" id="astructgcoap__request__memo_html_a51b9798ea9d4b6df2ece6b713ae15199"><div class="ttname"><a href="structgcoap__request__memo.html#a51b9798ea9d4b6df2ece6b713ae15199">gcoap_request_memo::resp_handler</a></div><div class="ttdeci">gcoap_resp_handler_t resp_handler</div><div class="ttdoc">Callback for the response.</div><div class="ttdef"><b>Definition</b> <a href="#l00843">gcoap.h:843</a></div></div>
+<div class="ttc" id="astructgcoap__request__memo_html_a59628714666650179d6e4783b3e90384"><div class="ttname"><a href="structgcoap__request__memo.html#a59628714666650179d6e4783b3e90384">gcoap_request_memo::resp_tmout_cb</a></div><div class="ttdeci">event_callback_t resp_tmout_cb</div><div class="ttdoc">Callback for response timeout.</div><div class="ttdef"><b>Definition</b> <a href="#l00846">gcoap.h:846</a></div></div>
+<div class="ttc" id="astructgcoap__request__memo_html_a5db1721a5b392c9b1f7f993e8a7ddb51"><div class="ttname"><a href="structgcoap__request__memo.html#a5db1721a5b392c9b1f7f993e8a7ddb51">gcoap_request_memo::msg</a></div><div class="ttdeci">union gcoap_request_memo::@356 msg</div><div class="ttdoc">Request message data; if confirmable, supports resending message.</div></div>
+<div class="ttc" id="astructgcoap__request__memo_html_a827a2d6aafaedc3267e557dbd7da865b"><div class="ttname"><a href="structgcoap__request__memo.html#a827a2d6aafaedc3267e557dbd7da865b">gcoap_request_memo::state</a></div><div class="ttdeci">unsigned state</div><div class="ttdoc">State of this memo, a GCOAP_MEMO...</div><div class="ttdef"><b>Definition</b> <a href="#l00833">gcoap.h:833</a></div></div>
+<div class="ttc" id="astructgcoap__request__memo_html_a986e6bf0f0f641f0f8ad9f1e7e18ff9c"><div class="ttname"><a href="structgcoap__request__memo.html#a986e6bf0f0f641f0f8ad9f1e7e18ff9c">gcoap_request_memo::send_limit</a></div><div class="ttdeci">int send_limit</div><div class="ttdoc">Remaining resends, 0 if none; GCOAP_SEND_LIMIT_NON if non-confirmable.</div><div class="ttdef"><b>Definition</b> <a href="#l00834">gcoap.h:834</a></div></div>
+<div class="ttc" id="astructgcoap__request__memo_html_aa1d37911fa0fe55e5c4eb9b2760b4b53"><div class="ttname"><a href="structgcoap__request__memo.html#aa1d37911fa0fe55e5c4eb9b2760b4b53">gcoap_request_memo::data</a></div><div class="ttdeci">gcoap_resend_t data</div><div class="ttdoc">Endpoint and PDU buffer, for resend.</div><div class="ttdef"><b>Definition</b> <a href="#l00839">gcoap.h:839</a></div></div>
+<div class="ttc" id="astructgcoap__request__memo_html_aa96b12c83f9d24f5895ac4f932ff0b20"><div class="ttname"><a href="structgcoap__request__memo.html#aa96b12c83f9d24f5895ac4f932ff0b20">gcoap_request_memo::cache_key</a></div><div class="ttdeci">uint8_t cache_key[CONFIG_NANOCOAP_CACHE_KEY_LENGTH]</div><div class="ttdoc">Cache key for the request.</div><div class="ttdef"><b>Definition</b> <a href="#l00854">gcoap.h:854</a></div></div>
+<div class="ttc" id="astructgcoap__request__memo_html_ac4ba7534970a4095667fa47ec8c1debb"><div class="ttname"><a href="structgcoap__request__memo.html#ac4ba7534970a4095667fa47ec8c1debb">gcoap_request_memo::remote_ep</a></div><div class="ttdeci">sock_udp_ep_t remote_ep</div><div class="ttdoc">Remote endpoint.</div><div class="ttdef"><b>Definition</b> <a href="#l00842">gcoap.h:842</a></div></div>
+<div class="ttc" id="astructgcoap__request__memo_html_ad2968836aebc4075ce28978cf470e819"><div class="ttname"><a href="structgcoap__request__memo.html#ad2968836aebc4075ce28978cf470e819">gcoap_request_memo::socket</a></div><div class="ttdeci">gcoap_socket_t socket</div><div class="ttdoc">Transport type to remote endpoint.</div><div class="ttdef"><b>Definition</b> <a href="#l00847">gcoap.h:847</a></div></div>
+<div class="ttc" id="astructgcoap__request__memo_html_ad87c340a7e9968c99da0df8286a68079"><div class="ttname"><a href="structgcoap__request__memo.html#ad87c340a7e9968c99da0df8286a68079">gcoap_request_memo::hdr_buf</a></div><div class="ttdeci">uint8_t hdr_buf[GCOAP_HEADER_MAXLEN]</div><div class="ttdoc">Copy of PDU header, if no resends.</div><div class="ttdef"><b>Definition</b> <a href="#l00837">gcoap.h:837</a></div></div>
+<div class="ttc" id="astructgcoap__request__memo_html_aed2479f0fe1f8e33f387e5fd937333d2"><div class="ttname"><a href="structgcoap__request__memo.html#aed2479f0fe1f8e33f387e5fd937333d2">gcoap_request_memo::resp_evt_tmout</a></div><div class="ttdeci">event_timeout_t resp_evt_tmout</div><div class="ttdoc">Limits wait for response.</div><div class="ttdef"><b>Definition</b> <a href="#l00845">gcoap.h:845</a></div></div>
+<div class="ttc" id="astructgcoap__resend__t_html"><div class="ttname"><a href="structgcoap__resend__t.html">gcoap_resend_t</a></div><div class="ttdoc">Extends request memo for resending a confirmable request.</div><div class="ttdef"><b>Definition</b> <a href="#l00824">gcoap.h:824</a></div></div>
+<div class="ttc" id="astructgcoap__resend__t_html_a39b197eac01083da8a77c69cac1b6317"><div class="ttname"><a href="structgcoap__resend__t.html#a39b197eac01083da8a77c69cac1b6317">gcoap_resend_t::pdu_buf</a></div><div class="ttdeci">uint8_t * pdu_buf</div><div class="ttdoc">Buffer containing the PDU.</div><div class="ttdef"><b>Definition</b> <a href="#l00825">gcoap.h:825</a></div></div>
+<div class="ttc" id="astructgcoap__resend__t_html_ada0209e1da388efbf403c9823af7c696"><div class="ttname"><a href="structgcoap__resend__t.html#ada0209e1da388efbf403c9823af7c696">gcoap_resend_t::pdu_len</a></div><div class="ttdeci">size_t pdu_len</div><div class="ttdoc">Length of pdu_buf.</div><div class="ttdef"><b>Definition</b> <a href="#l00826">gcoap.h:826</a></div></div>
+<div class="ttc" id="astructgcoap__socket__t_html"><div class="ttname"><a href="structgcoap__socket__t.html">gcoap_socket_t</a></div><div class="ttdoc">CoAP socket to handle multiple transport types.</div><div class="ttdef"><b>Definition</b> <a href="#l00759">gcoap.h:759</a></div></div>
+<div class="ttc" id="astructgcoap__socket__t_html_a118d7df877a1067fa8c19734e3f84fbb"><div class="ttname"><a href="structgcoap__socket__t.html#a118d7df877a1067fa8c19734e3f84fbb">gcoap_socket_t::type</a></div><div class="ttdeci">gcoap_socket_type_t type</div><div class="ttdoc">Type of stored socket.</div><div class="ttdef"><b>Definition</b> <a href="#l00760">gcoap.h:760</a></div></div>
+<div class="ttc" id="astructgcoap__socket__t_html_a69fc19d24f754a761c322a99809fa1a1"><div class="ttname"><a href="structgcoap__socket__t.html#a69fc19d24f754a761c322a99809fa1a1">gcoap_socket_t::ctx_dtls_session</a></div><div class="ttdeci">sock_dtls_session_t ctx_dtls_session</div><div class="ttdoc">Session object for the stored socket.</div><div class="ttdef"><b>Definition</b> <a href="#l00768">gcoap.h:768</a></div></div>
+<div class="ttc" id="astructsock__dtls__session_html"><div class="ttname"><a href="structsock__dtls__session.html">sock_dtls_session</a></div><div class="ttdoc">Information about remote client connected to the server.</div><div class="ttdef"><b>Definition</b> <a href="sock__dtls__types_8h_source.html#l00089">sock_dtls_types.h:89</a></div></div>
+<div class="ttc" id="astructsock__dtls_html"><div class="ttname"><a href="structsock__dtls.html">sock_dtls</a></div><div class="ttdoc">Information about DTLS sock.</div><div class="ttdef"><b>Definition</b> <a href="sock__dtls__types_8h_source.html#l00041">sock_dtls_types.h:41</a></div></div>
+<div class="ttc" id="astructsock__udp_html"><div class="ttname"><a href="structsock__udp.html">sock_udp</a></div><div class="ttdoc">UDP sock type.</div><div class="ttdef"><b>Definition</b> <a href="pkg_2lwip_2include_2sock__types_8h_source.html#l00128">sock_types.h:128</a></div></div>
+<div class="ttc" id="atimex_8h_html"><div class="ttname"><a href="timex_8h.html">timex.h</a></div><div class="ttdoc">Utility library for comparing and computing timestamps.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:30 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

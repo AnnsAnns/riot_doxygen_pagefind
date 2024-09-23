@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>boards/arduino-nano-33-ble-sense/include/board.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('arduino-nano-33-ble-sense_2include_2board_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">board.h File Reference<div class="ingroups"><a class="el" href="group__boards.html">Boards</a> &raquo; <a class="el" href="group__boards__arduino-nano-33-ble-sense.html">Arduino Nano 33 BLE sense</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Board specific configuration for the Arduino Nano 33 BLE sense.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Board specific configuration for the Arduino Nano 33 BLE sense. </p>
+<dl class="section author"><dt>Author</dt><dd>Méwen Berthelot <a href="#" onclick="location.href='mai'+'lto:'+'ber'+'th'+'elo'+'tm'+'ewe'+'n@'+'gma'+'il'+'.co'+'m'; return false;">berth<span class="obfuscator">.nosp@m.</span>elot<span class="obfuscator">.nosp@m.</span>mewen<span class="obfuscator">.nosp@m.</span>@gma<span class="obfuscator">.nosp@m.</span>il.co<span class="obfuscator">.nosp@m.</span>m</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;cpu.h&quot;</code><br />
+<code>#include &quot;board_common.h&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for board.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="arduino-nano-33-ble-sense_2include_2board_8h__incl.svg" width="227" height="148"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="arduino-nano-33-ble-sense_2include_2board_8h__dep__incl.svg" width="172" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">LEDs pin configuration</h2></td></tr>
+<tr class="memitem:a3fc522fda449d6edde717d6a857429cf" id="r_a3fc522fda449d6edde717d6a857429cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fc522fda449d6edde717d6a857429cf">LED0_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 13)</td></tr>
+<tr class="separator:a3fc522fda449d6edde717d6a857429cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfabde35a3e8b7ab50146a5e223bfead" id="r_abfabde35a3e8b7ab50146a5e223bfead"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfabde35a3e8b7ab50146a5e223bfead">LED0_MASK</a>&#160;&#160;&#160;(1 &lt;&lt; 13)</td></tr>
+<tr class="separator:abfabde35a3e8b7ab50146a5e223bfead"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e48dc02333bfc2e6ad3e5bd466eecd4" id="r_a1e48dc02333bfc2e6ad3e5bd466eecd4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e48dc02333bfc2e6ad3e5bd466eecd4">LED0_ON</a>&#160;&#160;&#160;(NRF_P0-&gt;OUTCLR = LED0_MASK)</td></tr>
+<tr class="separator:a1e48dc02333bfc2e6ad3e5bd466eecd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef2e39b9fd343d0e437fac0463f3e02d" id="r_aef2e39b9fd343d0e437fac0463f3e02d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef2e39b9fd343d0e437fac0463f3e02d">LED0_OFF</a>&#160;&#160;&#160;(NRF_P0-&gt;OUTSET = LED0_MASK)</td></tr>
+<tr class="separator:aef2e39b9fd343d0e437fac0463f3e02d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebc6389533d9fc8dcbe4d2129a4d5a45" id="r_aebc6389533d9fc8dcbe4d2129a4d5a45"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebc6389533d9fc8dcbe4d2129a4d5a45">LED0_TOGGLE</a>&#160;&#160;&#160;(NRF_P0-&gt;OUT   ^= LED0_MASK)</td></tr>
+<tr class="separator:aebc6389533d9fc8dcbe4d2129a4d5a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a318aa17e5d40e2132d2c7f6269ce7f51" id="r_a318aa17e5d40e2132d2c7f6269ce7f51"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a318aa17e5d40e2132d2c7f6269ce7f51">LED1_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 24)</td></tr>
+<tr class="separator:a318aa17e5d40e2132d2c7f6269ce7f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a669ed6e073140d069b30442bf4c08842" id="r_a669ed6e073140d069b30442bf4c08842"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>&#160;&#160;&#160;(1 &lt;&lt; 24)</td></tr>
+<tr class="separator:a669ed6e073140d069b30442bf4c08842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadd4c7ae0cd4e9bbb17f7055dd51fe08" id="r_aadd4c7ae0cd4e9bbb17f7055dd51fe08"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadd4c7ae0cd4e9bbb17f7055dd51fe08">LED1_ON</a>&#160;&#160;&#160;(NRF_P0-&gt;OUTCLR = <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>)</td></tr>
+<tr class="separator:aadd4c7ae0cd4e9bbb17f7055dd51fe08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a343fd2d3ce61b84f88ddfaea32c67c58" id="r_a343fd2d3ce61b84f88ddfaea32c67c58"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a343fd2d3ce61b84f88ddfaea32c67c58">LED1_OFF</a>&#160;&#160;&#160;(NRF_P0-&gt;OUTSET = <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>)</td></tr>
+<tr class="separator:a343fd2d3ce61b84f88ddfaea32c67c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a267fdbba1d750146b73da35c1731fd17" id="r_a267fdbba1d750146b73da35c1731fd17"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a267fdbba1d750146b73da35c1731fd17">LED1_TOGGLE</a>&#160;&#160;&#160;(NRF_P0-&gt;OUT   ^= <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>)</td></tr>
+<tr class="separator:a267fdbba1d750146b73da35c1731fd17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6f84078113b55354d20585131b386f7" id="r_af6f84078113b55354d20585131b386f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6f84078113b55354d20585131b386f7">LED2_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 16)</td></tr>
+<tr class="separator:af6f84078113b55354d20585131b386f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40f0f4b5ae7ea50d341105ddc740101e" id="r_a40f0f4b5ae7ea50d341105ddc740101e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>&#160;&#160;&#160;(1 &lt;&lt; 16)</td></tr>
+<tr class="separator:a40f0f4b5ae7ea50d341105ddc740101e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab55f588eb2c5177d3f7806e60d379fba" id="r_ab55f588eb2c5177d3f7806e60d379fba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab55f588eb2c5177d3f7806e60d379fba">LED2_ON</a>&#160;&#160;&#160;(NRF_P0-&gt;OUTCLR = <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>)</td></tr>
+<tr class="separator:ab55f588eb2c5177d3f7806e60d379fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6468b1df4dfabcca0bb142044d6f976" id="r_ac6468b1df4dfabcca0bb142044d6f976"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6468b1df4dfabcca0bb142044d6f976">LED2_OFF</a>&#160;&#160;&#160;(NRF_P0-&gt;OUTSET = <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>)</td></tr>
+<tr class="separator:ac6468b1df4dfabcca0bb142044d6f976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd16785845ce7004334b91a98707f8eb" id="r_acd16785845ce7004334b91a98707f8eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd16785845ce7004334b91a98707f8eb">LED2_TOGGLE</a>&#160;&#160;&#160;(NRF_P0-&gt;OUT   ^= <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>)</td></tr>
+<tr class="separator:acd16785845ce7004334b91a98707f8eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cb3ff938bcabb01494ce529ae55a542" id="r_a4cb3ff938bcabb01494ce529ae55a542"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4cb3ff938bcabb01494ce529ae55a542">LED3_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 6)</td></tr>
+<tr class="separator:a4cb3ff938bcabb01494ce529ae55a542"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bbbbf8e41ce9726178b09d7c68dd3fb" id="r_a0bbbbf8e41ce9726178b09d7c68dd3fb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bbbbf8e41ce9726178b09d7c68dd3fb">LED3_MASK</a>&#160;&#160;&#160;(1 &lt;&lt; 6)</td></tr>
+<tr class="separator:a0bbbbf8e41ce9726178b09d7c68dd3fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac69b87cb5151087202d5a354c87eb492" id="r_ac69b87cb5151087202d5a354c87eb492"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac69b87cb5151087202d5a354c87eb492">LED3_ON</a>&#160;&#160;&#160;(NRF_P0-&gt;OUTCLR = LED3_MASK)</td></tr>
+<tr class="separator:ac69b87cb5151087202d5a354c87eb492"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a18a6978d9c62c42afc3917d2f258b8" id="r_a0a18a6978d9c62c42afc3917d2f258b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a18a6978d9c62c42afc3917d2f258b8">LED3_OFF</a>&#160;&#160;&#160;(NRF_P0-&gt;OUTSET = LED3_MASK)</td></tr>
+<tr class="separator:a0a18a6978d9c62c42afc3917d2f258b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0702de219624c9cb1bdb4ea9b25ee62d" id="r_a0702de219624c9cb1bdb4ea9b25ee62d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0702de219624c9cb1bdb4ea9b25ee62d">LED3_TOGGLE</a>&#160;&#160;&#160;(NRF_P0-&gt;OUT   ^= LED3_MASK)</td></tr>
+<tr class="separator:a0702de219624c9cb1bdb4ea9b25ee62d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae684bb3d2f940637ccbc2adeb0e134d" id="r_aae684bb3d2f940637ccbc2adeb0e134d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae684bb3d2f940637ccbc2adeb0e134d">LED4_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(1, 9)</td></tr>
+<tr class="separator:aae684bb3d2f940637ccbc2adeb0e134d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4afff5c022eb85161421fe18b0a857d" id="r_ae4afff5c022eb85161421fe18b0a857d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4afff5c022eb85161421fe18b0a857d">LED4_MASK</a>&#160;&#160;&#160;(1 &lt;&lt; 9)</td></tr>
+<tr class="separator:ae4afff5c022eb85161421fe18b0a857d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a109660ec7c41cf167d83833c660f7c14" id="r_a109660ec7c41cf167d83833c660f7c14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a109660ec7c41cf167d83833c660f7c14">LED4_ON</a>&#160;&#160;&#160;(NRF_P1-&gt;OUTCLR = LED4_MASK)</td></tr>
+<tr class="separator:a109660ec7c41cf167d83833c660f7c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48d3711a619866c5ca8fe8135968c25f" id="r_a48d3711a619866c5ca8fe8135968c25f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48d3711a619866c5ca8fe8135968c25f">LED4_OFF</a>&#160;&#160;&#160;(NRF_P1-&gt;OUTSET = LED4_MASK)</td></tr>
+<tr class="separator:a48d3711a619866c5ca8fe8135968c25f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91a29c04e6b07e38d2beec0db1148140" id="r_a91a29c04e6b07e38d2beec0db1148140"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91a29c04e6b07e38d2beec0db1148140">LED4_TOGGLE</a>&#160;&#160;&#160;(NRF_P1-&gt;OUT   ^= LED4_MASK)</td></tr>
+<tr class="separator:a91a29c04e6b07e38d2beec0db1148140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Internal powering pin definition</h2></td></tr>
+<tr class="memitem:aca282936bcfbb85c24a95855c0dffd6f" id="r_aca282936bcfbb85c24a95855c0dffd6f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca282936bcfbb85c24a95855c0dffd6f">VDD</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 22)</td></tr>
+<tr class="memdesc:aca282936bcfbb85c24a95855c0dffd6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal VDD pin.  <br /></td></tr>
+<tr class="separator:aca282936bcfbb85c24a95855c0dffd6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Internal I2C pins definition</h2></td></tr>
+<tr class="memitem:a579780c4b53c3918a1427d24bec984d0" id="r_a579780c4b53c3918a1427d24bec984d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a579780c4b53c3918a1427d24bec984d0">SCL1</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 15)</td></tr>
+<tr class="memdesc:a579780c4b53c3918a1427d24bec984d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal SCL I2C pin.  <br /></td></tr>
+<tr class="separator:a579780c4b53c3918a1427d24bec984d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec9b870ff8ddddee3afd035b84d5e365" id="r_aec9b870ff8ddddee3afd035b84d5e365"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec9b870ff8ddddee3afd035b84d5e365">SDA1</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 14)</td></tr>
+<tr class="memdesc:aec9b870ff8ddddee3afd035b84d5e365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal SDA I2C pin.  <br /></td></tr>
+<tr class="separator:aec9b870ff8ddddee3afd035b84d5e365"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">HTS221 sensor configuration</h2></td></tr>
+<tr class="memitem:adeaf926ed41209e21fb5a97cef8fe8b7" id="r_adeaf926ed41209e21fb5a97cef8fe8b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adeaf926ed41209e21fb5a97cef8fe8b7">HTS221_PARAM_I2C</a>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__i2c.html#ga9f14916eda80b19ff41d08e25eee56fb">I2C_DEV</a>(1)</td></tr>
+<tr class="memdesc:adeaf926ed41209e21fb5a97cef8fe8b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C device.  <br /></td></tr>
+<tr class="separator:adeaf926ed41209e21fb5a97cef8fe8b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">LPS22HB sensor configuration</h2></td></tr>
+<tr class="memitem:ad51344c4d189d77d1bdd68b9f8c288ee" id="r_ad51344c4d189d77d1bdd68b9f8c288ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad51344c4d189d77d1bdd68b9f8c288ee">LPSXXX_PARAM_ADDR</a>&#160;&#160;&#160;(0x5c)</td></tr>
+<tr class="memdesc:ad51344c4d189d77d1bdd68b9f8c288ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C address.  <br /></td></tr>
+<tr class="separator:ad51344c4d189d77d1bdd68b9f8c288ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e6991e361f63a8d8aa3ae117be9f33e" id="r_a6e6991e361f63a8d8aa3ae117be9f33e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e6991e361f63a8d8aa3ae117be9f33e">LPSXXX_PARAM_I2C</a>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__i2c.html#ga9f14916eda80b19ff41d08e25eee56fb">I2C_DEV</a>(1)</td></tr>
+<tr class="memdesc:a6e6991e361f63a8d8aa3ae117be9f33e"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C device.  <br /></td></tr>
+<tr class="separator:a6e6991e361f63a8d8aa3ae117be9f33e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">APDS9960 sensor configuration</h2></td></tr>
+<tr class="memitem:ab61b7d253d39b860f23ed480c3fe2d3f" id="r_ab61b7d253d39b860f23ed480c3fe2d3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab61b7d253d39b860f23ed480c3fe2d3f">APDS99XX_PARAM_DEV</a>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__i2c.html#ga9f14916eda80b19ff41d08e25eee56fb">I2C_DEV</a>(1)</td></tr>
+<tr class="memdesc:ab61b7d253d39b860f23ed480c3fe2d3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C device.  <br /></td></tr>
+<tr class="separator:ab61b7d253d39b860f23ed480c3fe2d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a6704b66607ae21ce07e3a4e69a20b5" id="r_a5a6704b66607ae21ce07e3a4e69a20b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a6704b66607ae21ce07e3a4e69a20b5">APDS99XX_PARAM_INT_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 19)</td></tr>
+<tr class="memdesc:a5a6704b66607ae21ce07e3a4e69a20b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt pin.  <br /></td></tr>
+<tr class="separator:a5a6704b66607ae21ce07e3a4e69a20b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ab61b7d253d39b860f23ed480c3fe2d3f" name="ab61b7d253d39b860f23ed480c3fe2d3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab61b7d253d39b860f23ed480c3fe2d3f">&#9670;&#160;</a></span>APDS99XX_PARAM_DEV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define APDS99XX_PARAM_DEV&#160;&#160;&#160;<a class="el" href="group__drivers__periph__i2c.html#ga9f14916eda80b19ff41d08e25eee56fb">I2C_DEV</a>(1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>I2C device. </p>
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00098">98</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a5a6704b66607ae21ce07e3a4e69a20b5" name="a5a6704b66607ae21ce07e3a4e69a20b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a6704b66607ae21ce07e3a4e69a20b5">&#9670;&#160;</a></span>APDS99XX_PARAM_INT_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define APDS99XX_PARAM_INT_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 19)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interrupt pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00099">99</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="adeaf926ed41209e21fb5a97cef8fe8b7" name="adeaf926ed41209e21fb5a97cef8fe8b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adeaf926ed41209e21fb5a97cef8fe8b7">&#9670;&#160;</a></span>HTS221_PARAM_I2C</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HTS221_PARAM_I2C&#160;&#160;&#160;<a class="el" href="group__drivers__periph__i2c.html#ga9f14916eda80b19ff41d08e25eee56fb">I2C_DEV</a>(1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>I2C device. </p>
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00083">83</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="abfabde35a3e8b7ab50146a5e223bfead" name="abfabde35a3e8b7ab50146a5e223bfead"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfabde35a3e8b7ab50146a5e223bfead">&#9670;&#160;</a></span>LED0_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_MASK&#160;&#160;&#160;(1 &lt;&lt; 13)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00034">34</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aef2e39b9fd343d0e437fac0463f3e02d" name="aef2e39b9fd343d0e437fac0463f3e02d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef2e39b9fd343d0e437fac0463f3e02d">&#9670;&#160;</a></span>LED0_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_OFF&#160;&#160;&#160;(NRF_P0-&gt;OUTSET = LED0_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00036">36</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a1e48dc02333bfc2e6ad3e5bd466eecd4" name="a1e48dc02333bfc2e6ad3e5bd466eecd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e48dc02333bfc2e6ad3e5bd466eecd4">&#9670;&#160;</a></span>LED0_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_ON&#160;&#160;&#160;(NRF_P0-&gt;OUTCLR = LED0_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00035">35</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a3fc522fda449d6edde717d6a857429cf" name="a3fc522fda449d6edde717d6a857429cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fc522fda449d6edde717d6a857429cf">&#9670;&#160;</a></span>LED0_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 13)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00033">33</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aebc6389533d9fc8dcbe4d2129a4d5a45" name="aebc6389533d9fc8dcbe4d2129a4d5a45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebc6389533d9fc8dcbe4d2129a4d5a45">&#9670;&#160;</a></span>LED0_TOGGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED0_TOGGLE&#160;&#160;&#160;(NRF_P0-&gt;OUT   ^= LED0_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00037">37</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a669ed6e073140d069b30442bf4c08842" name="a669ed6e073140d069b30442bf4c08842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a669ed6e073140d069b30442bf4c08842">&#9670;&#160;</a></span>LED1_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED1_MASK&#160;&#160;&#160;(1 &lt;&lt; 24)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00040">40</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a343fd2d3ce61b84f88ddfaea32c67c58" name="a343fd2d3ce61b84f88ddfaea32c67c58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a343fd2d3ce61b84f88ddfaea32c67c58">&#9670;&#160;</a></span>LED1_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED1_OFF&#160;&#160;&#160;(NRF_P0-&gt;OUTSET = <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00042">42</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aadd4c7ae0cd4e9bbb17f7055dd51fe08" name="aadd4c7ae0cd4e9bbb17f7055dd51fe08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadd4c7ae0cd4e9bbb17f7055dd51fe08">&#9670;&#160;</a></span>LED1_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED1_ON&#160;&#160;&#160;(NRF_P0-&gt;OUTCLR = <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00041">41</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a318aa17e5d40e2132d2c7f6269ce7f51" name="a318aa17e5d40e2132d2c7f6269ce7f51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a318aa17e5d40e2132d2c7f6269ce7f51">&#9670;&#160;</a></span>LED1_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED1_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 24)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00039">39</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a267fdbba1d750146b73da35c1731fd17" name="a267fdbba1d750146b73da35c1731fd17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a267fdbba1d750146b73da35c1731fd17">&#9670;&#160;</a></span>LED1_TOGGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED1_TOGGLE&#160;&#160;&#160;(NRF_P0-&gt;OUT   ^= <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a669ed6e073140d069b30442bf4c08842">LED1_MASK</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00043">43</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a40f0f4b5ae7ea50d341105ddc740101e" name="a40f0f4b5ae7ea50d341105ddc740101e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40f0f4b5ae7ea50d341105ddc740101e">&#9670;&#160;</a></span>LED2_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED2_MASK&#160;&#160;&#160;(1 &lt;&lt; 16)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00046">46</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ac6468b1df4dfabcca0bb142044d6f976" name="ac6468b1df4dfabcca0bb142044d6f976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6468b1df4dfabcca0bb142044d6f976">&#9670;&#160;</a></span>LED2_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED2_OFF&#160;&#160;&#160;(NRF_P0-&gt;OUTSET = <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00048">48</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ab55f588eb2c5177d3f7806e60d379fba" name="ab55f588eb2c5177d3f7806e60d379fba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab55f588eb2c5177d3f7806e60d379fba">&#9670;&#160;</a></span>LED2_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED2_ON&#160;&#160;&#160;(NRF_P0-&gt;OUTCLR = <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00047">47</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="af6f84078113b55354d20585131b386f7" name="af6f84078113b55354d20585131b386f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6f84078113b55354d20585131b386f7">&#9670;&#160;</a></span>LED2_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED2_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 16)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00045">45</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="acd16785845ce7004334b91a98707f8eb" name="acd16785845ce7004334b91a98707f8eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd16785845ce7004334b91a98707f8eb">&#9670;&#160;</a></span>LED2_TOGGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED2_TOGGLE&#160;&#160;&#160;(NRF_P0-&gt;OUT   ^= <a class="el" href="adafruit-grand-central-m4-express_2include_2board_8h.html#a40f0f4b5ae7ea50d341105ddc740101e">LED2_MASK</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00049">49</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a0bbbbf8e41ce9726178b09d7c68dd3fb" name="a0bbbbf8e41ce9726178b09d7c68dd3fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bbbbf8e41ce9726178b09d7c68dd3fb">&#9670;&#160;</a></span>LED3_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED3_MASK&#160;&#160;&#160;(1 &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00052">52</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a0a18a6978d9c62c42afc3917d2f258b8" name="a0a18a6978d9c62c42afc3917d2f258b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a18a6978d9c62c42afc3917d2f258b8">&#9670;&#160;</a></span>LED3_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED3_OFF&#160;&#160;&#160;(NRF_P0-&gt;OUTSET = LED3_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00054">54</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ac69b87cb5151087202d5a354c87eb492" name="ac69b87cb5151087202d5a354c87eb492"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac69b87cb5151087202d5a354c87eb492">&#9670;&#160;</a></span>LED3_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED3_ON&#160;&#160;&#160;(NRF_P0-&gt;OUTCLR = LED3_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00053">53</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a4cb3ff938bcabb01494ce529ae55a542" name="a4cb3ff938bcabb01494ce529ae55a542"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cb3ff938bcabb01494ce529ae55a542">&#9670;&#160;</a></span>LED3_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED3_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00051">51</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a0702de219624c9cb1bdb4ea9b25ee62d" name="a0702de219624c9cb1bdb4ea9b25ee62d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0702de219624c9cb1bdb4ea9b25ee62d">&#9670;&#160;</a></span>LED3_TOGGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED3_TOGGLE&#160;&#160;&#160;(NRF_P0-&gt;OUT   ^= LED3_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00055">55</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ae4afff5c022eb85161421fe18b0a857d" name="ae4afff5c022eb85161421fe18b0a857d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4afff5c022eb85161421fe18b0a857d">&#9670;&#160;</a></span>LED4_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED4_MASK&#160;&#160;&#160;(1 &lt;&lt; 9)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00058">58</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a48d3711a619866c5ca8fe8135968c25f" name="a48d3711a619866c5ca8fe8135968c25f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48d3711a619866c5ca8fe8135968c25f">&#9670;&#160;</a></span>LED4_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED4_OFF&#160;&#160;&#160;(NRF_P1-&gt;OUTSET = LED4_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00060">60</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a109660ec7c41cf167d83833c660f7c14" name="a109660ec7c41cf167d83833c660f7c14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a109660ec7c41cf167d83833c660f7c14">&#9670;&#160;</a></span>LED4_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED4_ON&#160;&#160;&#160;(NRF_P1-&gt;OUTCLR = LED4_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00059">59</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aae684bb3d2f940637ccbc2adeb0e134d" name="aae684bb3d2f940637ccbc2adeb0e134d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae684bb3d2f940637ccbc2adeb0e134d">&#9670;&#160;</a></span>LED4_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED4_PIN&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(1, 9)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00057">57</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a91a29c04e6b07e38d2beec0db1148140" name="a91a29c04e6b07e38d2beec0db1148140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91a29c04e6b07e38d2beec0db1148140">&#9670;&#160;</a></span>LED4_TOGGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED4_TOGGLE&#160;&#160;&#160;(NRF_P1-&gt;OUT   ^= LED4_MASK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00061">61</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="ad51344c4d189d77d1bdd68b9f8c288ee" name="ad51344c4d189d77d1bdd68b9f8c288ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad51344c4d189d77d1bdd68b9f8c288ee">&#9670;&#160;</a></span>LPSXXX_PARAM_ADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LPSXXX_PARAM_ADDR&#160;&#160;&#160;(0x5c)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>I2C address. </p>
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00090">90</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a6e6991e361f63a8d8aa3ae117be9f33e" name="a6e6991e361f63a8d8aa3ae117be9f33e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e6991e361f63a8d8aa3ae117be9f33e">&#9670;&#160;</a></span>LPSXXX_PARAM_I2C</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LPSXXX_PARAM_I2C&#160;&#160;&#160;<a class="el" href="group__drivers__periph__i2c.html#ga9f14916eda80b19ff41d08e25eee56fb">I2C_DEV</a>(1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>I2C device. </p>
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00091">91</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a579780c4b53c3918a1427d24bec984d0" name="a579780c4b53c3918a1427d24bec984d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a579780c4b53c3918a1427d24bec984d0">&#9670;&#160;</a></span>SCL1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCL1&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 15)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Internal SCL I2C pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00075">75</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aec9b870ff8ddddee3afd035b84d5e365" name="aec9b870ff8ddddee3afd035b84d5e365"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec9b870ff8ddddee3afd035b84d5e365">&#9670;&#160;</a></span>SDA1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDA1&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 14)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Internal SDA I2C pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00076">76</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="aca282936bcfbb85c24a95855c0dffd6f" name="aca282936bcfbb85c24a95855c0dffd6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca282936bcfbb85c24a95855c0dffd6f">&#9670;&#160;</a></span>VDD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VDD&#160;&#160;&#160;<a class="el" href="atmega1284p_2include_2periph__cpu_8h.html#ae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 22)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Internal VDD pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html#l00068">68</a> of file <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:30 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/lcd/include/lcd_internal.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('lcd__internal_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle"><div class="title">lcd_internal.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__display.html">Display Device Drivers</a> &raquo; <a class="el" href="group__drivers__lcd.html">LCD display driver</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Device driver implementation for the lcd display controller.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Device driver implementation for the lcd display controller. </p>
+<dl class="section author"><dt>Author</dt><dd>Koen Zandberg <a href="#" onclick="location.href='mai'+'lto:'+'koe'+'n@'+'ber'+'gz'+'and'+'.n'+'et'; return false;">koen@<span class="obfuscator">.nosp@m.</span>berg<span class="obfuscator">.nosp@m.</span>zand.<span class="obfuscator">.nosp@m.</span>net</a> </dd>
+<dd>
+Francisco Molina <a href="#" onclick="location.href='mai'+'lto:'+'fra'+'nc'+'ois'+'-x'+'avi'+'er'+'.mo'+'li'+'na@'+'in'+'ria'+'.f'+'r'; return false;">franc<span class="obfuscator">.nosp@m.</span>ois-<span class="obfuscator">.nosp@m.</span>xavie<span class="obfuscator">.nosp@m.</span>r.mo<span class="obfuscator">.nosp@m.</span>lina@<span class="obfuscator">.nosp@m.</span>inri<span class="obfuscator">.nosp@m.</span>a.fr</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="lcd__internal_8h__dep__incl.svg" width="555" height="242"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="lcd__internal_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a126ca4141ba3fe2c0899fb34b9984b95" id="r_a126ca4141ba3fe2c0899fb34b9984b95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a126ca4141ba3fe2c0899fb34b9984b95">LCD_PIXSET_16BIT</a>&#160;&#160;&#160;0x55</td></tr>
+<tr class="memdesc:a126ca4141ba3fe2c0899fb34b9984b95"><td class="mdescLeft">&#160;</td><td class="mdescRight">MCU and RGB 16 bit interface.  <br /></td></tr>
+<tr class="separator:a126ca4141ba3fe2c0899fb34b9984b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfa2036ceb9379320b38f41d3cbb8d71" id="r_acfa2036ceb9379320b38f41d3cbb8d71"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfa2036ceb9379320b38f41d3cbb8d71">LCD_PIXSET_18BIT</a>&#160;&#160;&#160;0x66</td></tr>
+<tr class="memdesc:acfa2036ceb9379320b38f41d3cbb8d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">MCU and RGB 18 bit interface (not implemented)  <br /></td></tr>
+<tr class="separator:acfa2036ceb9379320b38f41d3cbb8d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">LCD commands</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>Not exhaustive, please extend when required </p>
+</td></tr>
+<tr class="memitem:ac00d8e81fe283b0f7e46095eaf3758f8" id="r_ac00d8e81fe283b0f7e46095eaf3758f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac00d8e81fe283b0f7e46095eaf3758f8">LCD_CMD_SWRESET</a>&#160;&#160;&#160;0x01</td></tr>
+<tr class="memdesc:ac00d8e81fe283b0f7e46095eaf3758f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Software reset.  <br /></td></tr>
+<tr class="separator:ac00d8e81fe283b0f7e46095eaf3758f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa84d3c343715c5be93bb0f20ffcf9e45" id="r_aa84d3c343715c5be93bb0f20ffcf9e45"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa84d3c343715c5be93bb0f20ffcf9e45">LCD_CMD_RDDIDIF</a>&#160;&#160;&#160;0x04</td></tr>
+<tr class="memdesc:aa84d3c343715c5be93bb0f20ffcf9e45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read display ID.  <br /></td></tr>
+<tr class="separator:aa84d3c343715c5be93bb0f20ffcf9e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae88d71637bd42077b126141be0568af5" id="r_ae88d71637bd42077b126141be0568af5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae88d71637bd42077b126141be0568af5">LCD_CMD_RDDST</a>&#160;&#160;&#160;0x09</td></tr>
+<tr class="memdesc:ae88d71637bd42077b126141be0568af5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read display status.  <br /></td></tr>
+<tr class="separator:ae88d71637bd42077b126141be0568af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9076c7bdd92391142050682cc66da8b8" id="r_a9076c7bdd92391142050682cc66da8b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9076c7bdd92391142050682cc66da8b8">LCD_CMD_SLPIN</a>&#160;&#160;&#160;0x10</td></tr>
+<tr class="memdesc:a9076c7bdd92391142050682cc66da8b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enter sleep mode.  <br /></td></tr>
+<tr class="separator:a9076c7bdd92391142050682cc66da8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9030786994f14df26dd3c99a79516e0a" id="r_a9030786994f14df26dd3c99a79516e0a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9030786994f14df26dd3c99a79516e0a">LCD_CMD_SLPOUT</a>&#160;&#160;&#160;0x11</td></tr>
+<tr class="memdesc:a9030786994f14df26dd3c99a79516e0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sleep out.  <br /></td></tr>
+<tr class="separator:a9030786994f14df26dd3c99a79516e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaf83724b59ecc7af5ab6364c51b1c90" id="r_adaf83724b59ecc7af5ab6364c51b1c90"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adaf83724b59ecc7af5ab6364c51b1c90">LCD_CMD_NORON</a>&#160;&#160;&#160;0x13</td></tr>
+<tr class="memdesc:adaf83724b59ecc7af5ab6364c51b1c90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normal display mode on.  <br /></td></tr>
+<tr class="separator:adaf83724b59ecc7af5ab6364c51b1c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94910d70286cdcfb296371ffccc71375" id="r_a94910d70286cdcfb296371ffccc71375"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94910d70286cdcfb296371ffccc71375">LCD_CMD_DINVOFF</a>&#160;&#160;&#160;0x20</td></tr>
+<tr class="memdesc:a94910d70286cdcfb296371ffccc71375"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display inversion off.  <br /></td></tr>
+<tr class="separator:a94910d70286cdcfb296371ffccc71375"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcec67da127c5e962fc4d2328fbea974" id="r_afcec67da127c5e962fc4d2328fbea974"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcec67da127c5e962fc4d2328fbea974">LCD_CMD_DINVON</a>&#160;&#160;&#160;0x21</td></tr>
+<tr class="memdesc:afcec67da127c5e962fc4d2328fbea974"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display inversion on.  <br /></td></tr>
+<tr class="separator:afcec67da127c5e962fc4d2328fbea974"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62ede99e78cd5074d1bf6190af7eefc7" id="r_a62ede99e78cd5074d1bf6190af7eefc7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62ede99e78cd5074d1bf6190af7eefc7">LCD_CMD_GAMSET</a>&#160;&#160;&#160;0x26</td></tr>
+<tr class="memdesc:a62ede99e78cd5074d1bf6190af7eefc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gamma Set.  <br /></td></tr>
+<tr class="separator:a62ede99e78cd5074d1bf6190af7eefc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0e5be6fec8653a3cdeedf27571d5c44" id="r_ad0e5be6fec8653a3cdeedf27571d5c44"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0e5be6fec8653a3cdeedf27571d5c44">LCD_CMD_DISPOFF</a>&#160;&#160;&#160;0x28</td></tr>
+<tr class="memdesc:ad0e5be6fec8653a3cdeedf27571d5c44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display OFF.  <br /></td></tr>
+<tr class="separator:ad0e5be6fec8653a3cdeedf27571d5c44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b84344a88624e8f9b52b5790241f6e6" id="r_a8b84344a88624e8f9b52b5790241f6e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b84344a88624e8f9b52b5790241f6e6">LCD_CMD_DISPON</a>&#160;&#160;&#160;0x29</td></tr>
+<tr class="memdesc:a8b84344a88624e8f9b52b5790241f6e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display ON.  <br /></td></tr>
+<tr class="separator:a8b84344a88624e8f9b52b5790241f6e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67adb85097e3a6eb07ce0f4a1f56dcec" id="r_a67adb85097e3a6eb07ce0f4a1f56dcec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67adb85097e3a6eb07ce0f4a1f56dcec">LCD_CMD_CASET</a>&#160;&#160;&#160;0x2A</td></tr>
+<tr class="memdesc:a67adb85097e3a6eb07ce0f4a1f56dcec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Column Address Set.  <br /></td></tr>
+<tr class="separator:a67adb85097e3a6eb07ce0f4a1f56dcec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bcd85022fdc74ea73cd8b28db1dc795" id="r_a9bcd85022fdc74ea73cd8b28db1dc795"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bcd85022fdc74ea73cd8b28db1dc795">LCD_CMD_PASET</a>&#160;&#160;&#160;0x2b</td></tr>
+<tr class="memdesc:a9bcd85022fdc74ea73cd8b28db1dc795"><td class="mdescLeft">&#160;</td><td class="mdescRight">Page Address Set.  <br /></td></tr>
+<tr class="separator:a9bcd85022fdc74ea73cd8b28db1dc795"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a493311a7392e46c1b0f39b16f7a74257" id="r_a493311a7392e46c1b0f39b16f7a74257"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a493311a7392e46c1b0f39b16f7a74257">LCD_CMD_RAMWR</a>&#160;&#160;&#160;0x2c</td></tr>
+<tr class="memdesc:a493311a7392e46c1b0f39b16f7a74257"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory Write.  <br /></td></tr>
+<tr class="separator:a493311a7392e46c1b0f39b16f7a74257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90ae533cf76b746273a59b439aea2161" id="r_a90ae533cf76b746273a59b439aea2161"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90ae533cf76b746273a59b439aea2161">LCD_CMD_RAMRD</a>&#160;&#160;&#160;0x2e</td></tr>
+<tr class="memdesc:a90ae533cf76b746273a59b439aea2161"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory Read.  <br /></td></tr>
+<tr class="separator:a90ae533cf76b746273a59b439aea2161"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace4d3f9b442bfebc11d6071897ebbb72" id="r_ace4d3f9b442bfebc11d6071897ebbb72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace4d3f9b442bfebc11d6071897ebbb72">LCD_CMD_MADCTL</a>&#160;&#160;&#160;0x36</td></tr>
+<tr class="memdesc:ace4d3f9b442bfebc11d6071897ebbb72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory data access control.  <br /></td></tr>
+<tr class="separator:ace4d3f9b442bfebc11d6071897ebbb72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26e7eef7f2be7c5c5c4c116e35c40106" id="r_a26e7eef7f2be7c5c5c4c116e35c40106"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26e7eef7f2be7c5c5c4c116e35c40106">LCD_CMD_IDMOFF</a>&#160;&#160;&#160;0x38</td></tr>
+<tr class="memdesc:a26e7eef7f2be7c5c5c4c116e35c40106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Idle Mode OFF.  <br /></td></tr>
+<tr class="separator:a26e7eef7f2be7c5c5c4c116e35c40106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad839cf435f53c1f546e644f8d84ae40b" id="r_ad839cf435f53c1f546e644f8d84ae40b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad839cf435f53c1f546e644f8d84ae40b">LCD_CMD_IDMON</a>&#160;&#160;&#160;0x39</td></tr>
+<tr class="memdesc:ad839cf435f53c1f546e644f8d84ae40b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Idle Mode ON.  <br /></td></tr>
+<tr class="separator:ad839cf435f53c1f546e644f8d84ae40b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4ae9557a4b6fdb97a067d57c2a2250c" id="r_ab4ae9557a4b6fdb97a067d57c2a2250c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4ae9557a4b6fdb97a067d57c2a2250c">LCD_CMD_TEOFF</a>&#160;&#160;&#160;0x34</td></tr>
+<tr class="memdesc:ab4ae9557a4b6fdb97a067d57c2a2250c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tearing Effect Line Off.  <br /></td></tr>
+<tr class="separator:ab4ae9557a4b6fdb97a067d57c2a2250c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34d827baf6326e3688dae8e7d9647ab9" id="r_a34d827baf6326e3688dae8e7d9647ab9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34d827baf6326e3688dae8e7d9647ab9">LCD_CMD_TEON</a>&#160;&#160;&#160;0x35</td></tr>
+<tr class="memdesc:a34d827baf6326e3688dae8e7d9647ab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tearing Effect Line On.  <br /></td></tr>
+<tr class="separator:a34d827baf6326e3688dae8e7d9647ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad96215614e2bd3434cd161cf8543bd9c" id="r_ad96215614e2bd3434cd161cf8543bd9c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad96215614e2bd3434cd161cf8543bd9c">LCD_CMD_COLMOD</a>&#160;&#160;&#160;0x3A</td></tr>
+<tr class="memdesc:ad96215614e2bd3434cd161cf8543bd9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface Pixel Format Set.  <br /></td></tr>
+<tr class="separator:ad96215614e2bd3434cd161cf8543bd9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ab04e12b7a992201a50d0e3c972de59" id="r_a7ab04e12b7a992201a50d0e3c972de59"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ab04e12b7a992201a50d0e3c972de59">LCD_CMD_PIXSET</a>&#160;&#160;&#160;0x3A</td></tr>
+<tr class="memdesc:a7ab04e12b7a992201a50d0e3c972de59"><td class="mdescLeft">&#160;</td><td class="mdescRight">COLMOD: Pixel Format Set.  <br /></td></tr>
+<tr class="separator:a7ab04e12b7a992201a50d0e3c972de59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b115d80b86ae8e63055a34247927bdd" id="r_a8b115d80b86ae8e63055a34247927bdd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b115d80b86ae8e63055a34247927bdd">LCD_CMD_RAMWRC</a>&#160;&#160;&#160;0x3c</td></tr>
+<tr class="memdesc:a8b115d80b86ae8e63055a34247927bdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory Write Continue.  <br /></td></tr>
+<tr class="separator:a8b115d80b86ae8e63055a34247927bdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab17a6c5749af7ee4ec4dcbd8a353d26c" id="r_ab17a6c5749af7ee4ec4dcbd8a353d26c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab17a6c5749af7ee4ec4dcbd8a353d26c">LCD_CMD_RAMRDC</a>&#160;&#160;&#160;0x3e</td></tr>
+<tr class="memdesc:ab17a6c5749af7ee4ec4dcbd8a353d26c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory Read Continue.  <br /></td></tr>
+<tr class="separator:ab17a6c5749af7ee4ec4dcbd8a353d26c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d9c379b5d904eee99aedb80218bb6e1" id="r_a2d9c379b5d904eee99aedb80218bb6e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d9c379b5d904eee99aedb80218bb6e1">LCD_CMD_WRDISBV</a>&#160;&#160;&#160;0x51</td></tr>
+<tr class="memdesc:a2d9c379b5d904eee99aedb80218bb6e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write Display Brightness.  <br /></td></tr>
+<tr class="separator:a2d9c379b5d904eee99aedb80218bb6e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8b125a3bb63cc380ce94f8a88d610b3" id="r_ad8b125a3bb63cc380ce94f8a88d610b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8b125a3bb63cc380ce94f8a88d610b3">LCD_CMD_WRCTRLD</a>&#160;&#160;&#160;0x53</td></tr>
+<tr class="memdesc:ad8b125a3bb63cc380ce94f8a88d610b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write Control Display.  <br /></td></tr>
+<tr class="separator:ad8b125a3bb63cc380ce94f8a88d610b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac15eaca8a715f0d036a6fa3c7df41721" id="r_ac15eaca8a715f0d036a6fa3c7df41721"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac15eaca8a715f0d036a6fa3c7df41721">LCD_CMD_RDCTRLD</a>&#160;&#160;&#160;0x54</td></tr>
+<tr class="memdesc:ac15eaca8a715f0d036a6fa3c7df41721"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read Control Display.  <br /></td></tr>
+<tr class="separator:ac15eaca8a715f0d036a6fa3c7df41721"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68a6717ef4c2da335bafc17ba6cb31a4" id="r_a68a6717ef4c2da335bafc17ba6cb31a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68a6717ef4c2da335bafc17ba6cb31a4">LCD_CMD_FRAMECTL1</a>&#160;&#160;&#160;0xb1</td></tr>
+<tr class="memdesc:a68a6717ef4c2da335bafc17ba6cb31a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frame control normal.  <br /></td></tr>
+<tr class="separator:a68a6717ef4c2da335bafc17ba6cb31a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76bdc2a0d30a60189e183595fb6f1317" id="r_a76bdc2a0d30a60189e183595fb6f1317"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76bdc2a0d30a60189e183595fb6f1317">LCD_CMD_FRAMECTL2</a>&#160;&#160;&#160;0xb2</td></tr>
+<tr class="memdesc:a76bdc2a0d30a60189e183595fb6f1317"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frame control idle.  <br /></td></tr>
+<tr class="separator:a76bdc2a0d30a60189e183595fb6f1317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f53b5f20469e894e58762090c88782a" id="r_a0f53b5f20469e894e58762090c88782a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f53b5f20469e894e58762090c88782a">LCD_CMD_FRAMECTL3</a>&#160;&#160;&#160;0xb3</td></tr>
+<tr class="memdesc:a0f53b5f20469e894e58762090c88782a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frame control partial.  <br /></td></tr>
+<tr class="separator:a0f53b5f20469e894e58762090c88782a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a257b36e68ed94f06a920a5e0b244f9" id="r_a4a257b36e68ed94f06a920a5e0b244f9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a257b36e68ed94f06a920a5e0b244f9">LCD_CMD_DFUNC</a>&#160;&#160;&#160;0xb6</td></tr>
+<tr class="memdesc:a4a257b36e68ed94f06a920a5e0b244f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display function control.  <br /></td></tr>
+<tr class="separator:a4a257b36e68ed94f06a920a5e0b244f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a472529afccbeb9779e2a34aef32552" id="r_a2a472529afccbeb9779e2a34aef32552"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a472529afccbeb9779e2a34aef32552">LCD_CMD_PWCTRL1</a>&#160;&#160;&#160;0xc0</td></tr>
+<tr class="memdesc:a2a472529afccbeb9779e2a34aef32552"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power control 1.  <br /></td></tr>
+<tr class="separator:a2a472529afccbeb9779e2a34aef32552"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b8d0213f746a38801d032e223c27527" id="r_a7b8d0213f746a38801d032e223c27527"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b8d0213f746a38801d032e223c27527">LCD_CMD_PWCTRL2</a>&#160;&#160;&#160;0xc1</td></tr>
+<tr class="memdesc:a7b8d0213f746a38801d032e223c27527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power control 2.  <br /></td></tr>
+<tr class="separator:a7b8d0213f746a38801d032e223c27527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addccff52b04bf588f3d73e987b7afce0" id="r_addccff52b04bf588f3d73e987b7afce0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#addccff52b04bf588f3d73e987b7afce0">LCD_CMD_VMCTRL1</a>&#160;&#160;&#160;0xc5</td></tr>
+<tr class="memdesc:addccff52b04bf588f3d73e987b7afce0"><td class="mdescLeft">&#160;</td><td class="mdescRight">VCOM control 1.  <br /></td></tr>
+<tr class="separator:addccff52b04bf588f3d73e987b7afce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade36e420a66f63cb36ab8155183ad134" id="r_ade36e420a66f63cb36ab8155183ad134"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade36e420a66f63cb36ab8155183ad134">LCD_CMD_VMCTRL2</a>&#160;&#160;&#160;0xc7</td></tr>
+<tr class="memdesc:ade36e420a66f63cb36ab8155183ad134"><td class="mdescLeft">&#160;</td><td class="mdescRight">VCOM control 2.  <br /></td></tr>
+<tr class="separator:ade36e420a66f63cb36ab8155183ad134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbcaa030649a8264927ef5a14b3d906d" id="r_acbcaa030649a8264927ef5a14b3d906d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbcaa030649a8264927ef5a14b3d906d">LCD_CMD_PGAMCTRL</a>&#160;&#160;&#160;0xe0</td></tr>
+<tr class="memdesc:acbcaa030649a8264927ef5a14b3d906d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Positive gamma correction.  <br /></td></tr>
+<tr class="separator:acbcaa030649a8264927ef5a14b3d906d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29add4fd2fa3faec65f1a02387183cda" id="r_a29add4fd2fa3faec65f1a02387183cda"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29add4fd2fa3faec65f1a02387183cda">LCD_CMD_NGAMCTRL</a>&#160;&#160;&#160;0xe1</td></tr>
+<tr class="memdesc:a29add4fd2fa3faec65f1a02387183cda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Negative gamma correction.  <br /></td></tr>
+<tr class="separator:a29add4fd2fa3faec65f1a02387183cda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54903f22d137d58f4513a2a3df5a5686" id="r_a54903f22d137d58f4513a2a3df5a5686"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54903f22d137d58f4513a2a3df5a5686">LCD_CMD_IFCTL</a>&#160;&#160;&#160;0xf6</td></tr>
+<tr class="memdesc:a54903f22d137d58f4513a2a3df5a5686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface control.  <br /></td></tr>
+<tr class="separator:a54903f22d137d58f4513a2a3df5a5686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a67adb85097e3a6eb07ce0f4a1f56dcec" name="a67adb85097e3a6eb07ce0f4a1f56dcec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67adb85097e3a6eb07ce0f4a1f56dcec">&#9670;&#160;</a></span>LCD_CMD_CASET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_CASET&#160;&#160;&#160;0x2A</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Column Address Set. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00048">48</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ad96215614e2bd3434cd161cf8543bd9c" name="ad96215614e2bd3434cd161cf8543bd9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad96215614e2bd3434cd161cf8543bd9c">&#9670;&#160;</a></span>LCD_CMD_COLMOD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_COLMOD&#160;&#160;&#160;0x3A</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interface Pixel Format Set. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00057">57</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a4a257b36e68ed94f06a920a5e0b244f9" name="a4a257b36e68ed94f06a920a5e0b244f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a257b36e68ed94f06a920a5e0b244f9">&#9670;&#160;</a></span>LCD_CMD_DFUNC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_DFUNC&#160;&#160;&#160;0xb6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Display function control. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00067">67</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a94910d70286cdcfb296371ffccc71375" name="a94910d70286cdcfb296371ffccc71375"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94910d70286cdcfb296371ffccc71375">&#9670;&#160;</a></span>LCD_CMD_DINVOFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_DINVOFF&#160;&#160;&#160;0x20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Display inversion off. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00042">42</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="afcec67da127c5e962fc4d2328fbea974" name="afcec67da127c5e962fc4d2328fbea974"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcec67da127c5e962fc4d2328fbea974">&#9670;&#160;</a></span>LCD_CMD_DINVON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_DINVON&#160;&#160;&#160;0x21</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Display inversion on. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00043">43</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ad0e5be6fec8653a3cdeedf27571d5c44" name="ad0e5be6fec8653a3cdeedf27571d5c44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0e5be6fec8653a3cdeedf27571d5c44">&#9670;&#160;</a></span>LCD_CMD_DISPOFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_DISPOFF&#160;&#160;&#160;0x28</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Display OFF. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00046">46</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a8b84344a88624e8f9b52b5790241f6e6" name="a8b84344a88624e8f9b52b5790241f6e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b84344a88624e8f9b52b5790241f6e6">&#9670;&#160;</a></span>LCD_CMD_DISPON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_DISPON&#160;&#160;&#160;0x29</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Display ON. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00047">47</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a68a6717ef4c2da335bafc17ba6cb31a4" name="a68a6717ef4c2da335bafc17ba6cb31a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68a6717ef4c2da335bafc17ba6cb31a4">&#9670;&#160;</a></span>LCD_CMD_FRAMECTL1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_FRAMECTL1&#160;&#160;&#160;0xb1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Frame control normal. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00064">64</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a76bdc2a0d30a60189e183595fb6f1317" name="a76bdc2a0d30a60189e183595fb6f1317"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76bdc2a0d30a60189e183595fb6f1317">&#9670;&#160;</a></span>LCD_CMD_FRAMECTL2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_FRAMECTL2&#160;&#160;&#160;0xb2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Frame control idle. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00065">65</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a0f53b5f20469e894e58762090c88782a" name="a0f53b5f20469e894e58762090c88782a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f53b5f20469e894e58762090c88782a">&#9670;&#160;</a></span>LCD_CMD_FRAMECTL3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_FRAMECTL3&#160;&#160;&#160;0xb3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Frame control partial. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00066">66</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a62ede99e78cd5074d1bf6190af7eefc7" name="a62ede99e78cd5074d1bf6190af7eefc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62ede99e78cd5074d1bf6190af7eefc7">&#9670;&#160;</a></span>LCD_CMD_GAMSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_GAMSET&#160;&#160;&#160;0x26</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gamma Set. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00045">45</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a26e7eef7f2be7c5c5c4c116e35c40106" name="a26e7eef7f2be7c5c5c4c116e35c40106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26e7eef7f2be7c5c5c4c116e35c40106">&#9670;&#160;</a></span>LCD_CMD_IDMOFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_IDMOFF&#160;&#160;&#160;0x38</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Idle Mode OFF. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00053">53</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ad839cf435f53c1f546e644f8d84ae40b" name="ad839cf435f53c1f546e644f8d84ae40b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad839cf435f53c1f546e644f8d84ae40b">&#9670;&#160;</a></span>LCD_CMD_IDMON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_IDMON&#160;&#160;&#160;0x39</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Idle Mode ON. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00054">54</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a54903f22d137d58f4513a2a3df5a5686" name="a54903f22d137d58f4513a2a3df5a5686"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54903f22d137d58f4513a2a3df5a5686">&#9670;&#160;</a></span>LCD_CMD_IFCTL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_IFCTL&#160;&#160;&#160;0xf6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interface control. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00074">74</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ace4d3f9b442bfebc11d6071897ebbb72" name="ace4d3f9b442bfebc11d6071897ebbb72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace4d3f9b442bfebc11d6071897ebbb72">&#9670;&#160;</a></span>LCD_CMD_MADCTL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_MADCTL&#160;&#160;&#160;0x36</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Memory data access control. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00052">52</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a29add4fd2fa3faec65f1a02387183cda" name="a29add4fd2fa3faec65f1a02387183cda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29add4fd2fa3faec65f1a02387183cda">&#9670;&#160;</a></span>LCD_CMD_NGAMCTRL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_NGAMCTRL&#160;&#160;&#160;0xe1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Negative gamma correction. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00073">73</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="adaf83724b59ecc7af5ab6364c51b1c90" name="adaf83724b59ecc7af5ab6364c51b1c90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaf83724b59ecc7af5ab6364c51b1c90">&#9670;&#160;</a></span>LCD_CMD_NORON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_NORON&#160;&#160;&#160;0x13</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Normal display mode on. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00041">41</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a9bcd85022fdc74ea73cd8b28db1dc795" name="a9bcd85022fdc74ea73cd8b28db1dc795"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bcd85022fdc74ea73cd8b28db1dc795">&#9670;&#160;</a></span>LCD_CMD_PASET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_PASET&#160;&#160;&#160;0x2b</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Page Address Set. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00049">49</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="acbcaa030649a8264927ef5a14b3d906d" name="acbcaa030649a8264927ef5a14b3d906d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbcaa030649a8264927ef5a14b3d906d">&#9670;&#160;</a></span>LCD_CMD_PGAMCTRL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_PGAMCTRL&#160;&#160;&#160;0xe0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Positive gamma correction. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00072">72</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a7ab04e12b7a992201a50d0e3c972de59" name="a7ab04e12b7a992201a50d0e3c972de59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ab04e12b7a992201a50d0e3c972de59">&#9670;&#160;</a></span>LCD_CMD_PIXSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_PIXSET&#160;&#160;&#160;0x3A</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>COLMOD: Pixel Format Set. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00058">58</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a2a472529afccbeb9779e2a34aef32552" name="a2a472529afccbeb9779e2a34aef32552"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a472529afccbeb9779e2a34aef32552">&#9670;&#160;</a></span>LCD_CMD_PWCTRL1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_PWCTRL1&#160;&#160;&#160;0xc0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Power control 1. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00068">68</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a7b8d0213f746a38801d032e223c27527" name="a7b8d0213f746a38801d032e223c27527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b8d0213f746a38801d032e223c27527">&#9670;&#160;</a></span>LCD_CMD_PWCTRL2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_PWCTRL2&#160;&#160;&#160;0xc1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Power control 2. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00069">69</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a90ae533cf76b746273a59b439aea2161" name="a90ae533cf76b746273a59b439aea2161"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90ae533cf76b746273a59b439aea2161">&#9670;&#160;</a></span>LCD_CMD_RAMRD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_RAMRD&#160;&#160;&#160;0x2e</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Memory Read. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00051">51</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ab17a6c5749af7ee4ec4dcbd8a353d26c" name="ab17a6c5749af7ee4ec4dcbd8a353d26c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab17a6c5749af7ee4ec4dcbd8a353d26c">&#9670;&#160;</a></span>LCD_CMD_RAMRDC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_RAMRDC&#160;&#160;&#160;0x3e</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Memory Read Continue. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00060">60</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a493311a7392e46c1b0f39b16f7a74257" name="a493311a7392e46c1b0f39b16f7a74257"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a493311a7392e46c1b0f39b16f7a74257">&#9670;&#160;</a></span>LCD_CMD_RAMWR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_RAMWR&#160;&#160;&#160;0x2c</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Memory Write. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00050">50</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a8b115d80b86ae8e63055a34247927bdd" name="a8b115d80b86ae8e63055a34247927bdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b115d80b86ae8e63055a34247927bdd">&#9670;&#160;</a></span>LCD_CMD_RAMWRC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_RAMWRC&#160;&#160;&#160;0x3c</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Memory Write Continue. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00059">59</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ac15eaca8a715f0d036a6fa3c7df41721" name="ac15eaca8a715f0d036a6fa3c7df41721"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac15eaca8a715f0d036a6fa3c7df41721">&#9670;&#160;</a></span>LCD_CMD_RDCTRLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_RDCTRLD&#160;&#160;&#160;0x54</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read Control Display. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00063">63</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="aa84d3c343715c5be93bb0f20ffcf9e45" name="aa84d3c343715c5be93bb0f20ffcf9e45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa84d3c343715c5be93bb0f20ffcf9e45">&#9670;&#160;</a></span>LCD_CMD_RDDIDIF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_RDDIDIF&#160;&#160;&#160;0x04</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read display ID. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00037">37</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ae88d71637bd42077b126141be0568af5" name="ae88d71637bd42077b126141be0568af5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae88d71637bd42077b126141be0568af5">&#9670;&#160;</a></span>LCD_CMD_RDDST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_RDDST&#160;&#160;&#160;0x09</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read display status. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00038">38</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a9076c7bdd92391142050682cc66da8b8" name="a9076c7bdd92391142050682cc66da8b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9076c7bdd92391142050682cc66da8b8">&#9670;&#160;</a></span>LCD_CMD_SLPIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_SLPIN&#160;&#160;&#160;0x10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enter sleep mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00039">39</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a9030786994f14df26dd3c99a79516e0a" name="a9030786994f14df26dd3c99a79516e0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9030786994f14df26dd3c99a79516e0a">&#9670;&#160;</a></span>LCD_CMD_SLPOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_SLPOUT&#160;&#160;&#160;0x11</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sleep out. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00040">40</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ac00d8e81fe283b0f7e46095eaf3758f8" name="ac00d8e81fe283b0f7e46095eaf3758f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac00d8e81fe283b0f7e46095eaf3758f8">&#9670;&#160;</a></span>LCD_CMD_SWRESET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_SWRESET&#160;&#160;&#160;0x01</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Software reset. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00036">36</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ab4ae9557a4b6fdb97a067d57c2a2250c" name="ab4ae9557a4b6fdb97a067d57c2a2250c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4ae9557a4b6fdb97a067d57c2a2250c">&#9670;&#160;</a></span>LCD_CMD_TEOFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_TEOFF&#160;&#160;&#160;0x34</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tearing Effect Line Off. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00055">55</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a34d827baf6326e3688dae8e7d9647ab9" name="a34d827baf6326e3688dae8e7d9647ab9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34d827baf6326e3688dae8e7d9647ab9">&#9670;&#160;</a></span>LCD_CMD_TEON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_TEON&#160;&#160;&#160;0x35</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tearing Effect Line On. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00056">56</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="addccff52b04bf588f3d73e987b7afce0" name="addccff52b04bf588f3d73e987b7afce0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addccff52b04bf588f3d73e987b7afce0">&#9670;&#160;</a></span>LCD_CMD_VMCTRL1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_VMCTRL1&#160;&#160;&#160;0xc5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>VCOM control 1. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00070">70</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ade36e420a66f63cb36ab8155183ad134" name="ade36e420a66f63cb36ab8155183ad134"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade36e420a66f63cb36ab8155183ad134">&#9670;&#160;</a></span>LCD_CMD_VMCTRL2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_VMCTRL2&#160;&#160;&#160;0xc7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>VCOM control 2. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00071">71</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ad8b125a3bb63cc380ce94f8a88d610b3" name="ad8b125a3bb63cc380ce94f8a88d610b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8b125a3bb63cc380ce94f8a88d610b3">&#9670;&#160;</a></span>LCD_CMD_WRCTRLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_WRCTRLD&#160;&#160;&#160;0x53</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write Control Display. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00062">62</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a2d9c379b5d904eee99aedb80218bb6e1" name="a2d9c379b5d904eee99aedb80218bb6e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d9c379b5d904eee99aedb80218bb6e1">&#9670;&#160;</a></span>LCD_CMD_WRDISBV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_WRDISBV&#160;&#160;&#160;0x51</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write Display Brightness. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00061">61</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a126ca4141ba3fe2c0899fb34b9984b95" name="a126ca4141ba3fe2c0899fb34b9984b95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a126ca4141ba3fe2c0899fb34b9984b95">&#9670;&#160;</a></span>LCD_PIXSET_16BIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_PIXSET_16BIT&#160;&#160;&#160;0x55</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MCU and RGB 16 bit interface. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00077">77</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="acfa2036ceb9379320b38f41d3cbb8d71" name="acfa2036ceb9379320b38f41d3cbb8d71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfa2036ceb9379320b38f41d3cbb8d71">&#9670;&#160;</a></span>LCD_PIXSET_18BIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_PIXSET_18BIT&#160;&#160;&#160;0x66</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MCU and RGB 18 bit interface (not implemented) </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd__internal_8h_source.html#l00078">78</a> of file <a class="el" href="lcd__internal_8h_source.html">lcd_internal.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

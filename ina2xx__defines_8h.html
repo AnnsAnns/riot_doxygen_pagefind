@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/ina2xx/include/ina2xx_defines.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('ina2xx__defines_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ina2xx_defines.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a> &raquo; <a class="el" href="group__drivers__ina2xx.html">INA2XX current/power monitor</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Various definitions for Texas Instruments INA219/INA220 Bi-Directional CURRENT/POWER MONITOR with Two-Wire Interface.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Various definitions for Texas Instruments INA219/INA220 Bi-Directional CURRENT/POWER MONITOR with Two-Wire Interface. </p>
+<dl class="section author"><dt>Author</dt><dd>Joakim Nohlgård <a href="#" onclick="location.href='mai'+'lto:'+'joa'+'ki'+'m.n'+'oh'+'lga'+'rd'+'@ei'+'st'+'ec.'+'se'; return false;">joaki<span class="obfuscator">.nosp@m.</span>m.no<span class="obfuscator">.nosp@m.</span>hlgar<span class="obfuscator">.nosp@m.</span>d@ei<span class="obfuscator">.nosp@m.</span>stec.<span class="obfuscator">.nosp@m.</span>se</a> </dd>
+<dd>
+Marian Buschsieweke <a href="#" onclick="location.href='mai'+'lto:'+'mar'+'ia'+'n.b'+'us'+'chs'+'ie'+'wek'+'e@'+'ovg'+'u.'+'de'; return false;">maria<span class="obfuscator">.nosp@m.</span>n.bu<span class="obfuscator">.nosp@m.</span>schsi<span class="obfuscator">.nosp@m.</span>ewek<span class="obfuscator">.nosp@m.</span>e@ovg<span class="obfuscator">.nosp@m.</span>u.de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="ina2xx__defines_8h_source.html">ina2xx_defines.h</a>.</p>
+</div>
+<p><a href="ina2xx__defines_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Flags in the INA2XX Bus Voltage Register</h2></td></tr>
+<tr class="memitem:a18ed29dddfeaeec46eb63de7622cb342" id="r_a18ed29dddfeaeec46eb63de7622cb342"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18ed29dddfeaeec46eb63de7622cb342">INA2XX_VBUS_CNVR</a>&#160;&#160;&#160;(0x2)</td></tr>
+<tr class="memdesc:a18ed29dddfeaeec46eb63de7622cb342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unread value in power register ready.  <br /></td></tr>
+<tr class="separator:a18ed29dddfeaeec46eb63de7622cb342"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4523306406b40051cf7ba05bd0fbf003" id="r_a4523306406b40051cf7ba05bd0fbf003"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4523306406b40051cf7ba05bd0fbf003">INA2XX_VBUS_OVF</a>&#160;&#160;&#160;(0x1)</td></tr>
+<tr class="memdesc:a4523306406b40051cf7ba05bd0fbf003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Math overflow during conversion.  <br /></td></tr>
+<tr class="separator:a4523306406b40051cf7ba05bd0fbf003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Special configuration register values</h2></td></tr>
+<tr class="memitem:a4aaaf59b3eabfdb3ab48678e1435dcc2" id="r_a4aaaf59b3eabfdb3ab48678e1435dcc2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4aaaf59b3eabfdb3ab48678e1435dcc2">INA2XX_RESET</a>&#160;&#160;&#160;(0x8000</td></tr>
+<tr class="memdesc:a4aaaf59b3eabfdb3ab48678e1435dcc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write to config reg to reset device.  <br /></td></tr>
+<tr class="separator:a4aaaf59b3eabfdb3ab48678e1435dcc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfde395a9974d63959903928a71adac7" id="r_acfde395a9974d63959903928a71adac7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfde395a9974d63959903928a71adac7">INA2XX_DEFCONFIG</a>&#160;&#160;&#160;(0x399f</td></tr>
+<tr class="memdesc:acfde395a9974d63959903928a71adac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default config after reset.  <br /></td></tr>
+<tr class="separator:acfde395a9974d63959903928a71adac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7ada28100302896be2506181d8ef4cd" id="r_ad7ada28100302896be2506181d8ef4cd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7ada28100302896be2506181d8ef4cd">ina2xx_reg</a> { <br />
+&#160;&#160;<a class="el" href="#ad7ada28100302896be2506181d8ef4cda69117c230da95ab6e7c1e09463953b0c">INA2XX_REG_CONFIGURATION</a> = 0x00
+, <a class="el" href="#ad7ada28100302896be2506181d8ef4cda51b437aa926c77f32f1465285a122c21">INA2XX_REG_SHUNT_VOLTAGE</a> = 0x01
+, <a class="el" href="#ad7ada28100302896be2506181d8ef4cda8d4b15c5b99a82afc72982368eca4636">INA2XX_REG_BUS_VOLTAGE</a> = 0x02
+, <a class="el" href="#ad7ada28100302896be2506181d8ef4cdad08cd9cd22715fbf1cc1a73fca0f9f36">INA2XX_REG_POWER</a> = 0x03
+, <br />
+&#160;&#160;<a class="el" href="#ad7ada28100302896be2506181d8ef4cda368b35f3298da69c0017c34a9a8ee7cd">INA2XX_REG_CURRENT</a> = 0x04
+, <a class="el" href="#ad7ada28100302896be2506181d8ef4cdad6f834e3519261c05e077e00761e245c">INA2XX_REG_CALIBRATION</a> = 0x05
+<br />
+ }</td></tr>
+<tr class="memdesc:ad7ada28100302896be2506181d8ef4cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">INA2XX register addresses.  <a href="#ad7ada28100302896be2506181d8ef4cd">More...</a><br /></td></tr>
+<tr class="separator:ad7ada28100302896be2506181d8ef4cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade125e9106323d517fb9942a3f19559c" id="r_ade125e9106323d517fb9942a3f19559c"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="#ad7ada28100302896be2506181d8ef4cd">ina2xx_reg</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade125e9106323d517fb9942a3f19559c">ina2xx_reg_t</a></td></tr>
+<tr class="memdesc:ade125e9106323d517fb9942a3f19559c"><td class="mdescLeft">&#160;</td><td class="mdescRight">INA2XX register addresses.  <br /></td></tr>
+<tr class="separator:ade125e9106323d517fb9942a3f19559c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="acfde395a9974d63959903928a71adac7" name="acfde395a9974d63959903928a71adac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfde395a9974d63959903928a71adac7">&#9670;&#160;</a></span>INA2XX_DEFCONFIG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INA2XX_DEFCONFIG&#160;&#160;&#160;(0x399f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default config after reset. </p>
+
+<p class="definition">Definition at line <a class="el" href="ina2xx__defines_8h_source.html#l00056">56</a> of file <a class="el" href="ina2xx__defines_8h_source.html">ina2xx_defines.h</a>.</p>
+
+</div>
+</div>
+<a id="a4aaaf59b3eabfdb3ab48678e1435dcc2" name="a4aaaf59b3eabfdb3ab48678e1435dcc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aaaf59b3eabfdb3ab48678e1435dcc2">&#9670;&#160;</a></span>INA2XX_RESET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INA2XX_RESET&#160;&#160;&#160;(0x8000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write to config reg to reset device. </p>
+
+<p class="definition">Definition at line <a class="el" href="ina2xx__defines_8h_source.html#l00055">55</a> of file <a class="el" href="ina2xx__defines_8h_source.html">ina2xx_defines.h</a>.</p>
+
+</div>
+</div>
+<a id="a18ed29dddfeaeec46eb63de7622cb342" name="a18ed29dddfeaeec46eb63de7622cb342"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18ed29dddfeaeec46eb63de7622cb342">&#9670;&#160;</a></span>INA2XX_VBUS_CNVR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INA2XX_VBUS_CNVR&#160;&#160;&#160;(0x2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unread value in power register ready. </p>
+
+<p class="definition">Definition at line <a class="el" href="ina2xx__defines_8h_source.html#l00047">47</a> of file <a class="el" href="ina2xx__defines_8h_source.html">ina2xx_defines.h</a>.</p>
+
+</div>
+</div>
+<a id="a4523306406b40051cf7ba05bd0fbf003" name="a4523306406b40051cf7ba05bd0fbf003"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4523306406b40051cf7ba05bd0fbf003">&#9670;&#160;</a></span>INA2XX_VBUS_OVF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INA2XX_VBUS_OVF&#160;&#160;&#160;(0x1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Math overflow during conversion. </p>
+
+<p class="definition">Definition at line <a class="el" href="ina2xx__defines_8h_source.html#l00048">48</a> of file <a class="el" href="ina2xx__defines_8h_source.html">ina2xx_defines.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ade125e9106323d517fb9942a3f19559c" name="ade125e9106323d517fb9942a3f19559c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade125e9106323d517fb9942a3f19559c">&#9670;&#160;</a></span>ina2xx_reg_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="#ad7ada28100302896be2506181d8ef4cd">ina2xx_reg</a> <a class="el" href="#ade125e9106323d517fb9942a3f19559c">ina2xx_reg_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>INA2XX register addresses. </p>
+<p>All registers in the INA2XX are 16 bit wide and transmitted MSB first. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ad7ada28100302896be2506181d8ef4cd" name="ad7ada28100302896be2506181d8ef4cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7ada28100302896be2506181d8ef4cd">&#9670;&#160;</a></span>ina2xx_reg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ad7ada28100302896be2506181d8ef4cd">ina2xx_reg</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>INA2XX register addresses. </p>
+<p>All registers in the INA2XX are 16 bit wide and transmitted MSB first. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad7ada28100302896be2506181d8ef4cda69117c230da95ab6e7c1e09463953b0c" name="ad7ada28100302896be2506181d8ef4cda69117c230da95ab6e7c1e09463953b0c"></a>INA2XX_REG_CONFIGURATION&#160;</td><td class="fielddoc"><p>Configuration register (read/write) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad7ada28100302896be2506181d8ef4cda51b437aa926c77f32f1465285a122c21" name="ad7ada28100302896be2506181d8ef4cda51b437aa926c77f32f1465285a122c21"></a>INA2XX_REG_SHUNT_VOLTAGE&#160;</td><td class="fielddoc"><p>Shunt voltage register (read only) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad7ada28100302896be2506181d8ef4cda8d4b15c5b99a82afc72982368eca4636" name="ad7ada28100302896be2506181d8ef4cda8d4b15c5b99a82afc72982368eca4636"></a>INA2XX_REG_BUS_VOLTAGE&#160;</td><td class="fielddoc"><p>Bus voltage register (read only) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad7ada28100302896be2506181d8ef4cdad08cd9cd22715fbf1cc1a73fca0f9f36" name="ad7ada28100302896be2506181d8ef4cdad08cd9cd22715fbf1cc1a73fca0f9f36"></a>INA2XX_REG_POWER&#160;</td><td class="fielddoc"><p>Power register (read only) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad7ada28100302896be2506181d8ef4cda368b35f3298da69c0017c34a9a8ee7cd" name="ad7ada28100302896be2506181d8ef4cda368b35f3298da69c0017c34a9a8ee7cd"></a>INA2XX_REG_CURRENT&#160;</td><td class="fielddoc"><p>Current register (read only) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad7ada28100302896be2506181d8ef4cdad6f834e3519261c05e077e00761e245c" name="ad7ada28100302896be2506181d8ef4cdad6f834e3519261c05e077e00761e245c"></a>INA2XX_REG_CALIBRATION&#160;</td><td class="fielddoc"><p>Calibration register (read/write) </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="ina2xx__defines_8h_source.html#l00034">34</a> of file <a class="el" href="ina2xx__defines_8h_source.html">ina2xx_defines.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

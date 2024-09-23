@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/lis2dh12/lis2dh12_internal.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('lis2dh12__internal_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lis2dh12_internal.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a> &#124; <a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> &raquo; <a class="el" href="group__drivers__lis2dh12.html">LIS2DH12 Accelerometer</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Command definition for the LIS2DH12 accelerometer.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Command definition for the LIS2DH12 accelerometer. </p>
+<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+</div>
+<p><a href="lis2dh12__internal_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">LIS2DH12 registers</h2></td></tr>
+<tr class="memitem:aab6c3d8c40b9483c8f2d23e8ad8ee35f" id="r_aab6c3d8c40b9483c8f2d23e8ad8ee35f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab6c3d8c40b9483c8f2d23e8ad8ee35f">REG_STATUS_REG_AUX</a>&#160;&#160;&#160;(0x07)</td></tr>
+<tr class="separator:aab6c3d8c40b9483c8f2d23e8ad8ee35f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b45cc5d45e62b1ec94c853b1f704800" id="r_a2b45cc5d45e62b1ec94c853b1f704800"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b45cc5d45e62b1ec94c853b1f704800">REG_OUT_TEMP_L</a>&#160;&#160;&#160;(0x0C)</td></tr>
+<tr class="separator:a2b45cc5d45e62b1ec94c853b1f704800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8b47745fbab8eb380f4811d94f630ee" id="r_ad8b47745fbab8eb380f4811d94f630ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8b47745fbab8eb380f4811d94f630ee">REG_OUT_TEMP_H</a>&#160;&#160;&#160;(0x0D)</td></tr>
+<tr class="separator:ad8b47745fbab8eb380f4811d94f630ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73f4728dfb5c82afcea7bee729af205c" id="r_a73f4728dfb5c82afcea7bee729af205c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73f4728dfb5c82afcea7bee729af205c">REG_WHO_AM_I</a>&#160;&#160;&#160;(0x0F)</td></tr>
+<tr class="separator:a73f4728dfb5c82afcea7bee729af205c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69e7bb6e6eed317f7b9c9b7d41ca60c8" id="r_a69e7bb6e6eed317f7b9c9b7d41ca60c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69e7bb6e6eed317f7b9c9b7d41ca60c8">REG_CTRL_REG0</a>&#160;&#160;&#160;(0x1E)</td></tr>
+<tr class="separator:a69e7bb6e6eed317f7b9c9b7d41ca60c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fbdcd1d4ec666cc9ad518cf76833eb8" id="r_a6fbdcd1d4ec666cc9ad518cf76833eb8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6fbdcd1d4ec666cc9ad518cf76833eb8">REG_TEMP_CFG_REG</a>&#160;&#160;&#160;(0x1F)</td></tr>
+<tr class="separator:a6fbdcd1d4ec666cc9ad518cf76833eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac75a599fd4346e1f78c43ed8e90cb4e" id="r_aac75a599fd4346e1f78c43ed8e90cb4e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac75a599fd4346e1f78c43ed8e90cb4e">REG_CTRL_REG1</a>&#160;&#160;&#160;(0x20)</td></tr>
+<tr class="separator:aac75a599fd4346e1f78c43ed8e90cb4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5228c4a21a967fc23673f3838b8d6c10" id="r_a5228c4a21a967fc23673f3838b8d6c10"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5228c4a21a967fc23673f3838b8d6c10">REG_CTRL_REG2</a>&#160;&#160;&#160;(0x21)</td></tr>
+<tr class="separator:a5228c4a21a967fc23673f3838b8d6c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd7c625da3c073842b1ed5f55e433fce" id="r_afd7c625da3c073842b1ed5f55e433fce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd7c625da3c073842b1ed5f55e433fce">REG_CTRL_REG3</a>&#160;&#160;&#160;(0x22)</td></tr>
+<tr class="separator:afd7c625da3c073842b1ed5f55e433fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af07468e8b87a1a565919ea6ebd0c7b30" id="r_af07468e8b87a1a565919ea6ebd0c7b30"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af07468e8b87a1a565919ea6ebd0c7b30">REG_CTRL_REG4</a>&#160;&#160;&#160;(0x23)</td></tr>
+<tr class="separator:af07468e8b87a1a565919ea6ebd0c7b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a507a83ec6c11076c46cb5c299fe9f3c3" id="r_a507a83ec6c11076c46cb5c299fe9f3c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a507a83ec6c11076c46cb5c299fe9f3c3">REG_CTRL_REG5</a>&#160;&#160;&#160;(0x24)</td></tr>
+<tr class="separator:a507a83ec6c11076c46cb5c299fe9f3c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a725ecd96f6c6a986ad267adfff3511a6" id="r_a725ecd96f6c6a986ad267adfff3511a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a725ecd96f6c6a986ad267adfff3511a6">REG_CTRL_REG6</a>&#160;&#160;&#160;(0x25)</td></tr>
+<tr class="separator:a725ecd96f6c6a986ad267adfff3511a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaaf51d48697722419b09f81e64936c4" id="r_adaaf51d48697722419b09f81e64936c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adaaf51d48697722419b09f81e64936c4">REG_REFERENCE</a>&#160;&#160;&#160;(0x26)</td></tr>
+<tr class="separator:adaaf51d48697722419b09f81e64936c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78666154d9276a77684cccdbc3caaa49" id="r_a78666154d9276a77684cccdbc3caaa49"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78666154d9276a77684cccdbc3caaa49">REG_STATUS_REG</a>&#160;&#160;&#160;(0x27)</td></tr>
+<tr class="separator:a78666154d9276a77684cccdbc3caaa49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aead30ee4c56e2e46c5e92d376a1c5f14" id="r_aead30ee4c56e2e46c5e92d376a1c5f14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aead30ee4c56e2e46c5e92d376a1c5f14">REG_OUT_X_L</a>&#160;&#160;&#160;(0x28)</td></tr>
+<tr class="separator:aead30ee4c56e2e46c5e92d376a1c5f14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31ed5c0f70f9af31e02f7b0ba32ad7dc" id="r_a31ed5c0f70f9af31e02f7b0ba32ad7dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31ed5c0f70f9af31e02f7b0ba32ad7dc">REG_OUT_X_H</a>&#160;&#160;&#160;(0x29)</td></tr>
+<tr class="separator:a31ed5c0f70f9af31e02f7b0ba32ad7dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af48717e0e7ffc6bbed58075a89bfa587" id="r_af48717e0e7ffc6bbed58075a89bfa587"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af48717e0e7ffc6bbed58075a89bfa587">REG_OUT_Y_L</a>&#160;&#160;&#160;(0x2A)</td></tr>
+<tr class="separator:af48717e0e7ffc6bbed58075a89bfa587"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7008aa4d4c9d83a97bb187948ac551a5" id="r_a7008aa4d4c9d83a97bb187948ac551a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7008aa4d4c9d83a97bb187948ac551a5">REG_OUT_Y_H</a>&#160;&#160;&#160;(0x2B)</td></tr>
+<tr class="separator:a7008aa4d4c9d83a97bb187948ac551a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4fcfa2ec0657a92563d5a68a0596a84" id="r_ae4fcfa2ec0657a92563d5a68a0596a84"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4fcfa2ec0657a92563d5a68a0596a84">REG_OUT_Z_L</a>&#160;&#160;&#160;(0x2C)</td></tr>
+<tr class="separator:ae4fcfa2ec0657a92563d5a68a0596a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fb19e678103baf56c1aeb4fa44c7466" id="r_a4fb19e678103baf56c1aeb4fa44c7466"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fb19e678103baf56c1aeb4fa44c7466">REG_OUT_Z_H</a>&#160;&#160;&#160;(0x2D)</td></tr>
+<tr class="separator:a4fb19e678103baf56c1aeb4fa44c7466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9abae252981428d09fc575c2457dc164" id="r_a9abae252981428d09fc575c2457dc164"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9abae252981428d09fc575c2457dc164">REG_FIFO_CTRL_REG</a>&#160;&#160;&#160;(0x2E)</td></tr>
+<tr class="separator:a9abae252981428d09fc575c2457dc164"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61daa7ebeee6c9e1f20031467503a916" id="r_a61daa7ebeee6c9e1f20031467503a916"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61daa7ebeee6c9e1f20031467503a916">REG_FIFO_SRC_REG</a>&#160;&#160;&#160;(0x2F)</td></tr>
+<tr class="separator:a61daa7ebeee6c9e1f20031467503a916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d5a414514cfcc59079bf87d9637d6eb" id="r_a2d5a414514cfcc59079bf87d9637d6eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d5a414514cfcc59079bf87d9637d6eb">REG_INT1_CFG</a>&#160;&#160;&#160;(0x30)</td></tr>
+<tr class="separator:a2d5a414514cfcc59079bf87d9637d6eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4d303855e94a7926f03f703c983ae13" id="r_ab4d303855e94a7926f03f703c983ae13"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4d303855e94a7926f03f703c983ae13">REG_INT1_SRC</a>&#160;&#160;&#160;(0x31)</td></tr>
+<tr class="separator:ab4d303855e94a7926f03f703c983ae13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24a4332bb55cbef6f79a8ef04e1e854b" id="r_a24a4332bb55cbef6f79a8ef04e1e854b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24a4332bb55cbef6f79a8ef04e1e854b">REG_INT1_THS</a>&#160;&#160;&#160;(0x32)</td></tr>
+<tr class="separator:a24a4332bb55cbef6f79a8ef04e1e854b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e3f554edeccef2df8f376047b158dd3" id="r_a5e3f554edeccef2df8f376047b158dd3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e3f554edeccef2df8f376047b158dd3">REG_INT1_DURATION</a>&#160;&#160;&#160;(0x33)</td></tr>
+<tr class="separator:a5e3f554edeccef2df8f376047b158dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a706b9e849cf5491bc9cc6c11bcb20fb5" id="r_a706b9e849cf5491bc9cc6c11bcb20fb5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a706b9e849cf5491bc9cc6c11bcb20fb5">REG_INT2_CFG</a>&#160;&#160;&#160;(0x34)</td></tr>
+<tr class="separator:a706b9e849cf5491bc9cc6c11bcb20fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dd35cf5a2de8a0196d12632b22a3d09" id="r_a4dd35cf5a2de8a0196d12632b22a3d09"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4dd35cf5a2de8a0196d12632b22a3d09">REG_INT2_SRC</a>&#160;&#160;&#160;(0x35)</td></tr>
+<tr class="separator:a4dd35cf5a2de8a0196d12632b22a3d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8721cdf6c0d2ff3f702ad6f63612d17a" id="r_a8721cdf6c0d2ff3f702ad6f63612d17a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8721cdf6c0d2ff3f702ad6f63612d17a">REG_INT2_THS</a>&#160;&#160;&#160;(0x36)</td></tr>
+<tr class="separator:a8721cdf6c0d2ff3f702ad6f63612d17a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac541b05e06c345c300196a6ce51f713a" id="r_ac541b05e06c345c300196a6ce51f713a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac541b05e06c345c300196a6ce51f713a">REG_INT2_DURATION</a>&#160;&#160;&#160;(0x37)</td></tr>
+<tr class="separator:ac541b05e06c345c300196a6ce51f713a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ce6c59431040198d7f82b219f70199d" id="r_a3ce6c59431040198d7f82b219f70199d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ce6c59431040198d7f82b219f70199d">REG_CLICK_CFG</a>&#160;&#160;&#160;(0x38)</td></tr>
+<tr class="separator:a3ce6c59431040198d7f82b219f70199d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2585bf5f892fd204f465ff5e730b62e0" id="r_a2585bf5f892fd204f465ff5e730b62e0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2585bf5f892fd204f465ff5e730b62e0">REG_CLICK_SRC</a>&#160;&#160;&#160;(0x39)</td></tr>
+<tr class="separator:a2585bf5f892fd204f465ff5e730b62e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a339cd2309e8be484a2d97701616692fb" id="r_a339cd2309e8be484a2d97701616692fb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a339cd2309e8be484a2d97701616692fb">REG_CLICK_THS</a>&#160;&#160;&#160;(0x3A)</td></tr>
+<tr class="separator:a339cd2309e8be484a2d97701616692fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7df0ad924e7d41bc383a81f37ffe8a99" id="r_a7df0ad924e7d41bc383a81f37ffe8a99"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7df0ad924e7d41bc383a81f37ffe8a99">REG_TIME_LIMIT</a>&#160;&#160;&#160;(0x3B)</td></tr>
+<tr class="separator:a7df0ad924e7d41bc383a81f37ffe8a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fde6cc9fdf000c403724cf716a70835" id="r_a1fde6cc9fdf000c403724cf716a70835"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fde6cc9fdf000c403724cf716a70835">REG_TIME_LATENCY</a>&#160;&#160;&#160;(0x3C)</td></tr>
+<tr class="separator:a1fde6cc9fdf000c403724cf716a70835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a177c2744dea05ac0510a06b572746694" id="r_a177c2744dea05ac0510a06b572746694"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a177c2744dea05ac0510a06b572746694">REG_TIME_WINDOW</a>&#160;&#160;&#160;(0x3D)</td></tr>
+<tr class="separator:a177c2744dea05ac0510a06b572746694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29ce19c56f8ea9cfcfcb252a251ed38e" id="r_a29ce19c56f8ea9cfcfcb252a251ed38e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29ce19c56f8ea9cfcfcb252a251ed38e">REG_ACT_THS</a>&#160;&#160;&#160;(0x3E)</td></tr>
+<tr class="separator:a29ce19c56f8ea9cfcfcb252a251ed38e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa181b6b37ea7360598baf07fb497480e" id="r_aa181b6b37ea7360598baf07fb497480e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa181b6b37ea7360598baf07fb497480e">REG_ACT_DUR</a>&#160;&#160;&#160;(0x3F)</td></tr>
+<tr class="separator:aa181b6b37ea7360598baf07fb497480e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Selected register values</h2></td></tr>
+<tr class="memitem:a4a6eb6d34106490a76e78b008ee463db" id="r_a4a6eb6d34106490a76e78b008ee463db"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a6eb6d34106490a76e78b008ee463db">WHO_AM_I_VAL</a>&#160;&#160;&#160;(0x33)</td></tr>
+<tr class="separator:a4a6eb6d34106490a76e78b008ee463db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acae4b3dc9bd5f6f2c40b19afa6da4eba" id="r_acae4b3dc9bd5f6f2c40b19afa6da4eba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acae4b3dc9bd5f6f2c40b19afa6da4eba">CTRL_REG0_DEFAULT</a>&#160;&#160;&#160;(0x10)</td></tr>
+<tr class="separator:acae4b3dc9bd5f6f2c40b19afa6da4eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="acae4b3dc9bd5f6f2c40b19afa6da4eba" name="acae4b3dc9bd5f6f2c40b19afa6da4eba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acae4b3dc9bd5f6f2c40b19afa6da4eba">&#9670;&#160;</a></span>CTRL_REG0_DEFAULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CTRL_REG0_DEFAULT&#160;&#160;&#160;(0x10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00075">75</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="aa181b6b37ea7360598baf07fb497480e" name="aa181b6b37ea7360598baf07fb497480e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa181b6b37ea7360598baf07fb497480e">&#9670;&#160;</a></span>REG_ACT_DUR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_ACT_DUR&#160;&#160;&#160;(0x3F)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00067">67</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a29ce19c56f8ea9cfcfcb252a251ed38e" name="a29ce19c56f8ea9cfcfcb252a251ed38e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29ce19c56f8ea9cfcfcb252a251ed38e">&#9670;&#160;</a></span>REG_ACT_THS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_ACT_THS&#160;&#160;&#160;(0x3E)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00066">66</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a3ce6c59431040198d7f82b219f70199d" name="a3ce6c59431040198d7f82b219f70199d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ce6c59431040198d7f82b219f70199d">&#9670;&#160;</a></span>REG_CLICK_CFG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_CLICK_CFG&#160;&#160;&#160;(0x38)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00060">60</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a2585bf5f892fd204f465ff5e730b62e0" name="a2585bf5f892fd204f465ff5e730b62e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2585bf5f892fd204f465ff5e730b62e0">&#9670;&#160;</a></span>REG_CLICK_SRC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_CLICK_SRC&#160;&#160;&#160;(0x39)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00061">61</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a339cd2309e8be484a2d97701616692fb" name="a339cd2309e8be484a2d97701616692fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a339cd2309e8be484a2d97701616692fb">&#9670;&#160;</a></span>REG_CLICK_THS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_CLICK_THS&#160;&#160;&#160;(0x3A)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00062">62</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a69e7bb6e6eed317f7b9c9b7d41ca60c8" name="a69e7bb6e6eed317f7b9c9b7d41ca60c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69e7bb6e6eed317f7b9c9b7d41ca60c8">&#9670;&#160;</a></span>REG_CTRL_REG0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_CTRL_REG0&#160;&#160;&#160;(0x1E)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00034">34</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="aac75a599fd4346e1f78c43ed8e90cb4e" name="aac75a599fd4346e1f78c43ed8e90cb4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac75a599fd4346e1f78c43ed8e90cb4e">&#9670;&#160;</a></span>REG_CTRL_REG1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_CTRL_REG1&#160;&#160;&#160;(0x20)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00036">36</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a5228c4a21a967fc23673f3838b8d6c10" name="a5228c4a21a967fc23673f3838b8d6c10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5228c4a21a967fc23673f3838b8d6c10">&#9670;&#160;</a></span>REG_CTRL_REG2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_CTRL_REG2&#160;&#160;&#160;(0x21)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00037">37</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="afd7c625da3c073842b1ed5f55e433fce" name="afd7c625da3c073842b1ed5f55e433fce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd7c625da3c073842b1ed5f55e433fce">&#9670;&#160;</a></span>REG_CTRL_REG3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_CTRL_REG3&#160;&#160;&#160;(0x22)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00038">38</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="af07468e8b87a1a565919ea6ebd0c7b30" name="af07468e8b87a1a565919ea6ebd0c7b30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af07468e8b87a1a565919ea6ebd0c7b30">&#9670;&#160;</a></span>REG_CTRL_REG4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_CTRL_REG4&#160;&#160;&#160;(0x23)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00039">39</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a507a83ec6c11076c46cb5c299fe9f3c3" name="a507a83ec6c11076c46cb5c299fe9f3c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a507a83ec6c11076c46cb5c299fe9f3c3">&#9670;&#160;</a></span>REG_CTRL_REG5</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_CTRL_REG5&#160;&#160;&#160;(0x24)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00040">40</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a725ecd96f6c6a986ad267adfff3511a6" name="a725ecd96f6c6a986ad267adfff3511a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a725ecd96f6c6a986ad267adfff3511a6">&#9670;&#160;</a></span>REG_CTRL_REG6</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_CTRL_REG6&#160;&#160;&#160;(0x25)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00041">41</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a9abae252981428d09fc575c2457dc164" name="a9abae252981428d09fc575c2457dc164"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9abae252981428d09fc575c2457dc164">&#9670;&#160;</a></span>REG_FIFO_CTRL_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_FIFO_CTRL_REG&#160;&#160;&#160;(0x2E)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00050">50</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a61daa7ebeee6c9e1f20031467503a916" name="a61daa7ebeee6c9e1f20031467503a916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61daa7ebeee6c9e1f20031467503a916">&#9670;&#160;</a></span>REG_FIFO_SRC_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_FIFO_SRC_REG&#160;&#160;&#160;(0x2F)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00051">51</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a2d5a414514cfcc59079bf87d9637d6eb" name="a2d5a414514cfcc59079bf87d9637d6eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d5a414514cfcc59079bf87d9637d6eb">&#9670;&#160;</a></span>REG_INT1_CFG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_INT1_CFG&#160;&#160;&#160;(0x30)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00052">52</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a5e3f554edeccef2df8f376047b158dd3" name="a5e3f554edeccef2df8f376047b158dd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e3f554edeccef2df8f376047b158dd3">&#9670;&#160;</a></span>REG_INT1_DURATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_INT1_DURATION&#160;&#160;&#160;(0x33)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00055">55</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ab4d303855e94a7926f03f703c983ae13" name="ab4d303855e94a7926f03f703c983ae13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4d303855e94a7926f03f703c983ae13">&#9670;&#160;</a></span>REG_INT1_SRC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_INT1_SRC&#160;&#160;&#160;(0x31)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00053">53</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a24a4332bb55cbef6f79a8ef04e1e854b" name="a24a4332bb55cbef6f79a8ef04e1e854b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24a4332bb55cbef6f79a8ef04e1e854b">&#9670;&#160;</a></span>REG_INT1_THS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_INT1_THS&#160;&#160;&#160;(0x32)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00054">54</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a706b9e849cf5491bc9cc6c11bcb20fb5" name="a706b9e849cf5491bc9cc6c11bcb20fb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a706b9e849cf5491bc9cc6c11bcb20fb5">&#9670;&#160;</a></span>REG_INT2_CFG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_INT2_CFG&#160;&#160;&#160;(0x34)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00056">56</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ac541b05e06c345c300196a6ce51f713a" name="ac541b05e06c345c300196a6ce51f713a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac541b05e06c345c300196a6ce51f713a">&#9670;&#160;</a></span>REG_INT2_DURATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_INT2_DURATION&#160;&#160;&#160;(0x37)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00059">59</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a4dd35cf5a2de8a0196d12632b22a3d09" name="a4dd35cf5a2de8a0196d12632b22a3d09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dd35cf5a2de8a0196d12632b22a3d09">&#9670;&#160;</a></span>REG_INT2_SRC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_INT2_SRC&#160;&#160;&#160;(0x35)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00057">57</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a8721cdf6c0d2ff3f702ad6f63612d17a" name="a8721cdf6c0d2ff3f702ad6f63612d17a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8721cdf6c0d2ff3f702ad6f63612d17a">&#9670;&#160;</a></span>REG_INT2_THS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_INT2_THS&#160;&#160;&#160;(0x36)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00058">58</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ad8b47745fbab8eb380f4811d94f630ee" name="ad8b47745fbab8eb380f4811d94f630ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8b47745fbab8eb380f4811d94f630ee">&#9670;&#160;</a></span>REG_OUT_TEMP_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_OUT_TEMP_H&#160;&#160;&#160;(0x0D)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00032">32</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a2b45cc5d45e62b1ec94c853b1f704800" name="a2b45cc5d45e62b1ec94c853b1f704800"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b45cc5d45e62b1ec94c853b1f704800">&#9670;&#160;</a></span>REG_OUT_TEMP_L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_OUT_TEMP_L&#160;&#160;&#160;(0x0C)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00031">31</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a31ed5c0f70f9af31e02f7b0ba32ad7dc" name="a31ed5c0f70f9af31e02f7b0ba32ad7dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31ed5c0f70f9af31e02f7b0ba32ad7dc">&#9670;&#160;</a></span>REG_OUT_X_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_OUT_X_H&#160;&#160;&#160;(0x29)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00045">45</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="aead30ee4c56e2e46c5e92d376a1c5f14" name="aead30ee4c56e2e46c5e92d376a1c5f14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aead30ee4c56e2e46c5e92d376a1c5f14">&#9670;&#160;</a></span>REG_OUT_X_L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_OUT_X_L&#160;&#160;&#160;(0x28)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00044">44</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a7008aa4d4c9d83a97bb187948ac551a5" name="a7008aa4d4c9d83a97bb187948ac551a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7008aa4d4c9d83a97bb187948ac551a5">&#9670;&#160;</a></span>REG_OUT_Y_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_OUT_Y_H&#160;&#160;&#160;(0x2B)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00047">47</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="af48717e0e7ffc6bbed58075a89bfa587" name="af48717e0e7ffc6bbed58075a89bfa587"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af48717e0e7ffc6bbed58075a89bfa587">&#9670;&#160;</a></span>REG_OUT_Y_L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_OUT_Y_L&#160;&#160;&#160;(0x2A)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00046">46</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a4fb19e678103baf56c1aeb4fa44c7466" name="a4fb19e678103baf56c1aeb4fa44c7466"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fb19e678103baf56c1aeb4fa44c7466">&#9670;&#160;</a></span>REG_OUT_Z_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_OUT_Z_H&#160;&#160;&#160;(0x2D)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00049">49</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ae4fcfa2ec0657a92563d5a68a0596a84" name="ae4fcfa2ec0657a92563d5a68a0596a84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4fcfa2ec0657a92563d5a68a0596a84">&#9670;&#160;</a></span>REG_OUT_Z_L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_OUT_Z_L&#160;&#160;&#160;(0x2C)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00048">48</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="adaaf51d48697722419b09f81e64936c4" name="adaaf51d48697722419b09f81e64936c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaaf51d48697722419b09f81e64936c4">&#9670;&#160;</a></span>REG_REFERENCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_REFERENCE&#160;&#160;&#160;(0x26)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00042">42</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a78666154d9276a77684cccdbc3caaa49" name="a78666154d9276a77684cccdbc3caaa49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78666154d9276a77684cccdbc3caaa49">&#9670;&#160;</a></span>REG_STATUS_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_STATUS_REG&#160;&#160;&#160;(0x27)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00043">43</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="aab6c3d8c40b9483c8f2d23e8ad8ee35f" name="aab6c3d8c40b9483c8f2d23e8ad8ee35f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab6c3d8c40b9483c8f2d23e8ad8ee35f">&#9670;&#160;</a></span>REG_STATUS_REG_AUX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_STATUS_REG_AUX&#160;&#160;&#160;(0x07)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00030">30</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a6fbdcd1d4ec666cc9ad518cf76833eb8" name="a6fbdcd1d4ec666cc9ad518cf76833eb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fbdcd1d4ec666cc9ad518cf76833eb8">&#9670;&#160;</a></span>REG_TEMP_CFG_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_TEMP_CFG_REG&#160;&#160;&#160;(0x1F)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00035">35</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a1fde6cc9fdf000c403724cf716a70835" name="a1fde6cc9fdf000c403724cf716a70835"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fde6cc9fdf000c403724cf716a70835">&#9670;&#160;</a></span>REG_TIME_LATENCY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_TIME_LATENCY&#160;&#160;&#160;(0x3C)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00064">64</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a7df0ad924e7d41bc383a81f37ffe8a99" name="a7df0ad924e7d41bc383a81f37ffe8a99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7df0ad924e7d41bc383a81f37ffe8a99">&#9670;&#160;</a></span>REG_TIME_LIMIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_TIME_LIMIT&#160;&#160;&#160;(0x3B)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00063">63</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a177c2744dea05ac0510a06b572746694" name="a177c2744dea05ac0510a06b572746694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a177c2744dea05ac0510a06b572746694">&#9670;&#160;</a></span>REG_TIME_WINDOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_TIME_WINDOW&#160;&#160;&#160;(0x3D)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00065">65</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a73f4728dfb5c82afcea7bee729af205c" name="a73f4728dfb5c82afcea7bee729af205c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73f4728dfb5c82afcea7bee729af205c">&#9670;&#160;</a></span>REG_WHO_AM_I</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_WHO_AM_I&#160;&#160;&#160;(0x0F)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00033">33</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a4a6eb6d34106490a76e78b008ee463db" name="a4a6eb6d34106490a76e78b008ee463db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a6eb6d34106490a76e78b008ee463db">&#9670;&#160;</a></span>WHO_AM_I_VAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WHO_AM_I_VAL&#160;&#160;&#160;(0x33)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lis2dh12__internal_8h_source.html#l00074">74</a> of file <a class="el" href="lis2dh12__internal_8h_source.html">lis2dh12_internal.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

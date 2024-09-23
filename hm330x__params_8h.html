@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/hm330x/include/hm330x_params.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('hm330x__params_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">hm330x_params.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a> &#124; <a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> &raquo; <a class="el" href="group__drivers__hm330x.html">HM330X Laser Particulate Matter Sensor</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Default configuration.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Default configuration. </p>
+<dl class="section author"><dt>Author</dt><dd>Francisco Molina <a href="#" onclick="location.href='mai'+'lto:'+'fra'+'nc'+'ois'+'-x'+'avi'+'er'+'.mo'+'li'+'na@'+'in'+'ria'+'.f'+'r'; return false;">franc<span class="obfuscator">.nosp@m.</span>ois-<span class="obfuscator">.nosp@m.</span>xavie<span class="obfuscator">.nosp@m.</span>r.mo<span class="obfuscator">.nosp@m.</span>lina@<span class="obfuscator">.nosp@m.</span>inri<span class="obfuscator">.nosp@m.</span>a.fr</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="hm330x__params_8h_source.html">hm330x_params.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;board.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="saul__reg_8h_source.html">saul_reg.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="hm330x_8h_source.html">hm330x.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="hm330x__constants_8h_source.html">hm330x_constants.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for hm330x_params.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="hm330x__params_8h__incl.svg" width="767" height="283"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="hm330x__params_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a21ff038812b0d51a51fbe1d7dbe738d5" id="r_a21ff038812b0d51a51fbe1d7dbe738d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21ff038812b0d51a51fbe1d7dbe738d5">HM330X_NUMOF</a>&#160;&#160;&#160;<a class="el" href="container_8h.html#a25f003de16c08a4888b69f619d70f427">ARRAY_SIZE</a>(<a class="el" href="#a795c3c078f15d1b5366509e4ec7736e9">hm330x_params</a>)</td></tr>
+<tr class="memdesc:a21ff038812b0d51a51fbe1d7dbe738d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the number of configured sensors.  <br /></td></tr>
+<tr class="separator:a21ff038812b0d51a51fbe1d7dbe738d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4710d21c6eb2fd29538874cc3b0ab10e" id="r_a4710d21c6eb2fd29538874cc3b0ab10e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4710d21c6eb2fd29538874cc3b0ab10e">HM330X_INFO_NUM</a>&#160;&#160;&#160;<a class="el" href="container_8h.html#a25f003de16c08a4888b69f619d70f427">ARRAY_SIZE</a>(<a class="el" href="#a0faed5756830b2c8c6b985a2c3c86c08">hm330x_saul_info</a>)</td></tr>
+<tr class="memdesc:a4710d21c6eb2fd29538874cc3b0ab10e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of saul info structs.  <br /></td></tr>
+<tr class="separator:a4710d21c6eb2fd29538874cc3b0ab10e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a795c3c078f15d1b5366509e4ec7736e9" id="r_a795c3c078f15d1b5366509e4ec7736e9"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structhm330x__params__t.html">hm330x_params_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a795c3c078f15d1b5366509e4ec7736e9">hm330x_params</a> []</td></tr>
+<tr class="memdesc:a795c3c078f15d1b5366509e4ec7736e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration struct.  <br /></td></tr>
+<tr class="separator:a795c3c078f15d1b5366509e4ec7736e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0faed5756830b2c8c6b985a2c3c86c08" id="r_a0faed5756830b2c8c6b985a2c3c86c08"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structsaul__reg__info__t.html">saul_reg_info_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0faed5756830b2c8c6b985a2c3c86c08">hm330x_saul_info</a> []</td></tr>
+<tr class="memdesc:a0faed5756830b2c8c6b985a2c3c86c08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Additional meta information to keep in the SAUL registry.  <br /></td></tr>
+<tr class="separator:a0faed5756830b2c8c6b985a2c3c86c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Set default configuration parameters</h2></td></tr>
+<tr class="memitem:ae8010167367af8aea2f1f6895056b79a" id="r_ae8010167367af8aea2f1f6895056b79a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8010167367af8aea2f1f6895056b79a">HM330X_PARAM_I2C_DEV</a>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__i2c.html#ga9f14916eda80b19ff41d08e25eee56fb">I2C_DEV</a>(0)</td></tr>
+<tr class="memdesc:ae8010167367af8aea2f1f6895056b79a"><td class="mdescLeft">&#160;</td><td class="mdescRight">HM330X default I2C bus.  <br /></td></tr>
+<tr class="separator:ae8010167367af8aea2f1f6895056b79a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00aaa769c38a4e3cfd698ca69e3b61bb" id="r_a00aaa769c38a4e3cfd698ca69e3b61bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00aaa769c38a4e3cfd698ca69e3b61bb">HM330X_PARAM_RESET_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a></td></tr>
+<tr class="memdesc:a00aaa769c38a4e3cfd698ca69e3b61bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">HM330X default reset pin.  <br /></td></tr>
+<tr class="separator:a00aaa769c38a4e3cfd698ca69e3b61bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4fab2868f2a492a28e7ce200c17dd24" id="r_aa4fab2868f2a492a28e7ce200c17dd24"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4fab2868f2a492a28e7ce200c17dd24">HM330X_PARAM_SET_PIN</a>&#160;&#160;&#160;<a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a></td></tr>
+<tr class="memdesc:aa4fab2868f2a492a28e7ce200c17dd24"><td class="mdescLeft">&#160;</td><td class="mdescRight">HM330X default set pin.  <br /></td></tr>
+<tr class="separator:aa4fab2868f2a492a28e7ce200c17dd24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ef5d13e8f35d377571232008c0d1245" id="r_a2ef5d13e8f35d377571232008c0d1245"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ef5d13e8f35d377571232008c0d1245">HM330X_SAUL_INFO</a>&#160;&#160;&#160;{ .name = &quot;hm330x&quot; }</td></tr>
+<tr class="memdesc:a2ef5d13e8f35d377571232008c0d1245"><td class="mdescLeft">&#160;</td><td class="mdescRight">HM330X default SAUL information.  <br /></td></tr>
+<tr class="separator:a2ef5d13e8f35d377571232008c0d1245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac40133f19510a66d8ab153fbf281dbce" id="r_ac40133f19510a66d8ab153fbf281dbce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac40133f19510a66d8ab153fbf281dbce">HM330X_PARAMS</a></td></tr>
+<tr class="memdesc:ac40133f19510a66d8ab153fbf281dbce"><td class="mdescLeft">&#160;</td><td class="mdescRight">HM330X default parameters.  <br /></td></tr>
+<tr class="separator:ac40133f19510a66d8ab153fbf281dbce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a4710d21c6eb2fd29538874cc3b0ab10e" name="a4710d21c6eb2fd29538874cc3b0ab10e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4710d21c6eb2fd29538874cc3b0ab10e">&#9670;&#160;</a></span>HM330X_INFO_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HM330X_INFO_NUM&#160;&#160;&#160;<a class="el" href="container_8h.html#a25f003de16c08a4888b69f619d70f427">ARRAY_SIZE</a>(<a class="el" href="#a0faed5756830b2c8c6b985a2c3c86c08">hm330x_saul_info</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of saul info structs. </p>
+
+<p class="definition">Definition at line <a class="el" href="hm330x__params_8h_source.html#l00094">94</a> of file <a class="el" href="hm330x__params_8h_source.html">hm330x_params.h</a>.</p>
+
+</div>
+</div>
+<a id="a21ff038812b0d51a51fbe1d7dbe738d5" name="a21ff038812b0d51a51fbe1d7dbe738d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21ff038812b0d51a51fbe1d7dbe738d5">&#9670;&#160;</a></span>HM330X_NUMOF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HM330X_NUMOF&#160;&#160;&#160;<a class="el" href="container_8h.html#a25f003de16c08a4888b69f619d70f427">ARRAY_SIZE</a>(<a class="el" href="#a795c3c078f15d1b5366509e4ec7736e9">hm330x_params</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define the number of configured sensors. </p>
+
+<p class="definition">Definition at line <a class="el" href="hm330x__params_8h_source.html#l00081">81</a> of file <a class="el" href="hm330x__params_8h_source.html">hm330x_params.h</a>.</p>
+
+</div>
+</div>
+<a id="ae8010167367af8aea2f1f6895056b79a" name="ae8010167367af8aea2f1f6895056b79a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8010167367af8aea2f1f6895056b79a">&#9670;&#160;</a></span>HM330X_PARAM_I2C_DEV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HM330X_PARAM_I2C_DEV&#160;&#160;&#160;<a class="el" href="group__drivers__periph__i2c.html#ga9f14916eda80b19ff41d08e25eee56fb">I2C_DEV</a>(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>HM330X default I2C bus. </p>
+
+<p class="definition">Definition at line <a class="el" href="hm330x__params_8h_source.html#l00040">40</a> of file <a class="el" href="hm330x__params_8h_source.html">hm330x_params.h</a>.</p>
+
+</div>
+</div>
+<a id="a00aaa769c38a4e3cfd698ca69e3b61bb" name="a00aaa769c38a4e3cfd698ca69e3b61bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00aaa769c38a4e3cfd698ca69e3b61bb">&#9670;&#160;</a></span>HM330X_PARAM_RESET_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HM330X_PARAM_RESET_PIN&#160;&#160;&#160;<a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>HM330X default reset pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="hm330x__params_8h_source.html#l00046">46</a> of file <a class="el" href="hm330x__params_8h_source.html">hm330x_params.h</a>.</p>
+
+</div>
+</div>
+<a id="aa4fab2868f2a492a28e7ce200c17dd24" name="aa4fab2868f2a492a28e7ce200c17dd24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4fab2868f2a492a28e7ce200c17dd24">&#9670;&#160;</a></span>HM330X_PARAM_SET_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HM330X_PARAM_SET_PIN&#160;&#160;&#160;<a class="el" href="atmega__common_2include_2periph__cpu__common_8h.html#a3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>HM330X default set pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="hm330x__params_8h_source.html#l00052">52</a> of file <a class="el" href="hm330x__params_8h_source.html">hm330x_params.h</a>.</p>
+
+</div>
+</div>
+<a id="ac40133f19510a66d8ab153fbf281dbce" name="ac40133f19510a66d8ab153fbf281dbce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac40133f19510a66d8ab153fbf281dbce">&#9670;&#160;</a></span>HM330X_PARAMS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HM330X_PARAMS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">                                     { .i2c = <a class="code hl_define" href="#ae8010167367af8aea2f1f6895056b79a">HM330X_PARAM_I2C_DEV</a>, \</div>
+<div class="line">                                     .reset_pin = <a class="code hl_define" href="#a00aaa769c38a4e3cfd698ca69e3b61bb">HM330X_PARAM_RESET_PIN</a>, \</div>
+<div class="line">                                     .set_pin = <a class="code hl_define" href="#aa4fab2868f2a492a28e7ce200c17dd24">HM330X_PARAM_SET_PIN</a> }</div>
+<div class="ttc" id="ahm330x__params_8h_html_a00aaa769c38a4e3cfd698ca69e3b61bb"><div class="ttname"><a href="#a00aaa769c38a4e3cfd698ca69e3b61bb">HM330X_PARAM_RESET_PIN</a></div><div class="ttdeci">#define HM330X_PARAM_RESET_PIN</div><div class="ttdoc">HM330X default reset pin.</div><div class="ttdef"><b>Definition</b> <a href="hm330x__params_8h_source.html#l00046">hm330x_params.h:46</a></div></div>
+<div class="ttc" id="ahm330x__params_8h_html_aa4fab2868f2a492a28e7ce200c17dd24"><div class="ttname"><a href="#aa4fab2868f2a492a28e7ce200c17dd24">HM330X_PARAM_SET_PIN</a></div><div class="ttdeci">#define HM330X_PARAM_SET_PIN</div><div class="ttdoc">HM330X default set pin.</div><div class="ttdef"><b>Definition</b> <a href="hm330x__params_8h_source.html#l00052">hm330x_params.h:52</a></div></div>
+<div class="ttc" id="ahm330x__params_8h_html_ae8010167367af8aea2f1f6895056b79a"><div class="ttname"><a href="#ae8010167367af8aea2f1f6895056b79a">HM330X_PARAM_I2C_DEV</a></div><div class="ttdeci">#define HM330X_PARAM_I2C_DEV</div><div class="ttdoc">HM330X default I2C bus.</div><div class="ttdef"><b>Definition</b> <a href="hm330x__params_8h_source.html#l00040">hm330x_params.h:40</a></div></div>
+</div><!-- fragment -->
+<p>HM330X default parameters. </p>
+
+<p class="definition">Definition at line <a class="el" href="hm330x__params_8h_source.html#l00064">64</a> of file <a class="el" href="hm330x__params_8h_source.html">hm330x_params.h</a>.</p>
+
+</div>
+</div>
+<a id="a2ef5d13e8f35d377571232008c0d1245" name="a2ef5d13e8f35d377571232008c0d1245"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ef5d13e8f35d377571232008c0d1245">&#9670;&#160;</a></span>HM330X_SAUL_INFO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HM330X_SAUL_INFO&#160;&#160;&#160;{ .name = &quot;hm330x&quot; }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>HM330X default SAUL information. </p>
+
+<p class="definition">Definition at line <a class="el" href="hm330x__params_8h_source.html#l00058">58</a> of file <a class="el" href="hm330x__params_8h_source.html">hm330x_params.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a795c3c078f15d1b5366509e4ec7736e9" name="a795c3c078f15d1b5366509e4ec7736e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a795c3c078f15d1b5366509e4ec7736e9">&#9670;&#160;</a></span>hm330x_params</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structhm330x__params__t.html">hm330x_params_t</a> hm330x_params[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">{</div>
+<div class="line">    <a class="code hl_define" href="#ac40133f19510a66d8ab153fbf281dbce">HM330X_PARAMS</a></div>
+<div class="line">}</div>
+<div class="ttc" id="ahm330x__params_8h_html_ac40133f19510a66d8ab153fbf281dbce"><div class="ttname"><a href="#ac40133f19510a66d8ab153fbf281dbce">HM330X_PARAMS</a></div><div class="ttdeci">#define HM330X_PARAMS</div><div class="ttdoc">HM330X default parameters.</div><div class="ttdef"><b>Definition</b> <a href="hm330x__params_8h_source.html#l00064">hm330x_params.h:64</a></div></div>
+</div><!-- fragment -->
+<p>Configuration struct. </p>
+
+<p class="definition">Definition at line <a class="el" href="hm330x__params_8h_source.html#l00073">73</a> of file <a class="el" href="hm330x__params_8h_source.html">hm330x_params.h</a>.</p>
+
+</div>
+</div>
+<a id="a0faed5756830b2c8c6b985a2c3c86c08" name="a0faed5756830b2c8c6b985a2c3c86c08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0faed5756830b2c8c6b985a2c3c86c08">&#9670;&#160;</a></span>hm330x_saul_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structsaul__reg__info__t.html">saul_reg_info_t</a> hm330x_saul_info[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">{</div>
+<div class="line">    <a class="code hl_define" href="#a2ef5d13e8f35d377571232008c0d1245">HM330X_SAUL_INFO</a></div>
+<div class="line">}</div>
+<div class="ttc" id="ahm330x__params_8h_html_a2ef5d13e8f35d377571232008c0d1245"><div class="ttname"><a href="#a2ef5d13e8f35d377571232008c0d1245">HM330X_SAUL_INFO</a></div><div class="ttdeci">#define HM330X_SAUL_INFO</div><div class="ttdoc">HM330X default SAUL information.</div><div class="ttdef"><b>Definition</b> <a href="hm330x__params_8h_source.html#l00058">hm330x_params.h:58</a></div></div>
+</div><!-- fragment -->
+<p>Additional meta information to keep in the SAUL registry. </p>
+
+<p class="definition">Definition at line <a class="el" href="hm330x__params_8h_source.html#l00086">86</a> of file <a class="el" href="hm330x__params_8h_source.html">hm330x_params.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

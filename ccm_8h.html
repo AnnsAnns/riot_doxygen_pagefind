@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/crypto/modes/ccm.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('ccm_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">ccm.h File Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__crypto.html">Crypto</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Counter with CBC-MAC mode of operation for block ciphers.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Counter with CBC-MAC mode of operation for block ciphers. </p>
+<dl class="section author"><dt>Author</dt><dd>Freie Universitaet Berlin, Computer Systems &amp; Telematics </dd>
+<dd>
+Nico von Geyso <a href="#" onclick="location.href='mai'+'lto:'+'nic'+'o.'+'gey'+'so'+'@fu'+'-b'+'erl'+'in'+'.de'; return false;">nico.<span class="obfuscator">.nosp@m.</span>geys<span class="obfuscator">.nosp@m.</span>o@fu-<span class="obfuscator">.nosp@m.</span>berl<span class="obfuscator">.nosp@m.</span>in.de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="ccm_8h_source.html">ccm.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="ciphers_8h_source.html">crypto/ciphers.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for ccm.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="ccm_8h__incl.svg" width="195" height="207"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="ccm_8h__dep__incl.svg" width="551" height="242"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="ccm_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a209beefedebafced4af998d7992397a4" id="r_a209beefedebafced4af998d7992397a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a209beefedebafced4af998d7992397a4">CCM_BLOCK_SIZE</a>&#160;&#160;&#160;16</td></tr>
+<tr class="memdesc:a209beefedebafced4af998d7992397a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Block size required for the cipher.  <br /></td></tr>
+<tr class="separator:a209beefedebafced4af998d7992397a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a313e949249f24268a72e16507b329247" id="r_a313e949249f24268a72e16507b329247"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a313e949249f24268a72e16507b329247">CCM_MAC_MAX_LEN</a>&#160;&#160;&#160;16</td></tr>
+<tr class="memdesc:a313e949249f24268a72e16507b329247"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum length for the appended MAC.  <br /></td></tr>
+<tr class="separator:a313e949249f24268a72e16507b329247"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a3904eb368fe7df3461d536c4ccdfb6c9" id="r_a3904eb368fe7df3461d536c4ccdfb6c9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3904eb368fe7df3461d536c4ccdfb6c9">cipher_encrypt_ccm</a> (const <a class="el" href="structcipher__t.html">cipher_t</a> *cipher, const uint8_t *auth_data, uint32_t auth_data_len, uint8_t mac_length, uint8_t length_encoding, const uint8_t *nonce, size_t nonce_len, const uint8_t *input, size_t input_len, uint8_t *output)</td></tr>
+<tr class="memdesc:a3904eb368fe7df3461d536c4ccdfb6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypt and authenticate data of arbitrary length in ccm mode.  <br /></td></tr>
+<tr class="separator:a3904eb368fe7df3461d536c4ccdfb6c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ec1eeb0d8d60a0a873e4493b9840aca" id="r_a1ec1eeb0d8d60a0a873e4493b9840aca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ec1eeb0d8d60a0a873e4493b9840aca">cipher_decrypt_ccm</a> (const <a class="el" href="structcipher__t.html">cipher_t</a> *cipher, const uint8_t *auth_data, uint32_t auth_data_len, uint8_t mac_length, uint8_t length_encoding, const uint8_t *nonce, size_t nonce_len, const uint8_t *input, size_t input_len, uint8_t *output)</td></tr>
+<tr class="memdesc:a1ec1eeb0d8d60a0a873e4493b9840aca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypt data of arbitrary length in ccm mode.  <br /></td></tr>
+<tr class="separator:a1ec1eeb0d8d60a0a873e4493b9840aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">CCM error codes</h2></td></tr>
+<tr class="memitem:a46204e619c1a01ebeb276364d184915a" id="r_a46204e619c1a01ebeb276364d184915a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46204e619c1a01ebeb276364d184915a">CCM_ERR_INVALID_NONCE_LENGTH</a>&#160;&#160;&#160;(-2)</td></tr>
+<tr class="separator:a46204e619c1a01ebeb276364d184915a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19b930748948a5346f42e1a6329dc84a" id="r_a19b930748948a5346f42e1a6329dc84a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19b930748948a5346f42e1a6329dc84a">CCM_ERR_INVALID_CBC_MAC</a>&#160;&#160;&#160;(-3)</td></tr>
+<tr class="separator:a19b930748948a5346f42e1a6329dc84a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ea0fe7fd220412200fe55430524b06a" id="r_a7ea0fe7fd220412200fe55430524b06a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ea0fe7fd220412200fe55430524b06a">CCM_ERR_INVALID_DATA_LENGTH</a>&#160;&#160;&#160;(-3)</td></tr>
+<tr class="separator:a7ea0fe7fd220412200fe55430524b06a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f3af6d2a73c67c15af25fa3a9fc5167" id="r_a3f3af6d2a73c67c15af25fa3a9fc5167"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f3af6d2a73c67c15af25fa3a9fc5167">CCM_ERR_INVALID_LENGTH_ENCODING</a>&#160;&#160;&#160;(-4)</td></tr>
+<tr class="separator:a3f3af6d2a73c67c15af25fa3a9fc5167"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa75457375d405459a01010ab97ae0e20" id="r_aa75457375d405459a01010ab97ae0e20"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa75457375d405459a01010ab97ae0e20">CCM_ERR_INVALID_MAC_LENGTH</a>&#160;&#160;&#160;(-5)</td></tr>
+<tr class="separator:aa75457375d405459a01010ab97ae0e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a209beefedebafced4af998d7992397a4" name="a209beefedebafced4af998d7992397a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a209beefedebafced4af998d7992397a4">&#9670;&#160;</a></span>CCM_BLOCK_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCM_BLOCK_SIZE&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Block size required for the cipher. </p>
+<p>CCM is only defined for 128 bit ciphers. </p>
+
+<p class="definition">Definition at line <a class="el" href="ccm_8h_source.html#l00043">43</a> of file <a class="el" href="ccm_8h_source.html">ccm.h</a>.</p>
+
+</div>
+</div>
+<a id="a19b930748948a5346f42e1a6329dc84a" name="a19b930748948a5346f42e1a6329dc84a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19b930748948a5346f42e1a6329dc84a">&#9670;&#160;</a></span>CCM_ERR_INVALID_CBC_MAC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCM_ERR_INVALID_CBC_MAC&#160;&#160;&#160;(-3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ccm_8h_source.html#l00034">34</a> of file <a class="el" href="ccm_8h_source.html">ccm.h</a>.</p>
+
+</div>
+</div>
+<a id="a7ea0fe7fd220412200fe55430524b06a" name="a7ea0fe7fd220412200fe55430524b06a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ea0fe7fd220412200fe55430524b06a">&#9670;&#160;</a></span>CCM_ERR_INVALID_DATA_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCM_ERR_INVALID_DATA_LENGTH&#160;&#160;&#160;(-3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ccm_8h_source.html#l00035">35</a> of file <a class="el" href="ccm_8h_source.html">ccm.h</a>.</p>
+
+</div>
+</div>
+<a id="a3f3af6d2a73c67c15af25fa3a9fc5167" name="a3f3af6d2a73c67c15af25fa3a9fc5167"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f3af6d2a73c67c15af25fa3a9fc5167">&#9670;&#160;</a></span>CCM_ERR_INVALID_LENGTH_ENCODING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCM_ERR_INVALID_LENGTH_ENCODING&#160;&#160;&#160;(-4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ccm_8h_source.html#l00036">36</a> of file <a class="el" href="ccm_8h_source.html">ccm.h</a>.</p>
+
+</div>
+</div>
+<a id="aa75457375d405459a01010ab97ae0e20" name="aa75457375d405459a01010ab97ae0e20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa75457375d405459a01010ab97ae0e20">&#9670;&#160;</a></span>CCM_ERR_INVALID_MAC_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCM_ERR_INVALID_MAC_LENGTH&#160;&#160;&#160;(-5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ccm_8h_source.html#l00037">37</a> of file <a class="el" href="ccm_8h_source.html">ccm.h</a>.</p>
+
+</div>
+</div>
+<a id="a46204e619c1a01ebeb276364d184915a" name="a46204e619c1a01ebeb276364d184915a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46204e619c1a01ebeb276364d184915a">&#9670;&#160;</a></span>CCM_ERR_INVALID_NONCE_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCM_ERR_INVALID_NONCE_LENGTH&#160;&#160;&#160;(-2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ccm_8h_source.html#l00033">33</a> of file <a class="el" href="ccm_8h_source.html">ccm.h</a>.</p>
+
+</div>
+</div>
+<a id="a313e949249f24268a72e16507b329247" name="a313e949249f24268a72e16507b329247"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a313e949249f24268a72e16507b329247">&#9670;&#160;</a></span>CCM_MAC_MAX_LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CCM_MAC_MAX_LEN&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum length for the appended MAC. </p>
+
+<p class="definition">Definition at line <a class="el" href="ccm_8h_source.html#l00048">48</a> of file <a class="el" href="ccm_8h_source.html">ccm.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a1ec1eeb0d8d60a0a873e4493b9840aca" name="a1ec1eeb0d8d60a0a873e4493b9840aca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ec1eeb0d8d60a0a873e4493b9840aca">&#9670;&#160;</a></span>cipher_decrypt_ccm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cipher_decrypt_ccm </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcipher__t.html">cipher_t</a> *</td>          <td class="paramname"><span class="paramname"><em>cipher</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *</td>          <td class="paramname"><span class="paramname"><em>auth_data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>auth_data_len</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>mac_length</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>length_encoding</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *</td>          <td class="paramname"><span class="paramname"><em>nonce</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>nonce_len</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *</td>          <td class="paramname"><span class="paramname"><em>input</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>input_len</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>output</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decrypt data of arbitrary length in ccm mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cipher</td><td>Already initialized cipher struct </td></tr>
+    <tr><td class="paramname">auth_data</td><td>Additional data to authenticate in MAC </td></tr>
+    <tr><td class="paramname">auth_data_len</td><td>Length of additional data, max (2^16 - 2^8) </td></tr>
+    <tr><td class="paramname">mac_length</td><td>length of the appended MAC (between 4 and 16 - only even values) </td></tr>
+    <tr><td class="paramname">length_encoding</td><td>maximal supported length of plaintext (2^(8*length_enc)). </td></tr>
+    <tr><td class="paramname">nonce</td><td>Nounce for ctr mode encryption </td></tr>
+    <tr><td class="paramname">nonce_len</td><td>Length of the nonce in octets (maximum: 15-length_encoding) </td></tr>
+    <tr><td class="paramname">input</td><td>pointer to input data to decrypt </td></tr>
+    <tr><td class="paramname">input_len</td><td>length of the input data, [0, 2^32] </td></tr>
+    <tr><td class="paramname">output</td><td>pointer to allocated memory for decrypted data. It has to be of size data_len - mac_length.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Length of the decrypted data on a successful decryption, can be 0 if only auth_data and MAC is present. </dd>
+<dd>
+A negative error code if something went wrong </dd></dl>
+
+</div>
+</div>
+<a id="a3904eb368fe7df3461d536c4ccdfb6c9" name="a3904eb368fe7df3461d536c4ccdfb6c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3904eb368fe7df3461d536c4ccdfb6c9">&#9670;&#160;</a></span>cipher_encrypt_ccm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cipher_encrypt_ccm </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcipher__t.html">cipher_t</a> *</td>          <td class="paramname"><span class="paramname"><em>cipher</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *</td>          <td class="paramname"><span class="paramname"><em>auth_data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>auth_data_len</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>mac_length</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>length_encoding</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *</td>          <td class="paramname"><span class="paramname"><em>nonce</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>nonce_len</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *</td>          <td class="paramname"><span class="paramname"><em>input</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>input_len</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>output</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encrypt and authenticate data of arbitrary length in ccm mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cipher</td><td>Already initialized cipher struct </td></tr>
+    <tr><td class="paramname">auth_data</td><td>Additional data to authenticate in MAC </td></tr>
+    <tr><td class="paramname">auth_data_len</td><td>Length of additional data, max (2^16 - 2^8) </td></tr>
+    <tr><td class="paramname">mac_length</td><td>length of the appended MAC (between 4 and 16 - only even values) </td></tr>
+    <tr><td class="paramname">length_encoding</td><td>maximal supported length of plaintext (2^(8*length_enc)). </td></tr>
+    <tr><td class="paramname">nonce</td><td>Nounce for ctr mode encryption </td></tr>
+    <tr><td class="paramname">nonce_len</td><td>Length of the nonce in octets (maximum: 15-length_encoding) </td></tr>
+    <tr><td class="paramname">input</td><td>pointer to input data to encrypt </td></tr>
+    <tr><td class="paramname">input_len</td><td>length of the input data, [0, 2^32] </td></tr>
+    <tr><td class="paramname">output</td><td>pointer to allocated memory for encrypted data. It has to be of size data_len + mac_length.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Length of encrypted data on a successful encryption, can be 0 if input_len=0 (no plaintext) </dd>
+<dd>
+A negative error code if something went wrong </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

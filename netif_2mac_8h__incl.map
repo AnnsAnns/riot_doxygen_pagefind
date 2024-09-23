@@ -1,0 +1,108 @@
+<map id="sys/include/net/gnrc/netif/mac.h" name="sys/include/net/gnrc/netif/mac.h">
+<area shape="rect" id="Node000001" title="Common MAC module definitions for Network interface API" alt="" coords="382,5,533,50"/>
+<area shape="rect" id="Node000002" href="$sys_2include_2net_2gnrc_2mac_2types_8h.html" title="Internal data types used by GNRC_MAC." alt="" coords="765,98,923,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="534,42,768,92,766,97,533,48"/>
+<area shape="rect" id="Node000031" href="$csma__sender_8h.html" title="Interface definition for the CSMA/CA helper." alt="" coords="5,249,150,277"/>
+<area shape="poly" id="edge54_Node000001_Node000031" title=" " alt="" coords="404,53,292,104,230,138,170,176,132,208,100,240,96,236,128,204,167,172,227,133,290,99,401,48"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="717,628,787,655"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="765,129,702,143,627,163,548,191,468,228,393,274,359,301,328,330,301,362,279,397,261,436,249,477,244,508,242,533,249,556,267,578,299,596,345,611,402,621,466,629,595,637,701,638,701,644,595,642,465,634,401,627,344,616,297,601,264,582,244,558,237,534,238,507,244,476,256,434,274,395,297,359,324,326,355,297,390,270,465,223,546,187,626,158,700,138,764,123"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="1684,476,1765,504"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="924,113,1183,126,1345,137,1511,152,1665,172,1793,196,1843,210,1881,225,1906,242,1915,261,1915,340,1913,389,1905,409,1889,430,1865,450,1837,465,1781,484,1779,479,1835,461,1862,446,1885,426,1900,406,1907,388,1910,340,1910,262,1902,246,1879,230,1841,215,1792,201,1664,177,1510,158,1345,143,1182,131,923,119"/>
+<area shape="rect" id="Node000005" href="$net_2gnrc_2pkt_8h.html" title="General definitions for network packets and their helper functions." alt="" coords="1335,249,1446,277"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="924,113,1027,119,1143,130,1250,147,1292,158,1324,171,1342,184,1357,200,1380,234,1376,237,1353,204,1338,188,1322,176,1291,163,1249,152,1143,135,1027,124,924,119"/>
+<area shape="rect" id="Node000022" href="$priority__pktqueue_8h.html" title="gnrc priority packet queue API" alt="" coords="1106,174,1311,201"/>
+<area shape="poly" id="edge32_Node000002_Node000022" title=" " alt="" coords="910,124,1128,167,1127,173,909,129"/>
+<area shape="rect" id="Node000024" href="$sys_2include_2net_2ieee802154_8h.html" title="IEEE 802.15.4 header definitions." alt="" coords="390,325,525,353"/>
+<area shape="poly" id="edge38_Node000002_Node000024" title=" " alt="" coords="823,129,494,319,492,315,820,124"/>
+<area shape="rect" id="Node000030" href="$mac_2mac_8h.html" title="Definitions of GNRC_MAC." alt="" coords="769,174,919,201"/>
+<area shape="poly" id="edge52_Node000002_Node000030" title=" " alt="" coords="847,126,847,158,842,158,842,126"/>
+<area shape="rect" id="Node000006" href="$inttypes_8h.html" title="Adds include for missing inttype definitions." alt="" coords="1509,401,1595,428"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1413,275,1475,323,1535,387,1531,391,1472,327,1409,280"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="522,401,591,428"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="1335,267,1179,268,976,275,874,282,779,293,700,308,641,327,621,340,603,356,574,389,570,386,599,352,618,336,639,323,698,303,779,288,873,277,976,270,1179,262,1334,261"/>
+<area shape="rect" id="Node000008" href="$sched_8h.html" title="Scheduler API definition." alt="" coords="1552,325,1624,353"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="1427,275,1540,317,1538,322,1425,280"/>
+<area shape="rect" id="Node000018" href="$list_8h.html" title="Intrusive linked list." alt="" coords="1606,476,1659,504"/>
+<area shape="poly" id="edge31_Node000005_Node000018" title=" " alt="" coords="1447,262,1523,270,1566,279,1610,292,1653,309,1692,332,1727,362,1753,399,1758,415,1753,430,1741,442,1721,454,1674,476,1672,471,1719,449,1738,438,1749,427,1753,415,1748,402,1723,366,1689,337,1651,314,1608,297,1565,284,1522,276,1447,268"/>
+<area shape="rect" id="Node000019" href="$nettype_8h.html" title="Protocol type definitions." alt="" coords="1321,325,1461,353"/>
+<area shape="poly" id="edge26_Node000005_Node000019" title=" " alt="" coords="1394,278,1394,309,1388,309,1388,278"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="1584,354,1568,388,1563,385,1579,352"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="1652,628,1725,655"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1625,340,1690,347,1768,359,1840,376,1869,386,1889,399,1918,433,1930,467,1940,552,1944,567,1940,581,1926,593,1907,603,1855,619,1740,638,1740,632,1854,613,1905,598,1923,588,1935,578,1938,567,1935,552,1925,468,1913,436,1885,403,1866,391,1839,381,1767,364,1689,353,1624,346"/>
+<area shape="rect" id="Node000010" href="$kernel__defines_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="932,401,1060,428"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="1552,347,1076,403,1075,398,1552,342"/>
+<area shape="rect" id="Node000016" href="$native__sched_8h.html" title="Add definitions required on the native board." alt="" coords="1619,401,1738,428"/>
+<area shape="poly" id="edge21_Node000008_Node000016" title=" " alt="" coords="1606,351,1653,389,1649,393,1603,355"/>
+<area shape="rect" id="Node000017" href="$clist_8h.html" title="Circular linked list." alt="" coords="1814,401,1874,428"/>
+<area shape="poly" id="edge22_Node000008_Node000017" title=" " alt="" coords="1625,348,1800,398,1798,403,1624,353"/>
+<area shape="rect" id="Node000011" href="$modules_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="724,476,813,504"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="956,431,824,474,822,469,955,426"/>
+<area shape="rect" id="Node000012" href="$riot__version_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="990,476,1101,504"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="1007,427,1030,462,1026,465,1003,430"/>
+<area shape="rect" id="Node000013" href="$compiler__hints_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="837,476,966,504"/>
+<area shape="poly" id="edge14_Node000010_Node000013" title=" " alt="" coords="981,431,932,469,929,465,978,427"/>
+<area shape="rect" id="Node000015" href="$container_8h.html" title="Common macros and compiler attributes/pragmas configuration." alt="" coords="1225,552,1319,580"/>
+<area shape="poly" id="edge18_Node000010_Node000015" title=" " alt="" coords="1023,427,1113,474,1237,542,1234,546,1111,479,1020,431"/>
+<area shape="poly" id="edge13_Node000012_Node000003" title=" " alt="" coords="1028,507,973,542,903,582,803,625,801,620,900,577,970,538,1025,502"/>
+<area shape="poly" id="edge17_Node000013_Node000003" title=" " alt="" coords="904,505,898,541,890,562,878,581,862,597,843,610,803,629,801,624,840,606,858,593,874,578,885,560,892,540,898,504"/>
+<area shape="rect" id="Node000014" href="$assert_8h.html" title="POSIX.1&#45;2008 compliant version of the assert macro." alt="" coords="790,552,864,580"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="890,506,853,543,849,539,886,503"/>
+<area shape="poly" id="edge16_Node000014_Node000003" title=" " alt="" coords="815,582,778,618,774,615,812,578"/>
+<area shape="poly" id="edge20_Node000015_Node000003" title=" " alt="" coords="1225,579,1207,582,982,615,803,637,802,632,981,610,1206,577,1224,574"/>
+<area shape="poly" id="edge19_Node000015_Node000009" title=" " alt="" coords="1320,573,1637,628,1636,634,1319,578"/>
+<area shape="poly" id="edge23_Node000017_Node000004" title=" " alt="" coords="1824,431,1760,470,1757,466,1821,427"/>
+<area shape="poly" id="edge24_Node000017_Node000009" title=" " alt="" coords="1838,430,1708,616,1704,613,1833,427"/>
+<area shape="poly" id="edge25_Node000017_Node000018" title=" " alt="" coords="1814,429,1674,477,1672,472,1812,424"/>
+<area shape="poly" id="edge27_Node000019_Node000006" title=" " alt="" coords="1421,351,1511,392,1509,397,1419,356"/>
+<area shape="poly" id="edge28_Node000019_Node000011" title=" " alt="" coords="1320,343,1238,347,1137,357,1028,375,921,403,867,431,802,470,799,466,864,426,919,398,1027,370,1136,352,1237,342,1320,338"/>
+<area shape="rect" id="Node000020" href="$ethertype_8h.html" title="Ether type definitions." alt="" coords="1226,401,1348,428"/>
+<area shape="poly" id="edge29_Node000019_Node000020" title=" " alt="" coords="1374,355,1319,394,1316,390,1371,351"/>
+<area shape="rect" id="Node000021" href="$protnum_8h.html" title="Protocol number definitions." alt="" coords="1372,401,1485,428"/>
+<area shape="poly" id="edge30_Node000019_Node000021" title=" " alt="" coords="1400,352,1417,386,1412,388,1395,354"/>
+<area shape="poly" id="edge33_Node000022_Node000003" title=" " alt="" coords="1208,202,1197,261,1191,338,1191,492,1188,507,1178,522,1146,548,1098,570,1039,589,912,619,803,636,803,631,911,614,1038,584,1096,565,1143,543,1174,518,1183,505,1186,491,1186,337,1192,260,1203,201"/>
+<area shape="poly" id="edge37_Node000022_Node000005" title=" " alt="" coords="1242,199,1345,241,1343,246,1240,204"/>
+<area shape="rect" id="Node000023" href="$priority__queue_8h.html" title="A simple priority queue." alt="" coords="1798,552,1925,580"/>
+<area shape="poly" id="edge34_Node000022_Node000023" title=" " alt="" coords="1294,199,1448,228,1629,271,1715,298,1791,329,1851,362,1873,380,1889,399,1897,416,1902,435,1900,473,1891,509,1878,539,1873,537,1886,507,1895,472,1896,435,1892,418,1885,402,1869,384,1848,366,1789,333,1713,303,1628,276,1447,233,1293,205"/>
+<area shape="poly" id="edge36_Node000023_Node000003" title=" " alt="" coords="1798,574,803,639,803,634,1797,569"/>
+<area shape="poly" id="edge35_Node000023_Node000009" title=" " alt="" coords="1832,583,1734,624,1732,619,1829,578"/>
+<area shape="poly" id="edge39_Node000024_Node000003" title=" " alt="" coords="460,353,465,389,471,409,482,427,505,447,528,456,554,462,585,474,653,505,681,522,712,550,732,581,746,612,741,614,728,584,707,554,678,526,651,510,583,479,553,467,527,461,502,451,478,430,467,411,460,390,455,353"/>
+<area shape="poly" id="edge40_Node000024_Node000007" title=" " alt="" coords="477,351,528,389,525,394,474,355"/>
+<area shape="poly" id="edge51_Node000024_Node000011" title=" " alt="" coords="464,352,481,390,494,410,511,426,585,446,709,474,708,479,584,451,508,431,490,413,476,392,459,354"/>
+<area shape="rect" id="Node000025" href="$byteorder_8h.html" title="Functions to work with different byte orders." alt="" coords="372,476,468,504"/>
+<area shape="poly" id="edge41_Node000024_Node000025" title=" " alt="" coords="391,349,363,356,337,367,312,382,293,402,288,413,288,423,301,441,327,457,358,470,356,475,324,462,297,445,283,424,283,412,289,399,309,378,334,362,362,351,389,344"/>
+<area shape="rect" id="Node000029" href="$eui64_8h.html" title="EUI&#45;64 data type definition." alt="" coords="302,401,397,428"/>
+<area shape="poly" id="edge48_Node000024_Node000029" title=" " alt="" coords="440,355,383,394,380,390,437,351"/>
+<area shape="poly" id="edge43_Node000025_Node000003" title=" " alt="" coords="445,502,584,577,703,622,701,627,582,582,443,507"/>
+<area shape="rect" id="Node000026" title=" " alt="" coords="594,552,665,580"/>
+<area shape="poly" id="edge42_Node000025_Node000026" title=" " alt="" coords="458,502,581,545,579,550,457,507"/>
+<area shape="rect" id="Node000027" href="$endian_8h.html" title="libc header for endian conversion" alt="" coords="320,552,398,580"/>
+<area shape="poly" id="edge44_Node000025_Node000027" title=" " alt="" coords="411,506,381,542,377,538,407,503"/>
+<area shape="rect" id="Node000028" href="$unaligned_8h.html" title="Unaligned but safe memory access functions." alt="" coords="422,552,520,580"/>
+<area shape="poly" id="edge46_Node000025_Node000028" title=" " alt="" coords="431,503,455,537,451,541,427,506"/>
+<area shape="poly" id="edge45_Node000027_Node000003" title=" " alt="" coords="399,575,410,577,569,608,702,630,701,635,569,613,409,582,397,580"/>
+<area shape="poly" id="edge47_Node000028_Node000003" title=" " alt="" coords="521,577,703,625,702,630,519,582"/>
+<area shape="poly" id="edge49_Node000029_Node000003" title=" " alt="" coords="398,425,457,444,529,470,606,506,678,550,711,581,738,613,733,617,708,585,675,554,603,510,527,475,455,449,396,431"/>
+<area shape="poly" id="edge50_Node000029_Node000025" title=" " alt="" coords="364,427,399,463,395,467,360,431"/>
+<area shape="poly" id="edge53_Node000030_Node000011" title=" " alt="" coords="848,202,850,242,849,299,840,365,821,429,810,449,796,467,792,463,805,446,816,427,835,364,843,299,845,242,843,202"/>
+<area shape="poly" id="edge55_Node000031_Node000003" title=" " alt="" coords="84,277,100,335,107,374,109,413,109,491,111,519,116,541,127,560,147,577,177,589,232,599,389,616,702,635,701,641,388,621,231,604,176,594,144,582,123,563,111,543,105,520,104,492,104,413,101,374,95,336,79,278"/>
+<area shape="rect" id="Node000032" href="$drivers_2include_2net_2netdev_8h.html" title="Definitions low&#45;level network driver interface." alt="" coords="652,325,754,353"/>
+<area shape="poly" id="edge56_Node000031_Node000032" title=" " alt="" coords="150,270,637,327,636,332,150,276"/>
+<area shape="poly" id="edge57_Node000032_Node000003" title=" " alt="" coords="652,347,441,368,343,384,310,393,293,403,276,425,264,447,257,469,254,490,257,512,264,534,276,556,293,578,312,588,351,598,464,615,702,635,701,640,463,620,350,603,311,593,289,582,271,559,259,536,251,513,249,490,252,467,259,445,272,422,289,399,308,388,342,379,440,363,651,341"/>
+<area shape="poly" id="edge69_Node000032_Node000010" title=" " alt="" coords="755,350,929,394,928,399,754,356"/>
+<area shape="rect" id="Node000033" href="$errno_8h.html" title=" " alt="" coords="614,401,682,428"/>
+<area shape="poly" id="edge58_Node000032_Node000033" title=" " alt="" coords="695,355,669,390,665,386,691,352"/>
+<area shape="rect" id="Node000034" href="$iolist_8h.html" title="iolist scatter / gather IO" alt="" coords="1085,401,1150,428"/>
+<area shape="poly" id="edge59_Node000032_Node000034" title=" " alt="" coords="755,344,893,365,1070,398,1069,403,892,370,754,350"/>
+<area shape="rect" id="Node000037" href="$netopt_8h.html" title="Definition of global configuration options." alt="" coords="706,401,806,428"/>
+<area shape="poly" id="edge66_Node000032_Node000037" title=" " alt="" coords="715,352,740,386,736,390,710,355"/>
+<area shape="rect" id="Node000035" href="$unistd_8h_source.html" title=" " alt="" coords="1362,476,1436,504"/>
+<area shape="poly" id="edge60_Node000034_Node000035" title=" " alt="" coords="1151,422,1348,473,1347,478,1150,427"/>
+<area shape="poly" id="edge62_Node000035_Node000003" title=" " alt="" coords="1395,506,1372,545,1354,565,1332,582,1288,599,1228,613,1080,631,925,640,803,643,803,637,925,634,1079,625,1227,607,1287,594,1330,577,1350,561,1368,541,1391,503"/>
+<area shape="poly" id="edge61_Node000035_Node000009" title=" " alt="" coords="1425,502,1651,618,1648,623,1423,507"/>
+<area shape="rect" id="Node000036" href="$cpu_2avr8__common_2avr__libc__extra_2include_2sys_2types_8h_source.html" title=" " alt="" coords="1394,552,1489,580"/>
+<area shape="poly" id="edge63_Node000035_Node000036" title=" " alt="" coords="1409,503,1429,537,1424,540,1404,506"/>
+<area shape="poly" id="edge64_Node000036_Node000003" title=" " alt="" coords="1394,579,1375,582,1212,603,1050,619,803,639,803,634,1049,614,1211,598,1374,577,1393,574"/>
+<area shape="poly" id="edge65_Node000036_Node000009" title=" " alt="" coords="1486,578,1637,622,1636,627,1485,583"/>
+<area shape="poly" id="edge67_Node000037_Node000003" title=" " alt="" coords="706,429,694,431,642,437,597,438,519,435,483,436,446,442,406,455,362,479,331,500,307,525,301,538,299,551,301,564,310,578,336,597,377,611,427,622,484,630,603,637,701,639,701,644,602,643,484,635,426,627,375,616,334,601,306,582,296,566,293,551,296,536,303,522,327,496,359,474,404,450,445,436,482,430,519,430,597,433,642,432,693,426,705,424"/>
+<area shape="poly" id="edge68_Node000037_Node000004" title=" " alt="" coords="807,417,920,426,1129,436,1294,440,1458,449,1668,474,1668,479,1458,454,1293,446,1129,441,920,431,807,423"/>
+</map>

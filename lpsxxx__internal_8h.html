@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/lpsxxx/include/lpsxxx_internal.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('lpsxxx__internal_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lpsxxx_internal.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a> &#124; <a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> &raquo; <a class="el" href="group__drivers__lpsxxx.html">LPS331AP/LPS25HB/LPS22HB Pressure Sensors Driver</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Definitions for the LPSXXX family of pressure sensors.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Definitions for the LPSXXX family of pressure sensors. </p>
+<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span class="obfuscator">.nosp@m.</span>.pet<span class="obfuscator">.nosp@m.</span>ersen<span class="obfuscator">.nosp@m.</span>@fu-<span class="obfuscator">.nosp@m.</span>berli<span class="obfuscator">.nosp@m.</span>n.de</a> </dd>
+<dd>
+Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span class="obfuscator">.nosp@m.</span>ndre<span class="obfuscator">.nosp@m.</span>.abad<span class="obfuscator">.nosp@m.</span>ie@i<span class="obfuscator">.nosp@m.</span>nria.<span class="obfuscator">.nosp@m.</span>fr</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="lpsxxx__internal_8h_source.html">lpsxxx_internal.h</a>.</p>
+</div>
+<p><a href="lpsxxx__internal_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Common LPS331AP/LPS25HB registers</h2></td></tr>
+<tr class="memitem:ab264e38e8d017230f9174f08bdad25e4" id="r_ab264e38e8d017230f9174f08bdad25e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab264e38e8d017230f9174f08bdad25e4">LPSXXX_REG_WHO_AM_I</a>&#160;&#160;&#160;(0x0f)</td></tr>
+<tr class="separator:ab264e38e8d017230f9174f08bdad25e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f0df2514717c3ccaf4179bb0e34d0dd" id="r_a4f0df2514717c3ccaf4179bb0e34d0dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f0df2514717c3ccaf4179bb0e34d0dd">LPSXXX_REG_STATUS</a>&#160;&#160;&#160;(0x27)</td></tr>
+<tr class="separator:a4f0df2514717c3ccaf4179bb0e34d0dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a644892068e1e1dd88c3719fa94a6be37" id="r_a644892068e1e1dd88c3719fa94a6be37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a644892068e1e1dd88c3719fa94a6be37">LPSXXX_REG_PRESS_OUT_XL</a>&#160;&#160;&#160;(0x28)</td></tr>
+<tr class="separator:a644892068e1e1dd88c3719fa94a6be37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a037166941bd291205dea0658bd7ccbaf" id="r_a037166941bd291205dea0658bd7ccbaf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a037166941bd291205dea0658bd7ccbaf">LPSXXX_REG_PRESS_OUT_L</a>&#160;&#160;&#160;(0x29)</td></tr>
+<tr class="separator:a037166941bd291205dea0658bd7ccbaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed4f223db94c104bbc42917635f8c4b9" id="r_aed4f223db94c104bbc42917635f8c4b9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed4f223db94c104bbc42917635f8c4b9">LPSXXX_REG_PRESS_OUT_H</a>&#160;&#160;&#160;(0x2a)</td></tr>
+<tr class="separator:aed4f223db94c104bbc42917635f8c4b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa7f6f67e294101bd86ea2409c78f5c4" id="r_aaa7f6f67e294101bd86ea2409c78f5c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa7f6f67e294101bd86ea2409c78f5c4">LPSXXX_REG_TEMP_OUT_L</a>&#160;&#160;&#160;(0x2b)</td></tr>
+<tr class="separator:aaa7f6f67e294101bd86ea2409c78f5c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8d3c354fc99626ea09009b6c7699150" id="r_ab8d3c354fc99626ea09009b6c7699150"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8d3c354fc99626ea09009b6c7699150">LPSXXX_REG_TEMP_OUT_H</a>&#160;&#160;&#160;(0x2c)</td></tr>
+<tr class="separator:ab8d3c354fc99626ea09009b6c7699150"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Common LPS331AP/LPS25HB CTRL_REG1 bitfields</h2></td></tr>
+<tr class="memitem:a0009bce209469a7cb3d67ba115697f1a" id="r_a0009bce209469a7cb3d67ba115697f1a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0009bce209469a7cb3d67ba115697f1a">LPSXXX_CTRL_REG1_ODR</a>&#160;&#160;&#160;(0x70)</td></tr>
+<tr class="separator:a0009bce209469a7cb3d67ba115697f1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8753ffa7681accbe1387fae34f5a83e6" id="r_a8753ffa7681accbe1387fae34f5a83e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8753ffa7681accbe1387fae34f5a83e6">LPSXXX_CTRL_REG1_ODR_POS</a>&#160;&#160;&#160;(4)</td></tr>
+<tr class="separator:a8753ffa7681accbe1387fae34f5a83e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac555564808693b537b26ac98acceb0d7" id="r_ac555564808693b537b26ac98acceb0d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac555564808693b537b26ac98acceb0d7">LPSXXX_CTRL_REG1_SIM</a>&#160;&#160;&#160;(0x01)</td></tr>
+<tr class="separator:ac555564808693b537b26ac98acceb0d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a0009bce209469a7cb3d67ba115697f1a" name="a0009bce209469a7cb3d67ba115697f1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0009bce209469a7cb3d67ba115697f1a">&#9670;&#160;</a></span>LPSXXX_CTRL_REG1_ODR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LPSXXX_CTRL_REG1_ODR&#160;&#160;&#160;(0x70)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lpsxxx__internal_8h_source.html#l00045">45</a> of file <a class="el" href="lpsxxx__internal_8h_source.html">lpsxxx_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a8753ffa7681accbe1387fae34f5a83e6" name="a8753ffa7681accbe1387fae34f5a83e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8753ffa7681accbe1387fae34f5a83e6">&#9670;&#160;</a></span>LPSXXX_CTRL_REG1_ODR_POS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LPSXXX_CTRL_REG1_ODR_POS&#160;&#160;&#160;(4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lpsxxx__internal_8h_source.html#l00046">46</a> of file <a class="el" href="lpsxxx__internal_8h_source.html">lpsxxx_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ac555564808693b537b26ac98acceb0d7" name="ac555564808693b537b26ac98acceb0d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac555564808693b537b26ac98acceb0d7">&#9670;&#160;</a></span>LPSXXX_CTRL_REG1_SIM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LPSXXX_CTRL_REG1_SIM&#160;&#160;&#160;(0x01)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lpsxxx__internal_8h_source.html#l00047">47</a> of file <a class="el" href="lpsxxx__internal_8h_source.html">lpsxxx_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="aed4f223db94c104bbc42917635f8c4b9" name="aed4f223db94c104bbc42917635f8c4b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed4f223db94c104bbc42917635f8c4b9">&#9670;&#160;</a></span>LPSXXX_REG_PRESS_OUT_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LPSXXX_REG_PRESS_OUT_H&#160;&#160;&#160;(0x2a)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lpsxxx__internal_8h_source.html#l00036">36</a> of file <a class="el" href="lpsxxx__internal_8h_source.html">lpsxxx_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a037166941bd291205dea0658bd7ccbaf" name="a037166941bd291205dea0658bd7ccbaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a037166941bd291205dea0658bd7ccbaf">&#9670;&#160;</a></span>LPSXXX_REG_PRESS_OUT_L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LPSXXX_REG_PRESS_OUT_L&#160;&#160;&#160;(0x29)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lpsxxx__internal_8h_source.html#l00035">35</a> of file <a class="el" href="lpsxxx__internal_8h_source.html">lpsxxx_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a644892068e1e1dd88c3719fa94a6be37" name="a644892068e1e1dd88c3719fa94a6be37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a644892068e1e1dd88c3719fa94a6be37">&#9670;&#160;</a></span>LPSXXX_REG_PRESS_OUT_XL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LPSXXX_REG_PRESS_OUT_XL&#160;&#160;&#160;(0x28)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lpsxxx__internal_8h_source.html#l00034">34</a> of file <a class="el" href="lpsxxx__internal_8h_source.html">lpsxxx_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a4f0df2514717c3ccaf4179bb0e34d0dd" name="a4f0df2514717c3ccaf4179bb0e34d0dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f0df2514717c3ccaf4179bb0e34d0dd">&#9670;&#160;</a></span>LPSXXX_REG_STATUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LPSXXX_REG_STATUS&#160;&#160;&#160;(0x27)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lpsxxx__internal_8h_source.html#l00033">33</a> of file <a class="el" href="lpsxxx__internal_8h_source.html">lpsxxx_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ab8d3c354fc99626ea09009b6c7699150" name="ab8d3c354fc99626ea09009b6c7699150"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8d3c354fc99626ea09009b6c7699150">&#9670;&#160;</a></span>LPSXXX_REG_TEMP_OUT_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LPSXXX_REG_TEMP_OUT_H&#160;&#160;&#160;(0x2c)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lpsxxx__internal_8h_source.html#l00038">38</a> of file <a class="el" href="lpsxxx__internal_8h_source.html">lpsxxx_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="aaa7f6f67e294101bd86ea2409c78f5c4" name="aaa7f6f67e294101bd86ea2409c78f5c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa7f6f67e294101bd86ea2409c78f5c4">&#9670;&#160;</a></span>LPSXXX_REG_TEMP_OUT_L</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LPSXXX_REG_TEMP_OUT_L&#160;&#160;&#160;(0x2b)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lpsxxx__internal_8h_source.html#l00037">37</a> of file <a class="el" href="lpsxxx__internal_8h_source.html">lpsxxx_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ab264e38e8d017230f9174f08bdad25e4" name="ab264e38e8d017230f9174f08bdad25e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab264e38e8d017230f9174f08bdad25e4">&#9670;&#160;</a></span>LPSXXX_REG_WHO_AM_I</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LPSXXX_REG_WHO_AM_I&#160;&#160;&#160;(0x0f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="lpsxxx__internal_8h_source.html#l00032">32</a> of file <a class="el" href="lpsxxx__internal_8h_source.html">lpsxxx_internal.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

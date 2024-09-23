@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>cc2538_gpio_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+                <div class="navbar-form navbar-right" style="background-color: white;"></div>
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search">
+              </div>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                      new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+              </script>
+              </div>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structcc2538__gpio__t.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">cc2538_gpio_t Struct Reference<div class="ingroups"><a class="el" href="group__cpu.html">CPU</a> &raquo; <a class="el" href="group__cpu__cc2538.html">TI CC2538</a> &raquo; <a class="el" href="group__cpu__cc2538__regs.html">TI CC2538 CMSIS-style Headers</a> &raquo; <a class="el" href="group__cpu__cc2538__gpio.html">CC2538 General-Purpose I/O</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>GPIO port component registers.  
+ <a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>GPIO port component registers. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00184">184</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:aba39027118ea39c334633a39bbeec257" id="r_aba39027118ea39c334633a39bbeec257"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba39027118ea39c334633a39bbeec257">RESERVED1</a> [255]</td></tr>
+<tr class="memdesc:aba39027118ea39c334633a39bbeec257"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved addresses.  <br /></td></tr>
+<tr class="separator:aba39027118ea39c334633a39bbeec257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07a3cd336d6e93fc4f873384695f7501" id="r_a07a3cd336d6e93fc4f873384695f7501"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07a3cd336d6e93fc4f873384695f7501">DATA</a></td></tr>
+<tr class="memdesc:a07a3cd336d6e93fc4f873384695f7501"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_A Data Register.  <br /></td></tr>
+<tr class="separator:a07a3cd336d6e93fc4f873384695f7501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1be5e2052bf04b3ad401a6ef4683b60a" id="r_a1be5e2052bf04b3ad401a6ef4683b60a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1be5e2052bf04b3ad401a6ef4683b60a">DIR</a></td></tr>
+<tr class="memdesc:a1be5e2052bf04b3ad401a6ef4683b60a"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_A data direction register.  <br /></td></tr>
+<tr class="separator:a1be5e2052bf04b3ad401a6ef4683b60a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93a3db6ae142f4e281fa01566d77321c" id="r_a93a3db6ae142f4e281fa01566d77321c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93a3db6ae142f4e281fa01566d77321c">IS</a></td></tr>
+<tr class="memdesc:a93a3db6ae142f4e281fa01566d77321c"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_A Interrupt Sense register.  <br /></td></tr>
+<tr class="separator:a93a3db6ae142f4e281fa01566d77321c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7976b22f88e6b332d51ba749b3cea63b" id="r_a7976b22f88e6b332d51ba749b3cea63b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7976b22f88e6b332d51ba749b3cea63b">IBE</a></td></tr>
+<tr class="memdesc:a7976b22f88e6b332d51ba749b3cea63b"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_A Interrupt Both-Edges register.  <br /></td></tr>
+<tr class="separator:a7976b22f88e6b332d51ba749b3cea63b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebbfd5af4b96ae72231200c1e6e98e85" id="r_aebbfd5af4b96ae72231200c1e6e98e85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebbfd5af4b96ae72231200c1e6e98e85">IEV</a></td></tr>
+<tr class="memdesc:aebbfd5af4b96ae72231200c1e6e98e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_A Interrupt Event Register.  <br /></td></tr>
+<tr class="separator:aebbfd5af4b96ae72231200c1e6e98e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af05df916afab7621eb45b6f522c6408a" id="r_af05df916afab7621eb45b6f522c6408a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af05df916afab7621eb45b6f522c6408a">IE</a></td></tr>
+<tr class="memdesc:af05df916afab7621eb45b6f522c6408a"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_A Interrupt mask register.  <br /></td></tr>
+<tr class="separator:af05df916afab7621eb45b6f522c6408a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c82e5b0b7a03bbee45d0c0f4925dcf8" id="r_a8c82e5b0b7a03bbee45d0c0f4925dcf8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c82e5b0b7a03bbee45d0c0f4925dcf8">RIS</a></td></tr>
+<tr class="memdesc:a8c82e5b0b7a03bbee45d0c0f4925dcf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_A Raw Interrupt Status register.  <br /></td></tr>
+<tr class="separator:a8c82e5b0b7a03bbee45d0c0f4925dcf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcca2774abf495c80b3e9c5471cb5c5c" id="r_abcca2774abf495c80b3e9c5471cb5c5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abcca2774abf495c80b3e9c5471cb5c5c">MIS</a></td></tr>
+<tr class="memdesc:abcca2774abf495c80b3e9c5471cb5c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_A Masked Interrupt Status register.  <br /></td></tr>
+<tr class="separator:abcca2774abf495c80b3e9c5471cb5c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99efad1bfa62895461d6f83b54d8bd11" id="r_a99efad1bfa62895461d6f83b54d8bd11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99efad1bfa62895461d6f83b54d8bd11">IC</a></td></tr>
+<tr class="memdesc:a99efad1bfa62895461d6f83b54d8bd11"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_A Interrupt Clear register.  <br /></td></tr>
+<tr class="separator:a99efad1bfa62895461d6f83b54d8bd11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03c6add4ad7006c60e49f38640d5aa5c" id="r_a03c6add4ad7006c60e49f38640d5aa5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03c6add4ad7006c60e49f38640d5aa5c">AFSEL</a></td></tr>
+<tr class="memdesc:a03c6add4ad7006c60e49f38640d5aa5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_A Alternate Function / mode control select register.  <br /></td></tr>
+<tr class="separator:a03c6add4ad7006c60e49f38640d5aa5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ed0c090c86d02becd26608e2ee12a6c" id="r_a6ed0c090c86d02becd26608e2ee12a6c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ed0c090c86d02becd26608e2ee12a6c">RESERVED2</a> [63]</td></tr>
+<tr class="memdesc:a6ed0c090c86d02becd26608e2ee12a6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved addresses.  <br /></td></tr>
+<tr class="separator:a6ed0c090c86d02becd26608e2ee12a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6827945a0056eb68ea9443680bb73848" id="r_a6827945a0056eb68ea9443680bb73848"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6827945a0056eb68ea9443680bb73848">GPIOLOCK</a></td></tr>
+<tr class="memdesc:a6827945a0056eb68ea9443680bb73848"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_A Lock register.  <br /></td></tr>
+<tr class="separator:a6827945a0056eb68ea9443680bb73848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4ec741fa5dd18f31f0aedfd659e8d4e" id="r_ad4ec741fa5dd18f31f0aedfd659e8d4e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4ec741fa5dd18f31f0aedfd659e8d4e">GPIOCR</a></td></tr>
+<tr class="memdesc:ad4ec741fa5dd18f31f0aedfd659e8d4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_A Commit Register.  <br /></td></tr>
+<tr class="separator:ad4ec741fa5dd18f31f0aedfd659e8d4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a486c5fe62547d090ff85fec56c5725ab" id="r_a486c5fe62547d090ff85fec56c5725ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a486c5fe62547d090ff85fec56c5725ab">RESERVED3</a> [118]</td></tr>
+<tr class="memdesc:a486c5fe62547d090ff85fec56c5725ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved addresses.  <br /></td></tr>
+<tr class="separator:a486c5fe62547d090ff85fec56c5725ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1829ab41cc6d521216f11a88013d6b6" id="r_aa1829ab41cc6d521216f11a88013d6b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1829ab41cc6d521216f11a88013d6b6">PMUX</a></td></tr>
+<tr class="memdesc:aa1829ab41cc6d521216f11a88013d6b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_A The PMUX register.  <br /></td></tr>
+<tr class="separator:aa1829ab41cc6d521216f11a88013d6b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecae6912f31dbb7bada7b81c8be0b0c9" id="r_aecae6912f31dbb7bada7b81c8be0b0c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecae6912f31dbb7bada7b81c8be0b0c9">P_EDGE_CTRL</a></td></tr>
+<tr class="memdesc:aecae6912f31dbb7bada7b81c8be0b0c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_A The Port Edge Control register.  <br /></td></tr>
+<tr class="separator:aecae6912f31dbb7bada7b81c8be0b0c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac807f0f132918c33960ca8fee411536e" id="r_ac807f0f132918c33960ca8fee411536e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac807f0f132918c33960ca8fee411536e">RESERVED4</a> [2]</td></tr>
+<tr class="memdesc:ac807f0f132918c33960ca8fee411536e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved addresses.  <br /></td></tr>
+<tr class="separator:ac807f0f132918c33960ca8fee411536e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3506a782883b8f7b9789c7b89016542f" id="r_a3506a782883b8f7b9789c7b89016542f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3506a782883b8f7b9789c7b89016542f">PI_IEN</a></td></tr>
+<tr class="memdesc:a3506a782883b8f7b9789c7b89016542f"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_A The Power-up Interrupt Enable register.  <br /></td></tr>
+<tr class="separator:a3506a782883b8f7b9789c7b89016542f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ece1743d5a57e39496558349ca2ff52" id="r_a7ece1743d5a57e39496558349ca2ff52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ece1743d5a57e39496558349ca2ff52">RESERVED5</a> [1]</td></tr>
+<tr class="memdesc:a7ece1743d5a57e39496558349ca2ff52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved addresses.  <br /></td></tr>
+<tr class="separator:a7ece1743d5a57e39496558349ca2ff52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3ba969c8a83c123947ec750c0b8f2b6" id="r_aa3ba969c8a83c123947ec750c0b8f2b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3ba969c8a83c123947ec750c0b8f2b6">IRQ_DETECT_ACK</a></td></tr>
+<tr class="memdesc:aa3ba969c8a83c123947ec750c0b8f2b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_A IRQ Detect ACK register.  <br /></td></tr>
+<tr class="separator:aa3ba969c8a83c123947ec750c0b8f2b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a301a3c40c249afee859ca1e1499d051a" id="r_a301a3c40c249afee859ca1e1499d051a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a301a3c40c249afee859ca1e1499d051a">USB_IRQ_ACK</a></td></tr>
+<tr class="memdesc:a301a3c40c249afee859ca1e1499d051a"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_A IRQ Detect ACK for USB.  <br /></td></tr>
+<tr class="separator:a301a3c40c249afee859ca1e1499d051a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a5dd293681bdb278d88671aa12e65cb" id="r_a0a5dd293681bdb278d88671aa12e65cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a5dd293681bdb278d88671aa12e65cb">IRQ_DETECT_UNMASK</a></td></tr>
+<tr class="memdesc:a0a5dd293681bdb278d88671aa12e65cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO_A IRQ Detect ACK for masked interrupts.  <br /></td></tr>
+<tr class="separator:a0a5dd293681bdb278d88671aa12e65cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af153b521110e0e2294436572c45b234c" id="r_af153b521110e0e2294436572c45b234c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af153b521110e0e2294436572c45b234c">RESERVED6</a> [567]</td></tr>
+<tr class="memdesc:af153b521110e0e2294436572c45b234c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved addresses.  <br /></td></tr>
+<tr class="separator:af153b521110e0e2294436572c45b234c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a03c6add4ad7006c60e49f38640d5aa5c" name="a03c6add4ad7006c60e49f38640d5aa5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03c6add4ad7006c60e49f38640d5aa5c">&#9670;&#160;</a></span>AFSEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::AFSEL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_A Alternate Function / mode control select register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00195">195</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="a07a3cd336d6e93fc4f873384695f7501" name="a07a3cd336d6e93fc4f873384695f7501"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07a3cd336d6e93fc4f873384695f7501">&#9670;&#160;</a></span>DATA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::DATA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_A Data Register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00186">186</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="a1be5e2052bf04b3ad401a6ef4683b60a" name="a1be5e2052bf04b3ad401a6ef4683b60a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1be5e2052bf04b3ad401a6ef4683b60a">&#9670;&#160;</a></span>DIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::DIR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_A data direction register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00187">187</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="ad4ec741fa5dd18f31f0aedfd659e8d4e" name="ad4ec741fa5dd18f31f0aedfd659e8d4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4ec741fa5dd18f31f0aedfd659e8d4e">&#9670;&#160;</a></span>GPIOCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::GPIOCR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_A Commit Register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00198">198</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="a6827945a0056eb68ea9443680bb73848" name="a6827945a0056eb68ea9443680bb73848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6827945a0056eb68ea9443680bb73848">&#9670;&#160;</a></span>GPIOLOCK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::GPIOLOCK</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_A Lock register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00197">197</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="a7976b22f88e6b332d51ba749b3cea63b" name="a7976b22f88e6b332d51ba749b3cea63b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7976b22f88e6b332d51ba749b3cea63b">&#9670;&#160;</a></span>IBE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::IBE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_A Interrupt Both-Edges register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00189">189</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="a99efad1bfa62895461d6f83b54d8bd11" name="a99efad1bfa62895461d6f83b54d8bd11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99efad1bfa62895461d6f83b54d8bd11">&#9670;&#160;</a></span>IC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::IC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_A Interrupt Clear register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00194">194</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="af05df916afab7621eb45b6f522c6408a" name="af05df916afab7621eb45b6f522c6408a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af05df916afab7621eb45b6f522c6408a">&#9670;&#160;</a></span>IE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::IE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_A Interrupt mask register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00191">191</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="aebbfd5af4b96ae72231200c1e6e98e85" name="aebbfd5af4b96ae72231200c1e6e98e85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebbfd5af4b96ae72231200c1e6e98e85">&#9670;&#160;</a></span>IEV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::IEV</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_A Interrupt Event Register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00190">190</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="aa3ba969c8a83c123947ec750c0b8f2b6" name="aa3ba969c8a83c123947ec750c0b8f2b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3ba969c8a83c123947ec750c0b8f2b6">&#9670;&#160;</a></span>IRQ_DETECT_ACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::IRQ_DETECT_ACK</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_A IRQ Detect ACK register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00205">205</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="a0a5dd293681bdb278d88671aa12e65cb" name="a0a5dd293681bdb278d88671aa12e65cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a5dd293681bdb278d88671aa12e65cb">&#9670;&#160;</a></span>IRQ_DETECT_UNMASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::IRQ_DETECT_UNMASK</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_A IRQ Detect ACK for masked interrupts. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00207">207</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="a93a3db6ae142f4e281fa01566d77321c" name="a93a3db6ae142f4e281fa01566d77321c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93a3db6ae142f4e281fa01566d77321c">&#9670;&#160;</a></span>IS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::IS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_A Interrupt Sense register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00188">188</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="abcca2774abf495c80b3e9c5471cb5c5c" name="abcca2774abf495c80b3e9c5471cb5c5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcca2774abf495c80b3e9c5471cb5c5c">&#9670;&#160;</a></span>MIS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::MIS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_A Masked Interrupt Status register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00193">193</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="aecae6912f31dbb7bada7b81c8be0b0c9" name="aecae6912f31dbb7bada7b81c8be0b0c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecae6912f31dbb7bada7b81c8be0b0c9">&#9670;&#160;</a></span>P_EDGE_CTRL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::P_EDGE_CTRL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_A The Port Edge Control register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00201">201</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="a3506a782883b8f7b9789c7b89016542f" name="a3506a782883b8f7b9789c7b89016542f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3506a782883b8f7b9789c7b89016542f">&#9670;&#160;</a></span>PI_IEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::PI_IEN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_A The Power-up Interrupt Enable register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00203">203</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="aa1829ab41cc6d521216f11a88013d6b6" name="aa1829ab41cc6d521216f11a88013d6b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1829ab41cc6d521216f11a88013d6b6">&#9670;&#160;</a></span>PMUX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::PMUX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_A The PMUX register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00200">200</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="aba39027118ea39c334633a39bbeec257" name="aba39027118ea39c334633a39bbeec257"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba39027118ea39c334633a39bbeec257">&#9670;&#160;</a></span>RESERVED1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::RESERVED1[255]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved addresses. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00185">185</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="a6ed0c090c86d02becd26608e2ee12a6c" name="a6ed0c090c86d02becd26608e2ee12a6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ed0c090c86d02becd26608e2ee12a6c">&#9670;&#160;</a></span>RESERVED2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::RESERVED2[63]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved addresses. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00196">196</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="a486c5fe62547d090ff85fec56c5725ab" name="a486c5fe62547d090ff85fec56c5725ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a486c5fe62547d090ff85fec56c5725ab">&#9670;&#160;</a></span>RESERVED3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::RESERVED3[118]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved addresses. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00199">199</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="ac807f0f132918c33960ca8fee411536e" name="ac807f0f132918c33960ca8fee411536e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac807f0f132918c33960ca8fee411536e">&#9670;&#160;</a></span>RESERVED4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::RESERVED4[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved addresses. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00202">202</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="a7ece1743d5a57e39496558349ca2ff52" name="a7ece1743d5a57e39496558349ca2ff52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ece1743d5a57e39496558349ca2ff52">&#9670;&#160;</a></span>RESERVED5</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::RESERVED5[1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved addresses. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00204">204</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="af153b521110e0e2294436572c45b234c" name="af153b521110e0e2294436572c45b234c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af153b521110e0e2294436572c45b234c">&#9670;&#160;</a></span>RESERVED6</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::RESERVED6[567]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserved addresses. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00208">208</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="a8c82e5b0b7a03bbee45d0c0f4925dcf8" name="a8c82e5b0b7a03bbee45d0c0f4925dcf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c82e5b0b7a03bbee45d0c0f4925dcf8">&#9670;&#160;</a></span>RIS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::RIS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_A Raw Interrupt Status register. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00192">192</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<a id="a301a3c40c249afee859ca1e1499d051a" name="a301a3c40c249afee859ca1e1499d051a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a301a3c40c249afee859ca1e1499d051a">&#9670;&#160;</a></span>USB_IRQ_ACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cc2538_8h.html#a068f22e8748490a08abf861eff38cc84">cc2538_reg_t</a> cc2538_gpio_t::USB_IRQ_ACK</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GPIO_A IRQ Detect ACK for USB. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc2538__gpio_8h_source.html#l00206">206</a> of file <a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>cpu/cc2538/include/<a class="el" href="cc2538__gpio_8h_source.html">cc2538_gpio.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Mon Sep 23 2024 14:49:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.12.0</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

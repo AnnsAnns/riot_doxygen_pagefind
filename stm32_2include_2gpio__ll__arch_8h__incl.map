@@ -1,0 +1,108 @@
+<map id="cpu/stm32/include/gpio_ll_arch.h" name="cpu/stm32/include/gpio_ll_arch.h">
+<area shape="rect" id="Node000001" title="CPU specific part of the Peripheral GPIO Low&#45;Level API." alt="" coords="1985,5,2157,50"/>
+<area shape="rect" id="Node000002" href="$architecture_8h.html" title="Platform&#45;independent access to architecture details." alt="" coords="2616,98,2727,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2158,38,2601,98,2600,104,2157,43"/>
+<area shape="rect" id="Node000007" href="$stm32_2include_2periph__cpu_8h.html" title="Shared CPU specific definitions for the STM32 family." alt="" coords="1419,98,1523,126"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1985,43,1539,104,1539,99,1984,38"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="1000,325,1070,353"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="2673,127,2666,163,2648,203,2627,232,2606,251,2581,266,2548,280,2511,289,2455,297,2295,310,2089,321,1857,328,1399,337,1086,340,1086,335,1399,332,1857,323,2089,315,2295,305,2454,291,2510,283,2546,274,2579,261,2603,247,2623,228,2644,200,2661,161,2667,126"/>
+<area shape="rect" id="Node000004" href="$inttypes_8h.html" title="Adds include for missing inttype definitions." alt="" coords="3000,325,3086,353"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="2728,112,2806,117,2895,127,2975,145,3005,157,3027,172,3046,204,3055,241,3055,278,3052,310,3046,309,3050,278,3049,242,3041,206,3023,175,3003,162,2973,150,2894,133,2806,122,2727,118"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="2564,174,2634,201"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="2660,128,2624,164,2621,161,2656,124"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="2866,174,3012,201"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="2720,124,2878,167,2876,172,2718,129"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="1524,110,1694,112,1947,119,2244,138,2397,152,2546,171,2550,172,2549,177,2546,176,2396,158,2243,143,1947,125,1694,117,1524,116"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="400,325,457,353"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="1419,116,1099,119,641,127,416,135,222,145,82,159,40,167,20,176,10,195,9,221,17,250,34,275,59,291,96,304,193,321,298,331,385,334,384,340,297,336,192,327,95,309,57,296,31,279,12,252,4,222,5,193,16,172,38,162,81,154,222,140,415,130,641,122,1099,113,1418,111"/>
+<area shape="rect" id="Node000009" href="$units_8h.html" title="Unit helper macros." alt="" coords="2158,249,2275,277"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="1524,110,1706,112,1944,120,2060,128,2161,138,2236,153,2261,162,2277,172,2285,190,2279,209,2266,226,2249,242,2246,238,2262,223,2275,206,2279,190,2273,175,2259,166,2235,158,2160,144,2060,133,1944,126,1706,118,1524,116"/>
+<area shape="rect" id="Node000010" href="$cpu__backup__ram_8h.html" title="Backup SRAM CPU specific definitions for the STM32 family." alt="" coords="1377,174,1565,201"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="1474,126,1474,158,1469,158,1469,126"/>
+<area shape="rect" id="Node000011" href="$stm32_2include_2periph_2cpu__common_8h.html" title="Common CPU definitions for the STM32 family." alt="" coords="2693,249,2858,277"/>
+<area shape="poly" id="edge11_Node000007_Node000011" title=" " alt="" coords="1524,111,1728,113,2012,121,2296,139,2414,153,2503,171,2529,184,2554,199,2627,224,2697,243,2696,248,2625,229,2551,204,2526,189,2501,176,2413,158,2296,144,2012,126,1728,118,1524,116"/>
+<area shape="rect" id="Node000013" href="$cpu__dma_8h.html" title="DMA CPU specific definitions for the STM32 family." alt="" coords="1895,249,2032,277"/>
+<area shape="poly" id="edge14_Node000007_Node000013" title=" " alt="" coords="1524,112,1664,117,1837,128,1992,145,2045,157,2074,172,2081,183,2082,194,2070,214,2046,231,2017,246,2015,241,2043,227,2066,211,2077,193,2076,185,2071,176,2043,162,1991,151,1837,133,1663,122,1524,117"/>
+<area shape="rect" id="Node000014" href="$cpu__eth_8h.html" title="Ethernet CPU specific definitions for the STM32 family." alt="" coords="1065,174,1195,201"/>
+<area shape="poly" id="edge15_Node000007_Node000014" title=" " alt="" coords="1419,127,1207,172,1206,167,1418,122"/>
+<area shape="rect" id="Node000015" href="$cpu__gpio_8h.html" title="GPIO CPU definitions for the STM32 family." alt="" coords="728,249,865,277"/>
+<area shape="poly" id="edge24_Node000007_Node000015" title=" " alt="" coords="1419,116,1247,119,1025,127,918,135,825,145,756,159,733,167,720,176,715,183,714,191,721,208,738,224,759,239,756,243,734,228,717,211,708,192,710,181,716,172,731,162,754,154,824,140,917,130,1025,122,1247,113,1419,111"/>
+<area shape="rect" id="Node000016" href="$cpu__fmc_8h.html" title="Specific FMC definitions for the STM32." alt="" coords="207,174,341,201"/>
+<area shape="poly" id="edge20_Node000007_Node000016" title=" " alt="" coords="1419,117,984,131,676,149,356,176,356,171,676,144,984,126,1419,111"/>
+<area shape="rect" id="Node000017" href="$cpu__gpio__ll_8h.html" title="GPIO LL CPU definitions for the STM32 family." alt="" coords="2338,174,2490,201"/>
+<area shape="poly" id="edge25_Node000007_Node000017" title=" " alt="" coords="1524,113,1859,133,2087,150,2319,171,2324,171,2323,177,2319,176,2087,155,1859,139,1524,118"/>
+<area shape="rect" id="Node000020" href="$cpu__i2c_8h.html" title="I2C CPU specific definitions for the STM32 family." alt="" coords="365,174,492,201"/>
+<area shape="poly" id="edge29_Node000007_Node000020" title=" " alt="" coords="1419,117,1043,133,780,151,508,176,507,171,780,146,1043,128,1419,112"/>
+<area shape="rect" id="Node000021" href="$cpu__ltdc_8h.html" title="LTDC CPU specific definitions for the STM32 family." alt="" coords="730,174,863,201"/>
+<area shape="poly" id="edge33_Node000007_Node000021" title=" " alt="" coords="1419,120,1189,141,878,176,878,171,1188,136,1418,115"/>
+<area shape="rect" id="Node000022" href="$stm32_2include_2periph_2cpu__pm_8h.html" title="Power Management (PM) CPU specific definitions for the STM32 family." alt="" coords="1589,174,1719,201"/>
+<area shape="poly" id="edge36_Node000007_Node000022" title=" " alt="" coords="1505,124,1608,165,1606,170,1503,129"/>
+<area shape="rect" id="Node000023" href="$cpu__pwm_8h.html" title="PWM CPU specific definitions for the STM32 family." alt="" coords="42,174,183,201"/>
+<area shape="poly" id="edge37_Node000007_Node000023" title=" " alt="" coords="1419,116,1223,120,925,130,568,147,198,176,198,171,568,142,925,124,1223,115,1419,111"/>
+<area shape="rect" id="Node000024" href="$cpu__timer_8h.html" title="Timer CPU specific definitions for the STM32 family." alt="" coords="45,249,188,277"/>
+<area shape="poly" id="edge58_Node000007_Node000024" title=" " alt="" coords="1419,116,1101,119,647,127,424,135,232,146,94,159,52,167,32,176,26,184,25,191,34,208,52,225,76,239,73,244,49,229,29,211,20,192,21,182,28,172,50,162,93,154,232,140,424,130,647,122,1101,113,1418,111"/>
+<area shape="rect" id="Node000025" href="$cpu__qdec_8h.html" title="QDEC CPU specific definitions for the STM32 family." alt="" coords="516,174,656,201"/>
+<area shape="poly" id="edge44_Node000007_Node000025" title=" " alt="" coords="1419,119,1103,139,891,155,674,176,671,177,671,171,674,171,890,150,1103,133,1418,113"/>
+<area shape="rect" id="Node000026" href="$cpu__sdmmc_8h.html" title="CPU specific definitions for SDIO/SDMMC for the STM32 family." alt="" coords="1904,174,2060,201"/>
+<area shape="poly" id="edge48_Node000007_Node000026" title=" " alt="" coords="1524,118,1889,170,1888,175,1524,123"/>
+<area shape="rect" id="Node000027" href="$cpu__spi_8h.html" title="SPI CPU specific definitions for the STM32 family." alt="" coords="2136,174,2263,201"/>
+<area shape="poly" id="edge52_Node000007_Node000027" title=" " alt="" coords="1524,114,1780,136,2117,171,2120,171,2120,177,2116,176,1779,141,1524,120"/>
+<area shape="rect" id="Node000028" href="$cpu__uart_8h.html" title="UART CPU specific definitions for the STM32 family." alt="" coords="1219,174,1353,201"/>
+<area shape="poly" id="edge59_Node000007_Node000028" title=" " alt="" coords="1439,129,1334,170,1332,165,1437,124"/>
+<area shape="rect" id="Node000029" href="$cpu__usbdev_8h.html" title="USB CPU specific definitions for the STM32 family." alt="" coords="887,174,1042,201"/>
+<area shape="poly" id="edge64_Node000007_Node000029" title=" " alt="" coords="1419,123,1058,175,1057,170,1418,118"/>
+<area shape="rect" id="Node000030" href="$cpu__vbat_8h.html" title="CPU internal VBAT interface and definitions of the STM32 family." alt="" coords="1743,174,1880,201"/>
+<area shape="poly" id="edge67_Node000007_Node000030" title=" " alt="" coords="1525,122,1736,167,1735,172,1523,127"/>
+<area shape="rect" id="Node000031" href="$cpu__wdt_8h.html" title="Watchdog CPU definitions for the STM32 family." alt="" coords="2709,174,2841,201"/>
+<area shape="poly" id="edge68_Node000007_Node000031" title=" " alt="" coords="1524,112,1985,132,2311,149,2646,171,2694,175,2694,180,2646,176,2311,155,1985,137,1524,118"/>
+<area shape="poly" id="edge12_Node000011_Node000003" title=" " alt="" coords="2693,278,2674,280,2435,297,2191,310,1722,328,1332,337,1086,340,1086,335,1331,332,1721,323,2191,305,2435,291,2674,274,2692,273"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="2730,325,2820,353"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="2778,278,2778,309,2773,309,2773,278"/>
+<area shape="poly" id="edge16_Node000014_Node000003" title=" " alt="" coords="1124,203,1054,313,1049,310,1120,200"/>
+<area shape="poly" id="edge17_Node000014_Node000015" title=" " alt="" coords="1070,205,872,248,871,243,1069,199"/>
+<area shape="poly" id="edge18_Node000015_Node000003" title=" " alt="" coords="840,275,986,320,984,325,838,280"/>
+<area shape="poly" id="edge19_Node000015_Node000008" title=" " alt="" coords="731,280,473,331,472,326,730,275"/>
+<area shape="poly" id="edge21_Node000016_Node000003" title=" " alt="" coords="314,199,433,236,582,274,694,295,806,311,985,331,984,336,806,316,694,300,581,280,432,242,312,205"/>
+<area shape="poly" id="edge22_Node000016_Node000008" title=" " alt="" coords="289,200,406,312,402,316,285,203"/>
+<area shape="poly" id="edge23_Node000016_Node000015" title=" " alt="" coords="341,197,353,199,713,248,713,254,352,204,340,202"/>
+<area shape="poly" id="edge27_Node000017_Node000003" title=" " alt="" coords="2454,199,2487,214,2517,232,2528,243,2534,254,2534,267,2526,279,2504,289,2459,297,2315,311,2115,322,1882,329,1412,338,1086,340,1086,335,1412,332,1882,324,2114,317,2314,306,2458,292,2502,284,2523,275,2529,265,2529,256,2524,246,2514,236,2485,219,2452,204"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="2299,249,2385,277"/>
+<area shape="poly" id="edge26_Node000017_Node000018" title=" " alt="" coords="2403,204,2367,240,2363,236,2399,200"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="2408,249,2513,277"/>
+<area shape="poly" id="edge28_Node000017_Node000019" title=" " alt="" coords="2424,200,2447,235,2442,238,2420,203"/>
+<area shape="poly" id="edge30_Node000020_Node000003" title=" " alt="" coords="463,199,663,274,751,295,839,311,985,330,985,335,838,316,750,300,661,280,461,204"/>
+<area shape="poly" id="edge31_Node000020_Node000008" title=" " alt="" coords="431,202,431,309,426,309,426,202"/>
+<area shape="poly" id="edge32_Node000020_Node000015" title=" " alt="" coords="493,199,717,243,715,248,492,204"/>
+<area shape="poly" id="edge34_Node000021_Node000003" title=" " alt="" coords="819,200,1003,314,1000,319,816,204"/>
+<area shape="poly" id="edge35_Node000021_Node000015" title=" " alt="" coords="799,202,799,234,794,234,794,202"/>
+<area shape="poly" id="edge38_Node000023_Node000003" title=" " alt="" coords="157,199,295,237,466,274,613,297,759,313,985,332,985,337,759,319,613,302,465,280,293,242,156,205"/>
+<area shape="poly" id="edge39_Node000023_Node000008" title=" " alt="" coords="141,199,299,275,387,316,385,320,297,279,138,204"/>
+<area shape="poly" id="edge40_Node000023_Node000015" title=" " alt="" coords="184,197,196,199,480,230,713,252,713,257,479,236,195,204,183,202"/>
+<area shape="poly" id="edge41_Node000023_Node000024" title=" " alt="" coords="116,202,118,233,112,234,111,202"/>
+<area shape="poly" id="edge42_Node000024_Node000003" title=" " alt="" coords="189,268,985,331,984,336,188,273"/>
+<area shape="poly" id="edge43_Node000024_Node000008" title=" " alt="" coords="173,275,386,325,385,330,172,280"/>
+<area shape="poly" id="edge45_Node000025_Node000003" title=" " alt="" coords="602,200,652,237,684,258,718,275,788,298,860,315,985,332,984,337,859,320,786,303,716,279,681,262,649,242,599,204"/>
+<area shape="poly" id="edge46_Node000025_Node000008" title=" " alt="" coords="574,203,455,316,451,312,571,200"/>
+<area shape="poly" id="edge47_Node000025_Node000015" title=" " alt="" coords="624,199,746,241,744,246,623,204"/>
+<area shape="poly" id="edge49_Node000026_Node000003" title=" " alt="" coords="1904,204,1086,332,1085,327,1903,199"/>
+<area shape="poly" id="edge50_Node000026_Node000013" title=" " alt="" coords="1981,203,1973,235,1968,233,1976,201"/>
+<area shape="poly" id="edge51_Node000026_Node000015" title=" " alt="" coords="1904,203,1893,204,1601,228,1314,245,880,262,880,257,1314,240,1601,223,1892,199,1903,198"/>
+<area shape="poly" id="edge53_Node000027_Node000003" title=" " alt="" coords="2190,203,2149,243,2121,263,2089,280,2027,292,1920,303,1626,321,1312,333,1086,339,1085,334,1312,328,1625,316,1920,298,2026,287,2088,274,2118,259,2146,239,2187,199"/>
+<area shape="poly" id="edge54_Node000027_Node000008" title=" " alt="" coords="2176,204,2090,252,2069,267,2045,280,1965,289,1802,298,1323,316,472,339,472,334,1323,311,1801,293,1965,284,2044,274,2066,263,2087,247,2173,200"/>
+<area shape="poly" id="edge55_Node000027_Node000009" title=" " alt="" coords="2205,201,2213,233,2207,235,2200,203"/>
+<area shape="poly" id="edge56_Node000027_Node000013" title=" " alt="" coords="2158,204,2021,247,2019,242,2156,199"/>
+<area shape="poly" id="edge57_Node000027_Node000015" title=" " alt="" coords="2136,198,2073,204,1726,226,1385,243,880,262,880,257,1385,238,1725,221,2072,199,2135,193"/>
+<area shape="poly" id="edge60_Node000028_Node000003" title=" " alt="" coords="1265,204,1071,319,1069,315,1263,199"/>
+<area shape="poly" id="edge61_Node000028_Node000008" title=" " alt="" coords="1232,204,1074,241,877,280,650,314,472,335,472,330,649,309,876,274,1072,235,1231,199"/>
+<area shape="poly" id="edge62_Node000028_Node000013" title=" " alt="" coords="1354,197,1365,199,1647,231,1879,252,1879,257,1647,236,1364,204,1353,202"/>
+<area shape="poly" id="edge63_Node000028_Node000015" title=" " alt="" coords="1219,202,1208,204,881,252,880,247,1207,199,1218,197"/>
+<area shape="poly" id="edge65_Node000029_Node000003" title=" " alt="" coords="973,200,1025,310,1020,312,968,203"/>
+<area shape="poly" id="edge66_Node000029_Node000015" title=" " alt="" coords="936,204,841,245,839,240,933,199"/>
+<area shape="poly" id="edge73_Node000031_Node000011" title=" " alt="" coords="2778,202,2778,234,2773,234,2773,202"/>
+<area shape="rect" id="Node000032" href="$timex_8h.html" title="Utility library for comparing and computing timestamps." alt="" coords="2882,249,2954,277"/>
+<area shape="poly" id="edge69_Node000031_Node000032" title=" " alt="" coords="2802,200,2880,240,2878,244,2800,204"/>
+<area shape="poly" id="edge70_Node000032_Node000003" title=" " alt="" coords="2882,277,2870,280,2701,297,2476,311,1940,329,1423,337,1086,340,1086,335,1423,332,1940,324,2476,306,2701,292,2870,274,2881,272"/>
+<area shape="poly" id="edge71_Node000032_Node000004" title=" " alt="" coords="2942,275,3010,315,3007,319,2939,280"/>
+<area shape="rect" id="Node000033" href="$time__units_8h.html" title="Utility header providing time unit defines." alt="" coords="2867,325,2969,353"/>
+<area shape="poly" id="edge72_Node000032_Node000033" title=" " alt="" coords="2921,278,2921,309,2915,309,2915,278"/>
+</map>
